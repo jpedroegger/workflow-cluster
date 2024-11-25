@@ -1,0 +1,19 @@
+# ninja log v5
+2	24	1732560621564280133	_cluster_autogen/timestamp	4a5a515f36217bcc
+2	24	1732560621564280133	_cluster_autogen/mocs_compilation.cpp	4a5a515f36217bcc
+2	24	1732560621564280133	/home/francisco/SEAME/SEAME-Cluster-24-25/cluster_qt/build/Desktop-MinSizeRel/_cluster_autogen/timestamp	4a5a515f36217bcc
+2	24	1732560621564280133	/home/francisco/SEAME/SEAME-Cluster-24-25/cluster_qt/build/Desktop-MinSizeRel/_cluster_autogen/mocs_compilation.cpp	4a5a515f36217bcc
+258	1620	1732560448081799167	CMakeFiles/_cluster.dir/_cluster_autogen/mocs_compilation.cpp.o	ab76a74019ec4936
+25	974	1732560623909259904	CMakeFiles/_cluster.dir/mainwindow.cpp.o	ae4c6439e34edd68
+26	1016	1732560623951259542	CMakeFiles/_cluster.dir/SpeedometerWidget.cpp.o	71aa037c195bf16f
+34	1013	1732560585188594889	CMakeFiles/_cluster.dir/ArrowSymbolWidget.cpp.o	e3700851f79315fd
+258	1713	1732560448174798340	CMakeFiles/_cluster.dir/main.cpp.o	25bdd43020049462
+1016	1224	1732560624157257765	_cluster	52cde118dd213546
+4	19	1732561088046362713	_cluster_autogen/timestamp	4a5a515f36217bcc
+4	19	1732561088046362713	_cluster_autogen/mocs_compilation.cpp	4a5a515f36217bcc
+4	19	1732561088046362713	/home/francisco/SEAME/SEAME-Cluster-24-25/cluster_qt/build/Desktop-MinSizeRel/_cluster_autogen/timestamp	4a5a515f36217bcc
+4	19	1732561088046362713	/home/francisco/SEAME/SEAME-Cluster-24-25/cluster_qt/build/Desktop-MinSizeRel/_cluster_autogen/mocs_compilation.cpp	4a5a515f36217bcc
+20	951	1732561089023354675	CMakeFiles/_cluster.dir/TopBar.cpp.o	60d8db99c6757d1d
+20	967	1732561089040354535	CMakeFiles/_cluster.dir/mainwindow.cpp.o	ae4c6439e34edd68
+20	1019	1732561089091354116	CMakeFiles/_cluster.dir/main.cpp.o	25bdd43020049462
+1019	1218	1732561089289352487	_cluster	a237125edc9848d8

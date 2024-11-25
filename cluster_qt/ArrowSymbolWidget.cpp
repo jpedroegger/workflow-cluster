@@ -1,4 +1,4 @@
-#include "ArrowSymbolWidget.h"
+#include "includes/ArrowSymbolWidget.h"
 
 ArrowSymbolWidget::ArrowSymbolWidget() { }
 
@@ -55,3 +55,5 @@ void ArrowSymbolWidget::drawArrowhead(QPainter& painter, int x, int y, double an
 
     painter.drawPolygon(arrowHead);
 }
+
+ArrowSymbolWidget::~ArrowSymbolWidget() {}

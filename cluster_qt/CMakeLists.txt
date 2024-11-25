@@ -15,12 +15,12 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 set(PROJECT_SOURCES
         main.cpp
         mainwindow.cpp
-        mainwindow.h
+        includes/mainwindow.h
         mainwindow.ui
 
-        ArrowSymbolWidget.h
+        includes/ArrowSymbolWidget.h
         ArrowSymbolWidget.cpp
-        SpeedometerWidget.h
+        includes/SpeedometerWidget.h
         SpeedometerWidget.cpp
 )
 
@@ -28,6 +28,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(_cluster
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+        includes/TopBar.h
+        TopBar.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET _cluster APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

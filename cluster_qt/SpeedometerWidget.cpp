@@ -1,4 +1,4 @@
-#include "SpeedometerWidget.h"
+#include "includes/SpeedometerWidget.h"
 
 SpeedometerWidget::SpeedometerWidget(QWidget* parent)
     : QWidget(parent), currentSpeed(0)
@@ -108,3 +108,5 @@ void SpeedometerWidget::updateSpeed() {
     currentSpeed = (currentSpeed + 2) % 161; // Cycle speed between 0 and 160
     update(); // Trigger a repaint
 }
+
+SpeedometerWidget::~SpeedometerWidget() {}

@@ -3,8 +3,9 @@
 #include <QLabel>
 #include <cmath> // For sin and cos
 
-#include "ArrowSymbolWidget.h"
-#include "SpeedometerWidget.h"
+#include "includes/ArrowSymbolWidget.h"
+#include "includes/SpeedometerWidget.h"
+#include "includes/TopBar.h"
 
 int main(int argc, char* argv[])
 {
@@ -22,7 +23,7 @@ int main(int argc, char* argv[])
 
     // Create a QLabel for the image
     QLabel* imageLabel = new QLabel(&mainWindow);
-    QPixmap symbol("/header.png"); // Replace with your image path
+    QPixmap symbol("assets/header.png"); // Replace with your image path
 
     imageLabel->setPixmap(symbol);
     imageLabel->setAlignment(Qt::AlignHCenter); // Center-align the image
