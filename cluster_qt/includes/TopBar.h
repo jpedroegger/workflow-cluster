@@ -2,17 +2,26 @@
 #define TOPBAR_H
 
 #include <QWidget>
-#include <QPainter>
-#include <QPainterPath>
+#include <QHBoxLayout>
+#include <QLabel>
+#include <QPixmap>
 
 class TopBar : public QWidget
 {
-    public:
-        TopBar();
-        TopBar(QWidget* parent = nullptr);
-        ~TopBar();
-    protected:
-    private:
+    Q_OBJECT
+
+public:
+    explicit TopBar(QWidget* parent = nullptr);
+    ~TopBar();
+
+    // Method to update the image at a specific index based on a condition
+    void setImageState(int index, bool state);
+
+private:
+    QHBoxLayout* layout;              // Layout to hold the images
+    QVector<QLabel*> imageLabels;     // Vector to hold QLabel pointers for the images
+    QVector<QPixmap> defaultImages;  // Vector to hold the default images
+    QVector<QPixmap> altImages;      // Vector to hold the alternate images
 };
 
 #endif // TOPBAR_H

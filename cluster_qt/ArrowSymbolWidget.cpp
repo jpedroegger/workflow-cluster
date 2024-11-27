@@ -27,19 +27,22 @@ void ArrowSymbolWidget::paintEvent(QPaintEvent* event)
     drawArrowhead(painter, centerX, centerY + stemLength, 270, arrowSize);
 
     // Draw the left curved arrow
+    // Left Curved Arrow (moving left and away from center)
+    // Left Curved Arrow (more curved, moving upward and left, within 100 pixels from center)
     QPainterPath leftCurve;
-
-    leftCurve.moveTo(centerX, centerY);
-    leftCurve.cubicTo(centerX - 50, centerY - 50, centerX - 70, centerY - 100, centerX - 50, centerY - 150);
+    leftCurve.moveTo(centerX, centerY); // Start at the center
+    leftCurve.cubicTo(centerX - 50, centerY - 80, centerX - 70, centerY - 120, centerX - 100, centerY - 140); // More curved, but within 100 pixels
     painter.drawPath(leftCurve);
-    drawArrowhead(painter, centerX - 50, centerY - 150, 135, arrowSize);
-
-    // // Draw the right curved arrow (east)
+    drawArrowhead(painter, centerX - 100, centerY - 140, 135, arrowSize); // Arrowhead pointing left
+    
+    // Right Curved Arrow (more curved, moving upward and right, within 100 pixels from center)
     QPainterPath rightCurve;
-    rightCurve.moveTo(centerX, centerY);
-    rightCurve.cubicTo(centerX + 50, centerY - 50, centerX + 70, centerY - 100, centerX + 50, centerY - 150);
+    rightCurve.moveTo(centerX, centerY); // Start at the center
+    rightCurve.cubicTo(centerX + 50, centerY - 80, centerX + 70, centerY - 120, centerX + 100, centerY - 140); // More curved, but within 100 pixels
     painter.drawPath(rightCurve);
-    drawArrowhead(painter, centerX + 50, centerY - 150, 45, arrowSize);
+    drawArrowhead(painter, centerX + 100, centerY - 140, 45, arrowSize); // Arrowhead pointing right
+
+
 }
 
 void ArrowSymbolWidget::drawArrowhead(QPainter& painter, int x, int y, double angle, int size)

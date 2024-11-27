@@ -22,6 +22,10 @@ set(PROJECT_SOURCES
         ArrowSymbolWidget.cpp
         includes/SpeedometerWidget.h
         SpeedometerWidget.cpp
+        includes/TopBar.h
+        TopBar.cpp
+        includes/Blinkers.h
+        Blinkers.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
