@@ -23,16 +23,15 @@ int main(int argc, char* argv[])
     Blinkers* rightB = new Blinkers(&mainWindow, "right");
 
 
-    SpeedometerWidget* speedometer1 = new SpeedometerWidget(&mainWindow);
-    BatteryWidget* battery2 = new BatteryWidget(&mainWindow);
+    //SpeedometerWidget* speedometer1 = new SpeedometerWidget(&mainWindow);
+    //BatteryWidget* battery2 = new BatteryWidget(&mainWindow);
 
-    // Create the ArrowSymbolWidget
     ArrowSymbolWidget* arrowSymbol = new ArrowSymbolWidget(&mainWindow);
 
-    speedometer1->resize(900, 900);
-    speedometer1->setFixedSize(400, 400);
-    battery2->resize(900, 900);
-    battery2->setFixedSize(400, 400);
+    //speedometer1->resize(900, 900);
+    //speedometer1->setFixedSize(400, 400);
+    //battery2->resize(900, 900);
+    //battery2->setFixedSize(400, 400);
 
  
     // Create layouts
@@ -56,6 +55,7 @@ int main(int argc, char* argv[])
 
     // Resize the main window and show it
     mainWindow.resize(1368, 768); // Adjusted to accommodate the image and speedometers
+    mainWindow.setStyleSheet("background-color: #0D2126"); // Replace Qt::blue with your desired color
     mainWindow.show();
 
     // Simulate changes to TopBar images

@@ -10,7 +10,7 @@ void ArrowSymbolWidget::paintEvent(QPaintEvent* event)
     // Enable anti-aliasing for smoother lines
     painter.setRenderHint(QPainter::Antialiasing);
     // Set pen and brush for drawing
-    QPen pen(Qt::gray, 10); // Black color, width 1
+    QPen pen(Qt::black, 10); // Black color, width 1
     painter.setPen(pen);
     painter.setBrush(Qt::NoBrush); // Fill arrowheads with black
 
@@ -26,21 +26,18 @@ void ArrowSymbolWidget::paintEvent(QPaintEvent* event)
     painter.drawLine(centerX, centerY, centerX, centerY + stemLength);
     drawArrowhead(painter, centerX, centerY + stemLength, 270, arrowSize);
 
-    // Draw the left curved arrow
-    // Left Curved Arrow (moving left and away from center)
-    // Left Curved Arrow (more curved, moving upward and left, within 100 pixels from center)
     QPainterPath leftCurve;
-    leftCurve.moveTo(centerX, centerY); // Start at the center
-    leftCurve.cubicTo(centerX - 50, centerY - 80, centerX - 70, centerY - 120, centerX - 100, centerY - 140); // More curved, but within 100 pixels
+    leftCurve.moveTo(centerX, centerY + 40); // Start at the center
+    leftCurve.cubicTo(centerX - 50, centerY - 40, centerX - 70, centerY - 50, centerX - 120, centerY - 60); // More curved, but within 100 pixels
     painter.drawPath(leftCurve);
-    drawArrowhead(painter, centerX - 100, centerY - 140, 135, arrowSize); // Arrowhead pointing left
+    drawArrowhead(painter, centerX - 120, centerY - 55, 135, arrowSize); // Arrowhead pointing left
     
     // Right Curved Arrow (more curved, moving upward and right, within 100 pixels from center)
     QPainterPath rightCurve;
-    rightCurve.moveTo(centerX, centerY); // Start at the center
-    rightCurve.cubicTo(centerX + 50, centerY - 80, centerX + 70, centerY - 120, centerX + 100, centerY - 140); // More curved, but within 100 pixels
+    rightCurve.moveTo(centerX, centerY + 40); // Start at the center
+    rightCurve.cubicTo(centerX + 50, centerY - 40, centerX + 70, centerY - 50, centerX + 120, centerY - 60); // More curved, but within 100 pixels
     painter.drawPath(rightCurve);
-    drawArrowhead(painter, centerX + 100, centerY - 140, 45, arrowSize); // Arrowhead pointing right
+    drawArrowhead(painter, centerX + 120, centerY - 55, 45, arrowSize); // Arrowhead pointing right
 
 
 }

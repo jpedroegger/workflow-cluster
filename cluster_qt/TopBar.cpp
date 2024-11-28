@@ -9,23 +9,23 @@ TopBar::TopBar(QWidget* parent) : QWidget(parent)
 
     // Create default and alternate images
     QStringList defaultImagePaths = {
-        "../assets/icons/wheel.png",
-        "../assets/icons/brake.png",
-        "../assets/icons/abs.png", // Replace with your actual paths
-        "../assets/icons/med.png",
-        "../assets/icons/max.png",
-        "../assets/icons/fog.png",
-        "../assets/icons/belt.png"
+        "assets/icons/wheel.png",
+        "assets/icons/brake.png",
+        "assets/icons/abs.png", // Replace with your actual paths
+        "assets/icons/med.png",
+        "assets/icons/max.png",
+        "assets/icons/fog.png",
+        "assets/icons/belt.png"
     };
 
     QStringList altImagePaths = {
-        "../assets/icons/wheel_on.png",
-        "../assets/icons/brake_on.png",
-        "../assets/icons/abs_on.png", // Replace with your actual paths
-        "../assets/icons/med_on.png",
-        "../assets/icons/max_on.png",
-        "../assets/icons/fog_on.png",
-        "../assets/icons/belt_on.png"
+        "assets/icons/wheel_on.png",
+        "assets/icons/brake_on.png",
+        "assets/icons/abs_on.png", // Replace with your actual paths
+        "assets/icons/med_on.png",
+        "assets/icons/max_on.png",
+        "assets/icons/fog_on.png",
+        "assets/icons/belt_on.png"
     };
 
     // Load images into QPixmaps

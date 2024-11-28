@@ -11,13 +11,13 @@ Blinkers::Blinkers(QWidget* parent, std::string dir)
     // Load two images to toggle
     if (dir == "left")
     {
-        image1.load("../assets/icons/left.png"); // Path to the first image
-        image2.load("../assets/icons/left_on.png"); // Path to the second image
+        image1.load("assets/icons/left.png"); // Path to the first image
+        image2.load("assets/icons/left_on.png"); // Path to the second image
     }
     else
     {
-        image1.load("../assets/icons/right.png"); // Path to the first image
-        image2.load("../assets/icons/right_on.png"); // Path to the second image
+        image1.load("assets/icons/right.png"); // Path to the first image
+        image2.load("assets/icons/right_on.png"); // Path to the second image
     }
 
     if (image1.isNull() || image2.isNull()) {
