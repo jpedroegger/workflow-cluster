@@ -5,6 +5,7 @@
 
 #include "includes/ArrowSymbolWidget.h"
 #include "includes/SpeedometerWidget.h"
+#include "includes/BatteryWidget.h"
 #include "includes/TopBar.h"
 #include "includes/Blinkers.h"
 
@@ -22,18 +23,16 @@ int main(int argc, char* argv[])
     Blinkers* rightB = new Blinkers(&mainWindow, "right");
 
 
-    // Create two SpeedometerWidgets
     SpeedometerWidget* speedometer1 = new SpeedometerWidget(&mainWindow);
-    SpeedometerWidget* speedometer2 = new SpeedometerWidget(&mainWindow);
+    BatteryWidget* battery2 = new BatteryWidget(&mainWindow);
 
     // Create the ArrowSymbolWidget
     ArrowSymbolWidget* arrowSymbol = new ArrowSymbolWidget(&mainWindow);
 
-    // Set sizes for both speedometers
     speedometer1->resize(900, 900);
     speedometer1->setFixedSize(400, 400);
-    speedometer2->resize(900, 900);
-    speedometer2->setFixedSize(400, 400);
+    battery2->resize(900, 900);
+    battery2->setFixedSize(400, 400);
 
  
     // Create layouts
@@ -43,15 +42,12 @@ int main(int argc, char* argv[])
     // Add the TopBar to the main layout
     mainLayout->addWidget(topBar, 0, Qt::AlignCenter); // Add the TopBar widget at the top
 
-    // Add the speedometers to the horizontal layout
-    //speedometerLayout->addWidget(speedometer1, 1);
-    //speedometerLayout->addWidget(speedometer2, 1);
 
     // Add the horizontal layout to the main vertical layout
     contentLayout->addWidget(leftB, 1);
     //contentLayout->addWidget(speedometer1, 1);
     contentLayout->addWidget(arrowSymbol, 1);
-    //contentLayout->addWidget(speedometer2, 1);
+    //contentLayout->addWidget(battery2, 1);
     contentLayout->addWidget(rightB, 1);
 
     mainLayout->addLayout(contentLayout, 1);

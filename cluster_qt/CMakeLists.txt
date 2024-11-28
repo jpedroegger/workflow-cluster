@@ -19,12 +19,15 @@ set(PROJECT_SOURCES
         mainwindow.ui
 
         includes/ArrowSymbolWidget.h
-        ArrowSymbolWidget.cpp
         includes/SpeedometerWidget.h
-        SpeedometerWidget.cpp
-        includes/TopBar.h
-        TopBar.cpp
         includes/Blinkers.h
+        includes/BatteryWidget.h
+        includes/TopBar.h
+        
+        ArrowSymbolWidget.cpp
+        SpeedometerWidget.cpp
+        BatteryWidget.cpp
+        TopBar.cpp
         Blinkers.cpp
 )
 
