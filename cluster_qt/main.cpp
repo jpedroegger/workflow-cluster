@@ -27,7 +27,7 @@ int main(int argc, char* argv[])
     SpeedometerWidget* speedometer1 = new SpeedometerWidget(&mainWindow);
     BatteryWidget* battery2 = new BatteryWidget(&mainWindow);
 
-    ArrowSymbolWidget* arrowSymbol = new ArrowSymbolWidget(&mainWindow, "left");
+    ArrowSymbolWidget* arrowSymbol = new ArrowSymbolWidget(&mainWindow, "zero");
     arrowSymbol->setFixedSize(400, 400);
 
 

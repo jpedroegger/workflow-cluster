@@ -15,6 +15,7 @@ ArrowSymbolWidget::ArrowSymbolWidget(QWidget* parent, std::string input)
         m_greenL = true;
     else if (input == "right")
         m_greenR = true;
+    setFocusPolicy(Qt::StrongFocus);
 }
 
 ArrowSymbolWidget::~ArrowSymbolWidget() {}
@@ -140,4 +141,26 @@ void ArrowSymbolWidget::drawArrowhead(QPainter& painter, int x, int y, double an
     arrowHead << QPoint(x + std::cos(radRight) * size, y + std::sin(radRight) * size);
 
     painter.drawPolygon(arrowHead);
+}
+
+void ArrowSymbolWidget::keyPressEvent(QKeyEvent* event)
+{
+    // Check the key pressed and update the appropriate flag
+    if (event->key() == Qt::Key_Left) {
+        m_greenL = true;
+        m_greenR = false;
+        m_greenV = false;
+    }
+    else if (event->key() == Qt::Key_Up) {
+        m_greenL = false;
+        m_greenR = false;
+        m_greenV = true;
+    }
+    else if (event->key() == Qt::Key_Right) {
+        m_greenL = false;
+        m_greenR = true;
+        m_greenV = false;
+    }
+
+    update();
 }

@@ -3,7 +3,6 @@
 SpeedometerWidget::SpeedometerWidget(QWidget* parent)
     : QWidget(parent), currentSpeed(0)
 {
-    // Remove the timer since we will handle speed change via key events
     setFocusPolicy(Qt::StrongFocus);  // Ensure the widget can receive key events
 }
 
@@ -105,7 +104,7 @@ void SpeedometerWidget::drawCentralNumber(QPainter& painter, int centerX, int ce
 void SpeedometerWidget::keyPressEvent(QKeyEvent* event)
 {
     // Check if the Up Arrow key is pressed
-    if (event->key() == Qt::Key_Up) {
+    if (event->key() == Qt::Key_Space) {
         currentSpeed += 2;  // Increase speed by 2
         if (currentSpeed > 160) {
             currentSpeed = 160;  // Cap speed at 160

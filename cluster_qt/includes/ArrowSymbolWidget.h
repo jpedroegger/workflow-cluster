@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QPainter>
 #include <QPainterPath>
+#include <QKeyEvent>  // Include for key events
 
 class ArrowSymbolWidget : public QWidget
 {
@@ -17,6 +18,7 @@ class ArrowSymbolWidget : public QWidget
     protected:
         ArrowSymbolWidget();
         void paintEvent(QPaintEvent* event) override;
+        void keyPressEvent(QKeyEvent* event) override;
 
     private:
         void drawVerticalArrows(QPainter& painter, std::string color);
