@@ -4,7 +4,6 @@
 #include <QWidget>
 #include <QPainter>
 #include <QTimer>
-#include <QKeyEvent>  // Include for key events
 
 class SpeedometerWidget : public QWidget {
 
@@ -13,7 +12,6 @@ class SpeedometerWidget : public QWidget {
         ~SpeedometerWidget();
     protected:
         void paintEvent(QPaintEvent* event) override;
-        void keyPressEvent(QKeyEvent* event) override;  // Added keyPressEvent
 
     private:
         int currentSpeed;

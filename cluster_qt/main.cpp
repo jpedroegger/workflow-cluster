@@ -1,6 +1,7 @@
 #include <QApplication>
 #include <QHBoxLayout>
 #include <QLabel>
+#include <QKeyEvent>
 #include <cmath> // For sin and cos
 
 #include "includes/ArrowSymbolWidget.h"

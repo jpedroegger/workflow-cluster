@@ -3,11 +3,10 @@
 SpeedometerWidget::SpeedometerWidget(QWidget* parent)
     : QWidget(parent), currentSpeed(0)
 {
-    // Set up a timer to simulate speed changes (optional)
-    QTimer* timer = new QTimer(this);
-    connect(timer, &QTimer::timeout, this, &SpeedometerWidget::updateSpeed);
-    timer->start(100); // Update speed every 100ms
+    // Remove the timer since we will handle speed change via key events
+    setFocusPolicy(Qt::StrongFocus);  // Ensure the widget can receive key events
 }
+
 
 void SpeedometerWidget::paintEvent(QPaintEvent* event)
 {
@@ -103,9 +102,29 @@ void SpeedometerWidget::drawCentralNumber(QPainter& painter, int centerX, int ce
     painter.drawText(kphX, kphY, "KPH");
 }
 
+void SpeedometerWidget::keyPressEvent(QKeyEvent* event)
+{
+    // Check if the Up Arrow key is pressed
+    if (event->key() == Qt::Key_Up) {
+        currentSpeed += 2;  // Increase speed by 2
+        if (currentSpeed > 160) {
+            currentSpeed = 160;  // Cap speed at 160
+        }
+        update();  // Trigger a repaint to reflect the updated speed
+    }
+
+        // Check if the Up Arrow key is pressed
+    if (event->key() == Qt::Key_Down) {
+        currentSpeed -= 2;  // Increase speed by 2
+        if (currentSpeed <= 0) {
+            currentSpeed = 0;  // Cap speed at 160
+        }
+        update();  // Trigger a repaint to reflect the updated speed
+    }
+}
+
+
 void SpeedometerWidget::updateSpeed() {
-    // Simulate a speed increase for demonstration purposes
-    currentSpeed = (currentSpeed + 2) % 161; // Cycle speed between 0 and 160
     update(); // Trigger a repaint
 }
 
