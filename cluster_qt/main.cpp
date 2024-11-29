@@ -23,15 +23,18 @@ int main(int argc, char* argv[])
     Blinkers* rightB = new Blinkers(&mainWindow, "right");
 
 
-    //SpeedometerWidget* speedometer1 = new SpeedometerWidget(&mainWindow);
-    //BatteryWidget* battery2 = new BatteryWidget(&mainWindow);
+    SpeedometerWidget* speedometer1 = new SpeedometerWidget(&mainWindow);
+    BatteryWidget* battery2 = new BatteryWidget(&mainWindow);
 
-    ArrowSymbolWidget* arrowSymbol = new ArrowSymbolWidget(&mainWindow);
+    ArrowSymbolWidget* arrowSymbol = new ArrowSymbolWidget(&mainWindow, "left");
+    arrowSymbol->setFixedSize(400, 400);
 
-    //speedometer1->resize(900, 900);
-    //speedometer1->setFixedSize(400, 400);
-    //battery2->resize(900, 900);
-    //battery2->setFixedSize(400, 400);
+
+
+    speedometer1->resize(900, 900);
+    speedometer1->setFixedSize(400, 400);
+    battery2->resize(900, 900);
+    battery2->setFixedSize(400, 400);
 
  
     // Create layouts
@@ -44,9 +47,9 @@ int main(int argc, char* argv[])
 
     // Add the horizontal layout to the main vertical layout
     contentLayout->addWidget(leftB, 1);
-    //contentLayout->addWidget(speedometer1, 1);
+    contentLayout->addWidget(speedometer1, 1);
     contentLayout->addWidget(arrowSymbol, 1);
-    //contentLayout->addWidget(battery2, 1);
+    contentLayout->addWidget(battery2, 1);
     contentLayout->addWidget(rightB, 1);
 
     mainLayout->addLayout(contentLayout, 1);
@@ -54,7 +57,7 @@ int main(int argc, char* argv[])
     mainWindow.setLayout(mainLayout);
 
     // Resize the main window and show it
-    mainWindow.resize(1368, 768); // Adjusted to accommodate the image and speedometers
+    mainWindow.resize(1468, 768); // Adjusted to accommodate the image and speedometers
     mainWindow.setStyleSheet("background-color: #0D2126"); // Replace Qt::blue with your desired color
     mainWindow.show();
 
