@@ -1,7 +1,7 @@
 #include "includes/Blinkers.h"
 #include <QHBoxLayout>
 
-Blinkers::Blinkers(QWidget* parent, std::string dir)
+Blinkers::Blinkers(QWidget* parent, std::string dir, std::string mode)
     : QWidget(parent), isImage1Visible(true) // Initialize the first image as visible
 {
     // Create a label to display the image
@@ -35,9 +35,12 @@ Blinkers::Blinkers(QWidget* parent, std::string dir)
     setLayout(layout);
 
     // Set up the QTimer to toggle the image every second
-    toggleTimer = new QTimer(this);
-    connect(toggleTimer, &QTimer::timeout, this, &Blinkers::toggleImage);
-    toggleTimer->start(1000); // 1000 ms = 1 second
+    if (mode == "on")
+    {
+        toggleTimer = new QTimer(this);
+        connect(toggleTimer, &QTimer::timeout, this, &Blinkers::toggleImage);
+        toggleTimer->start(1000); // 1000 ms = 1 second
+    }
 }
 
 Blinkers::~Blinkers()
