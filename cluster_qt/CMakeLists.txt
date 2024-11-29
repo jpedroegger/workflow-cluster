@@ -20,12 +20,16 @@ set(PROJECT_SOURCES
 
         includes/ArrowSymbolWidget.h
         includes/SpeedometerWidget.h
+        includes/CPUTempWidget.h
+        includes/FanSpeedWidget.h
         includes/Blinkers.h
         includes/BatteryWidget.h
         includes/TopBar.h
         
         ArrowSymbolWidget.cpp
         SpeedometerWidget.cpp
+        CPUTempWidget.cpp
+        FanSpeedWidget.cpp
         BatteryWidget.cpp
         TopBar.cpp
         Blinkers.cpp

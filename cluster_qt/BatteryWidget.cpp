@@ -27,8 +27,7 @@ void BatteryWidget::drawScale(QPainter& painter, int centerX, int centerY, int r
     painter.setPen(QPen(Qt::black, 15));
     int smaller_r = radius - 10;
     painter.setPen(QPen(Qt::black, 15));
-    smaller_r -=  80;
-    painter.drawEllipse(centerX - smaller_r, centerY - smaller_r, 2 * smaller_r, 2 * smaller_r);
+    
     // Draw tick marks and labels
     int minSpeed = 0, maxSpeed = 100, step = 10;
     double startAngle = -45; // Start angle for 0 speed (bottom left)
@@ -52,12 +51,14 @@ void BatteryWidget::drawScale(QPainter& painter, int centerX, int centerY, int r
         drawBars(painter, centerX, centerY, radius, startAngle, endAngle, 100);
     painter.setPen(QPen(Qt::black, 15));
     painter.drawEllipse(centerX - radius, centerY - radius, 2 * radius, 2 * radius);
+    smaller_r -=  80;
+    painter.drawEllipse(centerX - smaller_r, centerY - smaller_r, 2 * smaller_r, 2 * smaller_r);
 }
 
 void BatteryWidget::drawBars(QPainter& painter, int centerX, int centerY, int radius, double startAngle, double endAngle, int speed) {
     int numBars = speed / 2; // Total number of bars (from 0 to 100)
     int barWidth = 6;  // Width of each bar
-    int innerRadius = radius - 75; // Inner radius for bars
+    int innerRadius = radius - 80; // Inner radius for bars
     int outerRadius = radius - 5; // Outer radius for bars
 
     int activeBars = static_cast<int>(currentSpeed); // Bars below the needle

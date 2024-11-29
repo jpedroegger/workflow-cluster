@@ -6,6 +6,7 @@
 
 #include "includes/ArrowSymbolWidget.h"
 #include "includes/SpeedometerWidget.h"
+#include "includes/FanSpeedWidget.h"
 #include "includes/BatteryWidget.h"
 #include "includes/TopBar.h"
 #include "includes/Blinkers.h"
@@ -25,6 +26,7 @@ int main(int argc, char* argv[])
 
 
     SpeedometerWidget* speedometer1 = new SpeedometerWidget(&mainWindow);
+    FanSpeedWidget* fanspeed = new FanSpeedWidget(&mainWindow);
     BatteryWidget* battery2 = new BatteryWidget(&mainWindow);
 
     ArrowSymbolWidget* arrowSymbol = new ArrowSymbolWidget(&mainWindow, "zero");
@@ -44,6 +46,7 @@ int main(int argc, char* argv[])
 
     // Add the TopBar to the main layout
     mainLayout->addWidget(topBar, 0, Qt::AlignCenter); // Add the TopBar widget at the top
+    mainLayout->addWidget(fanspeed, 0); // Add the TopBar widget at the top
 
 
     // Add the horizontal layout to the main vertical layout

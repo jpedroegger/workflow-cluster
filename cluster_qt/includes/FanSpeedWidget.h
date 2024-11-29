@@ -1,17 +1,19 @@
-#ifndef SPEEDOMETERWIDGET_H
-#define SPEEDOMETERWIDGET_H
+#ifndef FANSPEEDWIDGET_H
+#define FANSPEEDWIDGET_H
 
 #include <QWidget>
 #include <QPainter>
 #include <QTimer>
+#include <QKeyEvent>  // Include for key events
 
-class SpeedometerWidget : public QWidget {
+class FanSpeedWidget : public QWidget {
 
     public:
-        SpeedometerWidget(QWidget* parent = nullptr);
-        ~SpeedometerWidget();
+        FanSpeedWidget(QWidget* parent = nullptr);
+        ~FanSpeedWidget();
     protected:
         void paintEvent(QPaintEvent* event) override;
+        void keyPressEvent(QKeyEvent* event) override;  // Added keyPressEvent
 
     private:
         int currentSpeed;
