@@ -11,7 +11,7 @@ class Blinkers : public QWidget
     Q_OBJECT
 
 public:
-    explicit Blinkers(QWidget* parent = nullptr, std::string dir = "left");
+    explicit Blinkers(QWidget* parent = nullptr, std::string dir = "left", std::string mode = "off");
     ~Blinkers();
 
 private slots:

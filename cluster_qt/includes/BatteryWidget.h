@@ -18,6 +18,10 @@ class BatteryWidget : public QWidget {
         void drawScale(QPainter& painter, int centerX, int centerY, int radius);
         void drawNeedle(QPainter& painter, int centerX, int centerY, int radius);
         void drawCentralNumber(QPainter& painter, int centerX, int centerY);
+        QColor calculateBarColor(int value);
+        void drawBars(QPainter& painter, int centerX, int centerY, int radius, double startAngle, double endAngle, int speed);
+
+
 
     private slots:
         void updateSpeed();

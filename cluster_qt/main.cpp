@@ -19,8 +19,8 @@ int main(int argc, char* argv[])
     // Create the TopBar
     TopBar* topBar = new TopBar(&mainWindow);
 
-    Blinkers* leftB = new Blinkers(&mainWindow, "left");
-    Blinkers* rightB = new Blinkers(&mainWindow, "right");
+    Blinkers* leftB = new Blinkers(&mainWindow, "left", "off");
+    Blinkers* rightB = new Blinkers(&mainWindow, "right", "on");
 
 
     SpeedometerWidget* speedometer1 = new SpeedometerWidget(&mainWindow);
