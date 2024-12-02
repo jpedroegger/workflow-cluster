@@ -1,12 +1,11 @@
 #include "includes/BatteryWidget.h"
 
 BatteryWidget::BatteryWidget(QWidget* parent)
-    : QWidget(parent), currentSpeed(100)
+    : QWidget(parent), currentLevel(100)
 {
-    // Set up a timer to simulate speed changes (optional)
     QTimer* timer = new QTimer(this);
-    connect(timer, &QTimer::timeout, this, &BatteryWidget::updateSpeed);
-    timer->start(800); // Update speed every 100ms
+    connect(timer, &QTimer::timeout, this, &BatteryWidget::updateLevel);
+    timer->start(800); // Update Level every 100ms
 }
 
 void BatteryWidget::paintEvent(QPaintEvent* event)
@@ -29,14 +28,14 @@ void BatteryWidget::drawScale(QPainter& painter, int centerX, int centerY, int r
     painter.setPen(QPen(Qt::black, 15));
     
     // Draw tick marks and labels
-    int minSpeed = 0, maxSpeed = 100, step = 10;
-    double startAngle = -45; // Start angle for 0 speed (bottom left)
-    double endAngle = 225;     // End angle for max speed (bottom right)
+    int minLevel = 0, maxLevel = 100, step = 10;
+    double startAngle = -45; // Start angle for 0 Level (bottom left)
+    double endAngle = 225;     // End angle for max Level (bottom right)
     QFont font("Arial", 20, QFont::Bold);  // Example: Arial, size 10, bold
     painter.setPen(QPen(Qt::white, 6));
     painter.setFont(font);
-    for (int speed = minSpeed; speed <= maxSpeed; speed += step / 2) {
-        double angle = startAngle + (endAngle - startAngle) * (double(speed) / maxSpeed);
+    for (int Level = minLevel; Level <= maxLevel; Level += step / 2) {
+        double angle = startAngle + (endAngle - startAngle) * (double(Level) / maxLevel);
         double rad = qDegreesToRadians(angle);
         int xOuter = centerX - std::cos(rad) * radius;
         int yOuter = centerY - std::sin(rad) * radius;
@@ -55,13 +54,13 @@ void BatteryWidget::drawScale(QPainter& painter, int centerX, int centerY, int r
     painter.drawEllipse(centerX - smaller_r, centerY - smaller_r, 2 * smaller_r, 2 * smaller_r);
 }
 
-void BatteryWidget::drawBars(QPainter& painter, int centerX, int centerY, int radius, double startAngle, double endAngle, int speed) {
-    int numBars = speed / 2; // Total number of bars (from 0 to 100)
+void BatteryWidget::drawBars(QPainter& painter, int centerX, int centerY, int radius, double startAngle, double endAngle, int Level) {
+    int numBars = Level / 2; // Total number of bars (from 0 to 100)
     int barWidth = 6;  // Width of each bar
     int innerRadius = radius - 80; // Inner radius for bars
     int outerRadius = radius - 5; // Outer radius for bars
 
-    int activeBars = static_cast<int>(currentSpeed); // Bars below the needle
+    int activeBars = static_cast<int>(currentLevel); // Bars below the needle
 
     for (int i = 0; i <= numBars; ++i) {
         double angle = startAngle + (endAngle - startAngle) * (double(i) / numBars);
@@ -100,52 +99,56 @@ QColor BatteryWidget::calculateBarColor(int value) {
     }
 }
 
-/*void BatteryWidget::drawNeedle(QPainter& painter, int centerX, int centerY, int radius) {
-    double startAngle = -45; // Start angle for 0 speed (bottom left)
-    double endAngle = 225;     // End angle for max speed (bottom right)
-    // Calculate the angle based on current speed in clockwise direction
-    double angle = startAngle + (endAngle - startAngle) * (double(currentSpeed) / 100);
-    double rad = qDegreesToRadians(angle);
-    int xStart = centerX - std::cos(rad) * (radius - 80);
-    int yStart = centerY - std::sin(rad) * (radius - 80);
-    int xEnd = centerX - std::cos(rad) * (radius - 5);
-    int yEnd = centerY - std::sin(rad) * (radius - 5);
-    QPen pen(Qt::red, 4);
-    painter.setPen(pen);
-    // Draw the needle
-    painter.drawLine(xStart, yStart, xEnd, yEnd);
-}*/
-
 void BatteryWidget::drawCentralNumber(QPainter& painter, int centerX, int centerY) {
-    // Set font and color for the speed number
-    QFont font("Arial", 40, QFont::Bold);  // Large font for the speed
+    // Set font and color for the Level number
+    QFont font("Arial", 40, QFont::Bold);  // Large font for the Level
     painter.setFont(font);
     painter.setPen(QPen(Qt::white));
-    QString speedText = QString::number(currentSpeed);
-    // Calculate the bounding box for the speed text
+    QString LevelText = QString::number(currentLevel);
+    // Calculate the bounding box for the Level text
     QFontMetrics metrics(font);
-    QRect textRect = metrics.boundingRect(speedText);
-    // Center the speed text
+    QRect textRect = metrics.boundingRect(LevelText);
+    // Center the Level text
     int x = centerX - textRect.width() / 2;
     int y = centerY + textRect.height() / 2 - 20;
-    painter.drawText(x, y, speedText);
+    painter.drawText(x, y, LevelText);
     // Set a smaller font and adjust position for "KPH"
     QFont smallFont("Arial", 14, QFont::Bold);  // Smaller font for the unit
     painter.setFont(smallFont);
-    // Adjust the position to render "KPH" just below the speed number
+    // Adjust the position to render "KPH" just below the Level number
     QFontMetrics smallMetrics(smallFont);
     int kphWidth = smallMetrics.horizontalAdvance("%");
     int kphX = centerX - kphWidth / 2; // Center-align "KPH"
-    int kphY = y + textRect.height() - 30;  // Position "KPH" below the speed text
+    int kphY = y + textRect.height() - 30;  // Position "KPH" below the Level text
     // Draw "KPH"
     painter.drawText(kphX, kphY, "%");
 }
 
-void BatteryWidget::updateSpeed() {
-    // Simulate a speed increase for demonstration purposes
-    currentSpeed = (currentSpeed - 0.1); // Cycle speed between 0 and 160
-    if (currentSpeed <= 0)
-        currentSpeed = 100;
+void BatteryWidget::updateLevel() {
+    // Command to get the battery level -- CURRENTLY WORKING ON ARCH, NEEDS TO BE ALTERED
+    const std::string command = "upower -i $(upower -e | grep BAT) | grep -E \"percentage\" | awk '{print $2}'";
+
+    // Create a pipe to read the command's output
+    std::array<char, 128> buffer;
+    std::string result;
+
+    // Open the process using popen
+    std::unique_ptr<FILE, decltype(&pclose)> pipe(popen(command.c_str(), "r"), pclose);
+    if (!pipe) {
+        throw std::runtime_error("Failed to run command");
+    }
+
+    // Read the output into the result string
+    while (fgets(buffer.data(), buffer.size(), pipe.get()) != nullptr) {
+        result += buffer.data();
+    }
+
+    // Remove any trailing whitespace or newline characters
+    result.erase(result.find_last_not_of(" \t\n\r") + 1);
+
+    // Convert the result to a float or integer if needed
+    currentLevel = std::stof(result); // or std::stoi(result) if it's an integer
+
     update(); // Trigger a repaint
 }
 
