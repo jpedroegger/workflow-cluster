@@ -25,6 +25,7 @@ set(PROJECT_SOURCES
         includes/Blinkers.h
         includes/BatteryWidget.h
         includes/TopBar.h
+        includes/EventManager.h
         
         ArrowSymbolWidget.cpp
         SpeedometerWidget.cpp
@@ -33,14 +34,13 @@ set(PROJECT_SOURCES
         BatteryWidget.cpp
         TopBar.cpp
         Blinkers.cpp
+        EventManager.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(_cluster
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
-        includes/TopBar.h
-        TopBar.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET _cluster APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

@@ -101,10 +101,10 @@ void SpeedometerWidget::drawCentralNumber(QPainter& painter, int centerX, int ce
     painter.drawText(kphX, kphY, "KPH");
 }
 
-void SpeedometerWidget::keyPressEvent(QKeyEvent* event)
+void SpeedometerWidget::accelerate(int forward_key)
 {
-    // Check if the Up Arrow key is pressed
-    if (event->key() == Qt::Key_Space) {
+    if (forward_key == Qt::Key_Space) {
+        qDebug() << "Moving Speed Space";
         currentSpeed += 2;  // Increase speed by 2
         if (currentSpeed > 160) {
             currentSpeed = 160;  // Cap speed at 160
@@ -112,8 +112,9 @@ void SpeedometerWidget::keyPressEvent(QKeyEvent* event)
         update();  // Trigger a repaint to reflect the updated speed
     }
 
-        // Check if the Up Arrow key is pressed
-    if (event->key() == Qt::Key_Down) {
+    // Check if the Up Arrow key is pressed
+    if (forward_key == Qt::Key_Down) {
+        qDebug() << "Moving Speed Down";
         currentSpeed -= 2;  // Increase speed by 2
         if (currentSpeed <= 0) {
             currentSpeed = 0;  // Cap speed at 160
@@ -121,7 +122,6 @@ void SpeedometerWidget::keyPressEvent(QKeyEvent* event)
         update();  // Trigger a repaint to reflect the updated speed
     }
 }
-
 
 void SpeedometerWidget::updateSpeed() {
     update(); // Trigger a repaint

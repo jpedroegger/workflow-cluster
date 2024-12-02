@@ -5,6 +5,7 @@
 #include <cmath> // For sin and cos
 
 #include "includes/ArrowSymbolWidget.h"
+#include "includes/EventManager.h"
 #include "includes/SpeedometerWidget.h"
 #include "includes/FanSpeedWidget.h"
 #include "includes/BatteryWidget.h"
@@ -22,7 +23,7 @@ int main(int argc, char* argv[])
     TopBar* topBar = new TopBar(&mainWindow);
 
     Blinkers* leftB = new Blinkers(&mainWindow, "left", "off");
-    Blinkers* rightB = new Blinkers(&mainWindow, "right", "on");
+    Blinkers* rightB = new Blinkers(&mainWindow, "right", "off");
 
 
     SpeedometerWidget* speedometer1 = new SpeedometerWidget(&mainWindow);
@@ -32,7 +33,8 @@ int main(int argc, char* argv[])
     ArrowSymbolWidget* arrowSymbol = new ArrowSymbolWidget(&mainWindow, "zero");
     arrowSymbol->setFixedSize(400, 400);
 
-
+    EventManager eventManager(arrowSymbol, speedometer1, leftB, rightB);
+    app.installEventFilter(&eventManager);
 
     speedometer1->resize(900, 900);
     speedometer1->setFixedSize(400, 400);
