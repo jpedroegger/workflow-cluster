@@ -10,31 +10,42 @@ int main(int argc, char* argv[])
     Blinkers*           rightB = new Blinkers(&mainWindow, "right", "off");
     SpeedometerWidget*  speedometer1 = new SpeedometerWidget(&mainWindow);
     FanSpeedWidget*     fanspeed = new FanSpeedWidget(&mainWindow);
+    CPUTempWidget*      cputemp = new CPUTempWidget(&mainWindow);
     BatteryWidget*      battery2 = new BatteryWidget(&mainWindow);
     ArrowSymbolWidget*  arrowSymbol = new ArrowSymbolWidget(&mainWindow, "zero");
     EventManager        eventManager(arrowSymbol, speedometer1, leftB, rightB);
     QVBoxLayout*        mainLayout = new QVBoxLayout();
     QHBoxLayout*        contentLayout = new QHBoxLayout();
+    QHBoxLayout*        smallerLayout = new QHBoxLayout();
     
-    //arrowSymbol->setFixedSize(400, 400);
+    arrowSymbol->setFixedSize(400, 400);
     app.installEventFilter(&eventManager);
     
-    //speedometer1->resize(900, 900);
-    //speedometer1->setFixedSize(400, 400);
-    //battery2->resize(900, 900);
-    //battery2->setFixedSize(400, 400);
+    speedometer1->resize(900, 900);
+    speedometer1->setFixedSize(400, 400);
+    battery2->resize(900, 900);
+    battery2->setFixedSize(400, 400);
  
     fanspeed->setFixedSize(150,150);
-    //mainLayout->addWidget(topBar, 0, Qt::AlignCenter);
-    mainLayout->addWidget(fanspeed, 0);
+    mainLayout->addWidget(topBar, 0, Qt::AlignCenter);
 
-    //contentLayout->addWidget(leftB, 1);
-    //contentLayout->addWidget(speedometer1, 1);
-    //contentLayout->addWidget(arrowSymbol, 1);
-    //contentLayout->addWidget(battery2, 1);
-    //contentLayout->addWidget(rightB, 1);
+    cputemp->setFixedSize(150,150);
 
-    //mainLayout->addLayout(contentLayout, 1);
+    smallerLayout->addWidget(fanspeed, 0);
+    smallerLayout->addWidget(cputemp, 0);
+    smallerLayout->setSpacing(0);
+
+    mainLayout->addLayout(smallerLayout, 0);
+    mainLayout->setAlignment(smallerLayout, Qt::AlignTop | Qt::AlignLeft);
+
+    contentLayout->addWidget(leftB, 1);
+    contentLayout->addWidget(speedometer1, 1);
+    contentLayout->addWidget(arrowSymbol, 1);
+    contentLayout->addWidget(battery2, 1);
+    contentLayout->addWidget(rightB, 1);
+
+    mainLayout->addLayout(contentLayout, 1);
+    mainLayout->setAlignment(contentLayout, Qt::AlignTop);
     
     mainWindow.setLayout(mainLayout);
 

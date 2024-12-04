@@ -10,6 +10,7 @@
 #include "ArrowSymbolWidget.h"
 #include "SpeedometerWidget.h"
 #include "FanSpeedWidget.h"
+#include "CPUTempWidget.h"
 #include "BatteryWidget.h"
 #include "TopBar.h"
 #include "Blinkers.h"
