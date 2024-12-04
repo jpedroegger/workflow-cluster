@@ -11,14 +11,15 @@ class ArrowSymbolWidget : public QWidget
     public:
         ArrowSymbolWidget(QWidget* parent = nullptr, std::string input = "none");
         ~ArrowSymbolWidget();
+
         void setDrawVerticalArrows(bool enabled);
         void setDrawLeftCurve(bool enabled);
         void setDrawRightCurve(bool enabled);
+        void changeDirection(int movement_key);
 
     protected:
         ArrowSymbolWidget();
         void paintEvent(QPaintEvent* event) override;
-        void keyPressEvent(QKeyEvent* event) override;
 
     private:
         void drawVerticalArrows(QPainter& painter, std::string color);

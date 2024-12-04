@@ -14,6 +14,8 @@ public:
     explicit Blinkers(QWidget* parent = nullptr, std::string dir = "left", std::string mode = "off");
     ~Blinkers();
 
+    void    turnOnBlinkers(int blinker_key);
+
 private slots:
     void toggleImage(); // Slot to toggle the image
 
@@ -23,6 +25,7 @@ private:
     QPixmap image2;             // Second image
     bool isImage1Visible;       // Boolean to track the current image
     QTimer* toggleTimer;        // Timer for toggling
+    bool blinking;
 };
 
 #endif

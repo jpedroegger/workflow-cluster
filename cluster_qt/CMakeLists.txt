@@ -23,6 +23,7 @@ set(PROJECT_SOURCES
         includes/BatteryWidget.h
         includes/TopBar.h
         includes/Blinkers.h
+        includes/EventManager.h
         includes/Cluster.h
         
         mainwindow.cpp
@@ -33,6 +34,7 @@ set(PROJECT_SOURCES
         BatteryWidget.cpp
         TopBar.cpp
         Blinkers.cpp
+        EventManager.cpp
         main.cpp
 )
 

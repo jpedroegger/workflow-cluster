@@ -13,5 +13,7 @@
 #include "BatteryWidget.h"
 #include "TopBar.h"
 #include "Blinkers.h"
+#include "EventManager.h"
+
 
 #endif

@@ -2,7 +2,7 @@
 #include <QHBoxLayout>
 
 Blinkers::Blinkers(QWidget* parent, std::string dir, std::string mode)
-    : QWidget(parent), isImage1Visible(true) // Initialize the first image as visible
+    : QWidget(parent), isImage1Visible(true), blinking(false) // Initialize the first image as visible
 {
     // Create a label to display the image
     imageLabel = new QLabel(this);
@@ -35,12 +35,12 @@ Blinkers::Blinkers(QWidget* parent, std::string dir, std::string mode)
     setLayout(layout);
 
     // Set up the QTimer to toggle the image every second
-    if (mode == "on")
-    {
-        toggleTimer = new QTimer(this);
-        connect(toggleTimer, &QTimer::timeout, this, &Blinkers::toggleImage);
-        toggleTimer->start(1000); // 1000 ms = 1 second
-    }
+    // if (mode == "on")
+    // {
+    //     toggleTimer = new QTimer(this);
+    //     connect(toggleTimer, &QTimer::timeout, this, &Blinkers::toggleImage);
+    //     toggleTimer->start(1000); // 1000 ms = 1 second
+    // }
 }
 
 Blinkers::~Blinkers()
@@ -62,3 +62,27 @@ void Blinkers::toggleImage()
     // Flip the visibility flag
     isImage1Visible = !isImage1Visible;
 }
+
+void    Blinkers::turnOnBlinkers(int  blinker_key)
+{
+    if (!blinking) {
+        toggleTimer = new QTimer(this);
+        connect(toggleTimer, &QTimer::timeout, this, &Blinkers::toggleImage);
+        toggleTimer->start(500);
+        blinking = true;
+    } else {
+        toggleTimer->stop();
+        if (isImage1Visible)
+            isImage1Visible = false;
+        imageLabel->setPixmap(image1);
+        blinking = false;
+    }
+}
+
+
+
+
+
+
+
+

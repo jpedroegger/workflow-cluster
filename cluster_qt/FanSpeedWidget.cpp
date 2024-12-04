@@ -11,9 +11,9 @@ void FanSpeedWidget::paintEvent(QPaintEvent* event)
 {
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
-    int centerX = width() / 2;
-    int centerY = height() / 2;
-    int radius = std::min(width(), height()) / 2 - 20;
+    int centerX = (width() - 50) / 2;
+    int centerY = (height() - 50) / 2;
+    int radius = std::min((width() - 50), (height() - 50)) / 2 - 20;
     // Draw circular scale
     drawScale(painter, centerX, centerY, radius);
     // Draw needle
@@ -23,7 +23,7 @@ void FanSpeedWidget::paintEvent(QPaintEvent* event)
 
 void FanSpeedWidget::drawScale(QPainter& painter, int centerX, int centerY, int radius) {
     // Draw outer circle
-    painter.setPen(QPen(Qt::black, 15));
+    painter.setPen(QPen(Qt::black, 8));
     painter.drawEllipse(centerX - radius, centerY - radius, 2 * radius, 2 * radius);
 
 }
@@ -34,11 +34,11 @@ void FanSpeedWidget::drawNeedle(QPainter& painter, int centerX, int centerY, int
     // Calculate the angle based on current speed in clockwise direction
     double angle = startAngle + (endAngle - startAngle) * (double(currentSpeed) / 160);
     double rad = qDegreesToRadians(angle);
-    int xStart = centerX - std::cos(rad) * (radius - 80);
-    int yStart = centerY - std::sin(rad) * (radius - 80);
-    int xEnd = centerX - std::cos(rad) * (radius - 5);
-    int yEnd = centerY - std::sin(rad) * (radius - 5);
-    QPen pen(Qt::red, 4);
+    int xStart = centerX - std::cos(rad) * (radius - 3);
+    int yStart = centerY - std::sin(rad) * (radius - 3);
+    int xEnd = centerX - std::cos(rad) * (radius + 1);
+    int yEnd = centerY - std::sin(rad) * (radius + 1);
+    QPen pen(Qt::gray, 5);
     painter.setPen(pen);
     // Draw the needle
     painter.drawLine(xStart, yStart, xEnd, yEnd);
@@ -46,7 +46,7 @@ void FanSpeedWidget::drawNeedle(QPainter& painter, int centerX, int centerY, int
 
 void FanSpeedWidget::drawCentralNumber(QPainter& painter, int centerX, int centerY) {
     // Set font and color for the speed number
-    QFont font("Arial", 40, QFont::Bold);  // Large font for the speed
+    QFont font("Arial", 20, QFont::Bold);  // Large font for the speed
     painter.setFont(font);
     painter.setPen(QPen(Qt::white));
     QString speedText = QString::number(currentSpeed);
@@ -55,18 +55,26 @@ void FanSpeedWidget::drawCentralNumber(QPainter& painter, int centerX, int cente
     QRect textRect = metrics.boundingRect(speedText);
     // Center the speed text
     int x = centerX - textRect.width() / 2;
-    int y = centerY + textRect.height() / 2 - 20;
+    int y = centerY + textRect.height() / 2 - 10;
     painter.drawText(x, y, speedText);
     // Set a smaller font and adjust position for "KPH"
-    QFont smallFont("Arial", 14, QFont::Bold);  // Smaller font for the unit
+    QFont smallFont("Arial", 5, QFont::Bold);  // Smaller font for the unit
     painter.setFont(smallFont);
     // Adjust the position to render "KPH" just below the speed number
     QFontMetrics smallMetrics(smallFont);
     int kphWidth = smallMetrics.horizontalAdvance("FAN\nRPM");
     int kphX = centerX - kphWidth / 2; // Center-align "KPH"
-    int kphY = y + textRect.height() - 30;  // Position "KPH" below the speed text
+    int kphY = y + textRect.height() - 20;  // Position "KPH" below the speed text
     // Draw "KPH"
     painter.drawText(kphX, kphY, "FAN\nRPM");
+    QPixmap image("assets/icons/fan.png"); // Update with the correct path
+    if (!image.isNull()) {
+        int imgWidth = 25;  // Adjust as needed
+        int imgHeight = 25; // Adjust as needed
+        int imgX = centerX - imgWidth / 2; // Center-align the image
+        int imgY = kphY + 30; // Position image below the "FAN RPM" text
+        painter.drawPixmap(imgX, imgY, imgWidth, imgHeight, image);
+    }
 }
 
 void FanSpeedWidget::keyPressEvent(QKeyEvent* event)
