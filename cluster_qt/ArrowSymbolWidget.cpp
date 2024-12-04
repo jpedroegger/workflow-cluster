@@ -135,10 +135,10 @@ void ArrowSymbolWidget::drawArrowhead(QPainter& painter, int x, int y, double an
     else
         painter.setPen(QPen(Qt::green,10));
 
-
-    arrowHead << QPoint(x, y);
-    arrowHead << QPoint(x + std::cos(radLeft) * size, y + std::sin(radLeft) * size);
+    size += 20;
     arrowHead << QPoint(x + std::cos(radRight) * size, y + std::sin(radRight) * size);
+    arrowHead << QPoint(x + std::cos(radLeft) * size, y + std::sin(radLeft) * size);
+    arrowHead << QPoint(x, y);
 
     painter.drawPolygon(arrowHead);
 }
