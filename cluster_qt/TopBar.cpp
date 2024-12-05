@@ -9,23 +9,23 @@ TopBar::TopBar(QWidget* parent) : QWidget(parent)
 
     // Create default and alternate images
     QStringList defaultImagePaths = {
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/cluster_qt/assets/icons/wheel.png",
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/cluster_qt/assets/icons/brake.png",
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/cluster_qt/assets/icons/abs.png", // Replace with your actual paths
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/cluster_qt/assets/icons/med.png",
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/cluster_qt/assets/icons/max.png",
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/cluster_qt/assets/icons/fog.png",
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/cluster_qt/assets/icons/belt.png"
+        "assets/icons/wheel.png",
+        "assets/icons/brake.png",
+        "assets/icons/abs.png", // Replace with your actual paths
+        "assets/icons/med.png",
+        "assets/icons/max.png",
+        "assets/icons/fog.png",
+        "assets/icons/belt.png"
     };
 
     QStringList altImagePaths = {
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/cluster_qt/assets/icons/wheel_on.png",
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/cluster_qt/assets/icons/brake_on.png",
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/cluster_qt/assets/icons/abs_on.png", // Replace with your actual paths
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/cluster_qt/assets/icons/med_on.png",
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/cluster_qt/assets/icons/max_on.png",
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/cluster_qt/assets/icons/fog_on.png",
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/cluster_qt/assets/icons/belt_on.png"
+        "assets/icons/wheel_on.png",
+        "assets/icons/brake_on.png",
+        "assets/icons/abs_on.png", // Replace with your actual paths
+        "assets/icons/med_on.png",
+        "assets/icons/max_on.png",
+        "assets/icons/fog_on.png",
+        "assets/icons/belt_on.png"
     };
 
     // Load images into QPixmaps

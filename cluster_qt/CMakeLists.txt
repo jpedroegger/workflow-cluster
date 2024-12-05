@@ -13,20 +13,20 @@ find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
 set(PROJECT_SOURCES
-        main.cpp
-        mainwindow.cpp
-        includes/mainwindow.h
         mainwindow.ui
 
+        includes/mainwindow.h
         includes/ArrowSymbolWidget.h
         includes/SpeedometerWidget.h
         includes/CPUTempWidget.h
         includes/FanSpeedWidget.h
-        includes/Blinkers.h
         includes/BatteryWidget.h
         includes/TopBar.h
+        includes/Blinkers.h
         includes/EventManager.h
+        includes/Cluster.h
         
+        mainwindow.cpp
         ArrowSymbolWidget.cpp
         SpeedometerWidget.cpp
         CPUTempWidget.cpp
@@ -35,6 +35,7 @@ set(PROJECT_SOURCES
         TopBar.cpp
         Blinkers.cpp
         EventManager.cpp
+        main.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
