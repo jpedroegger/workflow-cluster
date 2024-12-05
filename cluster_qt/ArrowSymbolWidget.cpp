@@ -147,23 +147,19 @@ void ArrowSymbolWidget::changeDirection(int movement_key)
 {
    // Check the key pressed and update the appropriate flag
         if (movement_key == Qt::Key_Left) {
-            qDebug() << "Moving Left";
             m_greenL = true;
             m_greenR = false;
             m_greenV = false;
         }
         else if (movement_key == Qt::Key_Up) {
-            qDebug() << "Moving Foward";
             m_greenL = false;
             m_greenR = false;
             m_greenV = true;
         }
         else if (movement_key == Qt::Key_Right) {
-            qDebug() << "Moving Right";
             m_greenL = false;
             m_greenR = true;
             m_greenV = false;
         }
-
         update();
 }
