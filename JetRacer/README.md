@@ -102,3 +102,14 @@ To build the JetRacer project, follow these steps:
     ```
 
 This will compile the source code and set up the appropriate environment for running the nodes.
+
+3. Execute thee launch script
+```
+	ros2 lauch launch/JetRacer_launch.py
+```
+
+4. Open a terminal to launch the rqt console and start playing with topics
+
+```
+	rqt
+```
