@@ -108,8 +108,14 @@ This will compile the source code and set up the appropriate environment for run
 	ros2 lauch launch/JetRacer_launch.py
 ```
 
-4. Open a terminal to launch the rqt console and start playing with topics
+4. Open a terminal to launch the rqt console and start playing with topics, or directly publish into topics
 
 ```
 	rqt
+```
+OR
+```
+	ros2 topic list
+	ros2 topic pub cmd_display std_msgs/String '{data: "Hello world"}' --once```
+	ros2 topic pub cmd_direction std_msgs/UInt8 '{data: "80"}' --once
 ```
