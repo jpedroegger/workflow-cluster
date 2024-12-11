@@ -1,0 +1,160 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-18164f2e77fede88eb8d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						4
+					]
+				},
+				{
+					"build" : "_deps/sockcanpp-build",
+					"childIndexes" : 
+					[
+						2,
+						3
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-_deps.sockcanpp-build-3f632c78caf6e5666762.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.23"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface/_deps/sockcanpp-src",
+					"targetIndexes" : 
+					[
+						2,
+						3
+					]
+				},
+				{
+					"build" : "_deps/sockcanpp-build/include",
+					"jsonFile" : "directory-_deps.sockcanpp-build.include-9368e05bb05eb00efda7.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.23"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface/_deps/sockcanpp-src/include"
+				},
+				{
+					"build" : "_deps/sockcanpp-build/src",
+					"jsonFile" : "directory-_deps.sockcanpp-build.src-62b1d653897e19e31234.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.23"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface/_deps/sockcanpp-src/src"
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "can_interface",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						4
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1,
+						2,
+						3
+					],
+					"name" : "sockcanpp",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "can_interface_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-can_interface_node-b060d99da34be634c94c.json",
+					"name" : "can_interface_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "can_interface_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-can_interface_uninstall-7429eef898b8ceb88eb6.json",
+					"name" : "can_interface_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "docs::@ca7acdcacf705d39bdc2",
+					"jsonFile" : "target-docs-2975faf91a29a5bdb10a.json",
+					"name" : "docs",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "sockcanpp::@ca7acdcacf705d39bdc2",
+					"jsonFile" : "target-sockcanpp-7996a680972db508da42.json",
+					"name" : "sockcanpp",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-4703bc9bb455bcbaf4b1.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface",
+		"source" : "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/bus_interfaces/can_interface"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

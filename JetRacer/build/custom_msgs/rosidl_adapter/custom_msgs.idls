@@ -1,0 +1,3 @@
+/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/custom_msgs/rosidl_adapter/custom_msgs:msg/CanFrame.idl
+/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/custom_msgs/rosidl_adapter/custom_msgs:srv/I2cService.idl
+/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/custom_msgs/rosidl_adapter/custom_msgs:srv/CanService.idl

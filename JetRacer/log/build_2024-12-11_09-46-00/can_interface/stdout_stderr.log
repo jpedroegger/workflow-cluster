@@ -1,0 +1,64 @@
+-- The C compiler identification is GNU 13.2.0
+-- The CXX compiler identification is GNU 13.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 2.5.2 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+-- Override CMake install command with custom implementation using symlinks instead of copying resources
+-- Found rclcpp: 28.1.5 (/opt/ros/jazzy/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 4.6.4 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+-- Found rosidl_generator_cpp: 4.6.4 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 7.3.1 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 8.4.1 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+-- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.13")  
+-- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found custom_msgs: 0.0.0 (/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake)
+-- Configuring done (19.0s)
+-- Generating done (0.2s)
+-- Build files have been written to: /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface
+[ 20%] [32mBuilding CXX object _deps/sockcanpp-build/CMakeFiles/sockcanpp.dir/src/CanDriver.cpp.o[0m
+[ 40%] [32m[1mLinking CXX shared library sockcanpp.so[0m
+[ 40%] Built target sockcanpp
+[ 60%] [32mBuilding CXX object CMakeFiles/can_interface_node.dir/src/main.cpp.o[0m
+[ 80%] [32mBuilding CXX object CMakeFiles/can_interface_node.dir/src/CanInterface.cpp.o[0m
+[100%] [32m[1mLinking CXX executable can_interface_node[0m
+[100%] Built target can_interface_node
+-- Install configuration: ""
+-- Execute custom install script
+-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/lib/cmake/sockcanpp/libsockcanppConfig.cmake
+-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/lib/cmake/sockcanpp/libsockcanppConfigVersion.cmake
+-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/lib/pkgconfig/libsockcanpp.pc
+-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/lib/can_interface/can_interface_node
+-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/ament_index/resource_index/package_run_dependencies/can_interface
+-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/ament_index/resource_index/parent_prefix_path/can_interface
+-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/can_interface/environment/ament_prefix_path.sh
+-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/can_interface/environment/ament_prefix_path.dsv
+-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/can_interface/environment/path.sh
+-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/can_interface/environment/path.dsv
+-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/can_interface/local_setup.bash
+-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/can_interface/local_setup.sh
+-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/can_interface/local_setup.zsh
+-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/can_interface/local_setup.dsv
+-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/can_interface/package.dsv
+-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/ament_index/resource_index/packages/can_interface
+-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/can_interface/cmake/can_interfaceConfig.cmake
+-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/can_interface/cmake/can_interfaceConfig-version.cmake
+-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/can_interface/package.xml
+-- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/lib/sockcanpp.so.1.1.0
+-- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/lib/sockcanpp.so
+-- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/include/CanDriver.hpp
+-- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/include/CanId.hpp
+-- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/include/CanMessage.hpp
+-- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/lib/cmake/sockcanpp/sockcanppTargets.cmake
+-- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/lib/cmake/sockcanpp/sockcanppTargets-noconfig.cmake

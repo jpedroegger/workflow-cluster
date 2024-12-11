@@ -1,0 +1,44 @@
+[0.084s] Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/battery': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/lib:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake /home/jetpack/SEAME-Cluster-24-25/JetRacer/src/peripherals/battery -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery
+[0.454s] -- The C compiler identification is GNU 13.2.0
+[0.801s] -- The CXX compiler identification is GNU 13.2.0
+[0.900s] -- Detecting C compiler ABI info
+[1.511s] -- Detecting C compiler ABI info - done
+[1.558s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.563s] -- Detecting C compile features
+[1.564s] -- Detecting C compile features - done
+[1.620s] -- Detecting CXX compiler ABI info
+[2.272s] -- Detecting CXX compiler ABI info - done
+[2.316s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[2.319s] -- Detecting CXX compile features
+[2.325s] -- Detecting CXX compile features - done
+[2.352s] -- Found ament_cmake: 2.5.2 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[3.433s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[4.047s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[4.447s] -- Found rclcpp: 28.1.5 (/opt/ros/jazzy/share/rclcpp/cmake)
+[4.876s] -- Found rosidl_generator_c: 4.6.4 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[5.001s] -- Found rosidl_generator_cpp: 4.6.4 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[5.152s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[5.300s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[5.888s] -- Found rmw_implementation_cmake: 7.3.1 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[5.923s] -- Found rmw_fastrtps_cpp: 8.4.1 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[6.478s] -- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[6.600s] -- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+[6.728s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[7.276s] -- Found std_msgs: 5.3.5 (/opt/ros/jazzy/share/std_msgs/cmake)
+[7.361s] -- Found ina219_driver: 0.0.0 (/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/cmake)
+[7.367s] -- Found custom_msgs: 0.0.0 (/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake)
+[8.113s] -- Configuring done (8.0s)
+[8.207s] -- Generating done (0.1s)
+[8.230s] -- Build files have been written to: /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/battery
+[8.303s] Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/battery' returned '0': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/lib:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake /home/jetpack/SEAME-Cluster-24-25/JetRacer/src/peripherals/battery -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery
+[8.306s] Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/battery': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/lib:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/battery -- -j4 -l4
+[8.661s] [ 33%] [32mBuilding CXX object CMakeFiles/battery_node.dir/src/main.cpp.o[0m
+[8.745s] In file included from [01m[K/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/peripherals/battery/src/main.cpp:1[m[K:
+[8.746s] [01m[K/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/peripherals/battery/include/BatteryNode.hpp:3:10:[m[K [01;31m[Kfatal error: [m[KINA219Driver.hpp: No such file or directory
+[8.747s]     3 | #include [01;31m[K<INA219Driver.hpp>[m[K
+[8.748s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[8.749s] compilation terminated.
+[8.753s] gmake[2]: *** [CMakeFiles/battery_node.dir/build.make:76: CMakeFiles/battery_node.dir/src/main.cpp.o] Error 1
+[8.754s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/battery_node.dir/all] Error 2
+[8.755s] gmake: *** [Makefile:146: all] Error 2
+[8.764s] Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/battery' returned '2': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/lib:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/battery -- -j4 -l4

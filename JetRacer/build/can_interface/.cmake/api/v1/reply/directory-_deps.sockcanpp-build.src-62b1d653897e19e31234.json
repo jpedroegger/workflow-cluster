@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "_deps/sockcanpp-build/src",
+		"source" : "/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface/_deps/sockcanpp-src/src"
+	}
+}

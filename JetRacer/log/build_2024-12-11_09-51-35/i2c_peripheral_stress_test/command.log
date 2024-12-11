@@ -1,0 +1,4 @@
+Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_peripheral_stress_test': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --build /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_peripheral_stress_test -- -j4 -l4
+Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_peripheral_stress_test' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --build /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_peripheral_stress_test -- -j4 -l4
+Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_peripheral_stress_test': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --install /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_peripheral_stress_test
+Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_peripheral_stress_test' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --install /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_peripheral_stress_test

@@ -1,0 +1,59 @@
+[0.076s] Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/ina219_driver': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake /home/jetpack/SEAME-Cluster-24-25/JetRacer/src/utils/ina219_driver -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver
+[0.462s] -- The C compiler identification is GNU 13.2.0
+[0.850s] -- The CXX compiler identification is GNU 13.2.0
+[0.943s] -- Detecting C compiler ABI info
+[1.547s] -- Detecting C compiler ABI info - done
+[1.590s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.591s] -- Detecting C compile features
+[1.593s] -- Detecting C compile features - done
+[1.639s] -- Detecting CXX compiler ABI info
+[2.275s] -- Detecting CXX compiler ABI info - done
+[2.329s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[2.333s] -- Detecting CXX compile features
+[2.334s] -- Detecting CXX compile features - done
+[2.357s] -- Found ament_cmake: 2.5.2 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[3.418s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[3.983s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[4.260s] -- Found rclcpp: 28.1.5 (/opt/ros/jazzy/share/rclcpp/cmake)
+[4.565s] -- Found rosidl_generator_c: 4.6.4 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[4.654s] -- Found rosidl_generator_cpp: 4.6.4 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[4.756s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[4.872s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[5.307s] -- Found rmw_implementation_cmake: 7.3.1 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[5.332s] -- Found rmw_fastrtps_cpp: 8.4.1 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[5.799s] -- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[5.917s] -- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+[6.023s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[6.413s] -- Found custom_msgs: 0.0.0 (/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake)
+[6.570s] -- Found std_msgs: 5.3.5 (/opt/ros/jazzy/share/std_msgs/cmake)
+[7.326s] -- Configuring done (7.2s)
+[7.426s] -- Generating done (0.1s)
+[7.446s] -- Build files have been written to: /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/ina219_driver
+[7.510s] Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/ina219_driver' returned '0': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake /home/jetpack/SEAME-Cluster-24-25/JetRacer/src/utils/ina219_driver -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver
+[7.513s] Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/ina219_driver': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/ina219_driver -- -j4 -l4
+[7.787s] [ 50%] [32mBuilding CXX object CMakeFiles/INA219Driver.dir/src/INA219Driver.cpp.o[0m
+[56.608s] [100%] [32m[1mLinking CXX shared library libINA219Driver.so[0m
+[58.079s] [100%] Built target INA219Driver
+[58.146s] Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/ina219_driver' returned '0': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/ina219_driver -- -j4 -l4
+[58.155s] Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/ina219_driver': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/ina219_driver
+[58.200s] -- Install configuration: ""
+[58.204s] -- Execute custom install script
+[58.205s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/lib/libINA219Driver.so
+[58.258s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/include/INA219Driver.hpp
+[58.308s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/include/INA219def.hpp
+[58.364s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ament_index/resource_index/package_run_dependencies/ina219_driver
+[58.415s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ament_index/resource_index/parent_prefix_path/ina219_driver
+[58.468s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/environment/ament_prefix_path.sh
+[58.521s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/environment/ament_prefix_path.dsv
+[58.573s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/environment/path.sh
+[58.625s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/environment/path.dsv
+[58.680s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/local_setup.bash
+[58.745s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/local_setup.sh
+[58.808s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/local_setup.zsh
+[58.871s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/local_setup.dsv
+[58.930s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/package.dsv
+[58.992s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ament_index/resource_index/packages/ina219_driver
+[59.050s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/cmake/ina219_driverConfig.cmake
+[59.109s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/cmake/ina219_driverConfig-version.cmake
+[59.191s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/package.xml
+[59.261s] Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/ina219_driver' returned '0': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/ina219_driver

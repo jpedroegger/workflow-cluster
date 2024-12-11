@@ -1,0 +1,57 @@
+[0.076s] Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake /home/jetpack/SEAME-Cluster-24-25/JetRacer/src/bus_interfaces/i2c_interface -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface
+[0.453s] -- The C compiler identification is GNU 13.2.0
+[0.874s] -- The CXX compiler identification is GNU 13.2.0
+[0.974s] -- Detecting C compiler ABI info
+[1.566s] -- Detecting C compiler ABI info - done
+[1.612s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.612s] -- Detecting C compile features
+[1.613s] -- Detecting C compile features - done
+[1.661s] -- Detecting CXX compiler ABI info
+[2.299s] -- Detecting CXX compiler ABI info - done
+[2.339s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[2.343s] -- Detecting CXX compile features
+[2.343s] -- Detecting CXX compile features - done
+[2.366s] -- Found ament_cmake: 2.5.2 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[3.438s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[3.980s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[4.257s] -- Found rclcpp: 28.1.5 (/opt/ros/jazzy/share/rclcpp/cmake)
+[4.571s] -- Found rosidl_generator_c: 4.6.4 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[4.665s] -- Found rosidl_generator_cpp: 4.6.4 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[4.771s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[4.885s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[5.334s] -- Found rmw_implementation_cmake: 7.3.1 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[5.358s] -- Found rmw_fastrtps_cpp: 8.4.1 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[5.829s] -- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[5.951s] -- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+[6.048s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[6.432s] -- Found custom_msgs: 0.0.0 (/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake)
+[7.238s] -- Configuring done (7.1s)
+[7.322s] -- Generating done (0.0s)
+[7.343s] -- Build files have been written to: /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface
+[7.402s] Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface' returned '0': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake /home/jetpack/SEAME-Cluster-24-25/JetRacer/src/bus_interfaces/i2c_interface -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface
+[7.409s] Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface -- -j4 -l4
+[7.742s] [ 33%] [32mBuilding CXX object CMakeFiles/i2c_interface_node.dir/src/I2cInterface.cpp.o[0m
+[7.763s] [ 66%] [32mBuilding CXX object CMakeFiles/i2c_interface_node.dir/src/main.cpp.o[0m
+[41.752s] [100%] [32m[1mLinking CXX executable i2c_interface_node[0m
+[43.486s] [100%] Built target i2c_interface_node
+[43.631s] Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface' returned '0': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface -- -j4 -l4
+[43.638s] Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface
+[43.695s] -- Install configuration: ""
+[43.696s] -- Execute custom install script
+[43.701s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/lib/i2c_interface/i2c_interface_node
+[43.828s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/ament_index/resource_index/package_run_dependencies/i2c_interface
+[43.928s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/ament_index/resource_index/parent_prefix_path/i2c_interface
+[43.991s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/i2c_interface/environment/ament_prefix_path.sh
+[44.053s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/i2c_interface/environment/ament_prefix_path.dsv
+[44.119s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/i2c_interface/environment/path.sh
+[44.180s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/i2c_interface/environment/path.dsv
+[44.243s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/i2c_interface/local_setup.bash
+[44.306s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/i2c_interface/local_setup.sh
+[44.369s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/i2c_interface/local_setup.zsh
+[44.437s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/i2c_interface/local_setup.dsv
+[44.506s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/i2c_interface/package.dsv
+[44.582s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/ament_index/resource_index/packages/i2c_interface
+[44.650s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/i2c_interface/cmake/i2c_interfaceConfig.cmake
+[44.720s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/i2c_interface/cmake/i2c_interfaceConfig-version.cmake
+[44.798s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/i2c_interface/package.xml
+[44.931s] Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface' returned '0': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface

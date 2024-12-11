@@ -22,13 +22,13 @@ find_package(pca9685_driver REQUIRED)
 find_package(custom_msgs REQUIRED)
 
 #specify the full path of where th lib should be 
-link_directories(/home/jetpack/JetRacer/install/pca9685_driver/lib)
+link_directories(/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/lib)
 
 # Include directories
 include_directories(
   include
   ${CMAKE_SOURCE_DIR}/include
-  ~/JetRacer/install/pca9685_driver/include
+  ~/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/include
 )
 
 # Add the executable and link necessary libraries

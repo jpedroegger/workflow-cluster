@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "custom_msgs__py",
+		"source" : "/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/custom_msgs/custom_msgs__py"
+	}
+}

@@ -1,0 +1,985 @@
+[0.577s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--symlink-install']
+[0.577s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=4, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0xffff832eaed0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0xffff834a3320>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0xffff834a3320>>, mixin_verb=('build',))
+[0.844s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.844s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.844s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.844s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.845s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.845s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.845s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/jetpack/SEAME-Cluster-24-25/JetRacer'
+[0.845s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.846s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.846s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.846s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.846s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.847s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.847s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.847s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.847s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.953s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.953s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.953s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.953s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.953s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.954s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.954s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.954s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.955s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.955s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.956s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.956s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extensions ['ignore', 'ignore_ament_install']
+[0.956s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extension 'ignore'
+[0.956s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extension 'ignore_ament_install'
+[0.957s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extensions ['colcon_pkg']
+[0.957s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extension 'colcon_pkg'
+[0.957s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extensions ['colcon_meta']
+[0.957s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extension 'colcon_meta'
+[0.957s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extensions ['ros']
+[0.957s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extension 'ros'
+[0.958s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extensions ['cmake', 'python']
+[0.958s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extension 'cmake'
+[0.958s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extension 'python'
+[0.958s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extensions ['python_setup_py']
+[0.958s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extension 'python_setup_py'
+[0.959s] Level 1:colcon.colcon_core.package_identification:_identify(launch/__pycache__) by extensions ['ignore', 'ignore_ament_install']
+[0.959s] Level 1:colcon.colcon_core.package_identification:_identify(launch/__pycache__) by extension 'ignore'
+[0.959s] Level 1:colcon.colcon_core.package_identification:_identify(launch/__pycache__) by extension 'ignore_ament_install'
+[0.959s] Level 1:colcon.colcon_core.package_identification:_identify(launch/__pycache__) by extensions ['colcon_pkg']
+[0.959s] Level 1:colcon.colcon_core.package_identification:_identify(launch/__pycache__) by extension 'colcon_pkg'
+[0.960s] Level 1:colcon.colcon_core.package_identification:_identify(launch/__pycache__) by extensions ['colcon_meta']
+[0.960s] Level 1:colcon.colcon_core.package_identification:_identify(launch/__pycache__) by extension 'colcon_meta'
+[0.960s] Level 1:colcon.colcon_core.package_identification:_identify(launch/__pycache__) by extensions ['ros']
+[0.960s] Level 1:colcon.colcon_core.package_identification:_identify(launch/__pycache__) by extension 'ros'
+[0.960s] Level 1:colcon.colcon_core.package_identification:_identify(launch/__pycache__) by extensions ['cmake', 'python']
+[0.960s] Level 1:colcon.colcon_core.package_identification:_identify(launch/__pycache__) by extension 'cmake'
+[0.961s] Level 1:colcon.colcon_core.package_identification:_identify(launch/__pycache__) by extension 'python'
+[0.961s] Level 1:colcon.colcon_core.package_identification:_identify(launch/__pycache__) by extensions ['python_setup_py']
+[0.961s] Level 1:colcon.colcon_core.package_identification:_identify(launch/__pycache__) by extension 'python_setup_py'
+[0.961s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.962s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.962s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.962s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.962s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.962s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.963s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.963s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.963s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.963s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.963s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.963s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.964s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.964s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.964s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.964s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.964s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.965s] Level 1:colcon.colcon_core.package_identification:_identify(src/bus_interfaces) by extensions ['ignore', 'ignore_ament_install']
+[0.965s] Level 1:colcon.colcon_core.package_identification:_identify(src/bus_interfaces) by extension 'ignore'
+[0.965s] Level 1:colcon.colcon_core.package_identification:_identify(src/bus_interfaces) by extension 'ignore_ament_install'
+[0.965s] Level 1:colcon.colcon_core.package_identification:_identify(src/bus_interfaces) by extensions ['colcon_pkg']
+[0.965s] Level 1:colcon.colcon_core.package_identification:_identify(src/bus_interfaces) by extension 'colcon_pkg'
+[0.966s] Level 1:colcon.colcon_core.package_identification:_identify(src/bus_interfaces) by extensions ['colcon_meta']
+[0.966s] Level 1:colcon.colcon_core.package_identification:_identify(src/bus_interfaces) by extension 'colcon_meta'
+[0.966s] Level 1:colcon.colcon_core.package_identification:_identify(src/bus_interfaces) by extensions ['ros']
+[0.966s] Level 1:colcon.colcon_core.package_identification:_identify(src/bus_interfaces) by extension 'ros'
+[0.966s] Level 1:colcon.colcon_core.package_identification:_identify(src/bus_interfaces) by extensions ['cmake', 'python']
+[0.966s] Level 1:colcon.colcon_core.package_identification:_identify(src/bus_interfaces) by extension 'cmake'
+[0.966s] Level 1:colcon.colcon_core.package_identification:_identify(src/bus_interfaces) by extension 'python'
+[0.967s] Level 1:colcon.colcon_core.package_identification:_identify(src/bus_interfaces) by extensions ['python_setup_py']
+[0.967s] Level 1:colcon.colcon_core.package_identification:_identify(src/bus_interfaces) by extension 'python_setup_py'
+[0.967s] Level 1:colcon.colcon_core.package_identification:_identify(src/bus_interfaces/can_interface) by extensions ['ignore', 'ignore_ament_install']
+[0.967s] Level 1:colcon.colcon_core.package_identification:_identify(src/bus_interfaces/can_interface) by extension 'ignore'
+[0.968s] Level 1:colcon.colcon_core.package_identification:_identify(src/bus_interfaces/can_interface) by extension 'ignore_ament_install'
+[0.968s] Level 1:colcon.colcon_core.package_identification:_identify(src/bus_interfaces/can_interface) by extensions ['colcon_pkg']
+[0.968s] Level 1:colcon.colcon_core.package_identification:_identify(src/bus_interfaces/can_interface) by extension 'colcon_pkg'
+[0.968s] Level 1:colcon.colcon_core.package_identification:_identify(src/bus_interfaces/can_interface) by extensions ['colcon_meta']
+[0.968s] Level 1:colcon.colcon_core.package_identification:_identify(src/bus_interfaces/can_interface) by extension 'colcon_meta'
+[0.968s] Level 1:colcon.colcon_core.package_identification:_identify(src/bus_interfaces/can_interface) by extensions ['ros']
+[0.968s] Level 1:colcon.colcon_core.package_identification:_identify(src/bus_interfaces/can_interface) by extension 'ros'
+[0.977s] DEBUG:colcon.colcon_core.package_identification:Package 'src/bus_interfaces/can_interface' with type 'ros.ament_cmake' and name 'can_interface'
+[0.978s] Level 1:colcon.colcon_core.package_identification:_identify(src/bus_interfaces/i2c_interface) by extensions ['ignore', 'ignore_ament_install']
+[0.978s] Level 1:colcon.colcon_core.package_identification:_identify(src/bus_interfaces/i2c_interface) by extension 'ignore'
+[0.978s] Level 1:colcon.colcon_core.package_identification:_identify(src/bus_interfaces/i2c_interface) by extension 'ignore_ament_install'
+[0.978s] Level 1:colcon.colcon_core.package_identification:_identify(src/bus_interfaces/i2c_interface) by extensions ['colcon_pkg']
+[0.978s] Level 1:colcon.colcon_core.package_identification:_identify(src/bus_interfaces/i2c_interface) by extension 'colcon_pkg'
+[0.979s] Level 1:colcon.colcon_core.package_identification:_identify(src/bus_interfaces/i2c_interface) by extensions ['colcon_meta']
+[0.979s] Level 1:colcon.colcon_core.package_identification:_identify(src/bus_interfaces/i2c_interface) by extension 'colcon_meta'
+[0.979s] Level 1:colcon.colcon_core.package_identification:_identify(src/bus_interfaces/i2c_interface) by extensions ['ros']
+[0.979s] Level 1:colcon.colcon_core.package_identification:_identify(src/bus_interfaces/i2c_interface) by extension 'ros'
+[0.981s] DEBUG:colcon.colcon_core.package_identification:Package 'src/bus_interfaces/i2c_interface' with type 'ros.ament_cmake' and name 'i2c_interface'
+[0.982s] Level 1:colcon.colcon_core.package_identification:_identify(src/head_unit) by extensions ['ignore', 'ignore_ament_install']
+[0.982s] Level 1:colcon.colcon_core.package_identification:_identify(src/head_unit) by extension 'ignore'
+[0.982s] Level 1:colcon.colcon_core.package_identification:_identify(src/head_unit) by extension 'ignore_ament_install'
+[0.982s] Level 1:colcon.colcon_core.package_identification:_identify(src/head_unit) by extensions ['colcon_pkg']
+[0.983s] Level 1:colcon.colcon_core.package_identification:_identify(src/head_unit) by extension 'colcon_pkg'
+[0.983s] Level 1:colcon.colcon_core.package_identification:_identify(src/head_unit) by extensions ['colcon_meta']
+[0.983s] Level 1:colcon.colcon_core.package_identification:_identify(src/head_unit) by extension 'colcon_meta'
+[0.983s] Level 1:colcon.colcon_core.package_identification:_identify(src/head_unit) by extensions ['ros']
+[0.983s] Level 1:colcon.colcon_core.package_identification:_identify(src/head_unit) by extension 'ros'
+[0.983s] Level 1:colcon.colcon_core.package_identification:_identify(src/head_unit) by extensions ['cmake', 'python']
+[0.983s] Level 1:colcon.colcon_core.package_identification:_identify(src/head_unit) by extension 'cmake'
+[0.984s] Level 1:colcon.colcon_core.package_identification:_identify(src/head_unit) by extension 'python'
+[0.984s] Level 1:colcon.colcon_core.package_identification:_identify(src/head_unit) by extensions ['python_setup_py']
+[0.984s] Level 1:colcon.colcon_core.package_identification:_identify(src/head_unit) by extension 'python_setup_py'
+[0.984s] Level 1:colcon.colcon_core.package_identification:_identify(src/head_unit/display_routine) by extensions ['ignore', 'ignore_ament_install']
+[0.985s] Level 1:colcon.colcon_core.package_identification:_identify(src/head_unit/display_routine) by extension 'ignore'
+[0.985s] Level 1:colcon.colcon_core.package_identification:_identify(src/head_unit/display_routine) by extension 'ignore_ament_install'
+[0.985s] Level 1:colcon.colcon_core.package_identification:_identify(src/head_unit/display_routine) by extensions ['colcon_pkg']
+[0.985s] Level 1:colcon.colcon_core.package_identification:_identify(src/head_unit/display_routine) by extension 'colcon_pkg'
+[0.985s] Level 1:colcon.colcon_core.package_identification:_identify(src/head_unit/display_routine) by extensions ['colcon_meta']
+[0.986s] Level 1:colcon.colcon_core.package_identification:_identify(src/head_unit/display_routine) by extension 'colcon_meta'
+[0.986s] Level 1:colcon.colcon_core.package_identification:_identify(src/head_unit/display_routine) by extensions ['ros']
+[0.986s] Level 1:colcon.colcon_core.package_identification:_identify(src/head_unit/display_routine) by extension 'ros'
+[0.988s] DEBUG:colcon.colcon_core.package_identification:Package 'src/head_unit/display_routine' with type 'ros.ament_cmake' and name 'display_routine'
+[0.988s] Level 1:colcon.colcon_core.package_identification:_identify(src/head_unit/tests) by extensions ['ignore', 'ignore_ament_install']
+[0.989s] Level 1:colcon.colcon_core.package_identification:_identify(src/head_unit/tests) by extension 'ignore'
+[0.989s] Level 1:colcon.colcon_core.package_identification:_identify(src/head_unit/tests) by extension 'ignore_ament_install'
+[0.989s] Level 1:colcon.colcon_core.package_identification:_identify(src/head_unit/tests) by extensions ['colcon_pkg']
+[0.989s] Level 1:colcon.colcon_core.package_identification:_identify(src/head_unit/tests) by extension 'colcon_pkg'
+[0.989s] Level 1:colcon.colcon_core.package_identification:_identify(src/head_unit/tests) by extensions ['colcon_meta']
+[0.989s] Level 1:colcon.colcon_core.package_identification:_identify(src/head_unit/tests) by extension 'colcon_meta'
+[0.990s] Level 1:colcon.colcon_core.package_identification:_identify(src/head_unit/tests) by extensions ['ros']
+[0.990s] Level 1:colcon.colcon_core.package_identification:_identify(src/head_unit/tests) by extension 'ros'
+[0.990s] Level 1:colcon.colcon_core.package_identification:_identify(src/head_unit/tests) by extensions ['cmake', 'python']
+[0.990s] Level 1:colcon.colcon_core.package_identification:_identify(src/head_unit/tests) by extension 'cmake'
+[0.990s] Level 1:colcon.colcon_core.package_identification:_identify(src/head_unit/tests) by extension 'python'
+[0.990s] Level 1:colcon.colcon_core.package_identification:_identify(src/head_unit/tests) by extensions ['python_setup_py']
+[0.990s] Level 1:colcon.colcon_core.package_identification:_identify(src/head_unit/tests) by extension 'python_setup_py'
+[0.991s] Level 1:colcon.colcon_core.package_identification:_identify(src/head_unit/tests/i2c_peripheral_stress_test) by extensions ['ignore', 'ignore_ament_install']
+[0.991s] Level 1:colcon.colcon_core.package_identification:_identify(src/head_unit/tests/i2c_peripheral_stress_test) by extension 'ignore'
+[0.991s] Level 1:colcon.colcon_core.package_identification:_identify(src/head_unit/tests/i2c_peripheral_stress_test) by extension 'ignore_ament_install'
+[0.992s] Level 1:colcon.colcon_core.package_identification:_identify(src/head_unit/tests/i2c_peripheral_stress_test) by extensions ['colcon_pkg']
+[0.992s] Level 1:colcon.colcon_core.package_identification:_identify(src/head_unit/tests/i2c_peripheral_stress_test) by extension 'colcon_pkg'
+[0.992s] Level 1:colcon.colcon_core.package_identification:_identify(src/head_unit/tests/i2c_peripheral_stress_test) by extensions ['colcon_meta']
+[0.992s] Level 1:colcon.colcon_core.package_identification:_identify(src/head_unit/tests/i2c_peripheral_stress_test) by extension 'colcon_meta'
+[0.992s] Level 1:colcon.colcon_core.package_identification:_identify(src/head_unit/tests/i2c_peripheral_stress_test) by extensions ['ros']
+[0.992s] Level 1:colcon.colcon_core.package_identification:_identify(src/head_unit/tests/i2c_peripheral_stress_test) by extension 'ros'
+[0.994s] DEBUG:colcon.colcon_core.package_identification:Package 'src/head_unit/tests/i2c_peripheral_stress_test' with type 'ros.ament_cmake' and name 'i2c_peripheral_stress_test'
+[0.995s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals) by extensions ['ignore', 'ignore_ament_install']
+[0.995s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals) by extension 'ignore'
+[0.996s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals) by extension 'ignore_ament_install'
+[0.996s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals) by extensions ['colcon_pkg']
+[0.996s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals) by extension 'colcon_pkg'
+[0.996s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals) by extensions ['colcon_meta']
+[0.996s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals) by extension 'colcon_meta'
+[0.996s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals) by extensions ['ros']
+[0.997s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals) by extension 'ros'
+[0.997s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals) by extensions ['cmake', 'python']
+[0.997s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals) by extension 'cmake'
+[0.997s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals) by extension 'python'
+[0.997s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals) by extensions ['python_setup_py']
+[0.997s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals) by extension 'python_setup_py'
+[0.998s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals/battery) by extensions ['ignore', 'ignore_ament_install']
+[0.998s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals/battery) by extension 'ignore'
+[0.998s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals/battery) by extension 'ignore_ament_install'
+[0.999s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals/battery) by extensions ['colcon_pkg']
+[0.999s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals/battery) by extension 'colcon_pkg'
+[0.999s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals/battery) by extensions ['colcon_meta']
+[0.999s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals/battery) by extension 'colcon_meta'
+[0.999s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals/battery) by extensions ['ros']
+[0.999s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals/battery) by extension 'ros'
+[1.002s] DEBUG:colcon.colcon_core.package_identification:Package 'src/peripherals/battery' with type 'ros.ament_cmake' and name 'battery'
+[1.002s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals/dc_motors) by extensions ['ignore', 'ignore_ament_install']
+[1.002s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals/dc_motors) by extension 'ignore'
+[1.003s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals/dc_motors) by extension 'ignore_ament_install'
+[1.003s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals/dc_motors) by extensions ['colcon_pkg']
+[1.003s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals/dc_motors) by extension 'colcon_pkg'
+[1.003s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals/dc_motors) by extensions ['colcon_meta']
+[1.003s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals/dc_motors) by extension 'colcon_meta'
+[1.003s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals/dc_motors) by extensions ['ros']
+[1.004s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals/dc_motors) by extension 'ros'
+[1.006s] DEBUG:colcon.colcon_core.package_identification:Package 'src/peripherals/dc_motors' with type 'ros.ament_cmake' and name 'dc_motors'
+[1.006s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals/oled_display) by extensions ['ignore', 'ignore_ament_install']
+[1.007s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals/oled_display) by extension 'ignore'
+[1.007s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals/oled_display) by extension 'ignore_ament_install'
+[1.007s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals/oled_display) by extensions ['colcon_pkg']
+[1.007s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals/oled_display) by extension 'colcon_pkg'
+[1.008s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals/oled_display) by extensions ['colcon_meta']
+[1.008s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals/oled_display) by extension 'colcon_meta'
+[1.008s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals/oled_display) by extensions ['ros']
+[1.008s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals/oled_display) by extension 'ros'
+[1.010s] DEBUG:colcon.colcon_core.package_identification:Package 'src/peripherals/oled_display' with type 'ros.ament_cmake' and name 'oled_display'
+[1.011s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals/servo_motor) by extensions ['ignore', 'ignore_ament_install']
+[1.011s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals/servo_motor) by extension 'ignore'
+[1.011s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals/servo_motor) by extension 'ignore_ament_install'
+[1.011s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals/servo_motor) by extensions ['colcon_pkg']
+[1.011s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals/servo_motor) by extension 'colcon_pkg'
+[1.012s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals/servo_motor) by extensions ['colcon_meta']
+[1.012s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals/servo_motor) by extension 'colcon_meta'
+[1.012s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals/servo_motor) by extensions ['ros']
+[1.012s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals/servo_motor) by extension 'ros'
+[1.014s] DEBUG:colcon.colcon_core.package_identification:Package 'src/peripherals/servo_motor' with type 'ros.ament_cmake' and name 'servo_motor'
+[1.015s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals/speed_sensor) by extensions ['ignore', 'ignore_ament_install']
+[1.015s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals/speed_sensor) by extension 'ignore'
+[1.015s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals/speed_sensor) by extension 'ignore_ament_install'
+[1.016s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals/speed_sensor) by extensions ['colcon_pkg']
+[1.016s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals/speed_sensor) by extension 'colcon_pkg'
+[1.016s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals/speed_sensor) by extensions ['colcon_meta']
+[1.016s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals/speed_sensor) by extension 'colcon_meta'
+[1.016s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals/speed_sensor) by extensions ['ros']
+[1.016s] Level 1:colcon.colcon_core.package_identification:_identify(src/peripherals/speed_sensor) by extension 'ros'
+[1.018s] DEBUG:colcon.colcon_core.package_identification:Package 'src/peripherals/speed_sensor' with type 'ros.ament_cmake' and name 'speed_sensor'
+[1.019s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils) by extensions ['ignore', 'ignore_ament_install']
+[1.019s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils) by extension 'ignore'
+[1.019s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils) by extension 'ignore_ament_install'
+[1.019s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils) by extensions ['colcon_pkg']
+[1.020s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils) by extension 'colcon_pkg'
+[1.020s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils) by extensions ['colcon_meta']
+[1.020s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils) by extension 'colcon_meta'
+[1.020s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils) by extensions ['ros']
+[1.020s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils) by extension 'ros'
+[1.020s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils) by extensions ['cmake', 'python']
+[1.021s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils) by extension 'cmake'
+[1.021s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils) by extension 'python'
+[1.021s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils) by extensions ['python_setup_py']
+[1.021s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils) by extension 'python_setup_py'
+[1.021s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/custom_msgs) by extensions ['ignore', 'ignore_ament_install']
+[1.022s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/custom_msgs) by extension 'ignore'
+[1.022s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/custom_msgs) by extension 'ignore_ament_install'
+[1.022s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/custom_msgs) by extensions ['colcon_pkg']
+[1.022s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/custom_msgs) by extension 'colcon_pkg'
+[1.022s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/custom_msgs) by extensions ['colcon_meta']
+[1.022s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/custom_msgs) by extension 'colcon_meta'
+[1.023s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/custom_msgs) by extensions ['ros']
+[1.023s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/custom_msgs) by extension 'ros'
+[1.025s] DEBUG:colcon.colcon_core.package_identification:Package 'src/utils/custom_msgs' with type 'ros.ament_cmake' and name 'custom_msgs'
+[1.025s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/ina219_driver) by extensions ['ignore', 'ignore_ament_install']
+[1.026s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/ina219_driver) by extension 'ignore'
+[1.026s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/ina219_driver) by extension 'ignore_ament_install'
+[1.026s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/ina219_driver) by extensions ['colcon_pkg']
+[1.027s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/ina219_driver) by extension 'colcon_pkg'
+[1.027s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/ina219_driver) by extensions ['colcon_meta']
+[1.027s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/ina219_driver) by extension 'colcon_meta'
+[1.027s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/ina219_driver) by extensions ['ros']
+[1.027s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/ina219_driver) by extension 'ros'
+[1.029s] DEBUG:colcon.colcon_core.package_identification:Package 'src/utils/ina219_driver' with type 'ros.ament_cmake' and name 'ina219_driver'
+[1.030s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/pca9685_driver) by extensions ['ignore', 'ignore_ament_install']
+[1.030s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/pca9685_driver) by extension 'ignore'
+[1.030s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/pca9685_driver) by extension 'ignore_ament_install'
+[1.031s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/pca9685_driver) by extensions ['colcon_pkg']
+[1.031s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/pca9685_driver) by extension 'colcon_pkg'
+[1.031s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/pca9685_driver) by extensions ['colcon_meta']
+[1.031s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/pca9685_driver) by extension 'colcon_meta'
+[1.031s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/pca9685_driver) by extensions ['ros']
+[1.031s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/pca9685_driver) by extension 'ros'
+[1.033s] DEBUG:colcon.colcon_core.package_identification:Package 'src/utils/pca9685_driver' with type 'ros.ament_cmake' and name 'pca9685_driver'
+[1.033s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[1.034s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[1.034s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[1.034s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[1.034s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[1.127s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[1.128s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[1.147s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 285 installed packages in /opt/ros/jazzy
+[1.156s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[1.354s] Level 5:colcon.colcon_core.verb:set package 'custom_msgs' build argument 'cmake_args' from command line to 'None'
+[1.354s] Level 5:colcon.colcon_core.verb:set package 'custom_msgs' build argument 'cmake_target' from command line to 'None'
+[1.354s] Level 5:colcon.colcon_core.verb:set package 'custom_msgs' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.354s] Level 5:colcon.colcon_core.verb:set package 'custom_msgs' build argument 'cmake_clean_cache' from command line to 'False'
+[1.354s] Level 5:colcon.colcon_core.verb:set package 'custom_msgs' build argument 'cmake_clean_first' from command line to 'False'
+[1.355s] Level 5:colcon.colcon_core.verb:set package 'custom_msgs' build argument 'cmake_force_configure' from command line to 'False'
+[1.355s] Level 5:colcon.colcon_core.verb:set package 'custom_msgs' build argument 'ament_cmake_args' from command line to 'None'
+[1.355s] Level 5:colcon.colcon_core.verb:set package 'custom_msgs' build argument 'catkin_cmake_args' from command line to 'None'
+[1.355s] Level 5:colcon.colcon_core.verb:set package 'custom_msgs' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.355s] DEBUG:colcon.colcon_core.verb:Building package 'custom_msgs' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/custom_msgs', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs', 'merge_install': False, 'path': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/utils/custom_msgs', 'symlink_install': True, 'test_result_base': None}
+[1.356s] Level 5:colcon.colcon_core.verb:set package 'display_routine' build argument 'cmake_args' from command line to 'None'
+[1.356s] Level 5:colcon.colcon_core.verb:set package 'display_routine' build argument 'cmake_target' from command line to 'None'
+[1.356s] Level 5:colcon.colcon_core.verb:set package 'display_routine' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.357s] Level 5:colcon.colcon_core.verb:set package 'display_routine' build argument 'cmake_clean_cache' from command line to 'False'
+[1.357s] Level 5:colcon.colcon_core.verb:set package 'display_routine' build argument 'cmake_clean_first' from command line to 'False'
+[1.357s] Level 5:colcon.colcon_core.verb:set package 'display_routine' build argument 'cmake_force_configure' from command line to 'False'
+[1.357s] Level 5:colcon.colcon_core.verb:set package 'display_routine' build argument 'ament_cmake_args' from command line to 'None'
+[1.357s] Level 5:colcon.colcon_core.verb:set package 'display_routine' build argument 'catkin_cmake_args' from command line to 'None'
+[1.357s] Level 5:colcon.colcon_core.verb:set package 'display_routine' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.357s] DEBUG:colcon.colcon_core.verb:Building package 'display_routine' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/display_routine', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine', 'merge_install': False, 'path': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/display_routine', 'symlink_install': True, 'test_result_base': None}
+[1.358s] Level 5:colcon.colcon_core.verb:set package 'i2c_peripheral_stress_test' build argument 'cmake_args' from command line to 'None'
+[1.358s] Level 5:colcon.colcon_core.verb:set package 'i2c_peripheral_stress_test' build argument 'cmake_target' from command line to 'None'
+[1.359s] Level 5:colcon.colcon_core.verb:set package 'i2c_peripheral_stress_test' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.359s] Level 5:colcon.colcon_core.verb:set package 'i2c_peripheral_stress_test' build argument 'cmake_clean_cache' from command line to 'False'
+[1.359s] Level 5:colcon.colcon_core.verb:set package 'i2c_peripheral_stress_test' build argument 'cmake_clean_first' from command line to 'False'
+[1.359s] Level 5:colcon.colcon_core.verb:set package 'i2c_peripheral_stress_test' build argument 'cmake_force_configure' from command line to 'False'
+[1.359s] Level 5:colcon.colcon_core.verb:set package 'i2c_peripheral_stress_test' build argument 'ament_cmake_args' from command line to 'None'
+[1.359s] Level 5:colcon.colcon_core.verb:set package 'i2c_peripheral_stress_test' build argument 'catkin_cmake_args' from command line to 'None'
+[1.359s] Level 5:colcon.colcon_core.verb:set package 'i2c_peripheral_stress_test' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.359s] DEBUG:colcon.colcon_core.verb:Building package 'i2c_peripheral_stress_test' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_peripheral_stress_test', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test', 'merge_install': False, 'path': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/tests/i2c_peripheral_stress_test', 'symlink_install': True, 'test_result_base': None}
+[1.360s] Level 5:colcon.colcon_core.verb:set package 'can_interface' build argument 'cmake_args' from command line to 'None'
+[1.360s] Level 5:colcon.colcon_core.verb:set package 'can_interface' build argument 'cmake_target' from command line to 'None'
+[1.361s] Level 5:colcon.colcon_core.verb:set package 'can_interface' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.361s] Level 5:colcon.colcon_core.verb:set package 'can_interface' build argument 'cmake_clean_cache' from command line to 'False'
+[1.361s] Level 5:colcon.colcon_core.verb:set package 'can_interface' build argument 'cmake_clean_first' from command line to 'False'
+[1.361s] Level 5:colcon.colcon_core.verb:set package 'can_interface' build argument 'cmake_force_configure' from command line to 'False'
+[1.361s] Level 5:colcon.colcon_core.verb:set package 'can_interface' build argument 'ament_cmake_args' from command line to 'None'
+[1.361s] Level 5:colcon.colcon_core.verb:set package 'can_interface' build argument 'catkin_cmake_args' from command line to 'None'
+[1.361s] Level 5:colcon.colcon_core.verb:set package 'can_interface' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.361s] DEBUG:colcon.colcon_core.verb:Building package 'can_interface' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface', 'merge_install': False, 'path': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/bus_interfaces/can_interface', 'symlink_install': True, 'test_result_base': None}
+[1.362s] Level 5:colcon.colcon_core.verb:set package 'i2c_interface' build argument 'cmake_args' from command line to 'None'
+[1.363s] Level 5:colcon.colcon_core.verb:set package 'i2c_interface' build argument 'cmake_target' from command line to 'None'
+[1.363s] Level 5:colcon.colcon_core.verb:set package 'i2c_interface' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.363s] Level 5:colcon.colcon_core.verb:set package 'i2c_interface' build argument 'cmake_clean_cache' from command line to 'False'
+[1.363s] Level 5:colcon.colcon_core.verb:set package 'i2c_interface' build argument 'cmake_clean_first' from command line to 'False'
+[1.363s] Level 5:colcon.colcon_core.verb:set package 'i2c_interface' build argument 'cmake_force_configure' from command line to 'False'
+[1.363s] Level 5:colcon.colcon_core.verb:set package 'i2c_interface' build argument 'ament_cmake_args' from command line to 'None'
+[1.363s] Level 5:colcon.colcon_core.verb:set package 'i2c_interface' build argument 'catkin_cmake_args' from command line to 'None'
+[1.363s] Level 5:colcon.colcon_core.verb:set package 'i2c_interface' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.363s] DEBUG:colcon.colcon_core.verb:Building package 'i2c_interface' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface', 'merge_install': False, 'path': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/bus_interfaces/i2c_interface', 'symlink_install': True, 'test_result_base': None}
+[1.365s] Level 5:colcon.colcon_core.verb:set package 'ina219_driver' build argument 'cmake_args' from command line to 'None'
+[1.365s] Level 5:colcon.colcon_core.verb:set package 'ina219_driver' build argument 'cmake_target' from command line to 'None'
+[1.365s] Level 5:colcon.colcon_core.verb:set package 'ina219_driver' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.365s] Level 5:colcon.colcon_core.verb:set package 'ina219_driver' build argument 'cmake_clean_cache' from command line to 'False'
+[1.365s] Level 5:colcon.colcon_core.verb:set package 'ina219_driver' build argument 'cmake_clean_first' from command line to 'False'
+[1.365s] Level 5:colcon.colcon_core.verb:set package 'ina219_driver' build argument 'cmake_force_configure' from command line to 'False'
+[1.365s] Level 5:colcon.colcon_core.verb:set package 'ina219_driver' build argument 'ament_cmake_args' from command line to 'None'
+[1.365s] Level 5:colcon.colcon_core.verb:set package 'ina219_driver' build argument 'catkin_cmake_args' from command line to 'None'
+[1.365s] Level 5:colcon.colcon_core.verb:set package 'ina219_driver' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.365s] DEBUG:colcon.colcon_core.verb:Building package 'ina219_driver' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/ina219_driver', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver', 'merge_install': False, 'path': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/utils/ina219_driver', 'symlink_install': True, 'test_result_base': None}
+[1.367s] Level 5:colcon.colcon_core.verb:set package 'oled_display' build argument 'cmake_args' from command line to 'None'
+[1.367s] Level 5:colcon.colcon_core.verb:set package 'oled_display' build argument 'cmake_target' from command line to 'None'
+[1.367s] Level 5:colcon.colcon_core.verb:set package 'oled_display' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.367s] Level 5:colcon.colcon_core.verb:set package 'oled_display' build argument 'cmake_clean_cache' from command line to 'False'
+[1.367s] Level 5:colcon.colcon_core.verb:set package 'oled_display' build argument 'cmake_clean_first' from command line to 'False'
+[1.367s] Level 5:colcon.colcon_core.verb:set package 'oled_display' build argument 'cmake_force_configure' from command line to 'False'
+[1.367s] Level 5:colcon.colcon_core.verb:set package 'oled_display' build argument 'ament_cmake_args' from command line to 'None'
+[1.367s] Level 5:colcon.colcon_core.verb:set package 'oled_display' build argument 'catkin_cmake_args' from command line to 'None'
+[1.367s] Level 5:colcon.colcon_core.verb:set package 'oled_display' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.367s] DEBUG:colcon.colcon_core.verb:Building package 'oled_display' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/oled_display', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display', 'merge_install': False, 'path': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/peripherals/oled_display', 'symlink_install': True, 'test_result_base': None}
+[1.369s] Level 5:colcon.colcon_core.verb:set package 'pca9685_driver' build argument 'cmake_args' from command line to 'None'
+[1.369s] Level 5:colcon.colcon_core.verb:set package 'pca9685_driver' build argument 'cmake_target' from command line to 'None'
+[1.369s] Level 5:colcon.colcon_core.verb:set package 'pca9685_driver' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.369s] Level 5:colcon.colcon_core.verb:set package 'pca9685_driver' build argument 'cmake_clean_cache' from command line to 'False'
+[1.369s] Level 5:colcon.colcon_core.verb:set package 'pca9685_driver' build argument 'cmake_clean_first' from command line to 'False'
+[1.369s] Level 5:colcon.colcon_core.verb:set package 'pca9685_driver' build argument 'cmake_force_configure' from command line to 'False'
+[1.369s] Level 5:colcon.colcon_core.verb:set package 'pca9685_driver' build argument 'ament_cmake_args' from command line to 'None'
+[1.369s] Level 5:colcon.colcon_core.verb:set package 'pca9685_driver' build argument 'catkin_cmake_args' from command line to 'None'
+[1.369s] Level 5:colcon.colcon_core.verb:set package 'pca9685_driver' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.369s] DEBUG:colcon.colcon_core.verb:Building package 'pca9685_driver' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/pca9685_driver', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver', 'merge_install': False, 'path': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/utils/pca9685_driver', 'symlink_install': True, 'test_result_base': None}
+[1.370s] Level 5:colcon.colcon_core.verb:set package 'speed_sensor' build argument 'cmake_args' from command line to 'None'
+[1.371s] Level 5:colcon.colcon_core.verb:set package 'speed_sensor' build argument 'cmake_target' from command line to 'None'
+[1.371s] Level 5:colcon.colcon_core.verb:set package 'speed_sensor' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.371s] Level 5:colcon.colcon_core.verb:set package 'speed_sensor' build argument 'cmake_clean_cache' from command line to 'False'
+[1.371s] Level 5:colcon.colcon_core.verb:set package 'speed_sensor' build argument 'cmake_clean_first' from command line to 'False'
+[1.371s] Level 5:colcon.colcon_core.verb:set package 'speed_sensor' build argument 'cmake_force_configure' from command line to 'False'
+[1.371s] Level 5:colcon.colcon_core.verb:set package 'speed_sensor' build argument 'ament_cmake_args' from command line to 'None'
+[1.371s] Level 5:colcon.colcon_core.verb:set package 'speed_sensor' build argument 'catkin_cmake_args' from command line to 'None'
+[1.371s] Level 5:colcon.colcon_core.verb:set package 'speed_sensor' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.371s] DEBUG:colcon.colcon_core.verb:Building package 'speed_sensor' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/speed_sensor', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor', 'merge_install': False, 'path': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/peripherals/speed_sensor', 'symlink_install': True, 'test_result_base': None}
+[1.372s] Level 5:colcon.colcon_core.verb:set package 'battery' build argument 'cmake_args' from command line to 'None'
+[1.373s] Level 5:colcon.colcon_core.verb:set package 'battery' build argument 'cmake_target' from command line to 'None'
+[1.373s] Level 5:colcon.colcon_core.verb:set package 'battery' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.373s] Level 5:colcon.colcon_core.verb:set package 'battery' build argument 'cmake_clean_cache' from command line to 'False'
+[1.373s] Level 5:colcon.colcon_core.verb:set package 'battery' build argument 'cmake_clean_first' from command line to 'False'
+[1.373s] Level 5:colcon.colcon_core.verb:set package 'battery' build argument 'cmake_force_configure' from command line to 'False'
+[1.373s] Level 5:colcon.colcon_core.verb:set package 'battery' build argument 'ament_cmake_args' from command line to 'None'
+[1.373s] Level 5:colcon.colcon_core.verb:set package 'battery' build argument 'catkin_cmake_args' from command line to 'None'
+[1.373s] Level 5:colcon.colcon_core.verb:set package 'battery' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.373s] DEBUG:colcon.colcon_core.verb:Building package 'battery' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/battery', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery', 'merge_install': False, 'path': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/peripherals/battery', 'symlink_install': True, 'test_result_base': None}
+[1.374s] Level 5:colcon.colcon_core.verb:set package 'dc_motors' build argument 'cmake_args' from command line to 'None'
+[1.375s] Level 5:colcon.colcon_core.verb:set package 'dc_motors' build argument 'cmake_target' from command line to 'None'
+[1.375s] Level 5:colcon.colcon_core.verb:set package 'dc_motors' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.375s] Level 5:colcon.colcon_core.verb:set package 'dc_motors' build argument 'cmake_clean_cache' from command line to 'False'
+[1.375s] Level 5:colcon.colcon_core.verb:set package 'dc_motors' build argument 'cmake_clean_first' from command line to 'False'
+[1.375s] Level 5:colcon.colcon_core.verb:set package 'dc_motors' build argument 'cmake_force_configure' from command line to 'False'
+[1.375s] Level 5:colcon.colcon_core.verb:set package 'dc_motors' build argument 'ament_cmake_args' from command line to 'None'
+[1.375s] Level 5:colcon.colcon_core.verb:set package 'dc_motors' build argument 'catkin_cmake_args' from command line to 'None'
+[1.375s] Level 5:colcon.colcon_core.verb:set package 'dc_motors' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.375s] DEBUG:colcon.colcon_core.verb:Building package 'dc_motors' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/dc_motors', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors', 'merge_install': False, 'path': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/peripherals/dc_motors', 'symlink_install': True, 'test_result_base': None}
+[1.376s] Level 5:colcon.colcon_core.verb:set package 'servo_motor' build argument 'cmake_args' from command line to 'None'
+[1.377s] Level 5:colcon.colcon_core.verb:set package 'servo_motor' build argument 'cmake_target' from command line to 'None'
+[1.377s] Level 5:colcon.colcon_core.verb:set package 'servo_motor' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.377s] Level 5:colcon.colcon_core.verb:set package 'servo_motor' build argument 'cmake_clean_cache' from command line to 'False'
+[1.377s] Level 5:colcon.colcon_core.verb:set package 'servo_motor' build argument 'cmake_clean_first' from command line to 'False'
+[1.377s] Level 5:colcon.colcon_core.verb:set package 'servo_motor' build argument 'cmake_force_configure' from command line to 'False'
+[1.377s] Level 5:colcon.colcon_core.verb:set package 'servo_motor' build argument 'ament_cmake_args' from command line to 'None'
+[1.377s] Level 5:colcon.colcon_core.verb:set package 'servo_motor' build argument 'catkin_cmake_args' from command line to 'None'
+[1.377s] Level 5:colcon.colcon_core.verb:set package 'servo_motor' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.377s] DEBUG:colcon.colcon_core.verb:Building package 'servo_motor' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/servo_motor', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor', 'merge_install': False, 'path': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/peripherals/servo_motor', 'symlink_install': True, 'test_result_base': None}
+[1.378s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[1.381s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[1.382s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/utils/custom_msgs' with build type 'ament_cmake'
+[1.383s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/utils/custom_msgs'
+[1.399s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[1.400s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.400s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.419s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/display_routine' with build type 'ament_cmake'
+[1.420s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/display_routine'
+[1.421s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.421s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.436s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/tests/i2c_peripheral_stress_test' with build type 'ament_cmake'
+[1.436s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/tests/i2c_peripheral_stress_test'
+[1.437s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.438s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.471s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/custom_msgs': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --build /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/custom_msgs -- -j4 -l4
+[1.484s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/display_routine': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --build /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/display_routine -- -j4 -l4
+[1.507s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_peripheral_stress_test': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --build /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_peripheral_stress_test -- -j4 -l4
+[1.911s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/display_routine' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --build /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/display_routine -- -j4 -l4
+[1.967s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/display_routine': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --install /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/display_routine
+[1.980s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_peripheral_stress_test' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --build /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_peripheral_stress_test -- -j4 -l4
+[1.999s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_peripheral_stress_test': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --install /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_peripheral_stress_test
+[2.146s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(display_routine)
+[2.150s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/display_routine' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --install /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/display_routine
+[2.176s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine' for CMake module files
+[2.186s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine' for CMake config files
+[2.189s] Level 1:colcon.colcon_core.shell:create_environment_hook('display_routine', 'cmake_prefix_path')
+[2.193s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/hook/cmake_prefix_path.ps1'
+[2.203s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/hook/cmake_prefix_path.dsv'
+[2.211s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/hook/cmake_prefix_path.sh'
+[2.221s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/lib'
+[2.225s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/bin'
+[2.225s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/lib/pkgconfig/display_routine.pc'
+[2.227s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/lib/python3.12/site-packages'
+[2.230s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/bin'
+[2.240s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/package.ps1'
+[2.252s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/package.dsv'
+[2.262s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/package.sh'
+[2.266s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/package.bash'
+[2.271s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/package.zsh'
+[2.274s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/colcon-core/packages/display_routine)
+[2.278s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(display_routine)
+[2.279s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine' for CMake module files
+[2.285s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine' for CMake config files
+[2.287s] Level 1:colcon.colcon_core.shell:create_environment_hook('display_routine', 'cmake_prefix_path')
+[2.288s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/hook/cmake_prefix_path.ps1'
+[2.291s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/hook/cmake_prefix_path.dsv'
+[2.293s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/hook/cmake_prefix_path.sh'
+[2.297s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/lib'
+[2.298s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/bin'
+[2.298s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/lib/pkgconfig/display_routine.pc'
+[2.300s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/lib/python3.12/site-packages'
+[2.302s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/bin'
+[2.303s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/package.ps1'
+[2.306s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/package.dsv'
+[2.312s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/package.sh'
+[2.317s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/package.bash'
+[2.320s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/package.zsh'
+[2.323s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/colcon-core/packages/display_routine)
+[2.331s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(i2c_peripheral_stress_test)
+[2.332s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test' for CMake module files
+[2.334s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_peripheral_stress_test' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --install /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_peripheral_stress_test
+[2.338s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test' for CMake config files
+[2.340s] Level 1:colcon.colcon_core.shell:create_environment_hook('i2c_peripheral_stress_test', 'cmake_prefix_path')
+[2.341s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/hook/cmake_prefix_path.ps1'
+[2.343s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/hook/cmake_prefix_path.dsv'
+[2.346s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/hook/cmake_prefix_path.sh'
+[2.350s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/lib'
+[2.351s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/bin'
+[2.351s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/lib/pkgconfig/i2c_peripheral_stress_test.pc'
+[2.352s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/lib/python3.12/site-packages'
+[2.354s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/bin'
+[2.355s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/package.ps1'
+[2.358s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/package.dsv'
+[2.360s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/package.sh'
+[2.363s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/package.bash'
+[2.366s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/package.zsh'
+[2.369s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/colcon-core/packages/i2c_peripheral_stress_test)
+[2.374s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(i2c_peripheral_stress_test)
+[2.375s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test' for CMake module files
+[2.381s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test' for CMake config files
+[2.384s] Level 1:colcon.colcon_core.shell:create_environment_hook('i2c_peripheral_stress_test', 'cmake_prefix_path')
+[2.385s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/hook/cmake_prefix_path.ps1'
+[2.388s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/hook/cmake_prefix_path.dsv'
+[2.390s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/hook/cmake_prefix_path.sh'
+[2.398s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/lib'
+[2.398s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/bin'
+[2.399s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/lib/pkgconfig/i2c_peripheral_stress_test.pc'
+[2.400s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/lib/python3.12/site-packages'
+[2.401s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/bin'
+[2.402s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/package.ps1'
+[2.407s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/package.dsv'
+[2.411s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/package.sh'
+[2.414s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/package.bash'
+[2.416s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/package.zsh'
+[2.419s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/colcon-core/packages/i2c_peripheral_stress_test)
+[3.629s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/custom_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --build /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/custom_msgs -- -j4 -l4
+[3.634s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/custom_msgs': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --install /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/custom_msgs
+[4.048s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(custom_msgs)
+[4.049s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs' for CMake module files
+[4.050s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/custom_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --install /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/custom_msgs
+[4.055s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs' for CMake config files
+[4.061s] Level 1:colcon.colcon_core.shell:create_environment_hook('custom_msgs', 'cmake_prefix_path')
+[4.061s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/hook/cmake_prefix_path.ps1'
+[4.063s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/hook/cmake_prefix_path.dsv'
+[4.065s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/hook/cmake_prefix_path.sh'
+[4.067s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib'
+[4.068s] Level 1:colcon.colcon_core.shell:create_environment_hook('custom_msgs', 'ld_library_path_lib')
+[4.068s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/hook/ld_library_path_lib.ps1'
+[4.070s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/hook/ld_library_path_lib.dsv'
+[4.072s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/hook/ld_library_path_lib.sh'
+[4.073s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/bin'
+[4.074s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/pkgconfig/custom_msgs.pc'
+[4.074s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages'
+[4.075s] Level 1:colcon.colcon_core.shell:create_environment_hook('custom_msgs', 'pythonpath')
+[4.076s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/hook/pythonpath.ps1'
+[4.077s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/hook/pythonpath.dsv'
+[4.079s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/hook/pythonpath.sh'
+[4.081s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/bin'
+[4.082s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/package.ps1'
+[4.085s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/package.dsv'
+[4.087s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/package.sh'
+[4.089s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/package.bash'
+[4.090s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/package.zsh'
+[4.092s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/colcon-core/packages/custom_msgs)
+[4.094s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(custom_msgs)
+[4.095s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs' for CMake module files
+[4.099s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs' for CMake config files
+[4.104s] Level 1:colcon.colcon_core.shell:create_environment_hook('custom_msgs', 'cmake_prefix_path')
+[4.105s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/hook/cmake_prefix_path.ps1'
+[4.107s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/hook/cmake_prefix_path.dsv'
+[4.108s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/hook/cmake_prefix_path.sh'
+[4.111s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib'
+[4.112s] Level 1:colcon.colcon_core.shell:create_environment_hook('custom_msgs', 'ld_library_path_lib')
+[4.112s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/hook/ld_library_path_lib.ps1'
+[4.114s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/hook/ld_library_path_lib.dsv'
+[4.116s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/hook/ld_library_path_lib.sh'
+[4.117s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/bin'
+[4.118s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/pkgconfig/custom_msgs.pc'
+[4.118s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages'
+[4.119s] Level 1:colcon.colcon_core.shell:create_environment_hook('custom_msgs', 'pythonpath')
+[4.120s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/hook/pythonpath.ps1'
+[4.121s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/hook/pythonpath.dsv'
+[4.123s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/hook/pythonpath.sh'
+[4.125s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/bin'
+[4.126s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/package.ps1'
+[4.129s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/package.dsv'
+[4.131s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/package.sh'
+[4.133s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/package.bash'
+[4.135s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/package.zsh'
+[4.137s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/colcon-core/packages/custom_msgs)
+[4.138s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/utils/pca9685_driver' with build type 'ament_cmake'
+[4.139s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/utils/pca9685_driver'
+[4.140s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[4.140s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[4.156s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/utils/ina219_driver' with build type 'ament_cmake'
+[4.157s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/utils/ina219_driver'
+[4.158s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[4.158s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[4.173s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/bus_interfaces/can_interface' with build type 'ament_cmake'
+[4.174s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/bus_interfaces/can_interface'
+[4.175s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[4.175s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[4.191s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/bus_interfaces/i2c_interface' with build type 'ament_cmake'
+[4.192s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/bus_interfaces/i2c_interface'
+[4.193s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[4.193s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[4.226s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/pca9685_driver': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/pca9685_driver -- -j4 -l4
+[4.239s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/ina219_driver': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/ina219_driver -- -j4 -l4
+[4.255s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface -- -j4 -l4
+[4.276s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface -- -j4 -l4
+[4.622s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/pca9685_driver' returned '0': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/pca9685_driver -- -j4 -l4
+[4.631s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/pca9685_driver': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/pca9685_driver
+[4.652s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/ina219_driver' returned '0': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/ina219_driver -- -j4 -l4
+[4.658s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/ina219_driver': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/ina219_driver
+[4.707s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface' returned '0': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface -- -j4 -l4
+[4.728s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface
+[4.776s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(pca9685_driver)
+[4.777s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver' for CMake module files
+[4.784s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/pca9685_driver' returned '0': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/pca9685_driver
+[4.787s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver' for CMake config files
+[4.801s] Level 1:colcon.colcon_core.shell:create_environment_hook('pca9685_driver', 'cmake_prefix_path')
+[4.802s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/hook/cmake_prefix_path.ps1'
+[4.804s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/hook/cmake_prefix_path.dsv'
+[4.811s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/hook/cmake_prefix_path.sh'
+[4.814s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/lib'
+[4.814s] Level 1:colcon.colcon_core.shell:create_environment_hook('pca9685_driver', 'ld_library_path_lib')
+[4.815s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/hook/ld_library_path_lib.ps1'
+[4.817s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/hook/ld_library_path_lib.dsv'
+[4.819s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/hook/ld_library_path_lib.sh'
+[4.821s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/bin'
+[4.822s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/lib/pkgconfig/pca9685_driver.pc'
+[4.823s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/lib/python3.12/site-packages'
+[4.824s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/bin'
+[4.826s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/package.ps1'
+[4.829s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/package.dsv'
+[4.832s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/package.sh'
+[4.834s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/package.bash'
+[4.836s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/package.zsh'
+[4.838s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/colcon-core/packages/pca9685_driver)
+[4.841s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(pca9685_driver)
+[4.842s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver' for CMake module files
+[4.847s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver' for CMake config files
+[4.850s] Level 1:colcon.colcon_core.shell:create_environment_hook('pca9685_driver', 'cmake_prefix_path')
+[4.851s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/hook/cmake_prefix_path.ps1'
+[4.853s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/hook/cmake_prefix_path.dsv'
+[4.855s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/hook/cmake_prefix_path.sh'
+[4.858s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/lib'
+[4.858s] Level 1:colcon.colcon_core.shell:create_environment_hook('pca9685_driver', 'ld_library_path_lib')
+[4.859s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/hook/ld_library_path_lib.ps1'
+[4.860s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/hook/ld_library_path_lib.dsv'
+[4.862s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/hook/ld_library_path_lib.sh'
+[4.864s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/bin'
+[4.864s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/lib/pkgconfig/pca9685_driver.pc'
+[4.865s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/lib/python3.12/site-packages'
+[4.866s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/bin'
+[4.867s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/package.ps1'
+[4.869s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/package.dsv'
+[4.871s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/package.sh'
+[4.875s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/package.bash'
+[4.877s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/package.zsh'
+[4.879s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/colcon-core/packages/pca9685_driver)
+[4.881s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/peripherals/oled_display' with build type 'ament_cmake'
+[4.882s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/peripherals/oled_display'
+[4.883s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[4.883s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[4.903s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ina219_driver)
+[4.904s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver' for CMake module files
+[4.906s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/ina219_driver' returned '0': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/ina219_driver
+[4.909s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver' for CMake config files
+[4.911s] Level 1:colcon.colcon_core.shell:create_environment_hook('ina219_driver', 'cmake_prefix_path')
+[4.912s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/hook/cmake_prefix_path.ps1'
+[4.914s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/hook/cmake_prefix_path.dsv'
+[4.917s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/hook/cmake_prefix_path.sh'
+[4.920s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/lib'
+[4.921s] Level 1:colcon.colcon_core.shell:create_environment_hook('ina219_driver', 'ld_library_path_lib')
+[4.921s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/hook/ld_library_path_lib.ps1'
+[4.923s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/hook/ld_library_path_lib.dsv'
+[4.926s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/hook/ld_library_path_lib.sh'
+[4.928s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/bin'
+[4.928s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/lib/pkgconfig/ina219_driver.pc'
+[4.929s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/lib/python3.12/site-packages'
+[4.930s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/bin'
+[4.931s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/package.ps1'
+[4.933s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/package.dsv'
+[4.935s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/package.sh'
+[4.937s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/package.bash'
+[4.939s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/package.zsh'
+[4.941s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/colcon-core/packages/ina219_driver)
+[4.943s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ina219_driver)
+[4.944s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver' for CMake module files
+[4.946s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver' for CMake config files
+[4.948s] Level 1:colcon.colcon_core.shell:create_environment_hook('ina219_driver', 'cmake_prefix_path')
+[4.949s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/hook/cmake_prefix_path.ps1'
+[4.951s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/hook/cmake_prefix_path.dsv'
+[4.952s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/hook/cmake_prefix_path.sh'
+[4.955s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/lib'
+[4.955s] Level 1:colcon.colcon_core.shell:create_environment_hook('ina219_driver', 'ld_library_path_lib')
+[4.956s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/hook/ld_library_path_lib.ps1'
+[4.958s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/hook/ld_library_path_lib.dsv'
+[4.959s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/hook/ld_library_path_lib.sh'
+[4.961s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/bin'
+[4.962s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/lib/pkgconfig/ina219_driver.pc'
+[4.962s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/lib/python3.12/site-packages'
+[4.963s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/bin'
+[4.964s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/package.ps1'
+[4.966s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/package.dsv'
+[4.970s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/package.sh'
+[4.972s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/package.bash'
+[4.974s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/package.zsh'
+[4.976s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/colcon-core/packages/ina219_driver)
+[4.978s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(i2c_interface)
+[4.979s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface' for CMake module files
+[4.982s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface' returned '0': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface
+[4.984s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface' for CMake config files
+[4.986s] Level 1:colcon.colcon_core.shell:create_environment_hook('i2c_interface', 'cmake_prefix_path')
+[4.987s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/i2c_interface/hook/cmake_prefix_path.ps1'
+[4.989s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/i2c_interface/hook/cmake_prefix_path.dsv'
+[4.991s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/i2c_interface/hook/cmake_prefix_path.sh'
+[4.994s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/lib'
+[4.994s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/bin'
+[4.994s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/lib/pkgconfig/i2c_interface.pc'
+[4.995s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/lib/python3.12/site-packages'
+[4.996s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/bin'
+[4.997s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/i2c_interface/package.ps1'
+[4.999s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/i2c_interface/package.dsv'
+[5.001s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/i2c_interface/package.sh'
+[5.003s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/i2c_interface/package.bash'
+[5.004s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/i2c_interface/package.zsh'
+[5.006s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/colcon-core/packages/i2c_interface)
+[5.008s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(i2c_interface)
+[5.009s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface' for CMake module files
+[5.012s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface' for CMake config files
+[5.014s] Level 1:colcon.colcon_core.shell:create_environment_hook('i2c_interface', 'cmake_prefix_path')
+[5.014s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/i2c_interface/hook/cmake_prefix_path.ps1'
+[5.016s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/i2c_interface/hook/cmake_prefix_path.dsv'
+[5.018s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/i2c_interface/hook/cmake_prefix_path.sh'
+[5.020s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/lib'
+[5.021s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/bin'
+[5.021s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/lib/pkgconfig/i2c_interface.pc'
+[5.022s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/lib/python3.12/site-packages'
+[5.022s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/bin'
+[5.023s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/i2c_interface/package.ps1'
+[5.026s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/i2c_interface/package.dsv'
+[5.028s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/i2c_interface/package.sh'
+[5.030s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/i2c_interface/package.bash'
+[5.032s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/i2c_interface/package.zsh'
+[5.034s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/colcon-core/packages/i2c_interface)
+[5.038s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface' returned '0': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface -- -j4 -l4
+[5.042s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface
+[5.045s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/peripherals/speed_sensor' with build type 'ament_cmake'
+[5.046s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/peripherals/speed_sensor'
+[5.047s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[5.047s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[5.066s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/peripherals/battery' with build type 'ament_cmake'
+[5.067s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/peripherals/battery'
+[5.068s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[5.068s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[5.113s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/oled_display': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/oled_display -- -j4 -l4
+[5.130s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/speed_sensor': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/speed_sensor -- -j4 -l4
+[5.148s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/battery': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/lib:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/battery -- -j4 -l4
+[5.173s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(can_interface)
+[5.174s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface' for CMake module files
+[5.176s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface' returned '0': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface
+[5.180s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface' for CMake config files
+[5.183s] Level 1:colcon.colcon_core.shell:create_environment_hook('can_interface', 'cmake_prefix_path')
+[5.184s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/can_interface/hook/cmake_prefix_path.ps1'
+[5.188s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/can_interface/hook/cmake_prefix_path.dsv'
+[5.190s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/can_interface/hook/cmake_prefix_path.sh'
+[5.194s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/lib'
+[5.195s] Level 1:colcon.colcon_core.shell:create_environment_hook('can_interface', 'ld_library_path_lib')
+[5.196s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/can_interface/hook/ld_library_path_lib.ps1'
+[5.199s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/can_interface/hook/ld_library_path_lib.dsv'
+[5.202s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/can_interface/hook/ld_library_path_lib.sh'
+[5.204s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/bin'
+[5.205s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/lib/pkgconfig/can_interface.pc'
+[5.206s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/lib/python3.12/site-packages'
+[5.208s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/bin'
+[5.209s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/can_interface/package.ps1'
+[5.212s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/can_interface/package.dsv'
+[5.215s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/can_interface/package.sh'
+[5.218s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/can_interface/package.bash'
+[5.221s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/can_interface/package.zsh'
+[5.223s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/colcon-core/packages/can_interface)
+[5.226s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(can_interface)
+[5.227s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface' for CMake module files
+[5.232s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface' for CMake config files
+[5.236s] Level 1:colcon.colcon_core.shell:create_environment_hook('can_interface', 'cmake_prefix_path')
+[5.237s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/can_interface/hook/cmake_prefix_path.ps1'
+[5.240s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/can_interface/hook/cmake_prefix_path.dsv'
+[5.243s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/can_interface/hook/cmake_prefix_path.sh'
+[5.247s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/lib'
+[5.248s] Level 1:colcon.colcon_core.shell:create_environment_hook('can_interface', 'ld_library_path_lib')
+[5.249s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/can_interface/hook/ld_library_path_lib.ps1'
+[5.251s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/can_interface/hook/ld_library_path_lib.dsv'
+[5.254s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/can_interface/hook/ld_library_path_lib.sh'
+[5.256s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/bin'
+[5.257s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/lib/pkgconfig/can_interface.pc'
+[5.258s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/lib/python3.12/site-packages'
+[5.259s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/bin'
+[5.260s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/can_interface/package.ps1'
+[5.264s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/can_interface/package.dsv'
+[5.269s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/can_interface/package.sh'
+[5.272s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/can_interface/package.bash'
+[5.274s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/can_interface/package.zsh'
+[5.277s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/colcon-core/packages/can_interface)
+[5.279s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/peripherals/dc_motors' with build type 'ament_cmake'
+[5.279s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/peripherals/dc_motors'
+[5.280s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[5.280s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[5.354s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/dc_motors': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/lib:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/dc_motors -- -j4 -l4
+[5.545s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/oled_display' returned '0': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/oled_display -- -j4 -l4
+[5.553s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/oled_display': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/oled_display
+[5.572s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/speed_sensor' returned '0': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/speed_sensor -- -j4 -l4
+[5.585s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/speed_sensor': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/speed_sensor
+[6.624s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(oled_display)
+[6.625s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display' for CMake module files
+[6.630s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/oled_display' returned '0': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/oled_display
+[6.631s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display' for CMake config files
+[6.632s] Level 1:colcon.colcon_core.shell:create_environment_hook('oled_display', 'cmake_prefix_path')
+[6.633s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/oled_display/hook/cmake_prefix_path.ps1'
+[6.636s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/oled_display/hook/cmake_prefix_path.dsv'
+[6.639s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/oled_display/hook/cmake_prefix_path.sh'
+[6.647s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/lib'
+[6.649s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/bin'
+[6.650s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/lib/pkgconfig/oled_display.pc'
+[6.651s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/lib/python3.12/site-packages'
+[6.653s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/bin'
+[6.655s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/oled_display/package.ps1'
+[6.661s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/oled_display/package.dsv'
+[6.666s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/oled_display/package.sh'
+[6.671s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/oled_display/package.bash'
+[6.674s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/oled_display/package.zsh'
+[6.678s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/colcon-core/packages/oled_display)
+[6.683s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(oled_display)
+[6.685s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display' for CMake module files
+[6.690s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display' for CMake config files
+[6.694s] Level 1:colcon.colcon_core.shell:create_environment_hook('oled_display', 'cmake_prefix_path')
+[6.696s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/oled_display/hook/cmake_prefix_path.ps1'
+[6.700s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/oled_display/hook/cmake_prefix_path.dsv'
+[6.704s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/oled_display/hook/cmake_prefix_path.sh'
+[6.710s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/lib'
+[6.712s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/bin'
+[6.713s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/lib/pkgconfig/oled_display.pc'
+[6.715s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/lib/python3.12/site-packages'
+[6.717s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/bin'
+[6.718s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/oled_display/package.ps1'
+[6.724s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/oled_display/package.dsv'
+[6.728s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/oled_display/package.sh'
+[6.731s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/oled_display/package.bash'
+[6.734s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/oled_display/package.zsh'
+[6.736s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/colcon-core/packages/oled_display)
+[6.740s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/peripherals/servo_motor' with build type 'ament_cmake'
+[6.740s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/peripherals/servo_motor'
+[6.741s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[6.742s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[6.764s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(speed_sensor)
+[6.765s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor' for CMake module files
+[6.768s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/speed_sensor' returned '0': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/speed_sensor
+[6.771s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor' for CMake config files
+[6.772s] Level 1:colcon.colcon_core.shell:create_environment_hook('speed_sensor', 'cmake_prefix_path')
+[6.773s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor/share/speed_sensor/hook/cmake_prefix_path.ps1'
+[6.776s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor/share/speed_sensor/hook/cmake_prefix_path.dsv'
+[6.778s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor/share/speed_sensor/hook/cmake_prefix_path.sh'
+[6.782s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor/lib'
+[6.782s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor/bin'
+[6.783s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor/lib/pkgconfig/speed_sensor.pc'
+[6.784s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor/lib/python3.12/site-packages'
+[6.786s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor/bin'
+[6.788s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor/share/speed_sensor/package.ps1'
+[6.790s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor/share/speed_sensor/package.dsv'
+[6.792s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor/share/speed_sensor/package.sh'
+[6.794s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor/share/speed_sensor/package.bash'
+[6.796s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor/share/speed_sensor/package.zsh'
+[6.798s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor/share/colcon-core/packages/speed_sensor)
+[6.801s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(speed_sensor)
+[6.802s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor' for CMake module files
+[6.806s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor' for CMake config files
+[6.808s] Level 1:colcon.colcon_core.shell:create_environment_hook('speed_sensor', 'cmake_prefix_path')
+[6.809s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor/share/speed_sensor/hook/cmake_prefix_path.ps1'
+[6.811s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor/share/speed_sensor/hook/cmake_prefix_path.dsv'
+[6.813s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor/share/speed_sensor/hook/cmake_prefix_path.sh'
+[6.816s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor/lib'
+[6.817s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor/bin'
+[6.817s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor/lib/pkgconfig/speed_sensor.pc'
+[6.818s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor/lib/python3.12/site-packages'
+[6.819s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor/bin'
+[6.821s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor/share/speed_sensor/package.ps1'
+[6.823s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor/share/speed_sensor/package.dsv'
+[6.826s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor/share/speed_sensor/package.sh'
+[6.829s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor/share/speed_sensor/package.bash'
+[6.831s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor/share/speed_sensor/package.zsh'
+[6.833s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor/share/colcon-core/packages/speed_sensor)
+[6.851s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/servo_motor': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/lib:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake /home/jetpack/SEAME-Cluster-24-25/JetRacer/src/peripherals/servo_motor -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor
+[16.078s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/servo_motor' returned '0': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/lib:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake /home/jetpack/SEAME-Cluster-24-25/JetRacer/src/peripherals/servo_motor -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor
+[16.080s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/servo_motor': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/lib:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/servo_motor -- -j4 -l4
+[43.473s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/battery' returned '0': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/lib:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/battery -- -j4 -l4
+[43.482s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/battery': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/lib:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/battery
+[44.543s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(battery)
+[44.546s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery' for CMake module files
+[44.544s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/battery' returned '0': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/lib:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/battery
+[44.552s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery' for CMake config files
+[44.556s] Level 1:colcon.colcon_core.shell:create_environment_hook('battery', 'cmake_prefix_path')
+[44.557s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery/share/battery/hook/cmake_prefix_path.ps1'
+[44.560s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery/share/battery/hook/cmake_prefix_path.dsv'
+[44.563s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery/share/battery/hook/cmake_prefix_path.sh'
+[44.567s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery/lib'
+[44.568s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery/bin'
+[44.569s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery/lib/pkgconfig/battery.pc'
+[44.571s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery/lib/python3.12/site-packages'
+[44.572s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery/bin'
+[44.574s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery/share/battery/package.ps1'
+[44.577s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery/share/battery/package.dsv'
+[44.581s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery/share/battery/package.sh'
+[44.586s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery/share/battery/package.bash'
+[44.590s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery/share/battery/package.zsh'
+[44.593s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery/share/colcon-core/packages/battery)
+[44.597s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(battery)
+[44.598s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery' for CMake module files
+[44.603s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery' for CMake config files
+[44.607s] Level 1:colcon.colcon_core.shell:create_environment_hook('battery', 'cmake_prefix_path')
+[44.608s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery/share/battery/hook/cmake_prefix_path.ps1'
+[44.611s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery/share/battery/hook/cmake_prefix_path.dsv'
+[44.614s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery/share/battery/hook/cmake_prefix_path.sh'
+[44.619s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery/lib'
+[44.620s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery/bin'
+[44.621s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery/lib/pkgconfig/battery.pc'
+[44.622s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery/lib/python3.12/site-packages'
+[44.624s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery/bin'
+[44.626s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery/share/battery/package.ps1'
+[44.630s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery/share/battery/package.dsv'
+[44.634s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery/share/battery/package.sh'
+[44.637s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery/share/battery/package.bash'
+[44.641s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery/share/battery/package.zsh'
+[44.644s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery/share/colcon-core/packages/battery)
+[65.996s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/dc_motors' returned '0': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/lib:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/dc_motors -- -j4 -l4
+[66.002s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/dc_motors': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/lib:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/dc_motors
+[66.783s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(dc_motors)
+[66.784s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors' for CMake module files
+[66.786s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/dc_motors' returned '0': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/lib:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/dc_motors
+[66.789s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors' for CMake config files
+[66.790s] Level 1:colcon.colcon_core.shell:create_environment_hook('dc_motors', 'cmake_prefix_path')
+[66.791s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors/share/dc_motors/hook/cmake_prefix_path.ps1'
+[66.793s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors/share/dc_motors/hook/cmake_prefix_path.dsv'
+[66.795s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors/share/dc_motors/hook/cmake_prefix_path.sh'
+[66.798s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors/lib'
+[66.799s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors/bin'
+[66.799s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors/lib/pkgconfig/dc_motors.pc'
+[66.800s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors/lib/python3.12/site-packages'
+[66.801s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors/bin'
+[66.803s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors/share/dc_motors/package.ps1'
+[66.805s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors/share/dc_motors/package.dsv'
+[66.807s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors/share/dc_motors/package.sh'
+[66.809s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors/share/dc_motors/package.bash'
+[66.811s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors/share/dc_motors/package.zsh'
+[66.813s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors/share/colcon-core/packages/dc_motors)
+[66.816s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(dc_motors)
+[66.817s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors' for CMake module files
+[66.820s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors' for CMake config files
+[66.822s] Level 1:colcon.colcon_core.shell:create_environment_hook('dc_motors', 'cmake_prefix_path')
+[66.823s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors/share/dc_motors/hook/cmake_prefix_path.ps1'
+[66.825s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors/share/dc_motors/hook/cmake_prefix_path.dsv'
+[66.828s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors/share/dc_motors/hook/cmake_prefix_path.sh'
+[66.831s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors/lib'
+[66.832s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors/bin'
+[66.832s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors/lib/pkgconfig/dc_motors.pc'
+[66.833s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors/lib/python3.12/site-packages'
+[66.834s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors/bin'
+[66.835s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors/share/dc_motors/package.ps1'
+[66.838s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors/share/dc_motors/package.dsv'
+[66.841s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors/share/dc_motors/package.sh'
+[66.843s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors/share/dc_motors/package.bash'
+[66.845s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors/share/dc_motors/package.zsh'
+[66.847s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors/share/colcon-core/packages/dc_motors)
+[71.059s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/servo_motor' returned '0': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/lib:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/servo_motor -- -j4 -l4
+[71.065s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/servo_motor': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/lib:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/servo_motor
+[71.806s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(servo_motor)
+[71.808s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor' for CMake module files
+[71.808s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/servo_motor' returned '0': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/lib:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/servo_motor
+[71.812s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor' for CMake config files
+[71.814s] Level 1:colcon.colcon_core.shell:create_environment_hook('servo_motor', 'cmake_prefix_path')
+[71.814s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor/share/servo_motor/hook/cmake_prefix_path.ps1'
+[71.816s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor/share/servo_motor/hook/cmake_prefix_path.dsv'
+[71.818s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor/share/servo_motor/hook/cmake_prefix_path.sh'
+[71.820s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor/lib'
+[71.821s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor/bin'
+[71.821s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor/lib/pkgconfig/servo_motor.pc'
+[71.822s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor/lib/python3.12/site-packages'
+[71.823s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor/bin'
+[71.824s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor/share/servo_motor/package.ps1'
+[71.826s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor/share/servo_motor/package.dsv'
+[71.827s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor/share/servo_motor/package.sh'
+[71.829s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor/share/servo_motor/package.bash'
+[71.830s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor/share/servo_motor/package.zsh'
+[71.832s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor/share/colcon-core/packages/servo_motor)
+[71.834s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(servo_motor)
+[71.835s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor' for CMake module files
+[71.837s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor' for CMake config files
+[71.839s] Level 1:colcon.colcon_core.shell:create_environment_hook('servo_motor', 'cmake_prefix_path')
+[71.840s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor/share/servo_motor/hook/cmake_prefix_path.ps1'
+[71.841s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor/share/servo_motor/hook/cmake_prefix_path.dsv'
+[71.844s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor/share/servo_motor/hook/cmake_prefix_path.sh'
+[71.847s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor/lib'
+[71.847s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor/bin'
+[71.847s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor/lib/pkgconfig/servo_motor.pc'
+[71.848s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor/lib/python3.12/site-packages'
+[71.849s] Level 1:colcon.colcon_core.environment:checking '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor/bin'
+[71.850s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor/share/servo_motor/package.ps1'
+[71.852s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor/share/servo_motor/package.dsv'
+[71.854s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor/share/servo_motor/package.sh'
+[71.856s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor/share/servo_motor/package.bash'
+[71.858s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor/share/servo_motor/package.zsh'
+[71.860s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor/share/colcon-core/packages/servo_motor)
+[71.861s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[71.862s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[71.863s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[71.863s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[71.888s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[71.888s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[71.888s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[71.893s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.Notifications was not provided by any .service files
+[71.893s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[71.894s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/local_setup.ps1'
+[71.898s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/_local_setup_util_ps1.py'
+[71.903s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/setup.ps1'
+[71.907s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/local_setup.sh'
+[71.909s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/_local_setup_util_sh.py'
+[71.912s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/setup.sh'
+[71.915s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/local_setup.bash'
+[71.917s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/setup.bash'
+[71.921s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/local_setup.zsh'
+[71.923s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/setup.zsh'

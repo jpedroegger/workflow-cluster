@@ -1,0 +1,1266 @@
+[0.000000] (-) TimerEvent: {}
+[0.000898] (custom_msgs) JobQueued: {'identifier': 'custom_msgs', 'dependencies': OrderedDict()}
+[0.001035] (display_routine) JobQueued: {'identifier': 'display_routine', 'dependencies': OrderedDict()}
+[0.001107] (i2c_peripheral_stress_test) JobQueued: {'identifier': 'i2c_peripheral_stress_test', 'dependencies': OrderedDict()}
+[0.001171] (can_interface) JobQueued: {'identifier': 'can_interface', 'dependencies': OrderedDict({'custom_msgs': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs'})}
+[0.001250] (i2c_interface) JobQueued: {'identifier': 'i2c_interface', 'dependencies': OrderedDict({'custom_msgs': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs'})}
+[0.001321] (ina219_driver) JobQueued: {'identifier': 'ina219_driver', 'dependencies': OrderedDict({'custom_msgs': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs'})}
+[0.001390] (oled_display) JobQueued: {'identifier': 'oled_display', 'dependencies': OrderedDict({'custom_msgs': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs'})}
+[0.002300] (pca9685_driver) JobQueued: {'identifier': 'pca9685_driver', 'dependencies': OrderedDict({'custom_msgs': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs'})}
+[0.002383] (speed_sensor) JobQueued: {'identifier': 'speed_sensor', 'dependencies': OrderedDict({'custom_msgs': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs'})}
+[0.003221] (battery) JobQueued: {'identifier': 'battery', 'dependencies': OrderedDict({'custom_msgs': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs', 'ina219_driver': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver'})}
+[0.003325] (dc_motors) JobQueued: {'identifier': 'dc_motors', 'dependencies': OrderedDict({'custom_msgs': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs', 'pca9685_driver': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver'})}
+[0.003401] (servo_motor) JobQueued: {'identifier': 'servo_motor', 'dependencies': OrderedDict({'custom_msgs': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs', 'pca9685_driver': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver'})}
+[0.003576] (custom_msgs) JobStarted: {'identifier': 'custom_msgs'}
+[0.038907] (display_routine) JobStarted: {'identifier': 'display_routine'}
+[0.055889] (i2c_peripheral_stress_test) JobStarted: {'identifier': 'i2c_peripheral_stress_test'}
+[0.077769] (custom_msgs) JobProgress: {'identifier': 'custom_msgs', 'progress': 'cmake'}
+[0.080479] (custom_msgs) JobProgress: {'identifier': 'custom_msgs', 'progress': 'build'}
+[0.082809] (custom_msgs) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/custom_msgs', '--', '-j4', '-l4'], 'cwd': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/custom_msgs', 'env': OrderedDict({'USER': 'jetpack', 'SSH_CLIENT': '192.168.1.80 63310 22', 'STARSHIP_SHELL': 'fish', 'XDG_SESSION_TYPE': 'tty', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib', 'SHLVL': '3', 'HOME': '/home/jetpack', 'SSH_TTY': '/dev/pts/0', 'OPENAI_API_KEY': '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', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'OMF_PATH': '/home/jetpack/.local/share/omf', 'LOGNAME': 'jetpack', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '10', 'PATH': '/opt/ros/jazzy/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/.fzf/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/miniconda3/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'SHELL': '/usr/bin/fish', 'WIFI_SSID': 'MEO-BD8310', 'PWD': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/custom_msgs', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'SSH_CONNECTION': '192.168.1.80 63310 192.168.1.84 22', 'OMF_CONFIG': '/home/jetpack/.config/omf', 'STARSHIP_SESSION_KEY': '2569217148239653', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'EDITOR': 'nvim', 'WIFI_PASSWORD': '9f24731014', 'WARP_THEMES_DIR': '/home/jetpack/.warp/themes', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy'}), 'shell': False}
+[0.093618] (display_routine) JobProgress: {'identifier': 'display_routine', 'progress': 'cmake'}
+[0.096568] (display_routine) JobProgress: {'identifier': 'display_routine', 'progress': 'build'}
+[0.097724] (display_routine) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/display_routine', '--', '-j4', '-l4'], 'cwd': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/display_routine', 'env': OrderedDict({'USER': 'jetpack', 'SSH_CLIENT': '192.168.1.80 63310 22', 'STARSHIP_SHELL': 'fish', 'XDG_SESSION_TYPE': 'tty', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib', 'SHLVL': '3', 'HOME': '/home/jetpack', 'SSH_TTY': '/dev/pts/0', 'OPENAI_API_KEY': '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', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'OMF_PATH': '/home/jetpack/.local/share/omf', 'LOGNAME': 'jetpack', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '10', 'PATH': '/opt/ros/jazzy/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/.fzf/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/miniconda3/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'SHELL': '/usr/bin/fish', 'WIFI_SSID': 'MEO-BD8310', 'PWD': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/display_routine', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'SSH_CONNECTION': '192.168.1.80 63310 192.168.1.84 22', 'OMF_CONFIG': '/home/jetpack/.config/omf', 'STARSHIP_SESSION_KEY': '2569217148239653', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'EDITOR': 'nvim', 'WIFI_PASSWORD': '9f24731014', 'WARP_THEMES_DIR': '/home/jetpack/.warp/themes', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy'}), 'shell': False}
+[0.104090] (-) TimerEvent: {}
+[0.114891] (i2c_peripheral_stress_test) JobProgress: {'identifier': 'i2c_peripheral_stress_test', 'progress': 'cmake'}
+[0.118134] (i2c_peripheral_stress_test) JobProgress: {'identifier': 'i2c_peripheral_stress_test', 'progress': 'build'}
+[0.122361] (i2c_peripheral_stress_test) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_peripheral_stress_test', '--', '-j4', '-l4'], 'cwd': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_peripheral_stress_test', 'env': OrderedDict({'USER': 'jetpack', 'SSH_CLIENT': '192.168.1.80 63310 22', 'STARSHIP_SHELL': 'fish', 'XDG_SESSION_TYPE': 'tty', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib', 'SHLVL': '3', 'HOME': '/home/jetpack', 'SSH_TTY': '/dev/pts/0', 'OPENAI_API_KEY': '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', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'OMF_PATH': '/home/jetpack/.local/share/omf', 'LOGNAME': 'jetpack', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '10', 'PATH': '/opt/ros/jazzy/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/.fzf/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/miniconda3/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'SHELL': '/usr/bin/fish', 'WIFI_SSID': 'MEO-BD8310', 'PWD': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_peripheral_stress_test', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'SSH_CONNECTION': '192.168.1.80 63310 192.168.1.84 22', 'OMF_CONFIG': '/home/jetpack/.config/omf', 'STARSHIP_SESSION_KEY': '2569217148239653', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'EDITOR': 'nvim', 'WIFI_PASSWORD': '9f24731014', 'WARP_THEMES_DIR': '/home/jetpack/.warp/themes', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy'}), 'shell': False}
+[0.204329] (-) TimerEvent: {}
+[0.306185] (-) TimerEvent: {}
+[0.357604] (custom_msgs) StdoutLine: {'line': b'[  1%] Built target custom_msgs__rosidl_generator_type_description\n'}
+[0.405247] (custom_msgs) StdoutLine: {'line': b'[  1%] Built target ament_cmake_python_symlink_custom_msgs\n'}
+[0.407642] (-) TimerEvent: {}
+[0.463662] (i2c_peripheral_stress_test) StdoutLine: {'line': b'[100%] Built target i2c_peripheral_stress_test_node\n'}
+[0.468230] (display_routine) StdoutLine: {'line': b'[100%] Built target display_routine_node\n'}
+[0.483733] (custom_msgs) StdoutLine: {'line': b'[  3%] Built target custom_msgs__cpp\n'}
+[0.507887] (-) TimerEvent: {}
+[0.529783] (display_routine) CommandEnded: {'returncode': 0}
+[0.532920] (display_routine) JobProgress: {'identifier': 'display_routine', 'progress': 'install'}
+[0.539560] (custom_msgs) StdoutLine: {'line': b'[ 24%] Built target custom_msgs__rosidl_generator_c\n'}
+[0.585226] (display_routine) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/display_routine'], 'cwd': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/display_routine', 'env': OrderedDict({'USER': 'jetpack', 'SSH_CLIENT': '192.168.1.80 63310 22', 'STARSHIP_SHELL': 'fish', 'XDG_SESSION_TYPE': 'tty', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib', 'SHLVL': '3', 'HOME': '/home/jetpack', 'SSH_TTY': '/dev/pts/0', 'OPENAI_API_KEY': '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', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'OMF_PATH': '/home/jetpack/.local/share/omf', 'LOGNAME': 'jetpack', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '10', 'PATH': '/opt/ros/jazzy/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/.fzf/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/miniconda3/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'SHELL': '/usr/bin/fish', 'WIFI_SSID': 'MEO-BD8310', 'PWD': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/display_routine', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'SSH_CONNECTION': '192.168.1.80 63310 192.168.1.84 22', 'OMF_CONFIG': '/home/jetpack/.config/omf', 'STARSHIP_SESSION_KEY': '2569217148239653', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'EDITOR': 'nvim', 'WIFI_PASSWORD': '9f24731014', 'WARP_THEMES_DIR': '/home/jetpack/.warp/themes', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy'}), 'shell': False}
+[0.598703] (i2c_peripheral_stress_test) CommandEnded: {'returncode': 0}
+[0.608706] (i2c_peripheral_stress_test) JobProgress: {'identifier': 'i2c_peripheral_stress_test', 'progress': 'install'}
+[0.609254] (-) TimerEvent: {}
+[0.609909] (i2c_peripheral_stress_test) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_peripheral_stress_test'], 'cwd': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_peripheral_stress_test', 'env': OrderedDict({'USER': 'jetpack', 'SSH_CLIENT': '192.168.1.80 63310 22', 'STARSHIP_SHELL': 'fish', 'XDG_SESSION_TYPE': 'tty', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib', 'SHLVL': '3', 'HOME': '/home/jetpack', 'SSH_TTY': '/dev/pts/0', 'OPENAI_API_KEY': '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', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'OMF_PATH': '/home/jetpack/.local/share/omf', 'LOGNAME': 'jetpack', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '10', 'PATH': '/opt/ros/jazzy/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/.fzf/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/miniconda3/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'SHELL': '/usr/bin/fish', 'WIFI_SSID': 'MEO-BD8310', 'PWD': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_peripheral_stress_test', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'SSH_CONNECTION': '192.168.1.80 63310 192.168.1.84 22', 'OMF_CONFIG': '/home/jetpack/.config/omf', 'STARSHIP_SESSION_KEY': '2569217148239653', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'EDITOR': 'nvim', 'WIFI_PASSWORD': '9f24731014', 'WARP_THEMES_DIR': '/home/jetpack/.warp/themes', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy'}), 'shell': False}
+[0.668801] (display_routine) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[0.669583] (display_routine) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[0.674674] (display_routine) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/lib/display_routine/display_routine_node\n'}
+[0.675770] (display_routine) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/ament_index/resource_index/package_run_dependencies/display_routine\n'}
+[0.677562] (display_routine) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/ament_index/resource_index/parent_prefix_path/display_routine\n'}
+[0.678520] (display_routine) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/environment/ament_prefix_path.sh\n'}
+[0.688587] (display_routine) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/environment/ament_prefix_path.dsv\n'}
+[0.689289] (display_routine) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/environment/path.sh\n'}
+[0.690016] (display_routine) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/environment/path.dsv\n'}
+[0.690578] (display_routine) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/local_setup.bash\n'}
+[0.691093] (display_routine) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/local_setup.sh\n'}
+[0.695868] (display_routine) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/local_setup.zsh\n'}
+[0.698236] (display_routine) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/local_setup.dsv\n'}
+[0.698949] (display_routine) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/package.dsv\n'}
+[0.699550] (i2c_peripheral_stress_test) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[0.707566] (i2c_peripheral_stress_test) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[0.708248] (i2c_peripheral_stress_test) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/lib/i2c_peripheral_stress_test/i2c_peripheral_stress_test_node\n'}
+[0.711591] (i2c_peripheral_stress_test) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/ament_index/resource_index/package_run_dependencies/i2c_peripheral_stress_test\n'}
+[0.712293] (-) TimerEvent: {}
+[0.717802] (i2c_peripheral_stress_test) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/ament_index/resource_index/parent_prefix_path/i2c_peripheral_stress_test\n'}
+[0.718851] (i2c_peripheral_stress_test) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/environment/ament_prefix_path.sh\n'}
+[0.726648] (i2c_peripheral_stress_test) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/environment/ament_prefix_path.dsv\n'}
+[0.727763] (i2c_peripheral_stress_test) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/environment/path.sh\n'}
+[0.729739] (i2c_peripheral_stress_test) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/environment/path.dsv\n'}
+[0.734808] (i2c_peripheral_stress_test) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/local_setup.bash\n'}
+[0.743053] (i2c_peripheral_stress_test) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/local_setup.sh\n'}
+[0.746559] (i2c_peripheral_stress_test) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/local_setup.zsh\n'}
+[0.748355] (display_routine) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/ament_index/resource_index/packages/display_routine\n'}
+[0.749771] (display_routine) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/cmake/display_routineConfig.cmake\n'}
+[0.751104] (display_routine) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/cmake/display_routineConfig-version.cmake\n'}
+[0.752881] (display_routine) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/package.xml\n'}
+[0.753592] (i2c_peripheral_stress_test) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/local_setup.dsv\n'}
+[0.754528] (i2c_peripheral_stress_test) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/package.dsv\n'}
+[0.768241] (display_routine) CommandEnded: {'returncode': 0}
+[0.780646] (custom_msgs) StdoutLine: {'line': b'[ 33%] Built target custom_msgs__rosidl_typesupport_introspection_c\n'}
+[0.818490] (custom_msgs) StdoutLine: {'line': b'[ 42%] Built target custom_msgs__rosidl_typesupport_cpp\n'}
+[0.819519] (-) TimerEvent: {}
+[0.820161] (custom_msgs) StdoutLine: {'line': b'[ 51%] Built target custom_msgs__rosidl_typesupport_fastrtps_c\n'}
+[0.849875] (i2c_peripheral_stress_test) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/ament_index/resource_index/packages/i2c_peripheral_stress_test\n'}
+[0.851044] (i2c_peripheral_stress_test) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/cmake/i2c_peripheral_stress_testConfig.cmake\n'}
+[0.860930] (i2c_peripheral_stress_test) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/cmake/i2c_peripheral_stress_testConfig-version.cmake\n'}
+[0.861752] (i2c_peripheral_stress_test) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/package.xml\n'}
+[0.919769] (-) TimerEvent: {}
+[0.945435] (display_routine) JobEnded: {'identifier': 'display_routine', 'rc': 0}
+[0.952855] (i2c_peripheral_stress_test) CommandEnded: {'returncode': 0}
+[0.995806] (custom_msgs) StdoutLine: {'line': b'[ 61%] Built target custom_msgs__rosidl_typesupport_c\n'}
+[1.016343] (custom_msgs) StdoutLine: {'line': b'[ 70%] Built target custom_msgs__rosidl_typesupport_introspection_cpp\n'}
+[1.024686] (custom_msgs) StdoutLine: {'line': b'[ 79%] Built target custom_msgs__rosidl_typesupport_fastrtps_cpp\n'}
+[1.025345] (-) TimerEvent: {}
+[1.042672] (i2c_peripheral_stress_test) JobEnded: {'identifier': 'i2c_peripheral_stress_test', 'rc': 0}
+[1.121809] (custom_msgs) StdoutLine: {'line': b'[ 79%] Built target custom_msgs\n'}
+[1.125579] (-) TimerEvent: {}
+[1.218790] (custom_msgs) StdoutLine: {'line': b'[ 81%] Built target custom_msgs__py\n'}
+[1.225752] (-) TimerEvent: {}
+[1.326379] (-) TimerEvent: {}
+[1.343476] (custom_msgs) StdoutLine: {'line': b'[ 88%] Built target custom_msgs__rosidl_generator_py\n'}
+[1.426588] (-) TimerEvent: {}
+[1.469341] (custom_msgs) StdoutLine: {'line': b'[ 96%] Built target custom_msgs_s__rosidl_typesupport_fastrtps_c\n'}
+[1.472770] (custom_msgs) StdoutLine: {'line': b'[ 96%] Built target custom_msgs_s__rosidl_typesupport_introspection_c\n'}
+[1.483917] (custom_msgs) StdoutLine: {'line': b'[100%] Built target custom_msgs_s__rosidl_typesupport_c\n'}
+[1.526766] (-) TimerEvent: {}
+[1.627291] (-) TimerEvent: {}
+[1.704933] (custom_msgs) StdoutLine: {'line': b'running egg_info\n'}
+[1.727464] (-) TimerEvent: {}
+[1.794135] (custom_msgs) StdoutLine: {'line': b'writing custom_msgs.egg-info/PKG-INFO\n'}
+[1.795234] (custom_msgs) StdoutLine: {'line': b'writing dependency_links to custom_msgs.egg-info/dependency_links.txt\n'}
+[1.796353] (custom_msgs) StdoutLine: {'line': b'writing top-level names to custom_msgs.egg-info/top_level.txt\n'}
+[1.827595] (-) TimerEvent: {}
+[1.928096] (-) TimerEvent: {}
+[2.028657] (-) TimerEvent: {}
+[2.053014] (custom_msgs) StdoutLine: {'line': b"reading manifest file 'custom_msgs.egg-info/SOURCES.txt'\n"}
+[2.055465] (custom_msgs) StdoutLine: {'line': b"writing manifest file 'custom_msgs.egg-info/SOURCES.txt'\n"}
+[2.128937] (-) TimerEvent: {}
+[2.194726] (custom_msgs) StdoutLine: {'line': b'[100%] Built target ament_cmake_python_build_custom_msgs_egg\n'}
+[2.229159] (-) TimerEvent: {}
+[2.248306] (custom_msgs) CommandEnded: {'returncode': 0}
+[2.250315] (custom_msgs) JobProgress: {'identifier': 'custom_msgs', 'progress': 'install'}
+[2.251139] (custom_msgs) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/custom_msgs'], 'cwd': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/custom_msgs', 'env': OrderedDict({'USER': 'jetpack', 'SSH_CLIENT': '192.168.1.80 63310 22', 'STARSHIP_SHELL': 'fish', 'XDG_SESSION_TYPE': 'tty', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib', 'SHLVL': '3', 'HOME': '/home/jetpack', 'SSH_TTY': '/dev/pts/0', 'OPENAI_API_KEY': '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', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'OMF_PATH': '/home/jetpack/.local/share/omf', 'LOGNAME': 'jetpack', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '10', 'PATH': '/opt/ros/jazzy/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/.fzf/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/miniconda3/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'SHELL': '/usr/bin/fish', 'WIFI_SSID': 'MEO-BD8310', 'PWD': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/custom_msgs', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'SSH_CONNECTION': '192.168.1.80 63310 192.168.1.84 22', 'OMF_CONFIG': '/home/jetpack/.config/omf', 'STARSHIP_SESSION_KEY': '2569217148239653', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'EDITOR': 'nvim', 'WIFI_PASSWORD': '9f24731014', 'WARP_THEMES_DIR': '/home/jetpack/.warp/themes', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy'}), 'shell': False}
+[2.289303] (custom_msgs) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[2.291338] (custom_msgs) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[2.292838] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/ament_index/resource_index/rosidl_interfaces/custom_msgs\n'}
+[2.293990] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/msg/CanFrame.json\n'}
+[2.295123] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/srv/I2cService.json\n'}
+[2.296214] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/srv/CanService.json\n'}
+[2.300042] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/msg/can_frame.h\n'}
+[2.300983] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/msg/detail/can_frame__functions.h\n'}
+[2.301944] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/msg/detail/can_frame__struct.h\n'}
+[2.302898] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/msg/detail/can_frame__type_support.h\n'}
+[2.303790] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/msg/rosidl_generator_c__visibility_control.h\n'}
+[2.304658] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/can_service.h\n'}
+[2.305607] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/detail/can_service__functions.h\n'}
+[2.306529] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/detail/can_service__struct.h\n'}
+[2.307526] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/detail/can_service__type_support.h\n'}
+[2.308478] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/detail/i2c_service__functions.h\n'}
+[2.309427] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/detail/i2c_service__struct.h\n'}
+[2.310427] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/detail/i2c_service__type_support.h\n'}
+[2.311297] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/i2c_service.h\n'}
+[2.312387] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/environment/library_path.sh\n'}
+[2.313374] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/environment/library_path.dsv\n'}
+[2.317297] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/msg/detail/can_frame__rosidl_typesupport_fastrtps_c.h\n'}
+[2.318176] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[2.319180] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/detail/can_service__rosidl_typesupport_fastrtps_c.h\n'}
+[2.320229] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/detail/i2c_service__rosidl_typesupport_fastrtps_c.h\n'}
+[2.323056] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/msg/detail/can_frame__rosidl_typesupport_introspection_c.h\n'}
+[2.323945] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[2.324993] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/detail/can_service__rosidl_typesupport_introspection_c.h\n'}
+[2.325975] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/detail/i2c_service__rosidl_typesupport_introspection_c.h\n'}
+[2.329309] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/msg/can_frame.hpp\n'}
+[2.329785] (-) TimerEvent: {}
+[2.330461] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/msg/detail/can_frame__builder.hpp\n'}
+[2.331266] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/msg/detail/can_frame__struct.hpp\n'}
+[2.332256] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/msg/detail/can_frame__traits.hpp\n'}
+[2.333305] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/msg/detail/can_frame__type_support.hpp\n'}
+[2.334222] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[2.335118] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/can_service.hpp\n'}
+[2.336081] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/detail/can_service__builder.hpp\n'}
+[2.337042] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/detail/can_service__struct.hpp\n'}
+[2.338084] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/detail/can_service__traits.hpp\n'}
+[2.339126] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/detail/can_service__type_support.hpp\n'}
+[2.340104] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/detail/i2c_service__builder.hpp\n'}
+[2.341073] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/detail/i2c_service__struct.hpp\n'}
+[2.342037] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/detail/i2c_service__traits.hpp\n'}
+[2.342994] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/detail/i2c_service__type_support.hpp\n'}
+[2.343891] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/i2c_service.hpp\n'}
+[2.348415] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/msg/detail/can_frame__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[2.349291] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[2.350322] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/detail/can_service__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[2.351337] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/detail/i2c_service__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[2.354054] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/msg/detail/can_frame__rosidl_typesupport_introspection_cpp.hpp\n'}
+[2.355015] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/detail/can_service__rosidl_typesupport_introspection_cpp.hpp\n'}
+[2.356053] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/detail/i2c_service__rosidl_typesupport_introspection_cpp.hpp\n'}
+[2.357106] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/environment/pythonpath.sh\n'}
+[2.358100] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/environment/pythonpath.dsv\n'}
+[2.360100] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs-0.0.0-py3.12.egg-info/PKG-INFO\n'}
+[2.360971] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs-0.0.0-py3.12.egg-info/SOURCES.txt\n'}
+[2.361910] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs-0.0.0-py3.12.egg-info/dependency_links.txt\n'}
+[2.362832] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs-0.0.0-py3.12.egg-info/top_level.txt\n'}
+[2.368181] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs/__init__.py\n'}
+[2.369030] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs/_custom_msgs_s.ep.rosidl_typesupport_c.c\n'}
+[2.369936] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs/_custom_msgs_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[2.370821] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs/_custom_msgs_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[2.371687] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs/custom_msgs_s__rosidl_typesupport_c.so\n'}
+[2.372611] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs/custom_msgs_s__rosidl_typesupport_fastrtps_c.so\n'}
+[2.373483] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs/custom_msgs_s__rosidl_typesupport_introspection_c.so\n'}
+[2.374372] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs/msg/__init__.py\n'}
+[2.375281] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs/msg/_can_frame.py\n'}
+[2.376193] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs/msg/_can_frame_s.c\n'}
+[2.377076] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs/srv/__init__.py\n'}
+[2.377980] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs/srv/_can_service.py\n'}
+[2.378906] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs/srv/_can_service_s.c\n'}
+[2.379814] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs/srv/_i2c_service.py\n'}
+[2.380763] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs/srv/_i2c_service_s.c\n'}
+[2.382355] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs/custom_msgs_s__rosidl_typesupport_fastrtps_c.so\n'}
+[2.383833] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs/custom_msgs_s__rosidl_typesupport_introspection_c.so\n'}
+[2.385288] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs/custom_msgs_s__rosidl_typesupport_c.so\n'}
+[2.386346] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/msg/CanFrame.idl\n'}
+[2.387399] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/srv/I2cService.idl\n'}
+[2.388460] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/srv/CanService.idl\n'}
+[2.389451] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/msg/CanFrame.msg\n'}
+[2.390435] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/srv/I2cService.srv\n'}
+[2.391387] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/srv/CanService.srv\n'}
+[2.392621] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/ament_index/resource_index/package_run_dependencies/custom_msgs\n'}
+[2.393801] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/ament_index/resource_index/parent_prefix_path/custom_msgs\n'}
+[2.394790] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/environment/ament_prefix_path.sh\n'}
+[2.395781] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/environment/ament_prefix_path.dsv\n'}
+[2.396744] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/environment/path.sh\n'}
+[2.397724] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/environment/path.dsv\n'}
+[2.398674] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/local_setup.bash\n'}
+[2.399617] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/local_setup.sh\n'}
+[2.400609] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/local_setup.zsh\n'}
+[2.401560] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/local_setup.dsv\n'}
+[2.402136] (custom_msgs) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/package.dsv\n'}
+[2.430007] (-) TimerEvent: {}
+[2.444108] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/ament_index/resource_index/packages/custom_msgs\n'}
+[2.445078] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/rosidl_cmake-extras.cmake\n'}
+[2.446174] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[2.447259] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[2.448341] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[2.449429] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[2.450470] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[2.451496] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[2.452550] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/custom_msgsConfig.cmake\n'}
+[2.453368] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/custom_msgsConfig-version.cmake\n'}
+[2.454374] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/package.xml\n'}
+[2.455765] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/libcustom_msgs__rosidl_generator_c.so\n'}
+[2.457737] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/libcustom_msgs__rosidl_typesupport_fastrtps_c.so\n'}
+[2.459555] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/libcustom_msgs__rosidl_typesupport_introspection_c.so\n'}
+[2.461267] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/libcustom_msgs__rosidl_typesupport_c.so\n'}
+[2.463135] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/libcustom_msgs__rosidl_typesupport_fastrtps_cpp.so\n'}
+[2.465102] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/libcustom_msgs__rosidl_typesupport_introspection_cpp.so\n'}
+[2.467042] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/libcustom_msgs__rosidl_typesupport_cpp.so\n'}
+[2.530148] (-) TimerEvent: {}
+[2.617683] (custom_msgs) StdoutLine: {'line': b"Listing '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs'...\n"}
+[2.618906] (custom_msgs) StdoutLine: {'line': b"Listing '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs/msg'...\n"}
+[2.619860] (custom_msgs) StdoutLine: {'line': b"Listing '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs/srv'...\n"}
+[2.630379] (-) TimerEvent: {}
+[2.648100] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/libcustom_msgs__rosidl_generator_py.so\n'}
+[2.649683] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/export_custom_msgs__rosidl_generator_cExport.cmake\n'}
+[2.650254] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/export_custom_msgs__rosidl_generator_cExport-noconfig.cmake\n'}
+[2.651060] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/export_custom_msgs__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[2.651659] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/export_custom_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[2.652480] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/custom_msgs__rosidl_typesupport_introspection_cExport.cmake\n'}
+[2.653010] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/custom_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[2.653836] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/custom_msgs__rosidl_typesupport_cExport.cmake\n'}
+[2.654368] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/custom_msgs__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[2.655152] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/export_custom_msgs__rosidl_generator_cppExport.cmake\n'}
+[2.656070] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/export_custom_msgs__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[2.656599] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/export_custom_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[2.657446] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/custom_msgs__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[2.657980] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/custom_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[2.658755] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/custom_msgs__rosidl_typesupport_cppExport.cmake\n'}
+[2.659306] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/custom_msgs__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[2.660129] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/export_custom_msgs__rosidl_generator_pyExport.cmake\n'}
+[2.660681] (custom_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/export_custom_msgs__rosidl_generator_pyExport-noconfig.cmake\n'}
+[2.668034] (custom_msgs) CommandEnded: {'returncode': 0}
+[2.730581] (-) TimerEvent: {}
+[2.757515] (custom_msgs) JobEnded: {'identifier': 'custom_msgs', 'rc': 0}
+[2.761856] (pca9685_driver) JobStarted: {'identifier': 'pca9685_driver'}
+[2.775984] (ina219_driver) JobStarted: {'identifier': 'ina219_driver'}
+[2.793020] (can_interface) JobStarted: {'identifier': 'can_interface'}
+[2.811250] (i2c_interface) JobStarted: {'identifier': 'i2c_interface'}
+[2.833237] (-) TimerEvent: {}
+[2.836603] (pca9685_driver) JobProgress: {'identifier': 'pca9685_driver', 'progress': 'cmake'}
+[2.839320] (pca9685_driver) JobProgress: {'identifier': 'pca9685_driver', 'progress': 'build'}
+[2.840572] (pca9685_driver) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/pca9685_driver', '--', '-j4', '-l4'], 'cwd': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/pca9685_driver', 'env': OrderedDict({'USER': 'jetpack', 'SSH_CLIENT': '192.168.1.80 63310 22', 'STARSHIP_SHELL': 'fish', 'XDG_SESSION_TYPE': 'tty', 'LD_LIBRARY_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib', 'SHLVL': '3', 'HOME': '/home/jetpack', 'SSH_TTY': '/dev/pts/0', 'OPENAI_API_KEY': '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', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'OMF_PATH': '/home/jetpack/.local/share/omf', 'LOGNAME': 'jetpack', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '10', 'PATH': '/opt/ros/jazzy/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/.fzf/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/miniconda3/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy', 'SHELL': '/usr/bin/fish', 'WIFI_SSID': 'MEO-BD8310', 'PWD': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/pca9685_driver', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'SSH_CONNECTION': '192.168.1.80 63310 192.168.1.84 22', 'OMF_CONFIG': '/home/jetpack/.config/omf', 'STARSHIP_SESSION_KEY': '2569217148239653', 'PYTHONPATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'EDITOR': 'nvim', 'WIFI_PASSWORD': '9f24731014', 'WARP_THEMES_DIR': '/home/jetpack/.warp/themes', 'CMAKE_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy'}), 'shell': False}
+[2.848828] (ina219_driver) JobProgress: {'identifier': 'ina219_driver', 'progress': 'cmake'}
+[2.852076] (ina219_driver) JobProgress: {'identifier': 'ina219_driver', 'progress': 'build'}
+[2.853255] (ina219_driver) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/ina219_driver', '--', '-j4', '-l4'], 'cwd': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/ina219_driver', 'env': OrderedDict({'USER': 'jetpack', 'SSH_CLIENT': '192.168.1.80 63310 22', 'STARSHIP_SHELL': 'fish', 'XDG_SESSION_TYPE': 'tty', 'LD_LIBRARY_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib', 'SHLVL': '3', 'HOME': '/home/jetpack', 'SSH_TTY': '/dev/pts/0', 'OPENAI_API_KEY': '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', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'OMF_PATH': '/home/jetpack/.local/share/omf', 'LOGNAME': 'jetpack', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '10', 'PATH': '/opt/ros/jazzy/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/.fzf/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/miniconda3/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy', 'SHELL': '/usr/bin/fish', 'WIFI_SSID': 'MEO-BD8310', 'PWD': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/ina219_driver', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'SSH_CONNECTION': '192.168.1.80 63310 192.168.1.84 22', 'OMF_CONFIG': '/home/jetpack/.config/omf', 'STARSHIP_SESSION_KEY': '2569217148239653', 'PYTHONPATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'EDITOR': 'nvim', 'WIFI_PASSWORD': '9f24731014', 'WARP_THEMES_DIR': '/home/jetpack/.warp/themes', 'CMAKE_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy'}), 'shell': False}
+[2.861947] (can_interface) JobProgress: {'identifier': 'can_interface', 'progress': 'cmake'}
+[2.866819] (can_interface) JobProgress: {'identifier': 'can_interface', 'progress': 'build'}
+[2.870861] (can_interface) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface', '--', '-j4', '-l4'], 'cwd': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface', 'env': OrderedDict({'USER': 'jetpack', 'SSH_CLIENT': '192.168.1.80 63310 22', 'STARSHIP_SHELL': 'fish', 'XDG_SESSION_TYPE': 'tty', 'LD_LIBRARY_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib', 'SHLVL': '3', 'HOME': '/home/jetpack', 'SSH_TTY': '/dev/pts/0', 'OPENAI_API_KEY': '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', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'OMF_PATH': '/home/jetpack/.local/share/omf', 'LOGNAME': 'jetpack', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '10', 'PATH': '/opt/ros/jazzy/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/.fzf/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/miniconda3/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy', 'SHELL': '/usr/bin/fish', 'WIFI_SSID': 'MEO-BD8310', 'PWD': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'SSH_CONNECTION': '192.168.1.80 63310 192.168.1.84 22', 'OMF_CONFIG': '/home/jetpack/.config/omf', 'STARSHIP_SESSION_KEY': '2569217148239653', 'PYTHONPATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'EDITOR': 'nvim', 'WIFI_PASSWORD': '9f24731014', 'WARP_THEMES_DIR': '/home/jetpack/.warp/themes', 'CMAKE_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy'}), 'shell': False}
+[2.882262] (i2c_interface) JobProgress: {'identifier': 'i2c_interface', 'progress': 'cmake'}
+[2.888238] (i2c_interface) JobProgress: {'identifier': 'i2c_interface', 'progress': 'build'}
+[2.888547] (i2c_interface) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface', '--', '-j4', '-l4'], 'cwd': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface', 'env': OrderedDict({'USER': 'jetpack', 'SSH_CLIENT': '192.168.1.80 63310 22', 'STARSHIP_SHELL': 'fish', 'XDG_SESSION_TYPE': 'tty', 'LD_LIBRARY_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib', 'SHLVL': '3', 'HOME': '/home/jetpack', 'SSH_TTY': '/dev/pts/0', 'OPENAI_API_KEY': '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', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'OMF_PATH': '/home/jetpack/.local/share/omf', 'LOGNAME': 'jetpack', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '10', 'PATH': '/opt/ros/jazzy/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/.fzf/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/miniconda3/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy', 'SHELL': '/usr/bin/fish', 'WIFI_SSID': 'MEO-BD8310', 'PWD': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'SSH_CONNECTION': '192.168.1.80 63310 192.168.1.84 22', 'OMF_CONFIG': '/home/jetpack/.config/omf', 'STARSHIP_SESSION_KEY': '2569217148239653', 'PYTHONPATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'EDITOR': 'nvim', 'WIFI_PASSWORD': '9f24731014', 'WARP_THEMES_DIR': '/home/jetpack/.warp/themes', 'CMAKE_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy'}), 'shell': False}
+[2.936707] (-) TimerEvent: {}
+[3.037864] (-) TimerEvent: {}
+[3.139612] (-) TimerEvent: {}
+[3.179556] (can_interface) StdoutLine: {'line': b'[ 40%] Built target sockcanpp\n'}
+[3.180973] (pca9685_driver) StdoutLine: {'line': b'[100%] Built target PCA9685Driver\n'}
+[3.203607] (ina219_driver) StdoutLine: {'line': b'[100%] Built target INA219Driver\n'}
+[3.240037] (pca9685_driver) CommandEnded: {'returncode': 0}
+[3.243117] (-) TimerEvent: {}
+[3.246376] (pca9685_driver) JobProgress: {'identifier': 'pca9685_driver', 'progress': 'install'}
+[3.246742] (pca9685_driver) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/pca9685_driver'], 'cwd': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/pca9685_driver', 'env': OrderedDict({'USER': 'jetpack', 'SSH_CLIENT': '192.168.1.80 63310 22', 'STARSHIP_SHELL': 'fish', 'XDG_SESSION_TYPE': 'tty', 'LD_LIBRARY_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib', 'SHLVL': '3', 'HOME': '/home/jetpack', 'SSH_TTY': '/dev/pts/0', 'OPENAI_API_KEY': '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', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'OMF_PATH': '/home/jetpack/.local/share/omf', 'LOGNAME': 'jetpack', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '10', 'PATH': '/opt/ros/jazzy/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/.fzf/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/miniconda3/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy', 'SHELL': '/usr/bin/fish', 'WIFI_SSID': 'MEO-BD8310', 'PWD': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/pca9685_driver', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'SSH_CONNECTION': '192.168.1.80 63310 192.168.1.84 22', 'OMF_CONFIG': '/home/jetpack/.config/omf', 'STARSHIP_SESSION_KEY': '2569217148239653', 'PYTHONPATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'EDITOR': 'nvim', 'WIFI_PASSWORD': '9f24731014', 'WARP_THEMES_DIR': '/home/jetpack/.warp/themes', 'CMAKE_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy'}), 'shell': False}
+[3.253769] (i2c_interface) StdoutLine: {'line': b'[100%] Built target i2c_interface_node\n'}
+[3.265498] (ina219_driver) CommandEnded: {'returncode': 0}
+[3.271914] (ina219_driver) JobProgress: {'identifier': 'ina219_driver', 'progress': 'install'}
+[3.272097] (ina219_driver) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/ina219_driver'], 'cwd': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/ina219_driver', 'env': OrderedDict({'USER': 'jetpack', 'SSH_CLIENT': '192.168.1.80 63310 22', 'STARSHIP_SHELL': 'fish', 'XDG_SESSION_TYPE': 'tty', 'LD_LIBRARY_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib', 'SHLVL': '3', 'HOME': '/home/jetpack', 'SSH_TTY': '/dev/pts/0', 'OPENAI_API_KEY': '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', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'OMF_PATH': '/home/jetpack/.local/share/omf', 'LOGNAME': 'jetpack', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '10', 'PATH': '/opt/ros/jazzy/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/.fzf/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/miniconda3/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy', 'SHELL': '/usr/bin/fish', 'WIFI_SSID': 'MEO-BD8310', 'PWD': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/ina219_driver', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'SSH_CONNECTION': '192.168.1.80 63310 192.168.1.84 22', 'OMF_CONFIG': '/home/jetpack/.config/omf', 'STARSHIP_SESSION_KEY': '2569217148239653', 'PYTHONPATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'EDITOR': 'nvim', 'WIFI_PASSWORD': '9f24731014', 'WARP_THEMES_DIR': '/home/jetpack/.warp/themes', 'CMAKE_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy'}), 'shell': False}
+[3.301748] (pca9685_driver) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[3.303210] (pca9685_driver) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[3.307800] (pca9685_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/lib/libPCA9685Driver.so\n'}
+[3.311784] (pca9685_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/include/PCA9685Driver.hpp\n'}
+[3.315750] (ina219_driver) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[3.316549] (pca9685_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/ament_index/resource_index/package_run_dependencies/pca9685_driver\n'}
+[3.318175] (pca9685_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/ament_index/resource_index/parent_prefix_path/pca9685_driver\n'}
+[3.320732] (pca9685_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/environment/ament_prefix_path.sh\n'}
+[3.321594] (pca9685_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/environment/ament_prefix_path.dsv\n'}
+[3.324297] (i2c_interface) CommandEnded: {'returncode': 0}
+[3.327611] (ina219_driver) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[3.332360] (ina219_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/lib/libINA219Driver.so\n'}
+[3.334297] (ina219_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/include/INA219Driver.hpp\n'}
+[3.334977] (pca9685_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/environment/path.sh\n'}
+[3.335642] (pca9685_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/environment/path.dsv\n'}
+[3.336236] (pca9685_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/local_setup.bash\n'}
+[3.336814] (ina219_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/include/INA219def.hpp\n'}
+[3.337241] (ina219_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ament_index/resource_index/package_run_dependencies/ina219_driver\n'}
+[3.337887] (ina219_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ament_index/resource_index/parent_prefix_path/ina219_driver\n'}
+[3.338358] (pca9685_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/local_setup.sh\n'}
+[3.340959] (pca9685_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/local_setup.zsh\n'}
+[3.341536] (ina219_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/environment/ament_prefix_path.sh\n'}
+[3.342141] (pca9685_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/local_setup.dsv\n'}
+[3.343359] (-) TimerEvent: {}
+[3.344634] (pca9685_driver) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/package.dsv\n'}
+[3.345307] (ina219_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/environment/ament_prefix_path.dsv\n'}
+[3.346036] (i2c_interface) JobProgress: {'identifier': 'i2c_interface', 'progress': 'install'}
+[3.346206] (ina219_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/environment/path.sh\n'}
+[3.346997] (i2c_interface) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface'], 'cwd': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface', 'env': OrderedDict({'USER': 'jetpack', 'SSH_CLIENT': '192.168.1.80 63310 22', 'STARSHIP_SHELL': 'fish', 'XDG_SESSION_TYPE': 'tty', 'LD_LIBRARY_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib', 'SHLVL': '3', 'HOME': '/home/jetpack', 'SSH_TTY': '/dev/pts/0', 'OPENAI_API_KEY': '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', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'OMF_PATH': '/home/jetpack/.local/share/omf', 'LOGNAME': 'jetpack', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '10', 'PATH': '/opt/ros/jazzy/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/.fzf/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/miniconda3/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy', 'SHELL': '/usr/bin/fish', 'WIFI_SSID': 'MEO-BD8310', 'PWD': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'SSH_CONNECTION': '192.168.1.80 63310 192.168.1.84 22', 'OMF_CONFIG': '/home/jetpack/.config/omf', 'STARSHIP_SESSION_KEY': '2569217148239653', 'PYTHONPATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'EDITOR': 'nvim', 'WIFI_PASSWORD': '9f24731014', 'WARP_THEMES_DIR': '/home/jetpack/.warp/themes', 'CMAKE_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy'}), 'shell': False}
+[3.348610] (ina219_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/environment/path.dsv\n'}
+[3.349580] (ina219_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/local_setup.bash\n'}
+[3.350450] (ina219_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/local_setup.sh\n'}
+[3.351432] (ina219_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/local_setup.zsh\n'}
+[3.352229] (ina219_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/local_setup.dsv\n'}
+[3.353344] (ina219_driver) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/package.dsv\n'}
+[3.369070] (can_interface) StdoutLine: {'line': b'[100%] Built target can_interface_node\n'}
+[3.380256] (pca9685_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/ament_index/resource_index/packages/pca9685_driver\n'}
+[3.381027] (pca9685_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/cmake/pca9685_driverConfig.cmake\n'}
+[3.386216] (pca9685_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/cmake/pca9685_driverConfig-version.cmake\n'}
+[3.387088] (pca9685_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/package.xml\n'}
+[3.389714] (ina219_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ament_index/resource_index/packages/ina219_driver\n'}
+[3.391193] (ina219_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/cmake/ina219_driverConfig.cmake\n'}
+[3.393284] (ina219_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/cmake/ina219_driverConfig-version.cmake\n'}
+[3.399081] (ina219_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/package.xml\n'}
+[3.400532] (pca9685_driver) CommandEnded: {'returncode': 0}
+[3.404585] (i2c_interface) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[3.405992] (i2c_interface) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[3.407312] (i2c_interface) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/lib/i2c_interface/i2c_interface_node\n'}
+[3.408386] (i2c_interface) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/ament_index/resource_index/package_run_dependencies/i2c_interface\n'}
+[3.409378] (i2c_interface) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/ament_index/resource_index/parent_prefix_path/i2c_interface\n'}
+[3.410333] (i2c_interface) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/i2c_interface/environment/ament_prefix_path.sh\n'}
+[3.411015] (i2c_interface) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/i2c_interface/environment/ament_prefix_path.dsv\n'}
+[3.412012] (i2c_interface) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/i2c_interface/environment/path.sh\n'}
+[3.412993] (i2c_interface) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/i2c_interface/environment/path.dsv\n'}
+[3.414008] (i2c_interface) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/i2c_interface/local_setup.bash\n'}
+[3.414953] (i2c_interface) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/i2c_interface/local_setup.sh\n'}
+[3.415946] (i2c_interface) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/i2c_interface/local_setup.zsh\n'}
+[3.416792] (i2c_interface) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/i2c_interface/local_setup.dsv\n'}
+[3.419263] (i2c_interface) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/i2c_interface/package.dsv\n'}
+[3.444543] (-) TimerEvent: {}
+[3.463778] (i2c_interface) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/ament_index/resource_index/packages/i2c_interface\n'}
+[3.464805] (i2c_interface) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/i2c_interface/cmake/i2c_interfaceConfig.cmake\n'}
+[3.465661] (i2c_interface) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/i2c_interface/cmake/i2c_interfaceConfig-version.cmake\n'}
+[3.466887] (i2c_interface) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface/share/i2c_interface/package.xml\n'}
+[3.499436] (pca9685_driver) JobEnded: {'identifier': 'pca9685_driver', 'rc': 0}
+[3.502905] (oled_display) JobStarted: {'identifier': 'oled_display'}
+[3.523202] (ina219_driver) CommandEnded: {'returncode': 0}
+[3.544773] (-) TimerEvent: {}
+[3.597628] (ina219_driver) JobEnded: {'identifier': 'ina219_driver', 'rc': 0}
+[3.601176] (i2c_interface) CommandEnded: {'returncode': 0}
+[3.644916] (-) TimerEvent: {}
+[3.655143] (i2c_interface) JobEnded: {'identifier': 'i2c_interface', 'rc': 0}
+[3.656772] (can_interface) CommandEnded: {'returncode': 0}
+[3.658181] (can_interface) JobProgress: {'identifier': 'can_interface', 'progress': 'install'}
+[3.659047] (can_interface) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface'], 'cwd': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface', 'env': OrderedDict({'USER': 'jetpack', 'SSH_CLIENT': '192.168.1.80 63310 22', 'STARSHIP_SHELL': 'fish', 'XDG_SESSION_TYPE': 'tty', 'LD_LIBRARY_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib', 'SHLVL': '3', 'HOME': '/home/jetpack', 'SSH_TTY': '/dev/pts/0', 'OPENAI_API_KEY': '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', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'OMF_PATH': '/home/jetpack/.local/share/omf', 'LOGNAME': 'jetpack', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '10', 'PATH': '/opt/ros/jazzy/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/.fzf/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/miniconda3/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy', 'SHELL': '/usr/bin/fish', 'WIFI_SSID': 'MEO-BD8310', 'PWD': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'SSH_CONNECTION': '192.168.1.80 63310 192.168.1.84 22', 'OMF_CONFIG': '/home/jetpack/.config/omf', 'STARSHIP_SESSION_KEY': '2569217148239653', 'PYTHONPATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'EDITOR': 'nvim', 'WIFI_PASSWORD': '9f24731014', 'WARP_THEMES_DIR': '/home/jetpack/.warp/themes', 'CMAKE_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy'}), 'shell': False}
+[3.664921] (speed_sensor) JobStarted: {'identifier': 'speed_sensor'}
+[3.685908] (battery) JobStarted: {'identifier': 'battery'}
+[3.708629] (can_interface) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[3.709576] (can_interface) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[3.710018] (can_interface) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/lib/cmake/sockcanpp/libsockcanppConfig.cmake\n'}
+[3.710379] (can_interface) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/lib/cmake/sockcanpp/libsockcanppConfigVersion.cmake\n'}
+[3.711105] (can_interface) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/lib/pkgconfig/libsockcanpp.pc\n'}
+[3.711730] (can_interface) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/lib/can_interface/can_interface_node\n'}
+[3.712122] (can_interface) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/ament_index/resource_index/package_run_dependencies/can_interface\n'}
+[3.713193] (can_interface) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/ament_index/resource_index/parent_prefix_path/can_interface\n'}
+[3.714652] (oled_display) JobProgress: {'identifier': 'oled_display', 'progress': 'cmake'}
+[3.714901] (can_interface) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/can_interface/environment/ament_prefix_path.sh\n'}
+[3.716734] (can_interface) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/can_interface/environment/ament_prefix_path.dsv\n'}
+[3.718304] (can_interface) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/can_interface/environment/path.sh\n'}
+[3.719201] (can_interface) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/can_interface/environment/path.dsv\n'}
+[3.720100] (can_interface) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/can_interface/local_setup.bash\n'}
+[3.720591] (can_interface) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/can_interface/local_setup.sh\n'}
+[3.721360] (can_interface) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/can_interface/local_setup.zsh\n'}
+[3.722433] (can_interface) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/can_interface/local_setup.dsv\n'}
+[3.727296] (can_interface) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/can_interface/package.dsv\n'}
+[3.728335] (oled_display) JobProgress: {'identifier': 'oled_display', 'progress': 'build'}
+[3.728520] (oled_display) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/oled_display', '--', '-j4', '-l4'], 'cwd': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/oled_display', 'env': OrderedDict({'USER': 'jetpack', 'SSH_CLIENT': '192.168.1.80 63310 22', 'STARSHIP_SHELL': 'fish', 'XDG_SESSION_TYPE': 'tty', 'LD_LIBRARY_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib', 'SHLVL': '3', 'HOME': '/home/jetpack', 'SSH_TTY': '/dev/pts/0', 'OPENAI_API_KEY': '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', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'OMF_PATH': '/home/jetpack/.local/share/omf', 'LOGNAME': 'jetpack', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '10', 'PATH': '/opt/ros/jazzy/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/.fzf/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/miniconda3/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy', 'SHELL': '/usr/bin/fish', 'WIFI_SSID': 'MEO-BD8310', 'PWD': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/oled_display', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'SSH_CONNECTION': '192.168.1.80 63310 192.168.1.84 22', 'OMF_CONFIG': '/home/jetpack/.config/omf', 'STARSHIP_SESSION_KEY': '2569217148239653', 'PYTHONPATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'EDITOR': 'nvim', 'WIFI_PASSWORD': '9f24731014', 'WARP_THEMES_DIR': '/home/jetpack/.warp/themes', 'CMAKE_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy'}), 'shell': False}
+[3.738429] (speed_sensor) JobProgress: {'identifier': 'speed_sensor', 'progress': 'cmake'}
+[3.740995] (speed_sensor) JobProgress: {'identifier': 'speed_sensor', 'progress': 'build'}
+[3.742368] (speed_sensor) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/speed_sensor', '--', '-j4', '-l4'], 'cwd': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/speed_sensor', 'env': OrderedDict({'USER': 'jetpack', 'SSH_CLIENT': '192.168.1.80 63310 22', 'STARSHIP_SHELL': 'fish', 'XDG_SESSION_TYPE': 'tty', 'LD_LIBRARY_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib', 'SHLVL': '3', 'HOME': '/home/jetpack', 'SSH_TTY': '/dev/pts/0', 'OPENAI_API_KEY': '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', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'OMF_PATH': '/home/jetpack/.local/share/omf', 'LOGNAME': 'jetpack', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '10', 'PATH': '/opt/ros/jazzy/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/.fzf/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/miniconda3/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy', 'SHELL': '/usr/bin/fish', 'WIFI_SSID': 'MEO-BD8310', 'PWD': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/speed_sensor', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'SSH_CONNECTION': '192.168.1.80 63310 192.168.1.84 22', 'OMF_CONFIG': '/home/jetpack/.config/omf', 'STARSHIP_SESSION_KEY': '2569217148239653', 'PYTHONPATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'EDITOR': 'nvim', 'WIFI_PASSWORD': '9f24731014', 'WARP_THEMES_DIR': '/home/jetpack/.warp/themes', 'CMAKE_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy'}), 'shell': False}
+[3.749849] (-) TimerEvent: {}
+[3.754773] (battery) JobProgress: {'identifier': 'battery', 'progress': 'cmake'}
+[3.759912] (battery) JobProgress: {'identifier': 'battery', 'progress': 'build'}
+[3.760144] (battery) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/battery', '--', '-j4', '-l4'], 'cwd': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/battery', 'env': OrderedDict({'USER': 'jetpack', 'SSH_CLIENT': '192.168.1.80 63310 22', 'STARSHIP_SHELL': 'fish', 'XDG_SESSION_TYPE': 'tty', 'LD_LIBRARY_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/lib:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib', 'SHLVL': '3', 'HOME': '/home/jetpack', 'SSH_TTY': '/dev/pts/0', 'OPENAI_API_KEY': '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', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'OMF_PATH': '/home/jetpack/.local/share/omf', 'LOGNAME': 'jetpack', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '10', 'PATH': '/opt/ros/jazzy/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/.fzf/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/miniconda3/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy', 'SHELL': '/usr/bin/fish', 'WIFI_SSID': 'MEO-BD8310', 'PWD': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/battery', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'SSH_CONNECTION': '192.168.1.80 63310 192.168.1.84 22', 'OMF_CONFIG': '/home/jetpack/.config/omf', 'STARSHIP_SESSION_KEY': '2569217148239653', 'PYTHONPATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'EDITOR': 'nvim', 'WIFI_PASSWORD': '9f24731014', 'WARP_THEMES_DIR': '/home/jetpack/.warp/themes', 'CMAKE_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy'}), 'shell': False}
+[3.773977] (can_interface) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/ament_index/resource_index/packages/can_interface\n'}
+[3.776488] (can_interface) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/can_interface/cmake/can_interfaceConfig.cmake\n'}
+[3.778785] (can_interface) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/can_interface/cmake/can_interfaceConfig-version.cmake\n'}
+[3.779714] (can_interface) StdoutLine: {'line': b'-- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/share/can_interface/package.xml\n'}
+[3.782719] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/lib/sockcanpp.so.1.1.0\n'}
+[3.783665] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/lib/sockcanpp.so\n'}
+[3.784560] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/include/CanDriver.hpp\n'}
+[3.785179] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/include/CanId.hpp\n'}
+[3.786058] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/include/CanMessage.hpp\n'}
+[3.786707] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/lib/cmake/sockcanpp/sockcanppTargets.cmake\n'}
+[3.787755] (can_interface) StdoutLine: {'line': b'-- Up-to-date: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/lib/cmake/sockcanpp/sockcanppTargets-noconfig.cmake\n'}
+[3.794560] (can_interface) CommandEnded: {'returncode': 0}
+[3.850017] (-) TimerEvent: {}
+[3.900803] (can_interface) JobEnded: {'identifier': 'can_interface', 'rc': 0}
+[3.902780] (dc_motors) JobStarted: {'identifier': 'dc_motors'}
+[3.932793] (battery) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.2 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[3.950346] (-) TimerEvent: {}
+[3.963718] (dc_motors) JobProgress: {'identifier': 'dc_motors', 'progress': 'cmake'}
+[3.965686] (dc_motors) JobProgress: {'identifier': 'dc_motors', 'progress': 'build'}
+[3.967177] (dc_motors) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/dc_motors', '--', '-j4', '-l4'], 'cwd': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/dc_motors', 'env': OrderedDict({'USER': 'jetpack', 'SSH_CLIENT': '192.168.1.80 63310 22', 'STARSHIP_SHELL': 'fish', 'XDG_SESSION_TYPE': 'tty', 'LD_LIBRARY_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/lib:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib', 'SHLVL': '3', 'HOME': '/home/jetpack', 'SSH_TTY': '/dev/pts/0', 'OPENAI_API_KEY': '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', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'OMF_PATH': '/home/jetpack/.local/share/omf', 'LOGNAME': 'jetpack', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '10', 'PATH': '/opt/ros/jazzy/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/.fzf/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/miniconda3/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy', 'SHELL': '/usr/bin/fish', 'WIFI_SSID': 'MEO-BD8310', 'PWD': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/dc_motors', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'SSH_CONNECTION': '192.168.1.80 63310 192.168.1.84 22', 'OMF_CONFIG': '/home/jetpack/.config/omf', 'STARSHIP_SESSION_KEY': '2569217148239653', 'PYTHONPATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'EDITOR': 'nvim', 'WIFI_PASSWORD': '9f24731014', 'WARP_THEMES_DIR': '/home/jetpack/.warp/themes', 'CMAKE_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy'}), 'shell': False}
+[4.052773] (-) TimerEvent: {}
+[4.101815] (oled_display) StdoutLine: {'line': b'[100%] Built target oled_display_node\n'}
+[4.120276] (speed_sensor) StdoutLine: {'line': b'[100%] Built target speed_sensor_node\n'}
+[4.140577] (dc_motors) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.2 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[4.155587] (-) TimerEvent: {}
+[4.163213] (oled_display) CommandEnded: {'returncode': 0}
+[4.171034] (oled_display) JobProgress: {'identifier': 'oled_display', 'progress': 'install'}
+[4.171287] (oled_display) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/oled_display'], 'cwd': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/oled_display', 'env': OrderedDict({'USER': 'jetpack', 'SSH_CLIENT': '192.168.1.80 63310 22', 'STARSHIP_SHELL': 'fish', 'XDG_SESSION_TYPE': 'tty', 'LD_LIBRARY_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib', 'SHLVL': '3', 'HOME': '/home/jetpack', 'SSH_TTY': '/dev/pts/0', 'OPENAI_API_KEY': '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', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'OMF_PATH': '/home/jetpack/.local/share/omf', 'LOGNAME': 'jetpack', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '10', 'PATH': '/opt/ros/jazzy/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/.fzf/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/miniconda3/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy', 'SHELL': '/usr/bin/fish', 'WIFI_SSID': 'MEO-BD8310', 'PWD': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/oled_display', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'SSH_CONNECTION': '192.168.1.80 63310 192.168.1.84 22', 'OMF_CONFIG': '/home/jetpack/.config/omf', 'STARSHIP_SESSION_KEY': '2569217148239653', 'PYTHONPATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'EDITOR': 'nvim', 'WIFI_PASSWORD': '9f24731014', 'WARP_THEMES_DIR': '/home/jetpack/.warp/themes', 'CMAKE_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy'}), 'shell': False}
+[4.189714] (speed_sensor) CommandEnded: {'returncode': 0}
+[4.197341] (speed_sensor) JobProgress: {'identifier': 'speed_sensor', 'progress': 'install'}
+[4.197721] (speed_sensor) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/speed_sensor'], 'cwd': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/speed_sensor', 'env': OrderedDict({'USER': 'jetpack', 'SSH_CLIENT': '192.168.1.80 63310 22', 'STARSHIP_SHELL': 'fish', 'XDG_SESSION_TYPE': 'tty', 'LD_LIBRARY_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib', 'SHLVL': '3', 'HOME': '/home/jetpack', 'SSH_TTY': '/dev/pts/0', 'OPENAI_API_KEY': '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', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'OMF_PATH': '/home/jetpack/.local/share/omf', 'LOGNAME': 'jetpack', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '10', 'PATH': '/opt/ros/jazzy/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/.fzf/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/miniconda3/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy', 'SHELL': '/usr/bin/fish', 'WIFI_SSID': 'MEO-BD8310', 'PWD': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/speed_sensor', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'SSH_CONNECTION': '192.168.1.80 63310 192.168.1.84 22', 'OMF_CONFIG': '/home/jetpack/.config/omf', 'STARSHIP_SESSION_KEY': '2569217148239653', 'PYTHONPATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'EDITOR': 'nvim', 'WIFI_PASSWORD': '9f24731014', 'WARP_THEMES_DIR': '/home/jetpack/.warp/themes', 'CMAKE_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy'}), 'shell': False}
+[4.228425] (oled_display) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[4.231900] (oled_display) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[4.235621] (oled_display) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/lib/oled_display/oled_display_node\n'}
+[4.255053] (speed_sensor) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[4.255794] (-) TimerEvent: {}
+[4.259855] (speed_sensor) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[4.266574] (speed_sensor) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor/lib/speed_sensor/speed_sensor_node\n'}
+[4.293478] (oled_display) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/ament_index/resource_index/package_run_dependencies/oled_display\n'}
+[4.331692] (speed_sensor) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor/share/ament_index/resource_index/package_run_dependencies/speed_sensor\n'}
+[4.358668] (oled_display) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/ament_index/resource_index/parent_prefix_path/oled_display\n'}
+[4.359817] (-) TimerEvent: {}
+[4.399841] (speed_sensor) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor/share/ament_index/resource_index/parent_prefix_path/speed_sensor\n'}
+[4.421694] (oled_display) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/oled_display/environment/ament_prefix_path.sh\n'}
+[4.460028] (-) TimerEvent: {}
+[4.465645] (speed_sensor) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor/share/speed_sensor/environment/ament_prefix_path.sh\n'}
+[4.478748] (oled_display) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/oled_display/environment/ament_prefix_path.dsv\n'}
+[4.525655] (speed_sensor) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor/share/speed_sensor/environment/ament_prefix_path.dsv\n'}
+[4.546609] (oled_display) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/oled_display/environment/path.sh\n'}
+[4.561657] (-) TimerEvent: {}
+[4.580252] (speed_sensor) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor/share/speed_sensor/environment/path.sh\n'}
+[4.615858] (oled_display) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/oled_display/environment/path.dsv\n'}
+[4.643990] (speed_sensor) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor/share/speed_sensor/environment/path.dsv\n'}
+[4.664596] (-) TimerEvent: {}
+[4.682679] (oled_display) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/oled_display/local_setup.bash\n'}
+[4.703388] (speed_sensor) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor/share/speed_sensor/local_setup.bash\n'}
+[4.746669] (oled_display) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/oled_display/local_setup.sh\n'}
+[4.764782] (-) TimerEvent: {}
+[4.768781] (speed_sensor) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor/share/speed_sensor/local_setup.sh\n'}
+[4.806672] (oled_display) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/oled_display/local_setup.zsh\n'}
+[4.832673] (speed_sensor) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor/share/speed_sensor/local_setup.zsh\n'}
+[4.867608] (-) TimerEvent: {}
+[4.872175] (oled_display) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/oled_display/local_setup.dsv\n'}
+[4.898138] (speed_sensor) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor/share/speed_sensor/local_setup.dsv\n'}
+[4.937574] (oled_display) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/oled_display/package.dsv\n'}
+[4.954999] (speed_sensor) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor/share/speed_sensor/package.dsv\n'}
+[4.970594] (-) TimerEvent: {}
+[4.992676] (oled_display) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/ament_index/resource_index/packages/oled_display\n'}
+[5.020581] (speed_sensor) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor/share/ament_index/resource_index/packages/speed_sensor\n'}
+[5.055984] (oled_display) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/oled_display/cmake/oled_displayConfig.cmake\n'}
+[5.072602] (-) TimerEvent: {}
+[5.086127] (speed_sensor) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor/share/speed_sensor/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[5.118630] (oled_display) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/oled_display/cmake/oled_displayConfig-version.cmake\n'}
+[5.145774] (speed_sensor) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor/share/speed_sensor/cmake/speed_sensorConfig.cmake\n'}
+[5.173644] (-) TimerEvent: {}
+[5.177775] (oled_display) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/oled_display/package.xml\n'}
+[5.199634] (speed_sensor) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor/share/speed_sensor/cmake/speed_sensorConfig-version.cmake\n'}
+[5.243783] (oled_display) CommandEnded: {'returncode': 0}
+[5.262968] (speed_sensor) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor/share/speed_sensor/package.xml\n'}
+[5.275221] (-) TimerEvent: {}
+[5.352539] (battery) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[5.357797] (oled_display) JobEnded: {'identifier': 'oled_display', 'rc': 0}
+[5.363934] (servo_motor) JobStarted: {'identifier': 'servo_motor'}
+[5.375435] (-) TimerEvent: {}
+[5.385142] (speed_sensor) CommandEnded: {'returncode': 0}
+[5.402375] (battery) StdoutLine: {'line': b'-- Found rclcpp: 28.1.5 (/opt/ros/jazzy/share/rclcpp/cmake)\n'}
+[5.455332] (speed_sensor) JobEnded: {'identifier': 'speed_sensor', 'rc': 0}
+[5.459692] (servo_motor) JobProgress: {'identifier': 'servo_motor', 'progress': 'cmake'}
+[5.464981] (servo_motor) Command: {'cmd': ['/usr/bin/cmake', '/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/peripherals/servo_motor', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor'], 'cwd': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/servo_motor', 'env': OrderedDict({'USER': 'jetpack', 'SSH_CLIENT': '192.168.1.80 63310 22', 'STARSHIP_SHELL': 'fish', 'XDG_SESSION_TYPE': 'tty', 'LD_LIBRARY_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/lib:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib', 'SHLVL': '3', 'HOME': '/home/jetpack', 'SSH_TTY': '/dev/pts/0', 'OPENAI_API_KEY': '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', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'OMF_PATH': '/home/jetpack/.local/share/omf', 'LOGNAME': 'jetpack', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '10', 'PATH': '/opt/ros/jazzy/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/.fzf/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/miniconda3/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy', 'SHELL': '/usr/bin/fish', 'WIFI_SSID': 'MEO-BD8310', 'PWD': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/servo_motor', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'SSH_CONNECTION': '192.168.1.80 63310 192.168.1.84 22', 'OMF_CONFIG': '/home/jetpack/.config/omf', 'STARSHIP_SESSION_KEY': '2569217148239653', 'PYTHONPATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'EDITOR': 'nvim', 'WIFI_PASSWORD': '9f24731014', 'WARP_THEMES_DIR': '/home/jetpack/.warp/themes', 'CMAKE_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy'}), 'shell': False}
+[5.475605] (-) TimerEvent: {}
+[5.546347] (dc_motors) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[5.575804] (-) TimerEvent: {}
+[5.583367] (dc_motors) StdoutLine: {'line': b'-- Found rclcpp: 28.1.5 (/opt/ros/jazzy/share/rclcpp/cmake)\n'}
+[5.595718] (battery) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.4 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[5.642169] (battery) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.4 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[5.676602] (-) TimerEvent: {}
+[5.698720] (battery) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[5.770834] (dc_motors) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.4 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[5.772839] (battery) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[5.776772] (-) TimerEvent: {}
+[5.786911] (servo_motor) StdoutLine: {'line': b'-- The C compiler identification is GNU 13.2.0\n'}
+[5.817560] (dc_motors) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.4 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[5.869835] (dc_motors) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[5.877004] (-) TimerEvent: {}
+[5.937565] (dc_motors) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[5.977226] (-) TimerEvent: {}
+[6.048263] (battery) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.3.1 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)\n'}
+[6.056637] (battery) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 8.4.1 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)\n'}
+[6.077506] (-) TimerEvent: {}
+[6.090594] (servo_motor) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 13.2.0\n'}
+[6.174582] (servo_motor) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[6.177695] (-) TimerEvent: {}
+[6.226219] (dc_motors) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.3.1 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)\n'}
+[6.234591] (dc_motors) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 8.4.1 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)\n'}
+[6.277948] (-) TimerEvent: {}
+[6.358549] (battery) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[6.380591] (-) TimerEvent: {}
+[6.481304] (-) TimerEvent: {}
+[6.548718] (dc_motors) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[6.582594] (-) TimerEvent: {}
+[6.645371] (battery) StdoutLine: {'line': b'-- Found std_msgs: 5.3.5 (/opt/ros/jazzy/share/std_msgs/cmake)\n'}
+[6.682982] (-) TimerEvent: {}
+[6.692288] (servo_motor) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[6.707011] (battery) StdoutLine: {'line': b'-- Found ina219_driver: 0.0.0 (/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/share/ina219_driver/cmake)\n'}
+[6.708592] (battery) StdoutLine: {'line': b'-- Found custom_msgs: 0.0.0 (/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake)\n'}
+[6.728812] (servo_motor) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[6.731805] (servo_motor) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[6.732486] (servo_motor) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[6.776923] (servo_motor) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[6.783196] (-) TimerEvent: {}
+[6.821316] (dc_motors) StdoutLine: {'line': b'-- Found std_msgs: 5.3.5 (/opt/ros/jazzy/share/std_msgs/cmake)\n'}
+[6.883522] (-) TimerEvent: {}
+[6.887437] (dc_motors) StdoutLine: {'line': b'-- Found pca9685_driver: 0.0.0 (/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/cmake)\n'}
+[6.889351] (dc_motors) StdoutLine: {'line': b'-- Found custom_msgs: 0.0.0 (/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake)\n'}
+[6.985555] (-) TimerEvent: {}
+[7.086252] (-) TimerEvent: {}
+[7.188708] (-) TimerEvent: {}
+[7.290676] (-) TimerEvent: {}
+[7.311513] (battery) StdoutLine: {'line': b'-- Configuring done (3.4s)\n'}
+[7.369686] (servo_motor) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[7.390843] (-) TimerEvent: {}
+[7.396666] (battery) StdoutLine: {'line': b'-- Generating done (0.0s)\n'}
+[7.407231] (servo_motor) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[7.408673] (servo_motor) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[7.412792] (servo_motor) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[7.423113] (battery) StdoutLine: {'line': b'-- Build files have been written to: /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/battery\n'}
+[7.443958] (servo_motor) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.2 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[7.491159] (-) TimerEvent: {}
+[7.542655] (dc_motors) StdoutLine: {'line': b'-- Configuring done (3.4s)\n'}
+[7.593577] (-) TimerEvent: {}
+[7.627831] (dc_motors) StdoutLine: {'line': b'-- Generating done (0.0s)\n'}
+[7.636631] (battery) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/battery_node.dir/src/main.cpp.o\x1b[0m\n'}
+[7.647632] (battery) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding CXX object CMakeFiles/battery_node.dir/src/BatteryNode.cpp.o\x1b[0m\n'}
+[7.655117] (dc_motors) StdoutLine: {'line': b'-- Build files have been written to: /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/dc_motors\n'}
+[7.694849] (-) TimerEvent: {}
+[7.798065] (-) TimerEvent: {}
+[7.874779] (dc_motors) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/dc_motors_node.dir/src/DcMotorsNode.cpp.o\x1b[0m\n'}
+[7.898259] (-) TimerEvent: {}
+[7.914769] (dc_motors) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding CXX object CMakeFiles/dc_motors_node.dir/src/main.cpp.o\x1b[0m\n'}
+[8.002543] (-) TimerEvent: {}
+[8.103560] (-) TimerEvent: {}
+[8.205037] (-) TimerEvent: {}
+[8.308984] (-) TimerEvent: {}
+[8.411896] (-) TimerEvent: {}
+[8.473440] (servo_motor) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter \n'}
+[8.512073] (-) TimerEvent: {}
+[8.613260] (-) TimerEvent: {}
+[8.718560] (-) TimerEvent: {}
+[8.819328] (-) TimerEvent: {}
+[8.921589] (-) TimerEvent: {}
+[8.952065] (servo_motor) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[9.021775] (-) TimerEvent: {}
+[9.122572] (-) TimerEvent: {}
+[9.226891] (-) TimerEvent: {}
+[9.330642] (-) TimerEvent: {}
+[9.369764] (servo_motor) StdoutLine: {'line': b'-- Found rclcpp: 28.1.5 (/opt/ros/jazzy/share/rclcpp/cmake)\n'}
+[9.430842] (-) TimerEvent: {}
+[9.531849] (-) TimerEvent: {}
+[9.634238] (-) TimerEvent: {}
+[9.736356] (-) TimerEvent: {}
+[9.839239] (-) TimerEvent: {}
+[9.860743] (servo_motor) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.4 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[9.942672] (-) TimerEvent: {}
+[10.000089] (servo_motor) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.4 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[10.042892] (-) TimerEvent: {}
+[10.145603] (-) TimerEvent: {}
+[10.156847] (servo_motor) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[10.249612] (-) TimerEvent: {}
+[10.336826] (servo_motor) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[10.349918] (-) TimerEvent: {}
+[10.453831] (-) TimerEvent: {}
+[10.554952] (-) TimerEvent: {}
+[10.655942] (-) TimerEvent: {}
+[10.761617] (-) TimerEvent: {}
+[10.862627] (-) TimerEvent: {}
+[10.968944] (-) TimerEvent: {}
+[11.069899] (-) TimerEvent: {}
+[11.122819] (servo_motor) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.3.1 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)\n'}
+[11.171601] (-) TimerEvent: {}
+[11.187499] (servo_motor) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 8.4.1 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)\n'}
+[11.272667] (-) TimerEvent: {}
+[11.375657] (-) TimerEvent: {}
+[11.478685] (-) TimerEvent: {}
+[11.583113] (-) TimerEvent: {}
+[11.685845] (-) TimerEvent: {}
+[11.790682] (-) TimerEvent: {}
+[11.891620] (-) TimerEvent: {}
+[11.962823] (servo_motor) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.13")  \n'}
+[11.994651] (-) TimerEvent: {}
+[12.095854] (-) TimerEvent: {}
+[12.099565] (servo_motor) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") \n'}
+[12.198658] (-) TimerEvent: {}
+[12.235932] (servo_motor) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[12.301670] (-) TimerEvent: {}
+[12.402861] (-) TimerEvent: {}
+[12.507626] (-) TimerEvent: {}
+[12.614673] (-) TimerEvent: {}
+[12.715939] (-) TimerEvent: {}
+[12.817192] (-) TimerEvent: {}
+[12.921084] (-) TimerEvent: {}
+[13.025629] (-) TimerEvent: {}
+[13.098955] (servo_motor) StdoutLine: {'line': b'-- Found std_msgs: 5.3.5 (/opt/ros/jazzy/share/std_msgs/cmake)\n'}
+[13.128709] (-) TimerEvent: {}
+[13.185556] (servo_motor) StdoutLine: {'line': b'-- Found pca9685_driver: 0.0.0 (/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/cmake)\n'}
+[13.193745] (servo_motor) StdoutLine: {'line': b'-- Found custom_msgs: 0.0.0 (/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake)\n'}
+[13.230631] (-) TimerEvent: {}
+[13.333616] (-) TimerEvent: {}
+[13.436610] (-) TimerEvent: {}
+[13.537581] (-) TimerEvent: {}
+[13.638817] (-) TimerEvent: {}
+[13.742594] (-) TimerEvent: {}
+[13.845975] (-) TimerEvent: {}
+[13.953585] (-) TimerEvent: {}
+[14.054631] (-) TimerEvent: {}
+[14.155963] (-) TimerEvent: {}
+[14.260555] (-) TimerEvent: {}
+[14.364353] (-) TimerEvent: {}
+[14.468654] (-) TimerEvent: {}
+[14.490302] (servo_motor) StdoutLine: {'line': b'-- Configuring done (9.0s)\n'}
+[14.568977] (-) TimerEvent: {}
+[14.598681] (servo_motor) StdoutLine: {'line': b'-- Generating done (0.1s)\n'}
+[14.625804] (servo_motor) StdoutLine: {'line': b'-- Build files have been written to: /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/servo_motor\n'}
+[14.670632] (-) TimerEvent: {}
+[14.690642] (servo_motor) CommandEnded: {'returncode': 0}
+[14.698246] (servo_motor) JobProgress: {'identifier': 'servo_motor', 'progress': 'build'}
+[14.698517] (servo_motor) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/servo_motor', '--', '-j4', '-l4'], 'cwd': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/servo_motor', 'env': OrderedDict({'USER': 'jetpack', 'SSH_CLIENT': '192.168.1.80 63310 22', 'STARSHIP_SHELL': 'fish', 'XDG_SESSION_TYPE': 'tty', 'LD_LIBRARY_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/lib:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib', 'SHLVL': '3', 'HOME': '/home/jetpack', 'SSH_TTY': '/dev/pts/0', 'OPENAI_API_KEY': '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', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'OMF_PATH': '/home/jetpack/.local/share/omf', 'LOGNAME': 'jetpack', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '10', 'PATH': '/opt/ros/jazzy/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/.fzf/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/miniconda3/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy', 'SHELL': '/usr/bin/fish', 'WIFI_SSID': 'MEO-BD8310', 'PWD': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/servo_motor', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'SSH_CONNECTION': '192.168.1.80 63310 192.168.1.84 22', 'OMF_CONFIG': '/home/jetpack/.config/omf', 'STARSHIP_SESSION_KEY': '2569217148239653', 'PYTHONPATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'EDITOR': 'nvim', 'WIFI_PASSWORD': '9f24731014', 'WARP_THEMES_DIR': '/home/jetpack/.warp/themes', 'CMAKE_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy'}), 'shell': False}
+[14.774470] (-) TimerEvent: {}
+[14.877611] (-) TimerEvent: {}
+[14.980728] (-) TimerEvent: {}
+[15.084811] (-) TimerEvent: {}
+[15.188633] (-) TimerEvent: {}
+[15.200461] (servo_motor) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding CXX object CMakeFiles/servo_motor_node.dir/src/ServoNode.cpp.o\x1b[0m\n'}
+[15.201532] (servo_motor) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding CXX object CMakeFiles/servo_motor_node.dir/src/main.cpp.o\x1b[0m\n'}
+[15.294678] (-) TimerEvent: {}
+[15.395998] (-) TimerEvent: {}
+[15.500075] (-) TimerEvent: {}
+[15.603600] (-) TimerEvent: {}
+[15.709597] (-) TimerEvent: {}
+[15.810478] (-) TimerEvent: {}
+[15.911576] (-) TimerEvent: {}
+[16.014296] (-) TimerEvent: {}
+[16.121717] (-) TimerEvent: {}
+[16.224621] (-) TimerEvent: {}
+[16.325762] (-) TimerEvent: {}
+[16.428932] (-) TimerEvent: {}
+[16.534003] (-) TimerEvent: {}
+[16.635575] (-) TimerEvent: {}
+[16.741641] (-) TimerEvent: {}
+[16.844634] (-) TimerEvent: {}
+[16.947608] (-) TimerEvent: {}
+[17.048570] (-) TimerEvent: {}
+[17.149862] (-) TimerEvent: {}
+[17.254002] (-) TimerEvent: {}
+[17.358636] (-) TimerEvent: {}
+[17.459704] (-) TimerEvent: {}
+[17.561337] (-) TimerEvent: {}
+[17.665447] (-) TimerEvent: {}
+[17.773598] (-) TimerEvent: {}
+[17.876659] (-) TimerEvent: {}
+[17.977764] (-) TimerEvent: {}
+[18.079820] (-) TimerEvent: {}
+[18.185024] (-) TimerEvent: {}
+[18.289603] (-) TimerEvent: {}
+[18.390641] (-) TimerEvent: {}
+[18.495643] (-) TimerEvent: {}
+[18.601604] (-) TimerEvent: {}
+[18.702584] (-) TimerEvent: {}
+[18.805286] (-) TimerEvent: {}
+[18.908998] (-) TimerEvent: {}
+[19.013622] (-) TimerEvent: {}
+[19.116600] (-) TimerEvent: {}
+[19.217612] (-) TimerEvent: {}
+[19.321314] (-) TimerEvent: {}
+[19.426707] (-) TimerEvent: {}
+[19.530883] (-) TimerEvent: {}
+[19.636980] (-) TimerEvent: {}
+[19.738342] (-) TimerEvent: {}
+[19.842653] (-) TimerEvent: {}
+[19.945698] (-) TimerEvent: {}
+[20.048614] (-) TimerEvent: {}
+[20.150366] (-) TimerEvent: {}
+[20.258613] (-) TimerEvent: {}
+[20.361587] (-) TimerEvent: {}
+[20.463703] (-) TimerEvent: {}
+[20.570612] (-) TimerEvent: {}
+[20.673649] (-) TimerEvent: {}
+[20.776642] (-) TimerEvent: {}
+[20.878613] (-) TimerEvent: {}
+[20.982840] (-) TimerEvent: {}
+[21.090603] (-) TimerEvent: {}
+[21.193623] (-) TimerEvent: {}
+[21.294634] (-) TimerEvent: {}
+[21.395738] (-) TimerEvent: {}
+[21.498312] (-) TimerEvent: {}
+[21.603679] (-) TimerEvent: {}
+[21.707645] (-) TimerEvent: {}
+[21.811638] (-) TimerEvent: {}
+[21.912828] (-) TimerEvent: {}
+[22.016688] (-) TimerEvent: {}
+[22.118038] (-) TimerEvent: {}
+[22.221610] (-) TimerEvent: {}
+[22.322737] (-) TimerEvent: {}
+[22.426081] (-) TimerEvent: {}
+[22.529328] (-) TimerEvent: {}
+[22.633021] (-) TimerEvent: {}
+[22.736023] (-) TimerEvent: {}
+[22.838612] (-) TimerEvent: {}
+[22.940910] (-) TimerEvent: {}
+[23.044291] (-) TimerEvent: {}
+[23.145255] (-) TimerEvent: {}
+[23.248993] (-) TimerEvent: {}
+[23.350074] (-) TimerEvent: {}
+[23.452620] (-) TimerEvent: {}
+[23.553629] (-) TimerEvent: {}
+[23.656023] (-) TimerEvent: {}
+[23.760327] (-) TimerEvent: {}
+[23.865619] (-) TimerEvent: {}
+[23.966590] (-) TimerEvent: {}
+[24.067559] (-) TimerEvent: {}
+[24.174616] (-) TimerEvent: {}
+[24.275625] (-) TimerEvent: {}
+[24.376702] (-) TimerEvent: {}
+[24.481619] (-) TimerEvent: {}
+[24.584614] (-) TimerEvent: {}
+[24.685609] (-) TimerEvent: {}
+[24.789656] (-) TimerEvent: {}
+[24.892604] (-) TimerEvent: {}
+[24.995608] (-) TimerEvent: {}
+[25.097643] (-) TimerEvent: {}
+[25.201610] (-) TimerEvent: {}
+[25.304612] (-) TimerEvent: {}
+[25.407618] (-) TimerEvent: {}
+[25.513624] (-) TimerEvent: {}
+[25.614617] (-) TimerEvent: {}
+[25.720057] (-) TimerEvent: {}
+[25.824631] (-) TimerEvent: {}
+[25.930612] (-) TimerEvent: {}
+[26.033606] (-) TimerEvent: {}
+[26.136619] (-) TimerEvent: {}
+[26.237745] (-) TimerEvent: {}
+[26.338953] (-) TimerEvent: {}
+[26.443040] (-) TimerEvent: {}
+[26.546612] (-) TimerEvent: {}
+[26.649606] (-) TimerEvent: {}
+[26.751029] (-) TimerEvent: {}
+[26.859613] (-) TimerEvent: {}
+[26.960821] (-) TimerEvent: {}
+[27.063703] (-) TimerEvent: {}
+[27.164757] (-) TimerEvent: {}
+[27.269008] (-) TimerEvent: {}
+[27.370164] (-) TimerEvent: {}
+[27.475069] (-) TimerEvent: {}
+[27.580661] (-) TimerEvent: {}
+[27.681636] (-) TimerEvent: {}
+[27.785978] (-) TimerEvent: {}
+[27.887693] (-) TimerEvent: {}
+[27.990677] (-) TimerEvent: {}
+[28.092608] (-) TimerEvent: {}
+[28.195613] (-) TimerEvent: {}
+[28.298623] (-) TimerEvent: {}
+[28.399620] (-) TimerEvent: {}
+[28.503533] (-) TimerEvent: {}
+[28.607043] (-) TimerEvent: {}
+[28.711192] (-) TimerEvent: {}
+[28.813606] (-) TimerEvent: {}
+[28.914627] (-) TimerEvent: {}
+[29.018061] (-) TimerEvent: {}
+[29.119202] (-) TimerEvent: {}
+[29.223275] (-) TimerEvent: {}
+[29.324837] (-) TimerEvent: {}
+[29.429257] (-) TimerEvent: {}
+[29.530477] (-) TimerEvent: {}
+[29.635032] (-) TimerEvent: {}
+[29.736019] (-) TimerEvent: {}
+[29.836990] (-) TimerEvent: {}
+[29.940617] (-) TimerEvent: {}
+[30.041583] (-) TimerEvent: {}
+[30.143453] (-) TimerEvent: {}
+[30.247243] (-) TimerEvent: {}
+[30.351237] (-) TimerEvent: {}
+[30.452381] (-) TimerEvent: {}
+[30.556041] (-) TimerEvent: {}
+[30.659272] (-) TimerEvent: {}
+[30.763189] (-) TimerEvent: {}
+[30.864245] (-) TimerEvent: {}
+[30.968509] (-) TimerEvent: {}
+[31.071615] (-) TimerEvent: {}
+[31.174619] (-) TimerEvent: {}
+[31.275604] (-) TimerEvent: {}
+[31.379020] (-) TimerEvent: {}
+[31.481626] (-) TimerEvent: {}
+[31.584608] (-) TimerEvent: {}
+[31.685590] (-) TimerEvent: {}
+[31.787706] (-) TimerEvent: {}
+[31.889660] (-) TimerEvent: {}
+[31.994203] (-) TimerEvent: {}
+[32.097616] (-) TimerEvent: {}
+[32.198658] (-) TimerEvent: {}
+[32.302019] (-) TimerEvent: {}
+[32.407609] (-) TimerEvent: {}
+[32.508628] (-) TimerEvent: {}
+[32.611885] (-) TimerEvent: {}
+[32.715598] (-) TimerEvent: {}
+[32.816595] (-) TimerEvent: {}
+[32.917627] (-) TimerEvent: {}
+[33.020678] (-) TimerEvent: {}
+[33.124339] (-) TimerEvent: {}
+[33.228106] (-) TimerEvent: {}
+[33.332612] (-) TimerEvent: {}
+[33.436861] (-) TimerEvent: {}
+[33.540880] (-) TimerEvent: {}
+[33.645007] (-) TimerEvent: {}
+[33.749613] (-) TimerEvent: {}
+[33.852615] (-) TimerEvent: {}
+[33.960615] (-) TimerEvent: {}
+[34.064943] (-) TimerEvent: {}
+[34.168983] (-) TimerEvent: {}
+[34.270036] (-) TimerEvent: {}
+[34.376625] (-) TimerEvent: {}
+[34.479606] (-) TimerEvent: {}
+[34.581297] (-) TimerEvent: {}
+[34.686627] (-) TimerEvent: {}
+[34.789627] (-) TimerEvent: {}
+[34.892616] (-) TimerEvent: {}
+[34.993596] (-) TimerEvent: {}
+[35.096998] (-) TimerEvent: {}
+[35.200042] (-) TimerEvent: {}
+[35.303558] (-) TimerEvent: {}
+[35.410065] (-) TimerEvent: {}
+[35.511165] (-) TimerEvent: {}
+[35.613622] (-) TimerEvent: {}
+[35.714612] (-) TimerEvent: {}
+[35.817638] (-) TimerEvent: {}
+[35.918598] (-) TimerEvent: {}
+[36.020610] (-) TimerEvent: {}
+[36.123722] (-) TimerEvent: {}
+[36.228354] (-) TimerEvent: {}
+[36.331277] (-) TimerEvent: {}
+[36.435115] (-) TimerEvent: {}
+[36.537642] (-) TimerEvent: {}
+[36.644619] (-) TimerEvent: {}
+[36.745814] (-) TimerEvent: {}
+[36.851759] (-) TimerEvent: {}
+[36.959609] (-) TimerEvent: {}
+[37.060754] (-) TimerEvent: {}
+[37.165616] (-) TimerEvent: {}
+[37.266795] (-) TimerEvent: {}
+[37.368632] (-) TimerEvent: {}
+[37.471624] (-) TimerEvent: {}
+[37.572759] (-) TimerEvent: {}
+[37.676097] (-) TimerEvent: {}
+[37.782630] (-) TimerEvent: {}
+[37.884194] (-) TimerEvent: {}
+[37.987513] (-) TimerEvent: {}
+[38.091052] (-) TimerEvent: {}
+[38.194057] (-) TimerEvent: {}
+[38.297042] (-) TimerEvent: {}
+[38.398980] (-) TimerEvent: {}
+[38.500657] (-) TimerEvent: {}
+[38.602614] (-) TimerEvent: {}
+[38.705622] (-) TimerEvent: {}
+[38.806606] (-) TimerEvent: {}
+[38.910035] (-) TimerEvent: {}
+[39.011316] (-) TimerEvent: {}
+[39.114866] (-) TimerEvent: {}
+[39.215914] (-) TimerEvent: {}
+[39.317025] (-) TimerEvent: {}
+[39.420642] (-) TimerEvent: {}
+[39.521600] (-) TimerEvent: {}
+[39.622583] (-) TimerEvent: {}
+[39.726643] (-) TimerEvent: {}
+[39.827624] (-) TimerEvent: {}
+[39.928621] (-) TimerEvent: {}
+[40.030856] (-) TimerEvent: {}
+[40.134626] (-) TimerEvent: {}
+[40.235642] (-) TimerEvent: {}
+[40.336628] (-) TimerEvent: {}
+[40.437605] (-) TimerEvent: {}
+[40.540622] (-) TimerEvent: {}
+[40.641591] (-) TimerEvent: {}
+[40.742669] (-) TimerEvent: {}
+[40.795153] (battery) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable battery_node\x1b[0m\n'}
+[40.844634] (-) TimerEvent: {}
+[40.946815] (-) TimerEvent: {}
+[41.052651] (-) TimerEvent: {}
+[41.153799] (-) TimerEvent: {}
+[41.257097] (-) TimerEvent: {}
+[41.360550] (-) TimerEvent: {}
+[41.466170] (-) TimerEvent: {}
+[41.568226] (-) TimerEvent: {}
+[41.672029] (-) TimerEvent: {}
+[41.773211] (-) TimerEvent: {}
+[41.878168] (-) TimerEvent: {}
+[41.979284] (-) TimerEvent: {}
+[42.021902] (battery) StdoutLine: {'line': b'[100%] Built target battery_node\n'}
+[42.081625] (-) TimerEvent: {}
+[42.091614] (battery) CommandEnded: {'returncode': 0}
+[42.099874] (battery) JobProgress: {'identifier': 'battery', 'progress': 'install'}
+[42.100137] (battery) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/battery'], 'cwd': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/battery', 'env': OrderedDict({'USER': 'jetpack', 'SSH_CLIENT': '192.168.1.80 63310 22', 'STARSHIP_SHELL': 'fish', 'XDG_SESSION_TYPE': 'tty', 'LD_LIBRARY_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/lib:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib', 'SHLVL': '3', 'HOME': '/home/jetpack', 'SSH_TTY': '/dev/pts/0', 'OPENAI_API_KEY': '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', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'OMF_PATH': '/home/jetpack/.local/share/omf', 'LOGNAME': 'jetpack', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '10', 'PATH': '/opt/ros/jazzy/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/.fzf/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/miniconda3/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy', 'SHELL': '/usr/bin/fish', 'WIFI_SSID': 'MEO-BD8310', 'PWD': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/battery', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'SSH_CONNECTION': '192.168.1.80 63310 192.168.1.84 22', 'OMF_CONFIG': '/home/jetpack/.config/omf', 'STARSHIP_SESSION_KEY': '2569217148239653', 'PYTHONPATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'EDITOR': 'nvim', 'WIFI_PASSWORD': '9f24731014', 'WARP_THEMES_DIR': '/home/jetpack/.warp/themes', 'CMAKE_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy'}), 'shell': False}
+[42.157604] (battery) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[42.158600] (battery) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[42.162619] (battery) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery/lib/battery/battery_node\n'}
+[42.181856] (-) TimerEvent: {}
+[42.222517] (battery) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery/share/ament_index/resource_index/package_run_dependencies/battery\n'}
+[42.282120] (-) TimerEvent: {}
+[42.288214] (battery) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery/share/ament_index/resource_index/parent_prefix_path/battery\n'}
+[42.349034] (battery) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery/share/battery/environment/ament_prefix_path.sh\n'}
+[42.385624] (-) TimerEvent: {}
+[42.406794] (battery) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery/share/battery/environment/ament_prefix_path.dsv\n'}
+[42.465791] (battery) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery/share/battery/environment/path.sh\n'}
+[42.487611] (-) TimerEvent: {}
+[42.524141] (battery) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery/share/battery/environment/path.dsv\n'}
+[42.587499] (battery) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery/share/battery/local_setup.bash\n'}
+[42.588531] (-) TimerEvent: {}
+[42.646236] (battery) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery/share/battery/local_setup.sh\n'}
+[42.691605] (-) TimerEvent: {}
+[42.706981] (battery) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery/share/battery/local_setup.zsh\n'}
+[42.767786] (battery) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery/share/battery/local_setup.dsv\n'}
+[42.795647] (-) TimerEvent: {}
+[42.829477] (battery) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery/share/battery/package.dsv\n'}
+[42.897723] (-) TimerEvent: {}
+[42.899965] (battery) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery/share/ament_index/resource_index/packages/battery\n'}
+[42.966659] (battery) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery/share/battery/cmake/batteryConfig.cmake\n'}
+[42.999831] (-) TimerEvent: {}
+[43.031153] (battery) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery/share/battery/cmake/batteryConfig-version.cmake\n'}
+[43.094623] (battery) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery/share/battery/package.xml\n'}
+[43.101642] (-) TimerEvent: {}
+[43.162828] (battery) CommandEnded: {'returncode': 0}
+[43.201981] (-) TimerEvent: {}
+[43.267025] (battery) JobEnded: {'identifier': 'battery', 'rc': 0}
+[43.302212] (-) TimerEvent: {}
+[43.404578] (-) TimerEvent: {}
+[43.505350] (-) TimerEvent: {}
+[43.606138] (-) TimerEvent: {}
+[43.709579] (-) TimerEvent: {}
+[43.810335] (-) TimerEvent: {}
+[43.911144] (-) TimerEvent: {}
+[44.014572] (-) TimerEvent: {}
+[44.115360] (-) TimerEvent: {}
+[44.216244] (-) TimerEvent: {}
+[44.318603] (-) TimerEvent: {}
+[44.419492] (-) TimerEvent: {}
+[44.523591] (-) TimerEvent: {}
+[44.624349] (-) TimerEvent: {}
+[44.725194] (-) TimerEvent: {}
+[44.826037] (-) TimerEvent: {}
+[44.926863] (-) TimerEvent: {}
+[45.028287] (-) TimerEvent: {}
+[45.129180] (-) TimerEvent: {}
+[45.230023] (-) TimerEvent: {}
+[45.330852] (-) TimerEvent: {}
+[45.431597] (-) TimerEvent: {}
+[45.532337] (-) TimerEvent: {}
+[45.633138] (-) TimerEvent: {}
+[45.733928] (-) TimerEvent: {}
+[45.834720] (-) TimerEvent: {}
+[45.935513] (-) TimerEvent: {}
+[46.036347] (-) TimerEvent: {}
+[46.137456] (-) TimerEvent: {}
+[46.238176] (-) TimerEvent: {}
+[46.338938] (-) TimerEvent: {}
+[46.439696] (-) TimerEvent: {}
+[46.540725] (-) TimerEvent: {}
+[46.641525] (-) TimerEvent: {}
+[46.742271] (-) TimerEvent: {}
+[46.843082] (-) TimerEvent: {}
+[46.943885] (-) TimerEvent: {}
+[47.044620] (-) TimerEvent: {}
+[47.145365] (-) TimerEvent: {}
+[47.246163] (-) TimerEvent: {}
+[47.346981] (-) TimerEvent: {}
+[47.448064] (-) TimerEvent: {}
+[47.549089] (-) TimerEvent: {}
+[47.649900] (-) TimerEvent: {}
+[47.750686] (-) TimerEvent: {}
+[47.851473] (-) TimerEvent: {}
+[47.952205] (-) TimerEvent: {}
+[48.053046] (-) TimerEvent: {}
+[48.153893] (-) TimerEvent: {}
+[48.254732] (-) TimerEvent: {}
+[48.355520] (-) TimerEvent: {}
+[48.456264] (-) TimerEvent: {}
+[48.557068] (-) TimerEvent: {}
+[48.657997] (-) TimerEvent: {}
+[48.759201] (-) TimerEvent: {}
+[48.860294] (-) TimerEvent: {}
+[48.961111] (-) TimerEvent: {}
+[49.061969] (-) TimerEvent: {}
+[49.162845] (-) TimerEvent: {}
+[49.263594] (-) TimerEvent: {}
+[49.364378] (-) TimerEvent: {}
+[49.465185] (-) TimerEvent: {}
+[49.566034] (-) TimerEvent: {}
+[49.666859] (-) TimerEvent: {}
+[49.767696] (-) TimerEvent: {}
+[49.868502] (-) TimerEvent: {}
+[49.969232] (-) TimerEvent: {}
+[50.070080] (-) TimerEvent: {}
+[50.170882] (-) TimerEvent: {}
+[50.271613] (-) TimerEvent: {}
+[50.372337] (-) TimerEvent: {}
+[50.473099] (-) TimerEvent: {}
+[50.573896] (-) TimerEvent: {}
+[50.674690] (-) TimerEvent: {}
+[50.775476] (-) TimerEvent: {}
+[50.876231] (-) TimerEvent: {}
+[50.977026] (-) TimerEvent: {}
+[51.077899] (-) TimerEvent: {}
+[51.179041] (-) TimerEvent: {}
+[51.279789] (-) TimerEvent: {}
+[51.380492] (-) TimerEvent: {}
+[51.481122] (-) TimerEvent: {}
+[51.581903] (-) TimerEvent: {}
+[51.682692] (-) TimerEvent: {}
+[51.783468] (-) TimerEvent: {}
+[51.884208] (-) TimerEvent: {}
+[51.985041] (-) TimerEvent: {}
+[52.085834] (-) TimerEvent: {}
+[52.186585] (-) TimerEvent: {}
+[52.287315] (-) TimerEvent: {}
+[52.388111] (-) TimerEvent: {}
+[52.488908] (-) TimerEvent: {}
+[52.589716] (-) TimerEvent: {}
+[52.690523] (-) TimerEvent: {}
+[52.791266] (-) TimerEvent: {}
+[52.892092] (-) TimerEvent: {}
+[52.992916] (-) TimerEvent: {}
+[53.093711] (-) TimerEvent: {}
+[53.194528] (-) TimerEvent: {}
+[53.295481] (-) TimerEvent: {}
+[53.396233] (-) TimerEvent: {}
+[53.497039] (-) TimerEvent: {}
+[53.598008] (-) TimerEvent: {}
+[53.699221] (-) TimerEvent: {}
+[53.800217] (-) TimerEvent: {}
+[53.901266] (-) TimerEvent: {}
+[54.002064] (-) TimerEvent: {}
+[54.102916] (-) TimerEvent: {}
+[54.203728] (-) TimerEvent: {}
+[54.304530] (-) TimerEvent: {}
+[54.405266] (-) TimerEvent: {}
+[54.506063] (-) TimerEvent: {}
+[54.606886] (-) TimerEvent: {}
+[54.707624] (-) TimerEvent: {}
+[54.808373] (-) TimerEvent: {}
+[54.909166] (-) TimerEvent: {}
+[55.009967] (-) TimerEvent: {}
+[55.110742] (-) TimerEvent: {}
+[55.211516] (-) TimerEvent: {}
+[55.312204] (-) TimerEvent: {}
+[55.412937] (-) TimerEvent: {}
+[55.513886] (-) TimerEvent: {}
+[55.614703] (-) TimerEvent: {}
+[55.715581] (-) TimerEvent: {}
+[55.816388] (-) TimerEvent: {}
+[55.917134] (-) TimerEvent: {}
+[56.017961] (-) TimerEvent: {}
+[56.118800] (-) TimerEvent: {}
+[56.219593] (-) TimerEvent: {}
+[56.320358] (-) TimerEvent: {}
+[56.421152] (-) TimerEvent: {}
+[56.522029] (-) TimerEvent: {}
+[56.622865] (-) TimerEvent: {}
+[56.723630] (-) TimerEvent: {}
+[56.824402] (-) TimerEvent: {}
+[56.925220] (-) TimerEvent: {}
+[57.026049] (-) TimerEvent: {}
+[57.126839] (-) TimerEvent: {}
+[57.227589] (-) TimerEvent: {}
+[57.328335] (-) TimerEvent: {}
+[57.429143] (-) TimerEvent: {}
+[57.529952] (-) TimerEvent: {}
+[57.630768] (-) TimerEvent: {}
+[57.731559] (-) TimerEvent: {}
+[57.832310] (-) TimerEvent: {}
+[57.933130] (-) TimerEvent: {}
+[58.033928] (-) TimerEvent: {}
+[58.134747] (-) TimerEvent: {}
+[58.235552] (-) TimerEvent: {}
+[58.336332] (-) TimerEvent: {}
+[58.437182] (-) TimerEvent: {}
+[58.538010] (-) TimerEvent: {}
+[58.638852] (-) TimerEvent: {}
+[58.739593] (-) TimerEvent: {}
+[58.840328] (-) TimerEvent: {}
+[58.941138] (-) TimerEvent: {}
+[59.041989] (-) TimerEvent: {}
+[59.142803] (-) TimerEvent: {}
+[59.243577] (-) TimerEvent: {}
+[59.344373] (-) TimerEvent: {}
+[59.445204] (-) TimerEvent: {}
+[59.546069] (-) TimerEvent: {}
+[59.646975] (-) TimerEvent: {}
+[59.747792] (-) TimerEvent: {}
+[59.848562] (-) TimerEvent: {}
+[59.949327] (-) TimerEvent: {}
+[60.050146] (-) TimerEvent: {}
+[60.150966] (-) TimerEvent: {}
+[60.251783] (-) TimerEvent: {}
+[60.352525] (-) TimerEvent: {}
+[60.453187] (-) TimerEvent: {}
+[60.553919] (-) TimerEvent: {}
+[60.654617] (-) TimerEvent: {}
+[60.755352] (-) TimerEvent: {}
+[60.856253] (-) TimerEvent: {}
+[60.957103] (-) TimerEvent: {}
+[61.057823] (-) TimerEvent: {}
+[61.158575] (-) TimerEvent: {}
+[61.259284] (-) TimerEvent: {}
+[61.360117] (-) TimerEvent: {}
+[61.460899] (-) TimerEvent: {}
+[61.561630] (-) TimerEvent: {}
+[61.662351] (-) TimerEvent: {}
+[61.763135] (-) TimerEvent: {}
+[61.863939] (-) TimerEvent: {}
+[61.964779] (-) TimerEvent: {}
+[62.065548] (-) TimerEvent: {}
+[62.166307] (-) TimerEvent: {}
+[62.267323] (-) TimerEvent: {}
+[62.368776] (-) TimerEvent: {}
+[62.469708] (-) TimerEvent: {}
+[62.570673] (-) TimerEvent: {}
+[62.672267] (-) TimerEvent: {}
+[62.773688] (-) TimerEvent: {}
+[62.816725] (dc_motors) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable dc_motors_node\x1b[0m\n'}
+[62.873908] (-) TimerEvent: {}
+[62.974692] (-) TimerEvent: {}
+[63.075519] (-) TimerEvent: {}
+[63.176849] (-) TimerEvent: {}
+[63.278065] (-) TimerEvent: {}
+[63.379733] (-) TimerEvent: {}
+[63.481213] (-) TimerEvent: {}
+[63.582617] (-) TimerEvent: {}
+[63.683584] (-) TimerEvent: {}
+[63.785000] (-) TimerEvent: {}
+[63.886142] (-) TimerEvent: {}
+[63.987041] (-) TimerEvent: {}
+[64.088349] (-) TimerEvent: {}
+[64.189285] (-) TimerEvent: {}
+[64.290765] (-) TimerEvent: {}
+[64.391859] (-) TimerEvent: {}
+[64.493490] (-) TimerEvent: {}
+[64.560491] (dc_motors) StdoutLine: {'line': b'[100%] Built target dc_motors_node\n'}
+[64.593655] (-) TimerEvent: {}
+[64.614746] (dc_motors) CommandEnded: {'returncode': 0}
+[64.617180] (dc_motors) JobProgress: {'identifier': 'dc_motors', 'progress': 'install'}
+[64.618156] (dc_motors) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/dc_motors'], 'cwd': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/dc_motors', 'env': OrderedDict({'USER': 'jetpack', 'SSH_CLIENT': '192.168.1.80 63310 22', 'STARSHIP_SHELL': 'fish', 'XDG_SESSION_TYPE': 'tty', 'LD_LIBRARY_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/lib:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib', 'SHLVL': '3', 'HOME': '/home/jetpack', 'SSH_TTY': '/dev/pts/0', 'OPENAI_API_KEY': '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', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'OMF_PATH': '/home/jetpack/.local/share/omf', 'LOGNAME': 'jetpack', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '10', 'PATH': '/opt/ros/jazzy/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/.fzf/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/miniconda3/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy', 'SHELL': '/usr/bin/fish', 'WIFI_SSID': 'MEO-BD8310', 'PWD': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/dc_motors', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'SSH_CONNECTION': '192.168.1.80 63310 192.168.1.84 22', 'OMF_CONFIG': '/home/jetpack/.config/omf', 'STARSHIP_SESSION_KEY': '2569217148239653', 'PYTHONPATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'EDITOR': 'nvim', 'WIFI_PASSWORD': '9f24731014', 'WARP_THEMES_DIR': '/home/jetpack/.warp/themes', 'CMAKE_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy'}), 'shell': False}
+[64.658694] (dc_motors) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[64.660675] (dc_motors) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[64.662817] (dc_motors) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors/lib/dc_motors/dc_motors_node\n'}
+[64.693852] (-) TimerEvent: {}
+[64.709323] (dc_motors) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors/share/ament_index/resource_index/package_run_dependencies/dc_motors\n'}
+[64.755062] (dc_motors) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors/share/ament_index/resource_index/parent_prefix_path/dc_motors\n'}
+[64.794091] (-) TimerEvent: {}
+[64.801356] (dc_motors) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors/share/dc_motors/environment/ament_prefix_path.sh\n'}
+[64.847108] (dc_motors) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors/share/dc_motors/environment/ament_prefix_path.dsv\n'}
+[64.892102] (dc_motors) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors/share/dc_motors/environment/path.sh\n'}
+[64.894301] (-) TimerEvent: {}
+[64.937469] (dc_motors) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors/share/dc_motors/environment/path.dsv\n'}
+[64.982888] (dc_motors) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors/share/dc_motors/local_setup.bash\n'}
+[64.994534] (-) TimerEvent: {}
+[65.029133] (dc_motors) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors/share/dc_motors/local_setup.sh\n'}
+[65.074729] (dc_motors) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors/share/dc_motors/local_setup.zsh\n'}
+[65.094717] (-) TimerEvent: {}
+[65.120915] (dc_motors) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors/share/dc_motors/local_setup.dsv\n'}
+[65.166089] (dc_motors) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors/share/dc_motors/package.dsv\n'}
+[65.194899] (-) TimerEvent: {}
+[65.212479] (dc_motors) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors/share/ament_index/resource_index/packages/dc_motors\n'}
+[65.258665] (dc_motors) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors/share/dc_motors/cmake/dc_motorsConfig.cmake\n'}
+[65.295085] (-) TimerEvent: {}
+[65.304575] (dc_motors) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors/share/dc_motors/cmake/dc_motorsConfig-version.cmake\n'}
+[65.350594] (dc_motors) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors/share/dc_motors/package.xml\n'}
+[65.395276] (-) TimerEvent: {}
+[65.403030] (dc_motors) CommandEnded: {'returncode': 0}
+[65.468482] (dc_motors) JobEnded: {'identifier': 'dc_motors', 'rc': 0}
+[65.495497] (-) TimerEvent: {}
+[65.596094] (-) TimerEvent: {}
+[65.696878] (-) TimerEvent: {}
+[65.797975] (-) TimerEvent: {}
+[65.898975] (-) TimerEvent: {}
+[65.999774] (-) TimerEvent: {}
+[66.100977] (-) TimerEvent: {}
+[66.201769] (-) TimerEvent: {}
+[66.302581] (-) TimerEvent: {}
+[66.403249] (-) TimerEvent: {}
+[66.503959] (-) TimerEvent: {}
+[66.604666] (-) TimerEvent: {}
+[66.705348] (-) TimerEvent: {}
+[66.806095] (-) TimerEvent: {}
+[66.906833] (-) TimerEvent: {}
+[67.007509] (-) TimerEvent: {}
+[67.108185] (-) TimerEvent: {}
+[67.208907] (-) TimerEvent: {}
+[67.309579] (-) TimerEvent: {}
+[67.410270] (-) TimerEvent: {}
+[67.511120] (-) TimerEvent: {}
+[67.612547] (-) TimerEvent: {}
+[67.713276] (-) TimerEvent: {}
+[67.814065] (-) TimerEvent: {}
+[67.914798] (-) TimerEvent: {}
+[68.015560] (-) TimerEvent: {}
+[68.020623] (servo_motor) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable servo_motor_node\x1b[0m\n'}
+[68.115837] (-) TimerEvent: {}
+[68.216681] (-) TimerEvent: {}
+[68.317362] (-) TimerEvent: {}
+[68.418154] (-) TimerEvent: {}
+[68.518982] (-) TimerEvent: {}
+[68.619798] (-) TimerEvent: {}
+[68.720599] (-) TimerEvent: {}
+[68.821389] (-) TimerEvent: {}
+[68.922246] (-) TimerEvent: {}
+[69.023318] (-) TimerEvent: {}
+[69.124044] (-) TimerEvent: {}
+[69.224750] (-) TimerEvent: {}
+[69.325386] (-) TimerEvent: {}
+[69.426039] (-) TimerEvent: {}
+[69.526605] (-) TimerEvent: {}
+[69.627205] (-) TimerEvent: {}
+[69.627805] (servo_motor) StdoutLine: {'line': b'[100%] Built target servo_motor_node\n'}
+[69.678341] (servo_motor) CommandEnded: {'returncode': 0}
+[69.680517] (servo_motor) JobProgress: {'identifier': 'servo_motor', 'progress': 'install'}
+[69.681391] (servo_motor) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/servo_motor'], 'cwd': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/servo_motor', 'env': OrderedDict({'USER': 'jetpack', 'SSH_CLIENT': '192.168.1.80 63310 22', 'STARSHIP_SHELL': 'fish', 'XDG_SESSION_TYPE': 'tty', 'LD_LIBRARY_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/lib:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib', 'SHLVL': '3', 'HOME': '/home/jetpack', 'SSH_TTY': '/dev/pts/0', 'OPENAI_API_KEY': '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', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'OMF_PATH': '/home/jetpack/.local/share/omf', 'LOGNAME': 'jetpack', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '10', 'PATH': '/opt/ros/jazzy/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/.fzf/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/miniconda3/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy', 'SHELL': '/usr/bin/fish', 'WIFI_SSID': 'MEO-BD8310', 'PWD': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/servo_motor', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'SSH_CONNECTION': '192.168.1.80 63310 192.168.1.84 22', 'OMF_CONFIG': '/home/jetpack/.config/omf', 'STARSHIP_SESSION_KEY': '2569217148239653', 'PYTHONPATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'EDITOR': 'nvim', 'WIFI_PASSWORD': '9f24731014', 'WARP_THEMES_DIR': '/home/jetpack/.warp/themes', 'CMAKE_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy'}), 'shell': False}
+[69.720778] (servo_motor) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[69.722477] (servo_motor) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[69.724218] (servo_motor) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor/lib/servo_motor/servo_motor_node\n'}
+[69.727358] (-) TimerEvent: {}
+[69.767230] (servo_motor) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor/share/ament_index/resource_index/package_run_dependencies/servo_motor\n'}
+[69.810737] (servo_motor) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor/share/ament_index/resource_index/parent_prefix_path/servo_motor\n'}
+[69.827575] (-) TimerEvent: {}
+[69.855252] (servo_motor) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor/share/servo_motor/environment/ament_prefix_path.sh\n'}
+[69.897976] (servo_motor) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor/share/servo_motor/environment/ament_prefix_path.dsv\n'}
+[69.927729] (-) TimerEvent: {}
+[69.941071] (servo_motor) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor/share/servo_motor/environment/path.sh\n'}
+[69.983955] (servo_motor) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor/share/servo_motor/environment/path.dsv\n'}
+[70.027150] (servo_motor) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor/share/servo_motor/local_setup.bash\n'}
+[70.027722] (-) TimerEvent: {}
+[70.070479] (servo_motor) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor/share/servo_motor/local_setup.sh\n'}
+[70.115032] (servo_motor) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor/share/servo_motor/local_setup.zsh\n'}
+[70.128006] (-) TimerEvent: {}
+[70.158304] (servo_motor) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor/share/servo_motor/local_setup.dsv\n'}
+[70.201340] (servo_motor) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor/share/servo_motor/package.dsv\n'}
+[70.228246] (-) TimerEvent: {}
+[70.244734] (servo_motor) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor/share/ament_index/resource_index/packages/servo_motor\n'}
+[70.289116] (servo_motor) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor/share/servo_motor/cmake/servo_motorConfig.cmake\n'}
+[70.328454] (-) TimerEvent: {}
+[70.334065] (servo_motor) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor/share/servo_motor/cmake/servo_motorConfig-version.cmake\n'}
+[70.376888] (servo_motor) StdoutLine: {'line': b'-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor/share/servo_motor/package.xml\n'}
+[70.426281] (servo_motor) CommandEnded: {'returncode': 0}
+[70.428916] (-) TimerEvent: {}
+[70.480387] (servo_motor) JobEnded: {'identifier': 'servo_motor', 'rc': 0}
+[70.483744] (-) EventReactorShutdown: {}

@@ -1,0 +1,57 @@
+[0.085s] Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/pca9685_driver': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake /home/jetpack/SEAME-Cluster-24-25/JetRacer/src/utils/pca9685_driver -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver
+[0.480s] -- The C compiler identification is GNU 13.2.0
+[0.865s] -- The CXX compiler identification is GNU 13.2.0
+[0.958s] -- Detecting C compiler ABI info
+[1.559s] -- Detecting C compiler ABI info - done
+[1.600s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.603s] -- Detecting C compile features
+[1.603s] -- Detecting C compile features - done
+[1.654s] -- Detecting CXX compiler ABI info
+[2.257s] -- Detecting CXX compiler ABI info - done
+[2.309s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[2.311s] -- Detecting CXX compile features
+[2.312s] -- Detecting CXX compile features - done
+[2.331s] -- Found ament_cmake: 2.5.2 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[3.366s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[3.902s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[4.206s] -- Found rclcpp: 28.1.5 (/opt/ros/jazzy/share/rclcpp/cmake)
+[4.512s] -- Found rosidl_generator_c: 4.6.4 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[4.606s] -- Found rosidl_generator_cpp: 4.6.4 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[4.707s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[4.816s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[5.249s] -- Found rmw_implementation_cmake: 7.3.1 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[5.274s] -- Found rmw_fastrtps_cpp: 8.4.1 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[5.731s] -- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[5.845s] -- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+[5.947s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[6.327s] -- Found custom_msgs: 0.0.0 (/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake)
+[7.110s] -- Configuring done (7.0s)
+[7.245s] -- Generating done (0.1s)
+[7.271s] -- Build files have been written to: /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/pca9685_driver
+[7.328s] Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/pca9685_driver' returned '0': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake /home/jetpack/SEAME-Cluster-24-25/JetRacer/src/utils/pca9685_driver -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver
+[7.336s] Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/pca9685_driver': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/pca9685_driver -- -j4 -l4
+[7.647s] [ 50%] [32mBuilding CXX object CMakeFiles/PCA9685Driver.dir/src/PCA9685Driver.cpp.o[0m
+[46.051s] [100%] [32m[1mLinking CXX shared library libPCA9685Driver.so[0m
+[47.277s] [100%] Built target PCA9685Driver
+[47.416s] Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/pca9685_driver' returned '0': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/pca9685_driver -- -j4 -l4
+[47.433s] Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/pca9685_driver': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/pca9685_driver
+[47.528s] -- Install configuration: ""
+[47.533s] -- Execute custom install script
+[47.538s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/lib/libPCA9685Driver.so
+[47.642s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/include/PCA9685Driver.hpp
+[47.764s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/ament_index/resource_index/package_run_dependencies/pca9685_driver
+[47.827s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/ament_index/resource_index/parent_prefix_path/pca9685_driver
+[47.892s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/environment/ament_prefix_path.sh
+[47.952s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/environment/ament_prefix_path.dsv
+[48.035s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/environment/path.sh
+[48.110s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/environment/path.dsv
+[48.189s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/local_setup.bash
+[48.294s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/local_setup.sh
+[48.407s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/local_setup.zsh
+[48.485s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/local_setup.dsv
+[48.549s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/package.dsv
+[48.665s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/ament_index/resource_index/packages/pca9685_driver
+[48.725s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/cmake/pca9685_driverConfig.cmake
+[48.789s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/cmake/pca9685_driverConfig-version.cmake
+[48.851s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/share/pca9685_driver/package.xml
+[48.932s] Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/pca9685_driver' returned '0': AMENT_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/opt/ros/jazzy LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/pca9685_driver

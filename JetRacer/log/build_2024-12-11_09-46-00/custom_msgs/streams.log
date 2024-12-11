@@ -1,0 +1,262 @@
+[0.068s] Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/custom_msgs': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake /home/jetpack/SEAME-Cluster-24-25/JetRacer/src/utils/custom_msgs -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs
+[0.422s] -- The C compiler identification is GNU 13.2.0
+[0.759s] -- The CXX compiler identification is GNU 13.2.0
+[0.840s] -- Detecting C compiler ABI info
+[1.334s] -- Detecting C compiler ABI info - done
+[1.370s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.373s] -- Detecting C compile features
+[1.374s] -- Detecting C compile features - done
+[1.418s] -- Detecting CXX compiler ABI info
+[1.957s] -- Detecting CXX compiler ABI info - done
+[1.998s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.999s] -- Detecting CXX compile features
+[2.001s] -- Detecting CXX compile features - done
+[2.023s] -- Found ament_cmake: 2.5.2 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[2.881s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[3.331s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[3.612s] -- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)
+[3.652s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[4.010s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[4.274s] -- Found rosidl_adapter: 4.6.4 (/opt/ros/jazzy/share/rosidl_adapter/cmake)
+[7.705s] -- Found ament_cmake_ros: 0.12.0 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)
+[10.516s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[14.595s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[14.623s] -- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)
+[15.625s] -- Found PythonExtra: /usr/bin/python3  
+[18.868s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed 
+[19.130s] -- Found ament_lint_auto: 0.17.1 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[19.474s] -- Added test 'lint_cmake' to check CMake code style
+[19.488s] -- Added test 'xmllint' to check XML markup files
+[19.529s] -- Configuring done (19.4s)
+[19.900s] -- Generating done (0.3s)
+[19.986s] -- Build files have been written to: /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/custom_msgs
+[20.078s] Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/custom_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake /home/jetpack/SEAME-Cluster-24-25/JetRacer/src/utils/custom_msgs -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs
+[20.088s] Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/custom_msgs': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --build /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/custom_msgs -- -j4 -l4
+[20.530s] [  1%] [34m[1mGenerating type hashes for ROS interfaces[0m
+[20.578s] [  1%] Built target ament_cmake_python_symlink_custom_msgs
+[22.947s] running egg_info
+[22.951s] creating custom_msgs.egg-info
+[23.170s] writing custom_msgs.egg-info/PKG-INFO
+[23.174s] writing dependency_links to custom_msgs.egg-info/dependency_links.txt
+[23.179s] writing top-level names to custom_msgs.egg-info/top_level.txt
+[23.183s] writing manifest file 'custom_msgs.egg-info/SOURCES.txt'
+[23.863s] reading manifest file 'custom_msgs.egg-info/SOURCES.txt'
+[23.866s] writing manifest file 'custom_msgs.egg-info/SOURCES.txt'
+[23.936s] [  1%] Built target custom_msgs__rosidl_generator_type_description
+[24.088s] [  3%] [34m[1mGenerating C code for ROS interfaces[0m
+[24.116s] [  3%] Built target ament_cmake_python_build_custom_msgs_egg
+[24.169s] [  5%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[28.392s] [  5%] Built target custom_msgs__cpp
+[29.380s] [  7%] [32mBuilding C object CMakeFiles/custom_msgs__rosidl_generator_c.dir/rosidl_generator_c/custom_msgs/msg/detail/can_frame__description.c.o[0m
+[29.396s] [  9%] [32mBuilding C object CMakeFiles/custom_msgs__rosidl_generator_c.dir/rosidl_generator_c/custom_msgs/msg/detail/can_frame__type_support.c.o[0m
+[29.401s] [ 11%] [32mBuilding C object CMakeFiles/custom_msgs__rosidl_generator_c.dir/rosidl_generator_c/custom_msgs/msg/detail/can_frame__functions.c.o[0m
+[29.409s] [ 12%] [32mBuilding C object CMakeFiles/custom_msgs__rosidl_generator_c.dir/rosidl_generator_c/custom_msgs/srv/detail/i2c_service__description.c.o[0m
+[29.831s] [ 14%] [32mBuilding C object CMakeFiles/custom_msgs__rosidl_generator_c.dir/rosidl_generator_c/custom_msgs/srv/detail/i2c_service__type_support.c.o[0m
+[29.839s] [ 16%] [32mBuilding C object CMakeFiles/custom_msgs__rosidl_generator_c.dir/rosidl_generator_c/custom_msgs/srv/detail/i2c_service__functions.c.o[0m
+[30.002s] [ 18%] [32mBuilding C object CMakeFiles/custom_msgs__rosidl_generator_c.dir/rosidl_generator_c/custom_msgs/srv/detail/can_service__description.c.o[0m
+[30.037s] [ 20%] [32mBuilding C object CMakeFiles/custom_msgs__rosidl_generator_c.dir/rosidl_generator_c/custom_msgs/srv/detail/can_service__functions.c.o[0m
+[30.339s] [ 22%] [32mBuilding C object CMakeFiles/custom_msgs__rosidl_generator_c.dir/rosidl_generator_c/custom_msgs/srv/detail/can_service__type_support.c.o[0m
+[30.833s] [ 24%] [32m[1mLinking C shared library libcustom_msgs__rosidl_generator_c.so[0m
+[31.097s] [ 24%] Built target custom_msgs__rosidl_generator_c
+[31.208s] [ 25%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[31.220s] [ 27%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[31.224s] [ 29%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[31.228s] [ 31%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[35.598s] [ 33%] [32mBuilding CXX object CMakeFiles/custom_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/custom_msgs/msg/can_frame__type_support.cpp.o[0m
+[35.654s] [ 35%] [32mBuilding CXX object CMakeFiles/custom_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/custom_msgs/msg/can_frame__type_support.cpp.o[0m
+[35.898s] [ 37%] [32mBuilding C object CMakeFiles/custom_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/custom_msgs/msg/detail/can_frame__type_support.c.o[0m
+[36.226s] [ 38%] [32mBuilding CXX object CMakeFiles/custom_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/custom_msgs/srv/i2c_service__type_support.cpp.o[0m
+[36.321s] [ 40%] [32mBuilding C object CMakeFiles/custom_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/custom_msgs/srv/detail/i2c_service__type_support.c.o[0m
+[36.788s] [ 42%] [32mBuilding CXX object CMakeFiles/custom_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/custom_msgs/msg/detail/can_frame__type_support_c.cpp.o[0m
+[36.886s] [ 44%] [32mBuilding C object CMakeFiles/custom_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/custom_msgs/srv/detail/can_service__type_support.c.o[0m
+[36.891s] [ 46%] [32mBuilding CXX object CMakeFiles/custom_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/custom_msgs/srv/can_service__type_support.cpp.o[0m
+[37.322s] [ 48%] [32m[1mLinking CXX shared library libcustom_msgs__rosidl_typesupport_c.so[0m
+[37.644s] [ 48%] Built target custom_msgs__rosidl_typesupport_c
+[37.693s] [ 50%] [32m[1mLinking C shared library libcustom_msgs__rosidl_typesupport_introspection_c.so[0m
+[37.770s] [ 51%] [32mBuilding CXX object CMakeFiles/custom_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/custom_msgs/srv/detail/i2c_service__type_support_c.cpp.o[0m
+[38.055s] [ 51%] Built target custom_msgs__rosidl_typesupport_introspection_c
+[38.165s] [ 53%] [32mBuilding CXX object CMakeFiles/custom_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/custom_msgs/srv/i2c_service__type_support.cpp.o[0m
+[38.924s] [ 55%] [32mBuilding CXX object CMakeFiles/custom_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/custom_msgs/srv/can_service__type_support.cpp.o[0m
+[41.326s] [ 57%] [32mBuilding CXX object CMakeFiles/custom_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/custom_msgs/srv/detail/can_service__type_support_c.cpp.o[0m
+[43.360s] [ 59%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[43.734s] [ 61%] [32m[1mLinking CXX shared library libcustom_msgs__rosidl_typesupport_cpp.so[0m
+[44.662s] [ 61%] Built target custom_msgs__rosidl_typesupport_cpp
+[44.795s] [ 62%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[46.865s] [ 64%] [32m[1mLinking CXX shared library libcustom_msgs__rosidl_typesupport_fastrtps_c.so[0m
+[47.532s] [ 64%] Built target custom_msgs__rosidl_typesupport_fastrtps_c
+[48.171s] [ 66%] [32mBuilding CXX object CMakeFiles/custom_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/custom_msgs/srv/detail/dds_fastrtps/can_service__type_support.cpp.o[0m
+[48.218s] [ 68%] [32mBuilding CXX object CMakeFiles/custom_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/custom_msgs/msg/detail/dds_fastrtps/can_frame__type_support.cpp.o[0m
+[48.222s] [ 70%] [32mBuilding CXX object CMakeFiles/custom_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/custom_msgs/srv/detail/dds_fastrtps/i2c_service__type_support.cpp.o[0m
+[49.162s] [ 72%] [32mBuilding CXX object CMakeFiles/custom_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/custom_msgs/msg/detail/can_frame__type_support.cpp.o[0m
+[52.256s] [ 74%] [32mBuilding CXX object CMakeFiles/custom_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/custom_msgs/srv/detail/i2c_service__type_support.cpp.o[0m
+[53.424s] [ 75%] [32mBuilding CXX object CMakeFiles/custom_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/custom_msgs/srv/detail/can_service__type_support.cpp.o[0m
+[55.510s] [ 77%] [32m[1mLinking CXX shared library libcustom_msgs__rosidl_typesupport_fastrtps_cpp.so[0m
+[55.984s] [ 77%] Built target custom_msgs__rosidl_typesupport_fastrtps_cpp
+[57.410s] [ 79%] [32m[1mLinking CXX shared library libcustom_msgs__rosidl_typesupport_introspection_cpp.so[0m
+[57.772s] [ 79%] Built target custom_msgs__rosidl_typesupport_introspection_cpp
+[57.872s] [ 79%] Built target custom_msgs
+[57.966s] [ 81%] [34m[1mGenerating Python code for ROS interfaces[0m
+[61.625s] [ 81%] Built target custom_msgs__py
+[61.723s] [ 83%] [32mBuilding C object CMakeFiles/custom_msgs__rosidl_generator_py.dir/rosidl_generator_py/custom_msgs/msg/_can_frame_s.c.o[0m
+[61.725s] [ 85%] [32mBuilding C object CMakeFiles/custom_msgs__rosidl_generator_py.dir/rosidl_generator_py/custom_msgs/srv/_i2c_service_s.c.o[0m
+[61.728s] [ 87%] [32mBuilding C object CMakeFiles/custom_msgs__rosidl_generator_py.dir/rosidl_generator_py/custom_msgs/srv/_can_service_s.c.o[0m
+[62.714s] [ 88%] [32m[1mLinking C shared library libcustom_msgs__rosidl_generator_py.so[0m
+[62.940s] [ 88%] Built target custom_msgs__rosidl_generator_py
+[63.045s] [ 92%] [32mBuilding C object CMakeFiles/custom_msgs_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/custom_msgs/_custom_msgs_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[63.046s] [ 92%] [32mBuilding C object CMakeFiles/custom_msgs_s__rosidl_typesupport_introspection_c.dir/rosidl_generator_py/custom_msgs/_custom_msgs_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[63.048s] [ 94%] [32mBuilding C object CMakeFiles/custom_msgs_s__rosidl_typesupport_c.dir/rosidl_generator_py/custom_msgs/_custom_msgs_s.ep.rosidl_typesupport_c.c.o[0m
+[63.726s] [ 96%] [32m[1mLinking C shared module rosidl_generator_py/custom_msgs/custom_msgs_s__rosidl_typesupport_c.so[0m
+[63.736s] [ 98%] [32m[1mLinking C shared module rosidl_generator_py/custom_msgs/custom_msgs_s__rosidl_typesupport_introspection_c.so[0m
+[63.777s] [100%] [32m[1mLinking C shared module rosidl_generator_py/custom_msgs/custom_msgs_s__rosidl_typesupport_fastrtps_c.so[0m
+[63.900s] [100%] Built target custom_msgs_s__rosidl_typesupport_c
+[63.905s] [100%] Built target custom_msgs_s__rosidl_typesupport_introspection_c
+[63.947s] [100%] Built target custom_msgs_s__rosidl_typesupport_fastrtps_c
+[64.001s] Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/custom_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --build /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/custom_msgs -- -j4 -l4
+[64.007s] Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/custom_msgs': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --install /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/custom_msgs
+[64.044s] -- Install configuration: ""
+[64.046s] -- Execute custom install script
+[64.047s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/ament_index/resource_index/rosidl_interfaces/custom_msgs
+[64.089s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/msg/CanFrame.json
+[64.132s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/srv/I2cService.json
+[64.174s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/srv/CanService.json
+[64.227s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/msg/can_frame.h
+[64.271s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/msg/detail/can_frame__functions.h
+[64.311s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/msg/detail/can_frame__struct.h
+[64.352s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/msg/detail/can_frame__type_support.h
+[64.394s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/msg/rosidl_generator_c__visibility_control.h
+[64.438s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/can_service.h
+[64.479s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/detail/can_service__functions.h
+[64.521s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/detail/can_service__struct.h
+[64.563s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/detail/can_service__type_support.h
+[64.617s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/detail/i2c_service__functions.h
+[64.662s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/detail/i2c_service__struct.h
+[64.703s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/detail/i2c_service__type_support.h
+[64.744s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/i2c_service.h
+[64.786s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/environment/library_path.sh
+[64.828s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/environment/library_path.dsv
+[64.872s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/msg/detail/can_frame__rosidl_typesupport_fastrtps_c.h
+[64.915s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[64.955s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/detail/can_service__rosidl_typesupport_fastrtps_c.h
+[64.996s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/detail/i2c_service__rosidl_typesupport_fastrtps_c.h
+[65.039s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/msg/detail/can_frame__rosidl_typesupport_introspection_c.h
+[65.081s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[65.122s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/detail/can_service__rosidl_typesupport_introspection_c.h
+[65.163s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/detail/i2c_service__rosidl_typesupport_introspection_c.h
+[65.207s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/msg/can_frame.hpp
+[65.249s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/msg/detail/can_frame__builder.hpp
+[65.290s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/msg/detail/can_frame__struct.hpp
+[65.331s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/msg/detail/can_frame__traits.hpp
+[65.372s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/msg/detail/can_frame__type_support.hpp
+[65.413s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/msg/rosidl_generator_cpp__visibility_control.hpp
+[65.456s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/can_service.hpp
+[65.497s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/detail/can_service__builder.hpp
+[65.542s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/detail/can_service__struct.hpp
+[65.583s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/detail/can_service__traits.hpp
+[65.624s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/detail/can_service__type_support.hpp
+[65.667s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/detail/i2c_service__builder.hpp
+[65.707s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/detail/i2c_service__struct.hpp
+[65.750s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/detail/i2c_service__traits.hpp
+[65.791s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/detail/i2c_service__type_support.hpp
+[65.833s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/i2c_service.hpp
+[65.880s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/msg/detail/can_frame__rosidl_typesupport_fastrtps_cpp.hpp
+[65.922s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[65.964s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/detail/can_service__rosidl_typesupport_fastrtps_cpp.hpp
+[66.004s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/detail/i2c_service__rosidl_typesupport_fastrtps_cpp.hpp
+[66.048s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/msg/detail/can_frame__rosidl_typesupport_introspection_cpp.hpp
+[66.089s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/detail/can_service__rosidl_typesupport_introspection_cpp.hpp
+[66.131s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/include/custom_msgs/custom_msgs/srv/detail/i2c_service__rosidl_typesupport_introspection_cpp.hpp
+[66.172s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/environment/pythonpath.sh
+[66.213s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/environment/pythonpath.dsv
+[66.256s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs-0.0.0-py3.12.egg-info/PKG-INFO
+[66.298s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs-0.0.0-py3.12.egg-info/SOURCES.txt
+[66.339s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs-0.0.0-py3.12.egg-info/dependency_links.txt
+[66.380s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs-0.0.0-py3.12.egg-info/top_level.txt
+[66.426s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs/__init__.py
+[66.466s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs/_custom_msgs_s.ep.rosidl_typesupport_c.c
+[66.507s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs/_custom_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+[66.550s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs/_custom_msgs_s.ep.rosidl_typesupport_introspection_c.c
+[66.591s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs/custom_msgs_s__rosidl_typesupport_c.so
+[66.633s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs/custom_msgs_s__rosidl_typesupport_fastrtps_c.so
+[66.673s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs/custom_msgs_s__rosidl_typesupport_introspection_c.so
+[66.716s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs/msg/__init__.py
+[66.759s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs/msg/_can_frame.py
+[66.800s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs/msg/_can_frame_s.c
+[66.843s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs/srv/__init__.py
+[66.883s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs/srv/_can_service.py
+[66.928s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs/srv/_can_service_s.c
+[66.969s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs/srv/_i2c_service.py
+[67.010s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs/srv/_i2c_service_s.c
+[67.052s] -- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs/custom_msgs_s__rosidl_typesupport_fastrtps_c.so
+[67.054s] -- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs/custom_msgs_s__rosidl_typesupport_introspection_c.so
+[67.055s] -- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs/custom_msgs_s__rosidl_typesupport_c.so
+[67.056s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/msg/CanFrame.idl
+[67.097s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/srv/I2cService.idl
+[67.139s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/srv/CanService.idl
+[67.180s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/msg/CanFrame.msg
+[67.221s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/srv/I2cService.srv
+[67.262s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/srv/CanService.srv
+[67.304s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/ament_index/resource_index/package_run_dependencies/custom_msgs
+[67.347s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/ament_index/resource_index/parent_prefix_path/custom_msgs
+[67.389s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/environment/ament_prefix_path.sh
+[67.432s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/environment/ament_prefix_path.dsv
+[67.475s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/environment/path.sh
+[67.516s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/environment/path.dsv
+[67.559s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/local_setup.bash
+[67.600s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/local_setup.sh
+[67.641s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/local_setup.zsh
+[67.682s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/local_setup.dsv
+[67.723s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/package.dsv
+[67.768s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/ament_index/resource_index/packages/custom_msgs
+[67.809s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/rosidl_cmake-extras.cmake
+[67.852s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/ament_cmake_export_dependencies-extras.cmake
+[67.894s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/ament_cmake_export_include_directories-extras.cmake
+[67.935s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/ament_cmake_export_libraries-extras.cmake
+[67.976s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/ament_cmake_export_targets-extras.cmake
+[68.018s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[68.060s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[68.101s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/custom_msgsConfig.cmake
+[68.143s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/custom_msgsConfig-version.cmake
+[68.186s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/package.xml
+[68.232s] -- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/libcustom_msgs__rosidl_generator_c.so
+[68.237s] -- Set non-toolchain portion of runtime path of "/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/libcustom_msgs__rosidl_generator_c.so" to ""
+[68.238s] -- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/libcustom_msgs__rosidl_typesupport_fastrtps_c.so
+[68.242s] -- Set non-toolchain portion of runtime path of "/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/libcustom_msgs__rosidl_typesupport_fastrtps_c.so" to ""
+[68.243s] -- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/libcustom_msgs__rosidl_typesupport_introspection_c.so
+[68.246s] -- Set non-toolchain portion of runtime path of "/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/libcustom_msgs__rosidl_typesupport_introspection_c.so" to ""
+[68.246s] -- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/libcustom_msgs__rosidl_typesupport_c.so
+[68.249s] -- Set non-toolchain portion of runtime path of "/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/libcustom_msgs__rosidl_typesupport_c.so" to ""
+[68.250s] -- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/libcustom_msgs__rosidl_typesupport_fastrtps_cpp.so
+[68.254s] -- Set non-toolchain portion of runtime path of "/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/libcustom_msgs__rosidl_typesupport_fastrtps_cpp.so" to ""
+[68.255s] -- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/libcustom_msgs__rosidl_typesupport_introspection_cpp.so
+[68.259s] -- Set non-toolchain portion of runtime path of "/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/libcustom_msgs__rosidl_typesupport_introspection_cpp.so" to ""
+[68.260s] -- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/libcustom_msgs__rosidl_typesupport_cpp.so
+[68.263s] -- Set non-toolchain portion of runtime path of "/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/libcustom_msgs__rosidl_typesupport_cpp.so" to ""
+[68.483s] Listing '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs'...
+[68.484s] Compiling '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs/__init__.py'...
+[68.485s] Listing '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs/msg'...
+[68.486s] Compiling '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs/msg/__init__.py'...
+[68.487s] Compiling '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs/msg/_can_frame.py'...
+[68.488s] Listing '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs/srv'...
+[68.488s] Compiling '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs/srv/__init__.py'...
+[68.489s] Compiling '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs/srv/_can_service.py'...
+[68.490s] Compiling '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages/custom_msgs/srv/_i2c_service.py'...
+[68.514s] -- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/libcustom_msgs__rosidl_generator_py.so
+[68.517s] -- Set non-toolchain portion of runtime path of "/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/libcustom_msgs__rosidl_generator_py.so" to ""
+[68.517s] -- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/export_custom_msgs__rosidl_generator_cExport.cmake
+[68.519s] -- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/export_custom_msgs__rosidl_generator_cExport-noconfig.cmake
+[68.520s] -- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/export_custom_msgs__rosidl_typesupport_fastrtps_cExport.cmake
+[68.522s] -- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/export_custom_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[68.523s] -- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/custom_msgs__rosidl_typesupport_introspection_cExport.cmake
+[68.525s] -- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/custom_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[68.526s] -- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/custom_msgs__rosidl_typesupport_cExport.cmake
+[68.528s] -- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/custom_msgs__rosidl_typesupport_cExport-noconfig.cmake
+[68.529s] -- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/export_custom_msgs__rosidl_generator_cppExport.cmake
+[68.531s] -- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/export_custom_msgs__rosidl_typesupport_fastrtps_cppExport.cmake
+[68.532s] -- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/export_custom_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[68.534s] -- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/custom_msgs__rosidl_typesupport_introspection_cppExport.cmake
+[68.535s] -- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/custom_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[68.536s] -- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/custom_msgs__rosidl_typesupport_cppExport.cmake
+[68.538s] -- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/custom_msgs__rosidl_typesupport_cppExport-noconfig.cmake
+[68.539s] -- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/export_custom_msgs__rosidl_generator_pyExport.cmake
+[68.541s] -- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake/export_custom_msgs__rosidl_generator_pyExport-noconfig.cmake
+[68.549s] Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/custom_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --install /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/custom_msgs

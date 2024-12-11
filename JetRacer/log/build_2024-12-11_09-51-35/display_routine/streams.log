@@ -1,0 +1,23 @@
+[0.064s] Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/display_routine': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --build /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/display_routine -- -j4 -l4
+[0.430s] [100%] Built target display_routine_node
+[0.492s] Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/display_routine' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --build /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/display_routine -- -j4 -l4
+[0.547s] Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/display_routine': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --install /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/display_routine
+[0.630s] -- Install configuration: ""
+[0.631s] -- Execute custom install script
+[0.637s] -- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/lib/display_routine/display_routine_node
+[0.637s] -- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/ament_index/resource_index/package_run_dependencies/display_routine
+[0.639s] -- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/ament_index/resource_index/parent_prefix_path/display_routine
+[0.640s] -- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/environment/ament_prefix_path.sh
+[0.650s] -- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/environment/ament_prefix_path.dsv
+[0.651s] -- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/environment/path.sh
+[0.651s] -- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/environment/path.dsv
+[0.652s] -- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/local_setup.bash
+[0.657s] -- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/local_setup.sh
+[0.657s] -- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/local_setup.zsh
+[0.660s] -- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/local_setup.dsv
+[0.660s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/package.dsv
+[0.710s] -- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/ament_index/resource_index/packages/display_routine
+[0.711s] -- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/cmake/display_routineConfig.cmake
+[0.713s] -- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/cmake/display_routineConfig-version.cmake
+[0.714s] -- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/package.xml
+[0.730s] Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/display_routine' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --install /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/display_routine

@@ -1,0 +1,16 @@
+/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/lib/display_routine/display_routine_node
+/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/ament_index/resource_index/package_run_dependencies/display_routine
+/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/ament_index/resource_index/parent_prefix_path/display_routine
+/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/environment/ament_prefix_path.sh
+/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/environment/ament_prefix_path.dsv
+/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/environment/path.sh
+/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/environment/path.dsv
+/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/local_setup.bash
+/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/local_setup.sh
+/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/local_setup.zsh
+/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/local_setup.dsv
+/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/package.dsv
+/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/ament_index/resource_index/packages/display_routine
+/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/cmake/display_routineConfig.cmake
+/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/cmake/display_routineConfig-version.cmake
+/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine/share/display_routine/package.xml

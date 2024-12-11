@@ -1,0 +1,23 @@
+[0.069s] Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_peripheral_stress_test': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --build /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_peripheral_stress_test -- -j4 -l4
+[0.411s] [100%] Built target i2c_peripheral_stress_test_node
+[0.542s] Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_peripheral_stress_test' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --build /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_peripheral_stress_test -- -j4 -l4
+[0.554s] Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_peripheral_stress_test': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --install /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_peripheral_stress_test
+[0.643s] -- Install configuration: ""
+[0.651s] -- Execute custom install script
+[0.652s] -- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/lib/i2c_peripheral_stress_test/i2c_peripheral_stress_test_node
+[0.655s] -- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/ament_index/resource_index/package_run_dependencies/i2c_peripheral_stress_test
+[0.662s] -- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/ament_index/resource_index/parent_prefix_path/i2c_peripheral_stress_test
+[0.662s] -- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/environment/ament_prefix_path.sh
+[0.670s] -- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/environment/ament_prefix_path.dsv
+[0.671s] -- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/environment/path.sh
+[0.673s] -- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/environment/path.dsv
+[0.678s] -- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/local_setup.bash
+[0.687s] -- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/local_setup.sh
+[0.690s] -- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/local_setup.zsh
+[0.697s] -- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/local_setup.dsv
+[0.698s] -- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/package.dsv
+[0.794s] -- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/ament_index/resource_index/packages/i2c_peripheral_stress_test
+[0.795s] -- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/cmake/i2c_peripheral_stress_testConfig.cmake
+[0.804s] -- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/cmake/i2c_peripheral_stress_testConfig-version.cmake
+[0.805s] -- Up-to-date symlink: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/package.xml
+[0.897s] Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_peripheral_stress_test' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --install /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_peripheral_stress_test
