@@ -1,1 +1,0 @@
-ament_cmake_symlink_install_targets("TARGET_FILES" "/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/display_routine/display_routine_node" "TARGETS" "display_routine_node" "DESTINATION" "lib/display_routine")

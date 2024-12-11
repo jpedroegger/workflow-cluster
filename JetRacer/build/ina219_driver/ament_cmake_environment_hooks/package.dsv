@@ -1,4 +1,0 @@
-source;share/ina219_driver/local_setup.bash
-source;share/ina219_driver/local_setup.dsv
-source;share/ina219_driver/local_setup.sh
-source;share/ina219_driver/local_setup.zsh

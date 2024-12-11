@@ -1,1 +1,0 @@
-/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/oled_display/ament_cmake_environment_hooks/local_setup.sh

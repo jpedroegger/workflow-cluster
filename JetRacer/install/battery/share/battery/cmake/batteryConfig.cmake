@@ -1,1 +1,0 @@
-/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/battery/ament_cmake_core/batteryConfig.cmake

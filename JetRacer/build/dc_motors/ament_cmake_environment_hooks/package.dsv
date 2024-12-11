@@ -1,4 +1,0 @@
-source;share/dc_motors/local_setup.bash
-source;share/dc_motors/local_setup.dsv
-source;share/dc_motors/local_setup.sh
-source;share/dc_motors/local_setup.zsh

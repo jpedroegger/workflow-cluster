@@ -1,0 +1,518 @@
+[0.000000] (-) TimerEvent: {}
+[0.000932] (-) JobUnselected: {'identifier': 'battery'}
+[0.001688] (-) JobUnselected: {'identifier': 'can_interface'}
+[0.001771] (-) JobUnselected: {'identifier': 'custom_msgs'}
+[0.001834] (-) JobUnselected: {'identifier': 'dc_motors'}
+[0.001896] (-) JobUnselected: {'identifier': 'display_routine'}
+[0.001958] (-) JobUnselected: {'identifier': 'i2c_interface'}
+[0.002018] (-) JobUnselected: {'identifier': 'i2c_peripheral_stress_test'}
+[0.002078] (-) JobUnselected: {'identifier': 'ina219_driver'}
+[0.002136] (-) JobUnselected: {'identifier': 'oled_display'}
+[0.002195] (-) JobUnselected: {'identifier': 'pca9685_driver'}
+[0.002253] (-) JobUnselected: {'identifier': 'servo_motor'}
+[0.002313] (-) JobUnselected: {'identifier': 'speed_sensor'}
+[0.002379] (camera) JobQueued: {'identifier': 'camera', 'dependencies': OrderedDict()}
+[0.002464] (camera) JobStarted: {'identifier': 'camera'}
+[0.069174] (camera) JobProgress: {'identifier': 'camera', 'progress': 'cmake'}
+[0.071754] (camera) Command: {'cmd': ['/usr/bin/cmake', '/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/peripherals/camera', '-DCMAKE_INSTALL_PREFIX=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera'], 'cwd': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/camera', 'env': OrderedDict({'USER': 'jetpack', 'SSH_CLIENT': '192.168.1.80 54676 22', 'STARSHIP_SHELL': 'fish', 'XDG_SESSION_TYPE': 'tty', 'LD_LIBRARY_PATH': '/usr/local/lib/aarch64-linux-gnu/libcamera/:/home/jetpack/ros2_v4l2/install/zstd_image_transport/lib:/home/jetpack/ros2_v4l2/install/v4l2_camera/lib:/home/jetpack/ros2_v4l2/install/theora_image_transport/lib:/home/jetpack/ros2_v4l2/install/compressed_image_transport/lib:/home/jetpack/ros2_v4l2/install/compressed_depth_image_transport/lib:/home/jetpack/ros2_v4l2/install/image_transport/lib:/home/jetpack/ros2_v4l2/install/cv_bridge/lib:/home/jetpack/ros2_v4l2/install/camera_info_manager/lib:/home/jetpack/ros2_v4l2/install/camera_calibration_parsers/lib:/usr/local/lib/aarch64-linux-gnu:/usr/local/lib/aarch64-linux-gnu:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/lib:/usr/local/lib/aarch64-linux-gnu:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/lib:/usr/local/lib/aarch64-linux-gnu:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/lib:/usr/local/lib/aarch64-linux-gnu:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:/usr/local/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/usr/local/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib/aarch64-linux-gnu:/usr/local/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/usr/local/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/usr/local/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/usr/local/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib:/usr/local/lib/aarch64-linux-gnu:', 'SHLVL': '1', 'HOME': '/home/jetpack', 'SSH_TTY': '/dev/pts/0', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'ROS_DISTRO': 'jazzy', 'OMF_PATH': '/home/jetpack/.local/share/omf', 'COLCON_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install:/home/jetpack/ros2_v4l2/install', 'LOGNAME': 'jetpack', 'XDG_SESSION_CLASS': 'user', 'ROS_VERSION': '2', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '3', 'PATH': '/opt/ros/jazzy/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/.fzf/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera:/home/jetpack/ros2_v4l2/install/image_transport_plugins:/home/jetpack/ros2_v4l2/install/zstd_image_transport:/home/jetpack/ros2_v4l2/install/v4l2_camera:/home/jetpack/ros2_v4l2/install/theora_image_transport:/home/jetpack/ros2_v4l2/install/compressed_image_transport:/home/jetpack/ros2_v4l2/install/compressed_depth_image_transport:/home/jetpack/ros2_v4l2/install/image_transport:/home/jetpack/ros2_v4l2/install/cv_bridge:/home/jetpack/ros2_v4l2/install/camera_info_manager:/home/jetpack/ros2_v4l2/install/camera_calibration_parsers:/opt/ros/jazzy', 'SHELL': '/usr/bin/fish', 'LIBCAMERA_IPA_DIR': '/usr/local/lib/aarch64-linux-gnu/libcamera/', 'WIFI_SSID': 'MEO-BD8310', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/camera', 'SSH_CONNECTION': '192.168.1.80 54676 192.168.1.84 22', 'OMF_CONFIG': '/home/jetpack/.config/omf', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'STARSHIP_SESSION_KEY': '2059658943015221', 'PYTHONPATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:/home/jetpack/ros2_v4l2/install/theora_image_transport/lib/python3.12/site-packages:/home/jetpack/ros2_v4l2/install/cv_bridge/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'WARP_THEMES_DIR': '/home/jetpack/.warp/themes', 'EDITOR': 'nvim', 'CMAKE_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera:/home/jetpack/ros2_v4l2/install/image_transport_plugins:/home/jetpack/ros2_v4l2/install/zstd_image_transport:/home/jetpack/ros2_v4l2/install/v4l2_camera:/home/jetpack/ros2_v4l2/install/theora_image_transport:/home/jetpack/ros2_v4l2/install/compressed_image_transport:/home/jetpack/ros2_v4l2/install/compressed_depth_image_transport:/home/jetpack/ros2_v4l2/install/image_transport:/home/jetpack/ros2_v4l2/install/cv_bridge:/home/jetpack/ros2_v4l2/install/camera_info_manager:/home/jetpack/ros2_v4l2/install/camera_calibration_parsers:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy', 'WIFI_PASSWORD': '9f24731014'}), 'shell': False}
+[0.099245] (-) TimerEvent: {}
+[0.200004] (-) TimerEvent: {}
+[0.300797] (-) TimerEvent: {}
+[0.401588] (-) TimerEvent: {}
+[0.423876] (camera) StdoutLine: {'line': b'-- The C compiler identification is GNU 13.2.0\n'}
+[0.501794] (-) TimerEvent: {}
+[0.602549] (-) TimerEvent: {}
+[0.703333] (-) TimerEvent: {}
+[0.735479] (camera) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 13.2.0\n'}
+[0.803548] (-) TimerEvent: {}
+[0.828899] (camera) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.903746] (-) TimerEvent: {}
+[1.004415] (-) TimerEvent: {}
+[1.105248] (-) TimerEvent: {}
+[1.206088] (-) TimerEvent: {}
+[1.306892] (-) TimerEvent: {}
+[1.395515] (camera) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[1.407021] (-) TimerEvent: {}
+[1.430674] (camera) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[1.431583] (camera) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[1.433162] (camera) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[1.485796] (camera) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[1.507246] (-) TimerEvent: {}
+[1.608017] (-) TimerEvent: {}
+[1.708747] (-) TimerEvent: {}
+[1.809532] (-) TimerEvent: {}
+[1.910199] (-) TimerEvent: {}
+[2.010902] (-) TimerEvent: {}
+[2.069726] (camera) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[2.105776] (camera) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[2.106863] (camera) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[2.108664] (camera) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[2.111022] (-) TimerEvent: {}
+[2.147401] (camera) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.2 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[2.211209] (-) TimerEvent: {}
+[2.311824] (-) TimerEvent: {}
+[2.412412] (-) TimerEvent: {}
+[2.512967] (-) TimerEvent: {}
+[2.613590] (-) TimerEvent: {}
+[2.714303] (-) TimerEvent: {}
+[2.815193] (-) TimerEvent: {}
+[2.916255] (-) TimerEvent: {}
+[3.016903] (-) TimerEvent: {}
+[3.117560] (-) TimerEvent: {}
+[3.173325] (camera) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter \n'}
+[3.217851] (-) TimerEvent: {}
+[3.318551] (-) TimerEvent: {}
+[3.419137] (-) TimerEvent: {}
+[3.519902] (-) TimerEvent: {}
+[3.620894] (-) TimerEvent: {}
+[3.721551] (-) TimerEvent: {}
+[3.822185] (-) TimerEvent: {}
+[3.922798] (-) TimerEvent: {}
+[4.023377] (-) TimerEvent: {}
+[4.058720] (camera) StdoutLine: {'line': b'-- Found rclcpp: 28.1.5 (/opt/ros/jazzy/share/rclcpp/cmake)\n'}
+[4.123585] (-) TimerEvent: {}
+[4.224243] (-) TimerEvent: {}
+[4.324906] (-) TimerEvent: {}
+[4.425550] (-) TimerEvent: {}
+[4.526166] (-) TimerEvent: {}
+[4.543664] (camera) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.4 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[4.626346] (-) TimerEvent: {}
+[4.689409] (camera) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.4 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[4.726541] (-) TimerEvent: {}
+[4.827149] (-) TimerEvent: {}
+[4.855716] (camera) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[4.927320] (-) TimerEvent: {}
+[5.027978] (-) TimerEvent: {}
+[5.028584] (camera) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[5.128150] (-) TimerEvent: {}
+[5.228773] (-) TimerEvent: {}
+[5.329374] (-) TimerEvent: {}
+[5.430045] (-) TimerEvent: {}
+[5.530746] (-) TimerEvent: {}
+[5.631367] (-) TimerEvent: {}
+[5.646275] (camera) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.3.1 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)\n'}
+[5.691200] (camera) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 8.4.1 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)\n'}
+[5.731558] (-) TimerEvent: {}
+[5.832191] (-) TimerEvent: {}
+[5.932940] (-) TimerEvent: {}
+[6.033677] (-) TimerEvent: {}
+[6.134381] (-) TimerEvent: {}
+[6.235172] (-) TimerEvent: {}
+[6.336062] (-) TimerEvent: {}
+[6.382604] (camera) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.13")  \n'}
+[6.436229] (-) TimerEvent: {}
+[6.502089] (camera) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") \n'}
+[6.536480] (-) TimerEvent: {}
+[6.614130] (camera) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[6.636609] (-) TimerEvent: {}
+[6.737215] (-) TimerEvent: {}
+[6.837853] (-) TimerEvent: {}
+[6.938492] (-) TimerEvent: {}
+[7.039112] (-) TimerEvent: {}
+[7.134496] (camera) StdoutLine: {'line': b'-- Found sensor_msgs: 5.3.5 (/opt/ros/jazzy/share/sensor_msgs/cmake)\n'}
+[7.139284] (-) TimerEvent: {}
+[7.239942] (-) TimerEvent: {}
+[7.340574] (-) TimerEvent: {}
+[7.441220] (-) TimerEvent: {}
+[7.462923] (camera) StdoutLine: {'line': b'-- Found image_transport: 5.1.5 (/home/jetpack/ros2_v4l2/install/image_transport/share/image_transport/cmake)\n'}
+[7.541385] (-) TimerEvent: {}
+[7.642000] (-) TimerEvent: {}
+[7.742580] (-) TimerEvent: {}
+[7.820869] (camera) StdoutLine: {'line': b'-- Found OpenCV: /usr (found version "4.6.0") \n'}
+[7.840909] (camera) StdoutLine: {'line': b'-- Found PkgConfig: /usr/bin/pkg-config (found version "1.8.1") \n'}
+[7.842745] (-) TimerEvent: {}
+[7.845593] (camera) StdoutLine: {'line': b"-- Checking for module 'libcamera'\n"}
+[7.942953] (-) TimerEvent: {}
+[7.943583] (camera) StdoutLine: {'line': b'--   Found libcamera, version 0.3.2\n'}
+[8.043193] (-) TimerEvent: {}
+[8.144010] (-) TimerEvent: {}
+[8.244796] (-) TimerEvent: {}
+[8.345375] (-) TimerEvent: {}
+[8.446020] (-) TimerEvent: {}
+[8.546713] (-) TimerEvent: {}
+[8.637661] (camera) StdoutLine: {'line': b'-- Configuring done (8.5s)\n'}
+[8.646859] (-) TimerEvent: {}
+[8.739039] (camera) StdoutLine: {'line': b'-- Generating done (0.0s)\n'}
+[8.747049] (-) TimerEvent: {}
+[8.757857] (camera) StdoutLine: {'line': b'-- Build files have been written to: /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/camera\n'}
+[8.805671] (camera) CommandEnded: {'returncode': 0}
+[8.807354] (camera) JobProgress: {'identifier': 'camera', 'progress': 'build'}
+[8.809383] (camera) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/camera', '--', '-j4', '-l4'], 'cwd': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/camera', 'env': OrderedDict({'USER': 'jetpack', 'SSH_CLIENT': '192.168.1.80 54676 22', 'STARSHIP_SHELL': 'fish', 'XDG_SESSION_TYPE': 'tty', 'LD_LIBRARY_PATH': '/usr/local/lib/aarch64-linux-gnu/libcamera/:/home/jetpack/ros2_v4l2/install/zstd_image_transport/lib:/home/jetpack/ros2_v4l2/install/v4l2_camera/lib:/home/jetpack/ros2_v4l2/install/theora_image_transport/lib:/home/jetpack/ros2_v4l2/install/compressed_image_transport/lib:/home/jetpack/ros2_v4l2/install/compressed_depth_image_transport/lib:/home/jetpack/ros2_v4l2/install/image_transport/lib:/home/jetpack/ros2_v4l2/install/cv_bridge/lib:/home/jetpack/ros2_v4l2/install/camera_info_manager/lib:/home/jetpack/ros2_v4l2/install/camera_calibration_parsers/lib:/usr/local/lib/aarch64-linux-gnu:/usr/local/lib/aarch64-linux-gnu:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/lib:/usr/local/lib/aarch64-linux-gnu:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/lib:/usr/local/lib/aarch64-linux-gnu:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/lib:/usr/local/lib/aarch64-linux-gnu:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:/usr/local/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/usr/local/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib/aarch64-linux-gnu:/usr/local/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/usr/local/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/usr/local/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/usr/local/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib:/usr/local/lib/aarch64-linux-gnu:', 'SHLVL': '1', 'HOME': '/home/jetpack', 'SSH_TTY': '/dev/pts/0', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'ROS_DISTRO': 'jazzy', 'OMF_PATH': '/home/jetpack/.local/share/omf', 'COLCON_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install:/home/jetpack/ros2_v4l2/install', 'LOGNAME': 'jetpack', 'XDG_SESSION_CLASS': 'user', 'ROS_VERSION': '2', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '3', 'PATH': '/opt/ros/jazzy/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/.fzf/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera:/home/jetpack/ros2_v4l2/install/image_transport_plugins:/home/jetpack/ros2_v4l2/install/zstd_image_transport:/home/jetpack/ros2_v4l2/install/v4l2_camera:/home/jetpack/ros2_v4l2/install/theora_image_transport:/home/jetpack/ros2_v4l2/install/compressed_image_transport:/home/jetpack/ros2_v4l2/install/compressed_depth_image_transport:/home/jetpack/ros2_v4l2/install/image_transport:/home/jetpack/ros2_v4l2/install/cv_bridge:/home/jetpack/ros2_v4l2/install/camera_info_manager:/home/jetpack/ros2_v4l2/install/camera_calibration_parsers:/opt/ros/jazzy', 'SHELL': '/usr/bin/fish', 'LIBCAMERA_IPA_DIR': '/usr/local/lib/aarch64-linux-gnu/libcamera/', 'WIFI_SSID': 'MEO-BD8310', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/camera', 'SSH_CONNECTION': '192.168.1.80 54676 192.168.1.84 22', 'OMF_CONFIG': '/home/jetpack/.config/omf', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'STARSHIP_SESSION_KEY': '2059658943015221', 'PYTHONPATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:/home/jetpack/ros2_v4l2/install/theora_image_transport/lib/python3.12/site-packages:/home/jetpack/ros2_v4l2/install/cv_bridge/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'WARP_THEMES_DIR': '/home/jetpack/.warp/themes', 'EDITOR': 'nvim', 'CMAKE_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera:/home/jetpack/ros2_v4l2/install/image_transport_plugins:/home/jetpack/ros2_v4l2/install/zstd_image_transport:/home/jetpack/ros2_v4l2/install/v4l2_camera:/home/jetpack/ros2_v4l2/install/theora_image_transport:/home/jetpack/ros2_v4l2/install/compressed_image_transport:/home/jetpack/ros2_v4l2/install/compressed_depth_image_transport:/home/jetpack/ros2_v4l2/install/image_transport:/home/jetpack/ros2_v4l2/install/cv_bridge:/home/jetpack/ros2_v4l2/install/camera_info_manager:/home/jetpack/ros2_v4l2/install/camera_calibration_parsers:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy', 'WIFI_PASSWORD': '9f24731014'}), 'shell': False}
+[8.847253] (-) TimerEvent: {}
+[8.947993] (-) TimerEvent: {}
+[9.048757] (-) TimerEvent: {}
+[9.146270] (camera) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/camera_node.dir/src/main.cpp.o\x1b[0m\n'}
+[9.148623] (camera) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding CXX object CMakeFiles/camera_node.dir/src/CameraNode.cpp.o\x1b[0m\n'}
+[9.149576] (-) TimerEvent: {}
+[9.250261] (-) TimerEvent: {}
+[9.351007] (-) TimerEvent: {}
+[9.451658] (-) TimerEvent: {}
+[9.552291] (-) TimerEvent: {}
+[9.652980] (-) TimerEvent: {}
+[9.753614] (-) TimerEvent: {}
+[9.854243] (-) TimerEvent: {}
+[9.954961] (-) TimerEvent: {}
+[10.055702] (-) TimerEvent: {}
+[10.156383] (-) TimerEvent: {}
+[10.257221] (-) TimerEvent: {}
+[10.357987] (-) TimerEvent: {}
+[10.458779] (-) TimerEvent: {}
+[10.559481] (-) TimerEvent: {}
+[10.660129] (-) TimerEvent: {}
+[10.760845] (-) TimerEvent: {}
+[10.861625] (-) TimerEvent: {}
+[10.962312] (-) TimerEvent: {}
+[11.063241] (-) TimerEvent: {}
+[11.163953] (-) TimerEvent: {}
+[11.264586] (-) TimerEvent: {}
+[11.365562] (-) TimerEvent: {}
+[11.466283] (-) TimerEvent: {}
+[11.567156] (-) TimerEvent: {}
+[11.668023] (-) TimerEvent: {}
+[11.768788] (-) TimerEvent: {}
+[11.869564] (-) TimerEvent: {}
+[11.970324] (-) TimerEvent: {}
+[12.071221] (-) TimerEvent: {}
+[12.172055] (-) TimerEvent: {}
+[12.272897] (-) TimerEvent: {}
+[12.373822] (-) TimerEvent: {}
+[12.474564] (-) TimerEvent: {}
+[12.575269] (-) TimerEvent: {}
+[12.676010] (-) TimerEvent: {}
+[12.776806] (-) TimerEvent: {}
+[12.877532] (-) TimerEvent: {}
+[12.978306] (-) TimerEvent: {}
+[13.079081] (-) TimerEvent: {}
+[13.179852] (-) TimerEvent: {}
+[13.280879] (-) TimerEvent: {}
+[13.381598] (-) TimerEvent: {}
+[13.482487] (-) TimerEvent: {}
+[13.583203] (-) TimerEvent: {}
+[13.684111] (-) TimerEvent: {}
+[13.784862] (-) TimerEvent: {}
+[13.885607] (-) TimerEvent: {}
+[13.986471] (-) TimerEvent: {}
+[14.087284] (-) TimerEvent: {}
+[14.188099] (-) TimerEvent: {}
+[14.289038] (-) TimerEvent: {}
+[14.389827] (-) TimerEvent: {}
+[14.490649] (-) TimerEvent: {}
+[14.591623] (-) TimerEvent: {}
+[14.692595] (-) TimerEvent: {}
+[14.793392] (-) TimerEvent: {}
+[14.894236] (-) TimerEvent: {}
+[14.995010] (-) TimerEvent: {}
+[15.095963] (-) TimerEvent: {}
+[15.196724] (-) TimerEvent: {}
+[15.297630] (-) TimerEvent: {}
+[15.398472] (-) TimerEvent: {}
+[15.499170] (-) TimerEvent: {}
+[15.600078] (-) TimerEvent: {}
+[15.700890] (-) TimerEvent: {}
+[15.801626] (-) TimerEvent: {}
+[15.902376] (-) TimerEvent: {}
+[16.003289] (-) TimerEvent: {}
+[16.104102] (-) TimerEvent: {}
+[16.204920] (-) TimerEvent: {}
+[16.305760] (-) TimerEvent: {}
+[16.406527] (-) TimerEvent: {}
+[16.507257] (-) TimerEvent: {}
+[16.608174] (-) TimerEvent: {}
+[16.709089] (-) TimerEvent: {}
+[16.809968] (-) TimerEvent: {}
+[16.910824] (-) TimerEvent: {}
+[17.011574] (-) TimerEvent: {}
+[17.112301] (-) TimerEvent: {}
+[17.213082] (-) TimerEvent: {}
+[17.313892] (-) TimerEvent: {}
+[17.414638] (-) TimerEvent: {}
+[17.515358] (-) TimerEvent: {}
+[17.616146] (-) TimerEvent: {}
+[17.716958] (-) TimerEvent: {}
+[17.817726] (-) TimerEvent: {}
+[17.918416] (-) TimerEvent: {}
+[18.019195] (-) TimerEvent: {}
+[18.120026] (-) TimerEvent: {}
+[18.220833] (-) TimerEvent: {}
+[18.321594] (-) TimerEvent: {}
+[18.422499] (-) TimerEvent: {}
+[18.523214] (-) TimerEvent: {}
+[18.624038] (-) TimerEvent: {}
+[18.724857] (-) TimerEvent: {}
+[18.825608] (-) TimerEvent: {}
+[18.926343] (-) TimerEvent: {}
+[19.027165] (-) TimerEvent: {}
+[19.127949] (-) TimerEvent: {}
+[19.228695] (-) TimerEvent: {}
+[19.329385] (-) TimerEvent: {}
+[19.430163] (-) TimerEvent: {}
+[19.530969] (-) TimerEvent: {}
+[19.631736] (-) TimerEvent: {}
+[19.732560] (-) TimerEvent: {}
+[19.833312] (-) TimerEvent: {}
+[19.934126] (-) TimerEvent: {}
+[20.034896] (-) TimerEvent: {}
+[20.135606] (-) TimerEvent: {}
+[20.236335] (-) TimerEvent: {}
+[20.337149] (-) TimerEvent: {}
+[20.438041] (-) TimerEvent: {}
+[20.538849] (-) TimerEvent: {}
+[20.639614] (-) TimerEvent: {}
+[20.740354] (-) TimerEvent: {}
+[20.841199] (-) TimerEvent: {}
+[20.942095] (-) TimerEvent: {}
+[21.042936] (-) TimerEvent: {}
+[21.143858] (-) TimerEvent: {}
+[21.244605] (-) TimerEvent: {}
+[21.345347] (-) TimerEvent: {}
+[21.446213] (-) TimerEvent: {}
+[21.547161] (-) TimerEvent: {}
+[21.648400] (-) TimerEvent: {}
+[21.749196] (-) TimerEvent: {}
+[21.850386] (-) TimerEvent: {}
+[21.951174] (-) TimerEvent: {}
+[22.051999] (-) TimerEvent: {}
+[22.153301] (-) TimerEvent: {}
+[22.254245] (-) TimerEvent: {}
+[22.355512] (-) TimerEvent: {}
+[22.456358] (-) TimerEvent: {}
+[22.557695] (-) TimerEvent: {}
+[22.658594] (-) TimerEvent: {}
+[22.759304] (-) TimerEvent: {}
+[22.860063] (-) TimerEvent: {}
+[22.960847] (-) TimerEvent: {}
+[23.061593] (-) TimerEvent: {}
+[23.162310] (-) TimerEvent: {}
+[23.263088] (-) TimerEvent: {}
+[23.363882] (-) TimerEvent: {}
+[23.464602] (-) TimerEvent: {}
+[23.565367] (-) TimerEvent: {}
+[23.666182] (-) TimerEvent: {}
+[23.766986] (-) TimerEvent: {}
+[23.867780] (-) TimerEvent: {}
+[23.968498] (-) TimerEvent: {}
+[24.069203] (-) TimerEvent: {}
+[24.169984] (-) TimerEvent: {}
+[24.270743] (-) TimerEvent: {}
+[24.371524] (-) TimerEvent: {}
+[24.472274] (-) TimerEvent: {}
+[24.573099] (-) TimerEvent: {}
+[24.673862] (-) TimerEvent: {}
+[24.774599] (-) TimerEvent: {}
+[24.875332] (-) TimerEvent: {}
+[24.976126] (-) TimerEvent: {}
+[25.076918] (-) TimerEvent: {}
+[25.177676] (-) TimerEvent: {}
+[25.278399] (-) TimerEvent: {}
+[25.379158] (-) TimerEvent: {}
+[25.479928] (-) TimerEvent: {}
+[25.580644] (-) TimerEvent: {}
+[25.681402] (-) TimerEvent: {}
+[25.782173] (-) TimerEvent: {}
+[25.882963] (-) TimerEvent: {}
+[25.983830] (-) TimerEvent: {}
+[26.084588] (-) TimerEvent: {}
+[26.185297] (-) TimerEvent: {}
+[26.286142] (-) TimerEvent: {}
+[26.386971] (-) TimerEvent: {}
+[26.487739] (-) TimerEvent: {}
+[26.588561] (-) TimerEvent: {}
+[26.689464] (-) TimerEvent: {}
+[26.790184] (-) TimerEvent: {}
+[26.890940] (-) TimerEvent: {}
+[26.991709] (-) TimerEvent: {}
+[27.092481] (-) TimerEvent: {}
+[27.193225] (-) TimerEvent: {}
+[27.294210] (-) TimerEvent: {}
+[27.394994] (-) TimerEvent: {}
+[27.495792] (-) TimerEvent: {}
+[27.596715] (-) TimerEvent: {}
+[27.697629] (-) TimerEvent: {}
+[27.798280] (-) TimerEvent: {}
+[27.898980] (-) TimerEvent: {}
+[27.999638] (-) TimerEvent: {}
+[28.100330] (-) TimerEvent: {}
+[28.201032] (-) TimerEvent: {}
+[28.301826] (-) TimerEvent: {}
+[28.402497] (-) TimerEvent: {}
+[28.503173] (-) TimerEvent: {}
+[28.603872] (-) TimerEvent: {}
+[28.704644] (-) TimerEvent: {}
+[28.805403] (-) TimerEvent: {}
+[28.906083] (-) TimerEvent: {}
+[29.006771] (-) TimerEvent: {}
+[29.107399] (-) TimerEvent: {}
+[29.208093] (-) TimerEvent: {}
+[29.308790] (-) TimerEvent: {}
+[29.409507] (-) TimerEvent: {}
+[29.510214] (-) TimerEvent: {}
+[29.610997] (-) TimerEvent: {}
+[29.711758] (-) TimerEvent: {}
+[29.812415] (-) TimerEvent: {}
+[29.913328] (-) TimerEvent: {}
+[30.014183] (-) TimerEvent: {}
+[30.115718] (-) TimerEvent: {}
+[30.216366] (-) TimerEvent: {}
+[30.317065] (-) TimerEvent: {}
+[30.417758] (-) TimerEvent: {}
+[30.518396] (-) TimerEvent: {}
+[30.619101] (-) TimerEvent: {}
+[30.719799] (-) TimerEvent: {}
+[30.820416] (-) TimerEvent: {}
+[30.921101] (-) TimerEvent: {}
+[31.021827] (-) TimerEvent: {}
+[31.122521] (-) TimerEvent: {}
+[31.223194] (-) TimerEvent: {}
+[31.323903] (-) TimerEvent: {}
+[31.424562] (-) TimerEvent: {}
+[31.525189] (-) TimerEvent: {}
+[31.625900] (-) TimerEvent: {}
+[31.726583] (-) TimerEvent: {}
+[31.827217] (-) TimerEvent: {}
+[31.927906] (-) TimerEvent: {}
+[32.028571] (-) TimerEvent: {}
+[32.129196] (-) TimerEvent: {}
+[32.229921] (-) TimerEvent: {}
+[32.330574] (-) TimerEvent: {}
+[32.431213] (-) TimerEvent: {}
+[32.531920] (-) TimerEvent: {}
+[32.632603] (-) TimerEvent: {}
+[32.733249] (-) TimerEvent: {}
+[32.833931] (-) TimerEvent: {}
+[32.934562] (-) TimerEvent: {}
+[33.035177] (-) TimerEvent: {}
+[33.135867] (-) TimerEvent: {}
+[33.236550] (-) TimerEvent: {}
+[33.337177] (-) TimerEvent: {}
+[33.437862] (-) TimerEvent: {}
+[33.538608] (-) TimerEvent: {}
+[33.639265] (-) TimerEvent: {}
+[33.739971] (-) TimerEvent: {}
+[33.840711] (-) TimerEvent: {}
+[33.941372] (-) TimerEvent: {}
+[34.042073] (-) TimerEvent: {}
+[34.142771] (-) TimerEvent: {}
+[34.243418] (-) TimerEvent: {}
+[34.344087] (-) TimerEvent: {}
+[34.444782] (-) TimerEvent: {}
+[34.545406] (-) TimerEvent: {}
+[34.646082] (-) TimerEvent: {}
+[34.746791] (-) TimerEvent: {}
+[34.847484] (-) TimerEvent: {}
+[34.948120] (-) TimerEvent: {}
+[35.048831] (-) TimerEvent: {}
+[35.149514] (-) TimerEvent: {}
+[35.250154] (-) TimerEvent: {}
+[35.350832] (-) TimerEvent: {}
+[35.451516] (-) TimerEvent: {}
+[35.552205] (-) TimerEvent: {}
+[35.652927] (-) TimerEvent: {}
+[35.753603] (-) TimerEvent: {}
+[35.854316] (-) TimerEvent: {}
+[35.955170] (-) TimerEvent: {}
+[36.055993] (-) TimerEvent: {}
+[36.156695] (-) TimerEvent: {}
+[36.257351] (-) TimerEvent: {}
+[36.358047] (-) TimerEvent: {}
+[36.458760] (-) TimerEvent: {}
+[36.559469] (-) TimerEvent: {}
+[36.660114] (-) TimerEvent: {}
+[36.760820] (-) TimerEvent: {}
+[36.861508] (-) TimerEvent: {}
+[36.962132] (-) TimerEvent: {}
+[37.062792] (-) TimerEvent: {}
+[37.163480] (-) TimerEvent: {}
+[37.264148] (-) TimerEvent: {}
+[37.364893] (-) TimerEvent: {}
+[37.465600] (-) TimerEvent: {}
+[37.566210] (-) TimerEvent: {}
+[37.666912] (-) TimerEvent: {}
+[37.767578] (-) TimerEvent: {}
+[37.868166] (-) TimerEvent: {}
+[37.968863] (-) TimerEvent: {}
+[38.069556] (-) TimerEvent: {}
+[38.170178] (-) TimerEvent: {}
+[38.270869] (-) TimerEvent: {}
+[38.371552] (-) TimerEvent: {}
+[38.472201] (-) TimerEvent: {}
+[38.572958] (-) TimerEvent: {}
+[38.673623] (-) TimerEvent: {}
+[38.774269] (-) TimerEvent: {}
+[38.874978] (-) TimerEvent: {}
+[38.975664] (-) TimerEvent: {}
+[39.076383] (-) TimerEvent: {}
+[39.177768] (-) TimerEvent: {}
+[39.278604] (-) TimerEvent: {}
+[39.379296] (-) TimerEvent: {}
+[39.480035] (-) TimerEvent: {}
+[39.580789] (-) TimerEvent: {}
+[39.681546] (-) TimerEvent: {}
+[39.782321] (-) TimerEvent: {}
+[39.830195] (camera) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable camera_node\x1b[0m\n'}
+[39.882556] (-) TimerEvent: {}
+[39.983245] (-) TimerEvent: {}
+[40.084025] (-) TimerEvent: {}
+[40.185325] (-) TimerEvent: {}
+[40.286104] (-) TimerEvent: {}
+[40.386794] (-) TimerEvent: {}
+[40.487702] (-) TimerEvent: {}
+[40.588838] (-) TimerEvent: {}
+[40.690081] (-) TimerEvent: {}
+[40.791317] (-) TimerEvent: {}
+[40.892124] (-) TimerEvent: {}
+[40.992885] (-) TimerEvent: {}
+[41.093903] (-) TimerEvent: {}
+[41.194838] (-) TimerEvent: {}
+[41.295631] (-) TimerEvent: {}
+[41.396625] (-) TimerEvent: {}
+[41.497753] (-) TimerEvent: {}
+[41.598964] (-) TimerEvent: {}
+[41.699797] (-) TimerEvent: {}
+[41.800652] (-) TimerEvent: {}
+[41.901419] (-) TimerEvent: {}
+[42.002337] (-) TimerEvent: {}
+[42.103508] (-) TimerEvent: {}
+[42.204314] (-) TimerEvent: {}
+[42.305328] (-) TimerEvent: {}
+[42.406479] (-) TimerEvent: {}
+[42.507244] (-) TimerEvent: {}
+[42.608405] (-) TimerEvent: {}
+[42.709364] (-) TimerEvent: {}
+[42.810651] (-) TimerEvent: {}
+[42.911669] (-) TimerEvent: {}
+[43.012632] (-) TimerEvent: {}
+[43.113616] (-) TimerEvent: {}
+[43.214353] (-) TimerEvent: {}
+[43.315179] (-) TimerEvent: {}
+[43.415850] (-) TimerEvent: {}
+[43.516553] (-) TimerEvent: {}
+[43.617278] (-) TimerEvent: {}
+[43.718129] (-) TimerEvent: {}
+[43.781572] (camera) StdoutLine: {'line': b'[100%] Built target camera_node\n'}
+[43.818365] (-) TimerEvent: {}
+[43.850922] (camera) CommandEnded: {'returncode': 0}
+[43.857057] (camera) JobProgress: {'identifier': 'camera', 'progress': 'install'}
+[43.916840] (camera) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/camera'], 'cwd': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/camera', 'env': OrderedDict({'USER': 'jetpack', 'SSH_CLIENT': '192.168.1.80 54676 22', 'STARSHIP_SHELL': 'fish', 'XDG_SESSION_TYPE': 'tty', 'LD_LIBRARY_PATH': '/usr/local/lib/aarch64-linux-gnu/libcamera/:/home/jetpack/ros2_v4l2/install/zstd_image_transport/lib:/home/jetpack/ros2_v4l2/install/v4l2_camera/lib:/home/jetpack/ros2_v4l2/install/theora_image_transport/lib:/home/jetpack/ros2_v4l2/install/compressed_image_transport/lib:/home/jetpack/ros2_v4l2/install/compressed_depth_image_transport/lib:/home/jetpack/ros2_v4l2/install/image_transport/lib:/home/jetpack/ros2_v4l2/install/cv_bridge/lib:/home/jetpack/ros2_v4l2/install/camera_info_manager/lib:/home/jetpack/ros2_v4l2/install/camera_calibration_parsers/lib:/usr/local/lib/aarch64-linux-gnu:/usr/local/lib/aarch64-linux-gnu:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/lib:/usr/local/lib/aarch64-linux-gnu:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/lib:/usr/local/lib/aarch64-linux-gnu:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/lib:/usr/local/lib/aarch64-linux-gnu:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:/usr/local/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/usr/local/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib/aarch64-linux-gnu:/usr/local/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/usr/local/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/usr/local/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/usr/local/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib:/usr/local/lib/aarch64-linux-gnu:', 'SHLVL': '1', 'HOME': '/home/jetpack', 'SSH_TTY': '/dev/pts/0', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'ROS_DISTRO': 'jazzy', 'OMF_PATH': '/home/jetpack/.local/share/omf', 'COLCON_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install:/home/jetpack/ros2_v4l2/install', 'LOGNAME': 'jetpack', 'XDG_SESSION_CLASS': 'user', 'ROS_VERSION': '2', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '3', 'PATH': '/opt/ros/jazzy/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/.fzf/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera:/home/jetpack/ros2_v4l2/install/image_transport_plugins:/home/jetpack/ros2_v4l2/install/zstd_image_transport:/home/jetpack/ros2_v4l2/install/v4l2_camera:/home/jetpack/ros2_v4l2/install/theora_image_transport:/home/jetpack/ros2_v4l2/install/compressed_image_transport:/home/jetpack/ros2_v4l2/install/compressed_depth_image_transport:/home/jetpack/ros2_v4l2/install/image_transport:/home/jetpack/ros2_v4l2/install/cv_bridge:/home/jetpack/ros2_v4l2/install/camera_info_manager:/home/jetpack/ros2_v4l2/install/camera_calibration_parsers:/opt/ros/jazzy', 'SHELL': '/usr/bin/fish', 'LIBCAMERA_IPA_DIR': '/usr/local/lib/aarch64-linux-gnu/libcamera/', 'WIFI_SSID': 'MEO-BD8310', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/camera', 'SSH_CONNECTION': '192.168.1.80 54676 192.168.1.84 22', 'OMF_CONFIG': '/home/jetpack/.config/omf', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'STARSHIP_SESSION_KEY': '2059658943015221', 'PYTHONPATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:/home/jetpack/ros2_v4l2/install/theora_image_transport/lib/python3.12/site-packages:/home/jetpack/ros2_v4l2/install/cv_bridge/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'WARP_THEMES_DIR': '/home/jetpack/.warp/themes', 'EDITOR': 'nvim', 'CMAKE_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera:/home/jetpack/ros2_v4l2/install/image_transport_plugins:/home/jetpack/ros2_v4l2/install/zstd_image_transport:/home/jetpack/ros2_v4l2/install/v4l2_camera:/home/jetpack/ros2_v4l2/install/theora_image_transport:/home/jetpack/ros2_v4l2/install/compressed_image_transport:/home/jetpack/ros2_v4l2/install/compressed_depth_image_transport:/home/jetpack/ros2_v4l2/install/image_transport:/home/jetpack/ros2_v4l2/install/cv_bridge:/home/jetpack/ros2_v4l2/install/camera_info_manager:/home/jetpack/ros2_v4l2/install/camera_calibration_parsers:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy', 'WIFI_PASSWORD': '9f24731014'}), 'shell': False}
+[43.920416] (-) TimerEvent: {}
+[43.972151] (camera) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[43.973003] (camera) StdoutLine: {'line': b'-- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera/lib/camera/camera_node\n'}
+[43.982468] (camera) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera/lib/camera/camera_node" to ""\n'}
+[43.983538] (camera) StdoutLine: {'line': b'-- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera/share/ament_index/resource_index/package_run_dependencies/camera\n'}
+[43.985153] (camera) StdoutLine: {'line': b'-- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera/share/ament_index/resource_index/parent_prefix_path/camera\n'}
+[43.986845] (camera) StdoutLine: {'line': b'-- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera/share/camera/environment/ament_prefix_path.sh\n'}
+[43.987987] (camera) StdoutLine: {'line': b'-- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera/share/camera/environment/ament_prefix_path.dsv\n'}
+[43.989116] (camera) StdoutLine: {'line': b'-- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera/share/camera/environment/path.sh\n'}
+[43.990205] (camera) StdoutLine: {'line': b'-- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera/share/camera/environment/path.dsv\n'}
+[43.991317] (camera) StdoutLine: {'line': b'-- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera/share/camera/local_setup.bash\n'}
+[43.992348] (camera) StdoutLine: {'line': b'-- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera/share/camera/local_setup.sh\n'}
+[43.993510] (camera) StdoutLine: {'line': b'-- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera/share/camera/local_setup.zsh\n'}
+[43.994619] (camera) StdoutLine: {'line': b'-- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera/share/camera/local_setup.dsv\n'}
+[43.995676] (camera) StdoutLine: {'line': b'-- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera/share/camera/package.dsv\n'}
+[43.997057] (camera) StdoutLine: {'line': b'-- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera/share/ament_index/resource_index/packages/camera\n'}
+[43.998481] (camera) StdoutLine: {'line': b'-- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera/share/camera/cmake/cameraConfig.cmake\n'}
+[43.999413] (camera) StdoutLine: {'line': b'-- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera/share/camera/cmake/cameraConfig-version.cmake\n'}
+[44.000524] (camera) StdoutLine: {'line': b'-- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera/share/camera/package.xml\n'}
+[44.007593] (camera) CommandEnded: {'returncode': 0}
+[44.021138] (-) TimerEvent: {}
+[44.101933] (camera) JobEnded: {'identifier': 'camera', 'rc': 0}
+[44.104844] (-) EventReactorShutdown: {}
