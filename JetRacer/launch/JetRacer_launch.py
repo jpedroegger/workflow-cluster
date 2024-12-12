@@ -34,4 +34,16 @@ def generate_launch_description():
             executable='battery_node',
             name='battery'
         ),
+        Node(
+            package='camera_ros',
+            executable='camera_node',
+            name='camera_node',
+            parameters=[
+                {
+                    "format": "RGB888",
+                    "width": 1920,
+                    "height": 1080,
+                }
+            ]
+        ),
     ])
