@@ -15,6 +15,7 @@
 #include "TopBar.h"
 #include "Blinkers.h"
 #include "EventManager.h"
+#include "CameraWidget.h"
 
 #include <QStackedWidget>
 #include <QToolBar>

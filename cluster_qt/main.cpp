@@ -25,6 +25,8 @@ int main(int argc, char* argv[])
     CPUTempWidget*      cputemp = new CPUTempWidget(mainPage);
     BatteryWidget*      battery2 = new BatteryWidget(mainPage);
     ArrowSymbolWidget*  arrowSymbol = new ArrowSymbolWidget(mainPage, "zero");
+    CameraWidget        *cameraWidget = new CameraWidget(secondPage);
+    //setCentralWidget(cameraWidget);
 
     // Set a manager to handle keyboard events
     EventManager        eventManager(arrowSymbol, speedometer1, leftB, rightB, stackedWidget);

@@ -9,8 +9,8 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Multimedia)
-find_package(Qt6 REQUIRED COMPONENTS Widgets Multimedia)
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Multimedia MultimediaWidgets)
+find_package(Qt6 REQUIRED COMPONENTS Widgets Multimedia MultimediaWidgets)
 
 set(PROJECT_SOURCES
         mainwindow.ui
@@ -40,28 +40,13 @@ set(PROJECT_SOURCES
         main.cpp
 )
 
-if(6 GREATER_EQUAL 6)
-    qt_add_executable(_cluster
-        MANUAL_FINALIZATION
-        ${PROJECT_SOURCES}
-    )
-else()
-    if(ANDROID)
-        add_library(_cluster SHARED
-            ${PROJECT_SOURCES}
-        )
-    else()
-        add_executable(_cluster
-            ${PROJECT_SOURCES}
-        )
-    endif()
-endif()
+qt_add_executable(_cluster
+    MANUAL_FINALIZATION
+    ${PROJECT_SOURCES}
+)
 
-target_link_libraries(_cluster PRIVATE Qt6::Widgets Qt6::Multimedia)
+target_link_libraries(_cluster PRIVATE Qt6::Widgets Qt6::Multimedia Qt6::MultimediaWidgets)
 
-if(${QT_VERSION} VERSION_LESS 6.1.0)
-  set(BUNDLE_ID_OPTION MACOSX_BUNDLE_GUI_IDENTIFIER com.example._cluster)
-endif()
 set_target_properties(_cluster PROPERTIES
     ${BUNDLE_ID_OPTION}
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
