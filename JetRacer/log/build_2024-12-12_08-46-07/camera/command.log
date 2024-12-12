@@ -1,4 +1,0 @@
-Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/camera': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/camera -- -j4 -l4
-Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/camera' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/camera -- -j4 -l4
-Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/camera': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/camera
-Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/camera' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/camera
