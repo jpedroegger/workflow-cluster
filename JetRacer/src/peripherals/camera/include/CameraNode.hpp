@@ -16,7 +16,7 @@ class CameraNode : public rclcpp::Node
         CameraNode();
         ~CameraNode();
 
-        void publishRawCamera();
+        void captureImage();
 
     private:
         rclcpp::TimerBase::SharedPtr timer_;
@@ -24,4 +24,10 @@ class CameraNode : public rclcpp::Node
             raw_out_publisher_;
         std::unique_ptr<CameraManager> camera_manager_;
         std::shared_ptr<Camera> camera_;
+        FrameBufferAllocator* allocator_;
+        std::vector<Stream*> streams_;
+
+        void configureStreams_();
+        void allocateBuffers_();
+        void HandleRequestCompleted_(Request* request);
 };

@@ -1,0 +1,25 @@
+[0.060s] Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/camera': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/camera -- -j4 -l4
+[0.449s] [ 33%] [32mBuilding CXX object CMakeFiles/camera_node.dir/src/CameraNode.cpp.o[0m
+[26.938s] [ 66%] [32m[1mLinking CXX executable camera_node[0m
+[30.210s] [100%] Built target camera_node
+[30.272s] Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/camera' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/camera -- -j4 -l4
+[30.329s] Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/camera': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/camera
+[30.378s] -- Install configuration: ""
+[30.379s] -- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera/lib/camera/camera_node
+[30.389s] -- Set non-toolchain portion of runtime path of "/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera/lib/camera/camera_node" to ""
+[30.390s] -- Up-to-date: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera/share/ament_index/resource_index/package_run_dependencies/camera
+[30.390s] -- Up-to-date: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera/share/ament_index/resource_index/parent_prefix_path/camera
+[30.391s] -- Up-to-date: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera/share/camera/environment/ament_prefix_path.sh
+[30.391s] -- Up-to-date: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera/share/camera/environment/ament_prefix_path.dsv
+[30.391s] -- Up-to-date: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera/share/camera/environment/path.sh
+[30.392s] -- Up-to-date: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera/share/camera/environment/path.dsv
+[30.392s] -- Up-to-date: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera/share/camera/local_setup.bash
+[30.393s] -- Up-to-date: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera/share/camera/local_setup.sh
+[30.393s] -- Up-to-date: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera/share/camera/local_setup.zsh
+[30.394s] -- Up-to-date: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera/share/camera/local_setup.dsv
+[30.394s] -- Installing: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera/share/camera/package.dsv
+[30.394s] -- Up-to-date: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera/share/ament_index/resource_index/packages/camera
+[30.395s] -- Up-to-date: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera/share/camera/cmake/cameraConfig.cmake
+[30.395s] -- Up-to-date: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera/share/camera/cmake/cameraConfig-version.cmake
+[30.396s] -- Up-to-date: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera/share/camera/package.xml
+[30.402s] Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/camera' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/camera

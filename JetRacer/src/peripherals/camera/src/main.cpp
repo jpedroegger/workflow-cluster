@@ -8,7 +8,14 @@ int main(int argc, char** argv)
     rclcpp::init(argc, argv);
     auto node = std::make_shared<CameraNode>();
 
-    rclcpp::spin(node);
-    rclcpp::shutdown();
+    try
+    {
+        rclcpp::spin(node);
+    }
+    catch (const std::exception& e)
+    {
+        std::cout << e.what() << std::endl;
+        rclcpp::shutdown();
+    }
     return 0;
 }
