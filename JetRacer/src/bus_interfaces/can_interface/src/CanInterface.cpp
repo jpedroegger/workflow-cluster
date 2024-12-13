@@ -5,7 +5,6 @@
 #include <rclcpp/logger.hpp>
 #include <rclcpp/logging.hpp>
 #include <rclcpp/utilities.hpp>
-#include <thread>
 
 using sockcanpp::CanMessage;
 using namespace std::chrono_literals;
@@ -21,17 +20,11 @@ CanInterface::CanInterface() : Node("can_interface")
         std::bind(&CanInterface::handleCanRequest, this, std::placeholders::_1,
                   std::placeholders::_2),
         qos);
-    publisher_ =
-        this->create_publisher<custom_msgs::msg::CanFrame>("raw_CAN", 10);
 
     RCLCPP_INFO(this->get_logger(), "Starting CAN bus interface");
 }
 
-CanInterface::~CanInterface()
-{
-    if (polling_thread_.joinable())
-        polling_thread_.join();
-}
+CanInterface::~CanInterface() {}
 
 /**
  * @brief function beeing called upon a request to the can service.

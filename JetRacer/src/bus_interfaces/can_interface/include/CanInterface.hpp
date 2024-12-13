@@ -20,8 +20,6 @@ class CanInterface : public rclcpp::Node
     private:
         std::shared_ptr<sockcanpp::CanDriver> can_driver_;
         rclcpp::Service<custom_msgs::srv::CanService>::SharedPtr can_service_;
-        std::thread polling_thread_;
-        rclcpp::Publisher<custom_msgs::msg::CanFrame>::SharedPtr publisher_;
 
         void handleCanRequest(
             const std::shared_ptr<custom_msgs::srv::CanService::Request>
