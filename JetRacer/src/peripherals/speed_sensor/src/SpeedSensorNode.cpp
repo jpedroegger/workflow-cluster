@@ -1,13 +1,13 @@
 #include "SpeedSensorNode.hpp"
 #include "std_msgs/msg/u_int8.hpp"
-#include <functional>
 #include <rclcpp/logging.hpp>
+
+using namespace std::chrono_literals;
 
 SpeedSensorNode::SpeedSensorNode() : rclcpp::Node("speed_sensor")
 {
-    raw_can_subscriber_ = this->create_subscription<custom_msgs::msg::CanFrame>(
-        "raw_can", 10,
-        std::bind(&SpeedSensorNode::writeSpeed, this, std::placeholders::_1));
+    client_ = this->create_client<custom_msgs::srv::CanService>("can_service");
+    timer_ = this->create_timer(100ms, [this]() { readSpeed(); });
     speed_publisher_ = this->create_publisher<std_msgs::msg::UInt8>(
         "speed_sensor_readings", 10);
 
@@ -23,13 +23,36 @@ SpeedSensorNode::~SpeedSensorNode() {}
  * @param can_frame
  */
 void SpeedSensorNode::writeSpeed(
-    const custom_msgs::msg::CanFrame::SharedPtr can_frame)
+    rclcpp::Client<custom_msgs::srv::CanService>::SharedFuture future)
 {
-    std_msgs::msg::UInt8 speed_msg;
-
-    if (can_frame->id == SPEED_SENSOR_ID)
+    auto response = future.get();
+    if (!response->success)
+        RCLCPP_ERROR(this->get_logger(), "FAILURE: %s",
+                     response->message.c_str());
+    else
     {
-        speed_msg.data = can_frame->data.front();
+        std_msgs::msg::UInt8 speed_msg;
+
+        speed_msg.set__data(response->read_data.at(0));
         speed_publisher_->publish(speed_msg);
     }
+}
+
+/**
+ * @brief request a read operation on the bus
+ *
+ * the response should contain the data requested
+ */
+void SpeedSensorNode::readSpeed()
+{
+    auto request = std::make_shared<custom_msgs::srv::CanService::Request>();
+
+    request->set__can_id(SPEED_SENSOR_ID);
+    request->set__read_request(true);
+    request->set__write_data(std::vector<uint8_t>{1});
+    client_->async_send_request(
+        request,
+        [this](
+            rclcpp::Client<custom_msgs::srv::CanService>::SharedFuture future)
+        { writeSpeed(future); });
 }

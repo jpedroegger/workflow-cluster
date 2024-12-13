@@ -8,12 +8,16 @@ def generate_launch_description():
             executable='i2c_interface_node',
             name='i2c_interface'
         ),
-        # Node (
-        #     package='can_interface',
-        #     namespace='jetracer',
-        #     executable='can_interface_node',
-        #     name='can_interface'
-        # ),
+        Node (
+            package='can_interface',
+            executable='can_interface_node',
+            name='can_interface'
+        ),
+        Node (
+            package='speed_sensor',
+            executable='speed_sensor_node',
+            name='can_interface'
+        ),
         Node (
             package='oled_display',
             executable='oled_display_node',
