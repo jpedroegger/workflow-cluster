@@ -48,6 +48,11 @@ def generate_launch_description():
                     "width": 1920,
                     "height": 1080,
                 }
+            ],
+            remappings=[
+                ('/camera_node/image_raw', 'image_raw'),
+                ('/camera_node/image_raw/compressed', 'image_compressed'),
+                ('/camera_node/camera_info', 'camera_info')
             ]
         ),
     ])
