@@ -20,6 +20,7 @@ OledDisplayNode::OledDisplayNode() : rclcpp::Node("oled_display")
     if (initDisplay() != EXIT_SUCCESS || setDefaultConfig() != EXIT_SUCCESS)
         return;
     clearScreen();
+    rotateDisplay(0);
     RCLCPP_INFO(this->get_logger(), "Starting oled display");
 }
 
@@ -174,6 +175,46 @@ int OledDisplayNode::setCursor(uint8_t x, uint8_t y)
     i2c_client_->async_send_request(
         request, std::bind(&OledDisplayNode::asyncI2cResponse, this,
                            std::placeholders::_1));
+    return EXIT_SUCCESS;
+}
+
+int OledDisplayNode::flipDisplay(uint8_t flip)
+{
+    auto request = std::make_shared<custom_msgs::srv::I2cService::Request>();
+
+    request->set__read_request(false);
+    request->set__device_address(SSD1306_I2C_ADDR);
+    request->write_data.push_back(SSD1306_COMM_CONTROL_BYTE);
+    if (!flip)
+        request->write_data.push_back(SSD1306_COMM_HORIZ_NORM);
+    else
+        request->write_data.push_back(SSD1306_COMM_HORIZ_FLIP);
+
+    i2c_client_->async_send_request(
+        request, std::bind(&OledDisplayNode::asyncI2cResponse, this,
+                           std::placeholders::_1));
+    return EXIT_SUCCESS;
+}
+
+int OledDisplayNode::rotateDisplay(uint8_t degree)
+{
+    auto request = std::make_shared<custom_msgs::srv::I2cService::Request>();
+
+    request->set__read_request(false);
+    request->set__device_address(SSD1306_I2C_ADDR);
+
+    if (degree == 0)
+    {
+        request->write_data.push_back(SSD1306_COMM_CONTROL_BYTE);
+        request->write_data.push_back(SSD1306_COMM_HORIZ_FLIP);
+        request->write_data.push_back(SSD1306_COMM_SCAN_REVS);
+    }
+    else if (degree == 180)
+    {
+        request->write_data.push_back(SSD1306_COMM_CONTROL_BYTE);
+        request->write_data.push_back(SSD1306_COMM_HORIZ_NORM);
+        request->write_data.push_back(SSD1306_COMM_SCAN_NORM);
+    }
     return EXIT_SUCCESS;
 }
 

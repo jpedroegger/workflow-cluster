@@ -55,4 +55,9 @@ def generate_launch_description():
                 ('/camera_node/camera_info', 'camera_info')
             ]
         ),
+        Node (
+            package='display_routine',
+            executable='display_routine_node',
+            name='display_routine'
+        ),
     ])

@@ -9,8 +9,6 @@ BatteryNode::BatteryNode() : Node("battery_node")
 {
     timer_ = this->create_timer(
         5s, std::bind(&BatteryNode::publishBatteryLevel, this));
-
-    RCLCPP_INFO(this->get_logger(), "Starting battery node");
 }
 
 void BatteryNode::initINA219()

@@ -9,7 +9,7 @@
 I2cInterface::I2cInterface() : Node("i2c_interface")
 {
     // Set up service with Reliable QoS
-    rclcpp::QoS qos(rclcpp::KeepLast(40));
+    rclcpp::QoS qos(rclcpp::KeepLast(60));
     qos.reliable();
     qos.durability_volatile();
 

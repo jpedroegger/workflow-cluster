@@ -10,8 +10,10 @@ INA219Driver::INA219Driver(std::shared_ptr<rclcpp::Node> node,
 {
     i2c_client_ =
         node_->create_client<custom_msgs::srv::I2cService>("i2c_service");
-    publisher_ =
-        node_->create_publisher<std_msgs::msg::Float64>("battery_readings", 10);
+    publisher_voltage_ =
+        node_->create_publisher<std_msgs::msg::Float64>("battery_voltage", 10);
+    publisher_perc_ = node_->create_publisher<std_msgs::msg::Float64>(
+        "battery_percentage", 10);
 
     while (!i2c_client_->wait_for_service(2s))
         RCLCPP_INFO(node_->get_logger(), "Waiting for i2c service to start");
@@ -173,7 +175,13 @@ void INA219Driver::publishBusVoltage()
 
                          auto msg = std_msgs::msg::Float64();
                          msg.set__data(bus_voltage);
-                         this->publisher_->publish(msg);
+                         this->publisher_voltage_->publish(msg);
+
+                         uint8_t battery_level =
+                             (bus_voltage - 10.8) / (12.6 - 10.8) * 100;
+                         auto msg_perc = std_msgs::msg::Float64();
+                         msg_perc.set__data(battery_level);
+                         this->publisher_perc_->publish(msg_perc);
                      }
                      else
                      {

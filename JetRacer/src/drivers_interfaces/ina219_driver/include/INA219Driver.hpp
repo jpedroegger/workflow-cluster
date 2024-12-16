@@ -16,7 +16,8 @@ class INA219Driver
     private:
         std::shared_ptr<rclcpp::Node> node_;
         rclcpp::Client<custom_msgs::srv::I2cService>::SharedPtr i2c_client_;
-        rclcpp::Publisher<std_msgs::msg::Float64>::SharedPtr publisher_;
+        rclcpp::Publisher<std_msgs::msg::Float64>::SharedPtr publisher_voltage_;
+        rclcpp::Publisher<std_msgs::msg::Float64>::SharedPtr publisher_perc_;
 
         uint8_t device_address_;
         uint32_t current_divider_mA_;

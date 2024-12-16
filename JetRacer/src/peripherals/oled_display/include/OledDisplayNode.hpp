@@ -32,4 +32,6 @@ class OledDisplayNode : public rclcpp::Node
         int clearRow(uint8_t row);
         int clearScreen();
         int writeString(uint8_t size, const std::string& msg);
+        int flipDisplay(uint8_t flip);
+        int rotateDisplay(uint8_t degree);
 };

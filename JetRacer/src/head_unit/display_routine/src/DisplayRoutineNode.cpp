@@ -3,27 +3,37 @@
 #include <ifaddrs.h>
 #include <netdb.h>
 #include <netinet/in.h>
+#include <string>
 
 using namespace std::chrono_literals;
 
 DisplayRoutineNode::DisplayRoutineNode() : rclcpp::Node("display_routine_node")
 {
     timer_ = this->create_timer(
-        10s, std::bind(&DisplayRoutineNode::updateDisplay, this));
+        60s, std::bind(&DisplayRoutineNode::updateDisplay, this));
     publisher_ =
-        this->create_publisher<std_msgs::msg::String>("cmd_display", 10);
+        this->create_publisher<custom_msgs::msg::Display>("cmd_display", 10);
+    battery_subscriber_ = this->create_subscription<std_msgs::msg::Float64>(
+        "battery_percentage", 10,
+        [this](std_msgs::msg::Float64 battery_level) {
+            battery_level_ =
+                std::to_string(static_cast<int>(battery_level.data));
+        });
 
     auto addresses = getIPv4Addresses();
     if (!addresses.empty())
         ip_address_ = addresses.at(0);
+
+    updateDisplay();
 }
 
 void DisplayRoutineNode::updateDisplay() const
 {
-    std_msgs::msg::String::SharedPtr msg =
-        std::make_shared<std_msgs::msg::String>();
+    auto msg = custom_msgs::msg::Display();
 
-    msg->data = ip_address_;
+    msg.line1 = "ip: " + ip_address_;
+    msg.line3 = "bat: " + battery_level_ + "%";
+    publisher_->publish(msg);
 }
 
 std::vector<std::string> DisplayRoutineNode::getIPv4Addresses() const
