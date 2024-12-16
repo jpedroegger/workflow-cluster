@@ -24,6 +24,8 @@ class EventManager : public QWidget
         QTimer* updateTimer;   // Used to check if a key is still being called
         QStackedWidget* stackedWidget;
 
+        QPointF mousePosition;
+
     public:
         EventManager(ArrowSymbolWidget* arrow,
                      SpeedometerWidget* py_speed,
@@ -35,7 +37,6 @@ class EventManager : public QWidget
         bool eventFilter(QObject* obj, QEvent* event) override;
 
     private slots:
-        void handleGestureEvent(QGestureEvent* gestureEvent);
         void processKeyStates();
 };
 

@@ -1,4 +1,6 @@
 #include "includes/EventManager.h"
+#include <QSinglePointEvent>
+
 
 EventManager::EventManager(ArrowSymbolWidget* arrow,
                            SpeedometerWidget* py_speed,
@@ -14,13 +16,27 @@ EventManager::EventManager(ArrowSymbolWidget* arrow,
 
 bool EventManager::eventFilter(QObject* obj, QEvent* event)
 {
-    // Handle gesture events
-    if (event->type() == QEvent::Gesture) {
-        QGestureEvent* gestureEvent = static_cast<QGestureEvent*>(event);
-        handleGestureEvent(gestureEvent);
+    if (event->type() == QEvent::MouseButtonPress) {
+        QMouseEvent* mousePos = static_cast<QMouseEvent*>(event);
+        QPointF pressPosition = mousePos->position();
+
+        mousePosition = pressPosition;
         return true;
     }
+    if (event->type() == QEvent::MouseButtonRelease) {
+        QMouseEvent* mousePos = static_cast<QMouseEvent*>(event);
+        QPointF releasePosition = mousePos->position();
 
+        if (mousePosition.rx() < releasePosition.rx()) {
+            int prevIndex = std::max(0, stackedWidget->currentIndex() - 1);
+            stackedWidget->setCurrentIndex(prevIndex);
+        }
+        else if (mousePosition.rx() > releasePosition.rx()) {
+            int nextIndex = std::min(stackedWidget->count() - 1, stackedWidget->currentIndex() + 1);
+            stackedWidget->setCurrentIndex(nextIndex);
+        }
+        return true;
+    }
     // Handle key events
     if (event->type() == QEvent::KeyPress) {
         QKeyEvent* keyEvent = static_cast<QKeyEvent*>(event);
@@ -56,20 +72,6 @@ void EventManager::processKeyStates()
                 break;
             default:
                 break;
-        }
-    }
-}
-
-void EventManager::handleGestureEvent(QGestureEvent* gestureEvent) {
-    if (QSwipeGesture* swipe = static_cast<QSwipeGesture*>(gestureEvent->gesture(Qt::SwipeGesture))) {
-        if (swipe->horizontalDirection() == QSwipeGesture::Left) {
-            // nextIndex is the last or page + 1
-            int nextIndex = std::min(stackedWidget->count() - 1, stackedWidget->currentIndex() + 1);
-            stackedWidget->setCurrentIndex(nextIndex);
-        } else if (swipe->horizontalDirection() == QSwipeGesture::Right) {
-            // prevIndex is the first or page - 1
-            int prevIndex = std::max(0, stackedWidget->currentIndex() - 1);
-            stackedWidget->setCurrentIndex(prevIndex);
         }
     }
 }
