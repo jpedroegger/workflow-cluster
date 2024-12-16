@@ -1,3 +1,4 @@
+#include <custom_msgs/msg/display.hpp>
 #include <rclcpp/rclcpp.hpp>
 #include <std_msgs/msg/string.hpp>
 #include <std_msgs/msg/u_int8.hpp>
@@ -25,8 +26,9 @@ class TesterNode : public rclcpp::Node
                 "cmd_direction", qos_profile);
             speed_publisher_ = this->create_publisher<std_msgs::msg::UInt8>(
                 "cmd_speed", qos_profile);
-            display_publisher_ = this->create_publisher<std_msgs::msg::String>(
-                "cmd_display", qos_profile);
+            display_publisher_ =
+                this->create_publisher<custom_msgs::msg::Display>("cmd_display",
+                                                                  qos_profile);
 
             RCLCPP_INFO(this->get_logger(), "starting test all peripherals");
         }
@@ -41,13 +43,17 @@ class TesterNode : public rclcpp::Node
 
         rclcpp::Publisher<std_msgs::msg::UInt8>::SharedPtr direction_publisher_;
         rclcpp::Publisher<std_msgs::msg::UInt8>::SharedPtr speed_publisher_;
-        rclcpp::Publisher<std_msgs::msg::String>::SharedPtr display_publisher_;
+        rclcpp::Publisher<custom_msgs::msg::Display>::SharedPtr
+            display_publisher_;
 
         void displayCallback()
         {
-            auto msg = std_msgs::msg::String();
+            auto msg = custom_msgs::msg::Display();
 
-            msg.data = "Hello world";
+            msg.line1 = "Hello world";
+            msg.line2 = "this is a test";
+            msg.line3 = "test";
+            msg.line4 = "test";
             display_publisher_->publish(msg);
         }
 
