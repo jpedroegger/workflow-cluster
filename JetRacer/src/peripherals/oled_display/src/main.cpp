@@ -5,7 +5,10 @@
 int main(int argc, char** argv)
 {
     rclcpp::init(argc, argv);
-    rclcpp::spin(std::make_shared<OledDisplayNode>());
+    auto node = std::make_shared<OledDisplayNode>();
+    node->initSSD1306();
+
+    rclcpp::spin(node);
     rclcpp::shutdown();
     return EXIT_SUCCESS;
 }
