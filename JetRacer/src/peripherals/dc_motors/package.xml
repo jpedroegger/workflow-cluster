@@ -3,16 +3,16 @@
 <package format="3">
   <name>dc_motors</name>
   <version>0.0.0</version>
-  <description>Control the speed of the vehicle via cmd_speed</description>
+  <description>Control the speed of the vehicle via cmd_vel</description>
   <maintainer email="axel.chabrerie@gmail.com">pi</maintainer>
   <license>TODO: License declaration</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
   <depend>rclcpp</depend>
-  <depend>std_msgs</depend>
-  <depend>custom_msgs</depend>
   <depend>pca9685_driver</depend>
+  <depend>custom_msgs</depend>
+  <depend>geometry_msgs</depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>

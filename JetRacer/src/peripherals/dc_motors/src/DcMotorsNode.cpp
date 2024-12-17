@@ -9,8 +9,8 @@ using namespace std::chrono_literals;
 
 DcMotorsNode::DcMotorsNode() : Node("dc_motors_node")
 {
-    speed_subscriber_ = this->create_subscription<std_msgs::msg::UInt8>(
-        "cmd_speed", 10,
+    twist_subscriber_ = this->create_subscription<geometry_msgs::msg::Twist>(
+        "cmd_vel", 10,
         std::bind(&DcMotorsNode::writeSpeed, this, std::placeholders::_1));
 }
 
@@ -32,25 +32,40 @@ void DcMotorsNode::initPCA9685()
  *
  * @param speed
  */
-void DcMotorsNode::writeSpeed(const std_msgs::msg::UInt8::SharedPtr speed)
+void DcMotorsNode::writeSpeed(
+    const geometry_msgs::msg::Twist::SharedPtr twist_msg)
 {
-    if (speed->data > 100)
+    float linear_x = twist_msg->linear.x;
+
+    if (linear_x > 1.0 || linear_x < -1.0)
     {
         RCLCPP_ERROR(this->get_logger(),
-                     "Invalid speed: %d (must be between 0 and 100 %%)",
-                     speed->data);
+                     "Invalid speed: %f (must be between -1.0 and 1.0)",
+                     linear_x);
         return;
     }
+    int8_t direction = linear_x > 0 ? 1 : -1;
+    linear_x = std::abs(linear_x);
 
-    // Map the angle speed in % to PCA9685 pulse width
+    //  Map the linear velocity to PCA9685 pulse width
     uint16_t pulseWidth =
-        static_cast<uint16_t>((speed->data * (MAX_COUNT - MIN_COUNT)) / 100);
+        static_cast<uint16_t>(linear_x * (MAX_COUNT - MIN_COUNT));
 
-    pca9685_->setPWMDutyCycle(DEFAULT_CHANNEL, 0, pulseWidth);
-    pca9685_->setGPIO(1, false);
-    pca9685_->setGPIO(2, true);
+    pca9685_->setPWMDutyCycle(DEFAULT_CHANNEL, true, pulseWidth);
+    pca9685_->setPWMDutyCycle(7, true, pulseWidth);
 
-    pca9685_->setPWMDutyCycle(7, 0, pulseWidth);
-    pca9685_->setGPIO(6, false);
-    pca9685_->setGPIO(5, true);
+    if (direction > 1)
+    {
+        pca9685_->setGPIO(1, false);
+        pca9685_->setGPIO(2, true);
+        pca9685_->setGPIO(6, false);
+        pca9685_->setGPIO(5, true);
+    }
+    else
+    {
+        pca9685_->setGPIO(1, true);
+        pca9685_->setGPIO(2, false);
+        pca9685_->setGPIO(6, true);
+        pca9685_->setGPIO(5, false);
+    }
 }

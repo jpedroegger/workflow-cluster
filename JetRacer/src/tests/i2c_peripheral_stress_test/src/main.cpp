@@ -1,6 +1,6 @@
 #include <custom_msgs/msg/display.hpp>
+#include <geometry_msgs/msg/twist.hpp>
 #include <rclcpp/rclcpp.hpp>
-#include <std_msgs/msg/string.hpp>
 #include <std_msgs/msg/u_int8.hpp>
 
 using namespace std::chrono_literals;
@@ -16,16 +16,13 @@ class TesterNode : public rclcpp::Node
                                           .durability_volatile();
 
             timer_servo = this->create_timer(
-                1s, std::bind(&TesterNode::servoCallback, this));
-            timer_dc_motors = this->create_timer(
-                1s, std::bind(&TesterNode::dcMotorsCallback, this));
+                1s, std::bind(&TesterNode::twistCallback, this));
             timer_display = this->create_timer(
                 1s, std::bind(&TesterNode::displayCallback, this));
 
-            direction_publisher_ = this->create_publisher<std_msgs::msg::UInt8>(
-                "cmd_direction", qos_profile);
-            speed_publisher_ = this->create_publisher<std_msgs::msg::UInt8>(
-                "cmd_speed", qos_profile);
+            twist_publisher_ =
+                this->create_publisher<geometry_msgs::msg::Twist>("cmd_vel",
+                                                                  qos_profile);
             display_publisher_ =
                 this->create_publisher<custom_msgs::msg::Display>("cmd_display",
                                                                   qos_profile);
@@ -38,11 +35,11 @@ class TesterNode : public rclcpp::Node
         rclcpp::TimerBase::SharedPtr timer_servo;
         rclcpp::TimerBase::SharedPtr timer_dc_motors;
 
-        uint8_t speed = 0;
-        uint8_t direction = 0;
+        float curr_linear_x = -1.0;
+        float curr_angular_z = -1.0;
 
-        rclcpp::Publisher<std_msgs::msg::UInt8>::SharedPtr direction_publisher_;
-        rclcpp::Publisher<std_msgs::msg::UInt8>::SharedPtr speed_publisher_;
+        rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr
+            twist_publisher_;
         rclcpp::Publisher<custom_msgs::msg::Display>::SharedPtr
             display_publisher_;
 
@@ -57,28 +54,22 @@ class TesterNode : public rclcpp::Node
             display_publisher_->publish(msg);
         }
 
-        void dcMotorsCallback()
+        void twistCallback()
         {
-            auto msg = std_msgs::msg::UInt8();
+            auto msg = geometry_msgs::msg::Twist();
+            msg.linear.x = curr_linear_x;
+            msg.angular.z = curr_angular_z;
 
-            if (speed == 100)
-                speed = 0;
+            curr_angular_z += 0.1;
+            curr_linear_x += 0.1;
 
-            msg.data = speed;
-            speed_publisher_->publish(msg);
-            speed += 10;
-        }
+            if (curr_linear_x > 1 && curr_angular_z > 1)
+            {
+                curr_angular_z = -1.0;
+                curr_linear_x = -1.0;
+            }
 
-        void servoCallback()
-        {
-            auto msg = std_msgs::msg::UInt8();
-
-            if (direction == 180)
-                direction = 0;
-
-            msg.data = direction;
-            direction_publisher_->publish(msg);
-            direction += 10;
+            twist_publisher_->publish(msg);
         }
 };
 

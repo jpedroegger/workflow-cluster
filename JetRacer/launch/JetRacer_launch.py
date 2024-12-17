@@ -16,7 +16,7 @@ def generate_launch_description():
         Node (
             package='speed_sensor',
             executable='speed_sensor_node',
-            name='can_interface'
+            name='speed_sensor'
         ),
         Node (
             package='oled_display',
@@ -34,16 +34,21 @@ def generate_launch_description():
             name='servo_motor',
             # arguments=['--ros-args', '--log-level', 'debug'],
         ),
-        Node (
-            package='battery',
-            executable='battery_node',
-            name='battery'
-        ),
+        # Node (
+        #     package='battery',
+        #     executable='battery_node',
+        #     name='battery'
+        # ),
         Node (
             package='joy',
             executable='joy_node',
             name='joy'
         ),
+        # Node (
+        #     package='teleop',
+        #     executable='teleop_node',
+        #     name='teleop'
+        # ),
         # Node(
         #     package='camera_ros',
         #     executable='camera_node',
