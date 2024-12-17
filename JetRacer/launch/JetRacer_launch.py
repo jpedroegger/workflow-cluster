@@ -6,18 +6,19 @@ def generate_launch_description():
         Node (
             package='i2c_interface',
             executable='i2c_interface_node',
-            name='i2c_interface'
+            name='i2c_interface',
+            arguments=['--ros-args', '--log-level', 'fatal'],
         ),
-        Node (
-            package='can_interface',
-            executable='can_interface_node',
-            name='can_interface'
-        ),
-        Node (
-            package='speed_sensor',
-            executable='speed_sensor_node',
-            name='speed_sensor'
-        ),
+        # Node (
+        #     package='can_interface',
+        #     executable='can_interface_node',
+        #     name='can_interface'
+        # ),
+        # Node (
+        #     package='speed_sensor',
+        #     executable='speed_sensor_node',
+        #     name='speed_sensor'
+        # ),
         Node (
             package='oled_display',
             executable='oled_display_node',
@@ -39,11 +40,11 @@ def generate_launch_description():
         #     executable='battery_node',
         #     name='battery'
         # ),
-        Node (
-            package='joy',
-            executable='joy_node',
-            name='joy'
-        ),
+        # Node (
+        #     package='joy',
+        #     executable='joy_node',
+        #     name='joy'
+        # ),
         # Node (
         #     package='teleop',
         #     executable='teleop_node',
@@ -66,9 +67,9 @@ def generate_launch_description():
         #         ('/camera_node/camera_info', 'camera_info')
         #     ]
         # ),
-        Node (
-            package='display_routine',
-            executable='display_routine_node',
-            name='display_routine'
-        ),
+        # Node (
+        #     package='display_routine',
+        #     executable='display_routine_node',
+        #     name='display_routine'
+        # ),
     ])

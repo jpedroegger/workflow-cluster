@@ -4,58 +4,31 @@
 
 The JetRacer project is organized into a modular structure, where each package represents a ROS2 node encapsulating a specific aspect of the system. The architecture is divided into three main layers, each with its own responsibility:
 
-- **Bus Interfaces**: Directly interact with hardware data buses (CAN, I2C).
+- **Bus Interfaces**: Directly interact with hardware via different protocols (CAN, I2C).
 - **Peripherals**: Communicate with the bus interfaces and manage device-specific logic.
 - **Head Unit**: Coordinates the peripherals and handles higher-level logic.
 
 ```
-JetRacer/
-├── src/
-│   ├── bus_interfaces/
-│   │   ├── can_interface/
-│   │   │   ├── CMakeLists.txt
-│   │   │   ├── package.xml
-│   │   │   ├── src/
-│   │   │   └── include/
-│   │   ├── i2c_interface/
-│   │       ├── CMakeLists.txt
-│   │       ├── package.xml
-│   │       ├── src/
-│   │       └── include/
-│   ├── peripherals/
-│   │   ├── oled_display/
-│   │   │   ├── CMakeLists.txt
-│   │   │   ├── package.xml
-│   │   │   ├── src/
-│   │   │   └── include/
-│   │   ├── servo_motor/
-│   │   │   ├── CMakeLists.txt
-│   │   │   ├── package.xml
-│   │   │   ├── src/
-│   │   │   └── include/
-│   │   ├── dc_motors/
-│   │   │   ├── CMakeLists.txt
-│   │   │   ├── package.xml
-│   │   │   ├── src/
-│   │   │   └── include/
-│   │   ├── speed_sensor/
-│   │       ├── CMakeLists.txt
-│   │       ├── package.xml
-│   │       ├── src/
-│   │       └── include/
-│   ├── head_unit/
-│   │   ├── coordinator/
-│   │   │   ├── CMakeLists.txt
-│   │   │   ├── package.xml
-│   │   │   ├── src/
-│   │   │   └── include/
-│   │   ├── infotainment/
-│   │       ├── CMakeLists.txt
-│   │       ├── package.xml
-│   │       ├── src/
-│   │       └── include/
-├── CMakeLists.txt
-└── colcon.meta
+├── bus_interfaces
+│   ├── can_interface
+│   └── i2c_interface
+├── drivers
+│   ├── custom_msgs
+│   ├── ina219_driver
+│   ├── pca9685_driver
+│   └── ssd1306_driver
+├── head_unit
+│   ├── display_routine
+│   └── teleop
+├── peripherals
+│   ├── battery
+│   ├── camera
+│   ├── dc_motors
+│   ├── oled_display
+│   ├── servo_motor
+│   └── speed_sensor
+└── tests
+    └── i2c_peripheral_stress_test
 ```
 
 ## Layered Architecture
@@ -116,6 +89,5 @@ This will compile the source code and set up the appropriate environment for run
 OR
 ```
 	ros2 topic list
-	ros2 topic pub cmd_display std_msgs/String '{data: "Hello world"}' --once```
-	ros2 topic pub cmd_direction std_msgs/UInt8 '{data: "80"}' --once
+	ros2 topic pub cmd_display custom_msgs/Display '{line1: "Hello world"}' --once
 ```

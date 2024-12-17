@@ -74,7 +74,7 @@ int I2cInterface::write_(std::vector<uint8_t>& data)
     {
         ssize_t bytes_written = write(i2c_fd_, data.data() + total_written,
                                       data.size() - total_written);
-        if (bytes_written < 0 && retry >= MAX_RETRY)
+        if (bytes_written < 0 || retry >= MAX_RETRY)
             return -1;
         total_written += bytes_written;
         retry++;
@@ -132,7 +132,7 @@ void I2cInterface::handleI2cRequest(
 
     if (setAddress_(request->device_address) != 0)
     {
-        std::string error_msg = "Fail to set the device at address " +
+        std::string error_msg = "Fail to set the device at address 0x" +
                                 std::to_string(request->device_address);
         RCLCPP_ERROR(this->get_logger(), "%s", error_msg.c_str());
         response->set__success(false);
@@ -140,26 +140,24 @@ void I2cInterface::handleI2cRequest(
         return;
     }
 
+    if (write_(request->write_data) != 0)
+    {
+        std::string error_msg = "Fail to write to device 0x" +
+                                std::to_string(request->device_address);
+        RCLCPP_ERROR(this->get_logger(), "%s", error_msg.c_str());
+        response->set__success(false);
+        response->set__message(error_msg);
+        return;
+    }
+    RCLCPP_DEBUG(this->get_logger(), "Succefully writen at address 0x%02X",
+                 request->device_address);
+
     if (request->read_request)
     {
-        // Most of the time the reading implies first writing onto the bus to
-        // select a register to read from
-        if (!request->write_data.empty())
-        {
-            if (write_(request->write_data) != 0)
-            {
-                std::string error_msg = "Fail to write to device " +
-                                        std::to_string(request->device_address);
-                RCLCPP_ERROR(this->get_logger(), "%s", error_msg.c_str());
-                response->set__success(false);
-                response->set__message(error_msg);
-                return;
-            }
-        }
         std::vector<uint8_t> data = read_(request->read_length);
         if (data.empty() && request->read_length > 0)
         {
-            std::string error_msg = "Fail to read data from device " +
+            std::string error_msg = "Fail to read data from device 0x" +
                                     std::to_string(request->device_address);
             RCLCPP_ERROR(this->get_logger(), "%s", error_msg.c_str());
             response->set__success(false);
@@ -167,19 +165,5 @@ void I2cInterface::handleI2cRequest(
             return;
         }
         response->set__read_data(data);
-    }
-    else
-    {
-        if (write_(request->write_data) != 0)
-        {
-            std::string error_msg = "Fail to write to device " +
-                                    std::to_string(request->device_address);
-            RCLCPP_ERROR(this->get_logger(), "%s", error_msg.c_str());
-            response->set__success(false);
-            response->set__message(error_msg);
-            return;
-        }
-        RCLCPP_DEBUG(this->get_logger(), "Succefully writen at address %x",
-                     request->device_address);
     }
 }
