@@ -18,6 +18,7 @@ class BatteryAndSpeedWidget : public QWidget {
         int currentSpeed;
         void drawScale(QPainter& painter, int centerX, int centerY, int radius);
         void drawCentralNumber(QPainter& painter, int centerX, int centerY);
+        void drawBatteryNumber(QPainter& painter, int centerX, int centerY);
         QColor calculateBarColor(int value);
         void drawBars(QPainter& painter, int centerX, int centerY, int radius, double startAngle, double endAngle, int Level);
         void accelerate(int forward_key);
