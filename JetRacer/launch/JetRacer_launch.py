@@ -38,6 +38,11 @@ def generate_launch_description():
             executable='battery_node',
             name='battery'
         ),
+        Node (
+            package='joy',
+            executable='joy_node',
+            name='joy'
+        ),
         # Node(
         #     package='camera_ros',
         #     executable='camera_node',
