@@ -25,6 +25,7 @@ set(PROJECT_SOURCES
         includes/Blinkers.h
         includes/EventManager.h
         includes/CameraWidget.h
+        includes/BatteryAndSpeedWidget.h
         includes/Cluster.h
         
         mainwindow.cpp
@@ -37,6 +38,8 @@ set(PROJECT_SOURCES
         Blinkers.cpp
         EventManager.cpp
         CameraWidget.cpp
+        BatteryAndSpeedWidget.cpp
+
         main.cpp
 )
 
