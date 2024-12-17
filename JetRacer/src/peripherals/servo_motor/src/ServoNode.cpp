@@ -9,9 +9,10 @@ using namespace std::chrono_literals;
 
 ServoNode::ServoNode() : Node("servo_node")
 {
-    direction_subscriber_ = this->create_subscription<std_msgs::msg::UInt8>(
-        "cmd_direction", 10,
-        std::bind(&ServoNode::writeAngle, this, std::placeholders::_1));
+    direction_subscriber_ =
+        this->create_subscription<geometry_msgs::msg::Twist>(
+            "cmd_direction", 10,
+            std::bind(&ServoNode::writeAngle, this, std::placeholders::_1));
 }
 
 ServoNode::~ServoNode() {}
@@ -50,20 +51,24 @@ void ServoNode::initPCA9685()
  * @param direction Shared pointer to the incoming UInt8 message containing the
  * angle.
  */
-void ServoNode::writeAngle(const std_msgs::msg::UInt8::SharedPtr direction)
+void ServoNode::writeAngle(const geometry_msgs::msg::Twist::SharedPtr twist)
 {
-    if (direction->data > 180)
+    float angular_z = twist->angular.z;
+    if (angular_z > 1.0 || angular_z < 1.0)
     {
         RCLCPP_ERROR(this->get_logger(),
-                     "Invalid angle: %d (must be between 0 and 180)",
-                     direction->data);
+                     "Invalid angular twist: %f (must be between 0 and 180)",
+                     angular_z);
         return;
     }
+
+    // map to an angle
+    uint8_t angle = static_cast<uint8_t>((angular_z + 1.0) * 90);
 
     // Map the angle (0 to 180) to PCA9685 pulse width (102 to 510)
     uint16_t pulseWidth = static_cast<uint16_t>(
         MIN_COUNT +
-        (static_cast<float>(direction->data) * (MAX_COUNT - MIN_COUNT)) / 180);
+        (static_cast<float>(angle) * (MAX_COUNT - MIN_COUNT)) / 180);
 
     // Set the PWM signal using the adapted values
     pca9685_->setPWMDutyCycle(DEFAULT_CHANNEL, 0, pulseWidth);
