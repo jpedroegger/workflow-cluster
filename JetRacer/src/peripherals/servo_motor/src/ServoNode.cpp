@@ -11,7 +11,7 @@ ServoNode::ServoNode() : Node("servo_node")
 {
     direction_subscriber_ =
         this->create_subscription<geometry_msgs::msg::Twist>(
-            "cmd_direction", 10,
+            "cmd_vel", 10,
             std::bind(&ServoNode::writeAngle, this, std::placeholders::_1));
 }
 
@@ -54,7 +54,7 @@ void ServoNode::initPCA9685()
 void ServoNode::writeAngle(const geometry_msgs::msg::Twist::SharedPtr twist)
 {
     float angular_z = twist->angular.z;
-    if (angular_z > 1.0 || angular_z < 1.0)
+    if (angular_z > 1.0 || angular_z < -1.0)
     {
         RCLCPP_ERROR(this->get_logger(),
                      "Invalid angular twist: %f (must be between 0 and 180)",
@@ -64,6 +64,7 @@ void ServoNode::writeAngle(const geometry_msgs::msg::Twist::SharedPtr twist)
 
     // map to an angle
     uint8_t angle = static_cast<uint8_t>((angular_z + 1.0) * 90);
+    RCLCPP_DEBUG(this->get_logger(), "Writing angle: %d", angle);
 
     // Map the angle (0 to 180) to PCA9685 pulse width (102 to 510)
     uint16_t pulseWidth = static_cast<uint16_t>(
