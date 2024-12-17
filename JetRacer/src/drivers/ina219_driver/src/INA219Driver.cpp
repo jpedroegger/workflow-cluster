@@ -148,14 +148,12 @@ void INA219Driver::handleI2cReadResponse(
 }
 
 void INA219Driver::handleI2cWriteResponse(
-    rclcpp::Client<custom_msgs::srv::I2cService>::SharedFuture response)
+    rclcpp::Client<custom_msgs::srv::I2cService>::SharedFuture future)
 {
-    auto result = response.get();
-
-    if (!result->success)
+    auto response = future.get();
+    if (!response->success)
     {
-        RCLCPP_ERROR(node_->get_logger(), "FAILURE: %s",
-                     result->message.c_str());
+        RCLCPP_ERROR(node_->get_logger(), "%s", response->message.c_str());
         return;
     }
 }

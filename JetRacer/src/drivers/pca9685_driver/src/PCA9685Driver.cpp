@@ -12,7 +12,6 @@ PCA9685Driver::PCA9685Driver(std::shared_ptr<rclcpp::Node> node,
     while (!i2c_client_->wait_for_service(1s))
         RCLCPP_INFO(node->get_logger(), "Waiting for i2c service to start");
 
-    setPWMFrequency(50);
     RCLCPP_INFO(node->get_logger(),
                 "PCA9685 succefully initiated at address: 0x%02X",
                 device_address_);
@@ -38,13 +37,11 @@ void PCA9685Driver::setRegister(uint8_t reg, uint8_t value)
  * @param response
  */
 void PCA9685Driver::handleI2cResponse(
-    rclcpp::Client<custom_msgs::srv::I2cService>::SharedFuture response)
+    rclcpp::Client<custom_msgs::srv::I2cService>::SharedFuture future)
 {
-    if (response.get()->success)
-        RCLCPP_DEBUG(node_->get_logger(), "SUCCESS");
-    else
-        RCLCPP_ERROR(node_->get_logger(), "FAILURE: %s",
-                     response.get()->message.c_str());
+    auto response = future.get();
+    if (!response->success)
+        RCLCPP_ERROR(node_->get_logger(), "%s", response->message.c_str());
 }
 
 void PCA9685Driver::setPWMFrequency(float freq_Hz)

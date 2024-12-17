@@ -54,10 +54,7 @@ void SSD1306Driver::asyncI2cResponse(
 {
     auto response = future.get();
     if (!response->success)
-        RCLCPP_ERROR(node_->get_logger(), "FAILURE: %s",
-                     response->message.c_str());
-    else
-        RCLCPP_DEBUG(node_->get_logger(), "SUCCESS");
+        RCLCPP_ERROR(node_->get_logger(), "%s", response->message.c_str());
 }
 
 int SSD1306Driver::onOffDisplay(uint8_t onoff)

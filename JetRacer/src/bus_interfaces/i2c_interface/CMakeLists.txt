@@ -23,10 +23,12 @@ include_directories(
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(custom_msgs REQUIRED)
+find_package(fmt REQUIRED)
 
 # Add the executable
 add_executable(${exec_name} ${srcs})
-ament_target_dependencies(${exec_name} rclcpp custom_msgs)
+ament_target_dependencies(${exec_name} rclcpp custom_msgs fmt)
+target_link_libraries(${exec_name} fmt::fmt)
 
 # Install target
 install(TARGETS ${exec_name} DESTINATION lib/${PROJECT_NAME})
