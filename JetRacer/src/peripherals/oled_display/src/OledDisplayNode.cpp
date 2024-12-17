@@ -20,8 +20,8 @@ void OledDisplayNode::initSSD1306()
     ssd1306_->onOffDisplay(0);
     ssd1306_->clearScreen();
     ssd1306_->rotateDisplay(0);
-    RCLCPP_INFO(this->get_logger(), "Starting oled display");
 }
+
 /**
  * @brief request to the i2c service a write operation via the driver upon
  * receiving a message in the display_topic

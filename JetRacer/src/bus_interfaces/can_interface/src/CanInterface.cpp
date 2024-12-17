@@ -14,7 +14,17 @@ CanInterface::CanInterface() : Node("can_interface")
     rclcpp::QoS qos(40);
     qos.reliable();
 
-    can_driver_ = std::make_shared<CanDriver>("can0", CAN_RAW);
+    try
+    {
+        can_driver_ = std::make_shared<CanDriver>("can0", CAN_RAW);
+    }
+    catch (const std::exception& e)
+    {
+        RCLCPP_ERROR(this->get_logger(), "Fail initiating Can interface: %s",
+                     e.what());
+        throw e;
+    }
+
     can_service_ = this->create_service<custom_msgs::srv::CanService>(
         "can_service",
         std::bind(&CanInterface::handleCanRequest, this, std::placeholders::_1,

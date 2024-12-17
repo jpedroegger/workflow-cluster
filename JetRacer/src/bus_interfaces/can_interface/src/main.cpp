@@ -4,7 +4,13 @@
 int main(int argc, char** argv)
 {
     rclcpp::init(argc, argv);
-    rclcpp::spin(std::make_shared<CanInterface>());
+    try
+    {
+        rclcpp::spin(std::make_shared<CanInterface>());
+    }
+    catch (const std::exception& e)
+    {
+    }
     rclcpp::shutdown();
     return 0;
 }

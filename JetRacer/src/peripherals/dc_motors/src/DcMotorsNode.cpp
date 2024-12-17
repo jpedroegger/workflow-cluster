@@ -12,8 +12,6 @@ DcMotorsNode::DcMotorsNode() : Node("dc_motors_node")
     speed_subscriber_ = this->create_subscription<std_msgs::msg::UInt8>(
         "cmd_speed", 10,
         std::bind(&DcMotorsNode::writeSpeed, this, std::placeholders::_1));
-
-    RCLCPP_INFO(this->get_logger(), "Starting the dc motors node");
 }
 
 DcMotorsNode::~DcMotorsNode() {}

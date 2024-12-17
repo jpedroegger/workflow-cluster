@@ -12,8 +12,6 @@ ServoNode::ServoNode() : Node("servo_node")
     direction_subscriber_ = this->create_subscription<std_msgs::msg::UInt8>(
         "cmd_direction", 10,
         std::bind(&ServoNode::writeAngle, this, std::placeholders::_1));
-
-    RCLCPP_INFO(this->get_logger(), "Starting the Servo node");
 }
 
 ServoNode::~ServoNode() {}

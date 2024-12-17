@@ -10,8 +10,6 @@ SpeedSensorNode::SpeedSensorNode() : rclcpp::Node("speed_sensor")
     timer_ = this->create_timer(100ms, [this]() { readSpeed(); });
     speed_publisher_ = this->create_publisher<std_msgs::msg::UInt8>(
         "speed_sensor_readings", 10);
-
-    RCLCPP_INFO(this->get_logger(), "Starting speed sensor node");
 }
 
 SpeedSensorNode::~SpeedSensorNode() {}
