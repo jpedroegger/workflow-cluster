@@ -15,6 +15,7 @@ class PCA9685Driver
                       uint8_t device_address);
         ~PCA9685Driver() = default;
 
+        void ping();
         void setRegister(uint8_t reg, uint8_t value);
         void setPWMFrequency(float freq_Hz);
         void setPWMDutyCycle(uint8_t channel, uint16_t on, uint16_t off);
@@ -28,4 +29,14 @@ class PCA9685Driver
         void handleI2cResponse(
             rclcpp::Client<custom_msgs::srv::I2cService>::SharedFuture
                 response);
+};
+
+class PCAException : public std::exception
+{
+    private:
+        std::string message;
+
+    public:
+        PCAException(const std::string& msg) : message(msg){};
+        const char* what() const noexcept override { return message.c_str(); }
 };

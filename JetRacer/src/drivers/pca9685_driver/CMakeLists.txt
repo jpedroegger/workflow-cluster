@@ -21,12 +21,14 @@ set(srcs
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(custom_msgs REQUIRED)
+find_package(fmt REQUIRED)
 
 # Create the shared library
 add_library(${lib_name} SHARED ${srcs})
 
 # Link against the required dependencies
-ament_target_dependencies(${lib_name} rclcpp custom_msgs)
+ament_target_dependencies(${lib_name} rclcpp custom_msgs fmt)
+target_link_libraries(${exec_name} fmt::fmt)
 
 # Export the libraries
 install(TARGETS ${lib_name} DESTINATION lib)

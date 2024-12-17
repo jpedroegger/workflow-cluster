@@ -15,6 +15,8 @@ class SSD1306Driver
         void asyncI2cResponse(
             rclcpp::Client<custom_msgs::srv::I2cService>::SharedFuture future);
 
+        uint8_t ping();
+
         // display interface
         int initDisplay();
         int setDefaultConfig();

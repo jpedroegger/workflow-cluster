@@ -1,5 +1,4 @@
 #include "DcMotorsNode.hpp"
-#include "std_msgs/msg/u_int8.hpp"
 #include <functional>
 #include <rclcpp/client.hpp>
 #include <rclcpp/logger.hpp>
@@ -18,8 +17,16 @@ DcMotorsNode::~DcMotorsNode() {}
 
 void DcMotorsNode::initPCA9685()
 {
-    pca9685_ =
-        std::make_shared<PCA9685Driver>(shared_from_this(), PCA_MOTORS_ADDRESS);
+    try
+    {
+        pca9685_ = std::make_shared<PCA9685Driver>(shared_from_this(),
+                                                   PCA_MOTORS_ADDRESS);
+    }
+    catch (const std::exception& e)
+    {
+        RCLCPP_ERROR(this->get_logger(), "%s", e.what());
+        throw e;
+    }
     pca9685_->setPWMFrequency(1600);
 }
 

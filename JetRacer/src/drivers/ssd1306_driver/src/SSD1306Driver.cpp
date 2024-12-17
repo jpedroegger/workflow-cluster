@@ -12,12 +12,52 @@ SSD1306Driver::SSD1306Driver(std::shared_ptr<rclcpp::Node> node) : node_(node)
 
     while (!i2c_client_->wait_for_service(2s))
         RCLCPP_INFO(node_->get_logger(), "Waiting for i2c service to start");
+
+    if (ping() == EXIT_FAILURE)
+        throw std::runtime_error("fail pinging the device");
+
     RCLCPP_INFO(node->get_logger(),
                 "SSD1306 succefully initiated at address: 0x%02X",
                 SSD1306_I2C_ADDR);
 }
 
 SSD1306Driver::~SSD1306Driver() {}
+
+uint8_t SSD1306Driver::ping()
+{
+    auto request = std::make_shared<custom_msgs::srv::I2cService::Request>();
+
+    request->set__device_address(SSD1306_I2C_ADDR);
+    request->set__read_request(false);
+    request->write_data.push_back(0x0);
+
+    auto future = i2c_client_->async_send_request(request);
+
+    auto response_future = i2c_client_->async_send_request(request);
+
+    // Spin until the future is complete
+    if (rclcpp::spin_until_future_complete(node_, response_future, 5s) ==
+        rclcpp::FutureReturnCode::SUCCESS)
+    {
+        auto response = response_future.get();
+
+        // Check if the response was successful
+        if (response->success)
+            return EXIT_SUCCESS;
+        else
+        {
+            RCLCPP_ERROR(node_->get_logger(), "Device 0x%02X not found",
+                         SSD1306_I2C_ADDR);
+            return EXIT_FAILURE;
+        }
+    }
+    else
+    {
+        RCLCPP_ERROR(node_->get_logger(), "Ping to device 0x%02X timed out.",
+                     SSD1306_I2C_ADDR);
+        return EXIT_FAILURE;
+    }
+}
 
 /*custom_msgs
  * @brief try to read and write dummy bytes to the display.

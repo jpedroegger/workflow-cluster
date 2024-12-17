@@ -7,9 +7,15 @@ int main(int argc, char** argv)
 {
     rclcpp::init(argc, argv);
     auto node = std::make_shared<DcMotorsNode>();
-    node->initPCA9685();
 
-    rclcpp::spin(node);
-    rclcpp::shutdown();
+    try
+    {
+        node->initPCA9685();
+        rclcpp::spin(node);
+        rclcpp::shutdown();
+    }
+    catch (const std::exception& e)
+    {
+    }
     return 0;
 }
