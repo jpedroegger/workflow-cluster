@@ -1,5 +1,6 @@
 #include "INA219Driver.hpp"
 #include "INA219def.hpp"
+#include <fmt/core.h>
 
 using namespace std::chrono_literals;
 
@@ -21,6 +22,47 @@ INA219Driver::INA219Driver(std::shared_ptr<rclcpp::Node> node,
     RCLCPP_INFO(node->get_logger(),
                 "INA219 succefully initiated at address: 0x%02X",
                 device_address_);
+}
+
+/**
+ * @brief ping the device
+ *
+ * to use before spinning the node
+ *
+ * @return
+ */
+void INA219Driver::ping()
+{
+    auto request = std::make_shared<custom_msgs::srv::I2cService::Request>();
+
+    request->set__device_address(device_address_);
+    request->set__read_request(false);
+    request->write_data.push_back(0x0);
+
+    auto future = i2c_client_->async_send_request(request);
+
+    auto response_future = i2c_client_->async_send_request(request);
+
+    // Spin until the future is complete
+    if (rclcpp::spin_until_future_complete(node_, response_future, 5s) ==
+        rclcpp::FutureReturnCode::SUCCESS)
+    {
+        auto response = response_future.get();
+
+        // Check if the response was successful
+        if (!response->success)
+        {
+            std::string msg =
+                fmt::format("Device 0x{:02X} not found", device_address_);
+            throw INAException(msg);
+        }
+    }
+    else
+    {
+        std::string msg = fmt::format("request for device 0x{:02X} timed out",
+                                      device_address_);
+        throw INAException(msg);
+    }
 }
 
 /**
@@ -62,7 +104,7 @@ void INA219Driver::writeRegister(uint8_t reg, uint16_t value)
 {
     auto request = std::make_shared<custom_msgs::srv::I2cService::Request>();
 
-    request->set__device_address(INA219_ADDRESS);
+    request->set__device_address(device_address_);
     request->set__read_request(false);
     request->write_data.push_back(reg);
     request->write_data.push_back((value >> 4) & 0xFF);
@@ -93,7 +135,7 @@ void INA219Driver::readRegister(uint8_t reg, uint8_t length,
 {
     auto request = std::make_shared<custom_msgs::srv::I2cService::Request>();
 
-    request->set__device_address(INA219_ADDRESS);
+    request->set__device_address(device_address_);
     request->set__read_request(true);
     request->set__read_length(length);
     request->write_data.push_back(reg);

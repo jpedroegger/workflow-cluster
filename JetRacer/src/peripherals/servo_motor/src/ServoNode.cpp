@@ -16,7 +16,7 @@ ServoNode::ServoNode() : Node("servo_node")
 
 ServoNode::~ServoNode() {}
 
-void ServoNode::initPCA9685()
+uint8_t ServoNode::initPCA9685()
 {
     try
     {
@@ -26,9 +26,10 @@ void ServoNode::initPCA9685()
     catch (const std::exception& e)
     {
         RCLCPP_ERROR(this->get_logger(), "%s", e.what());
-        throw e;
+        return EXIT_FAILURE;
     }
     pca9685_->setPWMFrequency(50);
+    return EXIT_SUCCESS;
 }
 
 /**

@@ -1,7 +1,6 @@
 #pragma once
 
 #include "PCA9685Driver.hpp"
-#include "std_msgs/msg/u_int8.hpp"
 #include <geometry_msgs/msg/twist.hpp>
 #include <rclcpp/client.hpp>
 #include <rclcpp/rclcpp.hpp>
@@ -18,7 +17,7 @@ class ServoNode : public rclcpp::Node
         ServoNode();
         ~ServoNode();
 
-        void initPCA9685();
+        uint8_t initPCA9685();
 
     private:
         rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr

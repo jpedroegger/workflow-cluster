@@ -15,7 +15,7 @@ DcMotorsNode::DcMotorsNode() : Node("dc_motors_node")
 
 DcMotorsNode::~DcMotorsNode() {}
 
-void DcMotorsNode::initPCA9685()
+uint8_t DcMotorsNode::initPCA9685()
 {
     try
     {
@@ -25,9 +25,11 @@ void DcMotorsNode::initPCA9685()
     catch (const std::exception& e)
     {
         RCLCPP_ERROR(this->get_logger(), "%s", e.what());
-        throw e;
+        return EXIT_FAILURE;
     }
+
     pca9685_->setPWMFrequency(1600);
+    return EXIT_SUCCESS;
 }
 
 /**

@@ -29,6 +29,7 @@ class INA219Driver
         using ReadCallback = std::function<void(std::vector<uint8_t>)>;
         std::unordered_map<uint8_t, ReadCallback> read_callbacks_;
 
+        void ping();
         void setCalibration_32V_1A();
         void writeRegister(uint8_t reg, uint16_t value);
         void readRegister(uint8_t reg, uint8_t length, ReadCallback callback);
@@ -38,4 +39,15 @@ class INA219Driver
         void handleI2cWriteResponse(
             rclcpp::Client<custom_msgs::srv::I2cService>::SharedFuture
                 response);
+};
+
+class INAException : public std::exception
+{
+    private:
+        std::string msg_;
+
+    public:
+        INAException(const std::string& msg) : msg_(msg){};
+
+        const char* what() const noexcept override { return msg_.c_str(); }
 };

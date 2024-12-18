@@ -10,7 +10,12 @@ set(lib_name PCA9685Driver)
 
 include_directories(
   include
+  ~/SEAME-Cluster-24-25/JetRacer/install/abstract_driver/include
+
 )
+
+#specify the full path of where th lib should be 
+link_directories(/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/abstract_driver/lib)
 
 # Add source files
 set(srcs
@@ -21,14 +26,15 @@ set(srcs
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(custom_msgs REQUIRED)
-find_package(fmt REQUIRED)
+find_package(abstract_driver REQUIRED)
 
 # Create the shared library
 add_library(${lib_name} SHARED ${srcs})
 
 # Link against the required dependencies
-ament_target_dependencies(${lib_name} rclcpp custom_msgs fmt)
-target_link_libraries(${exec_name} fmt::fmt)
+ament_target_dependencies(${lib_name} rclcpp custom_msgs abstract_driver)
+
+target_link_libraries(${lib_name} AbstractDriver)
 
 # Export the libraries
 install(TARGETS ${lib_name} DESTINATION lib)

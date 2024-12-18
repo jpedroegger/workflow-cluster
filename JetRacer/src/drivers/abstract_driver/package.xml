@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>pca9685_driver</name>
+  <name>abstract_driver</name>
   <version>0.0.0</version>
-  <description>Interface to the PCA9685 motor driver</description>
+  <description>Abstract interface for a driver</description>
   <maintainer email="axel.chabrerie@gmail.com">pi</maintainer>
   <license>TODO: License declaration</license>
 
@@ -11,7 +11,6 @@
 
   <depend>rclcpp</depend>
   <depend>custom_msgs</depend>
-  <depend>abstract_driver</depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>

@@ -14,7 +14,7 @@ class DcMotorsNode : public rclcpp::Node
         DcMotorsNode();
         ~DcMotorsNode();
 
-        void initPCA9685();
+        uint8_t initPCA9685();
 
     private:
         rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr
