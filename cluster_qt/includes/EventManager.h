@@ -25,6 +25,7 @@ class EventManager : public QWidget
         QStackedWidget* stackedWidget;
 
         QPointF mousePosition;
+        bool    swipe(QPointF releasePosition);
 
     public:
         EventManager(ArrowSymbolWidget* arrow,
@@ -32,6 +33,7 @@ class EventManager : public QWidget
                      Blinkers* left_blinker,
                      Blinkers* right_blinker,
                      QStackedWidget* stackedWidget);
+
 
     protected:
         bool eventFilter(QObject* obj, QEvent* event) override;

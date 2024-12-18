@@ -1,6 +1,6 @@
 #include "includes/EventManager.h"
 #include <QSinglePointEvent>
-
+#include <QtMath>
 
 EventManager::EventManager(ArrowSymbolWidget* arrow,
                            SpeedometerWidget* py_speed,
@@ -16,6 +16,7 @@ EventManager::EventManager(ArrowSymbolWidget* arrow,
 
 bool EventManager::eventFilter(QObject* obj, QEvent* event)
 {
+    // Handle Mouse Press Button
     if (event->type() == QEvent::MouseButtonPress) {
         QMouseEvent* mousePos = static_cast<QMouseEvent*>(event);
         QPointF pressPosition = mousePos->position();
@@ -23,19 +24,13 @@ bool EventManager::eventFilter(QObject* obj, QEvent* event)
         mousePosition = pressPosition;
         return true;
     }
+    // Handle Mouse Button Release
     if (event->type() == QEvent::MouseButtonRelease) {
         QMouseEvent* mousePos = static_cast<QMouseEvent*>(event);
         QPointF releasePosition = mousePos->position();
-
-        if (mousePosition.rx() < releasePosition.rx()) {
-            int prevIndex = std::max(0, stackedWidget->currentIndex() - 1);
-            stackedWidget->setCurrentIndex(prevIndex);
-        }
-        else if (mousePosition.rx() > releasePosition.rx()) {
-            int nextIndex = std::min(stackedWidget->count() - 1, stackedWidget->currentIndex() + 1);
-            stackedWidget->setCurrentIndex(nextIndex);
-        }
-        return true;
+        // Check for swipe params. If enough conditions, returns true for swipe.
+        if (swipe(releasePosition))
+            return true;
     }
     // Handle key events
     if (event->type() == QEvent::KeyPress) {
@@ -75,3 +70,36 @@ void EventManager::processKeyStates()
         }
     }
 }
+
+bool    EventManager::swipe(QPointF releasePosition)
+{
+    bool swipeRange = qFabs(mousePosition.rx() - releasePosition.rx()) > 100;
+    bool verticalRange = qFabs(mousePosition.ry() - releasePosition.ry()) < 200;
+
+    if (mousePosition.rx() < releasePosition.rx() && swipeRange && verticalRange ) {
+        int prevIndex = std::max(0, stackedWidget->currentIndex() - 1);
+        stackedWidget->setCurrentIndex(prevIndex);
+
+        return true;
+    }
+    else if (mousePosition.rx() > releasePosition.rx() && swipeRange && verticalRange ) {
+        int nextIndex = std::min(stackedWidget->count() - 1, stackedWidget->currentIndex() + 1);
+        stackedWidget->setCurrentIndex(nextIndex);
+
+        return true;
+    }
+    return false;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

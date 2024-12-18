@@ -20,7 +20,7 @@ int main(int argc, char* argv[])
     TopBar*             topBar = new TopBar(mainPage);
     Blinkers*           leftB = new Blinkers(mainPage, "left", "off");
     Blinkers*           rightB = new Blinkers(mainPage, "right", "off");
-    //SpeedometerWidget*  bas = new SpeedometerWidget(mainPage);
+    SpeedometerWidget*  speedometer = new SpeedometerWidget(mainPage);
     FanSpeedWidget*     fanspeed = new FanSpeedWidget(mainPage);
     CPUTempWidget*      cputemp = new CPUTempWidget(mainPage);
     //BatteryWidget*      battery2 = new BatteryWidget(mainPage);
@@ -31,8 +31,8 @@ int main(int argc, char* argv[])
     //setCentralWidget(cameraWidget);
 
     // Set a manager to handle keyboard events
-    //EventManager        eventManager(arrowSymbol, bas, leftB, rightB, stackedWidget);
-    //app.installEventFilter(&eventManager);
+    EventManager        eventManager(arrowSymbol, speedometer, leftB, rightB, stackedWidget);
+    app.installEventFilter(&eventManager);
 
     // Create layouts
     QVBoxLayout*        mainLayout = new QVBoxLayout();
