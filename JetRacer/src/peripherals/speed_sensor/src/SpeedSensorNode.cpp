@@ -25,8 +25,7 @@ void SpeedSensorNode::writeSpeed(
 {
     auto response = future.get();
     if (!response->success)
-        RCLCPP_ERROR(this->get_logger(), "FAILURE: %s",
-                     response->message.c_str());
+        RCLCPP_ERROR(this->get_logger(), "%s", response->message.c_str());
     else
     {
         std_msgs::msg::UInt8 speed_msg;

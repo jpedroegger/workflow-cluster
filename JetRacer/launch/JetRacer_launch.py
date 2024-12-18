@@ -7,18 +7,22 @@ def generate_launch_description():
             package='i2c_interface',
             executable='i2c_interface_node',
             name='i2c_interface',
+            respawn=True,
+            respawn_delay=2.0,
             arguments=['--ros-args', '--log-level', 'fatal'],
         ),
-        # Node (
-        #     package='can_interface',
-        #     executable='can_interface_node',
-        #     name='can_interface'
-        # ),
-        # Node (
-        #     package='speed_sensor',
-        #     executable='speed_sensor_node',
-        #     name='speed_sensor'
-        # ),
+        Node (
+            package='can_interface',
+            executable='can_interface_node',
+            name='can_interface',
+            respawn=True,
+            respawn_delay=2.0,
+        ),
+        Node (
+            package='speed_sensor',
+            executable='speed_sensor_node',
+            name='speed_sensor'
+        ),
         Node (
             package='oled_display',
             executable='oled_display_node',
