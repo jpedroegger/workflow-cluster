@@ -35,11 +35,11 @@ def generate_launch_description():
             name='servo_motor',
             # arguments=['--ros-args', '--log-level', 'debug'],
         ),
-        # Node (
-        #     package='battery',
-        #     executable='battery_node',
-        #     name='battery'
-        # ),
+        Node (
+            package='battery',
+            executable='battery_node',
+            name='battery'
+        ),
         Node (
             package='joy',
             executable='joy_node',

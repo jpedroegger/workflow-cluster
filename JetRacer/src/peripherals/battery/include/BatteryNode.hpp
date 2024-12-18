@@ -13,7 +13,7 @@ class BatteryNode : public rclcpp::Node
         BatteryNode();
         ~BatteryNode() = default;
 
-        void initINA219();
+        uint8_t initINA219();
         void publishBatteryLevel();
 
     private:

@@ -6,7 +6,9 @@ int main(int argc, char** argv)
 {
     rclcpp::init(argc, argv);
     auto node = std::make_shared<OledDisplayNode>();
-    node->initSSD1306();
+
+    if (node->initSSD1306() != EXIT_SUCCESS)
+        return EXIT_FAILURE;
 
     rclcpp::spin(node);
     rclcpp::shutdown();

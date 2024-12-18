@@ -28,13 +28,14 @@ include_directories(
   include
   ${CMAKE_SOURCE_DIR}/include
   ~/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/include
+  ~/SEAME-Cluster-24-25/JetRacer/install/abstract_driver/include
 )
 
 # Add the executable and link necessary libraries
 add_executable(${exec_name} ${srcs})
 
 # Link the PCA9685Driver library to the executable
-target_link_libraries(${exec_name} INA219Driver)  # Link to PCA9685Driver
+target_link_libraries(${exec_name} INA219Driver)  # Link to INA219Driver
 
 ament_target_dependencies(${exec_name} rclcpp std_msgs ina219_driver custom_msgs)
 

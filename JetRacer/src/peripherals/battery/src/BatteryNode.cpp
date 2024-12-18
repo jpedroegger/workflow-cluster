@@ -11,10 +11,19 @@ BatteryNode::BatteryNode() : Node("battery_node")
         5s, std::bind(&BatteryNode::publishBatteryLevel, this));
 }
 
-void BatteryNode::initINA219()
+uint8_t BatteryNode::initINA219()
 {
-    ina219_driver_ = std::make_shared<INA219Driver>(this->shared_from_this(),
-                                                    INA219_ADDRESS);
+    try
+    {
+        ina219_driver_ = std::make_shared<INA219Driver>(
+            this->shared_from_this(), INA219_ADDRESS);
+    }
+    catch (const std::exception& e)
+    {
+        RCLCPP_ERROR(this->get_logger(), "%s", e.what());
+        return EXIT_FAILURE;
+    }
+    return EXIT_SUCCESS;
 }
 
 void BatteryNode::publishBatteryLevel() { ina219_driver_->publishBusVoltage(); }

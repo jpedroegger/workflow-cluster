@@ -25,6 +25,7 @@ include_directories(
   include
   ${CMAKE_SOURCE_DIR}/include
   ~/SEAME-Cluster-24-25/JetRacer/install/ssd1306_driver/include
+  ~/SEAME-Cluster-24-25/JetRacer/install/abstract_driver/include
 )
 
 # Add the executable and link necessary libraries

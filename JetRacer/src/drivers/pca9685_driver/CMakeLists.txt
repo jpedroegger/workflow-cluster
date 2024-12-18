@@ -11,10 +11,8 @@ set(lib_name PCA9685Driver)
 include_directories(
   include
   ~/SEAME-Cluster-24-25/JetRacer/install/abstract_driver/include
-
 )
 
-#specify the full path of where th lib should be 
 link_directories(/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/abstract_driver/lib)
 
 # Add source files

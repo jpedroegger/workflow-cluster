@@ -5,66 +5,24 @@
 
 using namespace std::chrono_literals;
 
-SSD1306Driver::SSD1306Driver(std::shared_ptr<rclcpp::Node> node) : node_(node)
+SSD1306Driver::SSD1306Driver(std::shared_ptr<rclcpp::Node> node)
+    : ADriver(node, SSD1306_I2C_ADDR)
 {
-    i2c_client_ =
-        node_->create_client<custom_msgs::srv::I2cService>("i2c_service");
-
-    while (!i2c_client_->wait_for_service(2s))
-        RCLCPP_INFO(node_->get_logger(), "Waiting for i2c service to start");
-
-    if (ping() == EXIT_FAILURE)
-        throw std::runtime_error("fail pinging the device");
+    this->ping();
 
     RCLCPP_INFO(node->get_logger(),
                 "SSD1306 succefully initiated at address: 0x%02X",
-                SSD1306_I2C_ADDR);
+                device_address_);
 }
 
 SSD1306Driver::~SSD1306Driver() {}
-
-uint8_t SSD1306Driver::ping()
-{
-    auto request = std::make_shared<custom_msgs::srv::I2cService::Request>();
-
-    request->set__device_address(SSD1306_I2C_ADDR);
-    request->set__read_request(false);
-    request->write_data.push_back(0x0);
-
-    auto future = i2c_client_->async_send_request(request);
-
-    auto response_future = i2c_client_->async_send_request(request);
-
-    // Spin until the future is complete
-    if (rclcpp::spin_until_future_complete(node_, response_future, 5s) ==
-        rclcpp::FutureReturnCode::SUCCESS)
-    {
-        auto response = response_future.get();
-
-        // Check if the response was successful
-        if (response->success)
-            return EXIT_SUCCESS;
-        else
-        {
-            RCLCPP_ERROR(node_->get_logger(), "Device 0x%02X not found",
-                         SSD1306_I2C_ADDR);
-            return EXIT_FAILURE;
-        }
-    }
-    else
-    {
-        RCLCPP_ERROR(node_->get_logger(), "Ping to device 0x%02X timed out.",
-                     SSD1306_I2C_ADDR);
-        return EXIT_FAILURE;
-    }
-}
 
 /*custom_msgs
  * @brief try to read and write dummy bytes to the display.
  *
  * @return
  */
-int SSD1306Driver::initDisplay()
+void SSD1306Driver::initDisplay()
 {
     auto write_request =
         std::make_shared<custom_msgs::srv::I2cService::Request>();
@@ -80,24 +38,14 @@ int SSD1306Driver::initDisplay()
     read_request->set__read_length(1);
 
     i2c_client_->async_send_request(write_request,
-                                    std::bind(&SSD1306Driver::asyncI2cResponse,
+                                    std::bind(&SSD1306Driver::handleI2cResponse,
                                               this, std::placeholders::_1));
     i2c_client_->async_send_request(read_request,
-                                    std::bind(&SSD1306Driver::asyncI2cResponse,
+                                    std::bind(&SSD1306Driver::handleI2cResponse,
                                               this, std::placeholders::_1));
-
-    return EXIT_SUCCESS;
 }
 
-void SSD1306Driver::asyncI2cResponse(
-    rclcpp::Client<custom_msgs::srv::I2cService>::SharedFuture future)
-{
-    auto response = future.get();
-    if (!response->success)
-        RCLCPP_ERROR(node_->get_logger(), "%s", response->message.c_str());
-}
-
-int SSD1306Driver::onOffDisplay(uint8_t onoff)
+void SSD1306Driver::onOffDisplay(uint8_t onoff)
 {
     auto request = std::make_shared<custom_msgs::srv::I2cService::Request>();
 
@@ -110,12 +58,11 @@ int SSD1306Driver::onOffDisplay(uint8_t onoff)
         request->write_data.push_back(SSD1306_COMM_DISPLAY_OFF);
 
     i2c_client_->async_send_request(request,
-                                    std::bind(&SSD1306Driver::asyncI2cResponse,
+                                    std::bind(&SSD1306Driver::handleI2cResponse,
                                               this, std::placeholders::_1));
-    return EXIT_SUCCESS;
 }
 
-int SSD1306Driver::setDefaultConfig()
+void SSD1306Driver::setDefaultConfig()
 {
     auto request = std::make_shared<custom_msgs::srv::I2cService::Request>();
 
@@ -152,17 +99,16 @@ int SSD1306Driver::setDefaultConfig()
     request->write_data.push_back(SSD1306_COMM_DISABLE_SCROLL);
 
     i2c_client_->async_send_request(request,
-                                    std::bind(&SSD1306Driver::asyncI2cResponse,
+                                    std::bind(&SSD1306Driver::handleI2cResponse,
                                               this, std::placeholders::_1));
-    return EXIT_SUCCESS;
 }
 
-int SSD1306Driver::setCursor(uint8_t x, uint8_t y)
+void SSD1306Driver::setCursor(uint8_t x, uint8_t y)
 {
     if (x >= SSD1306_WIDTH || y >= (SSD1306_HEIGHT / 8))
     {
         RCLCPP_ERROR(node_->get_logger(), "setting cursor");
-        return EXIT_FAILURE;
+        return;
     }
 
     auto request = std::make_shared<custom_msgs::srv::I2cService::Request>();
@@ -175,12 +121,11 @@ int SSD1306Driver::setCursor(uint8_t x, uint8_t y)
     request->write_data.push_back(SSD1306_COMM_HIGH_COLUMN | ((x >> 4) & 0x0f));
 
     i2c_client_->async_send_request(request,
-                                    std::bind(&SSD1306Driver::asyncI2cResponse,
+                                    std::bind(&SSD1306Driver::handleI2cResponse,
                                               this, std::placeholders::_1));
-    return EXIT_SUCCESS;
 }
 
-int SSD1306Driver::flipDisplay(uint8_t flip)
+void SSD1306Driver::flipDisplay(uint8_t flip)
 {
     auto request = std::make_shared<custom_msgs::srv::I2cService::Request>();
 
@@ -193,12 +138,11 @@ int SSD1306Driver::flipDisplay(uint8_t flip)
         request->write_data.push_back(SSD1306_COMM_HORIZ_FLIP);
 
     i2c_client_->async_send_request(request,
-                                    std::bind(&SSD1306Driver::asyncI2cResponse,
+                                    std::bind(&SSD1306Driver::handleI2cResponse,
                                               this, std::placeholders::_1));
-    return EXIT_SUCCESS;
 }
 
-int SSD1306Driver::rotateDisplay(uint8_t degree)
+void SSD1306Driver::rotateDisplay(uint8_t degree)
 {
     auto request = std::make_shared<custom_msgs::srv::I2cService::Request>();
 
@@ -217,15 +161,14 @@ int SSD1306Driver::rotateDisplay(uint8_t degree)
         request->write_data.push_back(SSD1306_COMM_HORIZ_NORM);
         request->write_data.push_back(SSD1306_COMM_SCAN_NORM);
     }
-    return EXIT_SUCCESS;
 }
 
-int SSD1306Driver::clearRow(uint8_t row)
+void SSD1306Driver::clearRow(uint8_t row)
 {
     if (row >= (SSD1306_HEIGHT / 8))
     {
         RCLCPP_ERROR(node_->get_logger(), "invalid row number");
-        return EXIT_FAILURE;
+        return;
     }
 
     auto request = std::make_shared<custom_msgs::srv::I2cService::Request>();
@@ -239,21 +182,17 @@ int SSD1306Driver::clearRow(uint8_t row)
         request->write_data.push_back(0x00);
 
     i2c_client_->async_send_request(request,
-                                    std::bind(&SSD1306Driver::asyncI2cResponse,
+                                    std::bind(&SSD1306Driver::handleI2cResponse,
                                               this, std::placeholders::_1));
-    return EXIT_SUCCESS;
 }
 
-int SSD1306Driver::clearScreen()
+void SSD1306Driver::clearScreen()
 {
-    int result = 0;
-
     for (uint8_t i = 0; i < (SSD1306_HEIGHT / 8); i++)
-        result += clearRow(i);
-    return result;
+        clearRow(i);
 }
 
-int SSD1306Driver::writeString(uint8_t size, const std::string& msg)
+void SSD1306Driver::writeString(uint8_t size, const std::string& msg)
 {
     uint8_t* font_table = 0;
     uint8_t font_table_width = 0;
@@ -279,7 +218,7 @@ int SSD1306Driver::writeString(uint8_t size, const std::string& msg)
         for (char c : msg)
         {
             if (c < ' ' || c > '~')
-                return EXIT_FAILURE;
+                return;
 
             uint8_t* font_ptr = &font_table[(c - 0x20) * font_table_width];
             uint8_t j = 0;
@@ -291,8 +230,7 @@ int SSD1306Driver::writeString(uint8_t size, const std::string& msg)
         }
 
         i2c_client_->async_send_request(
-            request, std::bind(&SSD1306Driver::asyncI2cResponse, this,
+            request, std::bind(&SSD1306Driver::handleI2cResponse, this,
                                std::placeholders::_1));
     }
-    return EXIT_SUCCESS;
 }

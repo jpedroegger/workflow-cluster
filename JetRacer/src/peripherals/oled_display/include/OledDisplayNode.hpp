@@ -14,7 +14,7 @@ class OledDisplayNode : public rclcpp::Node
         OledDisplayNode();
         ~OledDisplayNode();
 
-        void initSSD1306();
+        uint8_t initSSD1306();
 
     private:
         rclcpp::Subscription<custom_msgs::msg::Display>::SharedPtr

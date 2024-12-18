@@ -6,11 +6,10 @@ using namespace std::chrono_literals;
 
 INA219Driver::INA219Driver(std::shared_ptr<rclcpp::Node> node,
                            uint8_t device_address)
-    : node_(node), device_address_(device_address), current_divider_mA_(0),
+    : ADriver(node, device_address), current_divider_mA_(0),
       power_multiplier_mW_(0), calibration_value_(0)
 {
-    i2c_client_ =
-        node_->create_client<custom_msgs::srv::I2cService>("i2c_service");
+
     publisher_voltage_ =
         node_->create_publisher<std_msgs::msg::Float64>("battery_voltage", 10);
     publisher_perc_ = node_->create_publisher<std_msgs::msg::Float64>(
@@ -19,50 +18,11 @@ INA219Driver::INA219Driver(std::shared_ptr<rclcpp::Node> node,
     while (!i2c_client_->wait_for_service(2s))
         RCLCPP_INFO(node_->get_logger(), "Waiting for i2c service to start");
 
+    this->ping();
+
     RCLCPP_INFO(node->get_logger(),
                 "INA219 succefully initiated at address: 0x%02X",
                 device_address_);
-}
-
-/**
- * @brief ping the device
- *
- * to use before spinning the node
- *
- * @return
- */
-void INA219Driver::ping()
-{
-    auto request = std::make_shared<custom_msgs::srv::I2cService::Request>();
-
-    request->set__device_address(device_address_);
-    request->set__read_request(false);
-    request->write_data.push_back(0x0);
-
-    auto future = i2c_client_->async_send_request(request);
-
-    auto response_future = i2c_client_->async_send_request(request);
-
-    // Spin until the future is complete
-    if (rclcpp::spin_until_future_complete(node_, response_future, 5s) ==
-        rclcpp::FutureReturnCode::SUCCESS)
-    {
-        auto response = response_future.get();
-
-        // Check if the response was successful
-        if (!response->success)
-        {
-            std::string msg =
-                fmt::format("Device 0x{:02X} not found", device_address_);
-            throw INAException(msg);
-        }
-    }
-    else
-    {
-        std::string msg = fmt::format("request for device 0x{:02X} timed out",
-                                      device_address_);
-        throw INAException(msg);
-    }
 }
 
 /**
@@ -110,9 +70,9 @@ void INA219Driver::writeRegister(uint8_t reg, uint16_t value)
     request->write_data.push_back((value >> 4) & 0xFF);
     request->write_data.push_back(value & 0xFF);
 
-    i2c_client_->async_send_request(
-        request, std::bind(&INA219Driver::handleI2cWriteResponse, this,
-                           std::placeholders::_1));
+    i2c_client_->async_send_request(request,
+                                    std::bind(&INA219Driver::handleI2cResponse,
+                                              this, std::placeholders::_1));
 }
 
 /**
@@ -186,17 +146,6 @@ void INA219Driver::handleI2cReadResponse(
     {
         RCLCPP_WARN(node_->get_logger(),
                     "No callback registered for register 0x%02X", reg);
-    }
-}
-
-void INA219Driver::handleI2cWriteResponse(
-    rclcpp::Client<custom_msgs::srv::I2cService>::SharedFuture future)
-{
-    auto response = future.get();
-    if (!response->success)
-    {
-        RCLCPP_ERROR(node_->get_logger(), "%s", response->message.c_str());
-        return;
     }
 }
 
