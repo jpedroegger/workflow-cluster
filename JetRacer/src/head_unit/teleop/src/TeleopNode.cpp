@@ -9,8 +9,10 @@ TeleopNode::TeleopNode() : rclcpp::Node("teleop_node")
         "/joy", qos,
         std::bind(&TeleopNode::joyCallback, this, std::placeholders::_1));
 
-    twist_publisher_ =
+    vel_publisher_ =
         this->create_publisher<geometry_msgs::msg::Twist>("cmd_vel", 10);
+    blinkers_publisher_ =
+        this->create_publisher<std_msgs::msg::UInt8>("cmd_blinkers", 10);
 }
 
 TeleopNode::~TeleopNode() {}
@@ -23,5 +25,21 @@ void TeleopNode::joyCallback(sensor_msgs::msg::Joy::SharedPtr joy_msg)
     twist_msg.angular.z = joy_msg->axes[0]; // Left stick, horizontal axis
 
     // Publish the Twist message to /cmd_vel
-    twist_publisher_->publish(twist_msg);
+    vel_publisher_->publish(twist_msg);
+    publishBlinkerState(joy_msg);
+}
+
+void TeleopNode::publishBlinkerState(sensor_msgs::msg::Joy::SharedPtr joy_msg)
+{
+    auto buttons = joy_msg->buttons;
+    auto msg = std_msgs::msg::UInt8();
+
+    if (buttons[0] == 1)
+        blinkers_publisher_->publish(msg.set__data(IDLE));
+    if (buttons[1] == 1)
+        blinkers_publisher_->publish(msg.set__data(TURN_RIGHT));
+    if (buttons[2] == 1)
+        blinkers_publisher_->publish(msg.set__data(WARNINGS));
+    if (buttons[3] == 1)
+        blinkers_publisher_->publish(msg.set__data(TURN_LEFT));
 }
