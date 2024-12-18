@@ -9,7 +9,6 @@ INA219Driver::INA219Driver(std::shared_ptr<rclcpp::Node> node,
     : ADriver(node, device_address), current_divider_mA_(0),
       power_multiplier_mW_(0), calibration_value_(0)
 {
-
     publisher_voltage_ =
         node_->create_publisher<std_msgs::msg::Float64>("battery_voltage", 10);
     publisher_perc_ = node_->create_publisher<std_msgs::msg::Float64>(

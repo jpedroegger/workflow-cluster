@@ -66,12 +66,14 @@ void CanInterface::handleCanRequest(
         try
         {
             can_driver_->sendMessage(frame);
+            RCLCPP_DEBUG(this->get_logger(), "wrote frame to the bus");
         }
         catch (const std::exception& e)
         {
             response->set__success(false);
             response->set__message(e.what());
             RCLCPP_ERROR(this->get_logger(), "Fail writing data: %s", e.what());
+            return;
         }
     }
 

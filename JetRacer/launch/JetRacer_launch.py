@@ -17,11 +17,17 @@ def generate_launch_description():
             name='can_interface',
             respawn=True,
             respawn_delay=2.0,
+            # arguments=['--ros-args', '--log-level', 'debug'],
         ),
+        # Node (
+        #     package='speed_sensor',
+        #     executable='speed_sensor_node',
+        #     name='speed_sensor'
+        # ),
         Node (
-            package='speed_sensor',
-            executable='speed_sensor_node',
-            name='speed_sensor'
+            package='blinkers',
+            executable='blinkers_node',
+            name='blinkers'
         ),
         Node (
             package='oled_display',
