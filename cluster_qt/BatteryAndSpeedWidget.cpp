@@ -1,12 +1,15 @@
 #include "includes/BatteryAndSpeedWidget.h"
+#include <iostream>
+
 
 BatteryAndSpeedWidget::BatteryAndSpeedWidget(QWidget* parent)
-    : QWidget(parent), currentLevel(100), currentSpeed(0)
+    : QWidget(parent), currentSpeed(0)
 {
-    setFocusPolicy(Qt::StrongFocus);  // Ensure the widget can receive key events
+    updateLevel();
+    setFocusPolicy(Qt::StrongFocus); 
     QTimer* timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, &BatteryAndSpeedWidget::updateLevel);
-    timer->start(800); // Update Level every 100ms
+    timer->start(800);
 }
 
 void BatteryAndSpeedWidget::paintEvent(QPaintEvent* event)
@@ -18,9 +21,9 @@ void BatteryAndSpeedWidget::paintEvent(QPaintEvent* event)
     int centerY = height() / 2;
     int radius = std::min(width(), height()) / 2 - 20;
 
-    int imageWidth = 25;  
+    int imageWidth = 25;
     int imageHeight = 25;
-    int imageX = centerX - 30 - imageWidth / 2;  // Center the image
+    int imageX = centerX - 30 - imageWidth / 2;
     int imageY = centerY + imageWidth / 2;
 
     painter.drawPixmap(imageX, imageY, imageWidth, imageHeight, image);
@@ -30,34 +33,33 @@ void BatteryAndSpeedWidget::paintEvent(QPaintEvent* event)
     drawScale(painter, centerX, centerY, radius);
 }
 
-void BatteryAndSpeedWidget::drawScale(QPainter& painter, int centerX, int centerY, int radius) {
-
-
-    double startAngle = -40; // Start angle for 0 Level (bottom left)
-    double endAngle = 40;     // End angle for max Level (bottom right)
-    QFont font("Arial", 20, QFont::Bold);  // Example: Arial, size 10, bold
+void BatteryAndSpeedWidget::drawScale(QPainter& painter, int centerX, int centerY, int radius)
+{
+    double startAngle = -40;
+    double endAngle = 40;
+    QFont font("Arial", 20, QFont::Bold); 
     painter.setPen(QPen(Qt::white, 6));
     painter.setFont(font);
     drawBars(painter, centerX + 150, centerY + 30, radius * 1.2, startAngle, endAngle, 100);
     painter.setPen(QPen(Qt::black, 15));
 
-    // Define bounding rectangle for the arc
-    QRect rect(centerX, centerY - 80, radius, radius * 1.3); // x, y, width, height
-    // Draw the arc
-    int startAngle1 = 135 * 16;    // Start at 0 degrees (3 o'clock)
-    int spanAngle1 = 90 * 16;   // Sweep 180 degrees (half-circle)
-    //painter.drawArc(rect, startAngle1, spanAngle1);
+    QRect rect(centerX, centerY - 80, radius, radius * 1.3);
+
+    int startAngle1 = 135 * 16;
+    int spanAngle1 = 90 * 16;
+
 }
 
-void BatteryAndSpeedWidget::drawBars(QPainter& painter, int centerX, int centerY, int radius, double startAngle, double endAngle, int Level) {
-    int numBars = Level / 2; // Total number of bars (from 0 to 100)
-    int barWidth = 6;  // Width of each bar
-    int innerRadius = radius - 80; // Inner radius for bars
-    int outerRadius = radius - 70; // Outer radius for bars
+void BatteryAndSpeedWidget::drawBars(QPainter& painter, int centerX, int centerY, int radius, double startAngle, double endAngle, int Level)
+{
+    int numBars = Level / 2;
+    int barWidth = 6; 
+    int innerRadius = radius - 80;
+    int outerRadius = radius - 70;
+    int activeBars = static_cast<int>(currentLevel);
 
-    int activeBars = static_cast<int>(currentLevel); // Bars below the needle
-
-    for (int i = 0; i <= numBars; ++i) {
+    for (int i = 0; i <= numBars; ++i)
+    {
         double angle = startAngle + (endAngle - startAngle) * (double(i) / numBars);
         double rad = qDegreesToRadians(angle);
 
@@ -65,100 +67,93 @@ void BatteryAndSpeedWidget::drawBars(QPainter& painter, int centerX, int centerY
         int yOuter = centerY - std::sin(rad) * outerRadius;
         int xInner = centerX - std::cos(rad) * innerRadius;
         int yInner = centerY - std::sin(rad) * innerRadius;
-
-        // Determine bar color based on the value
-        QColor barColor = (i * 2 <= activeBars) ? calculateBarColor(i * 2) : QColor(50, 50, 50); // Gray for inactive bars
-
-        // Draw the bar
+    
+        QColor barColor = (i * 2 <= activeBars) ? calculateBarColor(i * 2) : QColor(50, 50, 50);
+    
         painter.setPen(QPen(barColor, barWidth, Qt::SolidLine, Qt::SquareCap));
         painter.drawLine(xInner, yInner, xOuter, yOuter);
     }
 }
 
-QColor BatteryAndSpeedWidget::calculateBarColor(int value) {
-    if (value < 5) {
-        return QColor(139, 0, 0); // Dark red
-    } else if (value < 50) {
-        // Gradient from dark red to yellow
+QColor BatteryAndSpeedWidget::calculateBarColor(int value)
+{
+    if (value < 5)
+        return QColor(139, 0, 0);
+    else if (value < 50)
+    { 
         int red = 139 + (255 - 139) * (value - 5) / 45;
         int green = (255 - 139) * (value - 5) / 45;
         return QColor(red, green, 0);
-    } else if (value < 80) {
-        // Gradient from yellow to green
+    }
+    else if (value < 80)
+    {
         int red = 255 - (255 * (value - 50) / 30);
         int green = 255;
         return QColor(red, green, 0);
-    } else {
-        // Green
-        return QColor(0, 255, 0);
     }
+    else
+        return QColor(0, 255, 0);
 }
 
-void BatteryAndSpeedWidget::updateLevel() {
-    // Command to get the battery level -- CURRENTLY WORKING ON ARCH, NEEDS TO BE ALTERED
+void BatteryAndSpeedWidget::updateLevel()
+{
     const std::string command = "upower -i $(upower -e | grep BAT) | grep -E \"percentage\" | awk '{print $2}'";
-
-    // Create a pipe to read the command's output
     std::array<char, 128> buffer;
     std::string result;
-
-    // Open the process using popen
     std::unique_ptr<FILE, decltype(&pclose)> pipe(popen(command.c_str(), "r"), pclose);
-    if (!pipe) {
+    if (!pipe)
         throw std::runtime_error("Failed to run command");
-    }
-
-    // Read the output into the result string
-    while (fgets(buffer.data(), buffer.size(), pipe.get()) != nullptr) {
+    while (fgets(buffer.data(), buffer.size(), pipe.get()) != nullptr)
         result += buffer.data();
-    }
-
-    // Remove any trailing whitespace or newline characters
     result.erase(result.find_last_not_of(" \t\n\r") + 1);
-
-    // Convert the result to a float or integer if needed
-    currentLevel = std::stof(result); // or std::stoi(result) if it's an integer
-
-    update(); // Trigger a repaint
+    try
+    {
+        currentLevel = std::stof(result);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << "battery level not valid\n";
+        currentLevel = 56;
+    }
+    update();
 }
 
 BatteryAndSpeedWidget::~BatteryAndSpeedWidget() {}
 
-void BatteryAndSpeedWidget::drawCentralNumber(QPainter& painter, int centerX, int centerY) {
-    // Set font and color for the speed number
-    QFont font("Arial", 80, QFont::Bold);  // Large font for the speed
+void BatteryAndSpeedWidget::drawCentralNumber(QPainter& painter, int centerX, int centerY)
+{
+    QFont font("Arial", 80, QFont::Bold); 
     painter.setFont(font);
     painter.setPen(QPen(Qt::white));
     QString speedText = QString::number(currentSpeed);
-    // Calculate the bounding box for the speed text
     QFontMetrics metrics(font);
     QRect textRect = metrics.boundingRect(speedText);
-    // Center the speed text
+
     int x = centerX - textRect.width() / 2;
     int y = centerY + textRect.height() / 2 - 20;
     painter.drawText(x, y, speedText);
-    // Set a smaller font and adjust position for "KPH"
-    QFont smallFont("Arial", 28, QFont::Bold);  // Smaller font for the unit
+
+    QFont smallFont("Arial", 28, QFont::Bold);
     painter.setFont(smallFont);
-    // Adjust the position to render "KPH" just below the speed number
+
     QFontMetrics smallMetrics(smallFont);
     int kphWidth = smallMetrics.horizontalAdvance("KPH");
-    int kphX = centerX - kphWidth / 2; // Center-align "KPH"
-    int kphY = y + textRect.height() - 60;  // Position "KPH" below the speed text
-    // Draw "KPH"
+    int kphX = centerX - kphWidth / 2;
+    int kphY = y + textRect.height() - 60; 
+
     painter.drawText(kphX, kphY, "KPH");
 }
 
-void BatteryAndSpeedWidget::drawBatteryNumber(QPainter& painter, int centerX, int centerY) {
-    // Set font and color for the speed number
-    QFont font("Arial", 10, QFont::Bold);  // Large font for the speed
+void BatteryAndSpeedWidget::drawBatteryNumber(QPainter& painter, int centerX, int centerY)
+{
+    QFont font("Arial", 10, QFont::Bold); 
     painter.setFont(font);
     painter.setPen(QPen(Qt::white));
     QString speedText = QString::number(currentLevel) + " %";
-    // Calculate the bounding box for the speed text
+
     QFontMetrics metrics(font);
     QRect textRect = metrics.boundingRect(speedText);
-    // Center the speed text
+
     int x = centerX - textRect.width() / 2;
     int y = centerY + textRect.height() / 2 - 20;
     painter.drawText(x, y, speedText);
@@ -166,25 +161,25 @@ void BatteryAndSpeedWidget::drawBatteryNumber(QPainter& painter, int centerX, in
 
 void BatteryAndSpeedWidget::accelerate(int forward_key)
 {
-    if (forward_key == Qt::Key_Space) {
-        currentSpeed += 2;  // Increase speed by 2
-        if (currentSpeed > 160) {
-            currentSpeed = 160;  // Cap speed at 160
-        }
-        update();  // Trigger a repaint to reflect the updated speed
+    if (forward_key == Qt::Key_Space)
+    {
+        currentSpeed += 2; 
+        if (currentSpeed > 160)
+            currentSpeed = 160; 
+        update(); 
     }
 
-    // Check if the Up Arrow key is pressed
-    if (forward_key == Qt::Key_Down) {
-        currentSpeed -= 2;  // Increase speed by 2
-        if (currentSpeed <= 0) {
-            currentSpeed = 0;  // Cap speed at 160
-        }
-        update();  // Trigger a repaint to reflect the updated speed
+
+    if (forward_key == Qt::Key_Down)
+    {
+        currentSpeed -= 2; 
+        if (currentSpeed <= 0)
+            currentSpeed = 0; 
+        update(); 
     }
 }
 
-void BatteryAndSpeedWidget::updateSpeed() {
-    update(); // Trigger a repaint
+void BatteryAndSpeedWidget::updateSpeed()
+{
+    update();
 }
-
