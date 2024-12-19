@@ -19,11 +19,11 @@ def generate_launch_description():
             respawn_delay=2.0,
             # arguments=['--ros-args', '--log-level', 'debug'],
         ),
-        # Node (
-        #     package='speed_sensor',
-        #     executable='speed_sensor_node',
-        #     name='speed_sensor'
-        # ),
+        Node (
+            package='speed_sensor',
+            executable='speed_sensor_node',
+            name='speed_sensor'
+        ),
         Node (
             package='blinkers',
             executable='blinkers_node',
@@ -60,26 +60,26 @@ def generate_launch_description():
             executable='teleop_node',
             name='teleop'
         ),
-        # Node(
-        #     package='camera_ros',
-        #     executable='camera_node',
-        #     name='camera_node',
-        #     parameters=[
-        #         {
-        #             "format": "RGB888",
-        #             "width": 1920,
-        #             "height": 1080,
-        #         }
-        #     ],
-        #     remappings=[
-        #         ('/camera_node/image_raw', 'image_raw'),
-        #         ('/camera_node/image_raw/compressed', 'image_compressed'),
-        #         ('/camera_node/camera_info', 'camera_info')
-        #     ]
-        # ),
-        # Node (
-        #     package='display_routine',
-        #     executable='display_routine_node',
-        #     name='display_routine'
-        # ),
+        Node(
+            package='camera_ros',
+            executable='camera_node',
+            name='camera_node',
+            parameters=[
+                {
+                    "format": "RGB888",
+                    "width": 1920,
+                    "height": 1080,
+                }
+            ],
+            remappings=[
+                ('/camera_node/image_raw', 'image_raw'),
+                ('/camera_node/image_raw/compressed', 'image_compressed'),
+                ('/camera_node/camera_info', 'camera_info')
+            ]
+        ),
+        Node (
+            package='display_routine',
+            executable='display_routine_node',
+            name='display_routine'
+        ),
     ])

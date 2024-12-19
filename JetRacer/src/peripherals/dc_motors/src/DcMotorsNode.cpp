@@ -53,7 +53,11 @@ void DcMotorsNode::writeSpeed(
                      linear_x);
         return;
     }
-    int8_t direction = linear_x > 0 ? 1 : -1;
+    int8_t direction = (linear_x > 0) ? 1
+                       : (linear_x < 0)
+                           ? -1
+                           : 0; // 1 = forward, -1 = reverse, 0 = stop
+
     linear_x = std::abs(linear_x);
 
     //  Map the linear velocity to PCA9685 pulse width
@@ -63,18 +67,26 @@ void DcMotorsNode::writeSpeed(
     pca9685_->setPWMDutyCycle(DEFAULT_CHANNEL, true, pulseWidth);
     pca9685_->setPWMDutyCycle(7, true, pulseWidth);
 
-    if (direction > 1)
+    if (direction > 0) // Forward
     {
         pca9685_->setGPIO(1, false);
         pca9685_->setGPIO(2, true);
         pca9685_->setGPIO(6, false);
         pca9685_->setGPIO(5, true);
     }
-    else
+    else if (direction < 0) // Reverse
     {
         pca9685_->setGPIO(1, true);
         pca9685_->setGPIO(2, false);
         pca9685_->setGPIO(6, true);
+        pca9685_->setGPIO(5, false);
+    }
+    else // Stop
+    {
+        // Set all GPIOs for both motors to neutral/off
+        pca9685_->setGPIO(1, false);
+        pca9685_->setGPIO(2, false);
+        pca9685_->setGPIO(6, false);
         pca9685_->setGPIO(5, false);
     }
 }
