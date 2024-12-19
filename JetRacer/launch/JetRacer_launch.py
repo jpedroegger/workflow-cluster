@@ -53,7 +53,10 @@ def generate_launch_description():
         Node (
             package='joy',
             executable='joy_node',
-            name='joy'
+            name='joy',
+             parameters=[{
+                'device_id': 0,                # Set the device ID for your joystick
+            }]
         ),
         Node (
             package='teleop',
@@ -64,6 +67,7 @@ def generate_launch_description():
             package='camera_ros',
             executable='camera_node',
             name='camera_node',
+            arguments=['--ros-args', '--log-level', 'fatal'], 
             parameters=[
                 {
                     "format": "RGB888",
