@@ -3,7 +3,9 @@
 <package format="3">
 	<name>i2c_interface</name>
   <version>0.0.0</version>
-  <description>Interface for communication the i2c bus. this node essentially is a server providing a service. any caller can request writting and reading operation to this node</description>
+	<description>Interface for communication the i2c bus. 
+		this node essentially provides a service for read and write operation onto the bus.
+	</description>
   <maintainer email="axel.chabrerie@gmail.com">pi</maintainer>
   <license>TODO: License declaration</license>
 

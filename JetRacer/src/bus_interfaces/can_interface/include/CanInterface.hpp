@@ -1,11 +1,9 @@
 #pragma once
 
 #include "CanDriver.hpp"
-#include "custom_msgs/msg/can_frame.hpp"
 #include "custom_msgs/srv/can_service.hpp"
 #include <memory>
 #include <rclcpp/rclcpp.hpp>
-#include <thread>
 
 using sockcanpp::CanDriver;
 
