@@ -36,7 +36,6 @@ void PCA9685Driver::setPWMFrequency(float freq_Hz)
     setRegister(MODE1_REGISTER, 0x10); // sleep mode
     setRegister(PRESCALE_REGISTER, prescale);
     setRegister(MODE1_REGISTER, 0x80); // Wake-up + auto increment
-                                       //
     std::this_thread::sleep_for(5ms);  // wait for oscillator stabilization
 }
 

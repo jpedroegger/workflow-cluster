@@ -3,7 +3,7 @@
 <package format="3">
   <name>custom_msgs</name>
   <version>0.0.0</version>
-  <description>Package for message definition for the bus interfaces (CAN and I2C)</description>
+	<description>Package for service definition to interact with the bus interfaces (CAN and I2C)</description>
   <maintainer email="axel.chabrerie@gmail.com">jetpack</maintainer>
   <license>TODO: License declaration</license>
 

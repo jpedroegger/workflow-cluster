@@ -3,7 +3,7 @@
 <package format="3">
   <name>ina219_driver</name>
   <version>0.0.0</version>
-  <description>Driver for the ina219 battery sensor</description>
+  <description>Driver for the communication with the INA219 battery sensor</description>
   <maintainer email="axel.chabrerie@gmail.com">pi</maintainer>
   <license>TODO: License declaration</license>
 
