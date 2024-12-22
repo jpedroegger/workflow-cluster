@@ -145,21 +145,5 @@ void ArrowSymbolWidget::drawArrowhead(QPainter& painter, int x, int y, double an
 
 void ArrowSymbolWidget::changeDirection(int movement_key)
 {
-   // Check the key pressed and update the appropriate flag
-        if (movement_key == Qt::Key_Left) {
-            m_greenL = true;
-            m_greenR = false;
-            m_greenV = false;
-        }
-        else if (movement_key == Qt::Key_Up) {
-            m_greenL = false;
-            m_greenR = false;
-            m_greenV = true;
-        }
-        else if (movement_key == Qt::Key_Right) {
-            m_greenL = false;
-            m_greenR = true;
-            m_greenV = false;
-        }
-        update();
+   // FUTURE ROS2 CODE
 }

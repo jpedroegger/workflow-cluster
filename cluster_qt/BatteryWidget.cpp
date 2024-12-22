@@ -126,30 +126,7 @@ void BatteryWidget::drawCentralNumber(QPainter& painter, int centerX, int center
 
 void BatteryWidget::updateLevel() {
     // Command to get the battery level -- CURRENTLY WORKING ON ARCH, NEEDS TO BE ALTERED
-    const std::string command = "upower -i $(upower -e | grep BAT) | grep -E \"percentage\" | awk '{print $2}'";
-
-    // Create a pipe to read the command's output
-    std::array<char, 128> buffer;
-    std::string result;
-
-    // Open the process using popen
-    std::unique_ptr<FILE, decltype(&pclose)> pipe(popen(command.c_str(), "r"), pclose);
-    if (!pipe) {
-        throw std::runtime_error("Failed to run command");
-    }
-
-    // Read the output into the result string
-    while (fgets(buffer.data(), buffer.size(), pipe.get()) != nullptr) {
-        result += buffer.data();
-    }
-
-    // Remove any trailing whitespace or newline characters
-    result.erase(result.find_last_not_of(" \t\n\r") + 1);
-
-    // Convert the result to a float or integer if needed
-    currentLevel = std::stof(result); // or std::stoi(result) if it's an integer
-
-    update(); // Trigger a repaint
+    // FUTURE ROS2 CODE
 }
 
 BatteryWidget::~BatteryWidget() {}
