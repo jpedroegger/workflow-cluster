@@ -91,7 +91,10 @@ bool    EventManager::swipe(QPointF releasePosition)
     return false;
 }
 
-
+QStackedWidget*  EventManager::getStackedWidget(void) const
+{
+    return stackedWidget;
+}
 
 
 

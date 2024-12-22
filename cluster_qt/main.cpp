@@ -25,7 +25,7 @@ int main(int argc, char* argv[])
     CPUTempWidget*      cputemp = new CPUTempWidget(mainPage);
     //BatteryWidget*      battery2 = new BatteryWidget(mainPage);
     ArrowSymbolWidget*  arrowSymbol = new ArrowSymbolWidget(mainPage, "zero");
-    CameraWidget        *cameraWidget = new CameraWidget(secondPage);
+    // CameraWidget        *cameraWidget = new CameraWidget(secondPage);
     BatteryAndSpeedWidget*      bas = new BatteryAndSpeedWidget(mainPage);
 
     //setCentralWidget(cameraWidget);
