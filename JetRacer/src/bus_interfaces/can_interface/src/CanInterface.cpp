@@ -1,54 +1,100 @@
 #include "CanInterface.hpp"
 #include "CanMessage.hpp"
-#include <chrono>
 #include <linux/can.h>
 #include <memory>
 #include <rclcpp/logger.hpp>
 #include <rclcpp/logging.hpp>
 #include <rclcpp/utilities.hpp>
-#include <thread>
 
 using sockcanpp::CanMessage;
+using namespace std::chrono_literals;
 
 CanInterface::CanInterface() : Node("can_interface")
 {
-    can_driver_ = std::make_shared<CanDriver>("can0", CAN_RAW);
-    publisher_ =
-        this->create_publisher<custom_msgs::msg::CanFrame>("raw_CAN", 10);
-    polling_thread_ = std::thread(&CanInterface::pollCanBus, this);
+    rclcpp::QoS qos(40);
+    qos.reliable();
+
+    try
+    {
+        can_driver_ = std::make_shared<CanDriver>("can0", CAN_RAW);
+    }
+    catch (const std::exception& e)
+    {
+        RCLCPP_ERROR(this->get_logger(), "Fail initiating Can interface: %s",
+                     e.what());
+        throw e;
+    }
+
+    can_service_ = this->create_service<custom_msgs::srv::CanService>(
+        "can_service",
+        std::bind(&CanInterface::handleCanRequest, this, std::placeholders::_1,
+                  std::placeholders::_2),
+        qos);
 
     RCLCPP_INFO(this->get_logger(), "Starting CAN bus interface");
 }
 
-CanInterface::~CanInterface()
-{
-    if (polling_thread_.joinable())
-        polling_thread_.join();
-}
+CanInterface::~CanInterface() {}
 
 /**
- * @brief This function will simply pool the bus for new information and publish
- * it in a topic. so far this node only handle reading operations
+ * @brief function beeing called upon a request to the can service.
+ *
+ * the struct of the can service allows writting and reading operation. To see
+ * the service definition do "ros2 interface show custom_msgs/srv/CanService" or
+ * see JetRacer/src/bus_interfaces/custom_msgs/srv/CanService.
+ *
+ *
+ * @param request
+ * @param response
  */
-void CanInterface::pollCanBus()
+void CanInterface::handleCanRequest(
+    const std::shared_ptr<custom_msgs::srv::CanService::Request> request,
+    std::shared_ptr<custom_msgs::srv::CanService::Response> response)
 {
-    while (rclcpp::ok())
+    response->set__success(true);
+
+    if (!request->write_data.empty())
     {
-        if (can_driver_->waitForMessages(std::chrono::milliseconds(10)))
+        can_frame frame;
+
+        frame.can_id = request->can_id;
+        frame.can_dlc = request->write_data.size();
+        auto data = request->write_data;
+        for (size_t i = 0; i < frame.can_dlc; i++)
+            frame.data[i] = data[0];
+
+        try
         {
-            custom_msgs::msg::CanFrame ros_msg;
-
-            CanMessage received_msg = can_driver_->readMessage();
-            ros_msg.set__id(received_msg.getCanId());
-            ros_msg.set__data_len(received_msg.getFrameData().length());
-            std::copy_n(received_msg.getFrameData().begin(), ros_msg.data_len,
-                        ros_msg.data.begin());
-
-            RCLCPP_DEBUG(this->get_logger(),
-                         "Received CAN frame: ID=0x%X, LEN=%d", ros_msg.id,
-                         ros_msg.data_len);
-
-            publisher_->publish(ros_msg);
+            can_driver_->sendMessage(frame);
+            RCLCPP_DEBUG(this->get_logger(), "wrote frame to the bus");
+        }
+        catch (const std::exception& e)
+        {
+            response->set__success(false);
+            response->set__message(e.what());
+            RCLCPP_ERROR(this->get_logger(), "Fail writing data: %s", e.what());
+            return;
         }
     }
+
+    if (request->read_request)
+    {
+        if (!can_driver_->waitForMessages(50ms))
+        {
+            response->set__success(false);
+            response->set__message("request timedout");
+            RCLCPP_ERROR(this->get_logger(),
+                         "Fail reading can bus, request timed out");
+            return;
+        }
+
+        CanMessage received_msg = can_driver_->readMessage();
+        auto frame_data = received_msg.getFrameData();
+
+        // Resize the response read_data to match the size of frame_data
+        response->read_data.resize(frame_data.size());
+        std::copy(frame_data.begin(), frame_data.end(),
+                  response->read_data.begin());
+    }
+    response->set__message("success");
 }

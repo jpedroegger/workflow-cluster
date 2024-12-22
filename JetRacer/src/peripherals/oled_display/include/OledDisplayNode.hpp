@@ -1,9 +1,12 @@
 #pragma once
 
-#include <cstdint>
+#include "SSD1306Driver.hpp"
+#include <custom_msgs/msg/display.hpp>
 #include <custom_msgs/srv/i2c_service.hpp>
 #include <rclcpp/rclcpp.hpp>
 #include <std_msgs/msg/string.hpp>
+
+#define SSD1306_FONT_NORMAL 0x01
 
 class OledDisplayNode : public rclcpp::Node
 {
@@ -11,25 +14,12 @@ class OledDisplayNode : public rclcpp::Node
         OledDisplayNode();
         ~OledDisplayNode();
 
+        uint8_t initSSD1306();
+
     private:
-        rclcpp::Client<custom_msgs::srv::I2cService>::SharedPtr i2c_client_;
-        rclcpp::Subscription<std_msgs::msg::String>::SharedPtr
+        rclcpp::Subscription<custom_msgs::msg::Display>::SharedPtr
             display_subscriber_;
+        std::unique_ptr<SSD1306Driver> ssd1306_;
 
-        void writeToI2c(const std_msgs::msg::String::SharedPtr msg);
-        int waitForResponse(
-            rclcpp::Client<custom_msgs::srv::I2cService>::SharedFuture future,
-            const std::string& operation);
-        void asyncI2cResponse(
-            rclcpp::Client<custom_msgs::srv::I2cService>::SharedFuture future);
-        int current_page = -1;
-
-        // display interface
-        int initDisplay();
-        int setDefaultConfig();
-        int onOffDisplay(uint8_t onoff);
-        int setCursor(uint8_t x, uint8_t y);
-        int clearRow(uint8_t row);
-        int clearScreen();
-        int writeString(uint8_t size, const std::string& msg);
+        void writeToI2c(const custom_msgs::msg::Display::SharedPtr msg);
 };

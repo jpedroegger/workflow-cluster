@@ -7,9 +7,11 @@ int main(int argc, char** argv)
 {
     rclcpp::init(argc, argv);
     auto node = std::make_shared<ServoNode>();
-    node->initPCA9685();
+
+    if (node->initPCA9685() != EXIT_SUCCESS)
+        return EXIT_FAILURE;
 
     rclcpp::spin(node);
     rclcpp::shutdown();
-    return 0;
+    return EXIT_SUCCESS;
 }

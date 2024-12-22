@@ -1,7 +1,7 @@
 #pragma once
 
 #include "PCA9685Driver.hpp"
-#include "std_msgs/msg/u_int8.hpp"
+#include <geometry_msgs/msg/twist.hpp>
 #include <rclcpp/client.hpp>
 #include <rclcpp/rclcpp.hpp>
 #include <rclcpp/subscription.hpp>
@@ -17,12 +17,14 @@ class ServoNode : public rclcpp::Node
         ServoNode();
         ~ServoNode();
 
-        void initPCA9685();
+        uint8_t initPCA9685();
 
     private:
-        rclcpp::Subscription<std_msgs::msg::UInt8>::SharedPtr
+        rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr
             direction_subscriber_;
         std::shared_ptr<PCA9685Driver> pca9685_;
 
-        void writeAngle(const std_msgs::msg::UInt8::SharedPtr direction);
+        void writeAngle(const geometry_msgs::msg::Twist::SharedPtr twist);
+
+        const float_t MAX_ANGULAR_VEL = 1.0;
 };

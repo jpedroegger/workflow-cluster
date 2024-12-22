@@ -3,7 +3,10 @@
 <package format="3">
 	<name>can_interface</name>
   <version>0.0.0</version>
-  <description>Interface for communication the CAN bus</description>
+	<description>
+		Interface for communication on the CAN bus.
+		The interface is designed to provide a service to read an write to the bus
+	</description>
   <maintainer email="axel.chabrerie@gmail.com">pi</maintainer>
   <license>TODO: License declaration</license>
 

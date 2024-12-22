@@ -1,6 +1,7 @@
 #include "I2cInterface.hpp"
 #include "custom_msgs/srv/i2c_service.hpp"
 #include <fcntl.h>
+#include <fmt/core.h>
 #include <linux/i2c-dev.h>
 #include <string>
 #include <sys/ioctl.h>
@@ -9,7 +10,7 @@
 I2cInterface::I2cInterface() : Node("i2c_interface")
 {
     // Set up service with Reliable QoS
-    rclcpp::QoS qos(rclcpp::KeepLast(40));
+    rclcpp::QoS qos(rclcpp::KeepLast(60));
     qos.reliable();
     qos.durability_volatile();
 
@@ -74,7 +75,7 @@ int I2cInterface::write_(std::vector<uint8_t>& data)
     {
         ssize_t bytes_written = write(i2c_fd_, data.data() + total_written,
                                       data.size() - total_written);
-        if (bytes_written < 0 && retry >= MAX_RETRY)
+        if (bytes_written < 0 || retry >= MAX_RETRY)
             return -1;
         total_written += bytes_written;
         retry++;
@@ -132,54 +133,39 @@ void I2cInterface::handleI2cRequest(
 
     if (setAddress_(request->device_address) != 0)
     {
-        std::string error_msg = "Fail to set the device at address " +
-                                std::to_string(request->device_address);
+        std::string error_msg =
+            fmt::format("Fail to set the device at address 0x{:02X}",
+                        request->device_address);
         RCLCPP_ERROR(this->get_logger(), "%s", error_msg.c_str());
         response->set__success(false);
         response->set__message(error_msg);
         return;
     }
 
+    if (write_(request->write_data) != 0)
+    {
+        std::string error_msg = fmt::format("Fail to write to device 0x{:02X}",
+                                            request->device_address);
+        RCLCPP_ERROR(this->get_logger(), "%s", error_msg.c_str());
+        response->set__success(false);
+        response->set__message(error_msg);
+        return;
+    }
+    RCLCPP_DEBUG(this->get_logger(), "Succefully writen at address 0x%02X",
+                 request->device_address);
+
     if (request->read_request)
     {
-        // Most of the time the reading implies first writing onto the bus to
-        // select a register to read from
-        if (!request->write_data.empty())
-        {
-            if (write_(request->write_data) != 0)
-            {
-                std::string error_msg = "Fail to write to device " +
-                                        std::to_string(request->device_address);
-                RCLCPP_ERROR(this->get_logger(), "%s", error_msg.c_str());
-                response->set__success(false);
-                response->set__message(error_msg);
-                return;
-            }
-        }
         std::vector<uint8_t> data = read_(request->read_length);
         if (data.empty() && request->read_length > 0)
         {
-            std::string error_msg = "Fail to read data from device " +
-                                    std::to_string(request->device_address);
+            std::string error_msg = fmt::format(
+                "Fail to read from device 0x{:02X}", request->device_address);
             RCLCPP_ERROR(this->get_logger(), "%s", error_msg.c_str());
             response->set__success(false);
             response->set__message(error_msg);
             return;
         }
         response->set__read_data(data);
-    }
-    else
-    {
-        if (write_(request->write_data) != 0)
-        {
-            std::string error_msg = "Fail to write to device " +
-                                    std::to_string(request->device_address);
-            RCLCPP_ERROR(this->get_logger(), "%s", error_msg.c_str());
-            response->set__success(false);
-            response->set__message(error_msg);
-            return;
-        }
-        RCLCPP_DEBUG(this->get_logger(), "Succefully writen at address %x",
-                     request->device_address);
     }
 }

@@ -1,5 +1,4 @@
 #include "DcMotorsNode.hpp"
-#include "std_msgs/msg/u_int8.hpp"
 #include <functional>
 #include <rclcpp/client.hpp>
 #include <rclcpp/logger.hpp>
@@ -9,20 +8,28 @@ using namespace std::chrono_literals;
 
 DcMotorsNode::DcMotorsNode() : Node("dc_motors_node")
 {
-    speed_subscriber_ = this->create_subscription<std_msgs::msg::UInt8>(
-        "cmd_speed", 10,
+    twist_subscriber_ = this->create_subscription<geometry_msgs::msg::Twist>(
+        "cmd_vel", 10,
         std::bind(&DcMotorsNode::writeSpeed, this, std::placeholders::_1));
-
-    RCLCPP_INFO(this->get_logger(), "Starting the dc motors node");
 }
 
 DcMotorsNode::~DcMotorsNode() {}
 
-void DcMotorsNode::initPCA9685()
+uint8_t DcMotorsNode::initPCA9685()
 {
-    pca9685_ =
-        std::make_shared<PCA9685Driver>(shared_from_this(), PCA_MOTORS_ADDRESS);
+    try
+    {
+        pca9685_ = std::make_shared<PCA9685Driver>(shared_from_this(),
+                                                   PCA_MOTORS_ADDRESS);
+    }
+    catch (const std::exception& e)
+    {
+        RCLCPP_ERROR(this->get_logger(), "%s", e.what());
+        return EXIT_FAILURE;
+    }
+
     pca9685_->setPWMFrequency(1600);
+    return EXIT_SUCCESS;
 }
 
 /**
@@ -34,25 +41,52 @@ void DcMotorsNode::initPCA9685()
  *
  * @param speed
  */
-void DcMotorsNode::writeSpeed(const std_msgs::msg::UInt8::SharedPtr speed)
+void DcMotorsNode::writeSpeed(
+    const geometry_msgs::msg::Twist::SharedPtr twist_msg)
 {
-    if (speed->data > 100)
+    float linear_x = twist_msg->linear.x;
+
+    if (linear_x > 1.0 || linear_x < -1.0)
     {
         RCLCPP_ERROR(this->get_logger(),
-                     "Invalid speed: %d (must be between 0 and 100 %%)",
-                     speed->data);
+                     "Invalid speed: %f (must be between -1.0 and 1.0)",
+                     linear_x);
         return;
     }
+    int8_t direction = (linear_x > 0) ? 1
+                       : (linear_x < 0)
+                           ? -1
+                           : 0; // 1 = forward, -1 = reverse, 0 = stop
 
-    // Map the angle speed in % to PCA9685 pulse width
+    linear_x = std::abs(linear_x);
+
+    //  Map the linear velocity to PCA9685 pulse width
     uint16_t pulseWidth =
-        static_cast<uint16_t>((speed->data * (MAX_COUNT - MIN_COUNT)) / 100);
+        static_cast<uint16_t>(linear_x * (MAX_COUNT - MIN_COUNT));
 
-    pca9685_->setPWMDutyCycle(DEFAULT_CHANNEL, 0, pulseWidth);
-    pca9685_->setGPIO(1, false);
-    pca9685_->setGPIO(2, true);
+    pca9685_->setPWMDutyCycle(DEFAULT_CHANNEL, true, pulseWidth);
+    pca9685_->setPWMDutyCycle(7, true, pulseWidth);
 
-    pca9685_->setPWMDutyCycle(7, 0, pulseWidth);
-    pca9685_->setGPIO(6, false);
-    pca9685_->setGPIO(5, true);
+    if (direction > 0) // Forward
+    {
+        pca9685_->setGPIO(1, false);
+        pca9685_->setGPIO(2, true);
+        pca9685_->setGPIO(6, false);
+        pca9685_->setGPIO(5, true);
+    }
+    else if (direction < 0) // Reverse
+    {
+        pca9685_->setGPIO(1, true);
+        pca9685_->setGPIO(2, false);
+        pca9685_->setGPIO(6, true);
+        pca9685_->setGPIO(5, false);
+    }
+    else // Stop
+    {
+        // Set all GPIOs for both motors to neutral/off
+        pca9685_->setGPIO(1, false);
+        pca9685_->setGPIO(2, false);
+        pca9685_->setGPIO(6, false);
+        pca9685_->setGPIO(5, false);
+    }
 }
