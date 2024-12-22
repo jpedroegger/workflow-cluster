@@ -1,19 +1,4 @@
-#Registers**
-- **Display Address**:  
-  `SSD1306_I2C_ADDR` is the I2C address of the SSD1306 display.
-- **Control Bytes**:  
-  - `SSD1306_COMM_CONTROL_BYTE`: Control byte for commands.
-  - `SSD1306_DATA_CONTROL_BYTE`: Control byte for data.  
-- **Configuration Commands**:  
-  Includes commands for setting contrast, enabling the charge pump, configuring memory mode, and controlling display orientation.  
-- **Dimensions**:  
-  - `SSD1306_WIDTH`: Display width.
-  - `SSD1306_HEIGHT`: Display height.
-
----
-
-This structure ensures flexibility in interacting with the SSD1306 display while adhering to the ROS2 framework for communication and control.
- **SSD1306 Driver**
+# **SSD1306 Driver**
 
 ## **Code Structure**
 
@@ -27,7 +12,7 @@ This structure ensures flexibility in interacting with the SSD1306 display while
      - `onOffDisplay(uint8_t onoff)`: Turns the display on or off based on the provided parameter.
      - `setDefaultConfig()`: Configures the display with default settings, including resolution, contrast, and memory mode.
      - `setCursor(uint8_t x, uint8_t y)`: Sets the cursor position for writing data to the display.
-     - `flipDisplay(uint8_t flip)`: Flips the display horizontally based on the parameter.
+ Flips the display horizontally based on the parameter.
      - `rotateDisplay(uint8_t degree)`: Rotates the display by 0 or 180 degrees.
      - `clearRow(uint8_t row)`: Clears a specific row of the display.
      - `clearScreen()`: Clears the entire display by iterating through all rows.
@@ -37,7 +22,7 @@ This structure ensures flexibility in interacting with the SSD1306 display while
    - **Service Client**:  
      Utilizes the `custom_msgs::srv::I2cService` to send I2C commands for controlling the SSD1306 display.  
    - **Service Communication**:  
-     Asynchronous communication with the I2C service is handled using `async_send_request()`. The `handleI2cResponse()` processes the responses from the I2C service.
+   he I2C service.
 
 3. **Display Configuration and Control**
    - **Initialization and Configuration**:  
@@ -68,4 +53,4 @@ This structure ensures flexibility in interacting with the SSD1306 display while
 ---
 
 This structure ensures flexibility in interacting with the SSD1306 display while adhering to the ROS2 framework for communication and control.
-
+  Asynchronous communication with the I2C service is handled using `async_send_request()`. The `handleI2cResponse()` processes the responses from t    - `flipDisplay(uint8_t flip)`: 
