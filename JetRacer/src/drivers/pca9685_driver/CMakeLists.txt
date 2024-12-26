@@ -23,10 +23,11 @@ set(srcs
 # Gtest
 if(BUILD_TESTING)
   find_package(ament_cmake_gmock REQUIRED)
-  ament_add_gmock(${PROJECT_NAME}_test test/test.cpp)
+  ament_add_gmock(${PROJECT_NAME}_test test/src/PCA9685DriverTest.cpp test/src/MockI2cService.cpp)
   target_include_directories(${PROJECT_NAME}_test PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:include>
+	test/include
   )
   target_link_libraries(${PROJECT_NAME}_test ${lib_name})
 
