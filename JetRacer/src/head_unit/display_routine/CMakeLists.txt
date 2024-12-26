@@ -4,6 +4,7 @@ project(display_routine)
 
 # Enable compile commands export
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set(CMAKE_POLICY_WARNING_CMP0025 OFF)
 
 # Define executable name
 set(exec_name ${PROJECT_NAME}_node)

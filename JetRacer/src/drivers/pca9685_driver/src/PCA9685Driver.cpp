@@ -3,8 +3,8 @@
 using namespace std::chrono_literals;
 
 PCA9685Driver::PCA9685Driver(std::shared_ptr<rclcpp::Node> node,
-                             uint8_t device_adress)
-    : ADriver(node, device_adress)
+                             uint8_t device_address)
+    : ADriver(node, device_address)
 {
     // throw an exception if it fails
     this->ping();

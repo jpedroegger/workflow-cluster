@@ -45,8 +45,6 @@ void ADriver::ping()
     request->set__read_request(false);
     request->write_data.push_back(0x0);
 
-    auto future = i2c_client_->async_send_request(request);
-
     auto response_future = i2c_client_->async_send_request(request);
 
     // Spin until the future is complete
