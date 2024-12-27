@@ -12,6 +12,8 @@ set(exec_name ${PROJECT_NAME}_node)
 set(srcs
   src/main.cpp
   src/I2cInterface.cpp
+  src/I2cDevice.cpp
+  include/AI2cDevice.hpp
 )
 
 # Include necessary directories
