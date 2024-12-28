@@ -25,7 +25,7 @@ void I2cInterfaceTest::TearDown()
     rclcpp::shutdown();
 }
 
-// READS
+// READ OPERATIONS
 TEST_F(I2cInterfaceTest, read1byte)
 {
     EXPECT_CALL(*mock_device_, read)
@@ -64,7 +64,7 @@ TEST_F(I2cInterfaceTest, readFailure)
     ASSERT_EQ(response->success, false);
 }
 
-TEST_F(I2cInterfaceTest, incompletRead)
+TEST_F(I2cInterfaceTest, readIncomplete)
 {
     EXPECT_CALL(*mock_device_, read)
         .WillOnce([](std::vector<uint8_t>& buff) { return 1; });
@@ -80,20 +80,7 @@ TEST_F(I2cInterfaceTest, incompletRead)
     EXPECT_EQ(response->success, false);
 }
 
-TEST_F(I2cInterfaceTest, setAddressFailure)
-{
-    EXPECT_CALL(*mock_device_, setAddress).WillOnce(testing::Return(-1));
-
-    auto request = std::make_shared<custom_msgs::srv::I2cService::Request>();
-
-    request->device_address = 0x40;
-    auto future = i2c_client_->async_send_request(request);
-    auto response = future.get();
-    ASSERT_EQ(response->success, false);
-}
-
-// TODO: failures, incomplete read, timeouts, sequential reads..
-
+// WRITE OPERATIONS
 TEST_F(I2cInterfaceTest, write1byte)
 {
     EXPECT_CALL(*mock_device_, write)
@@ -111,5 +98,21 @@ TEST_F(I2cInterfaceTest, write1byte)
 
     auto future = i2c_client_->async_send_request(request);
     auto response = future.get();
+
     ASSERT_EQ(response->success, true);
+}
+
+// TODO: failures, incomplete read, timeouts, sequential reads..
+//
+TEST_F(I2cInterfaceTest, setAddressFailure)
+{
+    EXPECT_CALL(*mock_device_, setAddress).WillOnce(testing::Return(-1));
+
+    auto request = std::make_shared<custom_msgs::srv::I2cService::Request>();
+    request->device_address = 0x40;
+
+    auto future = i2c_client_->async_send_request(request);
+    auto response = future.get();
+
+    ASSERT_EQ(response->success, false);
 }
