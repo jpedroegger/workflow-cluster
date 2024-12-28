@@ -1,6 +1,6 @@
 #pragma once
 
-#include "I2cDevice.hpp"
+#include "AI2cDevice.hpp"
 #include "custom_msgs/srv/i2c_service.hpp"
 #include <custom_msgs/srv/i2c_service.hpp>
 #include <memory>
@@ -10,11 +10,12 @@
 class I2cInterface : public rclcpp::Node
 {
     public:
-        I2cInterface();
+        I2cInterface(std::shared_ptr<AI2cDevice> i2c_dev = nullptr,
+                     const std::string& service_name = "i2c_service");
         ~I2cInterface() = default;
 
     private:
-        I2cDevice i2c_device_;
+        std::shared_ptr<AI2cDevice> i2c_device_;
         rclcpp::Service<custom_msgs::srv::I2cService>::SharedPtr i2c_service_;
 
         void init_();

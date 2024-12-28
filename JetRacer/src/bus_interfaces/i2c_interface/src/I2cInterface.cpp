@@ -1,4 +1,5 @@
 #include "I2cInterface.hpp"
+#include "I2cDevice.hpp"
 #include "custom_msgs/srv/i2c_service.hpp"
 #include <fcntl.h>
 #include <fmt/core.h>
@@ -7,15 +8,21 @@
 #include <sys/ioctl.h>
 #include <unistd.h>
 
-I2cInterface::I2cInterface() : Node("i2c_interface"), i2c_device_(1)
+I2cInterface::I2cInterface(std::shared_ptr<AI2cDevice> i2c_dev,
+                           const std::string& service_name)
+    : Node("i2c_interface")
 {
+    if (i2c_dev)
+        i2c_device_ = i2c_dev;
+    else
+        i2c_device_ = std::make_shared<I2cDevice>(1);
     // Set up service with Reliable QoS
     rclcpp::QoS qos(rclcpp::KeepLast(60));
     qos.reliable();
     qos.durability_volatile();
 
     i2c_service_ = this->create_service<custom_msgs::srv::I2cService>(
-        "i2c_service",
+        service_name,
         std::bind(&I2cInterface::handleI2cRequest, this, std::placeholders::_1,
                   std::placeholders::_2),
         qos);
@@ -32,11 +39,11 @@ void I2cInterface::init_()
 {
     int res;
 
-    res = i2c_device_.open();
+    res = i2c_device_->open();
     if (res < 0)
     {
         RCLCPP_ERROR(this->get_logger(), "Fail opening /dev/i2c-%ud",
-                     i2c_device_.getDeviceNb());
+                     i2c_device_->getDeviceNb());
         throw std::runtime_error("Could not open i2c device");
     }
 }
@@ -60,7 +67,7 @@ void I2cInterface::handleI2cRequest(
 {
     response->set__success(true);
 
-    if (i2c_device_.setAddress(request->device_address) != 0)
+    if (i2c_device_->setAddress(request->device_address) != 0)
     {
         std::string error_msg =
             fmt::format("Fail to set the device at address 0x{:02X}",
@@ -71,7 +78,7 @@ void I2cInterface::handleI2cRequest(
         return;
     }
 
-    if (i2c_device_.write(request->write_data) < 0)
+    if (i2c_device_->write(request->write_data) < 0)
     {
         std::string error_msg = fmt::format("Fail to write to device 0x{:02X}",
                                             request->device_address);
@@ -86,7 +93,7 @@ void I2cInterface::handleI2cRequest(
     if (request->read_request)
     {
         std::vector<uint8_t> data(request->read_length);
-        int res = i2c_device_.read(data);
+        int res = i2c_device_->read(data);
         if (res != request->read_length)
         {
             std::string error_msg;
