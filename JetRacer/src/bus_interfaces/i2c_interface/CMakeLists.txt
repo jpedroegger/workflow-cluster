@@ -12,8 +12,8 @@ set(exec_name ${PROJECT_NAME}_node)
 set(srcs
   src/main.cpp
   src/I2cInterface.cpp
-  src/I2cDevice.cpp
-  include/AI2cDevice.hpp
+  src/I2cDriver.cpp
+  include/II2cDriver.hpp
 )
 
 # Include necessary directories
@@ -39,9 +39,10 @@ if(BUILD_TESTING)
   # Create test executable
   ament_add_gmock(${PROJECT_NAME}_test 
     test/src/I2cInterfaceTest.cpp
-    src/I2cInterface.cpp  # Add the source files needed for testing
-    src/I2cDevice.cpp
-	test/include/MockI2cDevice.hpp
+	test/include/MockI2cDriver.hpp
+	include/II2cDriver.hpp
+	src/I2cInterface.cpp
+	src/I2cDriver.cpp
   )
   
   target_include_directories(${PROJECT_NAME}_test PUBLIC

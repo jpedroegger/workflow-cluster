@@ -1,10 +1,10 @@
-#include "AI2cDevice.hpp"
+#include "II2cDriver.hpp"
 #include <gmock/gmock.h>
 
-class MockI2cDevice : public AI2cDevice
+class MockI2cDriver : public II2cDriver
 {
     public:
-        MockI2cDevice(uint8_t device) : AI2cDevice(device){};
+        MockI2cDriver(uint8_t device) : II2cDriver(device){};
         MOCK_METHOD(int, open, (), (override));
         MOCK_METHOD(ssize_t, read, (std::vector<uint8_t> & buff), (override));
         MOCK_METHOD(ssize_t, write, (std::vector<uint8_t> & buff), (override));

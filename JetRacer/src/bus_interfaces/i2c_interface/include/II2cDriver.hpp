@@ -20,15 +20,15 @@
  * address setting) into virtual methods that can be overridden by concrete
  * implementations.
  */
-class AI2cDevice
+class II2cDriver
 {
     public:
         /**
          * @brief Constructs an I2C device interface
          * @param device The I2C bus number (e.g., 1 for /dev/i2c-1)
          */
-        AI2cDevice(uint8_t device) : device_(device){};
-        virtual ~AI2cDevice() = default;
+        II2cDriver(uint8_t device) : device_(device){};
+        virtual ~II2cDriver() = default;
 
         /**
          * @brief Opens the I2C device

@@ -1,23 +1,23 @@
-#include <I2cDevice.hpp>
+#include <I2cDriver.hpp>
 #include <fcntl.h>
 #include <linux/i2c-dev.h>
 #include <sys/ioctl.h>
 
-I2cDevice::I2cDevice(uint8_t device) : AI2cDevice(device) {}
+I2cDriver::I2cDriver(uint8_t device) : II2cDriver(device) {}
 
-I2cDevice::~I2cDevice()
+I2cDriver::~I2cDriver()
 {
     if (i2c_fd_ > 0)
         ::close(i2c_fd_);
 }
-int I2cDevice::open()
+int I2cDriver::open()
 {
     std::string i2c_device_name = "/dev/i2c-" + std::to_string(device_);
     i2c_fd_ = ::open(i2c_device_name.c_str(), O_RDWR);
     return i2c_fd_;
 }
 
-ssize_t I2cDevice::read(std::vector<uint8_t>& buff)
+ssize_t I2cDriver::read(std::vector<uint8_t>& buff)
 {
     int bytes_read = 0;
     int total_read = 0;
@@ -36,7 +36,7 @@ ssize_t I2cDevice::read(std::vector<uint8_t>& buff)
     return total_read;
 }
 
-ssize_t I2cDevice::write(std::vector<uint8_t>& buff)
+ssize_t I2cDriver::write(std::vector<uint8_t>& buff)
 {
     int bytes_written = 0;
     int total_written = 0;
@@ -55,7 +55,7 @@ ssize_t I2cDevice::write(std::vector<uint8_t>& buff)
     return total_written;
 }
 
-int I2cDevice::setAddress(uint8_t address)
+int I2cDriver::setAddress(uint8_t address)
 {
     return ::ioctl(i2c_fd_, I2C_SLAVE, address);
 }

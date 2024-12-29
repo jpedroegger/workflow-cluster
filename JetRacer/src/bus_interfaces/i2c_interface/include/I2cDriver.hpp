@@ -1,14 +1,14 @@
 #pragma once
 
-#include "AI2cDevice.hpp"
+#include "II2cDriver.hpp"
 
 const uint8_t MAX_RETRY = 5;
 
-class I2cDevice : public AI2cDevice
+class I2cDriver : public II2cDriver
 {
     public:
-        I2cDevice(uint8_t device);
-        ~I2cDevice();
+        I2cDriver(uint8_t device);
+        ~I2cDriver();
 
         int open() override;
         ssize_t read(std::vector<uint8_t>& buff) override;

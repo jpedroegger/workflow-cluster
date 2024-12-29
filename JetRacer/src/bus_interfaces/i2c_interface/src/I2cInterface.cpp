@@ -1,5 +1,5 @@
 #include "I2cInterface.hpp"
-#include "I2cDevice.hpp"
+#include "I2cDriver.hpp"
 #include "custom_msgs/srv/i2c_service.hpp"
 #include <fcntl.h>
 #include <fmt/core.h>
@@ -8,14 +8,14 @@
 #include <sys/ioctl.h>
 #include <unistd.h>
 
-I2cInterface::I2cInterface(std::shared_ptr<AI2cDevice> i2c_dev,
+I2cInterface::I2cInterface(std::shared_ptr<II2cDriver> i2c_dev,
                            const std::string& service_name)
     : Node("i2c_interface")
 {
     if (i2c_dev)
         i2c_device_ = i2c_dev;
     else
-        i2c_device_ = std::make_shared<I2cDevice>(1);
+        i2c_device_ = std::make_shared<I2cDriver>(1);
     // Set up service with Reliable QoS
     rclcpp::QoS qos(rclcpp::KeepLast(60));
     qos.reliable();

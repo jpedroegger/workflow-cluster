@@ -1,7 +1,7 @@
 #pragma once
 
 #include "I2cInterface.hpp"
-#include "MockI2cDevice.hpp"
+#include "MockI2cDriver.hpp"
 #include <custom_msgs/srv/i2c_service.hpp>
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
@@ -18,5 +18,5 @@ class I2cInterfaceTest : public ::testing::Test
         std::shared_ptr<I2cInterface> test_node_;
         rclcpp::executors::SingleThreadedExecutor::UniquePtr executor_;
         std::thread executor_thread_;
-        std::shared_ptr<MockI2cDevice> mock_device_;
+        std::shared_ptr<MockI2cDriver> mock_device_;
 };

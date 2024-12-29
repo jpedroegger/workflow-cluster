@@ -7,7 +7,7 @@ void I2cInterfaceTest::SetUp()
 {
     rclcpp::init(0, nullptr);
 
-    mock_device_ = std::make_shared<MockI2cDevice>(1);
+    mock_device_ = std::make_shared<MockI2cDriver>(1);
     executor_ = rclcpp::executors::SingleThreadedExecutor::make_unique();
     test_node_ = std::make_shared<I2cInterface>(mock_device_, "i2c_service2");
     executor_->add_node(test_node_);

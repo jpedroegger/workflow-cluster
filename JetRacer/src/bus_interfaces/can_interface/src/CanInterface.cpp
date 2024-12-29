@@ -1,5 +1,6 @@
 #include "CanInterface.hpp"
 #include "CanMessage.hpp"
+#include <RCanDriver.hpp>
 #include <linux/can.h>
 #include <memory>
 #include <rclcpp/logger.hpp>
@@ -9,20 +10,29 @@
 using sockcanpp::CanMessage;
 using namespace std::chrono_literals;
 
-CanInterface::CanInterface() : Node("can_interface")
+CanInterface::CanInterface(std::shared_ptr<ICanDriver> can_driver)
+    : Node("can_interface")
 {
-    rclcpp::QoS qos(40);
+    rclcpp::QoS qos(60);
     qos.reliable();
 
-    try
+    if (can_driver)
     {
-        can_driver_ = std::make_shared<CanDriver>("can0", CAN_RAW);
+        can_driver_ = can_driver;
+        RCLCPP_INFO(this->get_logger(), "Mock driver received!");
     }
-    catch (const std::exception& e)
+    else
     {
-        RCLCPP_ERROR(this->get_logger(), "Fail initiating Can interface: %s",
-                     e.what());
-        throw e;
+        try
+        {
+            can_driver_ = std::make_unique<RCanDriver>("can0", CAN_RAW);
+        }
+        catch (const std::exception& e)
+        {
+            RCLCPP_ERROR(this->get_logger(),
+                         "Fail initiating Can interface: %s", e.what());
+            throw e;
+        }
     }
 
     can_service_ = this->create_service<custom_msgs::srv::CanService>(
