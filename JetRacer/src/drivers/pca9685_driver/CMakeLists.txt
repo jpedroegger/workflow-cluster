@@ -30,7 +30,6 @@ if(BUILD_TESTING)
 	test/include
   )
   target_link_libraries(${PROJECT_NAME}_test ${lib_name})
-
 endif()
 
 # Find dependencies
