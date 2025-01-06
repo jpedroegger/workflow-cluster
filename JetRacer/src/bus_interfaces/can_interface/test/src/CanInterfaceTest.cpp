@@ -40,7 +40,6 @@ TEST_F(CanInterfaceTest, readSuccess)
 
     auto request = std::make_shared<custom_msgs::srv::CanService::Request>();
     request->read_request = true;
-    request->read_length = 3;
 
     auto future = can_client_->async_send_request(request);
     auto response = future.get();
@@ -55,7 +54,6 @@ TEST_F(CanInterfaceTest, readFailure)
 
     auto request = std::make_shared<custom_msgs::srv::CanService::Request>();
     request->read_request = true;
-    request->read_length = 6;
 
     auto future = can_client_->async_send_request(request);
     auto response = future.get();
