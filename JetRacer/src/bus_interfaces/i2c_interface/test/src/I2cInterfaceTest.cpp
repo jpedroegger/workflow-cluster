@@ -2,6 +2,7 @@
 #include <gtest/gtest.h>
 
 using namespace std::chrono_literals;
+using namespace testing;
 
 void I2cInterfaceTest::SetUp()
 {
@@ -100,6 +101,37 @@ TEST_F(I2cInterfaceTest, write1byte)
     auto response = future.get();
 
     ASSERT_EQ(response->success, true);
+}
+
+TEST_F(I2cInterfaceTest, writeFailure)
+{
+    EXPECT_CALL(*mock_device_, write).WillOnce(Return(-1));
+
+    auto request = std::make_shared<custom_msgs::srv::I2cService::Request>();
+    request->device_address = 0x40;
+    request->read_request = false;
+    request->write_data.push_back(0x10);
+
+    auto future = i2c_client_->async_send_request(request);
+    auto response = future.get();
+
+    ASSERT_EQ(response->success, false);
+    ASSERT_FALSE(response->message.empty());
+}
+
+TEST_F(I2cInterfaceTest, writeIncomplete)
+{
+    EXPECT_CALL(*mock_device_, write).WillOnce(Return(1));
+
+    auto request = std::make_shared<custom_msgs::srv::I2cService::Request>();
+    request->device_address = 0x40;
+    request->read_request = false;
+    request->write_data.insert(request->write_data.end(), {0x10, 0x11, 0x12});
+
+    auto future = i2c_client_->async_send_request(request);
+    auto response = future.get();
+
+    EXPECT_EQ(response->success, false);
 }
 
 // TODO: failures, incomplete read, timeouts, sequential reads..

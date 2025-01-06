@@ -25,7 +25,7 @@ CanInterface::CanInterface(std::shared_ptr<ICanDriver> can_driver)
     {
         try
         {
-            can_driver_ = std::make_unique<RCanDriver>("can0", CAN_RAW);
+            can_driver_ = std::make_shared<RCanDriver>("can0", CAN_RAW);
         }
         catch (const std::exception& e)
         {
@@ -85,6 +85,7 @@ void CanInterface::handleCanRequest(
             RCLCPP_ERROR(this->get_logger(), "Fail writing data: %s", e.what());
             return;
         }
+        // TODO: Incomplete writes
     }
 
     if (request->read_request)

@@ -1,5 +1,7 @@
 #include "CanInterfaceTest.hpp"
 
+using namespace testing;
+
 void CanInterfaceTest::SetUp()
 {
     rclcpp::init(0, nullptr);
@@ -22,10 +24,10 @@ void CanInterfaceTest::TearDown()
     rclcpp::shutdown();
 }
 
-TEST_F(CanInterfaceTest, readMessage)
+// READ
+TEST_F(CanInterfaceTest, readSuccess)
 {
-    EXPECT_CALL(*mock_driver_, waitForMessages)
-        .WillOnce(::testing::Return(true));
+    EXPECT_CALL(*mock_driver_, waitForMessages).WillOnce(Return(true));
     EXPECT_CALL(*mock_driver_, readMessage)
         .WillOnce(
             []()
@@ -45,4 +47,39 @@ TEST_F(CanInterfaceTest, readMessage)
 
     EXPECT_EQ(response->success, true);
     EXPECT_EQ(response->read_data.at(0), 'h');
+}
+
+TEST_F(CanInterfaceTest, readFailure)
+{
+    EXPECT_CALL(*mock_driver_, waitForMessages).WillOnce(Return(false));
+
+    auto request = std::make_shared<custom_msgs::srv::CanService::Request>();
+    request->read_request = true;
+    request->read_length = 6;
+
+    auto future = can_client_->async_send_request(request);
+    auto response = future.get();
+
+    EXPECT_EQ(response->success, false);
+}
+
+// WRITE
+TEST_F(CanInterfaceTest, writeFailure)
+{
+    EXPECT_CALL(*mock_driver_, sendMessage)
+        .WillOnce(
+            []()
+            {
+                throw sockcanpp::exception();
+                return 1;
+            });
+
+    auto request = std::make_shared<custom_msgs::srv::CanService::Request>();
+    request->can_id = 0x10;
+    request->write_data.push_back(0x30);
+
+    auto future = can_client_->async_send_request(request);
+    auto response = future.get();
+
+    EXPECT_EQ(response->success, false);
 }
