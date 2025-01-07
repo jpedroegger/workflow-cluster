@@ -12,6 +12,7 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# Find Qt6 dependencies
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Multimedia MultimediaWidgets)
 find_package(Qt6 REQUIRED COMPONENTS Widgets Multimedia MultimediaWidgets)
 
@@ -37,9 +38,12 @@ set(srcs
     src/CameraWidget.cpp
 )
 
-# Include directories
+# Include directories (necessary for ROS 2 headers)
 include_directories(
     include
+    ${rclcpp_INCLUDE_DIRS}
+    ${std_msgs_INCLUDE_DIRS}
+    ${custom_msgs_INCLUDE_DIRS}
 )
 
 # Add executable
@@ -48,11 +52,14 @@ qt_add_executable(${exec_name}
     ${srcs}
 )
 
-# Link Qt6 libraries using the correct keyword signature
-target_link_libraries(${exec_name} PRIVATE Qt6::Widgets Qt6::Multimedia Qt6::MultimediaWidgets)
-
-# Add ROS dependencies via ament_target_dependencies
-ament_target_dependencies(${exec_name} rclcpp std_msgs custom_msgs)
+target_link_libraries(${exec_name} PRIVATE
+    Qt6::Widgets
+    Qt6::Multimedia
+    Qt6::MultimediaWidgets
+    ${rclcpp_LIBRARIES}
+    ${std_msgs_LIBRARIES}
+    ${custom_msgs_LIBRARIES}
+)
 
 # Install target
 install(TARGETS ${exec_name} DESTINATION lib/${PROJECT_NAME})
