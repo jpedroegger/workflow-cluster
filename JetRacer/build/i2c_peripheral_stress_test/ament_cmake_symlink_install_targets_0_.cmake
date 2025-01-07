@@ -1,1 +1,0 @@
-ament_cmake_symlink_install_targets("TARGET_FILES" "/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_peripheral_stress_test/i2c_peripheral_stress_test_node" "TARGETS" "i2c_peripheral_stress_test_node" "DESTINATION" "lib/i2c_peripheral_stress_test")

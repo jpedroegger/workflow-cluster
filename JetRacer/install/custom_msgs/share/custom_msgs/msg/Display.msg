@@ -1,1 +1,0 @@
-/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/drivers/custom_msgs/msg/Display.msg

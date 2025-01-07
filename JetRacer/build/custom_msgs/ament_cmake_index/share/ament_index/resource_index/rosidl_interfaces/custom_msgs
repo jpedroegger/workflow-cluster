@@ -1,8 +1,0 @@
-msg/CanFrame.idl
-msg/CanFrame.msg
-msg/Display.idl
-msg/Display.msg
-srv/CanService.idl
-srv/CanService.srv
-srv/I2cService.idl
-srv/I2cService.srv

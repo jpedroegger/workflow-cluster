@@ -1,4 +1,0 @@
-source;share/abstract_driver/local_setup.bash
-source;share/abstract_driver/local_setup.dsv
-source;share/abstract_driver/local_setup.sh
-source;share/abstract_driver/local_setup.zsh

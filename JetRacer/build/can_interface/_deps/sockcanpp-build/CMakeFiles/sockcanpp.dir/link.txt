@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC -shared -Wl,-soname,sockcanpp.so.1.2.0 -o sockcanpp.so.1.2.0 CMakeFiles/sockcanpp.dir/src/CanDriver.cpp.o 

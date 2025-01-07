@@ -1,4 +1,0 @@
-source;share/ssd1306_driver/local_setup.bash
-source;share/ssd1306_driver/local_setup.dsv
-source;share/ssd1306_driver/local_setup.sh
-source;share/ssd1306_driver/local_setup.zsh
