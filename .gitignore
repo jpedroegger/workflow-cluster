@@ -1,1 +1,4 @@
 CMakeLists.txt.user*
+log/
+install/
+build/
