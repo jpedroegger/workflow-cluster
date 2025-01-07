@@ -1,0 +1,3 @@
+/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera_ros/lib/libcamera_component.so
+/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera_ros/share/camera_ros/cmake/camera_componentTargetsExport.cmake
+/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera_ros/share/camera_ros/cmake/camera_componentTargetsExport-noconfig.cmake

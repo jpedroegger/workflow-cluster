@@ -1,0 +1,52 @@
+-- The C compiler identification is GNU 13.3.0
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 2.5.2 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+-- Override CMake install command with custom implementation using symlinks instead of copying resources
+-- Found rclcpp: 28.1.5 (/opt/ros/jazzy/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 4.6.4 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+-- Found rosidl_generator_cpp: 4.6.4 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 7.3.1 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 8.4.1 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+-- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.13")  
+-- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found std_msgs: 5.3.5 (/opt/ros/jazzy/share/std_msgs/cmake)
+-- Found custom_msgs: 0.0.0 (/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/share/custom_msgs/cmake)
+-- Found geometry_msgs: 5.3.5 (/opt/ros/jazzy/share/geometry_msgs/cmake)
+-- Configuring done (9.8s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_peripheral_stress_test
+[ 50%] [32mBuilding CXX object CMakeFiles/i2c_peripheral_stress_test_node.dir/src/main.cpp.o[0m
+[100%] [32m[1mLinking CXX executable i2c_peripheral_stress_test_node[0m
+[100%] Built target i2c_peripheral_stress_test_node
+-- Install configuration: ""
+-- Execute custom install script
+-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/lib/i2c_peripheral_stress_test/i2c_peripheral_stress_test_node
+-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/ament_index/resource_index/package_run_dependencies/i2c_peripheral_stress_test
+-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/ament_index/resource_index/parent_prefix_path/i2c_peripheral_stress_test
+-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/environment/ament_prefix_path.sh
+-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/environment/ament_prefix_path.dsv
+-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/environment/path.sh
+-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/environment/path.dsv
+-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/local_setup.bash
+-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/local_setup.sh
+-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/local_setup.zsh
+-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/local_setup.dsv
+-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/package.dsv
+-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/ament_index/resource_index/packages/i2c_peripheral_stress_test
+-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/cmake/i2c_peripheral_stress_testConfig.cmake
+-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/cmake/i2c_peripheral_stress_testConfig-version.cmake
+-- Symlinking: /home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test/share/i2c_peripheral_stress_test/package.xml

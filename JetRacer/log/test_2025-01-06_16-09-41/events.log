@@ -1,0 +1,303 @@
+[0.000000] (-) TimerEvent: {}
+[0.000916] (custom_msgs) JobQueued: {'identifier': 'custom_msgs', 'dependencies': OrderedDict({'custom_msgs': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs'})}
+[0.001938] (teleop) JobQueued: {'identifier': 'teleop', 'dependencies': OrderedDict({'teleop': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/teleop'})}
+[0.002031] (abstract_driver) JobQueued: {'identifier': 'abstract_driver', 'dependencies': OrderedDict({'custom_msgs': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs', 'abstract_driver': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/abstract_driver'})}
+[0.002108] (blinkers) JobQueued: {'identifier': 'blinkers', 'dependencies': OrderedDict({'custom_msgs': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs', 'blinkers': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/blinkers'})}
+[0.002181] (can_interface) JobQueued: {'identifier': 'can_interface', 'dependencies': OrderedDict({'custom_msgs': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs', 'can_interface': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface'})}
+[0.002253] (display_routine) JobQueued: {'identifier': 'display_routine', 'dependencies': OrderedDict({'custom_msgs': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs', 'display_routine': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine'})}
+[0.002323] (i2c_interface) JobQueued: {'identifier': 'i2c_interface', 'dependencies': OrderedDict({'custom_msgs': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs', 'i2c_interface': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface'})}
+[0.002391] (i2c_peripheral_stress_test) JobQueued: {'identifier': 'i2c_peripheral_stress_test', 'dependencies': OrderedDict({'custom_msgs': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs', 'i2c_peripheral_stress_test': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test'})}
+[0.002461] (speed_sensor) JobQueued: {'identifier': 'speed_sensor', 'dependencies': OrderedDict({'custom_msgs': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs', 'speed_sensor': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor'})}
+[0.002531] (ina219_driver) JobQueued: {'identifier': 'ina219_driver', 'dependencies': OrderedDict({'custom_msgs': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs', 'abstract_driver': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/abstract_driver', 'ina219_driver': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver'})}
+[0.002641] (pca9685_driver) JobQueued: {'identifier': 'pca9685_driver', 'dependencies': OrderedDict({'custom_msgs': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs', 'abstract_driver': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/abstract_driver', 'pca9685_driver': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver'})}
+[0.002719] (ssd1306_driver) JobQueued: {'identifier': 'ssd1306_driver', 'dependencies': OrderedDict({'custom_msgs': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs', 'abstract_driver': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/abstract_driver', 'ssd1306_driver': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ssd1306_driver'})}
+[0.002794] (battery) JobQueued: {'identifier': 'battery', 'dependencies': OrderedDict({'custom_msgs': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs', 'abstract_driver': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/abstract_driver', 'ina219_driver': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver', 'battery': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery'})}
+[0.002922] (dc_motors) JobQueued: {'identifier': 'dc_motors', 'dependencies': OrderedDict({'custom_msgs': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs', 'abstract_driver': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/abstract_driver', 'pca9685_driver': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver', 'dc_motors': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors'})}
+[0.003408] (oled_display) JobQueued: {'identifier': 'oled_display', 'dependencies': OrderedDict({'custom_msgs': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs', 'abstract_driver': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/abstract_driver', 'ssd1306_driver': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ssd1306_driver', 'oled_display': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display'})}
+[0.003502] (servo_motor) JobQueued: {'identifier': 'servo_motor', 'dependencies': OrderedDict({'custom_msgs': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs', 'abstract_driver': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/abstract_driver', 'pca9685_driver': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver', 'servo_motor': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor'})}
+[0.003607] (custom_msgs) JobStarted: {'identifier': 'custom_msgs'}
+[0.044291] (teleop) JobStarted: {'identifier': 'teleop'}
+[0.099235] (-) TimerEvent: {}
+[0.136273] (custom_msgs) JobEnded: {'identifier': 'custom_msgs', 'rc': 0}
+[0.140262] (abstract_driver) JobStarted: {'identifier': 'abstract_driver'}
+[0.167416] (blinkers) JobStarted: {'identifier': 'blinkers'}
+[0.196583] (can_interface) JobStarted: {'identifier': 'can_interface'}
+[0.251427] (-) TimerEvent: {}
+[0.283002] (teleop) JobEnded: {'identifier': 'teleop', 'rc': 0}
+[0.295220] (display_routine) JobStarted: {'identifier': 'display_routine'}
+[0.348918] (abstract_driver) JobEnded: {'identifier': 'abstract_driver', 'rc': 0}
+[0.352420] (pca9685_driver) JobStarted: {'identifier': 'pca9685_driver'}
+[0.354140] (-) TimerEvent: {}
+[0.386657] (blinkers) JobEnded: {'identifier': 'blinkers', 'rc': 0}
+[0.393052] (ina219_driver) JobStarted: {'identifier': 'ina219_driver'}
+[0.429755] (can_interface) Command: {'cmd': ['/usr/bin/ctest', '-C', 'Release', '-D', 'ExperimentalTest', '--no-compress-output', '-V', '--force-new-ctest-process', 'tests'], 'cwd': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface', 'env': OrderedDict({'USER': 'jetpack', 'SSH_CLIENT': '10.21.221.37 50832 22', 'STARSHIP_SHELL': 'fish', 'XDG_SESSION_TYPE': 'tty', 'LD_LIBRARY_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/lib:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ssd1306_driver/lib:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/abstract_driver/lib:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera_ros/lib:/usr/local/lib/aarch64-linux-gnu/libcamera/:/home/jetpack/ros2_v4l2/install/zstd_image_transport/lib:/home/jetpack/ros2_v4l2/install/v4l2_camera/lib:/home/jetpack/ros2_v4l2/install/theora_image_transport/lib:/home/jetpack/ros2_v4l2/install/compressed_image_transport/lib:/home/jetpack/ros2_v4l2/install/compressed_depth_image_transport/lib:/home/jetpack/ros2_v4l2/install/image_transport/lib:/home/jetpack/ros2_v4l2/install/cv_bridge/lib:/home/jetpack/ros2_v4l2/install/camera_info_manager/lib:/home/jetpack/ros2_v4l2/install/camera_calibration_parsers/lib:/usr/local/lib/aarch64-linux-gnu:/usr/local/lib/aarch64-linux-gnu:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/lib:/usr/local/lib/aarch64-linux-gnu:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/lib:/usr/local/lib/aarch64-linux-gnu:/usr/local/lib/aarch64-linux-gnu:/usr/local/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/usr/local/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib/aarch64-linux-gnu:/usr/local/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/usr/local/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/usr/local/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/usr/local/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib:/usr/local/lib/aarch64-linux-gnu', 'SHLVL': '1', 'HOME': '/home/jetpack', 'SSH_TTY': '/dev/pts/0', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'ROS_DISTRO': 'jazzy', 'OMF_PATH': '/home/jetpack/.local/share/omf', 'COLCON_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install', 'LOGNAME': 'jetpack', 'XDG_SESSION_CLASS': 'user', 'ROS_VERSION': '2', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '2', 'PATH': '/opt/ros/jazzy/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/.fzf/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/teleop:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ssd1306_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/blinkers:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/abstract_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera_ros:/opt/ros/jazzy', 'SHELL': '/usr/bin/fish', 'LIBCAMERA_IPA_DIR': '/usr/local/lib/aarch64-linux-gnu/libcamera/', 'WIFI_SSID': 'MEO-BD8310', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface', 'SSH_CONNECTION': '10.21.221.37 50832 10.21.221.38 22', 'OMF_CONFIG': '/home/jetpack/.config/omf', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'STARSHIP_SESSION_KEY': '2292216039981130', 'PYTHONPATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'WARP_THEMES_DIR': '/home/jetpack/.warp/themes', 'EDITOR': 'nvim', 'CMAKE_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/teleop:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ssd1306_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/blinkers:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/abstract_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera_ros:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor', 'WIFI_PASSWORD': '9f24731014'}), 'shell': False}
+[0.455291] (display_routine) JobEnded: {'identifier': 'display_routine', 'rc': 0}
+[0.457527] (-) TimerEvent: {}
+[0.457986] (ssd1306_driver) JobStarted: {'identifier': 'ssd1306_driver'}
+[0.494419] (can_interface) StdoutLine: {'line': b'UpdateCTestConfiguration  from :/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface/CTestConfiguration.ini\n'}
+[0.495444] (can_interface) StdoutLine: {'line': b'Parse Config file:/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface/CTestConfiguration.ini\n'}
+[0.496117] (can_interface) StdoutLine: {'line': b'   Site: jetpack-desktop\n'}
+[0.496641] (can_interface) StdoutLine: {'line': b'   Build name: (empty)\n'}
+[0.497220] (can_interface) StdoutLine: {'line': b' Add coverage exclude regular expressions.\n'}
+[0.501045] (can_interface) StdoutLine: {'line': b'Create new tag: 20250106-1609 - Experimental\n'}
+[0.502641] (can_interface) StdoutLine: {'line': b'UpdateCTestConfiguration  from :/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface/CTestConfiguration.ini\n'}
+[0.503489] (can_interface) StdoutLine: {'line': b'Parse Config file:/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface/CTestConfiguration.ini\n'}
+[0.504230] (can_interface) StdoutLine: {'line': b'Test project /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface\n'}
+[0.504855] (can_interface) StdoutLine: {'line': b'Constructing a list of tests\n'}
+[0.508766] (can_interface) StdoutLine: {'line': b'Done constructing a list of tests\n'}
+[0.509284] (can_interface) StdoutLine: {'line': b'Updating test list for fixtures\n'}
+[0.509851] (can_interface) StdoutLine: {'line': b'Added 0 tests to meet fixture requirements\n'}
+[0.510261] (can_interface) StdoutLine: {'line': b'Checking test dependency graph...\n'}
+[0.510847] (can_interface) StdoutLine: {'line': b'Checking test dependency graph end\n'}
+[0.511324] (can_interface) StdoutLine: {'line': b'test 1\n'}
+[0.511795] (can_interface) StdoutLine: {'line': b'    Start 1: can_interface_test\n'}
+[0.512375] (can_interface) StdoutLine: {'line': b'\n'}
+[0.513021] (can_interface) StdoutLine: {'line': b'1: Test command: /usr/bin/python3 "-u" "/opt/ros/jazzy/share/ament_cmake_test/cmake/run_test.py" "/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface/test_results/can_interface/can_interface_test.gtest.xml" "--package-name" "can_interface" "--output-file" "/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface/ament_cmake_gmock/can_interface_test.txt" "--command" "/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface/can_interface_test" "--gtest_output=xml:/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface/test_results/can_interface/can_interface_test.gtest.xml"\n'}
+[0.513739] (can_interface) StdoutLine: {'line': b'1: Working Directory: /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface\n'}
+[0.517931] (can_interface) StdoutLine: {'line': b'1: Test timeout computed to be: 60\n'}
+[0.518537] (pca9685_driver) JobEnded: {'identifier': 'pca9685_driver', 'rc': 0}
+[0.523521] (i2c_interface) JobStarted: {'identifier': 'i2c_interface'}
+[0.557719] (-) TimerEvent: {}
+[0.570231] (ina219_driver) JobEnded: {'identifier': 'ina219_driver', 'rc': 0}
+[0.572186] (i2c_peripheral_stress_test) JobStarted: {'identifier': 'i2c_peripheral_stress_test'}
+[0.628126] (ssd1306_driver) JobEnded: {'identifier': 'ssd1306_driver', 'rc': 0}
+[0.629968] (speed_sensor) JobStarted: {'identifier': 'speed_sensor'}
+[0.657883] (-) TimerEvent: {}
+[0.687760] (i2c_interface) Command: {'cmd': ['/usr/bin/ctest', '-C', 'Release', '-D', 'ExperimentalTest', '--no-compress-output', '-V', '--force-new-ctest-process', 'tests'], 'cwd': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface', 'env': OrderedDict({'USER': 'jetpack', 'SSH_CLIENT': '10.21.221.37 50832 22', 'STARSHIP_SHELL': 'fish', 'XDG_SESSION_TYPE': 'tty', 'LD_LIBRARY_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ssd1306_driver/lib:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/abstract_driver/lib:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera_ros/lib:/usr/local/lib/aarch64-linux-gnu/libcamera/:/home/jetpack/ros2_v4l2/install/zstd_image_transport/lib:/home/jetpack/ros2_v4l2/install/v4l2_camera/lib:/home/jetpack/ros2_v4l2/install/theora_image_transport/lib:/home/jetpack/ros2_v4l2/install/compressed_image_transport/lib:/home/jetpack/ros2_v4l2/install/compressed_depth_image_transport/lib:/home/jetpack/ros2_v4l2/install/image_transport/lib:/home/jetpack/ros2_v4l2/install/cv_bridge/lib:/home/jetpack/ros2_v4l2/install/camera_info_manager/lib:/home/jetpack/ros2_v4l2/install/camera_calibration_parsers/lib:/usr/local/lib/aarch64-linux-gnu:/usr/local/lib/aarch64-linux-gnu:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/lib:/usr/local/lib/aarch64-linux-gnu:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/lib:/usr/local/lib/aarch64-linux-gnu:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/lib:/usr/local/lib/aarch64-linux-gnu:/usr/local/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/usr/local/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib/aarch64-linux-gnu:/usr/local/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/usr/local/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/usr/local/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/usr/local/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib:/usr/local/lib/aarch64-linux-gnu', 'SHLVL': '1', 'HOME': '/home/jetpack', 'SSH_TTY': '/dev/pts/0', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'ROS_DISTRO': 'jazzy', 'OMF_PATH': '/home/jetpack/.local/share/omf', 'COLCON_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install', 'LOGNAME': 'jetpack', 'XDG_SESSION_CLASS': 'user', 'ROS_VERSION': '2', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '2', 'PATH': '/opt/ros/jazzy/bin:/home/jetpack/miniconda3/bin:/Users/Axel/.local/bin:/Users/Axel/.local/share/nvim/mason/bin:usr/bin:/Users/Axel/.fzf/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/teleop:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ssd1306_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/blinkers:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/abstract_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera_ros:/opt/ros/jazzy', 'SHELL': '/usr/bin/fish', 'LIBCAMERA_IPA_DIR': '/usr/local/lib/aarch64-linux-gnu/libcamera/', 'WIFI_SSID': 'MEO-BD8310', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface', 'SSH_CONNECTION': '10.21.221.37 50832 10.21.221.38 22', 'OMF_CONFIG': '/home/jetpack/.config/omf', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'STARSHIP_SESSION_KEY': '2292216039981130', 'PYTHONPATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'WARP_THEMES_DIR': '/home/jetpack/.warp/themes', 'EDITOR': 'nvim', 'CMAKE_PREFIX_PATH': '/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/teleop:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ssd1306_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/blinkers:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/abstract_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera_ros:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor', 'WIFI_PASSWORD': '9f24731014'}), 'shell': False}
+[0.745874] (i2c_peripheral_stress_test) JobEnded: {'identifier': 'i2c_peripheral_stress_test', 'rc': 0}
+[0.751313] (battery) JobStarted: {'identifier': 'battery'}
+[0.752696] (i2c_interface) StdoutLine: {'line': b'UpdateCTestConfiguration  from :/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface/CTestConfiguration.ini\n'}
+[0.756024] (i2c_interface) StdoutLine: {'line': b'Parse Config file:/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface/CTestConfiguration.ini\n'}
+[0.756809] (i2c_interface) StdoutLine: {'line': b'   Site: jetpack-desktop\n'}
+[0.757404] (i2c_interface) StdoutLine: {'line': b'   Build name: (empty)\n'}
+[0.762098] (-) TimerEvent: {}
+[0.762703] (i2c_interface) StdoutLine: {'line': b' Add coverage exclude regular expressions.\n'}
+[0.763322] (i2c_interface) StdoutLine: {'line': b'Create new tag: 20250106-1609 - Experimental\n'}
+[0.763880] (i2c_interface) StdoutLine: {'line': b'UpdateCTestConfiguration  from :/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface/CTestConfiguration.ini\n'}
+[0.764359] (i2c_interface) StdoutLine: {'line': b'Parse Config file:/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface/CTestConfiguration.ini\n'}
+[0.769018] (i2c_interface) StdoutLine: {'line': b'Test project /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface\n'}
+[0.769482] (i2c_interface) StdoutLine: {'line': b'Constructing a list of tests\n'}
+[0.770084] (i2c_interface) StdoutLine: {'line': b'Done constructing a list of tests\n'}
+[0.773823] (i2c_interface) StdoutLine: {'line': b'Updating test list for fixtures\n'}
+[0.775410] (i2c_interface) StdoutLine: {'line': b'Added 0 tests to meet fixture requirements\n'}
+[0.780459] (i2c_interface) StdoutLine: {'line': b'Checking test dependency graph...\n'}
+[0.781611] (i2c_interface) StdoutLine: {'line': b'Checking test dependency graph end\n'}
+[0.782744] (i2c_interface) StdoutLine: {'line': b'test 1\n'}
+[0.783929] (i2c_interface) StdoutLine: {'line': b'    Start 1: i2c_interface_test\n'}
+[0.784953] (i2c_interface) StdoutLine: {'line': b'\n'}
+[0.786583] (i2c_interface) StdoutLine: {'line': b'1: Test command: /usr/bin/python3 "-u" "/opt/ros/jazzy/share/ament_cmake_test/cmake/run_test.py" "/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface/test_results/i2c_interface/i2c_interface_test.gtest.xml" "--package-name" "i2c_interface" "--output-file" "/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface/ament_cmake_gmock/i2c_interface_test.txt" "--command" "/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface/i2c_interface_test" "--gtest_output=xml:/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface/test_results/i2c_interface/i2c_interface_test.gtest.xml"\n'}
+[0.787692] (i2c_interface) StdoutLine: {'line': b'1: Working Directory: /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface\n'}
+[0.788794] (i2c_interface) StdoutLine: {'line': b'1: Test timeout computed to be: 60\n'}
+[0.812921] (speed_sensor) JobEnded: {'identifier': 'speed_sensor', 'rc': 0}
+[0.814848] (dc_motors) JobStarted: {'identifier': 'dc_motors'}
+[0.821065] (can_interface) StdoutLine: {'line': b"1: -- run_test.py: invoking following command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface':\n"}
+[0.821733] (can_interface) StdoutLine: {'line': b'1:  - /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface/can_interface_test --gtest_output=xml:/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface/test_results/can_interface/can_interface_test.gtest.xml\n'}
+[0.864727] (-) TimerEvent: {}
+[0.896164] (can_interface) StdoutLine: {'line': b'1: Running main() from gmock_main.cc\n'}
+[0.897795] (can_interface) StdoutLine: {'line': b'1: [==========] Running 2 tests from 1 test suite.\n'}
+[0.898442] (can_interface) StdoutLine: {'line': b'1: [----------] Global test environment set-up.\n'}
+[0.899049] (can_interface) StdoutLine: {'line': b'1: [----------] 2 tests from CanInterfaceTest\n'}
+[0.899604] (can_interface) StdoutLine: {'line': b'1: [ RUN      ] CanInterfaceTest.readMessage\n'}
+[0.935691] (battery) JobEnded: {'identifier': 'battery', 'rc': 0}
+[0.937468] (oled_display) JobStarted: {'identifier': 'oled_display'}
+[0.964964] (-) TimerEvent: {}
+[0.984257] (dc_motors) JobEnded: {'identifier': 'dc_motors', 'rc': 0}
+[0.991036] (servo_motor) JobStarted: {'identifier': 'servo_motor'}
+[1.022330] (can_interface) StdoutLine: {'line': b'1: [INFO] [1736179783.146960153] [can_interface]: Mock driver received!\n'}
+[1.029134] (can_interface) StdoutLine: {'line': b'1: [INFO] [1736179783.150792423] [can_interface]: Starting CAN bus interface\n'}
+[1.050442] (can_interface) StdoutLine: {'line': b'1: [       OK ] CanInterfaceTest.readMessage (153 ms)\n'}
+[1.051994] (can_interface) StdoutLine: {'line': b'1: [ RUN      ] CanInterfaceTest.readIncomplete\n'}
+[1.065213] (-) TimerEvent: {}
+[1.100889] (can_interface) StdoutLine: {'line': b'1: [INFO] [1736179783.222959166] [can_interface]: Mock driver received!\n'}
+[1.102123] (can_interface) StdoutLine: {'line': b'1: [INFO] [1736179783.226042978] [can_interface]: Starting CAN bus interface\n'}
+[1.109306] (can_interface) StdoutLine: {'line': b'1: /home/jetpack/SEAME-Cluster-24-25/JetRacer/src/bus_interfaces/can_interface/test/src/CanInterfaceTest.cpp:72: Failure\n'}
+[1.110094] (can_interface) StdoutLine: {'line': b'1: Expected equality of these values:\n'}
+[1.110644] (can_interface) StdoutLine: {'line': b'1:   response->success\n'}
+[1.114696] (can_interface) StdoutLine: {'line': b'1:     Which is: true\n'}
+[1.115411] (can_interface) StdoutLine: {'line': b'1:   false\n'}
+[1.119792] (can_interface) StdoutLine: {'line': b'1: \n'}
+[1.122860] (oled_display) JobEnded: {'identifier': 'oled_display', 'rc': 0}
+[1.125056] (i2c_interface) StdoutLine: {'line': b"1: -- run_test.py: invoking following command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface':\n"}
+[1.126461] (i2c_interface) StdoutLine: {'line': b'1:  - /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface/i2c_interface_test --gtest_output=xml:/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface/test_results/i2c_interface/i2c_interface_test.gtest.xml\n'}
+[1.128421] (can_interface) StdoutLine: {'line': b'1: [  FAILED  ] CanInterfaceTest.readIncomplete (74 ms)\n'}
+[1.130898] (can_interface) StdoutLine: {'line': b'1: [----------] 2 tests from CanInterfaceTest (230 ms total)\n'}
+[1.131849] (can_interface) StdoutLine: {'line': b'1: \n'}
+[1.132297] (can_interface) StdoutLine: {'line': b'1: [----------] Global test environment tear-down\n'}
+[1.132823] (can_interface) StdoutLine: {'line': b'1: [==========] 2 tests from 1 test suite ran. (231 ms total)\n'}
+[1.133221] (can_interface) StdoutLine: {'line': b'1: [  PASSED  ] 1 test.\n'}
+[1.133596] (can_interface) StdoutLine: {'line': b'1: [  FAILED  ] 1 test, listed below:\n'}
+[1.134007] (can_interface) StdoutLine: {'line': b'1: [  FAILED  ] CanInterfaceTest.readIncomplete\n'}
+[1.134351] (can_interface) StdoutLine: {'line': b'1: \n'}
+[1.134739] (can_interface) StdoutLine: {'line': b'1:  1 FAILED TEST\n'}
+[1.163341] (servo_motor) JobEnded: {'identifier': 'servo_motor', 'rc': 0}
+[1.165305] (-) TimerEvent: {}
+[1.179063] (i2c_interface) StdoutLine: {'line': b'1: Running main() from gmock_main.cc\n'}
+[1.179734] (i2c_interface) StdoutLine: {'line': b'1: [==========] Running 7 tests from 1 test suite.\n'}
+[1.180102] (i2c_interface) StdoutLine: {'line': b'1: [----------] Global test environment set-up.\n'}
+[1.180474] (i2c_interface) StdoutLine: {'line': b'1: [----------] 7 tests from I2cInterfaceTest\n'}
+[1.180873] (i2c_interface) StdoutLine: {'line': b'1: [ RUN      ] I2cInterfaceTest.read1byte\n'}
+[1.241897] (can_interface) StdoutLine: {'line': b'1: -- run_test.py: return code 1\n'}
+[1.242997] (can_interface) StdoutLine: {'line': b"1: -- run_test.py: inject classname prefix into gtest result file '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface/test_results/can_interface/can_interface_test.gtest.xml'\n"}
+[1.243952] (can_interface) StdoutLine: {'line': b"1: -- run_test.py: verify result file '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface/test_results/can_interface/can_interface_test.gtest.xml'\n"}
+[1.265680] (-) TimerEvent: {}
+[1.292809] (i2c_interface) StdoutLine: {'line': b'1: \n'}
+[1.294168] (i2c_interface) StdoutLine: {'line': b'1: GMOCK WARNING:\n'}
+[1.295130] (i2c_interface) StdoutLine: {'line': b'1: Uninteresting mock function call - returning default value.\n'}
+[1.296131] (i2c_interface) StdoutLine: {'line': b'1:     Function call: open()\n'}
+[1.297782] (i2c_interface) StdoutLine: {'line': b'1:           Returns: 0\n'}
+[1.298492] (i2c_interface) StdoutLine: {'line': b"1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.\n"}
+[1.299110] (i2c_interface) StdoutLine: {'line': b'1: [INFO] [1736179783.416585405] [i2c_interface]: Starting i2c interface\n'}
+[1.300423] (i2c_interface) StdoutLine: {'line': b'1: \n'}
+[1.301597] (i2c_interface) StdoutLine: {'line': b'1: GMOCK WARNING:\n'}
+[1.302240] (i2c_interface) StdoutLine: {'line': b'1: Uninteresting mock function call - returning default value.\n'}
+[1.302736] (i2c_interface) StdoutLine: {'line': b"1:     Function call: setAddress('@' (64, 0x40))\n"}
+[1.303216] (i2c_interface) StdoutLine: {'line': b'1:           Returns: 0\n'}
+[1.306737] (i2c_interface) StdoutLine: {'line': b"1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.\n"}
+[1.307475] (i2c_interface) StdoutLine: {'line': b'1: \n'}
+[1.308935] (i2c_interface) StdoutLine: {'line': b'1: GMOCK WARNING:\n'}
+[1.309506] (i2c_interface) StdoutLine: {'line': b'1: Uninteresting mock function call - returning default value.\n'}
+[1.309927] (i2c_interface) StdoutLine: {'line': b'1:     Function call: write(@0xffff98001318 {})\n'}
+[1.310280] (i2c_interface) StdoutLine: {'line': b'1:           Returns: 0\n'}
+[1.310673] (i2c_interface) StdoutLine: {'line': b"1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.\n"}
+[1.311061] (can_interface) StdoutLine: {'line': b'1/1 Test #1: can_interface_test ...............***Failed    0.81 sec\n'}
+[1.311430] (can_interface) StdoutLine: {'line': b'\n'}
+[1.311968] (can_interface) StdoutLine: {'line': b'0% tests passed\x1b[0;0m, \x1b[0;31m1 tests failed\x1b[0;0m out of 1\n'}
+[1.312649] (can_interface) StdoutLine: {'line': b'\n'}
+[1.313349] (can_interface) StdoutLine: {'line': b'Label Time Summary:\n'}
+[1.315029] (can_interface) StdoutLine: {'line': b'gmock    =   0.81 sec*proc (1 test)\n'}
+[1.315573] (can_interface) StdoutLine: {'line': b'\n'}
+[1.316237] (can_interface) StdoutLine: {'line': b'Total Test time (real) =   0.81 sec\n'}
+[1.316914] (can_interface) StdoutLine: {'line': b'\n'}
+[1.317570] (can_interface) StdoutLine: {'line': b'The following tests FAILED:\n'}
+[1.319714] (can_interface) StdoutLine: {'line': b'\t\x1b[0;31m  1 - can_interface_test (Failed)\x1b[0;0m\n'}
+[1.321065] (can_interface) StderrLine: {'line': b'Errors while running CTest\n'}
+[1.321593] (can_interface) StderrLine: {'line': b'Output from these tests are in: /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface/Testing/Temporary/LastTest.log\n'}
+[1.322095] (can_interface) StderrLine: {'line': b'Use "--rerun-failed --output-on-failure" to re-run the failed cases verbosely.\n'}
+[1.322496] (i2c_interface) StdoutLine: {'line': b'1: [       OK ] I2cInterfaceTest.read1byte (138 ms)\n'}
+[1.322971] (i2c_interface) StdoutLine: {'line': b'1: [ RUN      ] I2cInterfaceTest.readFailure\n'}
+[1.323366] (can_interface) CommandEnded: {'returncode': 8}
+[1.324773] (can_interface) TestFailure: {'identifier': 'can_interface'}
+[1.324898] (can_interface) JobEnded: {'identifier': 'can_interface', 'rc': 0}
+[1.342033] (i2c_interface) StdoutLine: {'line': b'1: \n'}
+[1.342690] (i2c_interface) StdoutLine: {'line': b'1: GMOCK WARNING:\n'}
+[1.343175] (i2c_interface) StdoutLine: {'line': b'1: Uninteresting mock function call - returning default value.\n'}
+[1.343597] (i2c_interface) StdoutLine: {'line': b'1:     Function call: open()\n'}
+[1.344162] (i2c_interface) StdoutLine: {'line': b'1:           Returns: 0\n'}
+[1.344712] (i2c_interface) StdoutLine: {'line': b"1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.\n"}
+[1.345671] (i2c_interface) StdoutLine: {'line': b'1: [INFO] [1736179783.466516079] [i2c_interface]: Starting i2c interface\n'}
+[1.346181] (i2c_interface) StdoutLine: {'line': b'1: \n'}
+[1.346592] (i2c_interface) StdoutLine: {'line': b'1: GMOCK WARNING:\n'}
+[1.347076] (i2c_interface) StdoutLine: {'line': b'1: Uninteresting mock function call - returning default value.\n'}
+[1.347477] (i2c_interface) StdoutLine: {'line': b"1:     Function call: setAddress('@' (64, 0x40))\n"}
+[1.347966] (i2c_interface) StdoutLine: {'line': b'1:           Returns: 0\n'}
+[1.348380] (i2c_interface) StdoutLine: {'line': b"1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.\n"}
+[1.348911] (i2c_interface) StdoutLine: {'line': b'1: \n'}
+[1.349354] (i2c_interface) StdoutLine: {'line': b'1: GMOCK WARNING:\n'}
+[1.349808] (i2c_interface) StdoutLine: {'line': b'1: Uninteresting mock function call - returning default value.\n'}
+[1.350243] (i2c_interface) StdoutLine: {'line': b'1:     Function call: write(@0xffff98000ea8 {})\n'}
+[1.350722] (i2c_interface) StdoutLine: {'line': b'1:           Returns: 0\n'}
+[1.351249] (i2c_interface) StdoutLine: {'line': b"1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.\n"}
+[1.351792] (i2c_interface) StdoutLine: {'line': b'1: [ERROR] [1736179783.469320744] [i2c_interface]: Fail to read from device 0x40\n'}
+[1.357112] (i2c_interface) StdoutLine: {'line': b'1: [       OK ] I2cInterfaceTest.readFailure (38 ms)\n'}
+[1.357948] (i2c_interface) StdoutLine: {'line': b'1: [ RUN      ] I2cInterfaceTest.readIncomplete\n'}
+[1.365841] (-) TimerEvent: {}
+[1.379908] (i2c_interface) StdoutLine: {'line': b'1: \n'}
+[1.380535] (i2c_interface) StdoutLine: {'line': b'1: GMOCK WARNING:\n'}
+[1.381075] (i2c_interface) StdoutLine: {'line': b'1: Uninteresting mock function call - returning default value.\n'}
+[1.381509] (i2c_interface) StdoutLine: {'line': b'1:     Function call: open()\n'}
+[1.382092] (i2c_interface) StdoutLine: {'line': b'1:           Returns: 0\n'}
+[1.382911] (i2c_interface) StdoutLine: {'line': b"1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.\n"}
+[1.383465] (i2c_interface) StdoutLine: {'line': b'1: [INFO] [1736179783.504350910] [i2c_interface]: Starting i2c interface\n'}
+[1.383968] (i2c_interface) StdoutLine: {'line': b'1: \n'}
+[1.384382] (i2c_interface) StdoutLine: {'line': b'1: GMOCK WARNING:\n'}
+[1.384835] (i2c_interface) StdoutLine: {'line': b'1: Uninteresting mock function call - returning default value.\n'}
+[1.385271] (i2c_interface) StdoutLine: {'line': b"1:     Function call: setAddress('@' (64, 0x40))\n"}
+[1.385704] (i2c_interface) StdoutLine: {'line': b'1:           Returns: 0\n'}
+[1.386128] (i2c_interface) StdoutLine: {'line': b"1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.\n"}
+[1.386519] (i2c_interface) StdoutLine: {'line': b'1: \n'}
+[1.387019] (i2c_interface) StdoutLine: {'line': b'1: GMOCK WARNING:\n'}
+[1.387429] (i2c_interface) StdoutLine: {'line': b'1: Uninteresting mock function call - returning default value.\n'}
+[1.387930] (i2c_interface) StdoutLine: {'line': b'1:     Function call: write(@0xffff98001148 {})\n'}
+[1.388349] (i2c_interface) StdoutLine: {'line': b'1:           Returns: 0\n'}
+[1.388857] (i2c_interface) StdoutLine: {'line': b"1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.\n"}
+[1.389310] (i2c_interface) StdoutLine: {'line': b'1: [ERROR] [1736179783.507131336] [i2c_interface]: Incomplete read from device 0x40. expected 3 got 1\n'}
+[1.394692] (i2c_interface) StdoutLine: {'line': b'1: [       OK ] I2cInterfaceTest.readIncomplete (37 ms)\n'}
+[1.395395] (i2c_interface) StdoutLine: {'line': b'1: [ RUN      ] I2cInterfaceTest.write1byte\n'}
+[1.416926] (i2c_interface) StdoutLine: {'line': b'1: \n'}
+[1.417833] (i2c_interface) StdoutLine: {'line': b'1: GMOCK WARNING:\n'}
+[1.418283] (i2c_interface) StdoutLine: {'line': b'1: Uninteresting mock function call - returning default value.\n'}
+[1.418754] (i2c_interface) StdoutLine: {'line': b'1:     Function call: open()\n'}
+[1.419233] (i2c_interface) StdoutLine: {'line': b'1:           Returns: 0\n'}
+[1.420056] (i2c_interface) StdoutLine: {'line': b"1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.\n"}
+[1.420752] (i2c_interface) StdoutLine: {'line': b'1: [INFO] [1736179783.541643060] [i2c_interface]: Starting i2c interface\n'}
+[1.421206] (i2c_interface) StdoutLine: {'line': b'1: \n'}
+[1.421583] (i2c_interface) StdoutLine: {'line': b'1: GMOCK WARNING:\n'}
+[1.422045] (i2c_interface) StdoutLine: {'line': b'1: Uninteresting mock function call - returning default value.\n'}
+[1.422418] (i2c_interface) StdoutLine: {'line': b"1:     Function call: setAddress('@' (64, 0x40))\n"}
+[1.423095] (i2c_interface) StdoutLine: {'line': b'1:           Returns: 0\n'}
+[1.423582] (i2c_interface) StdoutLine: {'line': b"1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.\n"}
+[1.430569] (i2c_interface) StdoutLine: {'line': b'1: [       OK ] I2cInterfaceTest.write1byte (35 ms)\n'}
+[1.431222] (i2c_interface) StdoutLine: {'line': b'1: [ RUN      ] I2cInterfaceTest.writeFailure\n'}
+[1.455009] (i2c_interface) StdoutLine: {'line': b'1: \n'}
+[1.455683] (i2c_interface) StdoutLine: {'line': b'1: GMOCK WARNING:\n'}
+[1.456160] (i2c_interface) StdoutLine: {'line': b'1: Uninteresting mock function call - returning default value.\n'}
+[1.456653] (i2c_interface) StdoutLine: {'line': b'1:     Function call: open()\n'}
+[1.457242] (i2c_interface) StdoutLine: {'line': b'1:           Returns: 0\n'}
+[1.457901] (i2c_interface) StdoutLine: {'line': b"1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.\n"}
+[1.458505] (i2c_interface) StdoutLine: {'line': b'1: [INFO] [1736179783.579222098] [i2c_interface]: Starting i2c interface\n'}
+[1.459293] (i2c_interface) StdoutLine: {'line': b'1: \n'}
+[1.459881] (i2c_interface) StdoutLine: {'line': b'1: GMOCK WARNING:\n'}
+[1.460292] (i2c_interface) StdoutLine: {'line': b'1: Uninteresting mock function call - returning default value.\n'}
+[1.460727] (i2c_interface) StdoutLine: {'line': b"1:     Function call: setAddress('@' (64, 0x40))\n"}
+[1.461202] (i2c_interface) StdoutLine: {'line': b'1:           Returns: 0\n'}
+[1.461643] (i2c_interface) StdoutLine: {'line': b"1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.\n"}
+[1.462164] (i2c_interface) StdoutLine: {'line': b'1: [ERROR] [1736179783.581817672] [i2c_interface]: Fail to write to device 0x40\n'}
+[1.466025] (-) TimerEvent: {}
+[1.469881] (i2c_interface) StdoutLine: {'line': b'1: [       OK ] I2cInterfaceTest.writeFailure (39 ms)\n'}
+[1.470799] (i2c_interface) StdoutLine: {'line': b'1: [ RUN      ] I2cInterfaceTest.writeIncomplete\n'}
+[1.492047] (i2c_interface) StdoutLine: {'line': b'1: \n'}
+[1.492738] (i2c_interface) StdoutLine: {'line': b'1: GMOCK WARNING:\n'}
+[1.493235] (i2c_interface) StdoutLine: {'line': b'1: Uninteresting mock function call - returning default value.\n'}
+[1.493734] (i2c_interface) StdoutLine: {'line': b'1:     Function call: open()\n'}
+[1.494930] (i2c_interface) StdoutLine: {'line': b'1:           Returns: 0\n'}
+[1.495753] (i2c_interface) StdoutLine: {'line': b"1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.\n"}
+[1.496216] (i2c_interface) StdoutLine: {'line': b'1: [INFO] [1736179783.616491026] [i2c_interface]: Starting i2c interface\n'}
+[1.496684] (i2c_interface) StdoutLine: {'line': b'1: \n'}
+[1.497137] (i2c_interface) StdoutLine: {'line': b'1: GMOCK WARNING:\n'}
+[1.497519] (i2c_interface) StdoutLine: {'line': b'1: Uninteresting mock function call - returning default value.\n'}
+[1.498006] (i2c_interface) StdoutLine: {'line': b"1:     Function call: setAddress('@' (64, 0x40))\n"}
+[1.498394] (i2c_interface) StdoutLine: {'line': b'1:           Returns: 0\n'}
+[1.498883] (i2c_interface) StdoutLine: {'line': b"1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.\n"}
+[1.499327] (i2c_interface) StdoutLine: {'line': b'1: [ERROR] [1736179783.619122396] [i2c_interface]: Incomplete write from device 0x40\n'}
+[1.505962] (i2c_interface) StdoutLine: {'line': b'1: [       OK ] I2cInterfaceTest.writeIncomplete (35 ms)\n'}
+[1.506800] (i2c_interface) StdoutLine: {'line': b'1: [ RUN      ] I2cInterfaceTest.setAddressFailure\n'}
+[1.528483] (i2c_interface) StdoutLine: {'line': b'1: \n'}
+[1.529150] (i2c_interface) StdoutLine: {'line': b'1: GMOCK WARNING:\n'}
+[1.529613] (i2c_interface) StdoutLine: {'line': b'1: Uninteresting mock function call - returning default value.\n'}
+[1.530162] (i2c_interface) StdoutLine: {'line': b'1:     Function call: open()\n'}
+[1.530811] (i2c_interface) StdoutLine: {'line': b'1:           Returns: 0\n'}
+[1.531364] (i2c_interface) StdoutLine: {'line': b"1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.\n"}
+[1.531873] (i2c_interface) StdoutLine: {'line': b'1: [INFO] [1736179783.652814072] [i2c_interface]: Starting i2c interface\n'}
+[1.532313] (i2c_interface) StdoutLine: {'line': b'1: [ERROR] [1736179783.655401220] [i2c_interface]: Fail to set the device at address 0x40\n'}
+[1.541067] (i2c_interface) StdoutLine: {'line': b'1: [       OK ] I2cInterfaceTest.setAddressFailure (35 ms)\n'}
+[1.541810] (i2c_interface) StdoutLine: {'line': b'1: [----------] 7 tests from I2cInterfaceTest (361 ms total)\n'}
+[1.542229] (i2c_interface) StdoutLine: {'line': b'1: \n'}
+[1.542684] (i2c_interface) StdoutLine: {'line': b'1: [----------] Global test environment tear-down\n'}
+[1.543507] (i2c_interface) StdoutLine: {'line': b'1: [==========] 7 tests from 1 test suite ran. (362 ms total)\n'}
+[1.543968] (i2c_interface) StdoutLine: {'line': b'1: [  PASSED  ] 7 tests.\n'}
+[1.566190] (-) TimerEvent: {}
+[1.660303] (i2c_interface) StdoutLine: {'line': b'1: -- run_test.py: return code 0\n'}
+[1.661237] (i2c_interface) StdoutLine: {'line': b"1: -- run_test.py: inject classname prefix into gtest result file '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface/test_results/i2c_interface/i2c_interface_test.gtest.xml'\n"}
+[1.662134] (i2c_interface) StdoutLine: {'line': b"1: -- run_test.py: verify result file '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface/test_results/i2c_interface/i2c_interface_test.gtest.xml'\n"}
+[1.666532] (-) TimerEvent: {}
+[1.714338] (i2c_interface) StdoutLine: {'line': b'1/1 Test #1: i2c_interface_test ...............   Passed    0.95 sec\n'}
+[1.715919] (i2c_interface) StdoutLine: {'line': b'\n'}
+[1.716427] (i2c_interface) StdoutLine: {'line': b'\x1b[0;32m100% tests passed\x1b[0;0m, 0 tests failed\x1b[0;0m out of 1\n'}
+[1.716868] (i2c_interface) StdoutLine: {'line': b'\n'}
+[1.717197] (i2c_interface) StdoutLine: {'line': b'Label Time Summary:\n'}
+[1.717509] (i2c_interface) StdoutLine: {'line': b'gmock    =   0.95 sec*proc (1 test)\n'}
+[1.717875] (i2c_interface) StdoutLine: {'line': b'\n'}
+[1.718225] (i2c_interface) StdoutLine: {'line': b'Total Test time (real) =   0.96 sec\n'}
+[1.724800] (i2c_interface) CommandEnded: {'returncode': 0}
+[1.725871] (i2c_interface) JobEnded: {'identifier': 'i2c_interface', 'rc': 0}
+[1.728901] (-) EventReactorShutdown: {}

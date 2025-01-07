@@ -1,0 +1,16 @@
+/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/lib/oled_display/oled_display_node
+/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/ament_index/resource_index/package_run_dependencies/oled_display
+/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/ament_index/resource_index/parent_prefix_path/oled_display
+/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/oled_display/environment/ament_prefix_path.sh
+/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/oled_display/environment/ament_prefix_path.dsv
+/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/oled_display/environment/path.sh
+/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/oled_display/environment/path.dsv
+/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/oled_display/local_setup.bash
+/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/oled_display/local_setup.sh
+/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/oled_display/local_setup.zsh
+/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/oled_display/local_setup.dsv
+/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/oled_display/package.dsv
+/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/ament_index/resource_index/packages/oled_display
+/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/oled_display/cmake/oled_displayConfig.cmake
+/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/oled_display/cmake/oled_displayConfig-version.cmake
+/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display/share/oled_display/package.xml

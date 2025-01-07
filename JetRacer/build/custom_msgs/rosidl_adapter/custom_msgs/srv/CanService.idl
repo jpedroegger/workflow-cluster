@@ -1,0 +1,39 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from custom_msgs/srv/CanService.srv
+// generated code does not contain a copyright notice
+
+
+module custom_msgs {
+  module srv {
+    @verbatim (language="comment", text=
+      "Request:")
+    struct CanService_Request {
+      @verbatim (language="comment", text=
+        "ID")
+      uint32 can_id;
+
+      @verbatim (language="comment", text=
+        "Data to write to the device")
+      sequence<uint8> write_data;
+
+      @verbatim (language="comment", text=
+        "Whether a read operation is requested")
+      boolean read_request;
+    };
+    @verbatim (language="comment", text=
+      "Response")
+    struct CanService_Response {
+      @verbatim (language="comment", text=
+        "True if the operation was successful")
+      boolean success;
+
+      @verbatim (language="comment", text=
+        "Data read from the device (if read_request is true)")
+      sequence<uint8> read_data;
+
+      @verbatim (language="comment", text=
+        "For error messages or success confirmation")
+      string message;
+    };
+  };
+};

@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-b28462bd1043984cb92b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "ssd1306_driver",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "SSD1306Driver::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SSD1306Driver-a2c76670f7b1fc3b7174.json",
+					"name" : "SSD1306Driver",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ssd1306_driver_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ssd1306_driver_uninstall-a5aa061ea4e5e8eb7a84.json",
+					"name" : "ssd1306_driver_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-736fb2e6c3d960ad267a.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/ssd1306_driver",
+		"source" : "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/drivers/ssd1306_driver"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

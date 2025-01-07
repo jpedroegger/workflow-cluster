@@ -1,0 +1,47 @@
+UpdateCTestConfiguration  from :/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface/CTestConfiguration.ini
+Parse Config file:/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface/CTestConfiguration.ini
+   Site: jetpack-desktop
+   Build name: (empty)
+ Add coverage exclude regular expressions.
+Create new tag: 20250106-1455 - Experimental
+UpdateCTestConfiguration  from :/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface/CTestConfiguration.ini
+Parse Config file:/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface/CTestConfiguration.ini
+Test project /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 1
+    Start 1: can_interface_test
+
+1: Test command: /usr/bin/python3 "-u" "/opt/ros/jazzy/share/ament_cmake_test/cmake/run_test.py" "/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface/test_results/can_interface/can_interface_test.gtest.xml" "--package-name" "can_interface" "--output-file" "/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface/ament_cmake_gmock/can_interface_test.txt" "--command" "/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface/can_interface_test" "--gtest_output=xml:/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface/test_results/can_interface/can_interface_test.gtest.xml"
+1: Working Directory: /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface
+1: Test timeout computed to be: 60
+1: -- run_test.py: invoking following command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface':
+1:  - /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface/can_interface_test --gtest_output=xml:/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface/test_results/can_interface/can_interface_test.gtest.xml
+1: Running main() from gmock_main.cc
+1: [==========] Running 1 test from 1 test suite.
+1: [----------] Global test environment set-up.
+1: [----------] 1 test from CanInterfaceTest
+1: [ RUN      ] CanInterfaceTest.readMessage
+1: [INFO] [1736175351.339219125] [can_interface]: Mock driver received!
+1: [INFO] [1736175351.346940745] [can_interface]: Starting CAN bus interface
+1: [       OK ] CanInterfaceTest.readMessage (211 ms)
+1: [----------] 1 test from CanInterfaceTest (212 ms total)
+1: 
+1: [----------] Global test environment tear-down
+1: [==========] 1 test from 1 test suite ran. (213 ms total)
+1: [  PASSED  ] 1 test.
+1: -- run_test.py: return code 0
+1: -- run_test.py: inject classname prefix into gtest result file '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface/test_results/can_interface/can_interface_test.gtest.xml'
+1: -- run_test.py: verify result file '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface/test_results/can_interface/can_interface_test.gtest.xml'
+1/1 Test #1: can_interface_test ...............   Passed    0.81 sec
+
+[0;32m100% tests passed[0;0m, 0 tests failed[0;0m out of 1
+
+Label Time Summary:
+gmock    =   0.81 sec*proc (1 test)
+
+Total Test time (real) =   0.82 sec

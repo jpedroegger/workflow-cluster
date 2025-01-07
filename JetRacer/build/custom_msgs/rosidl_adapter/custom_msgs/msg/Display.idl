@@ -1,0 +1,18 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from custom_msgs/msg/Display.msg
+// generated code does not contain a copyright notice
+
+
+module custom_msgs {
+  module msg {
+    struct Display {
+      string line1;
+
+      string line2;
+
+      string line3;
+
+      string line4;
+    };
+  };
+};

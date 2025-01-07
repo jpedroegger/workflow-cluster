@@ -1,0 +1,31 @@
+-- run_test.py: invoking following command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface':
+ - /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface/can_interface_test --gtest_output=xml:/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface/test_results/can_interface/can_interface_test.gtest.xml
+
+Running main() from gmock_main.cc
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from CanInterfaceTest
+[ RUN      ] CanInterfaceTest.readSuccess
+[INFO] [1736181537.505542531] [can_interface]: Mock driver received!
+[INFO] [1736181537.510552826] [can_interface]: Starting CAN bus interface
+[       OK ] CanInterfaceTest.readSuccess (162 ms)
+[ RUN      ] CanInterfaceTest.readFailure
+[INFO] [1736181537.584258790] [can_interface]: Mock driver received!
+[INFO] [1736181537.587313108] [can_interface]: Starting CAN bus interface
+[ERROR] [1736181537.593125653] [can_interface]: Fail reading can bus, request timed out
+[       OK ] CanInterfaceTest.readFailure (68 ms)
+[ RUN      ] CanInterfaceTest.writeFailure
+[INFO] [1736181537.637995369] [can_interface]: Mock driver received!
+[INFO] [1736181537.639694127] [can_interface]: Starting CAN bus interface
+[ERROR] [1736181537.642454559] [can_interface]: Fail writing data: std::exception
+[       OK ] CanInterfaceTest.writeFailure (41 ms)
+[----------] 3 tests from CanInterfaceTest (274 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (275 ms total)
+[  PASSED  ] 3 tests.
+
+
+-- run_test.py: return code 0
+-- run_test.py: inject classname prefix into gtest result file '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface/test_results/can_interface/can_interface_test.gtest.xml'
+-- run_test.py: verify result file '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface/test_results/can_interface/can_interface_test.gtest.xml'

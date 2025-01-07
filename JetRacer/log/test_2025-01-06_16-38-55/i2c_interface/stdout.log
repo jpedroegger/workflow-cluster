@@ -1,0 +1,165 @@
+UpdateCTestConfiguration  from :/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface/CTestConfiguration.ini
+Parse Config file:/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface/CTestConfiguration.ini
+   Site: jetpack-desktop
+   Build name: (empty)
+ Add coverage exclude regular expressions.
+Create new tag: 20250106-1638 - Experimental
+UpdateCTestConfiguration  from :/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface/CTestConfiguration.ini
+Parse Config file:/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface/CTestConfiguration.ini
+Test project /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 1
+    Start 1: i2c_interface_test
+
+1: Test command: /usr/bin/python3 "-u" "/opt/ros/jazzy/share/ament_cmake_test/cmake/run_test.py" "/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface/test_results/i2c_interface/i2c_interface_test.gtest.xml" "--package-name" "i2c_interface" "--output-file" "/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface/ament_cmake_gmock/i2c_interface_test.txt" "--command" "/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface/i2c_interface_test" "--gtest_output=xml:/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface/test_results/i2c_interface/i2c_interface_test.gtest.xml"
+1: Working Directory: /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface
+1: Test timeout computed to be: 60
+1: -- run_test.py: invoking following command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface':
+1:  - /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface/i2c_interface_test --gtest_output=xml:/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface/test_results/i2c_interface/i2c_interface_test.gtest.xml
+1: Running main() from gmock_main.cc
+1: [==========] Running 7 tests from 1 test suite.
+1: [----------] Global test environment set-up.
+1: [----------] 7 tests from I2cInterfaceTest
+1: [ RUN      ] I2cInterfaceTest.read1byte
+1: 
+1: GMOCK WARNING:
+1: Uninteresting mock function call - returning default value.
+1:     Function call: open()
+1:           Returns: 0
+1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.
+1: [INFO] [1736181537.753365381] [i2c_interface]: Starting i2c interface
+1: 
+1: GMOCK WARNING:
+1: Uninteresting mock function call - returning default value.
+1:     Function call: setAddress('@' (64, 0x40))
+1:           Returns: 0
+1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.
+1: 
+1: GMOCK WARNING:
+1: Uninteresting mock function call - returning default value.
+1:     Function call: write(@0xffff68000da8 {})
+1:           Returns: 0
+1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.
+1: [       OK ] I2cInterfaceTest.read1byte (114 ms)
+1: [ RUN      ] I2cInterfaceTest.readFailure
+1: 
+1: GMOCK WARNING:
+1: Uninteresting mock function call - returning default value.
+1:     Function call: open()
+1:           Returns: 0
+1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.
+1: [INFO] [1736181537.821739183] [i2c_interface]: Starting i2c interface
+1: 
+1: GMOCK WARNING:
+1: Uninteresting mock function call - returning default value.
+1:     Function call: setAddress('@' (64, 0x40))
+1:           Returns: 0
+1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.
+1: 
+1: GMOCK WARNING:
+1: Uninteresting mock function call - returning default value.
+1:     Function call: write(@0xffff68001298 {})
+1:           Returns: 0
+1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.
+1: [ERROR] [1736181537.825954876] [i2c_interface]: Fail to read from device 0x40
+1: [       OK ] I2cInterfaceTest.readFailure (62 ms)
+1: [ RUN      ] I2cInterfaceTest.readIncomplete
+1: 
+1: GMOCK WARNING:
+1: Uninteresting mock function call - returning default value.
+1:     Function call: open()
+1:           Returns: 0
+1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.
+1: [INFO] [1736181537.865203692] [i2c_interface]: Starting i2c interface
+1: 
+1: GMOCK WARNING:
+1: Uninteresting mock function call - returning default value.
+1:     Function call: setAddress('@' (64, 0x40))
+1:           Returns: 0
+1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.
+1: 
+1: GMOCK WARNING:
+1: Uninteresting mock function call - returning default value.
+1:     Function call: write(@0xffff68000c48 {})
+1:           Returns: 0
+1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.
+1: [ERROR] [1736181537.867826941] [i2c_interface]: Incomplete read from device 0x40. expected 3 got 1
+1: [       OK ] I2cInterfaceTest.readIncomplete (37 ms)
+1: [ RUN      ] I2cInterfaceTest.write1byte
+1: 
+1: GMOCK WARNING:
+1: Uninteresting mock function call - returning default value.
+1:     Function call: open()
+1:           Returns: 0
+1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.
+1: [INFO] [1736181537.902192367] [i2c_interface]: Starting i2c interface
+1: 
+1: GMOCK WARNING:
+1: Uninteresting mock function call - returning default value.
+1:     Function call: setAddress('@' (64, 0x40))
+1:           Returns: 0
+1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.
+1: [       OK ] I2cInterfaceTest.write1byte (35 ms)
+1: [ RUN      ] I2cInterfaceTest.writeFailure
+1: 
+1: GMOCK WARNING:
+1: Uninteresting mock function call - returning default value.
+1:     Function call: open()
+1:           Returns: 0
+1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.
+1: [INFO] [1736181537.938099425] [i2c_interface]: Starting i2c interface
+1: 
+1: GMOCK WARNING:
+1: Uninteresting mock function call - returning default value.
+1:     Function call: setAddress('@' (64, 0x40))
+1:           Returns: 0
+1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.
+1: [ERROR] [1736181537.940750395] [i2c_interface]: Fail to write to device 0x40
+1: [       OK ] I2cInterfaceTest.writeFailure (36 ms)
+1: [ RUN      ] I2cInterfaceTest.writeIncomplete
+1: 
+1: GMOCK WARNING:
+1: Uninteresting mock function call - returning default value.
+1:     Function call: open()
+1:           Returns: 0
+1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.
+1: [INFO] [1736181537.973804226] [i2c_interface]: Starting i2c interface
+1: 
+1: GMOCK WARNING:
+1: Uninteresting mock function call - returning default value.
+1:     Function call: setAddress('@' (64, 0x40))
+1:           Returns: 0
+1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.
+1: [ERROR] [1736181537.976374900] [i2c_interface]: Incomplete write from device 0x40
+1: [       OK ] I2cInterfaceTest.writeIncomplete (35 ms)
+1: [ RUN      ] I2cInterfaceTest.setAddressFailure
+1: 
+1: GMOCK WARNING:
+1: Uninteresting mock function call - returning default value.
+1:     Function call: open()
+1:           Returns: 0
+1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.
+1: [INFO] [1736181538.012650361] [i2c_interface]: Starting i2c interface
+1: [ERROR] [1736181538.015151463] [i2c_interface]: Fail to set the device at address 0x40
+1: [       OK ] I2cInterfaceTest.setAddressFailure (37 ms)
+1: [----------] 7 tests from I2cInterfaceTest (359 ms total)
+1: 
+1: [----------] Global test environment tear-down
+1: [==========] 7 tests from 1 test suite ran. (360 ms total)
+1: [  PASSED  ] 7 tests.
+1: -- run_test.py: return code 0
+1: -- run_test.py: inject classname prefix into gtest result file '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface/test_results/i2c_interface/i2c_interface_test.gtest.xml'
+1: -- run_test.py: verify result file '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface/test_results/i2c_interface/i2c_interface_test.gtest.xml'
+1/1 Test #1: i2c_interface_test ...............   Passed    0.95 sec
+
+[0;32m100% tests passed[0;0m, 0 tests failed[0;0m out of 1
+
+Label Time Summary:
+gmock    =   0.95 sec*proc (1 test)
+
+Total Test time (real) =   0.96 sec

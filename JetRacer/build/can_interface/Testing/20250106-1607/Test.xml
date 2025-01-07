@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="(empty)"
+	BuildStamp="20250106-1607-Experimental"
+	Name="jetpack-desktop"
+	Generator="ctest-3.28.3"
+	CompilerName="/usr/bin/c++"
+	CompilerVersion="13.3.0"
+	OSName="Linux"
+	Hostname="jetpack-desktop"
+	OSRelease="6.8.0-1017-raspi"
+	OSVersion="#19-Ubuntu SMP PREEMPT_DYNAMIC Fri Dec  6 20:45:12 UTC 2024"
+	OSPlatform="aarch64"
+	Is64Bits="1"
+	VendorString=""
+	VendorID="Unknown Manufacturer"
+	FamilyID="8"
+	ModelID="0"
+	ProcessorCacheSize="0"
+	NumberOfLogicalCPU="4"
+	NumberOfPhysicalCPU="1"
+	TotalVirtualMemory="1023"
+	TotalPhysicalMemory="7802"
+	LogicalProcessorsPerPhysical="4"
+	ProcessorClockFrequency="0"
+	>
+	<Testing>
+		<StartDateTime>Jan 06 16:07 WET</StartDateTime>
+		<StartTestTime>1736179643</StartTestTime>
+		<TestList>
+			<Test>./can_interface_test</Test>
+		</TestList>
+		<Test Status="failed">
+			<Name>can_interface_test</Name>
+			<Path>.</Path>
+			<FullName>./can_interface_test</FullName>
+			<FullCommandLine>/usr/bin/python3 "-u" "/opt/ros/jazzy/share/ament_cmake_test/cmake/run_test.py" "/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface/test_results/can_interface/can_interface_test.gtest.xml" "--package-name" "can_interface" "--output-file" "/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface/ament_cmake_gmock/can_interface_test.txt" "--command" "/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface/can_interface_test" "--gtest_output=xml:/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface/test_results/can_interface/can_interface_test.gtest.xml"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="text/string" name="Exit Code">
+					<Value>Failed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Exit Value">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.811321</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Processors">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/usr/bin/python3 "-u" "/opt/ros/jazzy/share/ament_cmake_test/cmake/run_test.py" "/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface/test_results/can_interface/can_interface_test.gtest.xml" "--package-name" "can_interface" "--output-file" "/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface/ament_cmake_gmock/can_interface_test.txt" "--command" "/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface/can_interface_test" "--gtest_output=xml:/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface/test_results/can_interface/can_interface_test.gtest.xml"</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Environment">
+					<Value>#CTEST_RESOURCE_GROUP_COUNT=</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value>-- run_test.py: invoking following command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface':
+ - /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface/can_interface_test --gtest_output=xml:/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface/test_results/can_interface/can_interface_test.gtest.xml
+Running main() from gmock_main.cc
+[==========] Running 2 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 2 tests from CanInterfaceTest
+[ RUN      ] CanInterfaceTest.readMessage
+[INFO] [1736179644.232079670] [can_interface]: Mock driver received!
+[INFO] [1736179644.236880298] [can_interface]: Starting CAN bus interface
+[       OK ] CanInterfaceTest.readMessage (164 ms)
+[ RUN      ] CanInterfaceTest.readIncomplete
+[INFO] [1736179644.312591034] [can_interface]: Mock driver received!
+[INFO] [1736179644.315290568] [can_interface]: Starting CAN bus interface
+/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/bus_interfaces/can_interface/test/src/CanInterfaceTest.cpp:72: Failure
+Expected equality of these values:
+  response-&gt;success
+    Which is: true
+  false
+
+[  FAILED  ] CanInterfaceTest.readIncomplete (65 ms)
+[----------] 2 tests from CanInterfaceTest (230 ms total)
+
+[----------] Global test environment tear-down
+[==========] 2 tests from 1 test suite ran. (230 ms total)
+[  PASSED  ] 1 test.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] CanInterfaceTest.readIncomplete
+
+ 1 FAILED TEST
+-- run_test.py: return code 1
+-- run_test.py: inject classname prefix into gtest result file '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface/test_results/can_interface/can_interface_test.gtest.xml'
+-- run_test.py: verify result file '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/can_interface/test_results/can_interface/can_interface_test.gtest.xml'
+</Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>gmock</Label>
+			</Labels>
+		</Test>
+		<EndDateTime>Jan 06 16:07 WET</EndDateTime>
+		<EndTestTime>1736179644</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

@@ -1,0 +1,167 @@
+[0.173s] Invoking command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface': CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/teleop:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ssd1306_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/blinkers:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/abstract_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera_ros:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ssd1306_driver/lib:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/abstract_driver/lib:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera_ros/lib:/usr/local/lib/aarch64-linux-gnu/libcamera/:/home/jetpack/ros2_v4l2/install/zstd_image_transport/lib:/home/jetpack/ros2_v4l2/install/v4l2_camera/lib:/home/jetpack/ros2_v4l2/install/theora_image_transport/lib:/home/jetpack/ros2_v4l2/install/compressed_image_transport/lib:/home/jetpack/ros2_v4l2/install/compressed_depth_image_transport/lib:/home/jetpack/ros2_v4l2/install/image_transport/lib:/home/jetpack/ros2_v4l2/install/cv_bridge/lib:/home/jetpack/ros2_v4l2/install/camera_info_manager/lib:/home/jetpack/ros2_v4l2/install/camera_calibration_parsers/lib:/usr/local/lib/aarch64-linux-gnu:/usr/local/lib/aarch64-linux-gnu:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/lib:/usr/local/lib/aarch64-linux-gnu:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/lib:/usr/local/lib/aarch64-linux-gnu:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/lib:/usr/local/lib/aarch64-linux-gnu:/usr/local/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/usr/local/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib/aarch64-linux-gnu:/usr/local/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/usr/local/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/usr/local/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/usr/local/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib:/usr/local/lib/aarch64-linux-gnu /usr/bin/ctest -C Release -D ExperimentalTest --no-compress-output -V --force-new-ctest-process tests
+[0.241s] UpdateCTestConfiguration  from :/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface/CTestConfiguration.ini
+[0.245s] Parse Config file:/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface/CTestConfiguration.ini
+[0.246s]    Site: jetpack-desktop
+[0.247s]    Build name: (empty)
+[0.247s]  Add coverage exclude regular expressions.
+[0.249s] Create new tag: 20250106-1638 - Experimental
+[0.250s] UpdateCTestConfiguration  from :/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface/CTestConfiguration.ini
+[0.251s] Parse Config file:/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface/CTestConfiguration.ini
+[0.257s] Test project /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface
+[0.257s] Constructing a list of tests
+[0.258s] Done constructing a list of tests
+[0.259s] Updating test list for fixtures
+[0.259s] Added 0 tests to meet fixture requirements
+[0.260s] Checking test dependency graph...
+[0.260s] Checking test dependency graph end
+[0.261s] test 1
+[0.262s]     Start 1: i2c_interface_test
+[0.263s] 
+[0.264s] 1: Test command: /usr/bin/python3 "-u" "/opt/ros/jazzy/share/ament_cmake_test/cmake/run_test.py" "/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface/test_results/i2c_interface/i2c_interface_test.gtest.xml" "--package-name" "i2c_interface" "--output-file" "/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface/ament_cmake_gmock/i2c_interface_test.txt" "--command" "/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface/i2c_interface_test" "--gtest_output=xml:/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface/test_results/i2c_interface/i2c_interface_test.gtest.xml"
+[0.265s] 1: Working Directory: /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface
+[0.266s] 1: Test timeout computed to be: 60
+[0.592s] 1: -- run_test.py: invoking following command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface':
+[0.592s] 1:  - /home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface/i2c_interface_test --gtest_output=xml:/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface/test_results/i2c_interface/i2c_interface_test.gtest.xml
+[0.664s] 1: Running main() from gmock_main.cc
+[0.665s] 1: [==========] Running 7 tests from 1 test suite.
+[0.665s] 1: [----------] Global test environment set-up.
+[0.666s] 1: [----------] 7 tests from I2cInterfaceTest
+[0.666s] 1: [ RUN      ] I2cInterfaceTest.read1byte
+[0.752s] 1: 
+[0.753s] 1: GMOCK WARNING:
+[0.753s] 1: Uninteresting mock function call - returning default value.
+[0.754s] 1:     Function call: open()
+[0.755s] 1:           Returns: 0
+[0.756s] 1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.
+[0.756s] 1: [INFO] [1736181537.753365381] [i2c_interface]: Starting i2c interface
+[0.757s] 1: 
+[0.758s] 1: GMOCK WARNING:
+[0.759s] 1: Uninteresting mock function call - returning default value.
+[0.759s] 1:     Function call: setAddress('@' (64, 0x40))
+[0.760s] 1:           Returns: 0
+[0.761s] 1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.
+[0.761s] 1: 
+[0.762s] 1: GMOCK WARNING:
+[0.763s] 1: Uninteresting mock function call - returning default value.
+[0.763s] 1:     Function call: write(@0xffff68000da8 {})
+[0.764s] 1:           Returns: 0
+[0.765s] 1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.
+[0.780s] 1: [       OK ] I2cInterfaceTest.read1byte (114 ms)
+[0.781s] 1: [ RUN      ] I2cInterfaceTest.readFailure
+[0.822s] 1: 
+[0.823s] 1: GMOCK WARNING:
+[0.823s] 1: Uninteresting mock function call - returning default value.
+[0.824s] 1:     Function call: open()
+[0.826s] 1:           Returns: 0
+[0.827s] 1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.
+[0.827s] 1: [INFO] [1736181537.821739183] [i2c_interface]: Starting i2c interface
+[0.828s] 1: 
+[0.829s] 1: GMOCK WARNING:
+[0.829s] 1: Uninteresting mock function call - returning default value.
+[0.830s] 1:     Function call: setAddress('@' (64, 0x40))
+[0.830s] 1:           Returns: 0
+[0.831s] 1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.
+[0.832s] 1: 
+[0.832s] 1: GMOCK WARNING:
+[0.833s] 1: Uninteresting mock function call - returning default value.
+[0.833s] 1:     Function call: write(@0xffff68001298 {})
+[0.834s] 1:           Returns: 0
+[0.835s] 1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.
+[0.836s] 1: [ERROR] [1736181537.825954876] [i2c_interface]: Fail to read from device 0x40
+[0.844s] 1: [       OK ] I2cInterfaceTest.readFailure (62 ms)
+[0.845s] 1: [ RUN      ] I2cInterfaceTest.readIncomplete
+[0.864s] 1: 
+[0.865s] 1: GMOCK WARNING:
+[0.865s] 1: Uninteresting mock function call - returning default value.
+[0.866s] 1:     Function call: open()
+[0.866s] 1:           Returns: 0
+[0.867s] 1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.
+[0.868s] 1: [INFO] [1736181537.865203692] [i2c_interface]: Starting i2c interface
+[0.868s] 1: 
+[0.869s] 1: GMOCK WARNING:
+[0.869s] 1: Uninteresting mock function call - returning default value.
+[0.870s] 1:     Function call: setAddress('@' (64, 0x40))
+[0.870s] 1:           Returns: 0
+[0.871s] 1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.
+[0.871s] 1: 
+[0.871s] 1: GMOCK WARNING:
+[0.872s] 1: Uninteresting mock function call - returning default value.
+[0.872s] 1:     Function call: write(@0xffff68000c48 {})
+[0.873s] 1:           Returns: 0
+[0.873s] 1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.
+[0.874s] 1: [ERROR] [1736181537.867826941] [i2c_interface]: Incomplete read from device 0x40. expected 3 got 1
+[0.879s] 1: [       OK ] I2cInterfaceTest.readIncomplete (37 ms)
+[0.879s] 1: [ RUN      ] I2cInterfaceTest.write1byte
+[0.901s] 1: 
+[0.901s] 1: GMOCK WARNING:
+[0.902s] 1: Uninteresting mock function call - returning default value.
+[0.902s] 1:     Function call: open()
+[0.903s] 1:           Returns: 0
+[0.904s] 1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.
+[0.904s] 1: [INFO] [1736181537.902192367] [i2c_interface]: Starting i2c interface
+[0.905s] 1: 
+[0.905s] 1: GMOCK WARNING:
+[0.905s] 1: Uninteresting mock function call - returning default value.
+[0.906s] 1:     Function call: setAddress('@' (64, 0x40))
+[0.906s] 1:           Returns: 0
+[0.907s] 1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.
+[0.914s] 1: [       OK ] I2cInterfaceTest.write1byte (35 ms)
+[0.915s] 1: [ RUN      ] I2cInterfaceTest.writeFailure
+[0.937s] 1: 
+[0.938s] 1: GMOCK WARNING:
+[0.938s] 1: Uninteresting mock function call - returning default value.
+[0.939s] 1:     Function call: open()
+[0.939s] 1:           Returns: 0
+[0.940s] 1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.
+[0.941s] 1: [INFO] [1736181537.938099425] [i2c_interface]: Starting i2c interface
+[0.941s] 1: 
+[0.942s] 1: GMOCK WARNING:
+[0.942s] 1: Uninteresting mock function call - returning default value.
+[0.943s] 1:     Function call: setAddress('@' (64, 0x40))
+[0.943s] 1:           Returns: 0
+[0.943s] 1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.
+[0.944s] 1: [ERROR] [1736181537.940750395] [i2c_interface]: Fail to write to device 0x40
+[0.951s] 1: [       OK ] I2cInterfaceTest.writeFailure (36 ms)
+[0.951s] 1: [ RUN      ] I2cInterfaceTest.writeIncomplete
+[0.973s] 1: 
+[0.973s] 1: GMOCK WARNING:
+[0.974s] 1: Uninteresting mock function call - returning default value.
+[0.974s] 1:     Function call: open()
+[0.975s] 1:           Returns: 0
+[0.976s] 1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.
+[0.976s] 1: [INFO] [1736181537.973804226] [i2c_interface]: Starting i2c interface
+[0.977s] 1: 
+[0.977s] 1: GMOCK WARNING:
+[0.978s] 1: Uninteresting mock function call - returning default value.
+[0.978s] 1:     Function call: setAddress('@' (64, 0x40))
+[0.978s] 1:           Returns: 0
+[0.979s] 1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.
+[0.979s] 1: [ERROR] [1736181537.976374900] [i2c_interface]: Incomplete write from device 0x40
+[0.987s] 1: [       OK ] I2cInterfaceTest.writeIncomplete (35 ms)
+[0.988s] 1: [ RUN      ] I2cInterfaceTest.setAddressFailure
+[1.012s] 1: 
+[1.012s] 1: GMOCK WARNING:
+[1.013s] 1: Uninteresting mock function call - returning default value.
+[1.013s] 1:     Function call: open()
+[1.013s] 1:           Returns: 0
+[1.014s] 1: NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/main/docs/gmock_cook_book.md#knowing-when-to-expect-useoncall for details.
+[1.015s] 1: [INFO] [1736181538.012650361] [i2c_interface]: Starting i2c interface
+[1.015s] 1: [ERROR] [1736181538.015151463] [i2c_interface]: Fail to set the device at address 0x40
+[1.024s] 1: [       OK ] I2cInterfaceTest.setAddressFailure (37 ms)
+[1.025s] 1: [----------] 7 tests from I2cInterfaceTest (359 ms total)
+[1.025s] 1: 
+[1.025s] 1: [----------] Global test environment tear-down
+[1.027s] 1: [==========] 7 tests from 1 test suite ran. (360 ms total)
+[1.027s] 1: [  PASSED  ] 7 tests.
+[1.144s] 1: -- run_test.py: return code 0
+[1.145s] 1: -- run_test.py: inject classname prefix into gtest result file '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface/test_results/i2c_interface/i2c_interface_test.gtest.xml'
+[1.145s] 1: -- run_test.py: verify result file '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface/test_results/i2c_interface/i2c_interface_test.gtest.xml'
+[1.199s] 1/1 Test #1: i2c_interface_test ...............   Passed    0.95 sec
+[1.201s] 
+[1.201s] [0;32m100% tests passed[0;0m, 0 tests failed[0;0m out of 1
+[1.202s] 
+[1.202s] Label Time Summary:
+[1.202s] gmock    =   0.95 sec*proc (1 test)
+[1.203s] 
+[1.203s] Total Test time (real) =   0.96 sec
+[1.210s] Invoked command in '/home/jetpack/SEAME-Cluster-24-25/JetRacer/build/i2c_interface' returned '0': CMAKE_PREFIX_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_interface:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/teleop:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/oled_display:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ssd1306_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/speed_sensor:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/servo_motor:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/dc_motors:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/battery:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/i2c_peripheral_stress_test:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/display_routine:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/blinkers:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/abstract_driver:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera_ros:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor LD_LIBRARY_PATH=/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/custom_msgs/lib:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ssd1306_driver/lib:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/abstract_driver/lib:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/camera_ros/lib:/usr/local/lib/aarch64-linux-gnu/libcamera/:/home/jetpack/ros2_v4l2/install/zstd_image_transport/lib:/home/jetpack/ros2_v4l2/install/v4l2_camera/lib:/home/jetpack/ros2_v4l2/install/theora_image_transport/lib:/home/jetpack/ros2_v4l2/install/compressed_image_transport/lib:/home/jetpack/ros2_v4l2/install/compressed_depth_image_transport/lib:/home/jetpack/ros2_v4l2/install/image_transport/lib:/home/jetpack/ros2_v4l2/install/cv_bridge/lib:/home/jetpack/ros2_v4l2/install/camera_info_manager/lib:/home/jetpack/ros2_v4l2/install/camera_calibration_parsers/lib:/usr/local/lib/aarch64-linux-gnu:/usr/local/lib/aarch64-linux-gnu:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/pca9685_driver/lib:/usr/local/lib/aarch64-linux-gnu:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/ina219_driver/lib:/usr/local/lib/aarch64-linux-gnu:/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/can_interface/lib:/usr/local/lib/aarch64-linux-gnu:/usr/local/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/usr/local/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib/aarch64-linux-gnu:/usr/local/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/usr/local/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/usr/local/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/usr/local/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib:/usr/local/lib/aarch64-linux-gnu /usr/bin/ctest -C Release -D ExperimentalTest --no-compress-output -V --force-new-ctest-process tests
