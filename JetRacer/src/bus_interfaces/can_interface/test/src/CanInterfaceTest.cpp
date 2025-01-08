@@ -62,6 +62,31 @@ TEST_F(CanInterfaceTest, readFailure)
 }
 
 // WRITE
+TEST_F(CanInterfaceTest, writeSuccess)
+{
+    EXPECT_CALL(*mock_driver_, sendMessage)
+        .WillOnce(
+            [](const sockcanpp::CanMessage& msg, bool force_extended)
+            {
+                EXPECT_EQ(msg.getCanId(), 0x10);
+                EXPECT_EQ(msg.getFrameData().size(), 3);
+                EXPECT_EQ(msg.getFrameData().at(0), 'h');
+                EXPECT_EQ(msg.getFrameData().at(2), 'y');
+
+                return 3;
+            });
+
+    auto request = std::make_shared<custom_msgs::srv::CanService::Request>();
+    request->read_request = false;
+    request->can_id = 0x10;
+    request->write_data.insert(request->write_data.end(), {'h', 'e', 'y'});
+
+    auto future = can_client_->async_send_request(request);
+    auto response = future.get();
+
+    EXPECT_EQ(response->success, true);
+}
+
 TEST_F(CanInterfaceTest, writeFailure)
 {
     EXPECT_CALL(*mock_driver_, sendMessage)

@@ -1,5 +1,6 @@
 #pragma once
 
+#include "APCA9685Driver.hpp"
 #include "PCA9685Driver.hpp"
 #include <geometry_msgs/msg/twist.hpp>
 #include <rclcpp/client.hpp>
@@ -14,7 +15,7 @@
 class ServoNode : public rclcpp::Node
 {
     public:
-        ServoNode();
+        ServoNode(std::shared_ptr<APCA9685Driver> mock_pca_driver = nullptr);
         ~ServoNode();
 
         uint8_t initPCA9685();
@@ -22,7 +23,7 @@ class ServoNode : public rclcpp::Node
     private:
         rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr
             direction_subscriber_;
-        std::shared_ptr<PCA9685Driver> pca9685_;
+        std::shared_ptr<APCA9685Driver> pca_driver_;
 
         void writeAngle(const geometry_msgs::msg::Twist::SharedPtr twist);
 

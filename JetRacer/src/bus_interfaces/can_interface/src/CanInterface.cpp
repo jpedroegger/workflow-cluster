@@ -71,7 +71,7 @@ void CanInterface::handleCanRequest(
         frame.can_dlc = request->write_data.size();
         auto data = request->write_data;
         for (size_t i = 0; i < frame.can_dlc; i++)
-            frame.data[i] = data[0];
+            frame.data[i] = data[i];
 
         try
         {
