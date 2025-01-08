@@ -62,7 +62,6 @@ INSTANTIATE_TEST_CASE_P(
         double cmd_vel = std::get<0>(info.param);
         uint8_t angle = std::get<1>(info.param);
         std::stringstream ss;
-        // Remove decimal point and use 'n' for negative values
         ss << "CmdVel_" << (cmd_vel < 0 ? "n" : "")
            << static_cast<int>(std::abs(cmd_vel * 10)) << "_Angle_"
            << static_cast<int>(angle);

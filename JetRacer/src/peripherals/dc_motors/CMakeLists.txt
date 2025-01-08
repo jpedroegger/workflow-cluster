@@ -38,6 +38,32 @@ add_executable(${exec_name} ${srcs})
 # Link the PCA9685Driver library to the executable
 target_link_libraries(${exec_name} PCA9685Driver)  # Link to PCA9685Driver
 
+# Gtest
+if(BUILD_TESTING)
+  find_package(ament_cmake_gmock REQUIRED)
+
+  # Create test executable
+  ament_add_gmock(${PROJECT_NAME}_test 
+	  test/src/DcMotorsNodeTest.cpp
+	  src/DcMotorsNode.cpp
+  )
+  
+  target_include_directories(${PROJECT_NAME}_test PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:include>
+	test/include
+  )
+  
+  # Add dependencies to the test target
+  ament_target_dependencies(${PROJECT_NAME}_test 
+    rclcpp 
+    custom_msgs
+	geometry_msgs
+	pca9685_driver
+  )
+  target_link_libraries(${PROJECT_NAME}_test PCA9685Driver)
+endif()
+
 ament_target_dependencies(${exec_name} rclcpp pca9685_driver geometry_msgs custom_msgs)
 
 # Install target
