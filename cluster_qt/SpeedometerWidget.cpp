@@ -126,3 +126,8 @@ void SpeedometerWidget::updateSpeed() {
 }
 
 SpeedometerWidget::~SpeedometerWidget() {}
+
+int     SpeedometerWidget::getCurrentSpeed(void)
+{
+    return currentSpeed;
+}

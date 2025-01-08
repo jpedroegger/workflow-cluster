@@ -39,12 +39,12 @@ private:
     }
 
 private slots:
-    void testSwipeRight();
-    void testSwipeLeft();
-    void testSwipeRightLastPage();
-    void testSwipeLeftFirstPage();
-    void testNoSwipeForShortDistance();
-    void testNoSwipeForLongVerticalDistance();
+    void    testSwipeRight();
+    void    testSwipeLeft();
+    void    testSwipeRightLastPage();
+    void    testSwipeLeftFirstPage();
+    void    testNoSwipeForShortDistance();
+    void    testNoSwipeForLongVerticalDistance();
 };
 
 EventManagerTest::EventManagerTest() {}

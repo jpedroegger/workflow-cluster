@@ -34,13 +34,13 @@ class EventManager : public QWidget
                      QStackedWidget* stackedWidget);
 
         QStackedWidget*  getStackedWidget(void) const;
+        void processKeyStates();
 
     protected:
         bool    eventFilter(QObject* obj, QEvent* event) override;
         bool    swipe(QPointF releasePosition);
 
     private slots:
-        void processKeyStates();
 };
 
 #endif // EVENTMANAGER_H

@@ -17,8 +17,11 @@ class ArrowSymbolWidget : public QWidget
         void setDrawRightCurve(bool enabled);
         void changeDirection(int movement_key);
 
+        bool    getM_greenL(void);
+        bool    getM_greenR(void);
+        bool    getM_greenV(void);
+
     protected:
-        ArrowSymbolWidget();
         void paintEvent(QPaintEvent* event) override;
 
     private:

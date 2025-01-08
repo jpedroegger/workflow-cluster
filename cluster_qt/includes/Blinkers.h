@@ -15,6 +15,7 @@ public:
     ~Blinkers();
 
     void    turnOnBlinkers(int blinker_key);
+    bool    getBlinking(void);
 
 private slots:
     void toggleImage(); // Slot to toggle the image
