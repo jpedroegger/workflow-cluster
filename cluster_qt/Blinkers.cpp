@@ -63,19 +63,21 @@ void Blinkers::toggleImage()
     isImage1Visible = !isImage1Visible;
 }
 
-void    Blinkers::turnOnBlinkers(int  blinker_key)
+bool    Blinkers::turnOnBlinkers(int  blinker_key)
 {
     if (!blinking) {
         toggleTimer = new QTimer(this);
         connect(toggleTimer, &QTimer::timeout, this, &Blinkers::toggleImage);
         toggleTimer->start(500);
         blinking = true;
+        return blinking;
     } else {
         toggleTimer->stop();
         if (isImage1Visible)
             isImage1Visible = false;
         imageLabel->setPixmap(image1);
         blinking = false;
+        return blinking;
     }
 }
 
@@ -84,6 +86,15 @@ bool    Blinkers::getBlinking(void)
     return blinking;
 }
 
+QTimer* Blinkers::getToggleTimer(void)
+{
+    return toggleTimer;
+}
+
+bool    Blinkers::getIsImage1Visible(void)
+{
+    return isImage1Visible;
+}
 
 
 
