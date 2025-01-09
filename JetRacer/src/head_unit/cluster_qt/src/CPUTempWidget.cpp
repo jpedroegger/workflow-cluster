@@ -67,7 +67,7 @@ void CPUTempWidget::drawCentralNumber(QPainter& painter, int centerX, int center
     int kphY = y + textRect.height() - 20; 
 
     painter.drawText(kphX, kphY, "ºC");
-    QPixmap image("assets/icons/cpu.png");
+    QPixmap image("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/cpu.png");
     if (!image.isNull()) {
         int imgWidth = 25; 
         int imgHeight = 25;

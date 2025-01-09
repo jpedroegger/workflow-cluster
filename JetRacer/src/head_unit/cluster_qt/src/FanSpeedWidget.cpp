@@ -67,7 +67,7 @@ void FanSpeedWidget::drawCentralNumber(QPainter& painter, int centerX, int cente
     int kphY = y + textRect.height() - 20; 
 
     painter.drawText(kphX, kphY, "RPM");
-    QPixmap image("assets/icons/fan_white.png");
+    QPixmap image("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/fan_white.png");
     if (!image.isNull()) {
         int imgWidth = 25; 
         int imgHeight = 25;
