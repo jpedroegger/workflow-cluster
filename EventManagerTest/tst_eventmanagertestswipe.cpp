@@ -8,13 +8,13 @@ class MockSpeedometerWidget : public SpeedometerWidget {};
 class MockBlinkers : public Blinkers {};
 class MockStackedWidget : public QStackedWidget {};
 
-class EventManagerTest : public QObject
+class EventManagerTestSwipe : public QObject
 {
     Q_OBJECT
 
 public:
-    EventManagerTest();
-    ~EventManagerTest();
+    EventManagerTestSwipe();
+    ~EventManagerTestSwipe();
 
 private:
     EventManager* createEventManager(int initialIndex = 0)
@@ -47,11 +47,11 @@ private slots:
     void    testNoSwipeForLongVerticalDistance();
 };
 
-EventManagerTest::EventManagerTest() {}
+EventManagerTestSwipe::EventManagerTestSwipe() {}
 
-EventManagerTest::~EventManagerTest() {}
+EventManagerTestSwipe::~EventManagerTestSwipe() {}
 
-void EventManagerTest::testSwipeRight()
+void EventManagerTestSwipe::testSwipeRight()
 {
     auto eventManager = createEventManager(0);
     auto stackedWidget = eventManager->getStackedWidget();
@@ -69,7 +69,7 @@ void EventManagerTest::testSwipeRight()
     delete eventManager;
 }
 
-void EventManagerTest::testSwipeLeft()
+void EventManagerTestSwipe::testSwipeLeft()
 {
     auto eventManager = createEventManager(1);
     auto stackedWidget = eventManager->getStackedWidget();
@@ -87,7 +87,7 @@ void EventManagerTest::testSwipeLeft()
     delete eventManager;
 }
 
-void EventManagerTest::testSwipeRightLastPage()
+void EventManagerTestSwipe::testSwipeRightLastPage()
 {
     auto eventManager = createEventManager(1);
     auto stackedWidget = eventManager->getStackedWidget();
@@ -104,7 +104,7 @@ void EventManagerTest::testSwipeRightLastPage()
     delete eventManager;
 }
 
-void EventManagerTest::testSwipeLeftFirstPage()
+void EventManagerTestSwipe::testSwipeLeftFirstPage()
 {
     auto eventManager = createEventManager(0);
     auto stackedWidget = eventManager->getStackedWidget();
@@ -121,7 +121,7 @@ void EventManagerTest::testSwipeLeftFirstPage()
     delete eventManager;
 }
 
-void EventManagerTest::testNoSwipeForShortDistance()
+void EventManagerTestSwipe::testNoSwipeForShortDistance()
 {
     auto eventManager = createEventManager(0);
     auto stackedWidget = eventManager->getStackedWidget();
@@ -138,7 +138,7 @@ void EventManagerTest::testNoSwipeForShortDistance()
     delete eventManager;
 }
 
-void EventManagerTest::testNoSwipeForLongVerticalDistance()
+void EventManagerTestSwipe::testNoSwipeForLongVerticalDistance()
 {
     auto eventManager = createEventManager(0);
     auto stackedWidget = eventManager->getStackedWidget();
@@ -155,7 +155,7 @@ void EventManagerTest::testNoSwipeForLongVerticalDistance()
     delete eventManager;
 }
 
-QTEST_MAIN(EventManagerTest)
+QTEST_MAIN(EventManagerTestSwipe)
 
-#include "tst_eventmanagertest.moc"
+#include "tst_eventmanagertestswipe.moc"
 
