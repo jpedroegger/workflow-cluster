@@ -1,4 +1,4 @@
-#include "includes/CPUTempWidget.h"
+#include "../include/CPUTempWidget.h"
 
 CPUTempWidget::CPUTempWidget(QWidget* parent)
     : QWidget(parent), currentSpeed(0)

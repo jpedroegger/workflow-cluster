@@ -1,4 +1,4 @@
-#include "Cluster.h"
+#include "../include/Cluster.h"
 
 int main(int argc, char* argv[])
 {

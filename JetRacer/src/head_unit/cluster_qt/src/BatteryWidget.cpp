@@ -1,4 +1,4 @@
-#include "includes/BatteryWidget.h"
+#include "../include/BatteryWidget.h"
 
 BatteryWidget::BatteryWidget(QWidget* parent)
     : QWidget(parent), currentLevel(100)

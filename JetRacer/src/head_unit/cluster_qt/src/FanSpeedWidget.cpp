@@ -1,4 +1,4 @@
-#include "includes/FanSpeedWidget.h"
+#include "../include/FanSpeedWidget.h"
 
 FanSpeedWidget::FanSpeedWidget(QWidget* parent)
     : QWidget(parent), currentSpeed(0)

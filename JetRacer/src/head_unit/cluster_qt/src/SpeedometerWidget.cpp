@@ -1,4 +1,4 @@
-#include "includes/SpeedometerWidget.h"
+#include "../include/SpeedometerWidget.h"
 
 SpeedometerWidget::SpeedometerWidget(QWidget* parent)
     : QWidget(parent), currentSpeed(0)

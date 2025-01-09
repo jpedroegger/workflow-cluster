@@ -1,4 +1,4 @@
-#include "includes/EventManager.h"
+#include "../include/EventManager.h"
 
 EventManager::EventManager(ArrowSymbolWidget* arrow,
                            SpeedometerWidget* py_speed,
@@ -72,4 +72,7 @@ void EventManager::handleGestureEvent(QGestureEvent* gestureEvent) {
             stackedWidget->setCurrentIndex(prevIndex);
         }
     }
+}
+
+EventManager::~EventManager() {
 }

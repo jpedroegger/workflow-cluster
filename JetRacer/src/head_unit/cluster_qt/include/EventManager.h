@@ -30,6 +30,7 @@ class EventManager : public QWidget
                      Blinkers* left_blinker,
                      Blinkers* right_blinker,
                      QStackedWidget* stackedWidget);
+        virtual ~EventManager();
 
     protected:
         bool eventFilter(QObject* obj, QEvent* event) override;

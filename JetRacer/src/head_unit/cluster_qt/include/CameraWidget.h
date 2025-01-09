@@ -13,7 +13,7 @@ class CameraWidget : public QWidget {
 
 public:
     explicit CameraWidget(QWidget *parent = nullptr);
-    ~CameraWidget();
+    virtual ~CameraWidget();
 
 private:
     QCamera *camera;                       // Camera object

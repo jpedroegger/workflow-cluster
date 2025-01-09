@@ -1,4 +1,4 @@
-#include "includes/TopBar.h"
+#include "../include/TopBar.h"
 
 TopBar::TopBar(QWidget* parent) : QWidget(parent)
 {
@@ -9,23 +9,23 @@ TopBar::TopBar(QWidget* parent) : QWidget(parent)
 
     // Create default and alternate images
     QStringList defaultImagePaths = {
-        "assets/icons/wheel.png",
-        "assets/icons/brake.png",
-        "assets/icons/abs.png", // Replace with your actual paths
-        "assets/icons/med.png",
-        "assets/icons/max.png",
-        "assets/icons/fog.png",
-        "assets/icons/belt.png"
+        "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/wheel.png",
+        "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/brake.png",
+        "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/abs.png", // Replace with your actual paths
+        "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/med.png",
+        "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/max.png",
+        "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/fog.png",
+        "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/belt.png"
     };
 
     QStringList altImagePaths = {
-        "assets/icons/wheel_on.png",
-        "assets/icons/brake_on.png",
-        "assets/icons/abs_on.png", // Replace with your actual paths
-        "assets/icons/med_on.png",
-        "assets/icons/max_on.png",
-        "assets/icons/fog_on.png",
-        "assets/icons/belt_on.png"
+        "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/wheel_on.png",
+        "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/brake_on.png",
+        "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/abs_on.png", // Replace with your actual paths
+        "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/med_on.png",
+        "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/max_on.png",
+        "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/fog_on.png",
+        "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/belt_on.png"
     };
 
     // Load images into QPixmaps

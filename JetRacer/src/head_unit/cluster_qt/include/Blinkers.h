@@ -12,7 +12,7 @@ class Blinkers : public QWidget
 
 public:
     explicit Blinkers(QWidget* parent = nullptr, std::string dir = "left", std::string mode = "off");
-    ~Blinkers();
+    virtual ~Blinkers();
 
     void    turnOnBlinkers(int blinker_key);
 
