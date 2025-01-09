@@ -87,10 +87,11 @@ int main(int argc, char* argv[])
     firstLayout->setAlignment(smallerLayout, Qt::AlignTop | Qt::AlignLeft);
 
     mainWindow->setLayout(firstLayout);
-    mainWindow->resize(1468, 768);
+    mainWindow->resize(1200, 200);
+    //mainWindow->resize(1468, 768);
     mainWindow->setStyleSheet("background-color: #0D2126");
     mainWindow->grabGesture(Qt::SwipeGesture);
-    mainWindow->show();
+    mainWindow->showFullScreen();
 
     QTimer::singleShot(2000, [&]() { topBar->setImageState(0, true); });
     QTimer::singleShot(3000, [&]() { topBar->setImageState(1, true); });
