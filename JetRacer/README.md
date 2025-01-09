@@ -3,6 +3,7 @@
 The JetRacer project is organized into a modular structure, where each package represents a ROS2 node encapsulating a specific aspect of the system. The architecture is divided into three main layers, each with its own responsibility:
 
 - **Bus Interfaces**: Directly interact with hardware via different protocols (CAN, I2C).
+- **Drivers**: Defines device specific operations.
 - **Peripherals**: Communicate with the drivers and manage higher-level device functionality.
 - **Head Unit**: Coordinates the peripherals and handles higher-level logic.
 
@@ -54,18 +55,6 @@ Peripherals interact with drivers to manage the higher-level functionality of ea
 The head unit represents the higher-level logic of the system, coordinating the operation of peripherals and providing user interaction functionality (e.g., infotainment system, control coordination).
 - **Responsibility**: Coordinate and manage the operation of peripherals.
 - **ROS2 Mechanism**: Provide high-level functionalities and user interactions through nodes that communicate with peripheral nodes.
-
-
-## Modularity and Separation of Concerns
-
-This structure ensures that:
-
-- **Bus Interfaces**: Abstraction of hardware communication for flexibility and scalability.
-- **Drivers**: Encapsulation of device-specific logic into reusable libraries, simplifying peripheral implementation and promoting code reuse.
-- **Peripherals**: High-level logic tied to devices, ensuring clear dependency on drivers and bus interfaces.
-- **Head Unit**: Higher-level coordination and user interaction, ensuring easy maintenance and extendability.
-
-By maintaining a clear separation of concerns, the architecture enhances system flexibility, modularity, and ease of maintenance.
 
 ## Build Instructions
 
