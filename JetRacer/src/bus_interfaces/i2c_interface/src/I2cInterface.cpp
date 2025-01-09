@@ -1,12 +1,8 @@
 #include "I2cInterface.hpp"
 #include "I2cDriver.hpp"
-#include "custom_msgs/srv/i2c_service.hpp"
 #include <fcntl.h>
 #include <fmt/core.h>
-#include <linux/i2c-dev.h>
 #include <string>
-#include <sys/ioctl.h>
-#include <unistd.h>
 
 I2cInterface::I2cInterface(std::shared_ptr<II2cDriver> i2c_dev,
                            const std::string& service_name)
@@ -16,7 +12,6 @@ I2cInterface::I2cInterface(std::shared_ptr<II2cDriver> i2c_dev,
         i2c_driver_ = i2c_dev;
     else
         i2c_driver_ = std::make_shared<I2cDriver>(1);
-    // Set up service with Reliable QoS
     rclcpp::QoS qos(rclcpp::KeepLast(60));
     qos.reliable();
     qos.durability_volatile();
@@ -32,7 +27,7 @@ I2cInterface::I2cInterface(std::shared_ptr<II2cDriver> i2c_dev,
 }
 
 /**
- * @brief Open the /dev/i2c-1. this operation will fail if the user is not in
+ * @brief Open the /dev/i2c. this operation will fail if the user is not in
  * the i2c group ("sudo usermod -aG i2c $USER")
  */
 void I2cInterface::init_()
@@ -51,12 +46,9 @@ void I2cInterface::init_()
 /**
  * @brief function beeing called upon a request to the i2c service.
  *
- * the struct of the i2c service allows writting and reading operation. To see
+ * the struct of the i2c service allows writting and reading operations. To see
  * the service definition do "ros2 interface show custom_msgs/srv/I2cService" or
  * see JetRacer/src/bus_interfaces/custom_msgs/srv/I2cService.
- *
- * this node essentially write to the bus using the information passed in the
- * request and construct an appropriated response
  *
  * @param request
  * @param response

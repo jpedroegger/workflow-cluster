@@ -1,4 +1,5 @@
 #include "ServoNode.hpp"
+#include <PCA9685Driver.hpp>
 #include <functional>
 #include <rclcpp/client.hpp>
 #include <rclcpp/logger.hpp>
@@ -6,12 +7,8 @@
 
 using namespace std::chrono_literals;
 
-ServoNode::ServoNode(std::shared_ptr<APCA9685Driver> mock_pca_driver)
-    : Node("servo_node")
+ServoNode::ServoNode() : Node("servo_node")
 {
-    if (mock_pca_driver)
-        pca_driver_ = mock_pca_driver;
-
     direction_subscriber_ =
         this->create_subscription<geometry_msgs::msg::Twist>(
             "cmd_vel", 10,
@@ -20,17 +17,23 @@ ServoNode::ServoNode(std::shared_ptr<APCA9685Driver> mock_pca_driver)
 
 ServoNode::~ServoNode() {}
 
-uint8_t ServoNode::initPCA9685()
+uint8_t ServoNode::initPCA9685(std::shared_ptr<APCA9685Driver> mock_pca_driver)
 {
-    try
+    if (mock_pca_driver)
+        pca_driver_ = mock_pca_driver;
+    else
     {
-        pca_driver_ = std::make_shared<PCA9685Driver>(shared_from_this(),
-                                                      PCA_SERVO_ADDRESS);
-    }
-    catch (const std::exception& e)
-    {
-        RCLCPP_ERROR(this->get_logger(), "%s", e.what());
-        return EXIT_FAILURE;
+
+        try
+        {
+            pca_driver_ = std::make_shared<PCA9685Driver>(shared_from_this(),
+                                                          PCA_SERVO_ADDRESS);
+        }
+        catch (const std::exception& e)
+        {
+            RCLCPP_ERROR(this->get_logger(), "%s", e.what());
+            return EXIT_FAILURE;
+        }
     }
     pca_driver_->setPWMFrequency(50);
     return EXIT_SUCCESS;

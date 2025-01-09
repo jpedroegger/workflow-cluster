@@ -2,6 +2,12 @@
 
 #include <rclcpp/rclcpp.hpp>
 
+/**
+ * @class APCA9685Driver
+ * @brief Anstract interface defining interactions with the pca9685 chip.
+ *
+ *
+ */
 class APCA9685Driver
 {
     public:

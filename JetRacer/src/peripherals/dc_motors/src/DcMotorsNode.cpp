@@ -7,12 +7,8 @@
 
 using namespace std::chrono_literals;
 
-DcMotorsNode::DcMotorsNode(std::shared_ptr<APCA9685Driver> mock_driver)
-    : Node("dc_motors_node")
+DcMotorsNode::DcMotorsNode() : Node("dc_motors_node")
 {
-    if (mock_driver)
-        pca_driver_ = mock_driver;
-
     twist_subscriber_ = this->create_subscription<geometry_msgs::msg::Twist>(
         "cmd_vel", 10,
         std::bind(&DcMotorsNode::writeSpeed, this, std::placeholders::_1));
@@ -20,17 +16,22 @@ DcMotorsNode::DcMotorsNode(std::shared_ptr<APCA9685Driver> mock_driver)
 
 DcMotorsNode::~DcMotorsNode() {}
 
-uint8_t DcMotorsNode::initPCA9685()
+uint8_t DcMotorsNode::initPCA9685(std::shared_ptr<APCA9685Driver> mock_driver)
 {
-    try
+    if (mock_driver)
+        pca_driver_ = mock_driver;
+    else
     {
-        pca_driver_ = std::make_shared<PCA9685Driver>(shared_from_this(),
-                                                      PCA_MOTORS_ADDRESS);
-    }
-    catch (const std::exception& e)
-    {
-        RCLCPP_ERROR(this->get_logger(), "%s", e.what());
-        return EXIT_FAILURE;
+        try
+        {
+            pca_driver_ = std::make_shared<PCA9685Driver>(shared_from_this(),
+                                                          PCA_MOTORS_ADDRESS);
+        }
+        catch (const std::exception& e)
+        {
+            RCLCPP_ERROR(this->get_logger(), "%s", e.what());
+            return EXIT_FAILURE;
+        }
     }
 
     pca_driver_->setPWMFrequency(1600);

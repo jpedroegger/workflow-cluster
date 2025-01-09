@@ -1,12 +1,16 @@
 #pragma once
 
-#include "I2cDriver.hpp"
-#include "custom_msgs/srv/i2c_service.hpp"
+#include "II2cDriver.hpp"
 #include <custom_msgs/srv/i2c_service.hpp>
 #include <memory>
 #include <rclcpp/rclcpp.hpp>
 #include <rclcpp/service.hpp>
 
+/**
+ * @class I2cInterface
+ * @brief Handles read/write on the i2c bus via the I2C driver.
+ *
+ */
 class I2cInterface : public rclcpp::Node
 {
     public:

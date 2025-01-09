@@ -7,6 +7,11 @@
 
 using sockcanpp::CanDriver;
 
+/**
+ * @class CanInterface
+ * @brief Handles read and write operation onto the can bus via the can driver.
+ *
+ */
 class CanInterface : public rclcpp::Node
 {
     public:

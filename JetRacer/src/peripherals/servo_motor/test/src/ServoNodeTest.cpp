@@ -1,4 +1,5 @@
 #include "ServoNodeTest.hpp"
+#include "PCA9685Driver.hpp"
 
 #define ANGLE_TO_PW(x)                                                         \
     MIN_COUNT + (static_cast<float>(x) * (MAX_COUNT - MIN_COUNT)) / 180;
@@ -8,7 +9,8 @@ void ServoNodeTest::SetUp()
     rclcpp::init(0, nullptr);
 
     mock_driver_ = std::make_shared<MockPCA9685Driver>();
-    test_node_ = std::make_shared<ServoNode>(mock_driver_);
+    test_node_ = std::make_shared<ServoNode>();
+    test_node_->initPCA9685(mock_driver_);
     cmd_vel_pub_ =
         test_node_->create_publisher<geometry_msgs::msg::Twist>("cmd_vel", 10);
     executor_ = std::make_unique<rclcpp::executors::SingleThreadedExecutor>();

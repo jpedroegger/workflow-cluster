@@ -3,6 +3,11 @@
 #include <custom_msgs/srv/i2c_service.hpp>
 #include <rclcpp/rclcpp.hpp>
 
+/**
+ * @class ADriver
+ * @brief Abstract interface defining a contract for drivers using i2c bus
+ *
+ */
 class ADriver
 {
     public:

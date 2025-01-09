@@ -2,6 +2,14 @@
 #include "CanDriver.hpp"
 #include "ICanDriver.hpp"
 
+/**
+ * @class RCanDriver
+ * @brief Concrete implementation of the abstract interface.
+ *
+ * This class essentially wraps the call to sockcancpp::CanDriver methods
+ * (adaptor).
+ *
+ */
 class RCanDriver : public ICanDriver
 {
     private:

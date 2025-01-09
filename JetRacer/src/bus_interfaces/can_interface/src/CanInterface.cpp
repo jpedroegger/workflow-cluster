@@ -19,7 +19,6 @@ CanInterface::CanInterface(std::shared_ptr<ICanDriver> can_driver)
     if (can_driver)
     {
         can_driver_ = can_driver;
-        RCLCPP_INFO(this->get_logger(), "Mock driver received!");
     }
     else
     {
