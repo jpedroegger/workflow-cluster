@@ -129,8 +129,8 @@ int main(int argc, char* argv[])
     Blinkers*               rightB = new Blinkers(mainWindow, "right", "off");
     SpeedometerWidget*      speedometer = new SpeedometerWidget(mainWindow);
     BatteryWidget*          battery = new BatteryWidget(mainWindow);
-    FanSpeedWidget*         fanspeed = new FanSpeedWidget(mainPage);
-    CPUTempWidget*          cputemp = new CPUTempWidget(mainPage);
+    FanSpeedWidget*         fanspeed = new FanSpeedWidget(mainWindow);
+    CPUTempWidget*          cputemp = new CPUTempWidget(mainWindow);
     ArrowSymbolWidget*      arrowSymbol = new ArrowSymbolWidget(mainWindow, "zero");
     BatteryAndSpeedWidget*  bas = new BatteryAndSpeedWidget(mainWindow);
 

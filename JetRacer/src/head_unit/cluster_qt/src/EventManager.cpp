@@ -2,10 +2,11 @@
 
 EventManager::EventManager(ArrowSymbolWidget* arrow,
                            SpeedometerWidget* py_speed,
+                           BatteryAndSpeedWidget* py_batspeed,
                            Blinkers* left_blinker,
                            Blinkers* right_blinker,
                            QStackedWidget* stackedWidget)
-    : arrows(arrow), py_speed(py_speed), left_blinker(left_blinker), right_blinker(right_blinker), stackedWidget(stackedWidget)
+    : arrows(arrow), py_speed(py_speed), py_batspeed(py_batspeed), left_blinker(left_blinker), right_blinker(right_blinker), stackedWidget(stackedWidget)
 {
     updateTimer = new QTimer(this);
     connect(updateTimer, &QTimer::timeout, this, &EventManager::processKeyStates);
@@ -42,17 +43,23 @@ void EventManager::processKeyStates()
             case Qt::Key_Left:
             case Qt::Key_Right:
             case Qt::Key_Up:
-                arrows->changeDirection(key);
+                if (arrows)
+                    arrows->changeDirection(key);
                 break;
             case Qt::Key_Space:
             case Qt::Key_Down:
-                py_speed->accelerate(key);
+                if (py_speed)
+                    py_speed->accelerate(key);
+                if (py_batspeed)
+                    py_batspeed->accelerate(key);
                 break;
             case Qt::Key_L:
-                left_blinker->turnOnBlinkers(key);
+                if (left_blinker)
+                    left_blinker->turnOnBlinkers(key);
                 break;
             case Qt::Key_R:
-                right_blinker->turnOnBlinkers(key);
+                if (right_blinker)
+                    right_blinker->turnOnBlinkers(key);
                 break;
             default:
                 break;

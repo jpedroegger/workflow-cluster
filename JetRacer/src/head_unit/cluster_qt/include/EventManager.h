@@ -4,6 +4,7 @@
 #include <QWidget>
 #include "ArrowSymbolWidget.h"
 #include "SpeedometerWidget.h"
+#include "BatteryAndSpeedWidget.h"
 #include "Blinkers.h"
 #include <QSwipeGesture>
 #include <QStackedWidget>
@@ -18,6 +19,7 @@ class EventManager : public QWidget
     private:
         ArrowSymbolWidget* arrows;
         SpeedometerWidget* py_speed;
+        BatteryAndSpeedWidget* py_batspeed;
         Blinkers* left_blinker;
         Blinkers* right_blinker;
         QSet<int> pressedKeys;
@@ -27,6 +29,7 @@ class EventManager : public QWidget
     public:
         EventManager(ArrowSymbolWidget* arrow,
                      SpeedometerWidget* py_speed,
+                     BatteryAndSpeedWidget* py_batspeed,
                      Blinkers* left_blinker,
                      Blinkers* right_blinker,
                      QStackedWidget* stackedWidget);
