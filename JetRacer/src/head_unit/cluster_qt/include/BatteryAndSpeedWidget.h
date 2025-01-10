@@ -10,9 +10,9 @@ class BatteryAndSpeedWidget : public QWidget {
     public:
         BatteryAndSpeedWidget(QWidget* parent = nullptr);
         ~BatteryAndSpeedWidget();
+        void accelerate(int forward_key);
     protected:
         void paintEvent(QPaintEvent* event) override;
-        void accelerate(int forward_key);
 
     private:
         int currentLevel;
