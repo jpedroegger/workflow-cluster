@@ -138,7 +138,7 @@ int main(int argc, char* argv[])
     QVBoxLayout* mode1Layout = new QVBoxLayout();
     QHBoxLayout* mode1ContentLayout = new QHBoxLayout();
 
-    EventManager eventManager(arrowSymbol, speedometer, leftB, rightB, stackedWidget);
+    EventManager eventManager(arrowSymbol, speedometer, bas, leftB, rightB, stackedWidget);
     app.installEventFilter(&eventManager);
 
     mode1ContentLayout->addWidget(leftB, 1);

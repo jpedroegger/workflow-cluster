@@ -12,6 +12,7 @@ class BatteryAndSpeedWidget : public QWidget {
         ~BatteryAndSpeedWidget();
     protected:
         void paintEvent(QPaintEvent* event) override;
+        void accelerate(int forward_key);
 
     private:
         int currentLevel;
@@ -21,7 +22,6 @@ class BatteryAndSpeedWidget : public QWidget {
         void drawBatteryNumber(QPainter& painter, int centerX, int centerY);
         QColor calculateBarColor(int value);
         void drawBars(QPainter& painter, int centerX, int centerY, int radius, double startAngle, double endAngle, int Level);
-        void accelerate(int forward_key);
 
     private slots:
         void updateLevel();
