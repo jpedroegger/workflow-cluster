@@ -29,6 +29,7 @@ set(HEADERS
     include/CPUTempWidget.h
     include/FanSpeedWidget.h
     include/BatteryWidget.h
+    include/BatteryAndSpeedWidget.h
     include/TopBar.h
     include/Blinkers.h
     include/EventManager.h
@@ -43,6 +44,7 @@ set(SOURCES
     src/CPUTempWidget.cpp
     src/FanSpeedWidget.cpp
     src/BatteryWidget.cpp
+    src/BatteryAndSpeedWidget.cpp
     src/TopBar.cpp
     src/Blinkers.cpp
     src/EventManager.cpp

@@ -13,6 +13,7 @@
 #include "FanSpeedWidget.h"
 #include "CPUTempWidget.h"
 #include "BatteryWidget.h"
+#include "BatteryAndSpeedWidget.h"
 #include "TopBar.h"
 #include "Blinkers.h"
 #include "EventManager.h"
