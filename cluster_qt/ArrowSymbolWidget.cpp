@@ -163,3 +163,18 @@ void ArrowSymbolWidget::changeDirection(int movement_key)
         }
         update();
 }
+
+bool    ArrowSymbolWidget::getM_greenL(void)
+{
+    return m_greenL;
+}
+
+bool    ArrowSymbolWidget::getM_greenR(void)
+{
+    return m_greenR;
+}
+
+bool    ArrowSymbolWidget::getM_greenV(void)
+{
+    return m_greenV;
+}

@@ -12,7 +12,8 @@ class SpeedometerWidget : public QWidget {
         SpeedometerWidget(QWidget* parent = nullptr);
         ~SpeedometerWidget();
 
-        void accelerate(int forward_key);
+        void    accelerate(int forward_key);
+        int     getCurrentSpeed(void);
 
     protected:
         void paintEvent(QPaintEvent* event) override;
@@ -27,4 +28,4 @@ class SpeedometerWidget : public QWidget {
         void updateSpeed();
 };
 
-#endif // SPEEDOMETERWIDGET_H
+#endif

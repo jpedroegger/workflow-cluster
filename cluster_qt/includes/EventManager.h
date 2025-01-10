@@ -23,6 +23,8 @@ class EventManager : public QWidget
         QSet<int> pressedKeys;
         QTimer* updateTimer;   // Used to check if a key is still being called
         QStackedWidget* stackedWidget;
+        QPointF mousePosition;
+
 
     public:
         EventManager(ArrowSymbolWidget* arrow,
@@ -31,12 +33,14 @@ class EventManager : public QWidget
                      Blinkers* right_blinker,
                      QStackedWidget* stackedWidget);
 
+        QStackedWidget*  getStackedWidget(void) const;
+        void processKeyStates();
+
     protected:
-        bool eventFilter(QObject* obj, QEvent* event) override;
+        bool    eventFilter(QObject* obj, QEvent* event) override;
+        bool    swipe(QPointF releasePosition);
 
     private slots:
-        void handleGestureEvent(QGestureEvent* gestureEvent);
-        void processKeyStates();
 };
 
 #endif // EVENTMANAGER_H
