@@ -64,17 +64,19 @@ TopBar::TopBar(QWidget* parent) : QWidget(parent)
 
 TopBar::~TopBar() {}
 
-void TopBar::setImageState(int index, bool state)
+bool    TopBar::setImageState(int index, bool state)
 {
     if (index < 0 || index >= imageLabels.size()) {
         qWarning() << "Invalid index:" << index;
-        return;
+        return false;
     }
 
     // Set the image based on the state
     if (state) {
         imageLabels[index]->setPixmap(altImages[index]);
+        return true;
     } else {
         imageLabels[index]->setPixmap(defaultImages[index]);
+        return false;
     }
 }

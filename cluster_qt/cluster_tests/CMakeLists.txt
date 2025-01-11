@@ -19,10 +19,13 @@ add_library(ClusterShared
     ../includes/SpeedometerWidget.h
     ../includes/Blinkers.h
     ../includes/EventManager.h
+    ../includes/TopBar.h
+
     ../sources/ArrowSymbolWidget.cpp
     ../sources/SpeedometerWidget.cpp
     ../sources/Blinkers.cpp
     ../sources/EventManager.cpp
+    ../sources/TopBar.cpp
 )
 
 target_link_libraries(ClusterShared PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
@@ -42,4 +45,6 @@ endfunction()
 SETUP_TESTS(
     EventManagerTest
     BlinkerTest
+    TopBarTest
+    SpeedometerTest
 )

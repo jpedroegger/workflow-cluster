@@ -15,7 +15,7 @@ public:
     ~TopBar();
 
     // Method to update the image at a specific index based on a condition
-    void setImageState(int index, bool state);
+    bool setImageState(int index, bool state);
 
 private:
     QHBoxLayout* layout;              // Layout to hold the images
