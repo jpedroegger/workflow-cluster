@@ -1,6 +1,6 @@
 #include <QCoreApplication>
 #include <QtTest>
-#include "../cluster_qt/includes/EventManager.h"
+#include "../../includes/EventManager.h"
 
 
 class MockArrowSymbolWidget : public ArrowSymbolWidget {};

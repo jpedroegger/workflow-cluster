@@ -1,4 +1,4 @@
-#include "includes/Blinkers.h"
+#include "../includes/Blinkers.h"
 #include <QHBoxLayout>
 
 Blinkers::Blinkers(QWidget* parent, std::string dir, std::string mode)

@@ -1,6 +1,6 @@
 #include <QCoreApplication>
 #include <QtTest>
-#include "../cluster_qt/includes/Blinkers.h"
+#include "../../includes/Blinkers.h"
 #include <QTimer>
 
 

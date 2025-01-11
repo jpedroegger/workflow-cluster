@@ -13,7 +13,7 @@ find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Multimedia MultimediaW
 find_package(Qt6 REQUIRED COMPONENTS Widgets Multimedia MultimediaWidgets)
 
 set(PROJECT_SOURCES
-        mainwindow.ui
+        sources/mainwindow.ui
 
         includes/mainwindow.h
         includes/ArrowSymbolWidget.h
@@ -28,19 +28,19 @@ set(PROJECT_SOURCES
         includes/BatteryAndSpeedWidget.h
         includes/Cluster.h
         
-        mainwindow.cpp
-        ArrowSymbolWidget.cpp
-        SpeedometerWidget.cpp
-        CPUTempWidget.cpp
-        FanSpeedWidget.cpp
-        BatteryWidget.cpp
-        TopBar.cpp
-        Blinkers.cpp
-        EventManager.cpp
-        CameraWidget.cpp
-        BatteryAndSpeedWidget.cpp
+        sources/mainwindow.cpp
+        sources/ArrowSymbolWidget.cpp
+        sources/SpeedometerWidget.cpp
+        sources/CPUTempWidget.cpp
+        sources/FanSpeedWidget.cpp
+        sources/BatteryWidget.cpp
+        sources/TopBar.cpp
+        sources/Blinkers.cpp
+        sources/EventManager.cpp
+        sources/CameraWidget.cpp
+        sources/BatteryAndSpeedWidget.cpp
 
-        main.cpp
+        sources/main.cpp
 )
 
 qt_add_executable(_cluster
@@ -68,3 +68,4 @@ install(TARGETS _cluster
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(_cluster)
 endif()
+add_subdirectory(cluster_tests)

@@ -1,6 +1,5 @@
-#include "includes/BatteryAndSpeedWidget.h"
+#include "../includes/BatteryAndSpeedWidget.h"
 #include <iostream>
-
 
 BatteryAndSpeedWidget::BatteryAndSpeedWidget(QWidget* parent)
     : QWidget(parent), currentSpeed(0)

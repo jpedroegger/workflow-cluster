@@ -1,4 +1,4 @@
-#include "includes/CameraWidget.h"
+#include "../includes/CameraWidget.h"
 
 CameraWidget::CameraWidget(QWidget *parent)
     : QWidget(parent),
