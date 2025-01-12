@@ -2,33 +2,31 @@
 
 TopBar::TopBar(QWidget* parent) : QWidget(parent)
 {
-    // Initialize layout
+    
     layout = new QHBoxLayout(this);
-    layout->setSpacing(1); // Optional: adjust spacing between images
-    layout->setContentsMargins(0, 0, 0, 0); // Optional: adjust margins
-
-    // Create default and alternate images
+    layout->setSpacing(1); 
+    layout->setContentsMargins(0, 0, 0, 0); 
     QStringList defaultImagePaths = {
-        "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/wheel.png",
-        "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/brake.png",
-        "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/abs.png", // Replace with your actual paths
-        "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/med.png",
-        "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/max.png",
-        "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/fog.png",
-        "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/belt.png"
+        "assets/icons/wheel.png",
+        "assets/icons/brake.png",
+        "assets/icons/abs.png", 
+        "assets/icons/med.png",
+        "assets/icons/max.png",
+        "assets/icons/fog.png",
+        "assets/icons/belt.png"
     };
 
     QStringList altImagePaths = {
-        "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/wheel_on.png",
-        "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/brake_on.png",
-        "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/abs_on.png", // Replace with your actual paths
-        "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/med_on.png",
-        "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/max_on.png",
-        "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/fog_on.png",
-        "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/belt_on.png"
+        "assets/icons/wheel_on.png",
+        "assets/icons/brake_on.png",
+        "assets/icons/abs_on.png", 
+        "assets/icons/med_on.png",
+        "assets/icons/max_on.png",
+        "assets/icons/fog_on.png",
+        "assets/icons/belt_on.png"
     };
 
-    // Load images into QPixmaps
+    
     for (const QString& path : defaultImagePaths) {
         QPixmap pixmap(path);
         if (pixmap.isNull()) {
@@ -45,10 +43,10 @@ TopBar::TopBar(QWidget* parent) : QWidget(parent)
         altImages.append(pixmap);
     }
 
-    // Create QLabel widgets for each image
+    
     for (int i = 0; i < 6; ++i) {
         QLabel* label = new QLabel(this);
-        label->setFixedSize(40, 40); // Optional: set a fixed size for the images
+        label->setFixedSize(40, 40); 
         //label->setScaledContents(true); // Ensure the image scales to fit the QLabel
         if (i < defaultImages.size()) {
             label->setPixmap(defaultImages[i]); // Set default image

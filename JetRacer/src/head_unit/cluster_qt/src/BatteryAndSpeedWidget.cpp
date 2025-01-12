@@ -15,7 +15,7 @@ BatteryAndSpeedWidget::BatteryAndSpeedWidget(QWidget* parent)
 void BatteryAndSpeedWidget::paintEvent(QPaintEvent* event)
 {
     QPainter painter(this);
-    QPixmap image("./assets/icons/battery.png");
+    QPixmap image("assets/icons/battery.png");
     painter.setRenderHint(QPainter::Antialiasing);
     int centerX = width() / 2;
     int centerY = height() / 2;

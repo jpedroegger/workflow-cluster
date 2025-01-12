@@ -11,13 +11,13 @@ Blinkers::Blinkers(QWidget* parent, std::string dir, std::string mode)
     // Load two images to toggle
     if (dir == "left")
     {
-        image1.load("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/left.png"); // Path to the first image
-        image2.load("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/left_on.png"); // Path to the second image
+        image1.load("assets/icons/left.png"); // Path to the first image
+        image2.load("assets/icons/left_on.png"); // Path to the second image
     }
     else
     {
-        image1.load("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/right.png"); // Path to the first image
-        image2.load("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/right_on.png"); // Path to the second image
+        image1.load("assets/icons/right.png"); // Path to the first image
+        image2.load("assets/icons/right_on.png"); // Path to the second image
     }
 
     if (image1.isNull() || image2.isNull()) {

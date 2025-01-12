@@ -12,6 +12,7 @@ class TopBar : public QWidget
 
 public:
     explicit TopBar(QWidget* parent = nullptr);
+    //explicit TopBar(TopBar *topbar);
     virtual ~TopBar();
 
     // Method to update the image at a specific index based on a condition
