@@ -3,8 +3,8 @@
 using namespace std::chrono_literals;
 
 PCA9685Driver::PCA9685Driver(std::shared_ptr<rclcpp::Node> node,
-                             uint8_t device_adress)
-    : ADriver(node, device_adress)
+                             uint8_t device_address)
+    : ADriver(node, device_address)
 {
     // throw an exception if it fails
     this->ping();
@@ -36,7 +36,7 @@ void PCA9685Driver::setPWMFrequency(float freq_Hz)
     setRegister(MODE1_REGISTER, 0x10); // sleep mode
     setRegister(PRESCALE_REGISTER, prescale);
     setRegister(MODE1_REGISTER, 0x80); // Wake-up + auto increment
-    std::this_thread::sleep_for(5ms);  // wait for oscillator stabilization
+    std::this_thread::sleep_for(5ms);
 }
 
 /**

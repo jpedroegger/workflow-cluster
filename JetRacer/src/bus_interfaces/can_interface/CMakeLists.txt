@@ -12,6 +12,8 @@ set(exec_name ${PROJECT_NAME}_node)
 set(srcs
   src/main.cpp
   src/CanInterface.cpp
+  src/RCanDriver.cpp
+  include/ICanDriver.hpp
 )
 
 # Include necessary directories
@@ -33,12 +35,40 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(sockcanpp)
 
+
 # Add the executable
 add_executable(${exec_name} ${srcs})
 ament_target_dependencies(${exec_name} rclcpp custom_msgs)
 
 # Link external libraries
 target_link_libraries(${exec_name} sockcanpp)
+
+# Gtest
+if(BUILD_TESTING)
+  find_package(ament_cmake_gmock REQUIRED)
+  
+  # Create test executable
+  ament_add_gmock(${PROJECT_NAME}_test 
+	  test/src/CanInterfaceTest.cpp
+	  test/include/MockCanDriver.hpp
+	  src/CanInterface.cpp
+	  src/RCanDriver.cpp
+	  include/ICanDriver.hpp
+  )
+  
+  target_include_directories(${PROJECT_NAME}_test PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:include>
+    test/include
+  )
+  
+  # Add dependencies to the test target
+  ament_target_dependencies(${PROJECT_NAME}_test 
+    rclcpp 
+    custom_msgs
+  )
+  target_link_libraries(${PROJECT_NAME}_test sockcanpp)
+endif()
 
 # Install target
 install(TARGETS ${exec_name} DESTINATION lib/${PROJECT_NAME})

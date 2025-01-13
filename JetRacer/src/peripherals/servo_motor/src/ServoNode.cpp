@@ -1,4 +1,5 @@
 #include "ServoNode.hpp"
+#include <PCA9685Driver.hpp>
 #include <functional>
 #include <rclcpp/client.hpp>
 #include <rclcpp/logger.hpp>
@@ -16,19 +17,25 @@ ServoNode::ServoNode() : Node("servo_node")
 
 ServoNode::~ServoNode() {}
 
-uint8_t ServoNode::initPCA9685()
+uint8_t ServoNode::initPCA9685(std::shared_ptr<APCA9685Driver> mock_pca_driver)
 {
-    try
+    if (mock_pca_driver)
+        pca_driver_ = mock_pca_driver;
+    else
     {
-        pca9685_ = std::make_shared<PCA9685Driver>(shared_from_this(),
-                                                   PCA_SERVO_ADDRESS);
+
+        try
+        {
+            pca_driver_ = std::make_shared<PCA9685Driver>(shared_from_this(),
+                                                          PCA_SERVO_ADDRESS);
+        }
+        catch (const std::exception& e)
+        {
+            RCLCPP_ERROR(this->get_logger(), "%s", e.what());
+            return EXIT_FAILURE;
+        }
     }
-    catch (const std::exception& e)
-    {
-        RCLCPP_ERROR(this->get_logger(), "%s", e.what());
-        return EXIT_FAILURE;
-    }
-    pca9685_->setPWMFrequency(50);
+    pca_driver_->setPWMFrequency(50);
     return EXIT_SUCCESS;
 }
 
@@ -80,6 +87,5 @@ void ServoNode::writeAngle(const geometry_msgs::msg::Twist::SharedPtr twist)
         MIN_COUNT +
         (static_cast<float>(angle) * (MAX_COUNT - MIN_COUNT)) / 180);
 
-    // Set the PWM signal using the adapted values
-    pca9685_->setPWMDutyCycle(DEFAULT_CHANNEL, 0, pulseWidth);
+    pca_driver_->setPWMDutyCycle(DEFAULT_CHANNEL, 0, pulseWidth);
 }

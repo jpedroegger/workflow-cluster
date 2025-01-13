@@ -88,7 +88,6 @@ void INA219Driver::writeRegister(uint8_t reg, uint16_t value)
  * @param callback Function to call with the retrieved data once the read
  * operation completes.
  */
-
 void INA219Driver::readRegister(uint8_t reg, uint8_t length,
                                 ReadCallback callback)
 {

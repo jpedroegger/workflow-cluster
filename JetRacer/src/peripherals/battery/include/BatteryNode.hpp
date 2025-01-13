@@ -7,6 +7,11 @@
 #include <rclcpp/subscription.hpp>
 #include <std_msgs/msg/u_int8.hpp>
 
+/**
+ * @class BatteryNode
+ * @brief request battery readings every 5seconds.
+ *
+ */
 class BatteryNode : public rclcpp::Node
 {
     public:

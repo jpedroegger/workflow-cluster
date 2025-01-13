@@ -12,6 +12,8 @@ set(exec_name ${PROJECT_NAME}_node)
 set(srcs
   src/main.cpp
   src/I2cInterface.cpp
+  src/I2cDriver.cpp
+  include/II2cDriver.hpp
 )
 
 # Include necessary directories
@@ -29,6 +31,35 @@ find_package(fmt REQUIRED)
 add_executable(${exec_name} ${srcs})
 ament_target_dependencies(${exec_name} rclcpp custom_msgs fmt)
 target_link_libraries(${exec_name} fmt::fmt)
+
+# Gtest
+if(BUILD_TESTING)
+  find_package(ament_cmake_gmock REQUIRED)
+  
+  # Create test executable
+  ament_add_gmock(${PROJECT_NAME}_test 
+    test/src/I2cInterfaceTest.cpp
+	test/include/MockI2cDriver.hpp
+	include/II2cDriver.hpp
+	src/I2cInterface.cpp
+	src/I2cDriver.cpp
+  )
+  
+  target_include_directories(${PROJECT_NAME}_test PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:include>
+    test/include
+  )
+  
+  # Add dependencies to the test target
+  ament_target_dependencies(${PROJECT_NAME}_test 
+    rclcpp 
+    custom_msgs
+    fmt
+  )
+  target_link_libraries(${PROJECT_NAME}_test fmt::fmt)
+endif()
+
 
 # Install target
 install(TARGETS ${exec_name} DESTINATION lib/${PROJECT_NAME})

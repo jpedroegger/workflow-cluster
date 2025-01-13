@@ -14,6 +14,12 @@
 #define TURN_RIGHT 3
 #define WARNINGS 4
 
+/**
+ * @class BlinkersNode
+ * @brief listens to a topic dictating the state of the blinkers. upon changing
+ * state, a can request will be sent to the arduino to update the blinkers.
+ *
+ */
 class BlinkersNode : public rclcpp::Node
 {
     public:

@@ -5,6 +5,11 @@
 #include <custom_msgs/srv/i2c_service.hpp>
 #include <rclcpp/rclcpp.hpp>
 
+/**
+ * @class INA219Driver
+ * @brief Driver to interact with the ina219 chip (Battery voltage)
+ *
+ */
 class INA219Driver : public ADriver
 {
     public:

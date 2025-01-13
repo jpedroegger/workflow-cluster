@@ -8,6 +8,11 @@
 
 #define SSD1306_FONT_NORMAL 0x01
 
+/**
+ * @class OledDisplayNode
+ * @brief Listens for messages to display.
+ *
+ */
 class OledDisplayNode : public rclcpp::Node
 {
     public:

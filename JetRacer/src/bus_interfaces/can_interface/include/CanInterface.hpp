@@ -1,22 +1,27 @@
 #pragma once
 
-#include "CanDriver.hpp"
+#include "ICanDriver.hpp"
 #include "custom_msgs/srv/can_service.hpp"
 #include <memory>
 #include <rclcpp/rclcpp.hpp>
 
 using sockcanpp::CanDriver;
 
+/**
+ * @class CanInterface
+ * @brief Handles read and write operation onto the can bus via the can driver.
+ *
+ */
 class CanInterface : public rclcpp::Node
 {
     public:
-        CanInterface();
+        CanInterface(std::shared_ptr<ICanDriver> can_driver = nullptr);
         ~CanInterface();
 
         void pollCanBus();
 
     private:
-        std::shared_ptr<sockcanpp::CanDriver> can_driver_;
+        std::shared_ptr<ICanDriver> can_driver_;
         rclcpp::Service<custom_msgs::srv::CanService>::SharedPtr can_service_;
 
         void handleCanRequest(

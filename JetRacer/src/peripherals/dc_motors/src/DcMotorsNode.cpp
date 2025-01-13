@@ -1,4 +1,5 @@
 #include "DcMotorsNode.hpp"
+#include <PCA9685Driver.hpp>
 #include <functional>
 #include <rclcpp/client.hpp>
 #include <rclcpp/logger.hpp>
@@ -15,20 +16,25 @@ DcMotorsNode::DcMotorsNode() : Node("dc_motors_node")
 
 DcMotorsNode::~DcMotorsNode() {}
 
-uint8_t DcMotorsNode::initPCA9685()
+uint8_t DcMotorsNode::initPCA9685(std::shared_ptr<APCA9685Driver> mock_driver)
 {
-    try
+    if (mock_driver)
+        pca_driver_ = mock_driver;
+    else
     {
-        pca9685_ = std::make_shared<PCA9685Driver>(shared_from_this(),
-                                                   PCA_MOTORS_ADDRESS);
-    }
-    catch (const std::exception& e)
-    {
-        RCLCPP_ERROR(this->get_logger(), "%s", e.what());
-        return EXIT_FAILURE;
+        try
+        {
+            pca_driver_ = std::make_shared<PCA9685Driver>(shared_from_this(),
+                                                          PCA_MOTORS_ADDRESS);
+        }
+        catch (const std::exception& e)
+        {
+            RCLCPP_ERROR(this->get_logger(), "%s", e.what());
+            return EXIT_FAILURE;
+        }
     }
 
-    pca9685_->setPWMFrequency(1600);
+    pca_driver_->setPWMFrequency(1600);
     return EXIT_SUCCESS;
 }
 
@@ -64,29 +70,28 @@ void DcMotorsNode::writeSpeed(
     uint16_t pulseWidth =
         static_cast<uint16_t>(linear_x * (MAX_COUNT - MIN_COUNT));
 
-    pca9685_->setPWMDutyCycle(DEFAULT_CHANNEL, true, pulseWidth);
-    pca9685_->setPWMDutyCycle(7, true, pulseWidth);
+    pca_driver_->setPWMDutyCycle(DEFAULT_CHANNEL, true, pulseWidth);
+    pca_driver_->setPWMDutyCycle(7, true, pulseWidth);
 
     if (direction > 0) // Forward
     {
-        pca9685_->setGPIO(1, false);
-        pca9685_->setGPIO(2, true);
-        pca9685_->setGPIO(6, false);
-        pca9685_->setGPIO(5, true);
+        pca_driver_->setGPIO(1, false);
+        pca_driver_->setGPIO(2, true);
+        pca_driver_->setGPIO(6, false);
+        pca_driver_->setGPIO(5, true);
     }
     else if (direction < 0) // Reverse
     {
-        pca9685_->setGPIO(1, true);
-        pca9685_->setGPIO(2, false);
-        pca9685_->setGPIO(6, true);
-        pca9685_->setGPIO(5, false);
+        pca_driver_->setGPIO(1, true);
+        pca_driver_->setGPIO(2, false);
+        pca_driver_->setGPIO(6, true);
+        pca_driver_->setGPIO(5, false);
     }
     else // Stop
     {
-        // Set all GPIOs for both motors to neutral/off
-        pca9685_->setGPIO(1, false);
-        pca9685_->setGPIO(2, false);
-        pca9685_->setGPIO(6, false);
-        pca9685_->setGPIO(5, false);
+        pca_driver_->setGPIO(1, false);
+        pca_driver_->setGPIO(2, false);
+        pca_driver_->setGPIO(6, false);
+        pca_driver_->setGPIO(5, false);
     }
 }

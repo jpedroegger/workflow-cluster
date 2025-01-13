@@ -32,8 +32,9 @@ void ADriver::handleI2cResponse(
  * @brief ping the device and wait for a response
  *
  * This method uses spin_until_future_complete() which will spin the node while
- * waiting for the response. This function can then not be called after the node
- * has been spinned by the main executor.
+ * waiting for the response. Hence this function can not be called after the
+ * node has been spinned by the main executor (a node can be handle by only one
+ * executor at a time)
  *
  * @return
  */
@@ -44,8 +45,6 @@ void ADriver::ping()
     request->set__device_address(device_address_);
     request->set__read_request(false);
     request->write_data.push_back(0x0);
-
-    auto future = i2c_client_->async_send_request(request);
 
     auto response_future = i2c_client_->async_send_request(request);
 
