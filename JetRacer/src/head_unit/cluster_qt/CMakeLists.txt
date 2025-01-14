@@ -16,10 +16,10 @@ find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Multimedia MultimediaW
 find_package(Qt6 REQUIRED COMPONENTS Widgets Multimedia MultimediaWidgets)
 
 # Find ROS dependencies
-find_package(ament_cmake REQUIRED)
-find_package(rclcpp REQUIRED)
-find_package(std_msgs REQUIRED)
-find_package(custom_msgs REQUIRED)
+#find_package(ament_cmake REQUIRED)
+#find_package(rclcpp REQUIRED)
+#find_package(std_msgs REQUIRED)
+#find_package(custom_msgs REQUIRED)
 
 # Define source and header files separately
 set(HEADERS
@@ -95,7 +95,7 @@ install(TARGETS ${exec_name}
 )
 
 # Export package dependencies
-ament_package()
+#ament_package()
 
 # Finalize Qt6 executable
 if(QT_VERSION_MAJOR EQUAL 6)

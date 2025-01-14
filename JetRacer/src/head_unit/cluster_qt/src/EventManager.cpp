@@ -54,12 +54,39 @@ void EventManager::processKeyStates()
                     py_batspeed->accelerate(key);
                 break;
             case Qt::Key_L:
-                if (left_blinker)
-                    left_blinker->turnOnBlinkers(key);
+                if (left_blinker && right_blinker)
+                {
+                    if (!left_blinker->get_blinking())
+                        left_blinker->turnOnBlinkers(true);
+                    else
+                        left_blinker->turnOnBlinkers(false);
+                    right_blinker->turnOnBlinkers(false);
+                }
                 break;
             case Qt::Key_R:
-                if (right_blinker)
-                    right_blinker->turnOnBlinkers(key);
+                if (left_blinker && right_blinker)
+                {
+                    if (!right_blinker->get_blinking())
+                        right_blinker->turnOnBlinkers(true);
+                    else
+                        right_blinker->turnOnBlinkers(false);
+                    left_blinker->turnOnBlinkers(false);
+                }
+                break;
+            case Qt::Key_B:
+                if (right_blinker && left_blinker)
+                {
+                    if (right_blinker->get_blinking() && left_blinker->get_blinking())
+                    {
+                        left_blinker->turnOnBlinkers(false);
+                        right_blinker->turnOnBlinkers(false);
+                        break;
+                    }
+                        left_blinker->turnOnBlinkers(false);
+                        right_blinker->turnOnBlinkers(false);
+                        left_blinker->turnOnBlinkers(true);
+                        right_blinker->turnOnBlinkers(true);
+                }
                 break;
             default:
                 break;
