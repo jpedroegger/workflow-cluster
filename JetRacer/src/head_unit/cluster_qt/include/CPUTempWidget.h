@@ -5,6 +5,7 @@
 #include <QPainter>
 #include <QTimer>
 #include <QKeyEvent>  // Include for key events
+#include "Colors.h"
 
 class CPUTempWidget : public QWidget {
 
@@ -17,6 +18,7 @@ class CPUTempWidget : public QWidget {
 
     private:
         int currentSpeed;
+        Color color1;
         void drawScale(QPainter& painter, int centerX, int centerY, int radius);
         void drawNeedle(QPainter& painter, int centerX, int centerY, int radius);
         void drawCentralNumber(QPainter& painter, int centerX, int centerY);

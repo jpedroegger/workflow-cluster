@@ -3,6 +3,7 @@
 ArrowSymbolWidget::ArrowSymbolWidget(QWidget* parent, std::string input)
     : QWidget(parent)
 {
+    color1 = Color();
     m_greenL = false;
     m_greenR = false;
     m_greenV = false;
@@ -76,7 +77,7 @@ void ArrowSymbolWidget::drawVerticalArrows(QPainter& painter, std::string color)
 
     // Draw the central vertical arrow
     if (color == "black")
-        painter.setPen(QPen(Qt::black,10));
+        painter.setPen(QPen(color1.main_color,10));
     else
         painter.setPen(QPen(Qt::green,10));
 
@@ -94,7 +95,7 @@ void ArrowSymbolWidget::drawLeftCurve(QPainter& painter, std::string color)
     int arrowSize = 10;
 
     if (color == "black")
-        painter.setPen(QPen(Qt::black,10));
+        painter.setPen(QPen(color1.main_color,10));
     else
         painter.setPen(QPen(Qt::green,10));
 
@@ -112,7 +113,7 @@ void ArrowSymbolWidget::drawRightCurve(QPainter& painter, std::string color)
     int arrowSize = 10;
 
     if (color == "black")
-        painter.setPen(QPen(Qt::black,10));
+        painter.setPen(QPen(color1.main_color,10));
     else
         painter.setPen(QPen(Qt::green,10));
 
@@ -131,7 +132,7 @@ void ArrowSymbolWidget::drawArrowhead(QPainter& painter, int x, int y, double an
     double radRight = qDegreesToRadians(angle - 150);
 
     if (color == "black")
-        painter.setPen(QPen(Qt::black,10));
+        painter.setPen(QPen(color1.main_color,10));
     else
         painter.setPen(QPen(Qt::green,10));
 

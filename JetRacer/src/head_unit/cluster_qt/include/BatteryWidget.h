@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QPainter>
 #include <QTimer>
+#include "Colors.h"
 
 class BatteryWidget : public QWidget {
 
@@ -15,6 +16,7 @@ class BatteryWidget : public QWidget {
 
     private:
         int currentLevel;
+        Color color1;
         void drawScale(QPainter& painter, int centerX, int centerY, int radius);
         void drawNeedle(QPainter& painter, int centerX, int centerY, int radius);
         void drawCentralNumber(QPainter& painter, int centerX, int centerY);

@@ -34,6 +34,7 @@ set(HEADERS
     include/Blinkers.h
     include/EventManager.h
     include/CameraWidget.h
+    include/Colors.h
 )
 
 set(SOURCES

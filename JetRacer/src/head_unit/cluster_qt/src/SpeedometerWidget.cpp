@@ -3,6 +3,7 @@
 SpeedometerWidget::SpeedometerWidget(QWidget* parent)
     : QWidget(parent), currentSpeed(0)
 {
+    color1 = Color();
     setFocusPolicy(Qt::StrongFocus);  // Ensure the widget can receive key events
 }
 
@@ -23,12 +24,13 @@ void SpeedometerWidget::paintEvent(QPaintEvent* event)
 
 void SpeedometerWidget::drawScale(QPainter& painter, int centerX, int centerY, int radius) {
     // Draw outer circle
-    painter.setPen(QPen(Qt::black, 15));
+    painter.setPen(QPen(color1.main_color, 15));
     painter.drawEllipse(centerX - radius, centerY - radius, 2 * radius, 2 * radius);
-    painter.setPen(QPen(QColor("#2A4C5C"), 15));
+    //painter.setPen(QPen(QColor("#2A4C5C"), 15));
+    painter.setPen(QPen(color1.accent_color, 15));
     int smaller_r = radius - 10;
     painter.drawEllipse(centerX - smaller_r, centerY - smaller_r, 2 * smaller_r, 2 * smaller_r);
-    painter.setPen(QPen(Qt::black, 15));
+    painter.setPen(QPen(color1.main_color, 15));
     smaller_r -=  80;
     painter.drawEllipse(centerX - smaller_r, centerY - smaller_r, 2 * smaller_r, 2 * smaller_r);
     // Draw tick marks and labels
@@ -36,7 +38,7 @@ void SpeedometerWidget::drawScale(QPainter& painter, int centerX, int centerY, i
     double startAngle = -45; // Start angle for 0 speed (bottom left)
     double endAngle = 225;     // End angle for max speed (bottom right)
     QFont font("Arial", 20, QFont::Bold);  // Example: Arial, size 10, bold
-    painter.setPen(QPen(Qt::white, 6));
+    painter.setPen(QPen(color1.alphabet_color, 6));
     painter.setFont(font);
     for (int speed = minSpeed; speed <= maxSpeed; speed += step / 2) {
         double angle = startAngle + (endAngle - startAngle) * (double(speed) / maxSpeed);
@@ -51,7 +53,7 @@ void SpeedometerWidget::drawScale(QPainter& painter, int centerX, int centerY, i
         else if (speed / 10 % 2 != 0)
             painter.setPen(QPen(Qt::gray, 6));
         painter.drawLine(xOuter, yOuter, xInner, yInner);
-        painter.setPen(QPen(Qt::white, 6));
+        painter.setPen(QPen(color1.alphabet_color, 6));
         // Draw label
         int xLabel = centerX - std::cos(rad) * (radius - 55) - 8;
         int yLabel = centerY - std::sin(rad) * (radius - 55);
@@ -80,7 +82,7 @@ void SpeedometerWidget::drawCentralNumber(QPainter& painter, int centerX, int ce
     // Set font and color for the speed number
     QFont font("Arial", 40, QFont::Bold);  // Large font for the speed
     painter.setFont(font);
-    painter.setPen(QPen(Qt::white));
+    painter.setPen(QPen(color1.alphabet_color));
     QString speedText = QString::number(currentSpeed);
     // Calculate the bounding box for the speed text
     QFontMetrics metrics(font);
