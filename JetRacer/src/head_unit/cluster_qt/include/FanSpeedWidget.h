@@ -12,6 +12,9 @@ class FanSpeedWidget : public QWidget {
     public:
         FanSpeedWidget(QWidget* parent = nullptr);
         ~FanSpeedWidget();
+        QColor  main_color;
+        QColor  accent_color;
+        QColor  alphabet_color;
     protected:
         void paintEvent(QPaintEvent* event) override;
         void keyPressEvent(QKeyEvent* event) override;  // Added keyPressEvent

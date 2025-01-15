@@ -13,6 +13,9 @@ class BatteryAndSpeedWidget : public QWidget {
         BatteryAndSpeedWidget(QWidget* parent = nullptr);
         ~BatteryAndSpeedWidget();
         void accelerate(int forward_key);
+        QColor  main_color;
+        QColor  accent_color;
+        QColor  alphabet_color;
     protected:
         void paintEvent(QPaintEvent* event) override;
 

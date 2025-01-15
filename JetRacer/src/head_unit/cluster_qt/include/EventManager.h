@@ -11,6 +11,7 @@
 #include <QObject>
 #include <QSet>
 #include <QTimer>
+#include "Colors.h"
 
 class EventManager : public QWidget
 {
@@ -34,6 +35,7 @@ class EventManager : public QWidget
                      Blinkers* right_blinker,
                      QStackedWidget* stackedWidget);
         virtual ~EventManager();
+        Color color1;
 
     protected:
         bool eventFilter(QObject* obj, QEvent* event) override;

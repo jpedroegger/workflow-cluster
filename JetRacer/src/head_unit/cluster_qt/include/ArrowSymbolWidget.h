@@ -17,6 +17,9 @@ class ArrowSymbolWidget : public QWidget
         void setDrawLeftCurve(bool enabled);
         void setDrawRightCurve(bool enabled);
         void changeDirection(int movement_key);
+        QColor  main_color;
+        QColor  accent_color;
+        QColor  alphabet_color;
 
     protected:
         ArrowSymbolWidget();

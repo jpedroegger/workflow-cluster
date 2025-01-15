@@ -23,6 +23,7 @@ find_package(Qt6 REQUIRED COMPONENTS Widgets Multimedia MultimediaWidgets)
 
 # Define source and header files separately
 set(HEADERS
+    include/Colors.h
     include/mainwindow.h
     include/ArrowSymbolWidget.h
     include/SpeedometerWidget.h
@@ -34,7 +35,6 @@ set(HEADERS
     include/Blinkers.h
     include/EventManager.h
     include/CameraWidget.h
-    include/Colors.h
 )
 
 set(SOURCES

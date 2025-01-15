@@ -12,6 +12,9 @@ class CPUTempWidget : public QWidget {
     public:
         CPUTempWidget(QWidget* parent = nullptr);
         ~CPUTempWidget();
+        QColor  main_color;
+        QColor  accent_color;
+        QColor  alphabet_color;
     protected:
         void paintEvent(QPaintEvent* event) override;
         void keyPressEvent(QKeyEvent* event) override;  // Added keyPressEvent

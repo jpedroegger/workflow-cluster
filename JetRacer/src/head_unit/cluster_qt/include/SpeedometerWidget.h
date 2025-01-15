@@ -14,6 +14,10 @@ class SpeedometerWidget : public QWidget {
         ~SpeedometerWidget();
 
         void accelerate(int forward_key);
+        QColor  main_color;
+        QColor  accent_color;
+        QColor  alphabet_color;
+
 
     protected:
         void paintEvent(QPaintEvent* event) override;

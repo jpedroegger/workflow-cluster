@@ -1,5 +1,5 @@
 #include "../include/EventManager.h"
-
+#include <iostream>
 EventManager::EventManager(ArrowSymbolWidget* arrow,
                            SpeedometerWidget* py_speed,
                            BatteryAndSpeedWidget* py_batspeed,
@@ -8,6 +8,7 @@ EventManager::EventManager(ArrowSymbolWidget* arrow,
                            QStackedWidget* stackedWidget)
     : arrows(arrow), py_speed(py_speed), py_batspeed(py_batspeed), left_blinker(left_blinker), right_blinker(right_blinker), stackedWidget(stackedWidget)
 {
+    color1 = Color();
     updateTimer = new QTimer(this);
     connect(updateTimer, &QTimer::timeout, this, &EventManager::processKeyStates);
     updateTimer->start(80); // Every 80ms
@@ -87,6 +88,20 @@ void EventManager::processKeyStates()
                         left_blinker->turnOnBlinkers(true);
                         right_blinker->turnOnBlinkers(true);
                 }
+                break;
+            case Qt::Key_C:
+                color1.indent();
+                std::cout << color1.counter << " \n";
+                arrows->main_color = color1.main_color;
+                //py_speed->main_color = color1.main_color;
+                //py_batspeed->main_color = color1.main_color;
+                //arrows->accent_color = color1.accent_color;
+                //py_speed->accent_color = color1.accent_color;
+                //py_batspeed->accent_color = color1.accent_color;
+                //arrows->alphabet_color = color1.alphabet_color;
+                //py_speed->alphabet_color = color1.alphabet_color;
+                //py_batspeed->alphabet_color = color1.alphabet_color;
+
                 break;
             default:
                 break;
