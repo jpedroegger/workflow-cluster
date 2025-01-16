@@ -113,7 +113,8 @@ int main(int argc, char* argv[])
     QTimer::singleShot(7000, [&]() { topBar->setImageState(3, true); });
     QTimer::singleShot(8000, [&]() { topBar->setImageState(5, true); });
 
+    int res = app.exec();
     rclcpp::shutdown();
 
-    return app.exec();
+    return res;
 }

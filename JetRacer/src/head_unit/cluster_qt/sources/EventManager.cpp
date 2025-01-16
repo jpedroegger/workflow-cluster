@@ -56,10 +56,13 @@ bool EventManager::eventFilter(QObject* obj, QEvent* event)
 void EventManager::processKeyStates()
 {
     // TODO: spin the node. uodates the meber variable of RosNode
+
     executor.spin_some(
-        std::chrono::seconds(1)); // after this line, values are updated.
+        std::chrono::milliseconds(10)); // after this line, values are updated.
     py_speed->setCurrentSpeed(node->getSpeed());
+    py_speed->update();
     RCLCPP_INFO(node->get_logger(), "current_speed: %d", node->getSpeed());
+
     //
     // for (int key : pressedKeys)
     // {
