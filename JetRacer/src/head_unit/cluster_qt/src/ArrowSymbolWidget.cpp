@@ -152,3 +152,11 @@ void ArrowSymbolWidget::changeDirection(int movement_key)
 {
    // FUTURE ROS2 CODE
 }
+
+void    ArrowSymbolWidget::changeColor(int  array_index)
+{
+    main_color = color1.main_color_array[array_index];
+    accent_color = color1.accent_color_array[array_index];
+    alphabet_color = color1.alphabet_color_array[array_index];   
+    update();
+}

@@ -12,6 +12,7 @@ class CPUTempWidget : public QWidget {
     public:
         CPUTempWidget(QWidget* parent = nullptr);
         ~CPUTempWidget();
+        void changeColor(int  array_index);
         QColor  main_color;
         QColor  accent_color;
         QColor  alphabet_color;

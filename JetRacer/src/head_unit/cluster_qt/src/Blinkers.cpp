@@ -8,6 +8,8 @@ Blinkers::Blinkers(QWidget* parent, std::string dir, std::string mode)
     imageLabel = new QLabel(this);
     imageLabel->setAlignment(Qt::AlignCenter);
     blinking = false;
+    isImage1Visible = true;
+    toggleTimer = NULL;
 
     // Load two images to toggle
     if (dir == "left")
@@ -91,10 +93,3 @@ bool    Blinkers::get_blinking()
 {
     return blinking;
 }
-
-
-
-
-
-
-

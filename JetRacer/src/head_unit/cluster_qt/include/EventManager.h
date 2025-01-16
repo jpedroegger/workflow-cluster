@@ -5,6 +5,7 @@
 #include "ArrowSymbolWidget.h"
 #include "SpeedometerWidget.h"
 #include "BatteryAndSpeedWidget.h"
+#include "BatteryWidget.h"
 #include "Blinkers.h"
 #include <QSwipeGesture>
 #include <QStackedWidget>
@@ -23,6 +24,7 @@ class EventManager : public QWidget
         BatteryAndSpeedWidget* py_batspeed;
         Blinkers* left_blinker;
         Blinkers* right_blinker;
+        BatteryWidget* battery;
         QSet<int> pressedKeys;
         QTimer* updateTimer;   // Used to check if a key is still being called
         QStackedWidget* stackedWidget;
@@ -33,6 +35,7 @@ class EventManager : public QWidget
                      BatteryAndSpeedWidget* py_batspeed,
                      Blinkers* left_blinker,
                      Blinkers* right_blinker,
+                     BatteryWidget* bat,
                      QStackedWidget* stackedWidget);
         virtual ~EventManager();
         Color color1;

@@ -12,6 +12,7 @@ class BatteryAndSpeedWidget : public QWidget {
     public:
         BatteryAndSpeedWidget(QWidget* parent = nullptr);
         ~BatteryAndSpeedWidget();
+        void changeColor(int  array_index);
         void accelerate(int forward_key);
         QColor  main_color;
         QColor  accent_color;

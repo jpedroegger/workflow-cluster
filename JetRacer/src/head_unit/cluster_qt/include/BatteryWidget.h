@@ -11,6 +11,7 @@ class BatteryWidget : public QWidget {
     public:
         BatteryWidget(QWidget* parent = nullptr);
         ~BatteryWidget();
+        void changeColor(int  array_index);
         QColor  main_color;
         QColor  accent_color;
         QColor  alphabet_color;
