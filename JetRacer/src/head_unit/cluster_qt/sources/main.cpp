@@ -1,120 +1,122 @@
 #include "../includes/Cluster.h"
-#include <rclcpp/rclcpp.hpp>
 
 int main(int argc, char* argv[])
 {
-    QApplication app(argc, argv);
     rclcpp::init(argc, argv);
+    QApplication app(argc, argv);
 
-    // Set a main window where the pages will be included
     QWidget* mainWindow = new QWidget;
+    QWidget* mode1Page = new QWidget;
+    QWidget* mode2Page = new QWidget;
 
-    // Set the pages
-    QWidget* mainPage = new QWidget;
-    QWidget* secondPage = new QWidget;
-
-    // Set a stack of Widgets to store the pages
     QStackedWidget* stackedWidget = new QStackedWidget;
-    stackedWidget->addWidget(mainPage);
-    stackedWidget->addWidget(secondPage);
+    stackedWidget->addWidget(mode1Page); // Mode 1
+    stackedWidget->addWidget(mode2Page); // Mode 2
 
-    // Creating the objects for the window
-    TopBar* topBar = new TopBar(mainPage);
-    Blinkers* leftB = new Blinkers(mainPage, "left", "off");
-    Blinkers* rightB = new Blinkers(mainPage, "right", "off");
-    SpeedometerWidget* speedometer = new SpeedometerWidget(mainPage);
-    FanSpeedWidget* fanspeed = new FanSpeedWidget(mainPage);
-    CPUTempWidget* cputemp = new CPUTempWidget(mainPage);
-    // BatteryWidget*      battery2 = new BatteryWidget(mainPage);
-    ArrowSymbolWidget* arrowSymbol = new ArrowSymbolWidget(mainPage, "zero");
-    // CameraWidget        *cameraWidget = new CameraWidget(secondPage);
-    BatteryAndSpeedWidget* bas = new BatteryAndSpeedWidget(mainPage);
+    // Mode 1
+    TopBar* topBar = new TopBar(mainWindow);
+    Blinkers* leftB = new Blinkers(mainWindow, "left", "off");
+    Blinkers* rightB = new Blinkers(mainWindow, "right", "off");
+    SpeedometerWidget* speedometer = new SpeedometerWidget(mainWindow);
+    BatteryWidget* battery = new BatteryWidget(mainWindow);
+    FanSpeedWidget* fanspeed = new FanSpeedWidget(mainWindow);
+    CPUTempWidget* cputemp = new CPUTempWidget(mainWindow);
+    ArrowSymbolWidget* arrowSymbol = new ArrowSymbolWidget(mainWindow, "zero");
 
-    // Create the ROS node
-    auto ros_node = std::make_shared<RosNode>();
+    // Mode 2
+    TopBar* topBar2 = new TopBar(mainWindow);
+    Blinkers* rightB2 = new Blinkers(mainWindow, "right", "off");
+    Blinkers* leftB2 = new Blinkers(mainWindow, "left", "off");
+    BatteryAndSpeedWidget* bas = new BatteryAndSpeedWidget(mainWindow);
+    FanSpeedWidget* fanspeed2 = new FanSpeedWidget(mainWindow);
+    CPUTempWidget* cputemp2 = new CPUTempWidget(mainWindow);
 
-    // setCentralWidget(cameraWidget);
+    // Ros node
+    auto node = std::make_shared<RosNode>();
 
-    // Set a manager to handle keyboard events
-    EventManager eventManager(arrowSymbol, speedometer, leftB, rightB,
-                              stackedWidget, ros_node);
+    // Layout for Mode 1
+    QVBoxLayout* mode1Layout = new QVBoxLayout();
+    QHBoxLayout* mode1ContentLayout = new QHBoxLayout();
+
+    EventManager eventManager(arrowSymbol, speedometer, bas, leftB, rightB,
+                              stackedWidget, node);
     app.installEventFilter(&eventManager);
-
-    // Create layouts
-    QVBoxLayout* mainLayout = new QVBoxLayout();
-    QVBoxLayout* mainPageLayout = new QVBoxLayout(); // Main vertical layout
-    QHBoxLayout* mainContentLayout =
-        new QHBoxLayout(); // Horizontal layout for speedometers
-    QHBoxLayout* smallerLayout = new QHBoxLayout();
-    QVBoxLayout* secondPageLayout = new QVBoxLayout(); // Main vertical layout
 
     arrowSymbol->setFixedSize(400, 400);
 
+    speedometer->resize(900, 900);
+    speedometer->setFixedSize(400, 400);
+    battery->resize(900, 900);
+    battery->setFixedSize(400, 400);
+    // cameraWidget->resize(1920, 1080);
+    // cameraWidget->setFixedSize(700, 500);
+
     bas->resize(900, 900);
     bas->setFixedSize(400, 400);
-    // battery2->resize(900, 900);
-    // battery2->setFixedSize(400, 400);
 
-    mainPageLayout->addWidget(
-        topBar, 0, Qt::AlignCenter);        // Add the TopBar widget at the top
-    mainPageLayout->addWidget(fanspeed, 0); // Add the TopBar widget at the top
+    mode1ContentLayout->addWidget(leftB, 1);
+    mode1ContentLayout->addWidget(speedometer, 1);
+    mode1ContentLayout->addWidget(arrowSymbol, 1);
+    mode1ContentLayout->addWidget(battery, 1);
+    mode1ContentLayout->addWidget(rightB, 1);
 
-    // Adding objects to the second page
-    // secondPageLayout->addWidget(battery2, 1);
-    // secondPage->setLayout(secondPageLayout);
+    mode1Layout->addLayout(mode1ContentLayout, 1);
+    mode1Layout->addWidget(fanspeed, 0, Qt::AlignBottom);
+    mode1Layout->addWidget(cputemp, 0, Qt::AlignBottom);
+    mode1Layout->addWidget(topBar, 0, Qt::AlignBottom);
+    mode1Page->setLayout(mode1Layout);
 
-    // Add the horizontal layout to the main vertical layout
-    mainContentLayout->addWidget(leftB, 1);
-    mainContentLayout->addWidget(bas, 1);
-    mainContentLayout->addWidget(arrowSymbol, 1);
-    // mainContentLayout->addWidget(battery2, 1);
-    mainContentLayout->addWidget(rightB, 1);
-    // Add Layout to the main Page
-    mainPageLayout->addLayout(mainContentLayout, 1);
-    // Set the layout for the main page
-    mainPage->setLayout(mainPageLayout);
+    // Layout for Mode 2
+    QVBoxLayout* mode2Layout = new QVBoxLayout();
+    QHBoxLayout* mode2ContentLayout = new QHBoxLayout();
 
-    // Add a navigation tool for pages
+    mode2ContentLayout->addWidget(leftB2, 1);
+    mode2ContentLayout->addWidget(bas, 2);
+    mode2ContentLayout->addWidget(rightB2, 1);
+
+    mode2Layout->addLayout(mode2ContentLayout, 1);
+    mode2Layout->addWidget(fanspeed2, 0, Qt::AlignBottom);
+    mode2Layout->addWidget(cputemp2, 0, Qt::AlignBottom);
+    mode2Layout->addWidget(topBar2, 0, Qt::AlignBottom);
+    mode2Page->setLayout(mode2Layout);
+
+    // Toolbar for switching modes
     QToolBar* toolBar = new QToolBar;
-    QAction* page1Action = toolBar->addAction("Main");
-    QAction* page2Action = toolBar->addAction("Second");
+    QAction* mode1Action = toolBar->addAction("Mode 1");
+    QAction* mode2Action = toolBar->addAction("Mode 2");
 
-    // Connect the labels to trigger the pages
-    QObject::connect(page1Action, &QAction::triggered,
-                     [&]() { stackedWidget->setCurrentIndex(0); });
-    QObject::connect(page2Action, &QAction::triggered,
-                     [&]() { stackedWidget->setCurrentIndex(1); });
+    QObject::connect(mode1Action, &QAction::triggered,
+                     [&]()
+                     {
+                         stackedWidget->setCurrentIndex(0); // Switch to Mode 1
+                     });
+    QObject::connect(mode2Action, &QAction::triggered,
+                     [&]()
+                     {
+                         stackedWidget->setCurrentIndex(1); // Switch to Mode 2
+                     });
 
+    // Main Layout
+    Color color = Color();
+    QVBoxLayout* mainLayout = new QVBoxLayout();
     mainLayout->addWidget(toolBar);
     mainLayout->addWidget(stackedWidget);
 
-    mainLayout->addWidget(topBar, 0, Qt::AlignCenter);
-
-    fanspeed->setFixedSize(150, 150);
-    cputemp->setFixedSize(150, 150);
-
-    smallerLayout->addWidget(fanspeed, 0);
-    smallerLayout->addWidget(cputemp, 0);
-    smallerLayout->setSpacing(0);
-    mainLayout->addLayout(smallerLayout, 0);
-    mainLayout->setAlignment(smallerLayout, Qt::AlignTop | Qt::AlignLeft);
-
-    // Set layout for the main window
     mainWindow->setLayout(mainLayout);
-    mainWindow->resize(1468, 768);
-    mainWindow->setStyleSheet("background-color: #0D2126");
-    mainWindow->grabGesture(Qt::SwipeGesture);
+    mainWindow->resize(1200, 800);
+    mainWindow->setStyleSheet(color.background);
     mainWindow->show();
 
+    /*
     QTimer::singleShot(2000, [&]() { topBar->setImageState(0, true); });
     QTimer::singleShot(3000, [&]() { topBar->setImageState(1, true); });
     QTimer::singleShot(4000, [&]() { topBar->setImageState(2, true); });
     QTimer::singleShot(6000, [&]() { topBar->setImageState(4, true); });
     QTimer::singleShot(7000, [&]() { topBar->setImageState(3, true); });
     QTimer::singleShot(8000, [&]() { topBar->setImageState(5, true); });
-
-    int res = app.exec();
+    */
+    int ret = app.exec();
     rclcpp::shutdown();
 
-    return res;
+    return ret;
 }

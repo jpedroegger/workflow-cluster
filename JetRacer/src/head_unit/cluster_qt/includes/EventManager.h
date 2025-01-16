@@ -2,7 +2,10 @@
 #define EVENTMANAGER_H
 
 #include "ArrowSymbolWidget.h"
+#include "BatteryAndSpeedWidget.h"
 #include "Blinkers.h"
+#include "Colors.h"
+#include "RosNode.hpp"
 #include "SpeedometerWidget.h"
 #include <QObject>
 #include <QSet>
@@ -10,7 +13,7 @@
 #include <QSwipeGesture>
 #include <QTimer>
 #include <QWidget>
-#include <RosNode.hpp>
+#include <rclcpp/rclcpp.hpp>
 
 class EventManager : public QWidget
 {
@@ -19,31 +22,29 @@ class EventManager : public QWidget
     private:
         ArrowSymbolWidget* arrows;
         SpeedometerWidget* py_speed;
+        BatteryAndSpeedWidget* py_batspeed;
         Blinkers* left_blinker;
         Blinkers* right_blinker;
         QSet<int> pressedKeys;
         QTimer* updateTimer; // Used to check if a key is still being called
         QStackedWidget* stackedWidget;
-        QPointF mousePosition;
-
-        // ROS related objects
         std::shared_ptr<RosNode> node;
         rclcpp::executors::SingleThreadedExecutor executor;
 
     public:
         EventManager(ArrowSymbolWidget* arrow, SpeedometerWidget* py_speed,
-                     Blinkers* left_blinker, Blinkers* right_blinker,
-                     QStackedWidget* stackedWidget,
+                     BatteryAndSpeedWidget* py_batspeed, Blinkers* left_blinker,
+                     Blinkers* right_blinker, QStackedWidget* stackedWidget,
                      std::shared_ptr<RosNode> ros_node);
-
-        QStackedWidget* getStackedWidget(void) const;
-        void processKeyStates();
+        virtual ~EventManager();
+        Color color1;
 
     protected:
         bool eventFilter(QObject* obj, QEvent* event) override;
-        bool swipe(QPointF releasePosition);
 
     private slots:
+        void handleGestureEvent(QGestureEvent* gestureEvent);
+        void processKeyStates();
 };
 
 #endif // EVENTMANAGER_H

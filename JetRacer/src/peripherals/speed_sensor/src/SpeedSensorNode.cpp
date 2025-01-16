@@ -2,23 +2,24 @@
 #include "std_msgs/msg/u_int8.hpp"
 #include <rclcpp/logging.hpp>
 
-using namespace std::chrono_literals;
-
 SpeedSensorNode::SpeedSensorNode() : rclcpp::Node("speed_sensor")
 {
     client_ = this->create_client<custom_msgs::srv::CanService>("can_service");
-    timer_ = this->create_timer(100ms, [this]() { readSpeed(); });
-    speed_publisher_ = this->create_publisher<std_msgs::msg::UInt8>(
-        "speed_sensor_readings", 10);
+    timer_ = this->create_timer(std::chrono::milliseconds(POLL_FREQ_MS),
+                                [this]() { readSpeed(); });
+    speed_publisher_ =
+        this->create_publisher<std_msgs::msg::UInt8>("speed_readings", 10);
+    rpm_publisher_ =
+        this->create_publisher<std_msgs::msg::Int32>("rpm_readings", 10);
 }
 
 SpeedSensorNode::~SpeedSensorNode() {}
 
 /**
- * @brief function called upon receiving the response of the can interface.
- * Publishes the speed if the request is successful.
+ * @brief function called upon receiving a CAN_frame. reads the can_raw topic
+ * and publishes the speed in a different topic
  *
- * @param future
+ * @param can_frame
  */
 void SpeedSensorNode::writeSpeed(
     rclcpp::Client<custom_msgs::srv::CanService>::SharedFuture future)

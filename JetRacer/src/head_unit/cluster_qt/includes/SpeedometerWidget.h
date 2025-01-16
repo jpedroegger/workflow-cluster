@@ -1,6 +1,7 @@
 #ifndef SPEEDOMETERWIDGET_H
 #define SPEEDOMETERWIDGET_H
 
+#include "Colors.h"
 #include <QKeyEvent> // Include for key events
 #include <QPainter>
 #include <QTimer>
@@ -13,15 +14,18 @@ class SpeedometerWidget : public QWidget
         SpeedometerWidget(QWidget* parent = nullptr);
         ~SpeedometerWidget();
 
-        void accelerate(int forward_key);
-        int getCurrentSpeed(void) const;
         void setCurrentSpeed(int speed);
+        void accelerate(int forward_key);
+        QColor main_color;
+        QColor accent_color;
+        QColor alphabet_color;
 
     protected:
         void paintEvent(QPaintEvent* event) override;
 
     private:
         int currentSpeed;
+        Color color1;
         void drawScale(QPainter& painter, int centerX, int centerY, int radius);
         void drawNeedle(QPainter& painter, int centerX, int centerY,
                         int radius);
@@ -31,4 +35,4 @@ class SpeedometerWidget : public QWidget
         void updateSpeed();
 };
 
-#endif
+#endif // SPEEDOMETERWIDGET_H
