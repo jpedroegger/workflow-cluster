@@ -111,7 +111,7 @@ void BatteryAndSpeedWidget::updateLevel()
     }
     catch(const std::exception& e)
     {
-        std::cerr << "battery level not valid\n";
+    //    std::cerr << "battery level not valid\n";
         currentLevel = 56;
     }
     update();

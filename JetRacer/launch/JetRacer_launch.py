@@ -86,4 +86,9 @@ def generate_launch_description():
             executable='display_routine_node',
             name='display_routine'
         ),
+        Node (
+            package='cluster',
+            executable='cluster_node',
+            name='cluster'
+        ),
     ])
