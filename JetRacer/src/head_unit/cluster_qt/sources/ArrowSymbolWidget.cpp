@@ -1,4 +1,4 @@
-#include "includes/ArrowSymbolWidget.h"
+#include "../includes/ArrowSymbolWidget.h"
 
 ArrowSymbolWidget::ArrowSymbolWidget(QWidget* parent, std::string input)
     : QWidget(parent)

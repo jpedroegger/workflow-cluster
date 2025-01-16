@@ -1,4 +1,4 @@
-#include "includes/Blinkers.h"
+#include "../includes/Blinkers.h"
 #include <QHBoxLayout>
 
 Blinkers::Blinkers(QWidget* parent, std::string dir, std::string mode)
@@ -11,13 +11,13 @@ Blinkers::Blinkers(QWidget* parent, std::string dir, std::string mode)
     // Load two images to toggle
     if (dir == "left")
     {
-        image1.load("/home/jegger/Documents/qt/SEAME-Cluster-24-25/cluster_qt/assets/icons/left.png"); // Path to the first image
-        image2.load("/home/jegger/Documents/qt/SEAME-Cluster-24-25/cluster_qt/assets/icons/left_on.png"); // Path to the second image
+        image1.load("assets/icons/left.png"); // Path to the first image
+        image2.load("assets/icons/left_on.png"); // Path to the second image
     }
     else
     {
-        image1.load("/home/jegger/Documents/qt/SEAME-Cluster-24-25/cluster_qt/assets/icons/right.png"); // Path to the first image
-        image2.load("/home/jegger/Documents/qt/SEAME-Cluster-24-25/cluster_qt/assets/icons/right_on.png"); // Path to the second image
+        image1.load("assets/icons/right.png"); // Path to the first image
+        image2.load("assets/icons/right_on.png"); // Path to the second image
     }
 
     if (image1.isNull() || image2.isNull()) {
@@ -63,19 +63,21 @@ void Blinkers::toggleImage()
     isImage1Visible = !isImage1Visible;
 }
 
-void    Blinkers::turnOnBlinkers(int  blinker_key)
+bool    Blinkers::turnOnBlinkers(int  blinker_key)
 {
     if (!blinking) {
         toggleTimer = new QTimer(this);
         connect(toggleTimer, &QTimer::timeout, this, &Blinkers::toggleImage);
         toggleTimer->start(500);
         blinking = true;
+        return blinking;
     } else {
         toggleTimer->stop();
         if (isImage1Visible)
             isImage1Visible = false;
         imageLabel->setPixmap(image1);
         blinking = false;
+        return blinking;
     }
 }
 
@@ -84,6 +86,15 @@ bool    Blinkers::getBlinking(void)
     return blinking;
 }
 
+QTimer* Blinkers::getToggleTimer(void)
+{
+    return toggleTimer;
+}
+
+bool    Blinkers::getIsImage1Visible(void)
+{
+    return isImage1Visible;
+}
 
 
 

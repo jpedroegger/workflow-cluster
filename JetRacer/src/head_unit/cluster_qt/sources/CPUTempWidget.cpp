@@ -1,13 +1,13 @@
-#include "includes/FanSpeedWidget.h"
+#include "../includes/CPUTempWidget.h"
 
-FanSpeedWidget::FanSpeedWidget(QWidget* parent)
+CPUTempWidget::CPUTempWidget(QWidget* parent)
     : QWidget(parent), currentSpeed(0)
 {
     setFocusPolicy(Qt::StrongFocus); 
 }
 
 
-void FanSpeedWidget::paintEvent(QPaintEvent* event)
+void CPUTempWidget::paintEvent(QPaintEvent* event)
 {
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
@@ -21,14 +21,14 @@ void FanSpeedWidget::paintEvent(QPaintEvent* event)
     drawCentralNumber(painter, centerX, centerY);
 }
 
-void FanSpeedWidget::drawScale(QPainter& painter, int centerX, int centerY, int radius) {
+void CPUTempWidget::drawScale(QPainter& painter, int centerX, int centerY, int radius) {
 
     painter.setPen(QPen(Qt::black, 8));
     painter.drawEllipse(centerX - radius, centerY - radius, 2 * radius, 2 * radius);
 
 }
 
-void FanSpeedWidget::drawNeedle(QPainter& painter, int centerX, int centerY, int radius) {
+void CPUTempWidget::drawNeedle(QPainter& painter, int centerX, int centerY, int radius) {
     double startAngle = -45;
     double endAngle = 225;    
 
@@ -44,7 +44,7 @@ void FanSpeedWidget::drawNeedle(QPainter& painter, int centerX, int centerY, int
     painter.drawLine(xStart, yStart, xEnd, yEnd);
 }
 
-void FanSpeedWidget::drawCentralNumber(QPainter& painter, int centerX, int centerY) {
+void CPUTempWidget::drawCentralNumber(QPainter& painter, int centerX, int centerY) {
 
     QFont font("Arial", 20, QFont::Bold); 
     painter.setFont(font);
@@ -58,16 +58,16 @@ void FanSpeedWidget::drawCentralNumber(QPainter& painter, int centerX, int cente
     int y = centerY + textRect.height() / 2 - 10;
     painter.drawText(x, y, speedText);
 
-    QFont smallFont("Arial", 5, QFont::Bold); 
+    QFont smallFont("Arial", 10, QFont::Bold); 
     painter.setFont(smallFont);
 
     QFontMetrics smallMetrics(smallFont);
-    int kphWidth = smallMetrics.horizontalAdvance("RPM");
+    int kphWidth = smallMetrics.horizontalAdvance("ºC");
     int kphX = centerX - kphWidth / 2;
     int kphY = y + textRect.height() - 20; 
 
-    painter.drawText(kphX, kphY, "RPM");
-    QPixmap image("assets/icons/fan_white.png");
+    painter.drawText(kphX, kphY, "ºC");
+    QPixmap image("assets/icons/cpu.png");
     if (!image.isNull()) {
         int imgWidth = 25; 
         int imgHeight = 25;
@@ -77,7 +77,7 @@ void FanSpeedWidget::drawCentralNumber(QPainter& painter, int centerX, int cente
     }
 }
 
-void FanSpeedWidget::keyPressEvent(QKeyEvent* event)
+void CPUTempWidget::keyPressEvent(QKeyEvent* event)
 {
 
     if (event->key() == Qt::Key_Space) {
@@ -99,8 +99,8 @@ void FanSpeedWidget::keyPressEvent(QKeyEvent* event)
 }
 
 
-void FanSpeedWidget::updateSpeed() {
+void CPUTempWidget::updateSpeed() {
     update();
 }
 
-FanSpeedWidget::~FanSpeedWidget() {}
+CPUTempWidget::~CPUTempWidget() {}

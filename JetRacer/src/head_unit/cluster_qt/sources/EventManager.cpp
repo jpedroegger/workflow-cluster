@@ -1,4 +1,4 @@
-#include "includes/EventManager.h"
+#include "../includes/EventManager.h"
 #include <QSinglePointEvent>
 #include <QtMath>
 
