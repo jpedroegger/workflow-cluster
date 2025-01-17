@@ -28,6 +28,7 @@ class EventManager : public QWidget
         QSet<int> pressedKeys;
         QTimer* updateTimer;   // Used to check if a key is still being called
         QStackedWidget* stackedWidget;
+        QWidget* mainWindow;
 
     public:
         EventManager(ArrowSymbolWidget* arrow,
@@ -36,7 +37,8 @@ class EventManager : public QWidget
                      Blinkers* left_blinker,
                      Blinkers* right_blinker,
                      BatteryWidget* bat,
-                     QStackedWidget* stackedWidget);
+                     QStackedWidget* stackedWidget,
+                     QWidget* mainWindow);
         virtual ~EventManager();
         Color color1;
 

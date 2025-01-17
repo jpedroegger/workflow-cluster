@@ -6,8 +6,9 @@ EventManager::EventManager(ArrowSymbolWidget* arrow,
                            Blinkers* left_blinker,
                            Blinkers* right_blinker,
                            BatteryWidget* bat,
-                           QStackedWidget* stackedWidget)
-    : arrows(arrow), py_speed(py_speed), py_batspeed(py_batspeed), left_blinker(left_blinker), right_blinker(right_blinker), battery(bat), stackedWidget(stackedWidget)
+                           QStackedWidget* stackedWidget,
+                           QWidget* mainWindow)
+    : arrows(arrow), py_speed(py_speed), py_batspeed(py_batspeed), left_blinker(left_blinker), right_blinker(right_blinker), battery(bat), stackedWidget(stackedWidget), mainWindow(mainWindow)
 {
     color1 = Color();
     updateTimer = new QTimer(this);
@@ -96,6 +97,8 @@ void EventManager::processKeyStates()
                 py_batspeed->changeColor(color1.counter);
                 py_speed->changeColor(color1.counter);
                 battery->changeColor(color1.counter);
+                mainWindow->setStyleSheet(color1.background_array[color1.counter]);
+
                 break;
             default:
                 break;
