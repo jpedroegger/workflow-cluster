@@ -13,7 +13,8 @@ class BatteryAndSpeedWidget : public QWidget
         BatteryAndSpeedWidget(QWidget* parent = nullptr);
         ~BatteryAndSpeedWidget();
 
-        void setCurrentLevel(int level);
+        void setCurrentSpeed(int speed);
+        void setCurrentLevel(int battery);
 
         void accelerate(int forward_key);
         QColor main_color;

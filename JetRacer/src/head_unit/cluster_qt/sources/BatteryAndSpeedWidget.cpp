@@ -105,26 +105,6 @@ QColor BatteryAndSpeedWidget::calculateBarColor(int value)
 
 void BatteryAndSpeedWidget::updateLevel()
 {
-    const std::string command = "upower -i $(upower -e | grep BAT) | grep -E "
-                                "\"percentage\" | awk '{print $2}'";
-    std::array<char, 128> buffer;
-    std::string result;
-    std::unique_ptr<FILE, decltype(&pclose)> pipe(popen(command.c_str(), "r"),
-                                                  pclose);
-    if (!pipe)
-        throw std::runtime_error("Failed to run command");
-    while (fgets(buffer.data(), buffer.size(), pipe.get()) != nullptr)
-        result += buffer.data();
-    result.erase(result.find_last_not_of(" \t\n\r") + 1);
-    try
-    {
-        currentLevel = std::stof(result);
-    }
-    catch (const std::exception& e)
-    {
-        std::cerr << "battery level not valid\n";
-        currentLevel = 56;
-    }
     update();
 }
 
@@ -190,6 +170,7 @@ void BatteryAndSpeedWidget::accelerate(int forward_key)
     }
 }
 
-void BatteryAndSpeedWidget::setCurrentLevel(int level) { currentLevel = level; }
+void BatteryAndSpeedWidget::setCurrentLevel(int battery) { currentLevel = battery; }
+void BatteryAndSpeedWidget::setCurrentSpeed(int speed) { currentSpeed = speed; }
 
 void BatteryAndSpeedWidget::updateSpeed() { update(); }

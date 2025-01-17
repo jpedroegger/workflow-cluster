@@ -2,11 +2,12 @@
 #include <iostream>
 EventManager::EventManager(ArrowSymbolWidget* arrow,
                            SpeedometerWidget* py_speed,
+                           BatteryWidget* py_battery,
                            BatteryAndSpeedWidget* py_batspeed,
                            Blinkers* left_blinker, Blinkers* right_blinker,
                            QStackedWidget* stackedWidget,
                            std::shared_ptr<RosNode> ros_node)
-    : arrows(arrow), py_speed(py_speed), py_batspeed(py_batspeed),
+    : arrows(arrow), py_speed(py_speed), py_battery(py_battery), py_batspeed(py_batspeed),
       left_blinker(left_blinker), right_blinker(right_blinker),
       stackedWidget(stackedWidget), node(ros_node)
 {
@@ -49,8 +50,11 @@ void EventManager::processKeyStates()
     executor.spin_some(
         std::chrono::milliseconds(10)); // after this line, values are updated.
     py_speed->setCurrentSpeed(node->getSpeed());
+    py_battery->setCurrentLevel(node->getBattery());
     py_batspeed->setCurrentLevel(node->getBattery());
+    py_batspeed->setCurrentSpeed(node->getSpeed());
     py_speed->update();
+    py_battery->update();
     py_batspeed->update();
 
     for (int key : pressedKeys)
@@ -67,8 +71,6 @@ void EventManager::processKeyStates()
         case Qt::Key_Down:
             if (py_speed)
                 py_speed->accelerate(key);
-            if (py_batspeed)
-                py_batspeed->accelerate(key);
             break;
         case Qt::Key_L:
             if (left_blinker && right_blinker)

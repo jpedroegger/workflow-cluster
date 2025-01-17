@@ -7,6 +7,7 @@
 #include "Colors.h"
 #include "RosNode.hpp"
 #include "SpeedometerWidget.h"
+#include "BatteryWidget.h"
 #include <QObject>
 #include <QSet>
 #include <QStackedWidget>
@@ -22,6 +23,7 @@ class EventManager : public QWidget
     private:
         ArrowSymbolWidget* arrows;
         SpeedometerWidget* py_speed;
+        BatteryWidget* py_battery;
         BatteryAndSpeedWidget* py_batspeed;
         Blinkers* left_blinker;
         Blinkers* right_blinker;
@@ -33,6 +35,7 @@ class EventManager : public QWidget
 
     public:
         EventManager(ArrowSymbolWidget* arrow, SpeedometerWidget* py_speed,
+                     BatteryWidget* py_battery,
                      BatteryAndSpeedWidget* py_batspeed, Blinkers* left_blinker,
                      Blinkers* right_blinker, QStackedWidget* stackedWidget,
                      std::shared_ptr<RosNode> ros_node);

@@ -16,6 +16,8 @@ class BatteryWidget : public QWidget
         QColor accent_color;
         QColor alphabet_color;
 
+        void setCurrentLevel(int level);
+
     protected:
         void paintEvent(QPaintEvent* event) override;
 
