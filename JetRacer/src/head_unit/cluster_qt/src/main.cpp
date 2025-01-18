@@ -3,7 +3,7 @@
 int main(int argc, char* argv[])
 {
     //rclcpp::init(argc, argv);
-        QApplication app(argc, argv);
+    QApplication app(argc, argv);
 
     QWidget* mainWindow = new QWidget;
     QWidget* mode1Page = new QWidget;
@@ -24,6 +24,7 @@ int main(int argc, char* argv[])
     ArrowSymbolWidget*      arrowSymbol = new ArrowSymbolWidget(mainWindow, "zero");
 
     // Mode 2
+    SettingsWidget*         settings = new SettingsWidget(mainWindow);
     TopBar*                 topBar2 = new TopBar(mainWindow);
     Blinkers*               rightB2 = new Blinkers(mainWindow, "right", "off");
     Blinkers*               leftB2 = new Blinkers(mainWindow, "left", "off");
@@ -66,8 +67,11 @@ int main(int argc, char* argv[])
     QVBoxLayout* mode2Layout = new QVBoxLayout();
     QHBoxLayout* mode2ContentLayout = new QHBoxLayout();
 
+    settings->setFixedSize(400, 400);
+
     mode2ContentLayout->addWidget(leftB2, 1);
     mode2ContentLayout->addWidget(bas, 2);
+    mode2ContentLayout->addWidget(settings, 2);
     mode2ContentLayout->addWidget(rightB2, 1);
 
 

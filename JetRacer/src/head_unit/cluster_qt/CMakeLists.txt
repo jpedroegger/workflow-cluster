@@ -24,6 +24,7 @@ find_package(Qt6 REQUIRED COMPONENTS Widgets Multimedia MultimediaWidgets)
 # Define source and header files separately
 set(HEADERS
     include/Colors.h
+    include/SettingsWidget.h
     include/mainwindow.h
     include/ArrowSymbolWidget.h
     include/SpeedometerWidget.h
@@ -39,6 +40,7 @@ set(HEADERS
 
 set(SOURCES
     src/main.cpp
+    src/SettingsWidget.cpp
     src/mainwindow.cpp
     src/ArrowSymbolWidget.cpp
     src/SpeedometerWidget.cpp
