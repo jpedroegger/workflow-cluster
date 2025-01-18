@@ -3,6 +3,7 @@ project(cluster VERSION 0.1 LANGUAGES CXX)
 
 # Define executable name
 set(exec_name ${PROJECT_NAME}_node)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # Qt configuration
 set(CMAKE_AUTOUIC ON)
@@ -23,44 +24,46 @@ find_package(Qt6 REQUIRED COMPONENTS Widgets Multimedia MultimediaWidgets)
 
 # Define source and header files separately
 set(HEADERS
-    include/Colors.h
-    include/SettingsWidget.h
-    include/mainwindow.h
-    include/ArrowSymbolWidget.h
-    include/SpeedometerWidget.h
-    include/CPUTempWidget.h
-    include/FanSpeedWidget.h
-    include/BatteryWidget.h
-    include/BatteryAndSpeedWidget.h
-    include/TopBar.h
-    include/Blinkers.h
-    include/EventManager.h
-    include/CameraWidget.h
+    includes/mainwindow.h
+    includes/ArrowSymbolWidget.h
+    includes/SpeedometerWidget.h
+    includes/CPUTempWidget.h
+    includes/FanSpeedWidget.h
+    includes/BatteryWidget.h
+    includes/BatteryAndSpeedWidget.h
+    includes/TopBar.h
+    includes/Blinkers.h
+    includes/EventManager.h
+    includes/CameraWidget.h
+    includes/RosNode.hpp
+    includes/Colors.h
+    includes/SettingsWidget.h
 )
 
 set(SOURCES
-    src/main.cpp
-    src/SettingsWidget.cpp
-    src/mainwindow.cpp
-    src/ArrowSymbolWidget.cpp
-    src/SpeedometerWidget.cpp
-    src/CPUTempWidget.cpp
-    src/FanSpeedWidget.cpp
-    src/BatteryWidget.cpp
-    src/BatteryAndSpeedWidget.cpp
-    src/TopBar.cpp
-    src/Blinkers.cpp
-    src/EventManager.cpp
-    src/CameraWidget.cpp
+    sources/main.cpp
+    sources/mainwindow.cpp
+    sources/ArrowSymbolWidget.cpp
+    sources/SpeedometerWidget.cpp
+    sources/CPUTempWidget.cpp
+    sources/FanSpeedWidget.cpp
+    sources/BatteryWidget.cpp
+    sources/BatteryAndSpeedWidget.cpp
+    sources/TopBar.cpp
+    sources/Blinkers.cpp
+    sources/EventManager.cpp
+    sources/CameraWidget.cpp
+	sources/RosNode.cpp
+	sources/SettingsWidget.cpp
 )
 
 set(UI_FILES
-    src/mainwindow.ui
+    sources/mainwindow.ui
 )
 
 # Include directories
 include_directories(
-    ${CMAKE_CURRENT_SOURCE_DIR}/include
+    ${CMAKE_CURRENT_SOURCE_DIR}/includes
     ${rclcpp_INCLUDE_DIRS}
     ${std_msgs_INCLUDE_DIRS}
     ${custom_msgs_INCLUDE_DIRS}
