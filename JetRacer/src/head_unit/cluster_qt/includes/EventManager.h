@@ -28,8 +28,11 @@ class EventManager : public QWidget
         BatteryAndSpeedWidget* py_batspeed;
         Blinkers* left_blinker;
         Blinkers* right_blinker;
+        Blinkers* left_blinker2;
+        Blinkers* right_blinker2;
         StatsWidget* stats;
         TopBar* top;
+        TopBar* top2;
         QSet<int> pressedKeys;
         QTimer* updateTimer; // Used to check if a key is still being called
         QStackedWidget* stackedWidget;
@@ -39,9 +42,10 @@ class EventManager : public QWidget
 
     public:
         EventManager(ArrowSymbolWidget* arrow, SpeedometerWidget* py_speed,
-                     BatteryWidget* py_battery,
-                     BatteryAndSpeedWidget* py_batspeed, Blinkers* left_blinker,
-                     Blinkers* right_blinker, StatsWidget* stats, TopBar* top,
+                     BatteryWidget* py_battery, BatteryAndSpeedWidget* py_batspeed,
+                     Blinkers* left_blinker, Blinkers* right_blinker,
+                     Blinkers* left_blinker2, Blinkers* right_blinker2,
+                     StatsWidget* stats, TopBar* top, TopBar* top2,
                      QStackedWidget* stackedWidget, QWidget* mainWindow);
         virtual ~EventManager();
         Color color1;

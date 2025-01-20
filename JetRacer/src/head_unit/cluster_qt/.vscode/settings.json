@@ -65,7 +65,9 @@
         "thread": "cpp",
         "typeinfo": "cpp",
         "variant": "cpp",
-        "__nullptr": "cpp"
+        "__nullptr": "cpp",
+        "queue": "cpp",
+        "stack": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

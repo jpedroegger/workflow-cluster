@@ -21,7 +21,7 @@ public:
     QColor  alphabet_color_array[4] = {"#006466", "#E36414", "#E4C1F9", "#FEFAE0"};
     QColor  alphabet_color = alphabet_color_array[0];
 
-    QString background_array[4] = {"background-color: #212F45", "background-color: #5F0F40", "background-color: #D0F4DE", "background-color: #DDA15E"};
+    QString background_array[4] = {"background-color: #144552", "background-color: #5F0F40", "background-color: #D0F4DE", "background-color: #DDA15E"};
     QString background = background_array[0];
     void            indent()
     {

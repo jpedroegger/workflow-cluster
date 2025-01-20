@@ -18,7 +18,11 @@ BatteryAndSpeedWidget::BatteryAndSpeedWidget(QWidget* parent)
 void BatteryAndSpeedWidget::paintEvent(QPaintEvent* event)
 {
     QPainter painter(this);
-    QPixmap image("assets/icons/battery.png");
+    image_array[0] = QPixmap("assets/icons/battery_p.png");
+    image_array[1] = QPixmap("assets/icons/battery_r.png");
+    image_array[2] = QPixmap("assets/icons/battery_i.png");
+    image_array[3] = QPixmap("assets/icons/battery_g.png");
+    image = image_array[index];
     painter.setRenderHint(QPainter::Antialiasing);
     int centerX = width() / 2;
     int centerY = height() / 2;
@@ -174,7 +178,8 @@ void    BatteryAndSpeedWidget::changeColor(int  array_index)
 {
     main_color = color1.main_color_array[array_index];
     accent_color = color1.accent_color_array[array_index];
-    alphabet_color = color1.alphabet_color_array[array_index];   
+    alphabet_color = color1.alphabet_color_array[array_index];
+    index = array_index;
     update();
 }
 

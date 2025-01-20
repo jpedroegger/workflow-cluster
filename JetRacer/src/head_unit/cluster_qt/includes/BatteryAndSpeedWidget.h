@@ -30,7 +30,12 @@ class BatteryAndSpeedWidget : public QWidget
     private:
         int currentLevel;
         int currentSpeed;
+        int imageX;
+        int imageY;
+        int index = 0;
         Color color1;
+        QPixmap image_array[4];
+        QPixmap image;
         void drawScale(QPainter& painter, int centerX, int centerY, int radius);
         void drawCentralNumber(QPainter& painter, int centerX, int centerY);
         void drawBatteryNumber(QPainter& painter, int centerX, int centerY);

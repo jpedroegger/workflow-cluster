@@ -37,7 +37,7 @@ void    StatsWidget::paintEvent(QPaintEvent *event)
             int y = row * (rectHeight + spacing) + spacing + 200;
 
             // Draw rectangle
-            painter.setPen(QPen(main_color, 5));
+            painter.setPen(QPen(main_color, 8));
             painter.drawRect(x, y, rectWidth, rectHeight);
 
             painter.setPen(QPen(alphabet_color));

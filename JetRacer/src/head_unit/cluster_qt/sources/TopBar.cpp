@@ -118,5 +118,4 @@ void    TopBar::changeColor(int  array_index)
     for (int i = 0; i < 6; ++i) {
         imageLabels[i]->setPixmap(defaultImages[i]);
     }
-    update();
 }

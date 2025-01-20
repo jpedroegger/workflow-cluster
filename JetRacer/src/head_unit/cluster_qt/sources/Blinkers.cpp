@@ -22,7 +22,7 @@ Blinkers::Blinkers(QWidget* parent, std::string dir, std::string mode)
     }
     else
     {
-        image1_array[0].load("assets/icons/right_p.png");
+        image1_array[0].load("assets/icons/right_p2.png");
         image1_array[1].load("assets/icons/right_r.png");
         image1_array[2].load("assets/icons/right_i.png");
         image1_array[3].load("assets/icons/right_g.png");
@@ -89,7 +89,6 @@ void    Blinkers::changeColor(int  array_index)
 {
     image1 = image1_array[array_index];
     imageLabel->setPixmap(image1);
-    update();
 }
 
 bool    Blinkers::get_blinking()
