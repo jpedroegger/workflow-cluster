@@ -117,6 +117,8 @@ void EventManager::processKeyStates()
             py_battery->changeColor(color1.counter);
             stats->changeColor(color1.counter);
             top->changeColor(color1.counter);
+            left_blinker->changeColor(color1.counter);
+            right_blinker->changeColor(color1.counter);
             mainWindow->setStyleSheet(color1.background_array[color1.counter]);
             break;
         default:

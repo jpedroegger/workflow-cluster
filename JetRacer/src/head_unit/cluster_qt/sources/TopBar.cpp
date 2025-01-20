@@ -9,15 +9,6 @@ TopBar::TopBar(QWidget* parent) : QWidget(parent)
     layout->setContentsMargins(0, 0, 0, 0); // Optional: adjust margins
 
     // Create default and alternate images
-    defaultImagePaths_array[4] = {
-        "assets/icons/wheel.png",
-        "assets/icons/brake.png",
-        "assets/icons/abs.png", // Replace with your actual paths
-        "assets/icons/med.png",
-        "assets/icons/max.png",
-        "assets/icons/fog.png",
-        "assets/icons/belt.png"
-    };
     defaultImagePaths_array[0] = {
         "assets/icons/wheel_p.png",
         "assets/icons/brake_p.png",
@@ -64,9 +55,9 @@ TopBar::TopBar(QWidget* parent) : QWidget(parent)
         "assets/icons/belt_on.png"
     };
 
-    defaultImagePaths = defaultImagePaths_array[4];
+    defaultImagePaths = defaultImagePaths_array[0];
     // Load images into QPixmaps
-    for (int j = 0; j < 5; j++)
+    for (int j = 0; j < 4; j++)
     {
         for (const QString& path : defaultImagePaths_array[j]) {
             QPixmap pixmap(path);
@@ -76,7 +67,7 @@ TopBar::TopBar(QWidget* parent) : QWidget(parent)
             defaultImages_array[j].append(pixmap);
         }
     }
-    defaultImages = defaultImages_array[4];
+    defaultImages = defaultImages_array[0];
     for (const QString& path : altImagePaths) {
         QPixmap pixmap(path);
         if (pixmap.isNull()) {

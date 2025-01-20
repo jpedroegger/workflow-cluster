@@ -16,13 +16,16 @@ public:
 
     void    turnOnBlinkers(bool  on_off);
     bool    get_blinking(void);
+    void    changeColor(int  array_index);
 
 private slots:
     void toggleImage(); // Slot to toggle the image
 
 private:
     QLabel* imageLabel;         // QLabel to display the image
+    //QLabel* imageLabel_array[4];
     QPixmap image1;             // First image
+    QPixmap image1_array[4];             
     QPixmap image2;             // Second image
     bool isImage1Visible;       // Boolean to track the current image
     QTimer* toggleTimer;        // Timer for toggling
