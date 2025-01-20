@@ -1,3 +1,8 @@
+/**
+ * @file SpeedometerWidget.cpp
+ * @brief Object responsible for drawing the Speedometer widget present in the cluster, and updating it's values as published by EventManager. 
+ */
+
 #include "../includes/SpeedometerWidget.h"
 
 SpeedometerWidget::SpeedometerWidget(QWidget* parent)
