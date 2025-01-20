@@ -1,0 +1,46 @@
+name: Build on Pull Request
+
+on:
+  pull_request:
+    types: [opened, reopened]
+    branches:
+      - main
+
+env:
+  BUILD_DIR: JetRacer/src/head_unit/cluster_qt/build
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Install Clang
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y clang
+
+    - name: Install dependencies
+      run: |
+        sudo apt update
+        sudo apt install -y build-essential cmake
+
+    - name: Install Qt
+      run: |
+        sudo apt-get install -y qt6-base-dev qt6-tools-dev-tools
+        sudo apt-get install -y qt6-multimedia-dev        
+        
+    - name: Build the project
+      run: |
+        mkdir -p $BUILD_DIR
+        cd $BUILD_DIR
+        cmake ..
+        cmake --build . -- -j$(nproc)
+
+    - name: Testing the Cluster
+      run: |
+        cd $BUILD_DIR/cluster_tests
+        export QT_QPA_PLATFORM=offscreen
+        ctest --verbose
+  
