@@ -1,4 +1,5 @@
 #include "../includes/TopBar.h"
+#include <iostream>
 
 TopBar::TopBar(QWidget* parent) : QWidget(parent)
 {
@@ -53,7 +54,6 @@ TopBar::TopBar(QWidget* parent) : QWidget(parent)
         "assets/icons/fog_g.png",
         "assets/icons/belt_g.png"
     };
-    defaultImagePaths = defaultImagePaths_array[4];
     altImagePaths = {
         "assets/icons/wheel_on.png",
         "assets/icons/brake_on.png",
@@ -64,15 +64,19 @@ TopBar::TopBar(QWidget* parent) : QWidget(parent)
         "assets/icons/belt_on.png"
     };
 
+    defaultImagePaths = defaultImagePaths_array[4];
     // Load images into QPixmaps
-    for (const QString& path : defaultImagePaths) {
-        QPixmap pixmap(path);
-        if (pixmap.isNull()) {
-            qWarning() << "Failed to load default image:" << path;
+    for (int j = 0; j < 5; j++)
+    {
+        for (const QString& path : defaultImagePaths_array[j]) {
+            QPixmap pixmap(path);
+            if (pixmap.isNull()) {
+                qWarning() << "Failed to load default image:" << path;
+            }
+            defaultImages_array[j].append(pixmap);
         }
-        defaultImages.append(pixmap);
     }
-
+    defaultImages = defaultImages_array[4];
     for (const QString& path : altImagePaths) {
         QPixmap pixmap(path);
         if (pixmap.isNull()) {
@@ -119,7 +123,7 @@ bool    TopBar::setImageState(int index, bool state)
 
 void    TopBar::changeColor(int  array_index)
 {
-    defaultImagePaths = defaultImagePaths_array[array_index];
+    defaultImages = defaultImages_array[array_index];
     for (int i = 0; i < 6; ++i) {
         imageLabels[i]->setPixmap(defaultImages[i]);
     }
