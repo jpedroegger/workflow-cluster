@@ -5,18 +5,17 @@ EventManager::EventManager(ArrowSymbolWidget* arrow,
                            BatteryWidget* py_battery,
                            BatteryAndSpeedWidget* py_batspeed,
                            Blinkers* left_blinker, Blinkers* right_blinker,
-                           QStackedWidget* stackedWidget,
-                           QWidget* mainWindow,
-                           std::shared_ptr<RosNode> ros_node)
+                           StatsWidget* stats, QStackedWidget* stackedWidget,
+                           QWidget* mainWindow)
     : arrows(arrow), py_speed(py_speed), py_battery(py_battery), py_batspeed(py_batspeed),
-      left_blinker(left_blinker), right_blinker(right_blinker),
-      stackedWidget(stackedWidget), mainWindow(mainWindow), node(ros_node)
+      left_blinker(left_blinker), right_blinker(right_blinker), stats(stats),
+      stackedWidget(stackedWidget), mainWindow(mainWindow)
 {
     color1 = Color();
     updateTimer = new QTimer(this);
     connect(updateTimer, &QTimer::timeout, this,
             &EventManager::processKeyStates);
-    executor.add_node(node);
+    //executor.add_node(node);
     updateTimer->start(80); // Every 80ms
 }
 
@@ -48,15 +47,16 @@ bool EventManager::eventFilter(QObject* obj, QEvent* event)
 
 void EventManager::processKeyStates()
 {
-    executor.spin_some(
-        std::chrono::milliseconds(10)); // after this line, values are updated.
-    py_speed->setCurrentSpeed(node->getSpeed());
-    py_battery->setCurrentLevel(node->getBattery());
-    py_batspeed->setCurrentLevel(node->getBattery());
-    py_batspeed->setCurrentSpeed(node->getSpeed());
+    
+    //executor.spin_some(std::chrono::milliseconds(10)); // after this line, values are updated.
+    py_speed->setCurrentSpeed(37);
+    py_battery->setCurrentLevel(42);
+    py_batspeed->setCurrentLevel(42);
+    py_batspeed->setCurrentSpeed(37);
     py_speed->update();
     py_battery->update();
     py_batspeed->update();
+    
 
     for (int key : pressedKeys)
     {
@@ -114,7 +114,8 @@ void EventManager::processKeyStates()
             arrows->changeColor(color1.counter);
             py_batspeed->changeColor(color1.counter);
             py_speed->changeColor(color1.counter);
-            battery->changeColor(color1.counter);
+            py_battery->changeColor(color1.counter);
+            stats->changeColor(color1.counter);
             mainWindow->setStyleSheet(color1.background_array[color1.counter]);
             break;
         default:

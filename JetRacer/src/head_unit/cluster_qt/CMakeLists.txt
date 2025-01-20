@@ -35,9 +35,10 @@ set(HEADERS
     includes/Blinkers.h
     includes/EventManager.h
     includes/CameraWidget.h
-    includes/RosNode.hpp
+    #includes/RosNode.hpp
     includes/Colors.h
     includes/SettingsWidget.h
+    includes/StatsWidget.h
 )
 
 set(SOURCES
@@ -53,8 +54,9 @@ set(SOURCES
     sources/Blinkers.cpp
     sources/EventManager.cpp
     sources/CameraWidget.cpp
-	sources/RosNode.cpp
-	sources/SettingsWidget.cpp
+	#sources/RosNode.cpp
+    sources/SettingsWidget.cpp
+	sources/StatsWidget.cpp
 )
 
 set(UI_FILES

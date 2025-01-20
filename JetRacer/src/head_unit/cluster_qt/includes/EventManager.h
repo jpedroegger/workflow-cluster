@@ -5,8 +5,9 @@
 #include "BatteryAndSpeedWidget.h"
 #include "Blinkers.h"
 #include "Colors.h"
-#include "RosNode.hpp"
+//#include "RosNode.hpp"
 #include "SpeedometerWidget.h"
+#include "StatsWidget.h"
 #include "BatteryWidget.h"
 #include <QObject>
 #include <QSet>
@@ -14,7 +15,6 @@
 #include <QSwipeGesture>
 #include <QTimer>
 #include <QWidget>
-#include <rclcpp/rclcpp.hpp>
 
 class EventManager : public QWidget
 {
@@ -27,19 +27,20 @@ class EventManager : public QWidget
         BatteryAndSpeedWidget* py_batspeed;
         Blinkers* left_blinker;
         Blinkers* right_blinker;
+        StatsWidget* stats;
         QSet<int> pressedKeys;
         QTimer* updateTimer; // Used to check if a key is still being called
         QStackedWidget* stackedWidget;
         QWidget* mainWindow;
-        std::shared_ptr<RosNode> node;
-        rclcpp::executors::SingleThreadedExecutor executor;
+        //std::shared_ptr<RosNode> node;
+        //rclcpp::executors::SingleThreadedExecutor executor;
 
     public:
         EventManager(ArrowSymbolWidget* arrow, SpeedometerWidget* py_speed,
                      BatteryWidget* py_battery,
                      BatteryAndSpeedWidget* py_batspeed, Blinkers* left_blinker,
-                     Blinkers* right_blinker, QStackedWidget* stackedWidget,
-                     QWidget* mainWindow, std::shared_ptr<RosNode> ros_node);
+                     Blinkers* right_blinker, StatsWidget* stats,
+                     QStackedWidget* stackedWidget, QWidget* mainWindow);
         virtual ~EventManager();
         Color color1;
 

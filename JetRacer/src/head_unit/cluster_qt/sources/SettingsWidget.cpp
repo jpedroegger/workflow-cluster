@@ -1,4 +1,4 @@
-#include "../include/SettingsWidget.h"
+#include "../includes/SettingsWidget.h"
 
 SettingsWidget::SettingsWidget(QWidget *parent)
     : QWidget(parent), expanded(false)

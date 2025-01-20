@@ -24,7 +24,8 @@ int main(int argc, char* argv[])
     ArrowSymbolWidget*      arrowSymbol = new ArrowSymbolWidget(mainWindow, "zero");
 
     // Mode 2
-    SettingsWidget*         settings = new SettingsWidget(mainWindow);
+    //SettingsWidget*         settings = new SettingsWidget(mainWindow);
+    StatsWidget*            stats = new StatsWidget(mainWindow);
     TopBar*                 topBar2 = new TopBar(mainWindow);
     Blinkers*               rightB2 = new Blinkers(mainWindow, "right", "off");
     Blinkers*               leftB2 = new Blinkers(mainWindow, "left", "off");
@@ -33,14 +34,14 @@ int main(int argc, char* argv[])
     CPUTempWidget*          cputemp2 = new CPUTempWidget(mainWindow);
 
     // Ros node
-    auto node = std::make_shared<RosNode>();
+    //auto node = std::make_shared<RosNode>();
 
     // Layout for Mode 1
     QVBoxLayout* mode1Layout = new QVBoxLayout();
     QHBoxLayout* mode1ContentLayout = new QHBoxLayout();
 
     EventManager eventManager(arrowSymbol, speedometer, battery, bas, leftB, rightB,
-                              stackedWidget, mainWindow, node);
+                              stats, stackedWidget, mainWindow);
     app.installEventFilter(&eventManager);
 
     arrowSymbol->setFixedSize(400, 400);
@@ -72,7 +73,8 @@ int main(int argc, char* argv[])
     QHBoxLayout* mode2ContentLayout = new QHBoxLayout();
 
     mode2ContentLayout->addWidget(leftB2, 1);
-    mode2ContentLayout->addWidget(bas, 2);
+    mode2ContentLayout->addWidget(bas, 2, Qt::AlignCenter);
+    mode2ContentLayout->addWidget(stats, 2);
     mode2ContentLayout->addWidget(rightB2, 1);
 
     mode2Layout->addLayout(mode2ContentLayout, 1);
