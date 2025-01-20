@@ -5,10 +5,10 @@ EventManager::EventManager(ArrowSymbolWidget* arrow,
                            BatteryWidget* py_battery,
                            BatteryAndSpeedWidget* py_batspeed,
                            Blinkers* left_blinker, Blinkers* right_blinker,
-                           StatsWidget* stats, QStackedWidget* stackedWidget,
-                           QWidget* mainWindow)
+                           StatsWidget* stats, TopBar* top,
+                           QStackedWidget* stackedWidget, QWidget* mainWindow)
     : arrows(arrow), py_speed(py_speed), py_battery(py_battery), py_batspeed(py_batspeed),
-      left_blinker(left_blinker), right_blinker(right_blinker), stats(stats),
+      left_blinker(left_blinker), right_blinker(right_blinker), stats(stats), top(top),
       stackedWidget(stackedWidget), mainWindow(mainWindow)
 {
     color1 = Color();
@@ -116,6 +116,7 @@ void EventManager::processKeyStates()
             py_speed->changeColor(color1.counter);
             py_battery->changeColor(color1.counter);
             stats->changeColor(color1.counter);
+            top->changeColor(color1.counter);
             mainWindow->setStyleSheet(color1.background_array[color1.counter]);
             break;
         default:

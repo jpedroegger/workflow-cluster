@@ -8,7 +8,7 @@ TopBar::TopBar(QWidget* parent) : QWidget(parent)
     layout->setContentsMargins(0, 0, 0, 0); // Optional: adjust margins
 
     // Create default and alternate images
-    QStringList defaultImagePaths = {
+    defaultImagePaths_array[4] = {
         "assets/icons/wheel.png",
         "assets/icons/brake.png",
         "assets/icons/abs.png", // Replace with your actual paths
@@ -17,8 +17,44 @@ TopBar::TopBar(QWidget* parent) : QWidget(parent)
         "assets/icons/fog.png",
         "assets/icons/belt.png"
     };
-
-    QStringList altImagePaths = {
+    defaultImagePaths_array[0] = {
+        "assets/icons/wheel_p.png",
+        "assets/icons/brake_p.png",
+        "assets/icons/abs_p.png", // Replace with your actual paths
+        "assets/icons/med_p.png",
+        "assets/icons/max_p.png",
+        "assets/icons/fog_p.png",
+        "assets/icons/belt_p.png"
+    };
+    defaultImagePaths_array[1] = {
+        "assets/icons/wheel_r.png",
+        "assets/icons/brake_r.png",
+        "assets/icons/abs_r.png", // Replace with your actual paths
+        "assets/icons/med_r.png",
+        "assets/icons/max_r.png",
+        "assets/icons/fog_r.png",
+        "assets/icons/belt_r.png"
+    };
+    defaultImagePaths_array[2] = {
+        "assets/icons/wheel_i.png",
+        "assets/icons/brake_i.png",
+        "assets/icons/abs_i.png", // Replace with your actual paths
+        "assets/icons/med_i.png",
+        "assets/icons/max_i.png",
+        "assets/icons/fog_i.png",
+        "assets/icons/belt_i.png"
+    };
+    defaultImagePaths_array[3] = {
+        "assets/icons/wheel_g.png",
+        "assets/icons/brake_g.png",
+        "assets/icons/abs_g.png", // Replace with your actual paths
+        "assets/icons/med_g.png",
+        "assets/icons/max_g.png",
+        "assets/icons/fog_g.png",
+        "assets/icons/belt_g.png"
+    };
+    defaultImagePaths = defaultImagePaths_array[4];
+    altImagePaths = {
         "assets/icons/wheel_on.png",
         "assets/icons/brake_on.png",
         "assets/icons/abs_on.png", // Replace with your actual paths
@@ -79,4 +115,13 @@ bool    TopBar::setImageState(int index, bool state)
         imageLabels[index]->setPixmap(defaultImages[index]);
         return false;
     }
+}
+
+void    TopBar::changeColor(int  array_index)
+{
+    defaultImagePaths = defaultImagePaths_array[array_index];
+    for (int i = 0; i < 6; ++i) {
+        imageLabels[i]->setPixmap(defaultImages[i]);
+    }
+    update();
 }

@@ -5,6 +5,7 @@
 #include "BatteryAndSpeedWidget.h"
 #include "Blinkers.h"
 #include "Colors.h"
+#include "TopBar.h"
 //#include "RosNode.hpp"
 #include "SpeedometerWidget.h"
 #include "StatsWidget.h"
@@ -28,6 +29,7 @@ class EventManager : public QWidget
         Blinkers* left_blinker;
         Blinkers* right_blinker;
         StatsWidget* stats;
+        TopBar* top;
         QSet<int> pressedKeys;
         QTimer* updateTimer; // Used to check if a key is still being called
         QStackedWidget* stackedWidget;
@@ -39,7 +41,7 @@ class EventManager : public QWidget
         EventManager(ArrowSymbolWidget* arrow, SpeedometerWidget* py_speed,
                      BatteryWidget* py_battery,
                      BatteryAndSpeedWidget* py_batspeed, Blinkers* left_blinker,
-                     Blinkers* right_blinker, StatsWidget* stats,
+                     Blinkers* right_blinker, StatsWidget* stats, TopBar* top,
                      QStackedWidget* stackedWidget, QWidget* mainWindow);
         virtual ~EventManager();
         Color color1;

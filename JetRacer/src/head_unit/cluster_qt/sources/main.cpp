@@ -41,7 +41,7 @@ int main(int argc, char* argv[])
     QHBoxLayout* mode1ContentLayout = new QHBoxLayout();
 
     EventManager eventManager(arrowSymbol, speedometer, battery, bas, leftB, rightB,
-                              stats, stackedWidget, mainWindow);
+                              stats, topBar, stackedWidget, mainWindow);
     app.installEventFilter(&eventManager);
 
     arrowSymbol->setFixedSize(400, 400);
