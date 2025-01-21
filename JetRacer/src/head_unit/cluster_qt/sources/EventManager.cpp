@@ -54,6 +54,12 @@ void EventManager::processKeyStates()
     py_batspeed->setCurrentSpeed(37);
     py_battery->setCurrentLevel(42);
     py_batspeed->setCurrentLevel(42);
+    stats->setDistance(4533);
+    stats->setAverage(56);
+    stats->setConsumed(78);
+    stats->setObstacles(2);
+
+    stats->update();
     py_speed->update();
     py_battery->update();
     py_batspeed->update();
@@ -128,6 +134,7 @@ void EventManager::processKeyStates()
         case Qt::Key_U:
             py_speed->changeUnits();
             py_batspeed->changeUnits();
+            stats->changeUnits();
             break;
         default:
             break;
