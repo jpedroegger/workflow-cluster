@@ -4,12 +4,19 @@
 #include <fmt/core.h>
 #include <string>
 
-I2cInterface::I2cInterface(std::shared_ptr<II2cDriver> i2c_dev,
+/**
+ * @brief Construct a new I2c Interface object. throw an exception if the i2c
+ * driver fails to initiate.
+ *
+ * @param mock_driver if not null, the mock object will be used
+ * @param service_name "i2c_service" by default
+ */
+I2cInterface::I2cInterface(std::shared_ptr<II2cDriver> mock_driver,
                            const std::string& service_name)
     : Node("i2c_interface")
 {
-    if (i2c_dev)
-        i2c_driver_ = i2c_dev;
+    if (mock_driver)
+        i2c_driver_ = mock_driver;
     else
         i2c_driver_ = std::make_shared<I2cDriver>(1);
     rclcpp::QoS qos(rclcpp::KeepLast(60));
@@ -27,8 +34,10 @@ I2cInterface::I2cInterface(std::shared_ptr<II2cDriver> i2c_dev,
 }
 
 /**
- * @brief Open the /dev/i2c. this operation will fail if the user is not in
- * the i2c group ("sudo usermod -aG i2c $USER")
+ * @brief Open the /dev/i2c.
+ *
+ * this operation will fail if the user is not in the i2c group ("sudo usermod
+ * -aG i2c $USER")
  */
 void I2cInterface::init_()
 {
@@ -44,14 +53,15 @@ void I2cInterface::init_()
 }
 
 /**
- * @brief function beeing called upon a request to the i2c service.
+ * @brief Function beeing called upon receiving a request to the i2c service.
  *
  * the struct of the i2c service allows writting and reading operations. To see
  * the service definition do "ros2 interface show custom_msgs/srv/I2cService" or
  * see JetRacer/src/bus_interfaces/custom_msgs/srv/I2cService.
  *
- * @param request
- * @param response
+ * @param request the request object containing read / write / both request
+ * @param response the response object to be filled with the data requested and
+ * success mesage to communicate to the client
  */
 void I2cInterface::handleI2cRequest(
     const std::shared_ptr<custom_msgs::srv::I2cService::Request> request,

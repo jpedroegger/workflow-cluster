@@ -27,6 +27,11 @@ DisplayRoutineNode::DisplayRoutineNode() : rclcpp::Node("display_routine_node")
     updateDisplay();
 }
 
+/**
+ * @brief Update the display with the current IP address and battery level.
+ *
+ * this callback is called every 60 seconds.
+ */
 void DisplayRoutineNode::updateDisplay() const
 {
     auto msg = custom_msgs::msg::Display();
@@ -36,6 +41,11 @@ void DisplayRoutineNode::updateDisplay() const
     publisher_->publish(msg);
 }
 
+/**
+ * @brief Get the IPv4 addresses of the network interfaces.
+ *
+ * @return a vector of strings containing the IPv4 addresses.
+ */
 std::vector<std::string> DisplayRoutineNode::getIPv4Addresses() const
 {
     std::vector<std::string> ipAddresses;

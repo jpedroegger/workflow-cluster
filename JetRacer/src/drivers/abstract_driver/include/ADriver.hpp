@@ -1,5 +1,6 @@
 #pragma once
 
+#include "DriverException.hpp"
 #include <custom_msgs/srv/i2c_service.hpp>
 #include <rclcpp/rclcpp.hpp>
 
@@ -23,14 +24,4 @@ class ADriver
         virtual void handleI2cResponse(
             rclcpp::Client<custom_msgs::srv::I2cService>::SharedFuture
                 response);
-};
-
-class DriverException : public std::exception
-{
-    private:
-        std::string msg_;
-
-    public:
-        DriverException(const std::string& msg) : msg_(msg) {}
-        const char* what() const noexcept override { return msg_.c_str(); }
 };

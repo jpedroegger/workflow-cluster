@@ -4,9 +4,16 @@
 
 /**
  * @class APCA9685Driver
- * @brief Anstract interface defining interactions with the pca9685 chip.
+ * @brief Abstract interface defining interactions with the PCA9685.
  *
+ * This abstract class provides a hardware abstraction layer for pca9685
+ * communication, allowing for dependency injection and easier unit testing. By
+ * implementing this interface, concrete classes can provide either real
+ * hardware communication or mock implementations for testing.
  *
+ * The interface wraps the essential PCA9685 operations into virtual methods
+ * that can be overridden by concrete implementations. See PCA9685Driver for
+ * more information about its methods
  */
 class APCA9685Driver
 {

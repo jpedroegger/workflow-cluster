@@ -10,6 +10,10 @@
 #define CHANNEL_REGISTER 0x06
 #define DEFAULT_CHANNEL 0
 
+/**
+ * @class PCA9685Driver
+ * @brief Driver to interact with the PCA9685 (motor control)
+ */
 class PCA9685Driver : public ADriver, public APCA9685Driver
 {
     public:

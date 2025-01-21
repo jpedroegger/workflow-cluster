@@ -9,7 +9,7 @@
 
 /**
  * @class II2cDriver
- * @brief Abstract interface for I2C device operations
+ * @brief Abstract interface for I2C operations
  *
  * This abstract class provides a hardware abstraction layer for I2C
  * communication, allowing for dependency injection and easier unit testing. By
@@ -18,7 +18,7 @@
  *
  * The interface wraps the essential I2C operations (open, read, write, and
  * address setting) into virtual methods that can be overridden by concrete
- * implementations.
+ * implementations. See I2cDriver for more information about its methods.
  */
 class II2cDriver
 {

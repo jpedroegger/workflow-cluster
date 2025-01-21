@@ -11,6 +11,12 @@ OledDisplayNode::OledDisplayNode() : rclcpp::Node("oled_display")
 
 OledDisplayNode::~OledDisplayNode() {}
 
+/**
+ * @brief Try to initialize the SSD1306 display driver
+ *
+ * @return EXIT_FAILURE if the driver fails to initialize, EXIT_SUCCESS
+ * otherwise
+ */
 uint8_t OledDisplayNode::initSSD1306()
 {
     try
@@ -35,7 +41,7 @@ uint8_t OledDisplayNode::initSSD1306()
  * @brief request to the i2c service a write operation via the driver upon
  * receiving a message in the display_topic
  *
- * @param msg
+ * @param msg the message to be displayed
  */
 void OledDisplayNode::writeToI2c(const custom_msgs::msg::Display::SharedPtr msg)
 {
