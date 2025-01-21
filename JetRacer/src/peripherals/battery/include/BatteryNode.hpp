@@ -9,7 +9,7 @@
 
 /**
  * @class BatteryNode
- * @brief request battery readings every 5seconds and publishes it via the
+ * @brief request battery readings every 5 seconds and publishes it via the
  * INA219 driver.
  *
  */

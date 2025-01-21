@@ -16,9 +16,8 @@
 
 /**
  * @class BlinkersNode
- * @brief listens to a topic dictating the state of the blinkers. upon changing
- * state, a can request will be sent to the arduino to update the blinkers.
- *
+ * @brief listens to blinker state topic and request the can interface to update
+ * the blinkers .
  */
 class BlinkersNode : public rclcpp::Node
 {

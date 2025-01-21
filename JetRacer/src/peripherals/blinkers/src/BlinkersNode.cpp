@@ -14,6 +14,11 @@ BlinkersNode::BlinkersNode() : Node("blinkers_node")
                   std::placeholders::_1));
 }
 
+/**
+ * @brief request a write to the can bus upon receiving a new blinker state
+ *
+ * @param msg
+ */
 void BlinkersNode::writeBlinkersState(const std_msgs::msg::UInt8 msg)
 {
     auto request = std::make_shared<custom_msgs::srv::CanService::Request>();

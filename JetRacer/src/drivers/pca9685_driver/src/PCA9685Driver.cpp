@@ -6,7 +6,6 @@ PCA9685Driver::PCA9685Driver(std::shared_ptr<rclcpp::Node> node,
                              uint8_t device_address)
     : ADriver(node, device_address)
 {
-    // throw an exception if it fails
     this->ping();
 
     RCLCPP_INFO(node->get_logger(),
@@ -14,6 +13,16 @@ PCA9685Driver::PCA9685Driver(std::shared_ptr<rclcpp::Node> node,
                 device_address_);
 }
 
+/**
+ * @brief Writes a value to a specific register on the PCA9685 device.
+ *
+ * This function sends a write request to the I2C bus, specifying the target
+ * register and the value to be written. It uses an asynchronous service call
+ * to handle the I2C communication.
+ *
+ * @param reg The register address to write to.
+ * @param value The value to write to the register.
+ */
 void PCA9685Driver::setRegister(uint8_t reg, uint8_t value)
 {
     auto request = std::make_shared<custom_msgs::srv::I2cService::Request>();
@@ -28,6 +37,16 @@ void PCA9685Driver::setRegister(uint8_t reg, uint8_t value)
                                               this, std::placeholders::_1));
 }
 
+/**
+ * @brief Sets the PWM frequency of the PCA9685 device.
+ *
+ * The PWM frequency determines the speed at which PWM pulses are generated.
+ * This function calculates the prescale value based on the desired frequency
+ * and sets it on the device. The prescale value is derived from the formula:
+ *   prescale = round((25MHz / (4096 * freq_Hz)) - 1)
+ *
+ * @param freq_Hz The desired PWM frequency in hertz.
+ */
 void PCA9685Driver::setPWMFrequency(float freq_Hz)
 {
     uint8_t prescale =

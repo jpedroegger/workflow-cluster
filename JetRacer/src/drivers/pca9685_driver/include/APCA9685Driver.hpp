@@ -4,9 +4,10 @@
 
 /**
  * @class APCA9685Driver
- * @brief Anstract interface defining interactions with the pca9685 chip.
+ * @brief Abstract interface defining interactions with the pca9685.
  *
- *
+ * This interface is needed to be able to inject mocked object to classes that
+ * depend on the pca9685 driver.
  */
 class APCA9685Driver
 {
