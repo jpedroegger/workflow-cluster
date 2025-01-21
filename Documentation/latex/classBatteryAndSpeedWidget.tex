@@ -1,0 +1,197 @@
+\doxysection{Battery\+And\+Speed\+Widget Class Reference}
+\hypertarget{classBatteryAndSpeedWidget}{}\label{classBatteryAndSpeedWidget}\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+
+
+{\ttfamily \#include $<$Battery\+And\+Speed\+Widget.\+h$>$}
+
+Inheritance diagram for Battery\+And\+Speed\+Widget\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classBatteryAndSpeedWidget}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBatteryAndSpeedWidget_ae4a62cdc29c917332f33c00820698999}{Battery\+And\+Speed\+Widget}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+\mbox{\hyperlink{classBatteryAndSpeedWidget_a4b08d7475dd59dc1804d47824ce0f68b}{\texorpdfstring{$\sim$}{\string~}\+Battery\+And\+Speed\+Widget}} ()
+\item 
+void \mbox{\hyperlink{classBatteryAndSpeedWidget_a390d6831c7c65a36da504cb47a2770a7}{set\+Current\+Speed}} (int speed)
+\item 
+void \mbox{\hyperlink{classBatteryAndSpeedWidget_a63b92f9679050d19cb2ccfa6f308da2d}{set\+Current\+Level}} (int battery)
+\item 
+void \mbox{\hyperlink{classBatteryAndSpeedWidget_a1f84cda3aa2909bcfde4eacd8811afe3}{accelerate}} (int forward\+\_\+key)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QColor \mbox{\hyperlink{classBatteryAndSpeedWidget_a9c536b1b3c2c768ff229d9df6a01491f}{main\+\_\+color}}
+\item 
+QColor \mbox{\hyperlink{classBatteryAndSpeedWidget_a422f467ed7ae6a4ed9289ed31b3b2f24}{accent\+\_\+color}}
+\item 
+QColor \mbox{\hyperlink{classBatteryAndSpeedWidget_a8e5cf4dfb06995d95cfc1ff64b3e0976}{alphabet\+\_\+color}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classBatteryAndSpeedWidget_a2729834a955825b1e2fe5c1bce7d07a7}{paint\+Event}} (QPaint\+Event \texorpdfstring{$\ast$}{*}event) override
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classBatteryAndSpeedWidget_a8e46b48dea9a4235edacf82d8245f36e}{update\+Level}} ()
+\item 
+void \mbox{\hyperlink{classBatteryAndSpeedWidget_a6d95a2b1196b95ce52cc12693d1a9ccf}{update\+Speed}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classBatteryAndSpeedWidget_a37b757e111cf973df4e7ba4ffbf6cb65}{draw\+Scale}} (QPainter \&painter, int centerX, int centerY, int radius)
+\item 
+void \mbox{\hyperlink{classBatteryAndSpeedWidget_ac7512dc6ee5f57714194ed75e742bc5e}{draw\+Central\+Number}} (QPainter \&painter, int centerX, int centerY)
+\item 
+void \mbox{\hyperlink{classBatteryAndSpeedWidget_a8c283b51a58f5f8d1629098607d4afa0}{draw\+Battery\+Number}} (QPainter \&painter, int centerX, int centerY)
+\item 
+QColor \mbox{\hyperlink{classBatteryAndSpeedWidget_a4f2515ad6286654f348d346071fd1049}{calculate\+Bar\+Color}} (int value)
+\item 
+void \mbox{\hyperlink{classBatteryAndSpeedWidget_aac11c5cf4f33fafcabb54147f2165ea6}{draw\+Bars}} (QPainter \&painter, int centerX, int centerY, int radius, double start\+Angle, double end\+Angle, int Level)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classBatteryAndSpeedWidget_ad1d2d5b5daf8306b47055833301105b0}{current\+Level}}
+\item 
+int \mbox{\hyperlink{classBatteryAndSpeedWidget_a450c4696d009a0f66eaf14294d8207dc}{current\+Speed}}
+\item 
+\mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classBatteryAndSpeedWidget_a91b9ca9d8c91a483ade1a3bbeb613b6a}{color1}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBatteryAndSpeedWidget_ae4a62cdc29c917332f33c00820698999}\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}!BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}!BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{BatteryAndSpeedWidget()}{BatteryAndSpeedWidget()}}
+{\footnotesize\ttfamily \label{classBatteryAndSpeedWidget_ae4a62cdc29c917332f33c00820698999} 
+Battery\+And\+Speed\+Widget\+::\+Battery\+And\+Speed\+Widget (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})}
+
+\Hypertarget{classBatteryAndSpeedWidget_a4b08d7475dd59dc1804d47824ce0f68b}\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}!````~BatteryAndSpeedWidget@{\texorpdfstring{$\sim$}{\string~}BatteryAndSpeedWidget}}
+\index{````~BatteryAndSpeedWidget@{\texorpdfstring{$\sim$}{\string~}BatteryAndSpeedWidget}!BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}BatteryAndSpeedWidget()}{\string~BatteryAndSpeedWidget()}}
+{\footnotesize\ttfamily \label{classBatteryAndSpeedWidget_a4b08d7475dd59dc1804d47824ce0f68b} 
+Battery\+And\+Speed\+Widget\+::\texorpdfstring{$\sim$}{\string~}\+Battery\+And\+Speed\+Widget (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBatteryAndSpeedWidget_a1f84cda3aa2909bcfde4eacd8811afe3}\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}!accelerate@{accelerate}}
+\index{accelerate@{accelerate}!BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{accelerate()}{accelerate()}}
+{\footnotesize\ttfamily \label{classBatteryAndSpeedWidget_a1f84cda3aa2909bcfde4eacd8811afe3} 
+void Battery\+And\+Speed\+Widget\+::accelerate (\begin{DoxyParamCaption}\item[{int}]{forward\+\_\+key}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classBatteryAndSpeedWidget_a4f2515ad6286654f348d346071fd1049}\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}!calculateBarColor@{calculateBarColor}}
+\index{calculateBarColor@{calculateBarColor}!BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{calculateBarColor()}{calculateBarColor()}}
+{\footnotesize\ttfamily \label{classBatteryAndSpeedWidget_a4f2515ad6286654f348d346071fd1049} 
+QColor Battery\+And\+Speed\+Widget\+::calculate\+Bar\+Color (\begin{DoxyParamCaption}\item[{int}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classBatteryAndSpeedWidget_aac11c5cf4f33fafcabb54147f2165ea6}\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}!drawBars@{drawBars}}
+\index{drawBars@{drawBars}!BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{drawBars()}{drawBars()}}
+{\footnotesize\ttfamily \label{classBatteryAndSpeedWidget_aac11c5cf4f33fafcabb54147f2165ea6} 
+void Battery\+And\+Speed\+Widget\+::draw\+Bars (\begin{DoxyParamCaption}\item[{QPainter \&}]{painter}{, }\item[{int}]{centerX}{, }\item[{int}]{centerY}{, }\item[{int}]{radius}{, }\item[{double}]{start\+Angle}{, }\item[{double}]{end\+Angle}{, }\item[{int}]{Level}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classBatteryAndSpeedWidget_a8c283b51a58f5f8d1629098607d4afa0}\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}!drawBatteryNumber@{drawBatteryNumber}}
+\index{drawBatteryNumber@{drawBatteryNumber}!BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{drawBatteryNumber()}{drawBatteryNumber()}}
+{\footnotesize\ttfamily \label{classBatteryAndSpeedWidget_a8c283b51a58f5f8d1629098607d4afa0} 
+void Battery\+And\+Speed\+Widget\+::draw\+Battery\+Number (\begin{DoxyParamCaption}\item[{QPainter \&}]{painter}{, }\item[{int}]{centerX}{, }\item[{int}]{centerY}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classBatteryAndSpeedWidget_ac7512dc6ee5f57714194ed75e742bc5e}\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}!drawCentralNumber@{drawCentralNumber}}
+\index{drawCentralNumber@{drawCentralNumber}!BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{drawCentralNumber()}{drawCentralNumber()}}
+{\footnotesize\ttfamily \label{classBatteryAndSpeedWidget_ac7512dc6ee5f57714194ed75e742bc5e} 
+void Battery\+And\+Speed\+Widget\+::draw\+Central\+Number (\begin{DoxyParamCaption}\item[{QPainter \&}]{painter}{, }\item[{int}]{centerX}{, }\item[{int}]{centerY}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classBatteryAndSpeedWidget_a37b757e111cf973df4e7ba4ffbf6cb65}\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}!drawScale@{drawScale}}
+\index{drawScale@{drawScale}!BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{drawScale()}{drawScale()}}
+{\footnotesize\ttfamily \label{classBatteryAndSpeedWidget_a37b757e111cf973df4e7ba4ffbf6cb65} 
+void Battery\+And\+Speed\+Widget\+::draw\+Scale (\begin{DoxyParamCaption}\item[{QPainter \&}]{painter}{, }\item[{int}]{centerX}{, }\item[{int}]{centerY}{, }\item[{int}]{radius}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classBatteryAndSpeedWidget_a2729834a955825b1e2fe5c1bce7d07a7}\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}!paintEvent@{paintEvent}}
+\index{paintEvent@{paintEvent}!BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{paintEvent()}{paintEvent()}}
+{\footnotesize\ttfamily \label{classBatteryAndSpeedWidget_a2729834a955825b1e2fe5c1bce7d07a7} 
+void Battery\+And\+Speed\+Widget\+::paint\+Event (\begin{DoxyParamCaption}\item[{QPaint\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+\Hypertarget{classBatteryAndSpeedWidget_a63b92f9679050d19cb2ccfa6f308da2d}\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}!setCurrentLevel@{setCurrentLevel}}
+\index{setCurrentLevel@{setCurrentLevel}!BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{setCurrentLevel()}{setCurrentLevel()}}
+{\footnotesize\ttfamily \label{classBatteryAndSpeedWidget_a63b92f9679050d19cb2ccfa6f308da2d} 
+void Battery\+And\+Speed\+Widget\+::set\+Current\+Level (\begin{DoxyParamCaption}\item[{int}]{battery}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classBatteryAndSpeedWidget_a390d6831c7c65a36da504cb47a2770a7}\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}!setCurrentSpeed@{setCurrentSpeed}}
+\index{setCurrentSpeed@{setCurrentSpeed}!BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{setCurrentSpeed()}{setCurrentSpeed()}}
+{\footnotesize\ttfamily \label{classBatteryAndSpeedWidget_a390d6831c7c65a36da504cb47a2770a7} 
+void Battery\+And\+Speed\+Widget\+::set\+Current\+Speed (\begin{DoxyParamCaption}\item[{int}]{speed}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classBatteryAndSpeedWidget_a8e46b48dea9a4235edacf82d8245f36e}\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}!updateLevel@{updateLevel}}
+\index{updateLevel@{updateLevel}!BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{updateLevel}{updateLevel}}
+{\footnotesize\ttfamily \label{classBatteryAndSpeedWidget_a8e46b48dea9a4235edacf82d8245f36e} 
+void Battery\+And\+Speed\+Widget\+::update\+Level (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\Hypertarget{classBatteryAndSpeedWidget_a6d95a2b1196b95ce52cc12693d1a9ccf}\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}!updateSpeed@{updateSpeed}}
+\index{updateSpeed@{updateSpeed}!BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{updateSpeed}{updateSpeed}}
+{\footnotesize\ttfamily \label{classBatteryAndSpeedWidget_a6d95a2b1196b95ce52cc12693d1a9ccf} 
+void Battery\+And\+Speed\+Widget\+::update\+Speed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classBatteryAndSpeedWidget_a422f467ed7ae6a4ed9289ed31b3b2f24}\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}!accent\_color@{accent\_color}}
+\index{accent\_color@{accent\_color}!BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{accent\_color}{accent\_color}}
+{\footnotesize\ttfamily \label{classBatteryAndSpeedWidget_a422f467ed7ae6a4ed9289ed31b3b2f24} 
+QColor Battery\+And\+Speed\+Widget\+::accent\+\_\+color}
+
+\Hypertarget{classBatteryAndSpeedWidget_a8e5cf4dfb06995d95cfc1ff64b3e0976}\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}!alphabet\_color@{alphabet\_color}}
+\index{alphabet\_color@{alphabet\_color}!BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{alphabet\_color}{alphabet\_color}}
+{\footnotesize\ttfamily \label{classBatteryAndSpeedWidget_a8e5cf4dfb06995d95cfc1ff64b3e0976} 
+QColor Battery\+And\+Speed\+Widget\+::alphabet\+\_\+color}
+
+\Hypertarget{classBatteryAndSpeedWidget_a91b9ca9d8c91a483ade1a3bbeb613b6a}\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}!color1@{color1}}
+\index{color1@{color1}!BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{color1}{color1}}
+{\footnotesize\ttfamily \label{classBatteryAndSpeedWidget_a91b9ca9d8c91a483ade1a3bbeb613b6a} 
+\mbox{\hyperlink{classColor}{Color}} Battery\+And\+Speed\+Widget\+::color1\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classBatteryAndSpeedWidget_ad1d2d5b5daf8306b47055833301105b0}\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}!currentLevel@{currentLevel}}
+\index{currentLevel@{currentLevel}!BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{currentLevel}{currentLevel}}
+{\footnotesize\ttfamily \label{classBatteryAndSpeedWidget_ad1d2d5b5daf8306b47055833301105b0} 
+int Battery\+And\+Speed\+Widget\+::current\+Level\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classBatteryAndSpeedWidget_a450c4696d009a0f66eaf14294d8207dc}\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}!currentSpeed@{currentSpeed}}
+\index{currentSpeed@{currentSpeed}!BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{currentSpeed}{currentSpeed}}
+{\footnotesize\ttfamily \label{classBatteryAndSpeedWidget_a450c4696d009a0f66eaf14294d8207dc} 
+int Battery\+And\+Speed\+Widget\+::current\+Speed\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classBatteryAndSpeedWidget_a9c536b1b3c2c768ff229d9df6a01491f}\index{BatteryAndSpeedWidget@{BatteryAndSpeedWidget}!main\_color@{main\_color}}
+\index{main\_color@{main\_color}!BatteryAndSpeedWidget@{BatteryAndSpeedWidget}}
+\doxysubsubsection{\texorpdfstring{main\_color}{main\_color}}
+{\footnotesize\ttfamily \label{classBatteryAndSpeedWidget_a9c536b1b3c2c768ff229d9df6a01491f} 
+QColor Battery\+And\+Speed\+Widget\+::main\+\_\+color}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/head\+\_\+unit/cluster\+\_\+qt/includes/\mbox{\hyperlink{BatteryAndSpeedWidget_8h}{Battery\+And\+Speed\+Widget.\+h}}\item 
+src/head\+\_\+unit/cluster\+\_\+qt/sources/\mbox{\hyperlink{BatteryAndSpeedWidget_8cpp}{Battery\+And\+Speed\+Widget.\+cpp}}\end{DoxyCompactItemize}

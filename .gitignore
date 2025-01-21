@@ -3,4 +3,4 @@ CMakeLists.txt.user*
 *build/
 *install/
 *log/
-Documentation/*
+#Documentation/*

@@ -1,0 +1,59 @@
+\doxysection{Event\+Manager.\+h}
+\hypertarget{EventManager_8h_source}{}\label{EventManager_8h_source}\index{src/head\_unit/cluster\_qt/includes/EventManager.h@{src/head\_unit/cluster\_qt/includes/EventManager.h}}
+\mbox{\hyperlink{EventManager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ EVENTMANAGER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ EVENTMANAGER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ArrowSymbolWidget_8h}{ArrowSymbolWidget.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{BatteryAndSpeedWidget_8h}{BatteryAndSpeedWidget.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Blinkers_8h}{Blinkers.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Colors_8h}{Colors.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{RosNode_8hpp}{RosNode.hpp}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{SpeedometerWidget_8h}{SpeedometerWidget.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{BatteryWidget_8h}{BatteryWidget.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <QSet>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <QStackedWidget>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <QSwipeGesture>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <QTimer>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <rclcpp/rclcpp.hpp>}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classEventManager}{EventManager}}\ :\ \textcolor{keyword}{public}\ QWidget}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ Q\_OBJECT;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classArrowSymbolWidget}{ArrowSymbolWidget}}*\ \mbox{\hyperlink{classEventManager_afa97e3e1132d0fdf07918d1a146ad1d7}{arrows}};}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSpeedometerWidget}{SpeedometerWidget}}*\ \mbox{\hyperlink{classEventManager_a020dc91aad9feeaa1b3f6e68248e32fb}{py\_speed}};}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBatteryWidget}{BatteryWidget}}*\ \mbox{\hyperlink{classEventManager_ac82cd7f8df8f7e2085752c89bf723777}{py\_battery}};}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBatteryAndSpeedWidget}{BatteryAndSpeedWidget}}*\ \mbox{\hyperlink{classEventManager_adb602490af82b176b1c80909676efa6d}{py\_batspeed}};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBlinkers}{Blinkers}}*\ \mbox{\hyperlink{classEventManager_a315e5abaf8582a60b8cca2feba8ec2b9}{left\_blinker}};}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBlinkers}{Blinkers}}*\ \mbox{\hyperlink{classEventManager_ac423fb82b41f717c9bbe0245b9a61be3}{right\_blinker}};}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ QSet<int>\ \mbox{\hyperlink{classEventManager_a987ebff04e0bf2eebd7a057b6da5ccd6}{pressedKeys}};}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ QTimer*\ \mbox{\hyperlink{classEventManager_a4da7b796740b949f2554d772eb36818c}{updateTimer}};\ \textcolor{comment}{//\ Used\ to\ check\ if\ a\ key\ is\ still\ being\ called}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ QStackedWidget*\ \mbox{\hyperlink{classEventManager_a0861dc3ddb658955f6ae0df3f43c9c33}{stackedWidget}};}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ std::shared\_ptr<RosNode>\ \mbox{\hyperlink{classEventManager_a28854d2c1bfb32bbe58f161633fc610e}{node}};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ rclcpp::executors::SingleThreadedExecutor\ \mbox{\hyperlink{classEventManager_af98fb3196cda4172c05e2cfedcf084aa}{executor}};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEventManager_a76ae8212fdf1efab8c9c50765e29d17a}{EventManager}}(\mbox{\hyperlink{classArrowSymbolWidget}{ArrowSymbolWidget}}*\ arrow,\ \mbox{\hyperlink{classSpeedometerWidget}{SpeedometerWidget}}*\ \mbox{\hyperlink{classEventManager_a020dc91aad9feeaa1b3f6e68248e32fb}{py\_speed}},}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBatteryWidget}{BatteryWidget}}*\ \mbox{\hyperlink{classEventManager_ac82cd7f8df8f7e2085752c89bf723777}{py\_battery}},}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBatteryAndSpeedWidget}{BatteryAndSpeedWidget}}*\ \mbox{\hyperlink{classEventManager_adb602490af82b176b1c80909676efa6d}{py\_batspeed}},\ \mbox{\hyperlink{classBlinkers}{Blinkers}}*\ \mbox{\hyperlink{classEventManager_a315e5abaf8582a60b8cca2feba8ec2b9}{left\_blinker}},}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBlinkers}{Blinkers}}*\ \mbox{\hyperlink{classEventManager_ac423fb82b41f717c9bbe0245b9a61be3}{right\_blinker}},\ QStackedWidget*\ \mbox{\hyperlink{classEventManager_a0861dc3ddb658955f6ae0df3f43c9c33}{stackedWidget}},}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<RosNode>\ ros\_node);}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classEventManager_a2e43e8b165b54f75e9c005cf5b04ade7}{\string~EventManager}}();}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classColor}{Color}}\ \mbox{\hyperlink{classEventManager_ad837b341c5413dde1cd840d4f842c69b}{color1}};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classEventManager_a0b603a609fb3a31423f2d2166636238e}{eventFilter}}(QObject*\ obj,\ QEvent*\ event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEventManager_ad06aecdc7b7e2e0dc52183a979b1230a}{handleGestureEvent}}(QGestureEvent*\ gestureEvent);}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEventManager_ab8219153e730a2bcb194f8a5817f02e1}{processKeyStates}}();}
+\DoxyCodeLine{00051\ \};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ EVENTMANAGER\_H}}
+
+\end{DoxyCode}

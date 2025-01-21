@@ -1,0 +1,49 @@
+\doxysection{src/drivers/pca9685\+\_\+driver/include/\+PCA9685\+Driver.hpp File Reference}
+\hypertarget{PCA9685Driver_8hpp}{}\label{PCA9685Driver_8hpp}\index{src/drivers/pca9685\_driver/include/PCA9685Driver.hpp@{src/drivers/pca9685\_driver/include/PCA9685Driver.hpp}}
+{\ttfamily \#include $<$ADriver.\+hpp$>$}\newline
+{\ttfamily \#include $<$APCA9685\+Driver.\+hpp$>$}\newline
+{\ttfamily \#include $<$custom\+\_\+msgs/srv/i2c\+\_\+service.\+hpp$>$}\newline
+{\ttfamily \#include $<$rclcpp/rclcpp.\+hpp$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classPCA9685Driver}{PCA9685\+Driver}}
+\begin{DoxyCompactList}\small\item\em Driver to interact with the PCA9685 (motor control) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{PCA9685Driver_8hpp_abe650506dc571529f725c3f0e12490d9}{PRESCALE\+\_\+\+REGISTER}}~0x\+FE
+\item 
+\#define \mbox{\hyperlink{PCA9685Driver_8hpp_ac3b18acb6ac3fabf79d4ae769a252c04}{MODE1\+\_\+\+REGISTER}}~0x00
+\item 
+\#define \mbox{\hyperlink{PCA9685Driver_8hpp_a10480cfad4c20b911a6aa7c69c1e6f2d}{CHANNEL\+\_\+\+REGISTER}}~0x06
+\item 
+\#define \mbox{\hyperlink{PCA9685Driver_8hpp_aafa17c307af8c45323500fdac999d294}{DEFAULT\+\_\+\+CHANNEL}}~0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{PCA9685Driver_8hpp_a10480cfad4c20b911a6aa7c69c1e6f2d}\index{PCA9685Driver.hpp@{PCA9685Driver.hpp}!CHANNEL\_REGISTER@{CHANNEL\_REGISTER}}
+\index{CHANNEL\_REGISTER@{CHANNEL\_REGISTER}!PCA9685Driver.hpp@{PCA9685Driver.hpp}}
+\doxysubsubsection{\texorpdfstring{CHANNEL\_REGISTER}{CHANNEL\_REGISTER}}
+{\footnotesize\ttfamily \label{PCA9685Driver_8hpp_a10480cfad4c20b911a6aa7c69c1e6f2d} 
+\#define CHANNEL\+\_\+\+REGISTER~0x06}
+
+\Hypertarget{PCA9685Driver_8hpp_aafa17c307af8c45323500fdac999d294}\index{PCA9685Driver.hpp@{PCA9685Driver.hpp}!DEFAULT\_CHANNEL@{DEFAULT\_CHANNEL}}
+\index{DEFAULT\_CHANNEL@{DEFAULT\_CHANNEL}!PCA9685Driver.hpp@{PCA9685Driver.hpp}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_CHANNEL}{DEFAULT\_CHANNEL}}
+{\footnotesize\ttfamily \label{PCA9685Driver_8hpp_aafa17c307af8c45323500fdac999d294} 
+\#define DEFAULT\+\_\+\+CHANNEL~0}
+
+\Hypertarget{PCA9685Driver_8hpp_ac3b18acb6ac3fabf79d4ae769a252c04}\index{PCA9685Driver.hpp@{PCA9685Driver.hpp}!MODE1\_REGISTER@{MODE1\_REGISTER}}
+\index{MODE1\_REGISTER@{MODE1\_REGISTER}!PCA9685Driver.hpp@{PCA9685Driver.hpp}}
+\doxysubsubsection{\texorpdfstring{MODE1\_REGISTER}{MODE1\_REGISTER}}
+{\footnotesize\ttfamily \label{PCA9685Driver_8hpp_ac3b18acb6ac3fabf79d4ae769a252c04} 
+\#define MODE1\+\_\+\+REGISTER~0x00}
+
+\Hypertarget{PCA9685Driver_8hpp_abe650506dc571529f725c3f0e12490d9}\index{PCA9685Driver.hpp@{PCA9685Driver.hpp}!PRESCALE\_REGISTER@{PRESCALE\_REGISTER}}
+\index{PRESCALE\_REGISTER@{PRESCALE\_REGISTER}!PCA9685Driver.hpp@{PCA9685Driver.hpp}}
+\doxysubsubsection{\texorpdfstring{PRESCALE\_REGISTER}{PRESCALE\_REGISTER}}
+{\footnotesize\ttfamily \label{PCA9685Driver_8hpp_abe650506dc571529f725c3f0e12490d9} 
+\#define PRESCALE\+\_\+\+REGISTER~0x\+FE}
+
