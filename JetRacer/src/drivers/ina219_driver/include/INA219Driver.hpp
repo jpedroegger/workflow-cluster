@@ -7,7 +7,7 @@
 
 /**
  * @class INA219Driver
- * @brief Driver to interact with the ina219 chip (Battery voltage)
+ * @brief Driver to interact with the INA219 (Battery voltage)
  *
  */
 class INA219Driver : public ADriver

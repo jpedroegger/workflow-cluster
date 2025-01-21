@@ -7,7 +7,7 @@
  * @brief Concrete implementation of the ICanDriver interface.
  *
  * This class essentially wraps the call to sockcancpp::CanDriver methods
- * (adaptor pattern).
+ * (adaptor).
  */
 class RCanDriver : public ICanDriver
 {
