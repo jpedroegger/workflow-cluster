@@ -9,7 +9,8 @@
 
 /**
  * @class BatteryNode
- * @brief request battery readings every 5seconds.
+ * @brief request battery readings every 5seconds and publishes it via the
+ * INA219 driver.
  *
  */
 class BatteryNode : public rclcpp::Node
