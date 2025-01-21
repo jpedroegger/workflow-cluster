@@ -19,7 +19,7 @@ SpeedSensorNode::~SpeedSensorNode() {}
  * @brief function called upon receiving a CAN_frame. reads the can_raw topic
  * and publishes the speed in a different topic
  *
- * @param can_frame
+ * @param future the future containing the response from the service
  */
 void SpeedSensorNode::writeSpeed(
     rclcpp::Client<custom_msgs::srv::CanService>::SharedFuture future)

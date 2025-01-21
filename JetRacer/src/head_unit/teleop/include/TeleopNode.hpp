@@ -10,6 +10,14 @@
 #define TURN_RIGHT 3
 #define WARNINGS 4
 
+/**
+ * @class TeleopNode
+ * @brief ROS2 node that subscribes to the joystick topic, convert it and
+ * publishes it into "cmd_vel".
+ *
+ * This class also publishes the blinker state based on the joystick buttons
+ * state.
+ */
 class TeleopNode : public rclcpp::Node
 {
     public:

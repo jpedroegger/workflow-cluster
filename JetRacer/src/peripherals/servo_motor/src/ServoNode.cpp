@@ -46,25 +46,20 @@ uint8_t ServoNode::initPCA9685(std::shared_ptr<APCA9685Driver> mock_pca_driver)
  * This function subscribes to a topic providing direction as an angle (0 to 180
  * degrees). It validates the input and calculates the corresponding pulse width
  * for a servo motor.
- *
  * The PCA9685 divides the 20 ms (50 Hz) PWM period into 4096 discrete counts,
  * where each count corresponds to approximately 4.88 microseconds.
  * Servo motors typically require pulse widths between 1 ms (0°) and 2 ms
  * (180°), which map to 102 and 510 counts, respectively.
- *
  * The pulse width is linearly interpolated using the formula:
  * pulseWidth = MIN_COUNT + (angle * (MAX_COUNT - MIN_COUNT)) / 180
- *
  * For example:
  * - At 0 degrees: pulseWidth = 102 counts (HIGH for ~1 ms).
  * - At 180 degrees: pulseWidth = 510 counts (HIGH for ~2 ms).
- *
  * The `setPWM` function configures the PCA9685 as follows:
  * - onTime = 0 (signal starts HIGH at the beginning of the period).
  * - offTime = pulseWidth (signal goes LOW after `pulseWidth` counts).
  *
- * @param direction Shared pointer to the incoming UInt8 message containing the
- * angle.
+ * @param twist The incoming direction message.
  */
 void ServoNode::writeAngle(const geometry_msgs::msg::Twist::SharedPtr twist)
 {

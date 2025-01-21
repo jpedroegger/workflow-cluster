@@ -11,6 +11,11 @@
 #include <std_msgs/msg/u_int8.hpp>
 #define SPEED_SENSOR_ID 0x300
 
+/**
+ * @class SpeedSensorNode
+ * @brief Node that reads speed from a CAN bus and publishes it into
+ * speed_readings and rpm_readings topics
+ */
 class SpeedSensorNode : public rclcpp::Node
 {
     public:

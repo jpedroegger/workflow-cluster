@@ -259,7 +259,7 @@ PYTHON_DOCSTRING       = YES
 # documentation from any documented member that it re-implements.
 # The default value is: YES.
 
-INHERIT_DOCS           = YES
+INHERIT_DOCS           = NO
 
 # If the SEPARATE_MEMBER_PAGES tag is set to YES then Doxygen will produce a new
 # page for each member. If set to NO, the documentation of a member will be part
@@ -524,13 +524,13 @@ TIMESTAMP              = NO
 # normally produced when WARNINGS is set to YES.
 # The default value is: NO.
 
-EXTRACT_ALL            = NO
+EXTRACT_ALL            = YES
 
 # If the EXTRACT_PRIVATE tag is set to YES, all private members of a class will
 # be included in the documentation.
 # The default value is: NO.
 
-EXTRACT_PRIVATE        = NO
+EXTRACT_PRIVATE        = YES
 
 # If the EXTRACT_PRIV_VIRTUAL tag is set to YES, documented private virtual
 # methods of a class will be included in the documentation.
@@ -1038,6 +1038,7 @@ EXCLUDE_SYMLINKS       = NO
 
 EXCLUDE_PATTERNS       = */src/peripherals/camera/*
 EXCLUDE_PATTERNS       += */test/*
+EXCLUDE_PATTERNS       += */tests/*
 EXCLUDE_PATTERNS       += */cluster_tests/*
 
 # The EXCLUDE_SYMBOLS tag can be used to specify one or more symbol names

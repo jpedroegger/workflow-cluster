@@ -4,6 +4,12 @@
 #include <std_msgs/msg/float64.hpp>
 #include <std_msgs/msg/u_int8.hpp>
 
+/**
+ * @class RosNode
+ * @brief Subscribes to the battery level and speed topics for
+ * the QT app to use
+ *
+ */
 class RosNode : public rclcpp::Node
 {
     public:

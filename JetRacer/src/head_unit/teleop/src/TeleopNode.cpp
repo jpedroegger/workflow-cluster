@@ -17,6 +17,11 @@ TeleopNode::TeleopNode() : rclcpp::Node("teleop_node")
 
 TeleopNode::~TeleopNode() {}
 
+/**
+ * @brief Callback function called upon receiving a message from the joystick
+ *
+ * @param joy_msg The joystick message
+ */
 void TeleopNode::joyCallback(sensor_msgs::msg::Joy::SharedPtr joy_msg)
 {
     auto twist_msg = geometry_msgs::msg::Twist();
@@ -29,6 +34,11 @@ void TeleopNode::joyCallback(sensor_msgs::msg::Joy::SharedPtr joy_msg)
     publishBlinkerState(joy_msg);
 }
 
+/**
+ * @brief Publishes the blinker state based on the joystick buttons state
+ *
+ * @param joy_msg The joystick message
+ */
 void TeleopNode::publishBlinkerState(sensor_msgs::msg::Joy::SharedPtr joy_msg)
 {
     auto buttons = joy_msg->buttons;
