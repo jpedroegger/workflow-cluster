@@ -5,6 +5,7 @@ BatteryAndSpeedWidget::BatteryAndSpeedWidget(QWidget* parent)
     : QWidget(parent), currentSpeed(0)
 {
     color1 = Color();
+    unit = "KPH";
     main_color = color1.main_color;
     accent_color = color1.accent_color;
     alphabet_color = color1.alphabet_color;
@@ -132,11 +133,11 @@ void BatteryAndSpeedWidget::drawCentralNumber(QPainter& painter, int centerX,
     painter.setFont(smallFont);
 
     QFontMetrics smallMetrics(smallFont);
-    int kphWidth = smallMetrics.horizontalAdvance("KPH");
+    int kphWidth = smallMetrics.horizontalAdvance(unit);
     int kphX = centerX - kphWidth / 2;
     int kphY = y + textRect.height() - 60;
 
-    painter.drawText(kphX, kphY, "KPH");
+    painter.drawText(kphX, kphY, unit);
 }
 
 void BatteryAndSpeedWidget::drawBatteryNumber(QPainter& painter, int centerX,
@@ -183,7 +184,25 @@ void    BatteryAndSpeedWidget::changeColor(int  array_index)
     update();
 }
 
-void BatteryAndSpeedWidget::setCurrentLevel(int battery) { currentLevel = battery; }
-void BatteryAndSpeedWidget::setCurrentSpeed(int speed) { currentSpeed = speed; }
+void    BatteryAndSpeedWidget::setCurrentLevel(int battery) { currentLevel = battery; }
+void    BatteryAndSpeedWidget::changeUnits(void)
+{
+    if (unit == "KPH"){
+        unit = "MPH";
+        currentSpeed *= 0.6214;
+    } else {
+        unit = "KPH";
+        currentSpeed *= 1.609;
+    }
+    update();
+}
+
+void BatteryAndSpeedWidget::setCurrentSpeed(int speed)
+{
+    if (unit == "MPH")
+        currentSpeed = 0.6214 * speed;
+    else
+        currentSpeed = speed;
+}
 
 void BatteryAndSpeedWidget::updateSpeed() { update(); }

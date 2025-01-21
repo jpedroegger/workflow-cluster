@@ -49,10 +49,11 @@ void EventManager::processKeyStates()
 {
     
     //executor.spin_some(std::chrono::milliseconds(10)); // after this line, values are updated.
+
     py_speed->setCurrentSpeed(37);
+    py_batspeed->setCurrentSpeed(37);
     py_battery->setCurrentLevel(42);
     py_batspeed->setCurrentLevel(42);
-    py_batspeed->setCurrentSpeed(37);
     py_speed->update();
     py_battery->update();
     py_batspeed->update();
@@ -123,6 +124,10 @@ void EventManager::processKeyStates()
             left_blinker2->changeColor(color1.counter);
             right_blinker2->changeColor(color1.counter);
             mainWindow->setStyleSheet(color1.background_array[color1.counter]);
+            break;
+        case Qt::Key_U:
+            py_speed->changeUnits();
+            py_batspeed->changeUnits();
             break;
         default:
             break;

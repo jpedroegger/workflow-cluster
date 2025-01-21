@@ -19,6 +19,7 @@ class BatteryAndSpeedWidget : public QWidget
         void accelerate(int forward_key);
 
         void changeColor(int  array_index);
+        void changeUnits(void);
 
         QColor main_color;
         QColor accent_color;
@@ -33,6 +34,8 @@ class BatteryAndSpeedWidget : public QWidget
         int imageX;
         int imageY;
         int index = 0;
+
+        QString unit;
         Color color1;
         QPixmap image_array[4];
         QPixmap image;
