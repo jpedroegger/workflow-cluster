@@ -14,7 +14,7 @@
 class I2cInterface : public rclcpp::Node
 {
     public:
-        I2cInterface(std::shared_ptr<II2cDriver> i2c_dev = nullptr,
+        I2cInterface(std::shared_ptr<II2cDriver> mock_driver = nullptr,
                      const std::string& service_name = "i2c_service");
         ~I2cInterface() = default;
 

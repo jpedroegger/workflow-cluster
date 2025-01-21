@@ -1039,6 +1039,7 @@ EXCLUDE_SYMLINKS       = NO
 EXCLUDE_PATTERNS       = */src/peripherals/camera/*
 EXCLUDE_PATTERNS       += */test/*
 EXCLUDE_PATTERNS       += */tests/*
+EXCLUDE_PATTERNS       += */cluster_qt/*
 EXCLUDE_PATTERNS       += */cluster_tests/*
 
 # The EXCLUDE_SYMBOLS tag can be used to specify one or more symbol names

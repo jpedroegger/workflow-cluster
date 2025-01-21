@@ -15,7 +15,7 @@ using sockcanpp::CanDriver;
 class CanInterface : public rclcpp::Node
 {
     public:
-        CanInterface(std::shared_ptr<ICanDriver> can_driver = nullptr);
+        CanInterface(std::shared_ptr<ICanDriver> mock_driver = nullptr);
         ~CanInterface();
 
         void pollCanBus();

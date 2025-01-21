@@ -10,16 +10,20 @@
 using sockcanpp::CanMessage;
 using namespace std::chrono_literals;
 
-CanInterface::CanInterface(std::shared_ptr<ICanDriver> can_driver)
+/**
+ * @brief Construct a new Can Interface object. throw an exception if the can
+ * driver fails to initiate.
+ *
+ * @param mock_driver if not null, the mock object will be used
+ */
+CanInterface::CanInterface(std::shared_ptr<ICanDriver> mock_driver)
     : Node("can_interface")
 {
     rclcpp::QoS qos(60);
     qos.reliable();
 
-    if (can_driver)
-    {
-        can_driver_ = can_driver;
-    }
+    if (mock_driver)
+        can_driver_ = mock_driver;
     else
     {
         try
@@ -46,15 +50,16 @@ CanInterface::CanInterface(std::shared_ptr<ICanDriver> can_driver)
 CanInterface::~CanInterface() {}
 
 /**
- * @brief function beeing called upon a request to the can service.
+ * @brief Function beeing called upon receiving a request to the can service.
  *
  * the struct of the can service allows writting and reading operation. To see
  * the service definition do "ros2 interface show custom_msgs/srv/CanService" or
  * see JetRacer/src/bus_interfaces/custom_msgs/srv/CanService.
  *
  *
- * @param request
- * @param response
+ * @param request the request object containing read / write / both request
+ * @param response the response object to be filled with the data requested and
+ * success mesage to communicate to the client
  */
 void CanInterface::handleCanRequest(
     const std::shared_ptr<custom_msgs::srv::CanService::Request> request,

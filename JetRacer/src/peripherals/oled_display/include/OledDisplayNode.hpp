@@ -10,7 +10,7 @@
 
 /**
  * @class OledDisplayNode
- * @brief Listens for messages to display via "cmd_display topic"
+ * @brief Listens for messages to display via cmd_display topic
  */
 class OledDisplayNode : public rclcpp::Node
 {

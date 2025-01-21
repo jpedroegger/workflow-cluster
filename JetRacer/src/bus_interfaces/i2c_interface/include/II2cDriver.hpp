@@ -18,7 +18,7 @@
  *
  * The interface wraps the essential I2C operations (open, read, write, and
  * address setting) into virtual methods that can be overridden by concrete
- * implementations.
+ * implementations. See I2cDriver for more information about its methods.
  */
 class II2cDriver
 {

@@ -15,6 +15,7 @@ include_directories(
 # Add source files
 set(srcs
 	src/ADriver.cpp
+	include/DriverException.hpp
 )
 
 # Find dependencies

@@ -15,9 +15,9 @@ BlinkersNode::BlinkersNode() : Node("blinkers_node")
 }
 
 /**
- * @brief request a write to the can bus upon receiving a new blinker state
+ * @brief Request a write to the can bus upon receiving a new blinker state
  *
- * @param msg
+ * @param msg the new blinker state
  */
 void BlinkersNode::writeBlinkersState(const std_msgs::msg::UInt8 msg)
 {
@@ -32,6 +32,11 @@ void BlinkersNode::writeBlinkersState(const std_msgs::msg::UInt8 msg)
                                               this, std::placeholders::_1));
 }
 
+/**
+ * @brief Handle the response from the can service
+ *
+ * @param future the future object containing the response from the can service
+ */
 void BlinkersNode::handleCanResponse(
     rclcpp::Client<custom_msgs::srv::CanService>::SharedFuture future)
 {

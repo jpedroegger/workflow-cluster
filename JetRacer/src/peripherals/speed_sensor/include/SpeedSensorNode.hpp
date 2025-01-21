@@ -13,7 +13,7 @@
 
 /**
  * @class SpeedSensorNode
- * @brief Node that reads speed from a CAN bus and publishes it into
+ * @brief Reads speed from the CAN bus and publishes it into
  * speed_readings and rpm_readings topics
  */
 class SpeedSensorNode : public rclcpp::Node

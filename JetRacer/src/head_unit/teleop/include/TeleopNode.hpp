@@ -12,11 +12,11 @@
 
 /**
  * @class TeleopNode
- * @brief ROS2 node that subscribes to the joystick topic, convert it and
- * publishes it into "cmd_vel".
+ * @brief Subscribes to the joystick topic, convert it and publishes it into
+ * cmd_vel topic.
  *
- * This class also publishes the blinker state based on the joystick buttons
- * state.
+ * This class essentialy converts joy_msg into twist_msg. It also publishes the
+ * blinker state based on the joystick buttons state.
  */
 class TeleopNode : public rclcpp::Node
 {

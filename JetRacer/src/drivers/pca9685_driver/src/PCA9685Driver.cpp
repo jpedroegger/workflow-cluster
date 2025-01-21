@@ -75,7 +75,6 @@ void PCA9685Driver::setPWMFrequency(float freq_Hz)
  * @param channel The PWM channel to control (0-15).
  * @param on The 12-bit start time of the signal (0-4095).
  * @param off The 12-bit end time of the signal (0-4095).
- * @return EXIT_SUCCESS on success, EXIT_FAILURE on invalid input.
  */
 void PCA9685Driver::setPWMDutyCycle(uint8_t channel, uint16_t on, uint16_t off)
 {
@@ -102,8 +101,8 @@ void PCA9685Driver::setPWMDutyCycle(uint8_t channel, uint16_t on, uint16_t off)
  * Set ON to 0x1000 and OFF to 0x0000 to make the output HIGH.
  * Set ON to 0x0000 and OFF to 0x1000 to make the output LOW.
  *
- * @param channel
- * @param on
+ * @param channel The PWM channel to control (0-15).
+ * @param on true for high, false for low.
  */
 void PCA9685Driver::setGPIO(uint8_t channel, bool on)
 {

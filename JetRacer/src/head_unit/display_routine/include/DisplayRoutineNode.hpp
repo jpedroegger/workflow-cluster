@@ -7,7 +7,7 @@
 
 /**
  * @class DisplayRoutineNode
- * @brief ROS node responsible for updating the oled display.
+ * @brief Update the oled display.
  *
  * this node is responsible for updating the oled display with the current IP
  * address and battery with a 60s interval.
