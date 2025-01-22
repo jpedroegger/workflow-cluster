@@ -81,66 +81,126 @@ void EventManager::processKeyStates()
                 py_speed->accelerate(key);
             break;
         case Qt::Key_L:
-            if (left_blinker && right_blinker)
-            {
-                if (!left_blinker->get_blinking())
-                    left_blinker->turnOnBlinkers(true);
-                else
-                    left_blinker->turnOnBlinkers(false);
-                right_blinker->turnOnBlinkers(false);
-            }
+            turnLeftB();
             break;
         case Qt::Key_R:
-            if (left_blinker && right_blinker)
-            {
-                if (!right_blinker->get_blinking())
-                    right_blinker->turnOnBlinkers(true);
-                else
-                    right_blinker->turnOnBlinkers(false);
-                left_blinker->turnOnBlinkers(false);
-            }
+            turnRightB();
             break;
         case Qt::Key_B:
-            if (right_blinker && left_blinker)
-            {
-                if (right_blinker->get_blinking() &&
-                    left_blinker->get_blinking())
-                {
-                    left_blinker->turnOnBlinkers(false);
-                    right_blinker->turnOnBlinkers(false);
-                    break;
-                }
-                left_blinker->turnOnBlinkers(false);
-                right_blinker->turnOnBlinkers(false);
-                left_blinker->turnOnBlinkers(true);
-                right_blinker->turnOnBlinkers(true);
-            }
+            turnBothB();
             break;
         case Qt::Key_C:
-            color1.indent();
-            arrows->changeColor(color1.counter);
-            py_batspeed->changeColor(color1.counter);
-            py_speed->changeColor(color1.counter);
-            py_battery->changeColor(color1.counter);
-            stats->changeColor(color1.counter);
-            top->changeColor(color1.counter);
-            left_blinker->changeColor(color1.counter);
-            right_blinker->changeColor(color1.counter);
-            top2->changeColor(color1.counter);
-            left_blinker2->changeColor(color1.counter);
-            right_blinker2->changeColor(color1.counter);
-            mainWindow->setStyleSheet(color1.background_array[color1.counter]);
+            changeColors();
             break;
         case Qt::Key_U:
-            py_speed->changeUnits();
-            py_batspeed->changeUnits();
-            stats->changeUnits();
+            changeUnits();
             break;
         default:
             break;
         }
     }
 }
+
+void EventManager::turnLeftB()
+{
+    if (left_blinker && right_blinker)
+    {
+        if (!left_blinker->get_blinking())
+            left_blinker->turnOnBlinkers(true);
+        else if (!right_blinker->get_blinking())
+            left_blinker->turnOnBlinkers(false);
+        right_blinker->turnOnBlinkers(false);
+    }
+    if (left_blinker2 && right_blinker2)
+    {
+        if (!left_blinker2->get_blinking())
+            left_blinker2->turnOnBlinkers(true);
+        else if (!right_blinker2->get_blinking())
+            left_blinker2->turnOnBlinkers(false);
+        right_blinker2->turnOnBlinkers(false);
+    }
+}
+
+void EventManager::turnRightB()
+{
+    if (left_blinker && right_blinker)
+    {
+        if (!right_blinker->get_blinking())
+            right_blinker->turnOnBlinkers(true);
+        else if (!left_blinker->get_blinking())
+            right_blinker->turnOnBlinkers(false);
+        left_blinker->turnOnBlinkers(false);
+    }
+    if (left_blinker2 && right_blinker2)
+    {
+        if (!right_blinker2->get_blinking())
+            right_blinker2->turnOnBlinkers(true);
+        else if (!left_blinker2->get_blinking())
+            right_blinker2->turnOnBlinkers(false);
+        left_blinker2->turnOnBlinkers(false);
+    }
+}
+
+void EventManager::turnBothB()
+{
+    if (right_blinker && left_blinker)
+    {
+        if (right_blinker->get_blinking() &&
+            left_blinker->get_blinking())
+        {
+            left_blinker->turnOnBlinkers(false);
+            right_blinker->turnOnBlinkers(false);
+        }
+        else
+        {
+            left_blinker->turnOnBlinkers(false);
+            right_blinker->turnOnBlinkers(false);
+            left_blinker->turnOnBlinkers(true);
+            right_blinker->turnOnBlinkers(true);
+        }
+    }
+    if (right_blinker2 && left_blinker2)
+    {
+        if (right_blinker2->get_blinking() &&
+            left_blinker2->get_blinking())
+        {
+            left_blinker2->turnOnBlinkers(false);
+            right_blinker2->turnOnBlinkers(false);
+        }
+        else
+        {
+            left_blinker2->turnOnBlinkers(false);
+            right_blinker2->turnOnBlinkers(false);
+            left_blinker2->turnOnBlinkers(true);
+            right_blinker2->turnOnBlinkers(true);
+        }
+    }
+}
+
+void EventManager::changeColors()
+{
+    color1.indent();
+    arrows->changeColor(color1.counter);
+    py_batspeed->changeColor(color1.counter);
+    py_speed->changeColor(color1.counter);
+    py_battery->changeColor(color1.counter);
+    stats->changeColor(color1.counter);
+    top->changeColor(color1.counter);
+    left_blinker->changeColor(color1.counter);
+    right_blinker->changeColor(color1.counter);
+    top2->changeColor(color1.counter);
+    left_blinker2->changeColor(color1.counter);
+    right_blinker2->changeColor(color1.counter);
+    mainWindow->setStyleSheet(color1.background_array[color1.counter]);
+}
+
+void EventManager::changeUnits()
+{
+    py_speed->changeUnits();
+    py_batspeed->changeUnits();
+    stats->changeUnits();
+}
+
 
 void EventManager::handleGestureEvent(QGestureEvent* gestureEvent)
 {

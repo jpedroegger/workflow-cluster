@@ -56,6 +56,11 @@ class EventManager : public QWidget
     private slots:
         void handleGestureEvent(QGestureEvent* gestureEvent);
         void processKeyStates();
+        void turnBothB();
+        void turnLeftB();
+        void turnRightB();
+        void changeColors();
+        void changeUnits();
 };
 
 #endif // EVENTMANAGER_H
