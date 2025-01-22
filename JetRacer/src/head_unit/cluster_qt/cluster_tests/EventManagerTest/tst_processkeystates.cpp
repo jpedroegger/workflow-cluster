@@ -41,8 +41,8 @@ void    EventManagerTestProcessKeys::testProcessCallsLeftArrow()
 
     eventManager.processKeyStates();
 
-    QVERIFY(arrows->getM_greenL());
-    QVERIFY(!arrows->getM_greenR());
+    QVERIFY(arrows->getm_greenLU());
+    QVERIFY(!arrows->getm_greenRU());
     QVERIFY(!arrows->getM_greenV());
 
     QTest::keyRelease(&eventManager, Qt::Key_Left);
@@ -60,8 +60,8 @@ void    EventManagerTestProcessKeys::testProcessCallsRightArrow()
 
     eventManager.processKeyStates();
 
-    QVERIFY(!arrows->getM_greenL());
-    QVERIFY(arrows->getM_greenR());
+    QVERIFY(!arrows->getm_greenLU());
+    QVERIFY(arrows->getm_greenRU());
     QVERIFY(!arrows->getM_greenV());
 
     QTest::keyRelease(&eventManager, Qt::Key_Right);
@@ -79,8 +79,8 @@ void    EventManagerTestProcessKeys::testProcessCallsFowardArrow()
 
     eventManager.processKeyStates();
 
-    QVERIFY(!arrows->getM_greenL());
-    QVERIFY(!arrows->getM_greenR());
+    QVERIFY(!arrows->getm_greenLU());
+    QVERIFY(!arrows->getm_greenRU());
     QVERIFY(arrows->getM_greenV());
 
     QTest::keyRelease(&eventManager, Qt::Key_Up);

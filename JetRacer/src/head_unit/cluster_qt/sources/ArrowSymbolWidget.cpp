@@ -8,18 +8,22 @@ ArrowSymbolWidget::ArrowSymbolWidget(QWidget* parent, std::string input)
     accent_color = color1.accent_color;
     alphabet_color = color1.alphabet_color;
 
-    m_greenL = false;
-    m_greenR = false;
+    m_greenLU = false;
+    m_greenRU = false;
+    m_greenLL = false;
+    m_greenRL = false;
     m_greenV = false;
     m_drawVerticalArrows = true;
-    m_drawLeftCurve = true;
-    m_drawRightCurve = true;
+    m_drawLeftUpperCurve = true;
+    m_drawRightUpperCurve = true;
+    m_drawLeftLowerCurve = true;
+    m_drawRightLowerCurve = true;
     if (input == "front")
         m_greenV = true;
     else if (input == "left")
-        m_greenL = true;
+        m_greenLU = true;
     else if (input == "right")
-        m_greenR = true;
+        m_greenRU = true;
     setFocusPolicy(Qt::StrongFocus);
 }
 
@@ -31,15 +35,15 @@ void ArrowSymbolWidget::setDrawVerticalArrows(bool enabled)
     update(); // Trigger a repaint
 }
 
-void ArrowSymbolWidget::setDrawLeftCurve(bool enabled)
+void ArrowSymbolWidget::setdrawLeftUpperCurve(bool enabled)
 {
-    m_drawLeftCurve = enabled;
+    m_drawLeftUpperCurve = enabled;
     update(); // Trigger a repaint
 }
 
-void ArrowSymbolWidget::setDrawRightCurve(bool enabled)
+void ArrowSymbolWidget::setdrawRightUpperCurve(bool enabled)
 {
-    m_drawRightCurve = enabled;
+    m_drawRightUpperCurve = enabled;
     update(); // Trigger a repaint
 }
 
@@ -49,18 +53,32 @@ void ArrowSymbolWidget::paintEvent(QPaintEvent* event)
     painter.setRenderHint(QPainter::Antialiasing);
 
 
-    if (m_drawLeftCurve) {
-        if (m_greenL == false)
-            drawLeftCurve(painter, "black");
+    if (m_drawLeftUpperCurve) {
+        if (m_greenLU == false)
+            drawLeftUpperCurve(painter, "black");
         else
-            drawLeftCurve(painter, "green");
+            drawLeftUpperCurve(painter, "green");
     }
 
-    if (m_drawRightCurve) {
-        if (m_greenR == false) 
-            drawRightCurve(painter, "black");
+    if (m_drawRightUpperCurve) {
+        if (m_greenRU == false) 
+            drawRightUpperCurve(painter, "black");
         else
-            drawRightCurve(painter, "green");
+            drawRightUpperCurve(painter, "green");
+
+    }
+
+    if (m_drawLeftLowerCurve) {
+        if (m_greenLU == false)
+            drawLeftLowerCurve(painter, "black");
+        else
+            drawLeftLowerCurve(painter, "green");
+    }
+    if (m_drawRightLowerCurve) {
+        if (m_greenRU == false) 
+            drawRightLowerCurve(painter, "black");
+        else
+            drawRightLowerCurve(painter, "green");
 
     }
     if (m_drawVerticalArrows) {
@@ -75,7 +93,7 @@ void ArrowSymbolWidget::paintEvent(QPaintEvent* event)
 void ArrowSymbolWidget::drawVerticalArrows(QPainter& painter, std::string color)
 {
     int centerX = width() / 2;
-    int centerY = height() / 2;
+    int centerY = height() / 2 - 30;
     int stemLength = 100;
     int arrowSize = 10;
 
@@ -85,17 +103,17 @@ void ArrowSymbolWidget::drawVerticalArrows(QPainter& painter, std::string color)
     else
         painter.setPen(QPen(accent_color,10));
 
-    painter.drawLine(centerX, centerY, centerX, centerY - stemLength);
-    drawArrowhead(painter, centerX, centerY - stemLength, 90, arrowSize, color);
+    painter.drawLine(centerX, centerY + 40 , centerX, centerY - stemLength - 20);
+    drawArrowhead(painter, centerX, centerY - stemLength - 50, 270, arrowSize, color);
 
-    painter.drawLine(centerX, centerY, centerX, centerY + stemLength);
-    drawArrowhead(painter, centerX, centerY + stemLength, 270, arrowSize, color);
+    painter.drawLine(centerX, centerY + 40, centerX, centerY + stemLength + 80);
+    drawArrowhead(painter, centerX, centerY + stemLength + 110, 90, arrowSize, color);
 }
 
-void ArrowSymbolWidget::drawLeftCurve(QPainter& painter, std::string color)
+void ArrowSymbolWidget::drawLeftUpperCurve(QPainter& painter, std::string color)
 {
     int centerX = width() / 2;
-    int centerY = height() / 2;
+    int centerY = height() / 2 - 30;
     int arrowSize = 10;
 
     if (color == "black")
@@ -107,13 +125,13 @@ void ArrowSymbolWidget::drawLeftCurve(QPainter& painter, std::string color)
     leftCurve.moveTo(centerX, centerY + 40);
     leftCurve.cubicTo(centerX - 50, centerY - 40, centerX - 70, centerY - 50, centerX - 120, centerY - 60);
     painter.drawPath(leftCurve);
-    drawArrowhead(painter, centerX - 120, centerY - 55, 135, arrowSize, color);
+    drawArrowhead(painter, centerX - 120, centerY - 50, 45, arrowSize, color);
 }
 
-void ArrowSymbolWidget::drawRightCurve(QPainter& painter, std::string color)
+void ArrowSymbolWidget::drawRightUpperCurve(QPainter& painter, std::string color)
 {
     int centerX = width() / 2;
-    int centerY = height() / 2;
+    int centerY = height() / 2 - 30;
     int arrowSize = 10;
 
     if (color == "black")
@@ -125,7 +143,43 @@ void ArrowSymbolWidget::drawRightCurve(QPainter& painter, std::string color)
     rightCurve.moveTo(centerX, centerY + 40);
     rightCurve.cubicTo(centerX + 50, centerY - 40, centerX + 70, centerY - 50, centerX + 120, centerY - 60);
     painter.drawPath(rightCurve);
-    drawArrowhead(painter, centerX + 120, centerY - 55, 45, arrowSize, color);
+    drawArrowhead(painter, centerX + 120, centerY - 50, 135, arrowSize, color);
+}
+
+void ArrowSymbolWidget::drawLeftLowerCurve(QPainter& painter, std::string color)
+{
+    int centerX = width() / 2;
+    int centerY = height() / 2 - 30 + 70;
+    int arrowSize = 10;
+
+    if (color == "black")
+        painter.setPen(QPen(main_color,10));
+    else
+        painter.setPen(QPen(accent_color,10));
+
+    QPainterPath leftCurve;
+    leftCurve.moveTo(centerX, centerY - 40);
+    leftCurve.cubicTo(centerX - 50, centerY + 40, centerX - 70, centerY + 50, centerX - 120, centerY + 60);
+    painter.drawPath(leftCurve);
+    drawArrowhead(painter, centerX - 120, centerY + 70, 45, arrowSize, color);
+}
+
+void ArrowSymbolWidget::drawRightLowerCurve(QPainter& painter, std::string color)
+{
+    int centerX = width() / 2;
+    int centerY = height() / 2 - 30 + 70;
+    int arrowSize = 10;
+
+    if (color == "black")
+        painter.setPen(QPen(main_color,10));
+    else
+        painter.setPen(QPen(accent_color,10));
+
+    QPainterPath rightCurve;
+    rightCurve.moveTo(centerX, centerY - 40);
+    rightCurve.cubicTo(centerX + 50, centerY + 40, centerX + 70, centerY + 50, centerX + 120, centerY + 60);
+    painter.drawPath(rightCurve);
+    drawArrowhead(painter, centerX + 120, centerY + 70, 135, arrowSize, color);
 }
 
 void ArrowSymbolWidget::drawArrowhead(QPainter& painter, int x, int y, double angle, int size, std::string color)
