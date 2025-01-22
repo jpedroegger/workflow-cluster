@@ -29,6 +29,7 @@ void    StatsWidget::paintEvent(QPaintEvent *event)
     int spacing = 20;
 
     // Draw two rows, each with two rectangles
+    values.clear();
     values << distance << average << consumed << obstacles;
     for (int row = 0; row < 2; ++row)
     {
@@ -47,6 +48,7 @@ void    StatsWidget::paintEvent(QPaintEvent *event)
         }
     }
     QWidget::paintEvent(event);
+
 }
 
 void    StatsWidget::changeColor(int  array_index)
@@ -59,24 +61,30 @@ void    StatsWidget::changeColor(int  array_index)
 
 void    StatsWidget::setDistance(int dist)
 {
-    distance_int = dist;
-    distance = distance_int + " " + unit;
+    if (unit == "Mi")
+        distance_int = dist * 0.6214;
+    else
+        distance_int = dist;
+    distance = QString::number(distance_int) + " " + unit;
 }
 
 void    StatsWidget::setAverage(int avg)
 {
-    average_int = avg;
-    average = average_int + " " + unit + " Per Hour";
+    if (unit == "Mi")
+        average_int = avg * 0.6214;
+    else
+        average_int = avg;
+    average = QString::number(average_int) + " " + unit + " Per Hour";
 }
 
 void    StatsWidget::setConsumed(int con)
 {
-    consumed = con + "%";
+    consumed = QString::number(con) + "%";
 }
 
 void    StatsWidget::setObstacles(int obs)
 {
-    obstacles = obs + "";
+    obstacles = QString::number(obs) + "";
 }
 
 void    StatsWidget::changeUnits(void)
@@ -84,15 +92,15 @@ void    StatsWidget::changeUnits(void)
     if (unit == "Km"){
         unit = "Mi";
         distance_int *= 0.6214;
-        distance = distance_int + " " + unit;
+        distance = QString::number(distance_int) + " " + unit;
         average_int *= 0.6214;
-        average = average_int + " " + unit + " Per Hour";
+        average = QString::number(average_int) + " " + unit + " Per Hour";
     } else {
         unit = "Km";
         distance_int *= 1.609;
-        distance = distance_int + " " + unit;
+        distance = QString::number(distance_int) + " " + unit;
         average_int *= 1.609;
-        average = average_int + " " + unit + " Per Hour";
+        average = QString::number(average_int) + " " + unit + " Per Hour";
     }
     update();
 }
