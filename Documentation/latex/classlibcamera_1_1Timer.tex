@@ -1,0 +1,208 @@
+\doxysection{libcamera\+::Timer Class Reference}
+\hypertarget{classlibcamera_1_1Timer}{}\label{classlibcamera_1_1Timer}\index{libcamera::Timer@{libcamera::Timer}}
+
+
+Single-\/shot timer interface.  
+
+
+Inheritance diagram for libcamera\+::Timer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classlibcamera_1_1Timer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1Timer_aa84869220215f9deb6487cd7c7fae9c9}{Timer}} (\mbox{\hyperlink{classlibcamera_1_1Object}{Object}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classlibcamera_1_1Object_a469143548519e7ac9525e5b2b45e983f}{parent}}=nullptr)
+\begin{DoxyCompactList}\small\item\em Construct a timer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1Timer_a77111caad9d4db3062250f2d78e3cb16}{start}} (std\+::chrono\+::milliseconds duration)
+\begin{DoxyCompactList}\small\item\em Start or restart the timer with a timeout of {\itshape duration}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1Timer_a4ba62867fb3d5d4450aaa3494281e780}{start}} (std\+::chrono\+::steady\+\_\+clock\+::time\+\_\+point \mbox{\hyperlink{classlibcamera_1_1Timer_a73e8463d2637f55a08bf7e17c5b8c495}{deadline}})
+\begin{DoxyCompactList}\small\item\em Start or restart the timer with a {\itshape deadline}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1Timer_aa55c0eff53adb0d5b16b0ce9510ce7a2}{stop}} ()
+\begin{DoxyCompactList}\small\item\em Stop the timer. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlibcamera_1_1Timer_a3cc12f6e8d79c5661d9fcbfc5e977fef}{is\+Running}} () const
+\begin{DoxyCompactList}\small\item\em Check if the timer is running. \end{DoxyCompactList}\item 
+std\+::chrono\+::steady\+\_\+clock\+::time\+\_\+point \mbox{\hyperlink{classlibcamera_1_1Timer_a73e8463d2637f55a08bf7e17c5b8c495}{deadline}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the timer deadline. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1Object}{libcamera\+::\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1Object_a0425e0a986630b5881558378fad91687}{Object}} (\mbox{\hyperlink{classlibcamera_1_1Object}{Object}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classlibcamera_1_1Object_a469143548519e7ac9525e5b2b45e983f}{parent}}=nullptr)
+\begin{DoxyCompactList}\small\item\em Construct an \doxylink{classlibcamera_1_1Object}{Object} instance. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classlibcamera_1_1Object_ad52c17ff4161b166ae71e766d0649b97}{\texorpdfstring{$\sim$}{\string~}\+Object}} ()
+\begin{DoxyCompactList}\small\item\em Destroy an \doxylink{classlibcamera_1_1Object}{Object} instance. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1Object_a7432a52a2e69a29cfe8144929686d1e6}{delete\+Later}} ()
+\begin{DoxyCompactList}\small\item\em Schedule deletion of the instance in the thread it belongs to. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1Object_af9ae92dfe5f3741c64ebdec61a2f5bef}{post\+Message}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1Message}{Message}} $>$ msg)
+\begin{DoxyCompactList}\small\item\em Post a message to the object\textquotesingle{}s thread. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename R , typename... Func\+Args, typename... Args, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+base\+\_\+of$<$ \mbox{\hyperlink{classlibcamera_1_1Object}{Object}}, T $>$\+::value $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ }\\R \mbox{\hyperlink{classlibcamera_1_1Object_a2a4ea2209e289e2aabb75c5718d5b4a7}{invoke\+Method}} (R(T\+::\texorpdfstring{$\ast$}{*}func)(Func\+Args...), \mbox{\hyperlink{namespacelibcamera_ae2c8412791b9597d590a7d0b2c9e2919}{Connection\+Type}} type, Args \&\&... args)
+\begin{DoxyCompactList}\small\item\em Invoke a method asynchronously on an \doxylink{classlibcamera_1_1Object}{Object} instance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1Thread}{Thread}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1Object_aca52b8790edc25af65d6fe937355577b}{thread}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the thread the object is bound to \textbackslash{}context This function is \textbackslash{}threadsafe. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1Object_a8045a16ae8a093722466ca7129db6fc2}{move\+To\+Thread}} (\mbox{\hyperlink{classlibcamera_1_1Thread}{Thread}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classlibcamera_1_1Object_aca52b8790edc25af65d6fe937355577b}{thread}})
+\begin{DoxyCompactList}\small\item\em Move the object and all its children to a different thread. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1Object}{Object}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1Object_a469143548519e7ac9525e5b2b45e983f}{parent}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the object\textquotesingle{}s parent. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1Signal}{Signal}} \mbox{\hyperlink{classlibcamera_1_1Timer_aa5cf441be2e6686c96e085de2ef47d7a}{timeout}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classlibcamera_1_1Signal}{Signal} emitted when the timer times out. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classlibcamera_1_1Timer_a3ed22e72f2b3001a17e8aedcc6374c0c}{message}} (\mbox{\hyperlink{classlibcamera_1_1Message}{Message}} \texorpdfstring{$\ast$}{*}msg) override
+\begin{DoxyCompactList}\small\item\em \doxylink{classlibcamera_1_1Message}{Message} handler for the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1Object}{libcamera\+::\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classlibcamera_1_1Object_a6e81f2a2524dbe12daed49597cf66a57}{assert\+Thread\+Bound}} (const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classlibcamera_1_1Object_a5328cab1412743716aa2748eeded8e80}{message}})
+\begin{DoxyCompactList}\small\item\em Check if the caller complies with thread-\/bound constraints. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Single-\/shot timer interface. 
+
+The \doxylink{classlibcamera_1_1Timer}{Timer} class models a single-\/shot timer that is started with \doxylink{classlibcamera_1_1Timer_a77111caad9d4db3062250f2d78e3cb16}{start()} and emits the \doxylink{classlibcamera_1_1Timer_aa5cf441be2e6686c96e085de2ef47d7a}{timeout} signal when it times out.
+
+Once started the timer will run until it times out. It can be stopped with \doxylink{classlibcamera_1_1Timer_aa55c0eff53adb0d5b16b0ce9510ce7a2}{stop()}, and once it times out or is stopped, can be started again with \doxylink{classlibcamera_1_1Timer_a77111caad9d4db3062250f2d78e3cb16}{start()}.
+
+The timer deadline is specified as either a duration in milliseconds or an absolute time point. If the deadline is set to the current time or to the past, the timer will time out immediately when execution returns to the event loop of the timer\textquotesingle{}s thread.
+
+Timers run in the thread they belong to, and thus emit the {\itshape ref} timeout signal from that thread. To avoid race conditions they must not be started or stopped from a different thread, attempts to do so will be rejected and logged, and may cause undefined behaviour. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlibcamera_1_1Timer_aa84869220215f9deb6487cd7c7fae9c9}\label{classlibcamera_1_1Timer_aa84869220215f9deb6487cd7c7fae9c9} 
+\index{libcamera::Timer@{libcamera::Timer}!Timer@{Timer}}
+\index{Timer@{Timer}!libcamera::Timer@{libcamera::Timer}}
+\doxysubsubsection{\texorpdfstring{Timer()}{Timer()}}
+{\footnotesize\ttfamily libcamera\+::\+Timer\+::\+Timer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1Object}{Object}} \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Construct a timer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em parent} & The parent \doxylink{classlibcamera_1_1Object}{Object} \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1Timer_a73e8463d2637f55a08bf7e17c5b8c495}\label{classlibcamera_1_1Timer_a73e8463d2637f55a08bf7e17c5b8c495} 
+\index{libcamera::Timer@{libcamera::Timer}!deadline@{deadline}}
+\index{deadline@{deadline}!libcamera::Timer@{libcamera::Timer}}
+\doxysubsubsection{\texorpdfstring{deadline()}{deadline()}}
+{\footnotesize\ttfamily libcamera\+::\+Timer\+::deadline (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the timer deadline. 
+
+\begin{DoxyReturn}{Returns}
+The timer deadline 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Timer_a3cc12f6e8d79c5661d9fcbfc5e977fef}\label{classlibcamera_1_1Timer_a3cc12f6e8d79c5661d9fcbfc5e977fef} 
+\index{libcamera::Timer@{libcamera::Timer}!isRunning@{isRunning}}
+\index{isRunning@{isRunning}!libcamera::Timer@{libcamera::Timer}}
+\doxysubsubsection{\texorpdfstring{isRunning()}{isRunning()}}
+{\footnotesize\ttfamily bool libcamera\+::\+Timer\+::is\+Running (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Check if the timer is running. 
+
+\begin{DoxyReturn}{Returns}
+True if the timer is running, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Timer_a3ed22e72f2b3001a17e8aedcc6374c0c}\label{classlibcamera_1_1Timer_a3ed22e72f2b3001a17e8aedcc6374c0c} 
+\index{libcamera::Timer@{libcamera::Timer}!message@{message}}
+\index{message@{message}!libcamera::Timer@{libcamera::Timer}}
+\doxysubsubsection{\texorpdfstring{message()}{message()}}
+{\footnotesize\ttfamily void libcamera\+::\+Timer\+::message (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1Message}{Message}} \texorpdfstring{$\ast$}{*}}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+\doxylink{classlibcamera_1_1Message}{Message} handler for the object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em msg} & The message\\
+\hline
+\end{DoxyParams}
+This virtual function receives messages for the object. It is called in the context of the object\textquotesingle{}s thread, and can be overridden to process custom messages. The parent \doxylink{classlibcamera_1_1Object_a5328cab1412743716aa2748eeded8e80}{Object\+::message()} function shall be called for any message not handled by the override function.
+
+The message {\itshape msg} is valid only for the duration of the call, no reference to it shall be kept after this function returns. 
+
+Reimplemented from \mbox{\hyperlink{classlibcamera_1_1Object_a5328cab1412743716aa2748eeded8e80}{libcamera\+::\+Object}}.
+
+\Hypertarget{classlibcamera_1_1Timer_a77111caad9d4db3062250f2d78e3cb16}\label{classlibcamera_1_1Timer_a77111caad9d4db3062250f2d78e3cb16} 
+\index{libcamera::Timer@{libcamera::Timer}!start@{start}}
+\index{start@{start}!libcamera::Timer@{libcamera::Timer}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void libcamera\+::\+Timer\+::start (\begin{DoxyParamCaption}\item[{std\+::chrono\+::milliseconds}]{duration }\end{DoxyParamCaption})}
+
+
+
+Start or restart the timer with a timeout of {\itshape duration}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em duration} & The timer duration in milliseconds\\
+\hline
+\end{DoxyParams}
+If the timer is already running it will be stopped and restarted.
+
+\textbackslash{}context This function is \textbackslash{}threadbound. \Hypertarget{classlibcamera_1_1Timer_a4ba62867fb3d5d4450aaa3494281e780}\label{classlibcamera_1_1Timer_a4ba62867fb3d5d4450aaa3494281e780} 
+\index{libcamera::Timer@{libcamera::Timer}!start@{start}}
+\index{start@{start}!libcamera::Timer@{libcamera::Timer}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void libcamera\+::\+Timer\+::start (\begin{DoxyParamCaption}\item[{std\+::chrono\+::steady\+\_\+clock\+::time\+\_\+point}]{deadline }\end{DoxyParamCaption})}
+
+
+
+Start or restart the timer with a {\itshape deadline}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em deadline} & The timer deadline\\
+\hline
+\end{DoxyParams}
+If the timer is already running it will be stopped and restarted.
+
+\textbackslash{}context This function is \textbackslash{}threadbound. \Hypertarget{classlibcamera_1_1Timer_aa55c0eff53adb0d5b16b0ce9510ce7a2}\label{classlibcamera_1_1Timer_aa55c0eff53adb0d5b16b0ce9510ce7a2} 
+\index{libcamera::Timer@{libcamera::Timer}!stop@{stop}}
+\index{stop@{stop}!libcamera::Timer@{libcamera::Timer}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void libcamera\+::\+Timer\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Stop the timer. 
+
+After this function returns the timer is guaranteed not to emit the \doxylink{classlibcamera_1_1Timer_aa5cf441be2e6686c96e085de2ef47d7a}{timeout} signal.
+
+If the timer is not running this function performs no operation.
+
+\textbackslash{}context This function is \textbackslash{}threadbound. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classlibcamera_1_1Timer_aa5cf441be2e6686c96e085de2ef47d7a}\label{classlibcamera_1_1Timer_aa5cf441be2e6686c96e085de2ef47d7a} 
+\index{libcamera::Timer@{libcamera::Timer}!timeout@{timeout}}
+\index{timeout@{timeout}!libcamera::Timer@{libcamera::Timer}}
+\doxysubsubsection{\texorpdfstring{timeout}{timeout}}
+{\footnotesize\ttfamily libcamera\+::\+Timer\+::timeout}
+
+
+
+\doxylink{classlibcamera_1_1Signal}{Signal} emitted when the timer times out. 
+
+The timer pointer is passed as a parameter. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/base/\mbox{\hyperlink{timer_8h}{timer.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/base/timer.\+cpp\end{DoxyCompactItemize}

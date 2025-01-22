@@ -1,0 +1,178 @@
+\doxysection{Cam\+Helper\+Imx708 Class Reference}
+\hypertarget{classCamHelperImx708}{}\label{classCamHelperImx708}\index{CamHelperImx708@{CamHelperImx708}}
+Inheritance diagram for Cam\+Helper\+Imx708\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCamHelperImx708}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classCamHelperImx708_a4ca1d186e67bd9f1a07df77dec6b91b5}{gain\+Code}} (double gain) const override
+\item 
+double \mbox{\hyperlink{classCamHelperImx708_a68f56d7e65d29ad3e9a7e847f0f96157}{gain}} (uint32\+\_\+t gain\+\_\+code) const override
+\item 
+void \mbox{\hyperlink{classCamHelperImx708_a785d439fff617a730b405cf25cad692a}{prepare}} (\mbox{\hyperlink{classlibcamera_1_1Span}{libcamera\+::\+Span}}$<$ const uint8\+\_\+t $>$ buffer, Metadata \&metadata) override
+\item 
+void \mbox{\hyperlink{classCamHelperImx708_a158c797b3b9c9a19e2b2bb831874fbfa}{process}} (Statistics\+Ptr \&stats, Metadata \&metadata) override
+\item 
+std\+::pair$<$ uint32\+\_\+t, uint32\+\_\+t $>$ \mbox{\hyperlink{classCamHelperImx708_a0bb7af0abdc22f3a321d61a9511e362f}{get\+Blanking}} (\mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{Duration}} \&exposure, \mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{Duration}} min\+Frame\+Duration, \mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{Duration}} max\+Frame\+Duration) const override
+\item 
+void \mbox{\hyperlink{classCamHelperImx708_ab31578e4e79034f99f906fc4b94e4f94}{get\+Delays}} (int \&exposure\+Delay, int \&gain\+Delay, int \&vblank\+Delay, int \&hblank\+Delay) const override
+\item 
+bool \mbox{\hyperlink{classCamHelperImx708_a14ae768b00c1000086e4ced2ba87ebe4}{sensor\+Embedded\+Data\+Present}} () const override
+\item 
+double \mbox{\hyperlink{classCamHelperImx708_acdcffc677b18ef9bb6dc0a3ced83904b}{get\+Mode\+Sensitivity}} (const \mbox{\hyperlink{structCameraMode}{Camera\+Mode}} \&mode) const override
+\item 
+unsigned int \mbox{\hyperlink{classCamHelperImx708_aa684ea8041bf9a62559e72632f2beacf}{hide\+Frames\+Mode\+Switch}} () const override
+\item 
+unsigned int \mbox{\hyperlink{classCamHelperImx708_a36586e387a95bbe34160cf21583422a3}{hide\+Frames\+Startup}} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classRPiController_1_1CamHelper}{RPi\+Controller\+::\+Cam\+Helper}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Cam\+Helper} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classRPiController_1_1MdParser}{Md\+Parser}} $>$ parser, unsigned int frame\+Integration\+Diff)
+\item 
+void {\bfseries set\+Camera\+Mode} (const \mbox{\hyperlink{structCameraMode}{Camera\+Mode}} \&mode)
+\item 
+virtual uint32\+\_\+t {\bfseries exposure\+Lines} (const \mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{libcamera\+::utils\+::\+Duration}} exposure, const \mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{libcamera\+::utils\+::\+Duration}} line\+Length) const
+\item 
+virtual \mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{libcamera\+::utils\+::\+Duration}} {\bfseries exposure} (uint32\+\_\+t exposure\+Lines, const \mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{libcamera\+::utils\+::\+Duration}} line\+Length) const
+\item 
+\mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{libcamera\+::utils\+::\+Duration}} {\bfseries hblank\+To\+Line\+Length} (uint32\+\_\+t hblank) const
+\item 
+uint32\+\_\+t {\bfseries line\+Length\+To\+Hblank} (const \mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{libcamera\+::utils\+::\+Duration}} \&duration) const
+\item 
+\mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{libcamera\+::utils\+::\+Duration}} {\bfseries line\+Length\+Pck\+To\+Duration} (uint32\+\_\+t line\+Length\+Pck) const
+\item 
+virtual unsigned int {\bfseries mistrust\+Frames\+Startup} () const
+\item 
+virtual unsigned int {\bfseries mistrust\+Frames\+Mode\+Switch} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classRPiController_1_1CamHelper}{RPi\+Controller\+::\+Cam\+Helper}}}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classRPiController_1_1CamHelper}{Cam\+Helper}} \texorpdfstring{$\ast$}{*} {\bfseries create} (std\+::string const \&cam\+Name)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classRPiController_1_1CamHelper}{RPi\+Controller\+::\+Cam\+Helper}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries parse\+Embedded\+Data} (\mbox{\hyperlink{classlibcamera_1_1Span}{libcamera\+::\+Span}}$<$ const uint8\+\_\+t $>$ buffer, Metadata \&metadata)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classRPiController_1_1CamHelper}{RPi\+Controller\+::\+Cam\+Helper}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classRPiController_1_1MdParser}{Md\+Parser}} $>$ {\bfseries parser\+\_\+}
+\item 
+\mbox{\hyperlink{structCameraMode}{Camera\+Mode}} {\bfseries mode\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCamHelperImx708_a68f56d7e65d29ad3e9a7e847f0f96157}\label{classCamHelperImx708_a68f56d7e65d29ad3e9a7e847f0f96157} 
+\index{CamHelperImx708@{CamHelperImx708}!gain@{gain}}
+\index{gain@{gain}!CamHelperImx708@{CamHelperImx708}}
+\doxysubsubsection{\texorpdfstring{gain()}{gain()}}
+{\footnotesize\ttfamily double Cam\+Helper\+Imx708\+::gain (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{gain\+\_\+code }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classRPiController_1_1CamHelper}{RPi\+Controller\+::\+Cam\+Helper}}.
+
+\Hypertarget{classCamHelperImx708_a4ca1d186e67bd9f1a07df77dec6b91b5}\label{classCamHelperImx708_a4ca1d186e67bd9f1a07df77dec6b91b5} 
+\index{CamHelperImx708@{CamHelperImx708}!gainCode@{gainCode}}
+\index{gainCode@{gainCode}!CamHelperImx708@{CamHelperImx708}}
+\doxysubsubsection{\texorpdfstring{gainCode()}{gainCode()}}
+{\footnotesize\ttfamily uint32\+\_\+t Cam\+Helper\+Imx708\+::gain\+Code (\begin{DoxyParamCaption}\item[{double}]{gain }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classRPiController_1_1CamHelper}{RPi\+Controller\+::\+Cam\+Helper}}.
+
+\Hypertarget{classCamHelperImx708_a0bb7af0abdc22f3a321d61a9511e362f}\label{classCamHelperImx708_a0bb7af0abdc22f3a321d61a9511e362f} 
+\index{CamHelperImx708@{CamHelperImx708}!getBlanking@{getBlanking}}
+\index{getBlanking@{getBlanking}!CamHelperImx708@{CamHelperImx708}}
+\doxysubsubsection{\texorpdfstring{getBlanking()}{getBlanking()}}
+{\footnotesize\ttfamily std\+::pair$<$ uint32\+\_\+t, uint32\+\_\+t $>$ Cam\+Helper\+Imx708\+::get\+Blanking (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{Duration}} \&}]{exposure,  }\item[{\mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{Duration}}}]{min\+Frame\+Duration,  }\item[{\mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{Duration}}}]{max\+Frame\+Duration }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classRPiController_1_1CamHelper}{RPi\+Controller\+::\+Cam\+Helper}}.
+
+\Hypertarget{classCamHelperImx708_ab31578e4e79034f99f906fc4b94e4f94}\label{classCamHelperImx708_ab31578e4e79034f99f906fc4b94e4f94} 
+\index{CamHelperImx708@{CamHelperImx708}!getDelays@{getDelays}}
+\index{getDelays@{getDelays}!CamHelperImx708@{CamHelperImx708}}
+\doxysubsubsection{\texorpdfstring{getDelays()}{getDelays()}}
+{\footnotesize\ttfamily void Cam\+Helper\+Imx708\+::get\+Delays (\begin{DoxyParamCaption}\item[{int \&}]{exposure\+Delay,  }\item[{int \&}]{gain\+Delay,  }\item[{int \&}]{vblank\+Delay,  }\item[{int \&}]{hblank\+Delay }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classRPiController_1_1CamHelper}{RPi\+Controller\+::\+Cam\+Helper}}.
+
+\Hypertarget{classCamHelperImx708_acdcffc677b18ef9bb6dc0a3ced83904b}\label{classCamHelperImx708_acdcffc677b18ef9bb6dc0a3ced83904b} 
+\index{CamHelperImx708@{CamHelperImx708}!getModeSensitivity@{getModeSensitivity}}
+\index{getModeSensitivity@{getModeSensitivity}!CamHelperImx708@{CamHelperImx708}}
+\doxysubsubsection{\texorpdfstring{getModeSensitivity()}{getModeSensitivity()}}
+{\footnotesize\ttfamily double Cam\+Helper\+Imx708\+::get\+Mode\+Sensitivity (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCameraMode}{Camera\+Mode}} \&}]{mode }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classRPiController_1_1CamHelper}{RPi\+Controller\+::\+Cam\+Helper}}.
+
+\Hypertarget{classCamHelperImx708_aa684ea8041bf9a62559e72632f2beacf}\label{classCamHelperImx708_aa684ea8041bf9a62559e72632f2beacf} 
+\index{CamHelperImx708@{CamHelperImx708}!hideFramesModeSwitch@{hideFramesModeSwitch}}
+\index{hideFramesModeSwitch@{hideFramesModeSwitch}!CamHelperImx708@{CamHelperImx708}}
+\doxysubsubsection{\texorpdfstring{hideFramesModeSwitch()}{hideFramesModeSwitch()}}
+{\footnotesize\ttfamily unsigned int Cam\+Helper\+Imx708\+::hide\+Frames\+Mode\+Switch (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classRPiController_1_1CamHelper}{RPi\+Controller\+::\+Cam\+Helper}}.
+
+\Hypertarget{classCamHelperImx708_a36586e387a95bbe34160cf21583422a3}\label{classCamHelperImx708_a36586e387a95bbe34160cf21583422a3} 
+\index{CamHelperImx708@{CamHelperImx708}!hideFramesStartup@{hideFramesStartup}}
+\index{hideFramesStartup@{hideFramesStartup}!CamHelperImx708@{CamHelperImx708}}
+\doxysubsubsection{\texorpdfstring{hideFramesStartup()}{hideFramesStartup()}}
+{\footnotesize\ttfamily unsigned int Cam\+Helper\+Imx708\+::hide\+Frames\+Startup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classRPiController_1_1CamHelper}{RPi\+Controller\+::\+Cam\+Helper}}.
+
+\Hypertarget{classCamHelperImx708_a785d439fff617a730b405cf25cad692a}\label{classCamHelperImx708_a785d439fff617a730b405cf25cad692a} 
+\index{CamHelperImx708@{CamHelperImx708}!prepare@{prepare}}
+\index{prepare@{prepare}!CamHelperImx708@{CamHelperImx708}}
+\doxysubsubsection{\texorpdfstring{prepare()}{prepare()}}
+{\footnotesize\ttfamily void Cam\+Helper\+Imx708\+::prepare (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1Span}{libcamera\+::\+Span}}$<$ const uint8\+\_\+t $>$}]{buffer,  }\item[{Metadata \&}]{metadata }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classRPiController_1_1CamHelper}{RPi\+Controller\+::\+Cam\+Helper}}.
+
+\Hypertarget{classCamHelperImx708_a158c797b3b9c9a19e2b2bb831874fbfa}\label{classCamHelperImx708_a158c797b3b9c9a19e2b2bb831874fbfa} 
+\index{CamHelperImx708@{CamHelperImx708}!process@{process}}
+\index{process@{process}!CamHelperImx708@{CamHelperImx708}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily void Cam\+Helper\+Imx708\+::process (\begin{DoxyParamCaption}\item[{Statistics\+Ptr \&}]{stats,  }\item[{Metadata \&}]{metadata }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classRPiController_1_1CamHelper}{RPi\+Controller\+::\+Cam\+Helper}}.
+
+\Hypertarget{classCamHelperImx708_a14ae768b00c1000086e4ced2ba87ebe4}\label{classCamHelperImx708_a14ae768b00c1000086e4ced2ba87ebe4} 
+\index{CamHelperImx708@{CamHelperImx708}!sensorEmbeddedDataPresent@{sensorEmbeddedDataPresent}}
+\index{sensorEmbeddedDataPresent@{sensorEmbeddedDataPresent}!CamHelperImx708@{CamHelperImx708}}
+\doxysubsubsection{\texorpdfstring{sensorEmbeddedDataPresent()}{sensorEmbeddedDataPresent()}}
+{\footnotesize\ttfamily bool Cam\+Helper\+Imx708\+::sensor\+Embedded\+Data\+Present (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classRPiController_1_1CamHelper}{RPi\+Controller\+::\+Cam\+Helper}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/ipa/rpi/cam\+\_\+helper/cam\+\_\+helper\+\_\+imx708.\+cpp\end{DoxyCompactItemize}

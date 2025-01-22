@@ -1,0 +1,169 @@
+\doxysection{libcamera\+::ipa\+::Histogram Class Reference}
+\hypertarget{classlibcamera_1_1ipa_1_1Histogram}{}\label{classlibcamera_1_1ipa_1_1Histogram}\index{libcamera::ipa::Histogram@{libcamera::ipa::Histogram}}
+
+
+The base class for creating histograms.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Histogram_a01eef228a3afc07adadcdc592fe75220}{Histogram}} ()
+\begin{DoxyCompactList}\small\item\em Construct an empty \doxylink{classlibcamera_1_1ipa_1_1Histogram}{Histogram}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Histogram_ac2a991c53d9698b332f84ab6c50b0503}{Histogram}} (\mbox{\hyperlink{classlibcamera_1_1Span}{Span}}$<$ const uint32\+\_\+t $>$ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Histogram_af12738e0a9c5c6a9cab836310328de77}{data}})
+\begin{DoxyCompactList}\small\item\em Create a cumulative histogram. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename \mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571}{Transform}} , std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+invocable\+\_\+v$<$ \mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571}{Transform}}, uint32\+\_\+t $>$ $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ }\\\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Histogram_af20a31f0cc0d3875dc84b59003cd7f73}{Histogram}} (\mbox{\hyperlink{classlibcamera_1_1Span}{Span}}$<$ const uint32\+\_\+t $>$ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Histogram_af12738e0a9c5c6a9cab836310328de77}{data}}, \mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571}{Transform}} transform)
+\begin{DoxyCompactList}\small\item\em Create a cumulative histogram. \end{DoxyCompactList}\item 
+\Hypertarget{classlibcamera_1_1ipa_1_1Histogram_a3ff35a7464ce6b028f720dd528e4ea26}\label{classlibcamera_1_1ipa_1_1Histogram_a3ff35a7464ce6b028f720dd528e4ea26} 
+size\+\_\+t {\bfseries bins} () const
+\item 
+const \mbox{\hyperlink{classlibcamera_1_1Span}{Span}}$<$ const uint64\+\_\+t $>$ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Histogram_af12738e0a9c5c6a9cab836310328de77}{data}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the internal data. \end{DoxyCompactList}\item 
+\Hypertarget{classlibcamera_1_1ipa_1_1Histogram_aa9965127bb10a12ceaafc6679fa1a9bd}\label{classlibcamera_1_1ipa_1_1Histogram_aa9965127bb10a12ceaafc6679fa1a9bd} 
+uint64\+\_\+t {\bfseries total} () const
+\item 
+uint64\+\_\+t \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Histogram_a7ad1607c6a31b99697ca230f5fed8b3e}{cumulative\+Frequency}} (double bin) const
+\begin{DoxyCompactList}\small\item\em Cumulative frequency up to a (fractional) point in a bin. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Histogram_a4166ba1055d093261771ab49ef252ec2}{quantile}} (double q, uint32\+\_\+t first=0, uint32\+\_\+t last=UINT\+\_\+\+MAX) const
+\begin{DoxyCompactList}\small\item\em Return the (fractional) bin of the point through the histogram. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Histogram_afb35d21e5d3e13dbce9fd606003e30f4}{inter\+Quantile\+Mean}} (double low\+Quantile, double hi\+Quantile) const
+\begin{DoxyCompactList}\small\item\em Calculate the mean between two quantiles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The base class for creating histograms. 
+
+This class stores a cumulative frequency histogram, which is a mapping that counts the cumulative number of observations in all of the bins up to the specified bin. It can be used to find quantiles and averages between quantiles. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlibcamera_1_1ipa_1_1Histogram_a01eef228a3afc07adadcdc592fe75220}\label{classlibcamera_1_1ipa_1_1Histogram_a01eef228a3afc07adadcdc592fe75220} 
+\index{libcamera::ipa::Histogram@{libcamera::ipa::Histogram}!Histogram@{Histogram}}
+\index{Histogram@{Histogram}!libcamera::ipa::Histogram@{libcamera::ipa::Histogram}}
+\doxysubsubsection{\texorpdfstring{Histogram()}{Histogram()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily libcamera\+::ipa\+::\+Histogram\+::\+Histogram (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct an empty \doxylink{classlibcamera_1_1ipa_1_1Histogram}{Histogram}. 
+
+This empty constructor exists largely to allow Histograms to be embedded in other classes which may be created before the contents of the \doxylink{classlibcamera_1_1ipa_1_1Histogram}{Histogram} are known. \Hypertarget{classlibcamera_1_1ipa_1_1Histogram_ac2a991c53d9698b332f84ab6c50b0503}\label{classlibcamera_1_1ipa_1_1Histogram_ac2a991c53d9698b332f84ab6c50b0503} 
+\index{libcamera::ipa::Histogram@{libcamera::ipa::Histogram}!Histogram@{Histogram}}
+\index{Histogram@{Histogram}!libcamera::ipa::Histogram@{libcamera::ipa::Histogram}}
+\doxysubsubsection{\texorpdfstring{Histogram()}{Histogram()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily libcamera\+::ipa\+::\+Histogram\+::\+Histogram (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1Span}{Span}}$<$ const uint32\+\_\+t $>$}]{data }\end{DoxyParamCaption})}
+
+
+
+Create a cumulative histogram. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em data} & A (non-\/cumulative) histogram \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classlibcamera_1_1ipa_1_1Histogram_af20a31f0cc0d3875dc84b59003cd7f73}\label{classlibcamera_1_1ipa_1_1Histogram_af20a31f0cc0d3875dc84b59003cd7f73} 
+\index{libcamera::ipa::Histogram@{libcamera::ipa::Histogram}!Histogram@{Histogram}}
+\index{Histogram@{Histogram}!libcamera::ipa::Histogram@{libcamera::ipa::Histogram}}
+\doxysubsubsection{\texorpdfstring{Histogram()}{Histogram()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571}{Transform}} , std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+invocable\+\_\+v$<$ \mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571}{Transform}}, uint32\+\_\+t $>$ $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+libcamera\+::ipa\+::\+Histogram\+::\+Histogram (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1Span}{Span}}$<$ const uint32\+\_\+t $>$}]{data,  }\item[{\mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571}{Transform}}}]{transform }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create a cumulative histogram. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em data} & A (non-\/cumulative) histogram \\
+\hline
+\mbox{\texttt{ in}}  & {\em transform} & The transformation function to apply to every bin \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1ipa_1_1Histogram_a7ad1607c6a31b99697ca230f5fed8b3e}\label{classlibcamera_1_1ipa_1_1Histogram_a7ad1607c6a31b99697ca230f5fed8b3e} 
+\index{libcamera::ipa::Histogram@{libcamera::ipa::Histogram}!cumulativeFrequency@{cumulativeFrequency}}
+\index{cumulativeFrequency@{cumulativeFrequency}!libcamera::ipa::Histogram@{libcamera::ipa::Histogram}}
+\doxysubsubsection{\texorpdfstring{cumulativeFrequency()}{cumulativeFrequency()}}
+{\footnotesize\ttfamily uint64\+\_\+t libcamera\+::ipa\+::\+Histogram\+::cumulative\+Frequency (\begin{DoxyParamCaption}\item[{double}]{bin }\end{DoxyParamCaption}) const}
+
+
+
+Cumulative frequency up to a (fractional) point in a bin. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em bin} & The bin up to which to cumulate\\
+\hline
+\end{DoxyParams}
+With F(p) the cumulative frequency of the histogram, the value is 0 at the bottom of the histogram, and the maximum is the number of bins. The pixels are spread evenly throughout the “bin” in which they lie, so that F(p) is a continuous (monotonically increasing) function.
+
+\begin{DoxyReturn}{Returns}
+The cumulative frequency from 0 up to the specified bin 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1Histogram_af12738e0a9c5c6a9cab836310328de77}\label{classlibcamera_1_1ipa_1_1Histogram_af12738e0a9c5c6a9cab836310328de77} 
+\index{libcamera::ipa::Histogram@{libcamera::ipa::Histogram}!data@{data}}
+\index{data@{data}!libcamera::ipa::Histogram@{libcamera::ipa::Histogram}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}}
+{\footnotesize\ttfamily libcamera\+::ipa\+::\+Histogram\+::data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the internal data. 
+
+\begin{DoxyReturn}{Returns}
+The data 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1Histogram_afb35d21e5d3e13dbce9fd606003e30f4}\label{classlibcamera_1_1ipa_1_1Histogram_afb35d21e5d3e13dbce9fd606003e30f4} 
+\index{libcamera::ipa::Histogram@{libcamera::ipa::Histogram}!interQuantileMean@{interQuantileMean}}
+\index{interQuantileMean@{interQuantileMean}!libcamera::ipa::Histogram@{libcamera::ipa::Histogram}}
+\doxysubsubsection{\texorpdfstring{interQuantileMean()}{interQuantileMean()}}
+{\footnotesize\ttfamily double libcamera\+::ipa\+::\+Histogram\+::inter\+Quantile\+Mean (\begin{DoxyParamCaption}\item[{double}]{low\+Quantile,  }\item[{double}]{high\+Quantile }\end{DoxyParamCaption}) const}
+
+
+
+Calculate the mean between two quantiles. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em low\+Quantile} & low Quantile \\
+\hline
+\mbox{\texttt{ in}}  & {\em high\+Quantile} & high Quantile\\
+\hline
+\end{DoxyParams}
+Quantiles are not ideal for metering as they suffer several limitations. Instead, a concept is introduced here\+: inter-\/quantile mean. It returns the mean of all pixels between low\+Quantile and high\+Quantile.
+
+\begin{DoxyReturn}{Returns}
+The mean histogram bin value between the two quantiles 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1Histogram_a4166ba1055d093261771ab49ef252ec2}\label{classlibcamera_1_1ipa_1_1Histogram_a4166ba1055d093261771ab49ef252ec2} 
+\index{libcamera::ipa::Histogram@{libcamera::ipa::Histogram}!quantile@{quantile}}
+\index{quantile@{quantile}!libcamera::ipa::Histogram@{libcamera::ipa::Histogram}}
+\doxysubsubsection{\texorpdfstring{quantile()}{quantile()}}
+{\footnotesize\ttfamily double libcamera\+::ipa\+::\+Histogram\+::quantile (\begin{DoxyParamCaption}\item[{double}]{q,  }\item[{uint32\+\_\+t}]{first = {\ttfamily 0},  }\item[{uint32\+\_\+t}]{last = {\ttfamily UINT\+\_\+MAX} }\end{DoxyParamCaption}) const}
+
+
+
+Return the (fractional) bin of the point through the histogram. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em q} & the desired point (0 \texorpdfstring{$<$}{<}= q \texorpdfstring{$<$}{<}= 1) \\
+\hline
+\mbox{\texttt{ in}}  & {\em first} & low limit (default is 0) \\
+\hline
+\mbox{\texttt{ in}}  & {\em last} & high limit (default is UINT\+\_\+\+MAX)\\
+\hline
+\end{DoxyParams}
+A quantile gives us the point p = Q(q) in the range such that a proportion q of the pixels lie below p. A familiar quantile is Q(0.\+5) which is the median of a distribution.
+
+\begin{DoxyReturn}{Returns}
+The fractional bin of the point 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/ipa/libipa/\mbox{\hyperlink{libipa_2histogram_8h}{histogram.\+h}}\item 
+src/peripherals/camera/libcamera/src/ipa/libipa/histogram.\+cpp\end{DoxyCompactItemize}

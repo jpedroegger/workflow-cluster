@@ -1,0 +1,104 @@
+\doxysection{agc\+\_\+mean\+\_\+luminance.\+h}
+\hypertarget{agc__mean__luminance_8h_source}{}\label{agc__mean__luminance_8h_source}\index{src/peripherals/camera/libcamera/src/ipa/libipa/agc\_mean\_luminance.h@{src/peripherals/camera/libcamera/src/ipa/libipa/agc\_mean\_luminance.h}}
+\mbox{\hyperlink{agc__mean__luminance_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2024\ Ideas\ on\ Board\ Oy}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ agc\_mean\_luminance.h\ -\/\ Base\ class\ for\ mean\ luminance\ AGC\ algorithms}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <tuple>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{include_2libcamera_2base_2utils_8h}{libcamera/base/utils.h}}>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{controls_8h}{libcamera/controls.h}}>}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{yaml__parser_8h}{libcamera/internal/yaml\_parser.h}}"{}}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{exposure__mode__helper_8h}{exposure\_mode\_helper.h}}"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}histogram.h"{}}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacelibcamera}{libcamera}}\ \{}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{namespace\ }ipa\ \{}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1ipa_1_1AgcMeanLuminance}{AgcMeanLuminance}}}
+\DoxyCodeLine{00029\ \{}
+\DoxyCodeLine{00030\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1AgcMeanLuminance}{AgcMeanLuminance}}();}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1AgcMeanLuminance}{\string~AgcMeanLuminance}}();}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structlibcamera_1_1ipa_1_1AgcMeanLuminance_1_1AgcConstraint}{AgcConstraint}}\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1AgcMeanLuminance_1_1AgcConstraint_a784f23cb354934b0615e2dbc75578759}{Bound}}\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1AgcMeanLuminance_1_1AgcConstraint_a784f23cb354934b0615e2dbc75578759ab75fcdd2d72d9e000beab48622402d93}{Lower}}\ =\ 0,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1AgcMeanLuminance_1_1AgcConstraint_a784f23cb354934b0615e2dbc75578759a19de5b94f7b83900d4b296d9fa491aec}{Upper}}\ =\ 1}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1AgcMeanLuminance_1_1AgcConstraint_a784f23cb354934b0615e2dbc75578759}{Bound}}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1AgcMeanLuminance_1_1AgcConstraint_a9c9785cc5e190e74b987f23bc340e8f5}{bound}};}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1AgcMeanLuminance_1_1AgcConstraint_a95b530a3f2976471ac000927552e4426}{qLo}};}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1AgcMeanLuminance_1_1AgcConstraint_a2c2d55f5375f87bac64c33fd9fe3d5a7}{qHi}};}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1AgcMeanLuminance_1_1AgcConstraint_ac0537ed89cd30457bea5d4b0439dfd69}{yTarget}};}
+\DoxyCodeLine{00043\ \ \ \ \ \};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1AgcMeanLuminance_aaffc93f92dba52ab302ad086ae4824a5}{parseTuningData}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1YamlObject}{YamlObject}}\ \&tuningData);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1AgcMeanLuminance_a31c6f120a1f4ce2cc82afde8254fbd3d}{setLimits}}(\mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{utils::Duration}}\ minExposureTime,\ \mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{utils::Duration}}\ maxExposureTime,}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ minGain,\ \textcolor{keywordtype}{double}\ maxGain);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ std::map<int32\_t,\ std::vector<AgcConstraint>>\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1AgcMeanLuminance_a9697469979610c52678a95106acbd134}{constraintModes}}()}
+\DoxyCodeLine{00051\ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ constraintModes\_;}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ std::map<int32\_t,\ std::shared\_ptr<ExposureModeHelper>>\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1AgcMeanLuminance_af25c246b2c3caa93f2483773169c19c3}{exposureModeHelpers}}()}
+\DoxyCodeLine{00056\ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ exposureModeHelpers\_;}
+\DoxyCodeLine{00058\ \ \ \ \ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ControlInfoMap_a737e0a528fd58dd5d4f976633322b0fb}{ControlInfoMap::Map}}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1AgcMeanLuminance_ac42b76416df69e0ce78b595d8955c792}{controls}}()}
+\DoxyCodeLine{00061\ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ controls\_;}
+\DoxyCodeLine{00063\ \ \ \ \ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ std::tuple<utils::Duration,\ double,\ double>}
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1AgcMeanLuminance_aee6fa02c0b5adb2cf3da8f188e210e39}{calculateNewEv}}(uint32\_t\ constraintModeIndex,\ uint32\_t\ exposureModeIndex,}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Histogram}{Histogram}}\ \&yHist,\ \mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{utils::Duration}}\ effectiveExposureValue);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1AgcMeanLuminance_a61f38add75dec3d88aac0f0de9cd00a3}{resetFrameCount}}()}
+\DoxyCodeLine{00070\ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ frameCount\_\ =\ 0;}
+\DoxyCodeLine{00072\ \ \ \ \ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ estimateLuminance(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ gain)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ parseRelativeLuminanceTarget(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1YamlObject}{YamlObject}}\ \&tuningData);}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ parseConstraint(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1YamlObject}{YamlObject}}\ \&modeDict,\ int32\_t\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{int}\ parseConstraintModes(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1YamlObject}{YamlObject}}\ \&tuningData);}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{int}\ parseExposureModes(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1YamlObject}{YamlObject}}\ \&tuningData);}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{double}\ estimateInitialGain()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{double}\ constraintClampGain(uint32\_t\ constraintModeIndex,}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Histogram}{Histogram}}\ \&hist,}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ gain);}
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{utils::Duration}}\ filterExposure(\mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{utils::Duration}}\ exposureValue);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ uint64\_t\ frameCount\_;}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{utils::Duration}}\ filteredExposure\_;}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{double}\ relativeLuminanceTarget\_;}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ std::map<int32\_t,\ std::vector<AgcConstraint>>\ constraintModes\_;}
+\DoxyCodeLine{00092\ \ \ \ \ std::map<int32\_t,\ std::shared\_ptr<ExposureModeHelper>>\ exposureModeHelpers\_;}
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ControlInfoMap_a737e0a528fd58dd5d4f976633322b0fb}{ControlInfoMap::Map}}\ controls\_;}
+\DoxyCodeLine{00094\ \};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \}\ \textcolor{comment}{/*\ namespace\ ipa\ */}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \}\ \textcolor{comment}{/*\ namespace\ libcamera\ */}}
+
+\end{DoxyCode}

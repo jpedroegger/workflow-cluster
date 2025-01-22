@@ -1,0 +1,170 @@
+\doxysection{libcamera\+::Message Class Reference}
+\hypertarget{classlibcamera_1_1Message}{}\label{classlibcamera_1_1Message}\index{libcamera::Message@{libcamera::Message}}
+
+
+A message that can be posted to a \doxylink{classlibcamera_1_1Thread}{Thread}.  
+
+
+Inheritance diagram for libcamera\+::Message\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlibcamera_1_1Message}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5}{Type}} \{ \newline
+\mbox{\hyperlink{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5a2cf8f48814353e436d4f5fc4b9f8b713}{None}} = 0
+, \mbox{\hyperlink{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5a3f129f8240a0f00eca5f25c82032be2e}{Invoke\+Message}} = 1
+, \mbox{\hyperlink{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5a5f1a6bad8554e6afcc20a1713f08cbee}{Thread\+Move\+Message}} = 2
+, \mbox{\hyperlink{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5a000ca6c05658dd1d019315707eb449d7}{Deferred\+Delete}} = 3
+, \newline
+\mbox{\hyperlink{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5ad7c9da4e25599a32fe48308e6da49cf1}{User\+Message}} = 1000
+ \}
+\begin{DoxyCompactList}\small\item\em The message type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1Message_a820b1e559680365eef4d156915331e81}{Message}} (\mbox{\hyperlink{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5}{Type}} \mbox{\hyperlink{classlibcamera_1_1Message_a5e599ac6c441598d5a2c8f14e54e22c5}{type}})
+\begin{DoxyCompactList}\small\item\em Construct a message object of type {\itshape type}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5}{Type}} \mbox{\hyperlink{classlibcamera_1_1Message_a5e599ac6c441598d5a2c8f14e54e22c5}{type}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the message type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1Object}{Object}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1Message_a033904a82d0de72889559b6aafeeaae8}{receiver}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the message receiver. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5}{Type}} \mbox{\hyperlink{classlibcamera_1_1Message_ab05060113830c8501f0a0049084ad11b}{register\+Message\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Reserve and register a custom user-\/defined message type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1Message_adbc148eaddd341d7ae4d07c9e9e33bfd}\label{classlibcamera_1_1Message_adbc148eaddd341d7ae4d07c9e9e33bfd} 
+class {\bfseries Thread}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A message that can be posted to a \doxylink{classlibcamera_1_1Thread}{Thread}. 
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5}\label{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5} 
+\index{libcamera::Message@{libcamera::Message}!Type@{Type}}
+\index{Type@{Type}!libcamera::Message@{libcamera::Message}}
+\doxysubsubsection{\texorpdfstring{Type}{Type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5}{libcamera\+::\+Message\+::\+Type}}}
+
+
+
+The message type. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{None@{None}!libcamera::Message@{libcamera::Message}}\index{libcamera::Message@{libcamera::Message}!None@{None}}}\Hypertarget{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5a2cf8f48814353e436d4f5fc4b9f8b713}\label{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5a2cf8f48814353e436d4f5fc4b9f8b713} 
+None&Invalid message type. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{InvokeMessage@{InvokeMessage}!libcamera::Message@{libcamera::Message}}\index{libcamera::Message@{libcamera::Message}!InvokeMessage@{InvokeMessage}}}\Hypertarget{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5a3f129f8240a0f00eca5f25c82032be2e}\label{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5a3f129f8240a0f00eca5f25c82032be2e} 
+Invoke\+Message&Asynchronous method invocation across threads. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ThreadMoveMessage@{ThreadMoveMessage}!libcamera::Message@{libcamera::Message}}\index{libcamera::Message@{libcamera::Message}!ThreadMoveMessage@{ThreadMoveMessage}}}\Hypertarget{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5a5f1a6bad8554e6afcc20a1713f08cbee}\label{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5a5f1a6bad8554e6afcc20a1713f08cbee} 
+Thread\+Move\+Message&\doxylink{classlibcamera_1_1Object}{Object} is being moved to a different thread. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DeferredDelete@{DeferredDelete}!libcamera::Message@{libcamera::Message}}\index{libcamera::Message@{libcamera::Message}!DeferredDelete@{DeferredDelete}}}\Hypertarget{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5a000ca6c05658dd1d019315707eb449d7}\label{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5a000ca6c05658dd1d019315707eb449d7} 
+Deferred\+Delete&\doxylink{classlibcamera_1_1Object}{Object} is scheduled for deletion. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UserMessage@{UserMessage}!libcamera::Message@{libcamera::Message}}\index{libcamera::Message@{libcamera::Message}!UserMessage@{UserMessage}}}\Hypertarget{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5ad7c9da4e25599a32fe48308e6da49cf1}\label{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5ad7c9da4e25599a32fe48308e6da49cf1} 
+User\+Message&First value available for user-\/defined messages. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlibcamera_1_1Message_a820b1e559680365eef4d156915331e81}\label{classlibcamera_1_1Message_a820b1e559680365eef4d156915331e81} 
+\index{libcamera::Message@{libcamera::Message}!Message@{Message}}
+\index{Message@{Message}!libcamera::Message@{libcamera::Message}}
+\doxysubsubsection{\texorpdfstring{Message()}{Message()}}
+{\footnotesize\ttfamily libcamera\+::\+Message\+::\+Message (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5}{Message\+::\+Type}}}]{type }\end{DoxyParamCaption})}
+
+
+
+Construct a message object of type {\itshape type}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em type} & The message type \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1Message_a033904a82d0de72889559b6aafeeaae8}\label{classlibcamera_1_1Message_a033904a82d0de72889559b6aafeeaae8} 
+\index{libcamera::Message@{libcamera::Message}!receiver@{receiver}}
+\index{receiver@{receiver}!libcamera::Message@{libcamera::Message}}
+\doxysubsubsection{\texorpdfstring{receiver()}{receiver()}}
+{\footnotesize\ttfamily libcamera\+::\+Message\+::receiver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the message receiver. 
+
+\begin{DoxyReturn}{Returns}
+The message receiver 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Message_ab05060113830c8501f0a0049084ad11b}\label{classlibcamera_1_1Message_ab05060113830c8501f0a0049084ad11b} 
+\index{libcamera::Message@{libcamera::Message}!registerMessageType@{registerMessageType}}
+\index{registerMessageType@{registerMessageType}!libcamera::Message@{libcamera::Message}}
+\doxysubsubsection{\texorpdfstring{registerMessageType()}{registerMessageType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5}{Message\+::\+Type}} libcamera\+::\+Message\+::register\+Message\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Reserve and register a custom user-\/defined message type. 
+
+Custom message types use values starting at \doxylink{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5ad7c9da4e25599a32fe48308e6da49cf1}{Message\+::\+User\+Message}. Assigning custom types manually may lead to accidental duplicated types. To avoid this problem, this function reserves and returns the next available user-\/defined message type.
+
+The recommended way to use this function is to subclass \doxylink{classlibcamera_1_1Message}{Message} and provide a static accessor for the custom message type.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{class\ }MyCustomMessage\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classlibcamera_1_1Message_a820b1e559680365eef4d156915331e81}{Message}}}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{\ MyCustomMessage()\ :\ Message(type())\ \{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \textcolor{keyword}{static}\ Message::Type\ type()}
+\DoxyCodeLine{\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{static}\ MessageType\ type\ =\ registerMessageType();}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ type;}
+\DoxyCodeLine{\ \}}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+A new unique message type 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Message_a5e599ac6c441598d5a2c8f14e54e22c5}\label{classlibcamera_1_1Message_a5e599ac6c441598d5a2c8f14e54e22c5} 
+\index{libcamera::Message@{libcamera::Message}!type@{type}}
+\index{type@{type}!libcamera::Message@{libcamera::Message}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily libcamera\+::\+Message\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the message type. 
+
+\begin{DoxyReturn}{Returns}
+The message type 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/base/\mbox{\hyperlink{message_8h}{message.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/base/message.\+cpp\end{DoxyCompactItemize}

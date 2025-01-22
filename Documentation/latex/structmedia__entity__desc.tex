@@ -1,0 +1,63 @@
+\doxysection{media\+\_\+entity\+\_\+desc Struct Reference}
+\hypertarget{structmedia__entity__desc}{}\label{structmedia__entity__desc}\index{media\_entity\_desc@{media\_entity\_desc}}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structmedia__entity__desc_a97b7b91aeed658a570b586e598f97a3e}\label{structmedia__entity__desc_a97b7b91aeed658a570b586e598f97a3e} 
+\+\_\+\+\_\+u32 {\bfseries id}
+\item 
+\Hypertarget{structmedia__entity__desc_a5d0296ff286d6f58db07aa5b5806e1ef}\label{structmedia__entity__desc_a5d0296ff286d6f58db07aa5b5806e1ef} 
+char {\bfseries name} \mbox{[}32\mbox{]}
+\item 
+\Hypertarget{structmedia__entity__desc_acb60b079935d1b8c171cef200a45da6e}\label{structmedia__entity__desc_acb60b079935d1b8c171cef200a45da6e} 
+\+\_\+\+\_\+u32 {\bfseries type}
+\item 
+\Hypertarget{structmedia__entity__desc_aaa4f11679d8e740f70e2ee436de9bd05}\label{structmedia__entity__desc_aaa4f11679d8e740f70e2ee436de9bd05} 
+\+\_\+\+\_\+u32 {\bfseries revision}
+\item 
+\Hypertarget{structmedia__entity__desc_a6d5d8c2a69e5c53819604a842c7b2124}\label{structmedia__entity__desc_a6d5d8c2a69e5c53819604a842c7b2124} 
+\+\_\+\+\_\+u32 {\bfseries flags}
+\item 
+\Hypertarget{structmedia__entity__desc_abd59de2709b03c7a5d48113a74b7ae2a}\label{structmedia__entity__desc_abd59de2709b03c7a5d48113a74b7ae2a} 
+\+\_\+\+\_\+u32 {\bfseries group\+\_\+id}
+\item 
+\Hypertarget{structmedia__entity__desc_a3d17d81d93a326b1fb2ea3b8f5e4b977}\label{structmedia__entity__desc_a3d17d81d93a326b1fb2ea3b8f5e4b977} 
+\+\_\+\+\_\+u16 {\bfseries pads}
+\item 
+\Hypertarget{structmedia__entity__desc_a14fd43018f1935df901d62a4d56450f1}\label{structmedia__entity__desc_a14fd43018f1935df901d62a4d56450f1} 
+\+\_\+\+\_\+u16 {\bfseries links}
+\item 
+\Hypertarget{structmedia__entity__desc_ae325c7249083e3ada2b0db33a142d3b3}\label{structmedia__entity__desc_ae325c7249083e3ada2b0db33a142d3b3} 
+\+\_\+\+\_\+u32 {\bfseries reserved} \mbox{[}4\mbox{]}
+\item 
+\Hypertarget{structmedia__entity__desc_a9a14c33ab856d4853f4aa27fae864e5b}\label{structmedia__entity__desc_a9a14c33ab856d4853f4aa27fae864e5b} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>struct \{\\
+\>\>\_\_u32 {\bfseries major}\\
+\>\>\_\_u32 {\bfseries minor}\\
+\>\} {\bfseries dev}\\
+\>struct \{\\
+\>\>\_\_u32 {\bfseries card}\\
+\>\>\_\_u32 {\bfseries device}\\
+\>\>\_\_u32 {\bfseries subdevice}\\
+\>\} {\bfseries alsa}\\
+\>struct \{\\
+\>\>\_\_u32 {\bfseries major}\\
+\>\>\_\_u32 {\bfseries minor}\\
+\>\} {\bfseries v4l}\\
+\>struct \{\\
+\>\>\_\_u32 {\bfseries major}\\
+\>\>\_\_u32 {\bfseries minor}\\
+\>\} {\bfseries fb}\\
+\>int {\bfseries dvb}\\
+\>\_\_u8 {\bfseries raw} \mbox{[}184\mbox{]}\\
+\} {\bfseries \_\_attribute\_\_}\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/media.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,65 @@
+\doxysection{shared\+\_\+fd.\+h}
+\hypertarget{shared__fd_8h_source}{}\label{shared__fd_8h_source}\index{src/peripherals/camera/libcamera/include/libcamera/base/shared\_fd.h@{src/peripherals/camera/libcamera/include/libcamera/base/shared\_fd.h}}
+\mbox{\hyperlink{shared__fd_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2019,\ Google\ Inc.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ File\ descriptor\ wrapper\ with\ shared\ ownership}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacelibcamera}{libcamera}}\ \{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }UniqueFD;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1SharedFD}{SharedFD}}\ final}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classlibcamera_1_1SharedFD}{SharedFD}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \&fd\ =\ -\/1);}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classlibcamera_1_1SharedFD}{SharedFD}}(\textcolor{keywordtype}{int}\ \&\&fd);}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classlibcamera_1_1SharedFD}{SharedFD}}(\mbox{\hyperlink{classlibcamera_1_1UniqueFD}{UniqueFD}}\ fd);}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1SharedFD}{SharedFD}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1SharedFD}{SharedFD}}\ \&other);}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1SharedFD}{SharedFD}}(\mbox{\hyperlink{classlibcamera_1_1SharedFD}{SharedFD}}\ \&\&other);}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1SharedFD_a041fe2ba1582bace5628867e58f3d6e1}{\string~SharedFD}}();}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1SharedFD}{SharedFD}}\ \&\mbox{\hyperlink{classlibcamera_1_1SharedFD_ae6facb8e1bda1e100cf32b5af04145b0}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1SharedFD}{SharedFD}}\ \&other);}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1SharedFD}{SharedFD}}\ \&\mbox{\hyperlink{classlibcamera_1_1SharedFD_ae6facb8e1bda1e100cf32b5af04145b0}{operator=}}(\mbox{\hyperlink{classlibcamera_1_1SharedFD}{SharedFD}}\ \&\&other);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classlibcamera_1_1SharedFD_acd4e7477ee692b17553fba7d2cb65b5c}{isValid}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ fd\_\ !=\ \textcolor{keyword}{nullptr};\ \}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1SharedFD_a3b6f9504b5407aa9b19a7a20f2f9497b}{get}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ fd\_\ ?\ fd\_-\/>fd()\ :\ -\/1;\ \}}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1UniqueFD}{UniqueFD}}\ \mbox{\hyperlink{classlibcamera_1_1SharedFD_a0d518aab5754f5d411ef223518ac1dd9}{dup}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{class\ }Descriptor}
+\DoxyCodeLine{00035\ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ Descriptor(\textcolor{keywordtype}{int}\ fd,\ \textcolor{keywordtype}{bool}\ duplicate);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \string~Descriptor();}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ fd()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ fd\_;\ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ fd\_;}
+\DoxyCodeLine{00044\ \ \ \ \ \};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ std::shared\_ptr<Descriptor>\ fd\_;}
+\DoxyCodeLine{00047\ \};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ operator==(\textcolor{keyword}{const}\ SharedFD\ \&lhs,\ \textcolor{keyword}{const}\ SharedFD\ \&rhs)}
+\DoxyCodeLine{00050\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordflow}{return}\ lhs.get()\ ==\ rhs.get();}
+\DoxyCodeLine{00052\ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ operator!=(\textcolor{keyword}{const}\ SharedFD\ \&lhs,\ \textcolor{keyword}{const}\ SharedFD\ \&rhs)}
+\DoxyCodeLine{00055\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{return}\ !(lhs\ ==\ rhs);}
+\DoxyCodeLine{00057\ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \}\ \textcolor{comment}{/*\ namespace\ libcamera\ */}}
+
+\end{DoxyCode}

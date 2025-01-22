@@ -1,0 +1,24 @@
+\doxysection{ipu3\+\_\+uapi\+\_\+ae\+\_\+raw\+\_\+buffer Struct Reference}
+\hypertarget{structipu3__uapi__ae__raw__buffer}{}\label{structipu3__uapi__ae__raw__buffer}\index{ipu3\_uapi\_ae\_raw\_buffer@{ipu3\_uapi\_ae\_raw\_buffer}}
+
+
+{\ttfamily \#include $<$intel-\/ipu3.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structipu3__uapi__ae__raw__buffer_a297df3d71f682f5e0a9cc20e6ce3ee7d}\label{structipu3__uapi__ae__raw__buffer_a297df3d71f682f5e0a9cc20e6ce3ee7d} 
+\+\_\+\+\_\+u32 {\bfseries vals} \mbox{[}IPU3\+\_\+\+UAPI\+\_\+\+AE\+\_\+\+BINS \texorpdfstring{$\ast$}{*}IPU3\+\_\+\+UAPI\+\_\+\+AE\+\_\+\+COLORS\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structipu3__uapi__ae__raw__buffer}{ipu3\+\_\+uapi\+\_\+ae\+\_\+raw\+\_\+buffer} -\/ AE global weighted histogram
+
+@vals\+: Sum of IPU3\+\_\+\+UAPI\+\_\+\+AE\+\_\+\+COLORS in cell
+
+Each histogram contains IPU3\+\_\+\+UAPI\+\_\+\+AE\+\_\+\+BINS bins. Each bin has 24 bit unsigned for counting the number of the pixel. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/intel-\/ipu3.\+h\end{DoxyCompactItemize}

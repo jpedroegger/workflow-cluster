@@ -1,0 +1,31 @@
+\doxysection{ipu3\+\_\+uapi\+\_\+af\+\_\+config\+\_\+s Struct Reference}
+\hypertarget{structipu3__uapi__af__config__s}{}\label{structipu3__uapi__af__config__s}\index{ipu3\_uapi\_af\_config\_s@{ipu3\_uapi\_af\_config\_s}}
+
+
+{\ttfamily \#include $<$intel-\/ipu3.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structipu3__uapi__af__config__s_af5d8bd7bafb65daf0585da99adcd1373}\label{structipu3__uapi__af__config__s_af5d8bd7bafb65daf0585da99adcd1373} 
+struct \mbox{\hyperlink{structipu3__uapi__af__filter__config}{ipu3\+\_\+uapi\+\_\+af\+\_\+filter\+\_\+config}} filter\+\_\+config {\bfseries \+\_\+\+\_\+attribute\+\_\+\+\_\+} ((aligned(32)))
+\item 
+\Hypertarget{structipu3__uapi__af__config__s_a823e5fdadd5da2e806997a2df7a3cd42}\label{structipu3__uapi__af__config__s_a823e5fdadd5da2e806997a2df7a3cd42} 
+struct \mbox{\hyperlink{structipu3__uapi__grid__config}{ipu3\+\_\+uapi\+\_\+grid\+\_\+config}} grid\+\_\+cfg {\bfseries \+\_\+\+\_\+attribute\+\_\+\+\_\+} ((aligned(32)))
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structipu3__uapi__af__config__s_a3d4aa5c6fa76b23312a8784cd3cb506c}\label{structipu3__uapi__af__config__s_a3d4aa5c6fa76b23312a8784cd3cb506c} 
+\+\_\+\+\_\+u8 {\bfseries padding} \mbox{[}4\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structipu3__uapi__af__config__s}{ipu3\+\_\+uapi\+\_\+af\+\_\+config\+\_\+s} -\/ AF config
+
+@filter\+\_\+config\+: AF uses Y1 and Y2 filters as configured in \&\doxylink{structipu3__uapi__af__filter__config}{ipu3\+\_\+uapi\+\_\+af\+\_\+filter\+\_\+config} @padding\+: paddings @grid\+\_\+cfg\+: See \&\doxylink{structipu3__uapi__grid__config}{ipu3\+\_\+uapi\+\_\+grid\+\_\+config}, default resolution 16x16. Use large grid size for large image and vice versa. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/intel-\/ipu3.\+h\end{DoxyCompactItemize}

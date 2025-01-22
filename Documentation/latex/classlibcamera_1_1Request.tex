@@ -1,0 +1,343 @@
+\doxysection{libcamera\+::Request Class Reference}
+\hypertarget{classlibcamera_1_1Request}{}\label{classlibcamera_1_1Request}\index{libcamera::Request@{libcamera::Request}}
+
+
+A frame capture request.  
+
+
+Inheritance diagram for libcamera\+::Request\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlibcamera_1_1Request}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classlibcamera_1_1Request_1_1Private}{Private}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classlibcamera_1_1Request}{Request} private data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classlibcamera_1_1Request_a2209ba8d51af8167b25f6e3e94d5c45b}{Status}} \{ \mbox{\hyperlink{classlibcamera_1_1Request_a2209ba8d51af8167b25f6e3e94d5c45ba24117202d19400478ba2e01d2e9a5812}{Request\+Pending}}
+, \mbox{\hyperlink{classlibcamera_1_1Request_a2209ba8d51af8167b25f6e3e94d5c45badbacf3012a30a35bd19cfd9a9a41c499}{Request\+Complete}}
+, \mbox{\hyperlink{classlibcamera_1_1Request_a2209ba8d51af8167b25f6e3e94d5c45ba4b19d33e627aec32f831a30269aaa555}{Request\+Cancelled}}
+ \}
+\item 
+enum \mbox{\hyperlink{classlibcamera_1_1Request_a81bca5d1ba778455434506574e4286fa}{Reuse\+Flag}} \{ \mbox{\hyperlink{classlibcamera_1_1Request_a81bca5d1ba778455434506574e4286faa1d083c179d60b23898b44a7a6524a39a}{Default}} = 0
+, \mbox{\hyperlink{classlibcamera_1_1Request_a81bca5d1ba778455434506574e4286faa15458e90ae3fbfb75fe6f0d5001a0a12}{Reuse\+Buffers}} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0)
+ \}
+\item 
+\Hypertarget{classlibcamera_1_1Request_a53515dbe11740c5c200b4e2a62fd45a9}\label{classlibcamera_1_1Request_a53515dbe11740c5c200b4e2a62fd45a9} 
+using {\bfseries Buffer\+Map} = std\+::map$<$ const \mbox{\hyperlink{classlibcamera_1_1Stream}{Stream}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} \texorpdfstring{$\ast$}{*} $>$
+\begin{DoxyCompactList}\small\item\em A map of \doxylink{classlibcamera_1_1Stream}{Stream} to \doxylink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer} pointers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1Request_adce12d1213e5d894a5697ddd4b94b672}{Request}} (\mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}} \texorpdfstring{$\ast$}{*}camera, uint64\+\_\+t \mbox{\hyperlink{classlibcamera_1_1Request_a7b5b73e047df7b87a2c1b841345a77ae}{cookie}}=0)
+\begin{DoxyCompactList}\small\item\em Create a capture request for a camera. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1Request_aeb951e740b488f282292519625025491}{reuse}} (\mbox{\hyperlink{classlibcamera_1_1Request_a81bca5d1ba778455434506574e4286fa}{Reuse\+Flag}} flags=\mbox{\hyperlink{classlibcamera_1_1Request_a81bca5d1ba778455434506574e4286faa1d083c179d60b23898b44a7a6524a39a}{Default}})
+\begin{DoxyCompactList}\small\item\em Reset the request for reuse. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} \& \mbox{\hyperlink{classlibcamera_1_1Request_ae9327d49f60d15c34c90bb3d2f4cba10}{controls}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the request\textquotesingle{}s \doxylink{classlibcamera_1_1ControlList}{Control\+List}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} \& \mbox{\hyperlink{classlibcamera_1_1Request_ac620539cc50a28bd9ff9f8f697eb86c3}{metadata}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the request\textquotesingle{}s metadata. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classlibcamera_1_1Request_a53515dbe11740c5c200b4e2a62fd45a9}{Buffer\+Map}} \& \mbox{\hyperlink{classlibcamera_1_1Request_a48ca1ef0f70c3ae505541214021ee395}{buffers}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the request\textquotesingle{}s streams to buffers map. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classlibcamera_1_1Request_a470cae8064c46e66367ea236dc13287d}{add\+Buffer}} (const \mbox{\hyperlink{classlibcamera_1_1Stream}{Stream}} \texorpdfstring{$\ast$}{*}stream, \mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} \texorpdfstring{$\ast$}{*}buffer, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1Fence}{Fence}} $>$ fence=nullptr)
+\begin{DoxyCompactList}\small\item\em Add a \doxylink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer} with its associated \doxylink{classlibcamera_1_1Stream}{Stream} to the \doxylink{classlibcamera_1_1Request}{Request}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1Request_abaed06e43f6a92590075962f825767f7}{find\+Buffer}} (const \mbox{\hyperlink{classlibcamera_1_1Stream}{Stream}} \texorpdfstring{$\ast$}{*}stream) const
+\begin{DoxyCompactList}\small\item\em Return the buffer associated with a stream. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classlibcamera_1_1Request_a73dbf491ae133bedc9ec4f9bdd8461e2}{sequence}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the sequence number for the request. \end{DoxyCompactList}\item 
+uint64\+\_\+t \mbox{\hyperlink{classlibcamera_1_1Request_a7b5b73e047df7b87a2c1b841345a77ae}{cookie}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the cookie set when the request was created. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1Request_a2209ba8d51af8167b25f6e3e94d5c45b}{Status}} \mbox{\hyperlink{classlibcamera_1_1Request_abc893618b9f8f2dec3f06a828cd51e63}{status}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the request completion status. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlibcamera_1_1Request_a3d6e5771f33849411be21659fd93d8b7}{has\+Pending\+Buffers}} () const
+\begin{DoxyCompactList}\small\item\em Check if a request has buffers yet to be completed. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classlibcamera_1_1Request_a4b36a126333b48cee760c80026522179}{to\+String}} () const
+\begin{DoxyCompactList}\small\item\em Generate a string representation of the \doxylink{classlibcamera_1_1Request}{Request} internals. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1Extensible}{libcamera\+::\+Extensible}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1Extensible_afb1c6e39d8fe4fbeab1cbbbe65517f4c}{Extensible}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1Extensible_1_1Private}{Private}} $>$ d)
+\begin{DoxyCompactList}\small\item\em Construct an instance of an \doxylink{classlibcamera_1_1Extensible}{Extensible} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1Extensible}{libcamera\+::\+Extensible}}}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\const T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1Extensible_a6625afb4df192443c12d118f5f1a17ac}{\+\_\+d}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the private data instance. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1Extensible_a30a918eee516b7e1d97a7f346ce99fca}{\+\_\+d}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the private data instance.   \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A frame capture request. 
+
+A \doxylink{classlibcamera_1_1Request}{Request} allows an application to associate buffers and controls on a per-\/frame basis to be queued to the camera device for processing. 
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{classlibcamera_1_1Request_a81bca5d1ba778455434506574e4286fa}\label{classlibcamera_1_1Request_a81bca5d1ba778455434506574e4286fa} 
+\index{libcamera::Request@{libcamera::Request}!ReuseFlag@{ReuseFlag}}
+\index{ReuseFlag@{ReuseFlag}!libcamera::Request@{libcamera::Request}}
+\doxysubsubsection{\texorpdfstring{ReuseFlag}{ReuseFlag}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classlibcamera_1_1Request_a81bca5d1ba778455434506574e4286fa}{libcamera\+::\+Request\+::\+Reuse\+Flag}}}
+
+\doxylink{classlibcamera_1_1Flags}{Flags} to control the behavior of \doxylink{classlibcamera_1_1Request_aeb951e740b488f282292519625025491}{Request\+::reuse()} \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Default@{Default}!libcamera::Request@{libcamera::Request}}\index{libcamera::Request@{libcamera::Request}!Default@{Default}}}\Hypertarget{classlibcamera_1_1Request_a81bca5d1ba778455434506574e4286faa1d083c179d60b23898b44a7a6524a39a}\label{classlibcamera_1_1Request_a81bca5d1ba778455434506574e4286faa1d083c179d60b23898b44a7a6524a39a} 
+Default&Don\textquotesingle{}t reuse buffers \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ReuseBuffers@{ReuseBuffers}!libcamera::Request@{libcamera::Request}}\index{libcamera::Request@{libcamera::Request}!ReuseBuffers@{ReuseBuffers}}}\Hypertarget{classlibcamera_1_1Request_a81bca5d1ba778455434506574e4286faa15458e90ae3fbfb75fe6f0d5001a0a12}\label{classlibcamera_1_1Request_a81bca5d1ba778455434506574e4286faa15458e90ae3fbfb75fe6f0d5001a0a12} 
+Reuse\+Buffers&Reuse the buffers that were previously added by \doxylink{classlibcamera_1_1Request_a470cae8064c46e66367ea236dc13287d}{add\+Buffer()} \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{classlibcamera_1_1Request_a2209ba8d51af8167b25f6e3e94d5c45b}\label{classlibcamera_1_1Request_a2209ba8d51af8167b25f6e3e94d5c45b} 
+\index{libcamera::Request@{libcamera::Request}!Status@{Status}}
+\index{Status@{Status}!libcamera::Request@{libcamera::Request}}
+\doxysubsubsection{\texorpdfstring{Status}{Status}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classlibcamera_1_1Request_a2209ba8d51af8167b25f6e3e94d5c45b}{libcamera\+::\+Request\+::\+Status}}}
+
+\doxylink{classlibcamera_1_1Request}{Request} completion status \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RequestPending@{RequestPending}!libcamera::Request@{libcamera::Request}}\index{libcamera::Request@{libcamera::Request}!RequestPending@{RequestPending}}}\Hypertarget{classlibcamera_1_1Request_a2209ba8d51af8167b25f6e3e94d5c45ba24117202d19400478ba2e01d2e9a5812}\label{classlibcamera_1_1Request_a2209ba8d51af8167b25f6e3e94d5c45ba24117202d19400478ba2e01d2e9a5812} 
+Request\+Pending&The request hasn\textquotesingle{}t completed yet \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RequestComplete@{RequestComplete}!libcamera::Request@{libcamera::Request}}\index{libcamera::Request@{libcamera::Request}!RequestComplete@{RequestComplete}}}\Hypertarget{classlibcamera_1_1Request_a2209ba8d51af8167b25f6e3e94d5c45badbacf3012a30a35bd19cfd9a9a41c499}\label{classlibcamera_1_1Request_a2209ba8d51af8167b25f6e3e94d5c45badbacf3012a30a35bd19cfd9a9a41c499} 
+Request\+Complete&The request has completed \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RequestCancelled@{RequestCancelled}!libcamera::Request@{libcamera::Request}}\index{libcamera::Request@{libcamera::Request}!RequestCancelled@{RequestCancelled}}}\Hypertarget{classlibcamera_1_1Request_a2209ba8d51af8167b25f6e3e94d5c45ba4b19d33e627aec32f831a30269aaa555}\label{classlibcamera_1_1Request_a2209ba8d51af8167b25f6e3e94d5c45ba4b19d33e627aec32f831a30269aaa555} 
+Request\+Cancelled&The request has been cancelled due to capture stop \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlibcamera_1_1Request_adce12d1213e5d894a5697ddd4b94b672}\label{classlibcamera_1_1Request_adce12d1213e5d894a5697ddd4b94b672} 
+\index{libcamera::Request@{libcamera::Request}!Request@{Request}}
+\index{Request@{Request}!libcamera::Request@{libcamera::Request}}
+\doxysubsubsection{\texorpdfstring{Request()}{Request()}}
+{\footnotesize\ttfamily libcamera\+::\+Request\+::\+Request (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}} \texorpdfstring{$\ast$}{*}}]{camera,  }\item[{uint64\+\_\+t}]{cookie = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Create a capture request for a camera. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em camera} & The camera that creates the request \\
+\hline
+\mbox{\texttt{ in}}  & {\em cookie} & Opaque cookie for application use\\
+\hline
+\end{DoxyParams}
+The {\itshape cookie} is stored in the request and is accessible through the \doxylink{classlibcamera_1_1Request_a7b5b73e047df7b87a2c1b841345a77ae}{cookie()} function at any time. It is typically used by applications to map the request to an external resource in the request completion handler, and is completely opaque to libcamera. \begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000041}{Todo}}]Add a validator for metadata controls. \end{DoxyRefDesc}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1Request_a470cae8064c46e66367ea236dc13287d}\label{classlibcamera_1_1Request_a470cae8064c46e66367ea236dc13287d} 
+\index{libcamera::Request@{libcamera::Request}!addBuffer@{addBuffer}}
+\index{addBuffer@{addBuffer}!libcamera::Request@{libcamera::Request}}
+\doxysubsubsection{\texorpdfstring{addBuffer()}{addBuffer()}}
+{\footnotesize\ttfamily int libcamera\+::\+Request\+::add\+Buffer (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1Stream}{Stream}} \texorpdfstring{$\ast$}{*}}]{stream,  }\item[{\mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} \texorpdfstring{$\ast$}{*}}]{buffer,  }\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1Fence}{Fence}} $>$}]{fence = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Add a \doxylink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer} with its associated \doxylink{classlibcamera_1_1Stream}{Stream} to the \doxylink{classlibcamera_1_1Request}{Request}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em stream} & The stream the buffer belongs to \\
+\hline
+\mbox{\texttt{ in}}  & {\em buffer} & The \doxylink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer} to add to the request \\
+\hline
+\mbox{\texttt{ in}}  & {\em fence} & The optional fence\\
+\hline
+\end{DoxyParams}
+A reference to the buffer is stored in the request. The caller is responsible for ensuring that the buffer will remain valid until the request complete callback is called.
+
+A request can only contain one buffer per stream. If a buffer has already been added to the request for the same stream, this function returns -\/EEXIST.
+
+A \doxylink{classlibcamera_1_1Fence}{Fence} can be optionally associated with the {\itshape buffer}.
+
+When a valid \doxylink{classlibcamera_1_1Fence}{Fence} is provided to this function, {\itshape fence} is moved to {\itshape buffer} and this \doxylink{classlibcamera_1_1Request}{Request} will only be queued to the device once the fences of all its buffers have been correctly signalled.
+
+If the {\itshape fence} associated with {\itshape buffer} isn\textquotesingle{}t signalled, the request will fail after a timeout. The buffer will still contain the fence, which applications must retrieve with \doxylink{classlibcamera_1_1FrameBuffer_a6312ef39ae7cf1d4f5c7b22d56e0e227}{Frame\+Buffer\+::release\+Fence()} before the buffer can be reused in another request. Attempting to add a buffer that still contains a fence to a request will result in this function returning -\/EEXIST.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classlibcamera_1_1FrameBuffer_a6312ef39ae7cf1d4f5c7b22d56e0e227}{Frame\+Buffer\+::release\+Fence()}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+0 on success or a negative error code otherwise 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em -\/\+EEXIST} & The request already contains a buffer for the stream or the buffer still references a fence \\
+\hline
+{\em -\/\+EINVAL} & The buffer does not reference a valid \doxylink{classlibcamera_1_1Stream}{Stream} \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{classlibcamera_1_1Request_a48ca1ef0f70c3ae505541214021ee395}\label{classlibcamera_1_1Request_a48ca1ef0f70c3ae505541214021ee395} 
+\index{libcamera::Request@{libcamera::Request}!buffers@{buffers}}
+\index{buffers@{buffers}!libcamera::Request@{libcamera::Request}}
+\doxysubsubsection{\texorpdfstring{buffers()}{buffers()}}
+{\footnotesize\ttfamily libcamera\+::\+Request\+::buffers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the request\textquotesingle{}s streams to buffers map. 
+
+Return a reference to the map that associates each \doxylink{classlibcamera_1_1Stream}{Stream} part of the request to the \doxylink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer} the \doxylink{classlibcamera_1_1Stream}{Stream} output should be directed to.
+
+\begin{DoxyReturn}{Returns}
+The map of \doxylink{classlibcamera_1_1Stream}{Stream} to \doxylink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer} 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Request_ae9327d49f60d15c34c90bb3d2f4cba10}\label{classlibcamera_1_1Request_ae9327d49f60d15c34c90bb3d2f4cba10} 
+\index{libcamera::Request@{libcamera::Request}!controls@{controls}}
+\index{controls@{controls}!libcamera::Request@{libcamera::Request}}
+\doxysubsubsection{\texorpdfstring{controls()}{controls()}}
+{\footnotesize\ttfamily libcamera\+::\+Request\+::controls (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the request\textquotesingle{}s \doxylink{classlibcamera_1_1ControlList}{Control\+List}. 
+
+Requests store a list of controls to be applied to all frames captured for the request. They are created with an empty list of controls that can be accessed through this function. \doxylink{classlibcamera_1_1Control}{Control} values can be retrieved using \doxylink{classlibcamera_1_1ControlList_a8333b8978844aec280086855af72a9c5}{Control\+List\+::get()} and updated using \doxylink{classlibcamera_1_1ControlList_aa41c425f3075349747fdbfc1e3a6fc46}{Control\+List\+::set()}.
+
+Only controls supported by the camera to which this request will be submitted shall be included in the controls list. Attempting to add an unsupported control causes undefined behaviour.
+
+\begin{DoxyReturn}{Returns}
+A reference to the \doxylink{classlibcamera_1_1ControlList}{Control\+List} in this request 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Request_a7b5b73e047df7b87a2c1b841345a77ae}\label{classlibcamera_1_1Request_a7b5b73e047df7b87a2c1b841345a77ae} 
+\index{libcamera::Request@{libcamera::Request}!cookie@{cookie}}
+\index{cookie@{cookie}!libcamera::Request@{libcamera::Request}}
+\doxysubsubsection{\texorpdfstring{cookie()}{cookie()}}
+{\footnotesize\ttfamily libcamera\+::\+Request\+::cookie (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the cookie set when the request was created. 
+
+\begin{DoxyReturn}{Returns}
+The request cookie 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Request_abaed06e43f6a92590075962f825767f7}\label{classlibcamera_1_1Request_abaed06e43f6a92590075962f825767f7} 
+\index{libcamera::Request@{libcamera::Request}!findBuffer@{findBuffer}}
+\index{findBuffer@{findBuffer}!libcamera::Request@{libcamera::Request}}
+\doxysubsubsection{\texorpdfstring{findBuffer()}{findBuffer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} \texorpdfstring{$\ast$}{*} libcamera\+::\+Request\+::find\+Buffer (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1Stream}{Stream}} \texorpdfstring{$\ast$}{*}}]{stream }\end{DoxyParamCaption}) const}
+
+
+
+Return the buffer associated with a stream. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em stream} & The stream the buffer is associated to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The buffer associated with the stream, or nullptr if the stream is not part of this request 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Request_a3d6e5771f33849411be21659fd93d8b7}\label{classlibcamera_1_1Request_a3d6e5771f33849411be21659fd93d8b7} 
+\index{libcamera::Request@{libcamera::Request}!hasPendingBuffers@{hasPendingBuffers}}
+\index{hasPendingBuffers@{hasPendingBuffers}!libcamera::Request@{libcamera::Request}}
+\doxysubsubsection{\texorpdfstring{hasPendingBuffers()}{hasPendingBuffers()}}
+{\footnotesize\ttfamily bool libcamera\+::\+Request\+::has\+Pending\+Buffers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Check if a request has buffers yet to be completed. 
+
+\begin{DoxyReturn}{Returns}
+True if the request has buffers pending for completion, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Request_ac620539cc50a28bd9ff9f8f697eb86c3}\label{classlibcamera_1_1Request_ac620539cc50a28bd9ff9f8f697eb86c3} 
+\index{libcamera::Request@{libcamera::Request}!metadata@{metadata}}
+\index{metadata@{metadata}!libcamera::Request@{libcamera::Request}}
+\doxysubsubsection{\texorpdfstring{metadata()}{metadata()}}
+{\footnotesize\ttfamily libcamera\+::\+Request\+::metadata (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the request\textquotesingle{}s metadata. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000042}{Todo}}]Offer a read-\/only API towards applications while keeping a read/write API internally. \end{DoxyRefDesc}
+\begin{DoxyReturn}{Returns}
+The metadata associated with the request 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Request_aeb951e740b488f282292519625025491}\label{classlibcamera_1_1Request_aeb951e740b488f282292519625025491} 
+\index{libcamera::Request@{libcamera::Request}!reuse@{reuse}}
+\index{reuse@{reuse}!libcamera::Request@{libcamera::Request}}
+\doxysubsubsection{\texorpdfstring{reuse()}{reuse()}}
+{\footnotesize\ttfamily void libcamera\+::\+Request\+::reuse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1Request_a81bca5d1ba778455434506574e4286fa}{Reuse\+Flag}}}]{flags = {\ttfamily \mbox{\hyperlink{classlibcamera_1_1Request_a81bca5d1ba778455434506574e4286faa1d083c179d60b23898b44a7a6524a39a}{Default}}} }\end{DoxyParamCaption})}
+
+
+
+Reset the request for reuse. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em flags} & Indicate whether or not to reuse the buffers\\
+\hline
+\end{DoxyParams}
+Reset the status and controls associated with the request, to allow it to be reused and requeued without destruction. This function shall be called prior to queueing the request to the camera, in lieu of constructing a new request. The application can reuse the buffers that were previously added to the request via \doxylink{classlibcamera_1_1Request_a470cae8064c46e66367ea236dc13287d}{add\+Buffer()} by setting {\itshape flags} to Reuse\+Buffers. \Hypertarget{classlibcamera_1_1Request_a73dbf491ae133bedc9ec4f9bdd8461e2}\label{classlibcamera_1_1Request_a73dbf491ae133bedc9ec4f9bdd8461e2} 
+\index{libcamera::Request@{libcamera::Request}!sequence@{sequence}}
+\index{sequence@{sequence}!libcamera::Request@{libcamera::Request}}
+\doxysubsubsection{\texorpdfstring{sequence()}{sequence()}}
+{\footnotesize\ttfamily uint32\+\_\+t libcamera\+::\+Request\+::sequence (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retrieve the sequence number for the request. 
+
+When requests are queued, they are given a sequential number to track the order in which requests are queued to a camera. This number counts all requests given to a camera and is reset to zero between camera stop/start sequences.
+
+It can be used to support debugging and identifying the flow of requests through a pipeline, but does not guarantee to represent the sequence number of any images in the stream. The sequence number is stored as an unsigned integer and will wrap when overflowed.
+
+\begin{DoxyReturn}{Returns}
+The request sequence number 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Request_abc893618b9f8f2dec3f06a828cd51e63}\label{classlibcamera_1_1Request_abc893618b9f8f2dec3f06a828cd51e63} 
+\index{libcamera::Request@{libcamera::Request}!status@{status}}
+\index{status@{status}!libcamera::Request@{libcamera::Request}}
+\doxysubsubsection{\texorpdfstring{status()}{status()}}
+{\footnotesize\ttfamily libcamera\+::\+Request\+::status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the request completion status. 
+
+The request status indicates whether the request has completed successfully or with an error. When requests are created and before they complete the request status is set to Request\+Pending, and is updated at completion time to Request\+Complete. If a request is cancelled at capture stop before it has completed, its status is set to Request\+Cancelled.
+
+\begin{DoxyReturn}{Returns}
+The request completion status 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Request_a4b36a126333b48cee760c80026522179}\label{classlibcamera_1_1Request_a4b36a126333b48cee760c80026522179} 
+\index{libcamera::Request@{libcamera::Request}!toString@{toString}}
+\index{toString@{toString}!libcamera::Request@{libcamera::Request}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily std\+::string libcamera\+::\+Request\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Generate a string representation of the \doxylink{classlibcamera_1_1Request}{Request} internals. 
+
+This function facilitates debugging of \doxylink{classlibcamera_1_1Request}{Request} state while it is used internally within libcamera.
+
+\begin{DoxyReturn}{Returns}
+A string representing the current state of the request 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/\mbox{\hyperlink{request_8h}{request.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/request.\+cpp\end{DoxyCompactItemize}

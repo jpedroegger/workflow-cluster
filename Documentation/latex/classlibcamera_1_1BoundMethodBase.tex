@@ -1,0 +1,71 @@
+\doxysection{libcamera\+::Bound\+Method\+Base Class Reference}
+\hypertarget{classlibcamera_1_1BoundMethodBase}{}\label{classlibcamera_1_1BoundMethodBase}\index{libcamera::BoundMethodBase@{libcamera::BoundMethodBase}}
+Inheritance diagram for libcamera\+::Bound\+Method\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.723077cm]{classlibcamera_1_1BoundMethodBase}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1BoundMethodBase_a174b7ff5d61551b0d295e988adb95425}\label{classlibcamera_1_1BoundMethodBase_a174b7ff5d61551b0d295e988adb95425} 
+{\bfseries Bound\+Method\+Base} (void \texorpdfstring{$\ast$}{*}obj, \mbox{\hyperlink{classlibcamera_1_1Object}{Object}} \texorpdfstring{$\ast$}{*}object, \mbox{\hyperlink{namespacelibcamera_ae2c8412791b9597d590a7d0b2c9e2919}{Connection\+Type}} type)
+\item 
+\Hypertarget{classlibcamera_1_1BoundMethodBase_abfc7e253df5058c1d1118a6fd574d382}\label{classlibcamera_1_1BoundMethodBase_abfc7e253df5058c1d1118a6fd574d382} 
+{\footnotesize template$<$typename T , std\+::enable\+\_\+if\+\_\+t$<$!std\+::is\+\_\+same$<$ \mbox{\hyperlink{classlibcamera_1_1Object}{Object}}, T $>$\+::value $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ }\\bool {\bfseries match} (T \texorpdfstring{$\ast$}{*}obj)
+\item 
+\Hypertarget{classlibcamera_1_1BoundMethodBase_a40153ae7de903070ea7aa2ade751ef09}\label{classlibcamera_1_1BoundMethodBase_a40153ae7de903070ea7aa2ade751ef09} 
+bool {\bfseries match} (\mbox{\hyperlink{classlibcamera_1_1Object}{Object}} \texorpdfstring{$\ast$}{*}object)
+\item 
+\Hypertarget{classlibcamera_1_1BoundMethodBase_a312adde506ecba060dac582de8e70035}\label{classlibcamera_1_1BoundMethodBase_a312adde506ecba060dac582de8e70035} 
+\mbox{\hyperlink{classlibcamera_1_1Object}{Object}} \texorpdfstring{$\ast$}{*} {\bfseries object} () const
+\item 
+\Hypertarget{classlibcamera_1_1BoundMethodBase_aa091cc3b9070ed92edd11cf0696726ba}\label{classlibcamera_1_1BoundMethodBase_aa091cc3b9070ed92edd11cf0696726ba} 
+virtual void {\bfseries invoke\+Pack} (\mbox{\hyperlink{classlibcamera_1_1BoundMethodPackBase}{Bound\+Method\+Pack\+Base}} \texorpdfstring{$\ast$}{*}pack)=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classlibcamera_1_1BoundMethodBase_a51e75c96b98814fc61832e9650a9d8e0}{activate\+Pack}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1BoundMethodPackBase}{Bound\+Method\+Pack\+Base}} $>$ pack, bool delete\+Method)
+\begin{DoxyCompactList}\small\item\em Invoke the bound method with packed arguments. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1BoundMethodBase_aea6f55c063e58c4c219ab1351df412e8}\label{classlibcamera_1_1BoundMethodBase_aea6f55c063e58c4c219ab1351df412e8} 
+void \texorpdfstring{$\ast$}{*} {\bfseries obj\+\_\+}
+\item 
+\Hypertarget{classlibcamera_1_1BoundMethodBase_af59575e4bfb887f683ee9d0882b6fb75}\label{classlibcamera_1_1BoundMethodBase_af59575e4bfb887f683ee9d0882b6fb75} 
+\mbox{\hyperlink{classlibcamera_1_1Object}{Object}} \texorpdfstring{$\ast$}{*} {\bfseries object\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1BoundMethodBase_a51e75c96b98814fc61832e9650a9d8e0}\label{classlibcamera_1_1BoundMethodBase_a51e75c96b98814fc61832e9650a9d8e0} 
+\index{libcamera::BoundMethodBase@{libcamera::BoundMethodBase}!activatePack@{activatePack}}
+\index{activatePack@{activatePack}!libcamera::BoundMethodBase@{libcamera::BoundMethodBase}}
+\doxysubsubsection{\texorpdfstring{activatePack()}{activatePack()}}
+{\footnotesize\ttfamily bool libcamera\+::\+Bound\+Method\+Base\+::activate\+Pack (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1BoundMethodPackBase}{Bound\+Method\+Pack\+Base}} $>$}]{pack,  }\item[{bool}]{delete\+Method }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Invoke the bound method with packed arguments. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em pack} & Packed arguments \\
+\hline
+\mbox{\texttt{ in}}  & {\em delete\+Method} & True to delete {\itshape this} bound method instance when method invocation completes\\
+\hline
+\end{DoxyParams}
+The bound method stores its return value, if any, in the arguments {\itshape pack}. For direct and blocking invocations, this is performed synchronously, and the return value contained in the pack may be used. For queued invocations, the return value is stored at an undefined point of time and shall thus not be used by the caller.
+
+\begin{DoxyReturn}{Returns}
+True if the return value contained in the {\itshape pack} may be used by the caller, false otherwise 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/base/\mbox{\hyperlink{bound__method_8h}{bound\+\_\+method.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/base/bound\+\_\+method.\+cpp\end{DoxyCompactItemize}

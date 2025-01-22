@@ -1,0 +1,111 @@
+\doxysection{libcamera\+::Log\+Category Class Reference}
+\hypertarget{classlibcamera_1_1LogCategory}{}\label{classlibcamera_1_1LogCategory}\index{libcamera::LogCategory@{libcamera::LogCategory}}
+
+
+A category of log message.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \& \mbox{\hyperlink{classlibcamera_1_1LogCategory_a17f07127369123353f054b3a9b78be2e}{name}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the log category name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacelibcamera_a68f26f5a54a5bb105f2e7422215a0ca3}{Log\+Severity}} \mbox{\hyperlink{classlibcamera_1_1LogCategory_a5fc14105082dd738feda1014e9b06929}{severity}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the severity of the log category. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1LogCategory_acc94614ffb34499afb0e52b237c3e4e1}{set\+Severity}} (\mbox{\hyperlink{namespacelibcamera_a68f26f5a54a5bb105f2e7422215a0ca3}{Log\+Severity}} \mbox{\hyperlink{classlibcamera_1_1LogCategory_a5fc14105082dd738feda1014e9b06929}{severity}})
+\begin{DoxyCompactList}\small\item\em Set the severity of the log category. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classlibcamera_1_1LogCategory}{Log\+Category}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1LogCategory_a5977998abf81a30216c75d3e8f59858d}{create}} (const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classlibcamera_1_1LogCategory_a17f07127369123353f054b3a9b78be2e}{name}})
+\begin{DoxyCompactList}\small\item\em Create a new \doxylink{classlibcamera_1_1LogCategory}{Log\+Category} or return an existing one. \end{DoxyCompactList}\item 
+static const \mbox{\hyperlink{classlibcamera_1_1LogCategory}{Log\+Category}} \& \mbox{\hyperlink{classlibcamera_1_1LogCategory_a61e06c184d93f5c4848d808912b13817}{default\+Category}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the default log category. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A category of log message. 
+
+The \doxylink{classlibcamera_1_1LogCategory}{Log\+Category} class represents a category of log messages, related to an area of the library. It groups all messages belonging to the same category, and is used to control the log level per group. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1LogCategory_a5977998abf81a30216c75d3e8f59858d}\label{classlibcamera_1_1LogCategory_a5977998abf81a30216c75d3e8f59858d} 
+\index{libcamera::LogCategory@{libcamera::LogCategory}!create@{create}}
+\index{create@{create}!libcamera::LogCategory@{libcamera::LogCategory}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1LogCategory}{Log\+Category}} \texorpdfstring{$\ast$}{*} libcamera\+::\+Log\+Category\+::create (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create a new \doxylink{classlibcamera_1_1LogCategory}{Log\+Category} or return an existing one. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em name} & Name of the log category\\
+\hline
+\end{DoxyParams}
+Create and return a new \doxylink{classlibcamera_1_1LogCategory}{Log\+Category} with the given name if such a category does not yet exist, or return the existing one.
+
+\begin{DoxyReturn}{Returns}
+The pointer to the \doxylink{classlibcamera_1_1LogCategory}{Log\+Category} 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1LogCategory_a61e06c184d93f5c4848d808912b13817}\label{classlibcamera_1_1LogCategory_a61e06c184d93f5c4848d808912b13817} 
+\index{libcamera::LogCategory@{libcamera::LogCategory}!defaultCategory@{defaultCategory}}
+\index{defaultCategory@{defaultCategory}!libcamera::LogCategory@{libcamera::LogCategory}}
+\doxysubsubsection{\texorpdfstring{defaultCategory()}{defaultCategory()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classlibcamera_1_1LogCategory}{Log\+Category}} \& libcamera\+::\+Log\+Category\+::default\+Category (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retrieve the default log category. 
+
+The default log category is named "{}default"{} and is used by the \doxylink{libcamera_2base_2log_8h_a3577749fb48d57a158b8ac1a0b3ab57e}{LOG()} macro when no log category is specified.
+
+\begin{DoxyReturn}{Returns}
+A reference to the default log category 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1LogCategory_a17f07127369123353f054b3a9b78be2e}\label{classlibcamera_1_1LogCategory_a17f07127369123353f054b3a9b78be2e} 
+\index{libcamera::LogCategory@{libcamera::LogCategory}!name@{name}}
+\index{name@{name}!libcamera::LogCategory@{libcamera::LogCategory}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily libcamera\+::\+Log\+Category\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the log category name. 
+
+\begin{DoxyReturn}{Returns}
+The log category name 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1LogCategory_acc94614ffb34499afb0e52b237c3e4e1}\label{classlibcamera_1_1LogCategory_acc94614ffb34499afb0e52b237c3e4e1} 
+\index{libcamera::LogCategory@{libcamera::LogCategory}!setSeverity@{setSeverity}}
+\index{setSeverity@{setSeverity}!libcamera::LogCategory@{libcamera::LogCategory}}
+\doxysubsubsection{\texorpdfstring{setSeverity()}{setSeverity()}}
+{\footnotesize\ttfamily void libcamera\+::\+Log\+Category\+::set\+Severity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacelibcamera_a68f26f5a54a5bb105f2e7422215a0ca3}{Log\+Severity}}}]{severity }\end{DoxyParamCaption})}
+
+
+
+Set the severity of the log category. 
+
+Messages of severity higher than or equal to the severity of the log category are printed, other messages are discarded. \Hypertarget{classlibcamera_1_1LogCategory_a5fc14105082dd738feda1014e9b06929}\label{classlibcamera_1_1LogCategory_a5fc14105082dd738feda1014e9b06929} 
+\index{libcamera::LogCategory@{libcamera::LogCategory}!severity@{severity}}
+\index{severity@{severity}!libcamera::LogCategory@{libcamera::LogCategory}}
+\doxysubsubsection{\texorpdfstring{severity()}{severity()}}
+{\footnotesize\ttfamily libcamera\+::\+Log\+Category\+::severity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the severity of the log category. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classlibcamera_1_1LogCategory_acc94614ffb34499afb0e52b237c3e4e1}{set\+Severity()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+Return the severity of the log category 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/base/\mbox{\hyperlink{libcamera_2base_2log_8h}{log.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/base/log.\+cpp\end{DoxyCompactItemize}

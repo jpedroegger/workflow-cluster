@@ -1,0 +1,77 @@
+\doxysection{Camera\+Metadata Class Reference}
+\hypertarget{classCameraMetadata}{}\label{classCameraMetadata}\index{CameraMetadata@{CameraMetadata}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classCameraMetadata_a27778c2759396538acfe61b1520c55d1}\label{classCameraMetadata_a27778c2759396538acfe61b1520c55d1} 
+{\bfseries Camera\+Metadata} (size\+\_\+t entry\+Capacity, size\+\_\+t data\+Capacity)
+\item 
+\Hypertarget{classCameraMetadata_a94d94ba6225b2627462455059f5d22b5}\label{classCameraMetadata_a94d94ba6225b2627462455059f5d22b5} 
+{\bfseries Camera\+Metadata} (const camera\+\_\+metadata\+\_\+t \texorpdfstring{$\ast$}{*}metadata)
+\item 
+\Hypertarget{classCameraMetadata_a3a99ce37f145721c358a772b9439fc0a}\label{classCameraMetadata_a3a99ce37f145721c358a772b9439fc0a} 
+{\bfseries Camera\+Metadata} (const \mbox{\hyperlink{classCameraMetadata}{Camera\+Metadata}} \&other)
+\item 
+\Hypertarget{classCameraMetadata_a6e6b858a07b482de1b51651f2a8e819c}\label{classCameraMetadata_a6e6b858a07b482de1b51651f2a8e819c} 
+\mbox{\hyperlink{classCameraMetadata}{Camera\+Metadata}} \& {\bfseries operator=} (const \mbox{\hyperlink{classCameraMetadata}{Camera\+Metadata}} \&other)
+\item 
+\Hypertarget{classCameraMetadata_a494c675657c22054cb2337b69407ea2a}\label{classCameraMetadata_a494c675657c22054cb2337b69407ea2a} 
+std\+::tuple$<$ size\+\_\+t, size\+\_\+t $>$ {\bfseries usage} () const
+\item 
+\Hypertarget{classCameraMetadata_a9a2021847483722f3eb1b528702c3cce}\label{classCameraMetadata_a9a2021847483722f3eb1b528702c3cce} 
+bool {\bfseries resized} () const
+\item 
+\Hypertarget{classCameraMetadata_a21889009aaeb124358a27942d36cc910}\label{classCameraMetadata_a21889009aaeb124358a27942d36cc910} 
+bool {\bfseries is\+Valid} () const
+\item 
+\Hypertarget{classCameraMetadata_a6a118cc25d993213e6d2350465ceca66}\label{classCameraMetadata_a6a118cc25d993213e6d2350465ceca66} 
+bool {\bfseries get\+Entry} (uint32\+\_\+t tag, \mbox{\hyperlink{structcamera__metadata__ro__entry}{camera\+\_\+metadata\+\_\+ro\+\_\+entry\+\_\+t}} \texorpdfstring{$\ast$}{*}entry) const
+\item 
+\Hypertarget{classCameraMetadata_adddd28e16801a3ffa834a3b19bfd6f08}\label{classCameraMetadata_adddd28e16801a3ffa834a3b19bfd6f08} 
+{\footnotesize template$<$typename T $>$ }\\bool {\bfseries entry\+Contains} (uint32\+\_\+t tag, T value) const
+\item 
+\Hypertarget{classCameraMetadata_af4c150ce7a710d994e5c9956820f5ac8}\label{classCameraMetadata_af4c150ce7a710d994e5c9956820f5ac8} 
+bool {\bfseries has\+Entry} (uint32\+\_\+t tag) const
+\item 
+\Hypertarget{classCameraMetadata_a5b9cd3f1b79291d80741c9f8436ef780}\label{classCameraMetadata_a5b9cd3f1b79291d80741c9f8436ef780} 
+{\footnotesize template$<$typename T , std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic\+\_\+v$<$ T $>$\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}std\+::is\+\_\+enum\+\_\+v$<$ T $>$ $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ }\\bool {\bfseries set\+Entry} (uint32\+\_\+t tag, const T \&data)
+\item 
+\Hypertarget{classCameraMetadata_ac1b177b81bc4702ea1f1d0c75a031c6f}\label{classCameraMetadata_ac1b177b81bc4702ea1f1d0c75a031c6f} 
+{\footnotesize template$<$typename T , std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic\+\_\+v$<$ T $>$\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}std\+::is\+\_\+enum\+\_\+v$<$ T $>$ $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ }\\bool {\bfseries add\+Entry} (uint32\+\_\+t tag, const T \&data)
+\item 
+\Hypertarget{classCameraMetadata_a6d15b0369b523edec3b40feed39798c8}\label{classCameraMetadata_a6d15b0369b523edec3b40feed39798c8} 
+{\footnotesize template$<$typename T , size\+\_\+t size$>$ }\\bool {\bfseries add\+Entry} (uint32\+\_\+t tag, const T(\&data)\mbox{[}size\mbox{]})
+\item 
+\Hypertarget{classCameraMetadata_a2ce438ee17b1eedb84b24ee041a5b89d}\label{classCameraMetadata_a2ce438ee17b1eedb84b24ee041a5b89d} 
+{\footnotesize template$<$typename S , typename T  = typename S\+::value\+\_\+type$>$ }\\bool {\bfseries add\+Entry} (uint32\+\_\+t tag, const S \&data)
+\item 
+\Hypertarget{classCameraMetadata_a0b04cadaa9692a995c761515d023c5e3}\label{classCameraMetadata_a0b04cadaa9692a995c761515d023c5e3} 
+{\footnotesize template$<$typename T $>$ }\\bool {\bfseries add\+Entry} (uint32\+\_\+t tag, const T \texorpdfstring{$\ast$}{*}data, size\+\_\+t count)
+\item 
+\Hypertarget{classCameraMetadata_a7200cca2958fa23a75c880b6e03c0aa2}\label{classCameraMetadata_a7200cca2958fa23a75c880b6e03c0aa2} 
+{\footnotesize template$<$typename T $>$ }\\bool {\bfseries update\+Entry} (uint32\+\_\+t tag, const T \&data)
+\item 
+\Hypertarget{classCameraMetadata_a916e2a439c4d62eaa8ec2cc48baea3f9}\label{classCameraMetadata_a916e2a439c4d62eaa8ec2cc48baea3f9} 
+{\footnotesize template$<$typename T , size\+\_\+t size$>$ }\\bool {\bfseries update\+Entry} (uint32\+\_\+t tag, const T(\&data)\mbox{[}size\mbox{]})
+\item 
+\Hypertarget{classCameraMetadata_adecf8affd543c6caab4afc2c65e41ece}\label{classCameraMetadata_adecf8affd543c6caab4afc2c65e41ece} 
+{\footnotesize template$<$typename S , typename T  = typename S\+::value\+\_\+type$>$ }\\bool {\bfseries update\+Entry} (uint32\+\_\+t tag, const S \&data)
+\item 
+\Hypertarget{classCameraMetadata_abd038693b66c61300028790c4eb100de}\label{classCameraMetadata_abd038693b66c61300028790c4eb100de} 
+{\footnotesize template$<$typename T $>$ }\\bool {\bfseries update\+Entry} (uint32\+\_\+t tag, const T \texorpdfstring{$\ast$}{*}data, size\+\_\+t count)
+\item 
+\Hypertarget{classCameraMetadata_ae608a12108167d625b80b1e47177f9d8}\label{classCameraMetadata_ae608a12108167d625b80b1e47177f9d8} 
+camera\+\_\+metadata\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries get\+Metadata} ()
+\item 
+\Hypertarget{classCameraMetadata_a2836da95b67afb027f97bb0d6b835912}\label{classCameraMetadata_a2836da95b67afb027f97bb0d6b835912} 
+const camera\+\_\+metadata\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries get\+Metadata} () const
+\item 
+\Hypertarget{classCameraMetadata_a1daef6827a9af9c41721397b79c6bf00}\label{classCameraMetadata_a1daef6827a9af9c41721397b79c6bf00} 
+template$<$$>$ bool {\bfseries entry\+Contains} (uint32\+\_\+t tag, uint8\+\_\+t value) const
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/android/camera\+\_\+metadata.\+h\item 
+src/peripherals/camera/libcamera/src/android/camera\+\_\+metadata.\+cpp\end{DoxyCompactItemize}

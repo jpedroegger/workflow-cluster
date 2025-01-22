@@ -1,0 +1,152 @@
+\doxysection{media\+\_\+object.\+h}
+\hypertarget{media__object_8h_source}{}\label{media__object_8h_source}\index{src/peripherals/camera/libcamera/include/libcamera/internal/media\_object.h@{src/peripherals/camera/libcamera/include/libcamera/internal/media\_object.h}}
+\mbox{\hyperlink{media__object_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2018,\ Google\ Inc.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Media\ Device\ objects:\ entities,\ pads\ and\ links.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <linux/media.h>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{class_8h}{libcamera/base/class.h}}>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacelibcamera}{libcamera}}\ \{}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }MediaDevice;}
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }MediaEntity;}
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }MediaPad;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1MediaObject}{MediaObject}}}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1MediaDevice}{MediaDevice}}\ *\mbox{\hyperlink{classlibcamera_1_1MediaObject_afd1daa8170461ab5b15ce0cb25b2acb7}{device}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classlibcamera_1_1MediaObject_aa9ac2a933cc62d840f7554870b36e9a2}{dev\_}};\ \}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1MediaDevice}{MediaDevice}}\ *\mbox{\hyperlink{classlibcamera_1_1MediaObject_a324e73934f2b209ff6b5ea031a2640aa}{device}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classlibcamera_1_1MediaObject_aa9ac2a933cc62d840f7554870b36e9a2}{dev\_}};\ \}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1MediaObject_a71b2dbbfed6a5719df31d9399fb2f8f9}{id}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classlibcamera_1_1MediaObject_a30fd98d4872f4c456b52a2506542e11f}{id\_}};\ \}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1MediaDevice}{MediaDevice}};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1MediaObject_a040304e6607c1742fa50a1cfbe1064a5}{MediaObject}}(\mbox{\hyperlink{classlibcamera_1_1MediaDevice}{MediaDevice}}\ *dev,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classlibcamera_1_1MediaObject_aa9ac2a933cc62d840f7554870b36e9a2}{dev\_}}(dev),\ \mbox{\hyperlink{classlibcamera_1_1MediaObject_a30fd98d4872f4c456b52a2506542e11f}{id\_}}(\mbox{\hyperlink{classlibcamera_1_1MediaObject_a71b2dbbfed6a5719df31d9399fb2f8f9}{id}})}
+\DoxyCodeLine{00035\ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classlibcamera_1_1MediaObject}{\string~MediaObject}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1MediaDevice}{MediaDevice}}\ *\mbox{\hyperlink{classlibcamera_1_1MediaObject_aa9ac2a933cc62d840f7554870b36e9a2}{dev\_}};}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1MediaObject_a30fd98d4872f4c456b52a2506542e11f}{id\_}};}
+\DoxyCodeLine{00041\ \};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1MediaLink}{MediaLink}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classlibcamera_1_1MediaObject}{MediaObject}}}
+\DoxyCodeLine{00044\ \{}
+\DoxyCodeLine{00045\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1MediaPad}{MediaPad}}\ *\mbox{\hyperlink{classlibcamera_1_1MediaLink_aaf97df0f7ee1b64bfaa52816fafe14e0}{source}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ source\_;\ \}}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1MediaPad}{MediaPad}}\ *\mbox{\hyperlink{classlibcamera_1_1MediaLink_a9831d560d360e6fbb3b01e35455fcedd}{sink}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ sink\_;\ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1MediaLink_ac238dd3d10500d8536a6d356d06b2521}{flags}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ flags\_;\ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1MediaLink_a38a5261280fc55d055a9965bca3f7ba6}{setEnabled}}(\textcolor{keywordtype}{bool}\ enable);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ std::string\ \mbox{\hyperlink{classlibcamera_1_1MediaLink_a5fb0f7d48f0c44a4de834bf16f5e7d8c}{toString}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{class_8h_a3dfeb3af0e6990136655ba6125587d2f}{LIBCAMERA\_DISABLE\_COPY\_AND\_MOVE}}(\mbox{\hyperlink{classlibcamera_1_1MediaLink}{MediaLink}})}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1MediaDevice}{MediaDevice}};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1MediaLink}{MediaLink}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structmedia__v2__link}{media\_v2\_link}}\ *link,}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1MediaPad}{MediaPad}}\ *\mbox{\hyperlink{classlibcamera_1_1MediaLink_aaf97df0f7ee1b64bfaa52816fafe14e0}{source}},\ \mbox{\hyperlink{classlibcamera_1_1MediaPad}{MediaPad}}\ *\mbox{\hyperlink{classlibcamera_1_1MediaLink_a9831d560d360e6fbb3b01e35455fcedd}{sink}});}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1MediaPad}{MediaPad}}\ *source\_;}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1MediaPad}{MediaPad}}\ *sink\_;}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ flags\_;}
+\DoxyCodeLine{00064\ \};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ std::ostream\ \&operator<<(std::ostream\ \&out,\ \textcolor{keyword}{const}\ MediaLink\ \&link);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1MediaPad}{MediaPad}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classlibcamera_1_1MediaObject}{MediaObject}}}
+\DoxyCodeLine{00069\ \{}
+\DoxyCodeLine{00070\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1MediaPad_a2051076188b109220ff3a8ae881f24e1}{index}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ index\_;\ \}}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1MediaEntity}{MediaEntity}}\ *\mbox{\hyperlink{classlibcamera_1_1MediaPad_a3b23c50ec5a8dd6a60e41e6b66d78de2}{entity}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ entity\_;\ \}}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1MediaPad_a5bc5fa9cb6ebc11aa8f541cf8c5c4f65}{flags}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ flags\_;\ \}}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<MediaLink\ *>\ \&\mbox{\hyperlink{classlibcamera_1_1MediaPad_a34dd306dec37e216abc98c5fba919460}{links}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ links\_;\ \}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1MediaPad_a2f92b90894f68e56cd94270a315c3305}{addLink}}(\mbox{\hyperlink{classlibcamera_1_1MediaLink}{MediaLink}}\ *link);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ std::string\ \mbox{\hyperlink{classlibcamera_1_1MediaPad_af22dd05053f0ce9912077b2ab7e65ae0}{toString}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{class_8h_a3dfeb3af0e6990136655ba6125587d2f}{LIBCAMERA\_DISABLE\_COPY\_AND\_MOVE}}(\mbox{\hyperlink{classlibcamera_1_1MediaPad}{MediaPad}})}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1MediaDevice}{MediaDevice}};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1MediaPad}{MediaPad}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structmedia__v2__pad}{media\_v2\_pad}}\ *pad,\ \mbox{\hyperlink{classlibcamera_1_1MediaEntity}{MediaEntity}}\ *\mbox{\hyperlink{classlibcamera_1_1MediaPad_a3b23c50ec5a8dd6a60e41e6b66d78de2}{entity}});}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ index\_;}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1MediaEntity}{MediaEntity}}\ *entity\_;}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ flags\_;}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ std::vector<MediaLink\ *>\ links\_;}
+\DoxyCodeLine{00092\ \};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ std::ostream\ \&operator<<(std::ostream\ \&out,\ \textcolor{keyword}{const}\ MediaPad\ \&pad);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1MediaEntity}{MediaEntity}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classlibcamera_1_1MediaObject}{MediaObject}}}
+\DoxyCodeLine{00097\ \{}
+\DoxyCodeLine{00098\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{classlibcamera_1_1MediaEntity_ab75d46f7f7ee3270b3cffbb0e821c7b0}{Type}}\ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1MediaEntity_ab75d46f7f7ee3270b3cffbb0e821c7b0a4bbb8f967da6d1a610596d7257179c2b}{Invalid}},}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1MediaEntity_ab75d46f7f7ee3270b3cffbb0e821c7b0a150bda353722eb36a72b7548e051406f}{MediaEntity}},}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1MediaEntity_ab75d46f7f7ee3270b3cffbb0e821c7b0a6225cd504cb3e7475e63ab83fed66a8d}{V4L2Subdevice}},}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1MediaEntity_ab75d46f7f7ee3270b3cffbb0e821c7b0ae388b4d0db571ad8179ff34593372dea}{V4L2VideoDevice}},}
+\DoxyCodeLine{00104\ \ \ \ \ \};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classlibcamera_1_1MediaEntity_aa4cacb9e12787179a2c4a56590d7b2b5}{name}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ name\_;\ \}}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1MediaEntity_a6078dab1b3beaf6b0917babdab001fbd}{function}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ function\_;\ \}}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1MediaEntity_a48322351941cc87e2ac72b3175cbc561}{flags}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ flags\_;\ \}}
+\DoxyCodeLine{00109\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1MediaEntity_ab75d46f7f7ee3270b3cffbb0e821c7b0}{Type}}\ \mbox{\hyperlink{classlibcamera_1_1MediaEntity_a068c6c9e481b7adfb2f4aec1d8b81649}{type}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ type\_;\ \}}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classlibcamera_1_1MediaEntity_a7d5f090d44cd2362d3d0f5f56a651f0c}{deviceNode}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ deviceNode\_;\ \}}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1MediaEntity_a9a3c9a5656e9f59251783f8a3ce2db1b}{deviceMajor}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ major\_;\ \}}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1MediaEntity_a7bf8be19d4a38757d683481b24eed7ff}{deviceMinor}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ minor\_;\ \}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<MediaPad\ *>\ \&\mbox{\hyperlink{classlibcamera_1_1MediaEntity_adb91c47fdbd1b581da492d6257bb648e}{pads}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ pads\_;\ \}}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<MediaEntity\ *>\ \mbox{\hyperlink{classlibcamera_1_1MediaEntity_a801eb7c5ad38c31e540925766d8b1c44}{ancillaryEntities}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ ancillaryEntities\_;\ \}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1MediaPad}{MediaPad}}\ *\mbox{\hyperlink{classlibcamera_1_1MediaEntity_ac92364db18c91cb2295b943c12601767}{getPadByIndex}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ index)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1MediaPad}{MediaPad}}\ *\mbox{\hyperlink{classlibcamera_1_1MediaEntity_aa8f15a6ae32ba6e11b8f30740bd01f0b}{getPadById}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1MediaEntity_afc48af8e052b6436492eb9196abced71}{setDeviceNode}}(\textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classlibcamera_1_1MediaEntity_a7d5f090d44cd2362d3d0f5f56a651f0c}{deviceNode}});}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00123\ \ \ \ \ \mbox{\hyperlink{class_8h_a3dfeb3af0e6990136655ba6125587d2f}{LIBCAMERA\_DISABLE\_COPY\_AND\_MOVE}}(\mbox{\hyperlink{classlibcamera_1_1MediaEntity}{MediaEntity}})}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1MediaDevice}{MediaDevice}};}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1MediaEntity_ab75d46f7f7ee3270b3cffbb0e821c7b0a150bda353722eb36a72b7548e051406f}{MediaEntity}}(\mbox{\hyperlink{classlibcamera_1_1MediaDevice}{MediaDevice}}\ *dev,\ \textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structmedia__v2__entity}{media\_v2\_entity}}\ *entity,}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structmedia__v2__interface}{media\_v2\_interface}}\ *iface);}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordtype}{void}\ addPad(\mbox{\hyperlink{classlibcamera_1_1MediaPad}{MediaPad}}\ *pad);}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{void}\ addAncillaryEntity(\mbox{\hyperlink{classlibcamera_1_1MediaEntity}{MediaEntity}}\ *ancillaryEntity);}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ std::string\ name\_;}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ function\_;}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ flags\_;}
+\DoxyCodeLine{00137\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1MediaEntity_ab75d46f7f7ee3270b3cffbb0e821c7b0}{Type}}\ type\_;}
+\DoxyCodeLine{00138\ \ \ \ \ std::string\ deviceNode\_;}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ major\_;}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ minor\_;}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \ \ std::vector<MediaPad\ *>\ pads\_;}
+\DoxyCodeLine{00143\ \ \ \ \ std::vector<MediaEntity\ *>\ ancillaryEntities\_;}
+\DoxyCodeLine{00144\ \};}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \}\ \textcolor{comment}{/*\ namespace\ libcamera\ */}}
+
+\end{DoxyCode}

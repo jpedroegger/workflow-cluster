@@ -1,0 +1,46 @@
+\doxysection{v4l2\+\_\+camera\+\_\+file.\+h}
+\hypertarget{v4l2__camera__file_8h_source}{}\label{v4l2__camera__file_8h_source}\index{src/peripherals/camera/libcamera/src/v4l2/v4l2\_camera\_file.h@{src/peripherals/camera/libcamera/src/v4l2/v4l2\_camera\_file.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2020,\ Google\ Inc.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ V4L2\ compatibility\ camera\ file\ information}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <linux/videodev2.h>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classV4L2CameraProxy}{V4L2CameraProxy}};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classV4L2CameraFile}{V4L2CameraFile}}}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{classV4L2CameraFile}{V4L2CameraFile}}(\textcolor{keywordtype}{int}\ dirfd,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *path,\ \textcolor{keywordtype}{int}\ efd,\ \textcolor{keywordtype}{bool}\ nonBlocking,}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classV4L2CameraProxy}{V4L2CameraProxy}}\ *proxy);}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{classV4L2CameraFile}{\string~V4L2CameraFile}}();}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{classV4L2CameraProxy}{V4L2CameraProxy}}\ *proxy()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ proxy\_;\ \}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{bool}\ nonBlocking()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ nonBlocking\_;\ \}}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{int}\ efd()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ efd\_;\ \}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{enum}\ v4l2\_priority\ priority()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ priority\_;\ \}}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ setPriority(\textcolor{keyword}{enum}\ v4l2\_priority\ priority)\ \{\ priority\_\ =\ priority;\ \}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&description()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{classV4L2CameraProxy}{V4L2CameraProxy}}\ *proxy\_;}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ std::string\ description\_;}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{bool}\ nonBlocking\_;}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ efd\_;}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{enum}\ v4l2\_priority\ priority\_;}
+\DoxyCodeLine{00040\ \};}
+
+\end{DoxyCode}

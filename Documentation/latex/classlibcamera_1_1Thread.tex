@@ -1,0 +1,279 @@
+\doxysection{libcamera\+::Thread Class Reference}
+\hypertarget{classlibcamera_1_1Thread}{}\label{classlibcamera_1_1Thread}\index{libcamera::Thread@{libcamera::Thread}}
+
+
+A thread of execution.  
+
+
+Inheritance diagram for libcamera\+::Thread\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.009009cm]{classlibcamera_1_1Thread}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1Thread_ad3bf41ff4d660ed68ed2c75a02526b3a}\label{classlibcamera_1_1Thread_ad3bf41ff4d660ed68ed2c75a02526b3a} 
+{\bfseries Thread} ()
+\begin{DoxyCompactList}\small\item\em Create a thread. \end{DoxyCompactList}\item 
+\Hypertarget{classlibcamera_1_1Thread_a7a41ff49b92b165721070c0199de3df6}\label{classlibcamera_1_1Thread_a7a41ff49b92b165721070c0199de3df6} 
+void {\bfseries start} ()
+\begin{DoxyCompactList}\small\item\em Start the thread. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1Thread_a682e194cb85201f751679d405bddd390}{exit}} (int code=0)
+\begin{DoxyCompactList}\small\item\em Stop the thread\textquotesingle{}s event loop. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlibcamera_1_1Thread_aad8b4e36644bbb12dc4a3652875031c0}{wait}} (\mbox{\hyperlink{include_2libcamera_2base_2utils_8h_ad2a71f9eb2c27cd6213306d8d2ff7fd0}{utils\+::duration}} duration=utils\+::duration\+::max())
+\begin{DoxyCompactList}\small\item\em Wait for the thread to finish. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classlibcamera_1_1Thread_ac0aaa9e86d23aae87865d5b607263434}{set\+Thread\+Affinity}} (const \mbox{\hyperlink{classlibcamera_1_1Span}{Span}}$<$ const unsigned int $>$ \&cpus)
+\begin{DoxyCompactList}\small\item\em Set the CPU affinity mask of the thread. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlibcamera_1_1Thread_abc82f4273c701d2a3e10c616ae7be167}{is\+Running}} ()
+\begin{DoxyCompactList}\small\item\em Check if the thread is running. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1EventDispatcher}{Event\+Dispatcher}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1Thread_a473e4d310c13ca3e779781116b6df125}{event\+Dispatcher}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the event dispatcher. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1Thread_aa9e5281fd59e9644aab27c0a5fefe7ed}{dispatch\+Messages}} (\mbox{\hyperlink{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5}{Message\+::\+Type}} type=\mbox{\hyperlink{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5a2cf8f48814353e436d4f5fc4b9f8b713}{Message\+::\+Type\+::\+None}})
+\begin{DoxyCompactList}\small\item\em Dispatch posted messages for this thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classlibcamera_1_1Thread}{Thread}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1Thread_a3eef596f48cb7109462118890b6575cb}{current}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the \doxylink{classlibcamera_1_1Thread}{Thread} instance for the current thread \textbackslash{}context This function is \textbackslash{}threadsafe. \end{DoxyCompactList}\item 
+static pid\+\_\+t \mbox{\hyperlink{classlibcamera_1_1Thread_a41f93a5a8f2649c06859f88325dc60ac}{current\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the ID of the current thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1Thread_a7f3bdc2840090cfb00fa8442ce36c3df}\label{classlibcamera_1_1Thread_a7f3bdc2840090cfb00fa8442ce36c3df} 
+\mbox{\hyperlink{classlibcamera_1_1Signal}{Signal}} {\bfseries finished}
+\begin{DoxyCompactList}\small\item\em \doxylink{classlibcamera_1_1Signal}{Signal} the end of thread execution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classlibcamera_1_1Thread_a6422ed835177fd84f0e517efc798fa62}{exec}} ()
+\begin{DoxyCompactList}\small\item\em Enter the event loop. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classlibcamera_1_1Thread_a7e7d63b01477fa9987f5505f82f32913}{run}} ()
+\begin{DoxyCompactList}\small\item\em Main function of the thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1Thread_a0720b5f434e636e22a3ed34f847eec57}\label{classlibcamera_1_1Thread_a0720b5f434e636e22a3ed34f847eec57} 
+class {\bfseries Object}
+\item 
+\Hypertarget{classlibcamera_1_1Thread_a78cce72f7d53e176c798dc78aa1b8313}\label{classlibcamera_1_1Thread_a78cce72f7d53e176c798dc78aa1b8313} 
+class {\bfseries Thread\+Data}
+\item 
+\Hypertarget{classlibcamera_1_1Thread_acb5b1774a040ba637e7a1e47bb686eaf}\label{classlibcamera_1_1Thread_acb5b1774a040ba637e7a1e47bb686eaf} 
+class {\bfseries Thread\+Main}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A thread of execution. 
+
+The \doxylink{classlibcamera_1_1Thread}{Thread} class is a wrapper around std\+::thread that handles integration with the \doxylink{classlibcamera_1_1Object}{Object}, \doxylink{classlibcamera_1_1Signal}{Signal} and \doxylink{classlibcamera_1_1EventDispatcher}{Event\+Dispatcher} classes.
+
+\doxylink{classlibcamera_1_1Thread}{Thread} instances by default run an event loop until the \doxylink{classlibcamera_1_1Thread_a682e194cb85201f751679d405bddd390}{exit()} function is called. The event loop dispatches events (messages, notifiers and timers) sent to the objects living in the thread. This behaviour can be modified by overriding the \doxylink{classlibcamera_1_1Thread_a7e7d63b01477fa9987f5505f82f32913}{run()} function.\hypertarget{classlibcamera_1_1Thread_thread-stop}{}\doxysubsection{\texorpdfstring{Stopping Threads}{Stopping Threads}}\label{classlibcamera_1_1Thread_thread-stop}
+Threads can\textquotesingle{}t be forcibly stopped. Instead, a thread user first requests the thread to exit and then waits for the thread\textquotesingle{}s main function to react to the request and return, at which points the thread will stop.
+
+For threads running \doxylink{classlibcamera_1_1Thread_a6422ed835177fd84f0e517efc798fa62}{exec()}, the \doxylink{classlibcamera_1_1Thread_a682e194cb85201f751679d405bddd390}{exit()} function is used to request the thread to exit. For threads subclassing the \doxylink{classlibcamera_1_1Thread}{Thread} class and implementing a custom \doxylink{classlibcamera_1_1Thread_a7e7d63b01477fa9987f5505f82f32913}{run()} function, a subclass-\/specific mechanism shall be provided. In either case, the \doxylink{classlibcamera_1_1Thread_aad8b4e36644bbb12dc4a3652875031c0}{wait()} function shall be called to wait for the thread to stop.
+
+Due to their asynchronous nature, threads are subject to race conditions when they stop. This is of particular importance for messages posted to the thread with post\+Message() (and the other mechanisms that rely on it, such as \doxylink{classlibcamera_1_1Object_a2a4ea2209e289e2aabb75c5718d5b4a7}{Object\+::invoke\+Method()} or asynchronous signal delivery). To understand the issues, three contexts need to be considered\+:
+
+
+\begin{DoxyItemize}
+\item The worker is the \doxylink{classlibcamera_1_1Thread}{Thread} performing work and being instructed to stop.
+\item The controller is the context which instructs the worker thread to stop.
+\item The other contexts are any threads other than the worker and controller that interact with the worker thread.
+\end{DoxyItemize}
+
+Messages posted to the worker thread from the controller context before calling \doxylink{classlibcamera_1_1Thread_a682e194cb85201f751679d405bddd390}{exit()} are queued to the thread\textquotesingle{}s message queue, and the \doxylink{classlibcamera_1_1Thread}{Thread} class offers no guarantee that those messages will be processed before the thread stops. This allows threads to stop fast.
+
+A thread that requires delivery of messages posted from the controller context before \doxylink{classlibcamera_1_1Thread_a682e194cb85201f751679d405bddd390}{exit()} should reimplement the \doxylink{classlibcamera_1_1Thread_a7e7d63b01477fa9987f5505f82f32913}{run()} function and call \doxylink{classlibcamera_1_1Thread_aa9e5281fd59e9644aab27c0a5fefe7ed}{dispatch\+Messages()} after \doxylink{classlibcamera_1_1Thread_a6422ed835177fd84f0e517efc798fa62}{exec()}.
+
+Messages posted to the worker thread from the other contexts are asynchronous with respect to the \doxylink{classlibcamera_1_1Thread_a682e194cb85201f751679d405bddd390}{exit()} call from the controller context. There is no guarantee as to whether those messages will be processed or not before the thread stops.
+
+Messages that are not processed will stay in the queue, in the exact same way as messages posted after the thread has stopped. They will be processed when the thread is restarted. If the thread is never restarted, they will be deleted without being processed when the \doxylink{classlibcamera_1_1Thread}{Thread} instance is destroyed. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1Thread_a3eef596f48cb7109462118890b6575cb}\label{classlibcamera_1_1Thread_a3eef596f48cb7109462118890b6575cb} 
+\index{libcamera::Thread@{libcamera::Thread}!current@{current}}
+\index{current@{current}!libcamera::Thread@{libcamera::Thread}}
+\doxysubsubsection{\texorpdfstring{current()}{current()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1Thread}{Thread}} \texorpdfstring{$\ast$}{*} libcamera\+::\+Thread\+::current (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retrieve the \doxylink{classlibcamera_1_1Thread}{Thread} instance for the current thread \textbackslash{}context This function is \textbackslash{}threadsafe. 
+
+\begin{DoxyReturn}{Returns}
+The \doxylink{classlibcamera_1_1Thread}{Thread} instance for the current thread 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Thread_a41f93a5a8f2649c06859f88325dc60ac}\label{classlibcamera_1_1Thread_a41f93a5a8f2649c06859f88325dc60ac} 
+\index{libcamera::Thread@{libcamera::Thread}!currentId@{currentId}}
+\index{currentId@{currentId}!libcamera::Thread@{libcamera::Thread}}
+\doxysubsubsection{\texorpdfstring{currentId()}{currentId()}}
+{\footnotesize\ttfamily pid\+\_\+t libcamera\+::\+Thread\+::current\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retrieve the ID of the current thread. 
+
+The thread ID corresponds to the Linux thread ID (TID) as returned by the gettid system call.
+
+\textbackslash{}context This function is \textbackslash{}threadsafe.
+
+\begin{DoxyReturn}{Returns}
+The ID of the current thread 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Thread_aa9e5281fd59e9644aab27c0a5fefe7ed}\label{classlibcamera_1_1Thread_aa9e5281fd59e9644aab27c0a5fefe7ed} 
+\index{libcamera::Thread@{libcamera::Thread}!dispatchMessages@{dispatchMessages}}
+\index{dispatchMessages@{dispatchMessages}!libcamera::Thread@{libcamera::Thread}}
+\doxysubsubsection{\texorpdfstring{dispatchMessages()}{dispatchMessages()}}
+{\footnotesize\ttfamily void libcamera\+::\+Thread\+::dispatch\+Messages (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5}{Message\+::\+Type}}}]{type = {\ttfamily \mbox{\hyperlink{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5a2cf8f48814353e436d4f5fc4b9f8b713}{Message\+::\+Type\+::\+None}}} }\end{DoxyParamCaption})}
+
+
+
+Dispatch posted messages for this thread. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em type} & The message type\\
+\hline
+\end{DoxyParams}
+This function immediately dispatches all the messages previously posted for this thread with post\+Message() that match the message {\itshape type}. If the {\itshape type} is \doxylink{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5a2cf8f48814353e436d4f5fc4b9f8b713}{Message\+::\+Type\+::\+None}, all messages are dispatched.
+
+Messages shall only be dispatched from the current thread, typically within the thread from the \doxylink{classlibcamera_1_1Thread_a7e7d63b01477fa9987f5505f82f32913}{run()} function. Calling this function outside of the thread results in undefined behaviour.
+
+This function is not thread-\/safe, but it may be called recursively in the same thread from an object\textquotesingle{}s message handler. It guarantees delivery of messages in the order they have been posted in all cases. \Hypertarget{classlibcamera_1_1Thread_a473e4d310c13ca3e779781116b6df125}\label{classlibcamera_1_1Thread_a473e4d310c13ca3e779781116b6df125} 
+\index{libcamera::Thread@{libcamera::Thread}!eventDispatcher@{eventDispatcher}}
+\index{eventDispatcher@{eventDispatcher}!libcamera::Thread@{libcamera::Thread}}
+\doxysubsubsection{\texorpdfstring{eventDispatcher()}{eventDispatcher()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1EventDispatcher}{Event\+Dispatcher}} \texorpdfstring{$\ast$}{*} libcamera\+::\+Thread\+::event\+Dispatcher (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieve the event dispatcher. 
+
+This function retrieves the internal event dispatcher for the thread. The returned event dispatcher is valid until the thread is destroyed.
+
+\textbackslash{}context This function is \textbackslash{}threadsafe.
+
+\begin{DoxyReturn}{Returns}
+Pointer to the event dispatcher 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Thread_a6422ed835177fd84f0e517efc798fa62}\label{classlibcamera_1_1Thread_a6422ed835177fd84f0e517efc798fa62} 
+\index{libcamera::Thread@{libcamera::Thread}!exec@{exec}}
+\index{exec@{exec}!libcamera::Thread@{libcamera::Thread}}
+\doxysubsubsection{\texorpdfstring{exec()}{exec()}}
+{\footnotesize\ttfamily int libcamera\+::\+Thread\+::exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Enter the event loop. 
+
+This function enters an event loop based on the event dispatcher instance for the thread, and blocks until the \doxylink{classlibcamera_1_1Thread_a682e194cb85201f751679d405bddd390}{exit()} function is called. It is meant to be called within the thread from the \doxylink{classlibcamera_1_1Thread_a7e7d63b01477fa9987f5505f82f32913}{run()} function and shall not be called outside of the thread.
+
+\begin{DoxyReturn}{Returns}
+The exit code passed to the \doxylink{classlibcamera_1_1Thread_a682e194cb85201f751679d405bddd390}{exit()} function 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Thread_a682e194cb85201f751679d405bddd390}\label{classlibcamera_1_1Thread_a682e194cb85201f751679d405bddd390} 
+\index{libcamera::Thread@{libcamera::Thread}!exit@{exit}}
+\index{exit@{exit}!libcamera::Thread@{libcamera::Thread}}
+\doxysubsubsection{\texorpdfstring{exit()}{exit()}}
+{\footnotesize\ttfamily void libcamera\+::\+Thread\+::exit (\begin{DoxyParamCaption}\item[{int}]{code = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Stop the thread\textquotesingle{}s event loop. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em code} & The exit code\\
+\hline
+\end{DoxyParams}
+This function interrupts the event loop started by the \doxylink{classlibcamera_1_1Thread_a6422ed835177fd84f0e517efc798fa62}{exec()} function, causing \doxylink{classlibcamera_1_1Thread_a6422ed835177fd84f0e517efc798fa62}{exec()} to return {\itshape code}.
+
+Calling \doxylink{classlibcamera_1_1Thread_a682e194cb85201f751679d405bddd390}{exit()} on a thread that reimplements the \doxylink{classlibcamera_1_1Thread_a7e7d63b01477fa9987f5505f82f32913}{run()} function and doesn\textquotesingle{}t call \doxylink{classlibcamera_1_1Thread_a6422ed835177fd84f0e517efc798fa62}{exec()} will likely have no effect.
+
+\textbackslash{}context This function is \textbackslash{}threadsafe. \Hypertarget{classlibcamera_1_1Thread_abc82f4273c701d2a3e10c616ae7be167}\label{classlibcamera_1_1Thread_abc82f4273c701d2a3e10c616ae7be167} 
+\index{libcamera::Thread@{libcamera::Thread}!isRunning@{isRunning}}
+\index{isRunning@{isRunning}!libcamera::Thread@{libcamera::Thread}}
+\doxysubsubsection{\texorpdfstring{isRunning()}{isRunning()}}
+{\footnotesize\ttfamily bool libcamera\+::\+Thread\+::is\+Running (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Check if the thread is running. 
+
+A \doxylink{classlibcamera_1_1Thread}{Thread} instance is considered as running once the underlying thread has started. This function guarantees that it returns true after the \doxylink{classlibcamera_1_1Thread_a7a41ff49b92b165721070c0199de3df6}{start()} function returns, and false after the \doxylink{classlibcamera_1_1Thread_aad8b4e36644bbb12dc4a3652875031c0}{wait()} function returns.
+
+\textbackslash{}context This function is \textbackslash{}threadsafe.
+
+\begin{DoxyReturn}{Returns}
+True if the thread is running, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Thread_a7e7d63b01477fa9987f5505f82f32913}\label{classlibcamera_1_1Thread_a7e7d63b01477fa9987f5505f82f32913} 
+\index{libcamera::Thread@{libcamera::Thread}!run@{run}}
+\index{run@{run}!libcamera::Thread@{libcamera::Thread}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void libcamera\+::\+Thread\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Main function of the thread. 
+
+When the thread is started with \doxylink{classlibcamera_1_1Thread_a7a41ff49b92b165721070c0199de3df6}{start()}, it calls this function in the context of the new thread. The \doxylink{classlibcamera_1_1Thread_a7e7d63b01477fa9987f5505f82f32913}{run()} function can be overridden to perform custom work, either custom initialization and cleanup before and after calling the \doxylink{classlibcamera_1_1Thread_a6422ed835177fd84f0e517efc798fa62}{Thread\+::exec()} function, or a custom thread loop altogether. When this function returns the thread execution is stopped, and the \doxylink{classlibcamera_1_1Thread_a7f3bdc2840090cfb00fa8442ce36c3df}{finished} signal is emitted.
+
+Note that if this function is overridden and doesn\textquotesingle{}t call \doxylink{classlibcamera_1_1Thread_a6422ed835177fd84f0e517efc798fa62}{Thread\+::exec()}, no events will be dispatched to the objects living in the thread. These objects will not be able to use the \doxylink{classlibcamera_1_1EventNotifier}{Event\+Notifier}, \doxylink{classlibcamera_1_1Timer}{Timer} or \doxylink{classlibcamera_1_1Message}{Message} facilities. This includes functions that rely on message dispatching, such as \doxylink{classlibcamera_1_1Object_a7432a52a2e69a29cfe8144929686d1e6}{Object\+::delete\+Later()}.
+
+The base implementation just calls \doxylink{classlibcamera_1_1Thread_a6422ed835177fd84f0e517efc798fa62}{exec()}. 
+
+Reimplemented in \mbox{\hyperlink{classDeleterThread_a1d112d2fe445b4823f645a31a30c4ae3}{Deleter\+Thread}}, \mbox{\hyperlink{classDelayThread_ac07540dd0f7d3ee6b3de2ffbb9e08fb4}{Delay\+Thread}}, \mbox{\hyperlink{classCancelThread_a414ce279d0ced35c5c7cf55153a2d033}{Cancel\+Thread}}, \mbox{\hyperlink{classlibcamera_1_1CameraManager_1_1Private_a2495e76af68debe46f1fbdc770a73085}{libcamera\+::\+Camera\+Manager\+::\+Private}}, and \mbox{\hyperlink{classlibcamera_1_1ThreadMain_a06fd0d5ebb23cac7587793d2203b54ac}{libcamera\+::\+Thread\+Main}}.
+
+\Hypertarget{classlibcamera_1_1Thread_ac0aaa9e86d23aae87865d5b607263434}\label{classlibcamera_1_1Thread_ac0aaa9e86d23aae87865d5b607263434} 
+\index{libcamera::Thread@{libcamera::Thread}!setThreadAffinity@{setThreadAffinity}}
+\index{setThreadAffinity@{setThreadAffinity}!libcamera::Thread@{libcamera::Thread}}
+\doxysubsubsection{\texorpdfstring{setThreadAffinity()}{setThreadAffinity()}}
+{\footnotesize\ttfamily int libcamera\+::\+Thread\+::set\+Thread\+Affinity (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1Span}{Span}}$<$ const unsigned int $>$ \&}]{cpus }\end{DoxyParamCaption})}
+
+
+
+Set the CPU affinity mask of the thread. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em cpus} & The list of CPU indices that the thread is set affinity to\\
+\hline
+\end{DoxyParams}
+The CPU indices should be within \mbox{[}0, std\+::thread\+::hardware\+\_\+concurrency()). If any index is invalid, this function won\textquotesingle{}t modify the thread affinity and will return an error.
+
+\begin{DoxyReturn}{Returns}
+0 if all indices are valid, -\/EINVAL otherwise 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Thread_aad8b4e36644bbb12dc4a3652875031c0}\label{classlibcamera_1_1Thread_aad8b4e36644bbb12dc4a3652875031c0} 
+\index{libcamera::Thread@{libcamera::Thread}!wait@{wait}}
+\index{wait@{wait}!libcamera::Thread@{libcamera::Thread}}
+\doxysubsubsection{\texorpdfstring{wait()}{wait()}}
+{\footnotesize\ttfamily bool libcamera\+::\+Thread\+::wait (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{include_2libcamera_2base_2utils_8h_ad2a71f9eb2c27cd6213306d8d2ff7fd0}{utils\+::duration}}}]{duration = {\ttfamily utils\+:\+:duration\+:\+:max()} }\end{DoxyParamCaption})}
+
+
+
+Wait for the thread to finish. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em duration} & Maximum wait duration\\
+\hline
+\end{DoxyParams}
+This function waits until the thread finishes or the {\itshape duration} has elapsed, whichever happens first. If {\itshape duration} is equal to utils\+::duration\+::max(), the wait never times out. If the thread is not running the function returns immediately.
+
+\textbackslash{}context This function is \textbackslash{}threadsafe.
+
+\begin{DoxyReturn}{Returns}
+True if the thread has finished, or false if the wait timed out 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/base/\mbox{\hyperlink{thread_8h}{thread.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/base/thread.\+cpp\end{DoxyCompactItemize}

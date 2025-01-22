@@ -1,0 +1,204 @@
+\doxysection{src/peripherals/camera/libcamera/include/libcamera/base/class.h File Reference}
+\hypertarget{class_8h}{}\label{class_8h}\index{src/peripherals/camera/libcamera/include/libcamera/base/class.h@{src/peripherals/camera/libcamera/include/libcamera/base/class.h}}
+
+
+Utilities to help constructing class interfaces.  
+
+
+{\ttfamily \#include $<$memory$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classlibcamera_1_1Extensible}{libcamera\+::\+Extensible}}
+\begin{DoxyCompactList}\small\item\em Base class to manage private data through a d-\/pointer. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classlibcamera_1_1Extensible_1_1Private}{libcamera\+::\+Extensible\+::\+Private}}
+\begin{DoxyCompactList}\small\item\em Base class for private data managed through a d-\/pointer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacelibcamera}{libcamera}}
+\begin{DoxyCompactList}\small\item\em Top-\/level libcamera namespace. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{class_8h_ace000c18250df4aeac259f1ab739c655}{LIBCAMERA\+\_\+\+DISABLE\+\_\+\+COPY}}(klass)
+\begin{DoxyCompactList}\small\item\em Disable copy construction and assignment of the {\itshape klass}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{class_8h_ab0862a2f3a99aa0eaaba6e0ac81deea3}{LIBCAMERA\+\_\+\+DISABLE\+\_\+\+MOVE}}(klass)
+\begin{DoxyCompactList}\small\item\em Disable move construction and assignment of the {\itshape klass}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{class_8h_a3dfeb3af0e6990136655ba6125587d2f}{LIBCAMERA\+\_\+\+DISABLE\+\_\+\+COPY\+\_\+\+AND\+\_\+\+MOVE}}(klass)
+\begin{DoxyCompactList}\small\item\em Disable copy and move construction and assignment of the {\itshape klass}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{class_8h_a173cff214f6288d300840b7b474b7803}{LIBCAMERA\+\_\+\+DECLARE\+\_\+\+PRIVATE}}()
+\begin{DoxyCompactList}\small\item\em Declare private data for a public class. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{class_8h_af850b1c484bfa1f484a53c6c2ac7fbad}{LIBCAMERA\+\_\+\+DECLARE\+\_\+\+PUBLIC}}(klass)
+\begin{DoxyCompactList}\small\item\em Declare public data for a private class. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{class_8h_ad8c78641ec06c49edd227b63cc8449b5}{LIBCAMERA\+\_\+\+O\+\_\+\+PTR}}()~ \+\_\+o$<$Public$>$()
+\begin{DoxyCompactList}\small\item\em Retrieve the public instance corresponding to the private data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Utilities to help constructing class interfaces. 
+
+The extensible class can be inherited to create public classes with stable ABIs. 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{class_8h_a173cff214f6288d300840b7b474b7803}\label{class_8h_a173cff214f6288d300840b7b474b7803} 
+\index{class.h@{class.h}!LIBCAMERA\_DECLARE\_PRIVATE@{LIBCAMERA\_DECLARE\_PRIVATE}}
+\index{LIBCAMERA\_DECLARE\_PRIVATE@{LIBCAMERA\_DECLARE\_PRIVATE}!class.h@{class.h}}
+\doxysubsubsection{\texorpdfstring{LIBCAMERA\_DECLARE\_PRIVATE}{LIBCAMERA\_DECLARE\_PRIVATE}}
+{\footnotesize\ttfamily \#define LIBCAMERA\+\_\+\+DECLARE\+\_\+\+PRIVATE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}:\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{class\ }Private;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }Private;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keywordtype}{bool}\ B\ =\ true>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{const}\ Private\ *\_d()\ const\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Extensible::\_d<Private>();\ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keywordtype}{bool}\ B\ =\ true>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ Private\ *\_d()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Extensible::\_d<Private>();\ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+Declare private data for a public class. 
+
+The \doxylink{class_8h_a173cff214f6288d300840b7b474b7803}{LIBCAMERA\+\_\+\+DECLARE\+\_\+\+PRIVATE()} macro plumbs the infrastructure necessary to make a class manage its private data through a d-\/pointer. It shall be used at the very top of the class definition. \Hypertarget{class_8h_af850b1c484bfa1f484a53c6c2ac7fbad}\label{class_8h_af850b1c484bfa1f484a53c6c2ac7fbad} 
+\index{class.h@{class.h}!LIBCAMERA\_DECLARE\_PUBLIC@{LIBCAMERA\_DECLARE\_PUBLIC}}
+\index{LIBCAMERA\_DECLARE\_PUBLIC@{LIBCAMERA\_DECLARE\_PUBLIC}!class.h@{class.h}}
+\doxysubsubsection{\texorpdfstring{LIBCAMERA\_DECLARE\_PUBLIC}{LIBCAMERA\_DECLARE\_PUBLIC}}
+{\footnotesize\ttfamily \#define LIBCAMERA\+\_\+\+DECLARE\+\_\+\+PUBLIC(\begin{DoxyParamCaption}\item[{}]{klass }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }klass;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{using\ }Public\ =\ klass;}
+
+\end{DoxyCode}
+
+
+Declare public data for a private class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em klass} & The public class name\\
+\hline
+\end{DoxyParams}
+The \doxylink{class_8h_af850b1c484bfa1f484a53c6c2ac7fbad}{LIBCAMERA\+\_\+\+DECLARE\+\_\+\+PUBLIC()} macro is the counterpart of \doxylink{class_8h_a173cff214f6288d300840b7b474b7803}{LIBCAMERA\+\_\+\+DECLARE\+\_\+\+PRIVATE()} to be used in the private data class. It shall be used at the very top of the private class definition, with the public class name passed as the {\itshape klass} parameter. \Hypertarget{class_8h_ace000c18250df4aeac259f1ab739c655}\label{class_8h_ace000c18250df4aeac259f1ab739c655} 
+\index{class.h@{class.h}!LIBCAMERA\_DISABLE\_COPY@{LIBCAMERA\_DISABLE\_COPY}}
+\index{LIBCAMERA\_DISABLE\_COPY@{LIBCAMERA\_DISABLE\_COPY}!class.h@{class.h}}
+\doxysubsubsection{\texorpdfstring{LIBCAMERA\_DISABLE\_COPY}{LIBCAMERA\_DISABLE\_COPY}}
+{\footnotesize\ttfamily \#define LIBCAMERA\+\_\+\+DISABLE\+\_\+\+COPY(\begin{DoxyParamCaption}\item[{}]{klass }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ klass(\textcolor{keyword}{const}\ klass\ \&)\ =\ \textcolor{keyword}{delete};\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ klass\ \&operator=(\textcolor{keyword}{const}\ klass\ \&)\ =\ \textcolor{keyword}{delete};}
+
+\end{DoxyCode}
+
+
+Disable copy construction and assignment of the {\itshape klass}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em klass} & The name of the class\\
+\hline
+\end{DoxyParams}
+Example usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{class\ }NonCopyable}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{\ \ \ \ NonCopyable();}
+\DoxyCodeLine{\ \ \ \ ...}
+\DoxyCodeLine{}
+\DoxyCodeLine{private:}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_8h_ace000c18250df4aeac259f1ab739c655}{LIBCAMERA\_DISABLE\_COPY}}(NonCopyable)}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+ \Hypertarget{class_8h_a3dfeb3af0e6990136655ba6125587d2f}\label{class_8h_a3dfeb3af0e6990136655ba6125587d2f} 
+\index{class.h@{class.h}!LIBCAMERA\_DISABLE\_COPY\_AND\_MOVE@{LIBCAMERA\_DISABLE\_COPY\_AND\_MOVE}}
+\index{LIBCAMERA\_DISABLE\_COPY\_AND\_MOVE@{LIBCAMERA\_DISABLE\_COPY\_AND\_MOVE}!class.h@{class.h}}
+\doxysubsubsection{\texorpdfstring{LIBCAMERA\_DISABLE\_COPY\_AND\_MOVE}{LIBCAMERA\_DISABLE\_COPY\_AND\_MOVE}}
+{\footnotesize\ttfamily \#define LIBCAMERA\+\_\+\+DISABLE\+\_\+\+COPY\+\_\+\+AND\+\_\+\+MOVE(\begin{DoxyParamCaption}\item[{}]{klass }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_8h_ace000c18250df4aeac259f1ab739c655}{LIBCAMERA\_DISABLE\_COPY}}(klass)\ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ LIBCAMERA\_DISABLE\_MOVE(klass)}
+
+\end{DoxyCode}
+
+
+Disable copy and move construction and assignment of the {\itshape klass}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em klass} & The name of the class\\
+\hline
+\end{DoxyParams}
+Example usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{class\ }NonCopyableNonMoveable}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{\ \ \ \ NonCopyableNonMoveable();}
+\DoxyCodeLine{\ \ \ \ ...}
+\DoxyCodeLine{}
+\DoxyCodeLine{private:}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_8h_a3dfeb3af0e6990136655ba6125587d2f}{LIBCAMERA\_DISABLE\_COPY\_AND\_MOVE}}(NonCopyableNonMoveable)}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+ \Hypertarget{class_8h_ab0862a2f3a99aa0eaaba6e0ac81deea3}\label{class_8h_ab0862a2f3a99aa0eaaba6e0ac81deea3} 
+\index{class.h@{class.h}!LIBCAMERA\_DISABLE\_MOVE@{LIBCAMERA\_DISABLE\_MOVE}}
+\index{LIBCAMERA\_DISABLE\_MOVE@{LIBCAMERA\_DISABLE\_MOVE}!class.h@{class.h}}
+\doxysubsubsection{\texorpdfstring{LIBCAMERA\_DISABLE\_MOVE}{LIBCAMERA\_DISABLE\_MOVE}}
+{\footnotesize\ttfamily \#define LIBCAMERA\+\_\+\+DISABLE\+\_\+\+MOVE(\begin{DoxyParamCaption}\item[{}]{klass }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ klass(klass\ \&\&)\ =\ \textcolor{keyword}{delete};\ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ klass\ \&operator=(klass\ \&\&)\ =\ \textcolor{keyword}{delete};}
+
+\end{DoxyCode}
+
+
+Disable move construction and assignment of the {\itshape klass}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em klass} & The name of the class\\
+\hline
+\end{DoxyParams}
+Example usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{class\ }NonMoveable}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{\ \ \ \ NonMoveable();}
+\DoxyCodeLine{\ \ \ \ ...}
+\DoxyCodeLine{}
+\DoxyCodeLine{private:}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_8h_ab0862a2f3a99aa0eaaba6e0ac81deea3}{LIBCAMERA\_DISABLE\_MOVE}}(NonMoveable)}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+ \Hypertarget{class_8h_ad8c78641ec06c49edd227b63cc8449b5}\label{class_8h_ad8c78641ec06c49edd227b63cc8449b5} 
+\index{class.h@{class.h}!LIBCAMERA\_O\_PTR@{LIBCAMERA\_O\_PTR}}
+\index{LIBCAMERA\_O\_PTR@{LIBCAMERA\_O\_PTR}!class.h@{class.h}}
+\doxysubsubsection{\texorpdfstring{LIBCAMERA\_O\_PTR}{LIBCAMERA\_O\_PTR}}
+{\footnotesize\ttfamily \#define LIBCAMERA\+\_\+\+O\+\_\+\+PTR(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~ \+\_\+o$<$Public$>$()}
+
+
+
+Retrieve the public instance corresponding to the private data. 
+
+This macro is part of the \doxylink{classlibcamera_1_1Extensible}{libcamera\+::\+Extensible} class infrastructure. It may be used in any member function of a \doxylink{classlibcamera_1_1Extensible_1_1Private}{libcamera\+::\+Extensible\+::\+Private} subclass to access the public class instance corresponding to the private data. 

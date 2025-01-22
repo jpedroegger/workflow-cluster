@@ -1,0 +1,32 @@
+\doxysection{Camera\+Hal\+Manager Class Reference}
+\hypertarget{classCameraHalManager}{}\label{classCameraHalManager}\index{CameraHalManager@{CameraHalManager}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classCameraHalManager_af303b01f713292340d5c6bc1ec17d33d}\label{classCameraHalManager_af303b01f713292340d5c6bc1ec17d33d} 
+int {\bfseries init} ()
+\item 
+\Hypertarget{classCameraHalManager_a74d26e240625154d6d94f896d9d4edfc}\label{classCameraHalManager_a74d26e240625154d6d94f896d9d4edfc} 
+std\+::tuple$<$ \mbox{\hyperlink{classCameraDevice}{Camera\+Device}} \texorpdfstring{$\ast$}{*}, int $>$ {\bfseries open} (unsigned int id, const \mbox{\hyperlink{structhw__module__t}{hw\+\_\+module\+\_\+t}} \texorpdfstring{$\ast$}{*}module)
+\item 
+\Hypertarget{classCameraHalManager_a248041ca0c79a0b97d5f8ad7c1cd3eea}\label{classCameraHalManager_a248041ca0c79a0b97d5f8ad7c1cd3eea} 
+unsigned int {\bfseries num\+Cameras} () const
+\item 
+\Hypertarget{classCameraHalManager_a7c26900e16cdbbd70be015030fa1eb2e}\label{classCameraHalManager_a7c26900e16cdbbd70be015030fa1eb2e} 
+int {\bfseries get\+Camera\+Info} (unsigned int id, struct \mbox{\hyperlink{structcamera__info}{camera\+\_\+info}} \texorpdfstring{$\ast$}{*}info)
+\item 
+\Hypertarget{classCameraHalManager_ad156959ec8e6c489b624a77a7fa3a264}\label{classCameraHalManager_ad156959ec8e6c489b624a77a7fa3a264} 
+void {\bfseries set\+Callbacks} (const \mbox{\hyperlink{structcamera__module__callbacks}{camera\+\_\+module\+\_\+callbacks\+\_\+t}} \texorpdfstring{$\ast$}{*}callbacks)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classCameraHalManager_ad58afc8907752fd3806a82c12c3131a8}\label{classCameraHalManager_ad58afc8907752fd3806a82c12c3131a8} 
+static \mbox{\hyperlink{classCameraHalManager}{Camera\+Hal\+Manager}} \texorpdfstring{$\ast$}{*} {\bfseries instance} ()
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/android/camera\+\_\+hal\+\_\+manager.\+h\item 
+src/peripherals/camera/libcamera/src/android/camera\+\_\+hal\+\_\+manager.\+cpp\end{DoxyCompactItemize}

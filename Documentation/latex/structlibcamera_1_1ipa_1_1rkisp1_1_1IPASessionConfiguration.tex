@@ -1,0 +1,91 @@
+\doxysection{libcamera\+::ipa\+::rkisp1\+::IPASession\+Configuration Struct Reference}
+\hypertarget{structlibcamera_1_1ipa_1_1rkisp1_1_1IPASessionConfiguration}{}\label{structlibcamera_1_1ipa_1_1rkisp1_1_1IPASessionConfiguration}\index{libcamera::ipa::rkisp1::IPASessionConfiguration@{libcamera::ipa::rkisp1::IPASessionConfiguration}}
+
+
+Session configuration for the IPA module.  
+
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structlibcamera_1_1ipa_1_1rkisp1_1_1IPASessionConfiguration_a0dd1c5eae5401510cc2ee09e0b494221}\label{structlibcamera_1_1ipa_1_1rkisp1_1_1IPASessionConfiguration_a0dd1c5eae5401510cc2ee09e0b494221} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>struct \mbox{\hyperlink{structrkisp1__cif__isp__window}{rkisp1\_cif\_isp\_window}} {\bfseries measureWindow}\\
+\} {\bfseries agc}\\
+
+\end{tabbing}\begin{DoxyCompactList}\small\item\em AGC parameters configuration of the IPA. \end{DoxyCompactList}\item 
+\Hypertarget{structlibcamera_1_1ipa_1_1rkisp1_1_1IPASessionConfiguration_a3e6f3305bae2ef036afd32464a5adcc4}\label{structlibcamera_1_1ipa_1_1rkisp1_1_1IPASessionConfiguration_a3e6f3305bae2ef036afd32464a5adcc4} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>struct \mbox{\hyperlink{structrkisp1__cif__isp__window}{rkisp1\_cif\_isp\_window}} {\bfseries measureWindow}\\
+\>bool {\bfseries enabled}\\
+\} {\bfseries awb}\\
+
+\end{tabbing}\begin{DoxyCompactList}\small\item\em AWB parameters configuration of the IPA. \end{DoxyCompactList}\item 
+\Hypertarget{structlibcamera_1_1ipa_1_1rkisp1_1_1IPASessionConfiguration_a2506190d2523d9b9f45064a31997fee0}\label{structlibcamera_1_1ipa_1_1rkisp1_1_1IPASessionConfiguration_a2506190d2523d9b9f45064a31997fee0} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>bool {\bfseries enabled}\\
+\} {\bfseries lsc}\\
+
+\end{tabbing}\begin{DoxyCompactList}\small\item\em Lens Shading Correction configuration of the IPA. \end{DoxyCompactList}\item 
+\Hypertarget{structlibcamera_1_1ipa_1_1rkisp1_1_1IPASessionConfiguration_a209d6007b5672394f4a298b85d987862}\label{structlibcamera_1_1ipa_1_1rkisp1_1_1IPASessionConfiguration_a209d6007b5672394f4a298b85d987862} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>\mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{utils::Duration}} {\bfseries minExposureTime}\\
+\>\mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{utils::Duration}} {\bfseries maxExposureTime}\\
+\>double {\bfseries minAnalogueGain}\\
+\>double {\bfseries maxAnalogueGain}\\
+\>int32\_t {\bfseries defVBlank}\\
+\>\mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{utils::Duration}} {\bfseries lineDuration}\\
+\>\mbox{\hyperlink{classlibcamera_1_1Size}{Size}} {\bfseries size}\\
+\} {\bfseries sensor}\\
+
+\end{tabbing}\begin{DoxyCompactList}\small\item\em Sensor-\/specific configuration of the IPA. \end{DoxyCompactList}\item 
+\Hypertarget{structlibcamera_1_1ipa_1_1rkisp1_1_1IPASessionConfiguration_a69a964ca23e479d7e238dde8cdc2667f}\label{structlibcamera_1_1ipa_1_1rkisp1_1_1IPASessionConfiguration_a69a964ca23e479d7e238dde8cdc2667f} 
+bool {\bfseries raw}
+\begin{DoxyCompactList}\small\item\em Indicates if the camera is configured to capture raw frames. \end{DoxyCompactList}\item 
+\Hypertarget{structlibcamera_1_1ipa_1_1rkisp1_1_1IPASessionConfiguration_a7609d858f554786af528cd11142cd7db}\label{structlibcamera_1_1ipa_1_1rkisp1_1_1IPASessionConfiguration_a7609d858f554786af528cd11142cd7db} 
+uint32\+\_\+t {\bfseries param\+Format}
+\begin{DoxyCompactList}\small\item\em The fourcc of the parameters buffers format. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Session configuration for the IPA module. 
+
+The session configuration contains all IPA configuration parameters that remain constant during the capture session, from IPA module start to stop. It is typically set during the configure() operation of the IPA module, but may also be updated in the start() operation. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structlibcamera_1_1ipa_1_1rkisp1_1_1IPASessionConfiguration_a72374d8ba3f2b2ae442ecdbdc6e21e9f}\label{structlibcamera_1_1ipa_1_1rkisp1_1_1IPASessionConfiguration_a72374d8ba3f2b2ae442ecdbdc6e21e9f} 
+\index{libcamera::ipa::rkisp1::IPASessionConfiguration@{libcamera::ipa::rkisp1::IPASessionConfiguration}!enabled@{enabled}}
+\index{enabled@{enabled}!libcamera::ipa::rkisp1::IPASessionConfiguration@{libcamera::ipa::rkisp1::IPASessionConfiguration}}
+\doxysubsubsection{\texorpdfstring{enabled}{enabled}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structlibcamera_1_1ipa_1_1rkisp1_1_1IPASessionConfiguration_a2506190d2523d9b9f45064a31997fee0}{lsc}} libcamera\+::ipa\+::rkisp1\+::\+IPASession\+Configuration\+::enabled}
+
+
+
+Indicates if the AWB hardware is enabled and applies colour gains. 
+
+Indicates if the LSC hardware is enabled.
+
+The AWB module of the ISP applies colour gains and computes statistics. It is enabled when the AWB algorithm is loaded, regardless of whether the algorithm operates in manual or automatic mode. \Hypertarget{structlibcamera_1_1ipa_1_1rkisp1_1_1IPASessionConfiguration_a30fab1118e9449425e2ed9a9c8f94d7f}\label{structlibcamera_1_1ipa_1_1rkisp1_1_1IPASessionConfiguration_a30fab1118e9449425e2ed9a9c8f94d7f} 
+\index{libcamera::ipa::rkisp1::IPASessionConfiguration@{libcamera::ipa::rkisp1::IPASessionConfiguration}!measureWindow@{measureWindow}}
+\index{measureWindow@{measureWindow}!libcamera::ipa::rkisp1::IPASessionConfiguration@{libcamera::ipa::rkisp1::IPASessionConfiguration}}
+\doxysubsubsection{\texorpdfstring{measureWindow}{measureWindow}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structlibcamera_1_1ipa_1_1rkisp1_1_1IPASessionConfiguration_a3e6f3305bae2ef036afd32464a5adcc4}{awb}} libcamera\+::ipa\+::rkisp1\+::\+IPASession\+Configuration\+::measure\+Window}
+
+
+
+AGC measure window. 
+
+AWB measure window. 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/ipa/rkisp1/\mbox{\hyperlink{rkisp1_2ipa__context_8h}{ipa\+\_\+context.\+h}}\item 
+src/peripherals/camera/libcamera/src/ipa/rkisp1/ipa\+\_\+context.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,104 @@
+\chapter{Overview}
+\hypertarget{index}{}\label{index}\index{Overview@{Overview}}
+\label{index_md_README}%
+\Hypertarget{index_md_README}%
+ The Jet\+Racer project is organized into a modular structure, where each package represents a ROS2 node encapsulating a specific aspect of the system. The architecture is divided into three main layers, each with its own responsibility\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{Bus Interfaces}}\+: Directly interact with hardware via different protocols (CAN, I2C).
+\item {\bfseries{Drivers}}\+: Defines device specific operations.
+\item {\bfseries{Peripherals}}\+: Communicate with the drivers and manage higher-\/level device functionality.
+\item {\bfseries{Head Unit}}\+: Coordinates the peripherals and handles higher-\/level logic.
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{.}
+\DoxyCodeLine{├──\ bus\_interfaces}
+\DoxyCodeLine{│  \ ├──\ can\_interface}
+\DoxyCodeLine{│  \ └──\ i2c\_interface}
+\DoxyCodeLine{├──\ drivers}
+\DoxyCodeLine{│  \ ├──\ abstract\_driver}
+\DoxyCodeLine{│  \ ├──\ custom\_msgs}
+\DoxyCodeLine{│  \ ├──\ ina219\_driver}
+\DoxyCodeLine{│  \ ├──\ pca9685\_driver}
+\DoxyCodeLine{│  \ └──\ ssd1306\_driver}
+\DoxyCodeLine{├──\ head\_unit}
+\DoxyCodeLine{│  \ ├──\ display\_routine}
+\DoxyCodeLine{│  \ └──\ teleop}
+\DoxyCodeLine{├──\ peripherals}
+\DoxyCodeLine{│  \ ├──\ battery}
+\DoxyCodeLine{│  \ ├──\ camera}
+\DoxyCodeLine{│  \ ├──\ dc\_motors}
+\DoxyCodeLine{│  \ ├──\ oled\_display}
+\DoxyCodeLine{│  \ ├──\ servo\_motor}
+\DoxyCodeLine{│  \ └──\ speed\_sensor}
+\DoxyCodeLine{└──\ tests}
+\DoxyCodeLine{\ \ \ \ └──\ i2c\_peripheral\_stress\_test}
+
+\end{DoxyCode}
+ \hypertarget{index_autotoc_md1}{}\doxysection{\texorpdfstring{Layered Architecture}{Layered Architecture}}\label{index_autotoc_md1}
+The project structure follows a clear layered architecture that helps isolate responsibilities and ensures modularity. The three main layers are\+:\hypertarget{index_autotoc_md2}{}\doxysubsection{\texorpdfstring{1. $<$strong$>$\+Bus Interfaces (can\+\_\+interface, i2c\+\_\+interface)$<$/strong$>$}{1. <strong>Bus Interfaces (can\_interface, i2c\_interface)</strong>}}\label{index_autotoc_md2}
+These packages manage the direct interaction with hardware data buses. They are the closest to the hardware and abstract the communication with physical devices such as CAN and I2C interfaces.
+\begin{DoxyItemize}
+\item {\bfseries{Responsibility}}\+: Communicate with hardware via data buses (CAN, I2C).
+\item {\bfseries{ROS2 Mechanism}}\+: Provide services or topics for peripheral nodes to interact with hardware.
+\end{DoxyItemize}\hypertarget{index_autotoc_md3}{}\doxysubsection{\texorpdfstring{2. $<$strong$>$\+Drivers (abstract\+\_\+driver, pca9685\+\_\+driver, etc.)$<$/strong$>$}{2. <strong>Drivers (abstract\_driver, pca9685\_driver, etc.)</strong>}}\label{index_autotoc_md3}
+Drivers encapsulate device-\/specific logic into reusable objects. Each driver handles the low-\/level details of interacting with its associated hardware. These drivers are now decoupled from the peripheral nodes to promote code reuse and maintainability.
+\begin{DoxyItemize}
+\item {\bfseries{Responsibility}}\+: Provide device-\/specific functionality, abstracting away low-\/level hardware interactions.
+\item {\bfseries{Design Improvement}}\+: Peripheral nodes now hold an instance of their corresponding driver. If the driver fails to initialize (e.\+g., due to hardware issues), the peripheral node will not start, preventing undefined behavior or unnecessary crashes.
+\item {\bfseries{ROS2 Mechanism}}\+: Exposed as libraries to be used by peripherals or other nodes.
+\end{DoxyItemize}\hypertarget{index_autotoc_md4}{}\doxysubsection{\texorpdfstring{3. $<$strong$>$\+Peripherals (oled\+\_\+display, servo\+\_\+motor, dc\+\_\+motors, etc.)$<$/strong$>$}{3. <strong>Peripherals (oled\_display, servo\_motor, dc\_motors, etc.)</strong>}}\label{index_autotoc_md4}
+Peripherals interact with drivers to manage the higher-\/level functionality of each device. For example, the {\ttfamily servo\+\_\+motor} package uses the {\ttfamily pca9685\+\_\+driver} to control servos. Each peripheral node initializes its driver and interact with the bus interfaces via his driver instance.
+\begin{DoxyItemize}
+\item {\bfseries{Responsibility}}\+: Manage higher-\/level device functionality and interact with drivers.
+\item {\bfseries{Design Improvement}}\+: Peripheral nodes depend on the proper initialization of their corresponding driver. If the driver cannot initialize successfully (e.\+g., due to a missing or malfunctioning device), the peripheral node will fail gracefully.
+\end{DoxyItemize}\hypertarget{index_autotoc_md5}{}\doxysubsection{\texorpdfstring{4. $<$strong$>$\+Head Unit (coordinator, infotainment)$<$/strong$>$}{4. <strong>Head Unit (coordinator, infotainment)</strong>}}\label{index_autotoc_md5}
+The head unit represents the higher-\/level logic of the system, coordinating the operation of peripherals and providing user interaction functionality (e.\+g., infotainment system, control coordination).
+\begin{DoxyItemize}
+\item {\bfseries{Responsibility}}\+: Coordinate and manage the operation of peripherals.
+\item {\bfseries{ROS2 Mechanism}}\+: Provide high-\/level functionalities and user interactions through nodes that communicate with peripheral nodes.
+\end{DoxyItemize}\hypertarget{index_autotoc_md6}{}\doxysection{\texorpdfstring{Build Instructions}{Build Instructions}}\label{index_autotoc_md6}
+To build the Jet\+Racer project, follow these steps\+:
+
+
+\begin{DoxyEnumerate}
+\item Open a terminal and navigate to the root directory of the project\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cd\ JetRacer}
+
+\end{DoxyCode}
+
+\item Build the project using {\ttfamily colcon}\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{colcon\ build\ -\/-\/symlink-\/install}
+
+\end{DoxyCode}
+
+
+This will compile the source code and set up the appropriate environment for running the nodes.
+\item Execute the launch script\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ros2\ launch\ launch/JetRacer\_launch.py}
+
+\end{DoxyCode}
+
+\item Open a terminal to launch the {\ttfamily rqt} console and start interacting with topics, or directly publish into topics\+:
+
+To launch the {\ttfamily rqt} console\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{rqt}
+
+\end{DoxyCode}
+
+
+Or directly publish a topic\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ros2\ topic\ list}
+\DoxyCodeLine{ros2\ topic\ pub\ cmd\_display\ custom\_msgs/Display\ '\{line1:\ "{}Hello\ world"{}\}'\ -\/-\/once}
+
+\end{DoxyCode}
+ 
+\end{DoxyEnumerate}

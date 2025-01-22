@@ -1,0 +1,26 @@
+\doxysection{sharpen\+\_\+status.\+h}
+\hypertarget{sharpen__status_8h_source}{}\label{sharpen__status_8h_source}\index{src/peripherals/camera/libcamera/src/ipa/rpi/controller/sharpen\_status.h@{src/peripherals/camera/libcamera/src/ipa/rpi/controller/sharpen\_status.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ BSD-\/2-\/Clause\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2019,\ Raspberry\ Pi\ Ltd}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Sharpen\ control\ algorithm\ status}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{comment}{/*\ The\ "{}sharpen"{}\ algorithm\ stores\ the\ strength\ to\ use.\ */}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structSharpenStatus}{SharpenStatus}}\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{comment}{/*\ controls\ the\ smallest\ level\ of\ detail\ (or\ noise!)\ that\ sharpening\ will\ pick\ up\ */}}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{double}\ threshold;}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{comment}{/*\ the\ rate\ at\ which\ the\ sharpening\ response\ ramps\ once\ above\ the\ threshold\ */}}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{double}\ strength;}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{comment}{/*\ upper\ limit\ of\ the\ allowed\ sharpening\ response\ */}}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{double}\ limit;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{/*\ The\ sharpening\ strength\ requested\ by\ the\ user\ or\ application.\ */}}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{double}\ userStrength;}
+\DoxyCodeLine{00020\ \};}
+
+\end{DoxyCode}

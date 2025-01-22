@@ -1,0 +1,78 @@
+\doxysection{ipa\+\_\+controls\+\_\+header Struct Reference}
+\hypertarget{structipa__controls__header}{}\label{structipa__controls__header}\index{ipa\_controls\_header@{ipa\_controls\_header}}
+
+
+Serialized control packet header.  
+
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structipa__controls__header_ace71ed107a90f0e8859badc41c1bbcc0}{version}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structipa__controls__header_aeca2b59151bc80a5d26752de8b481083}{handle}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structipa__controls__header_a0fa8db32eb65b4c4820f1f20759da5b2}{entries}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structipa__controls__header_a9a0ce631fa593b3b41d166b0870d4eb8}{size}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structipa__controls__header_afcc4caa0f6eb56f4357ab2441581ef9e}{data\+\_\+offset}}
+\item 
+enum ipa\+\_\+controls\+\_\+id\+\_\+map\+\_\+type \mbox{\hyperlink{structipa__controls__header_a23e49a3d6e8fa4206814164c894c087e}{id\+\_\+map\+\_\+type}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structipa__controls__header_a9772581ac845390d02366b1a19ade40e}{reserved}} \mbox{[}2\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Serialized control packet header. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structipa__controls__header_afcc4caa0f6eb56f4357ab2441581ef9e}\label{structipa__controls__header_afcc4caa0f6eb56f4357ab2441581ef9e} 
+\index{ipa\_controls\_header@{ipa\_controls\_header}!data\_offset@{data\_offset}}
+\index{data\_offset@{data\_offset}!ipa\_controls\_header@{ipa\_controls\_header}}
+\doxysubsubsection{\texorpdfstring{data\_offset}{data\_offset}}
+{\footnotesize\ttfamily ipa\+\_\+controls\+\_\+header\+::data\+\_\+offset}
+
+Offset in bytes from the beginning of the packet of the data section start \Hypertarget{structipa__controls__header_a0fa8db32eb65b4c4820f1f20759da5b2}\label{structipa__controls__header_a0fa8db32eb65b4c4820f1f20759da5b2} 
+\index{ipa\_controls\_header@{ipa\_controls\_header}!entries@{entries}}
+\index{entries@{entries}!ipa\_controls\_header@{ipa\_controls\_header}}
+\doxysubsubsection{\texorpdfstring{entries}{entries}}
+{\footnotesize\ttfamily ipa\+\_\+controls\+\_\+header\+::entries}
+
+Number of entries in the packet \Hypertarget{structipa__controls__header_aeca2b59151bc80a5d26752de8b481083}\label{structipa__controls__header_aeca2b59151bc80a5d26752de8b481083} 
+\index{ipa\_controls\_header@{ipa\_controls\_header}!handle@{handle}}
+\index{handle@{handle}!ipa\_controls\_header@{ipa\_controls\_header}}
+\doxysubsubsection{\texorpdfstring{handle}{handle}}
+{\footnotesize\ttfamily ipa\+\_\+controls\+\_\+header\+::handle}
+
+For Control\+Info\+Map packets, this field contains a unique non-\/zero handle generated when the Control\+Info\+Map is serialized. For Control\+List packets, this field contains the handle of the corresponding Control\+Info\+Map. \Hypertarget{structipa__controls__header_a23e49a3d6e8fa4206814164c894c087e}\label{structipa__controls__header_a23e49a3d6e8fa4206814164c894c087e} 
+\index{ipa\_controls\_header@{ipa\_controls\_header}!id\_map\_type@{id\_map\_type}}
+\index{id\_map\_type@{id\_map\_type}!ipa\_controls\_header@{ipa\_controls\_header}}
+\doxysubsubsection{\texorpdfstring{id\_map\_type}{id\_map\_type}}
+{\footnotesize\ttfamily ipa\+\_\+controls\+\_\+header\+::id\+\_\+map\+\_\+type}
+
+The id map type as defined by the ipa\+\_\+controls\+\_\+id\+\_\+map\+\_\+type enumeration \Hypertarget{structipa__controls__header_a9772581ac845390d02366b1a19ade40e}\label{structipa__controls__header_a9772581ac845390d02366b1a19ade40e} 
+\index{ipa\_controls\_header@{ipa\_controls\_header}!reserved@{reserved}}
+\index{reserved@{reserved}!ipa\_controls\_header@{ipa\_controls\_header}}
+\doxysubsubsection{\texorpdfstring{reserved}{reserved}}
+{\footnotesize\ttfamily ipa\+\_\+controls\+\_\+header\+::reserved}
+
+Reserved for future extensions \Hypertarget{structipa__controls__header_a9a0ce631fa593b3b41d166b0870d4eb8}\label{structipa__controls__header_a9a0ce631fa593b3b41d166b0870d4eb8} 
+\index{ipa\_controls\_header@{ipa\_controls\_header}!size@{size}}
+\index{size@{size}!ipa\_controls\_header@{ipa\_controls\_header}}
+\doxysubsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily ipa\+\_\+controls\+\_\+header\+::size}
+
+The total packet size in bytes \Hypertarget{structipa__controls__header_ace71ed107a90f0e8859badc41c1bbcc0}\label{structipa__controls__header_ace71ed107a90f0e8859badc41c1bbcc0} 
+\index{ipa\_controls\_header@{ipa\_controls\_header}!version@{version}}
+\index{version@{version}!ipa\_controls\_header@{ipa\_controls\_header}}
+\doxysubsubsection{\texorpdfstring{version}{version}}
+{\footnotesize\ttfamily ipa\+\_\+controls\+\_\+header\+::version}
+
+Control packet format version number (shall be IPA\+\_\+\+CONTROLS\+\_\+\+FORMAT\+\_\+\+VERSION) 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/ipa/\mbox{\hyperlink{ipa__controls_8h}{ipa\+\_\+controls.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/ipa\+\_\+controls.\+cpp\end{DoxyCompactItemize}

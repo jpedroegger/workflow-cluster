@@ -1,0 +1,111 @@
+\doxysection{lsc\+\_\+polynomial.\+h}
+\hypertarget{lsc__polynomial_8h_source}{}\label{lsc__polynomial_8h_source}\index{src/peripherals/camera/libcamera/src/ipa/libipa/lsc\_polynomial.h@{src/peripherals/camera/libcamera/src/ipa/libipa/lsc\_polynomial.h}}
+\mbox{\hyperlink{lsc__polynomial_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2024,\ Ideas\ On\ Board}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Helper\ for\ radial\ polynomial\ used\ in\ lens\ shading\ correction.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <assert.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{libcamera_2base_2log_8h}{libcamera/base/log.h}}>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <libcamera/base/span.h>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{yaml__parser_8h}{libcamera/internal/yaml\_parser.h}}"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacelibcamera}{libcamera}}\ \{}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \mbox{\hyperlink{libcamera_2base_2log_8h_a051a13068200cd8f4e845a4c7101b423}{LOG\_DECLARE\_CATEGORY}}(LscPolynomial)}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{namespace\ }ipa\ \{}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1ipa_1_1LscPolynomial}{LscPolynomial}}}
+\DoxyCodeLine{00026\ \{}
+\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1LscPolynomial_a6612a3616761a93e4fbca387b86ec960}{LscPolynomial}}(\textcolor{keywordtype}{double}\ cx\ =\ 0.0,\ \textcolor{keywordtype}{double}\ cy\ =\ 0.0,\ \textcolor{keywordtype}{double}\ k0\ =\ 0.0,}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ k1\ =\ 0.0,\ \textcolor{keywordtype}{double}\ k2\ =\ 0.0,\ \textcolor{keywordtype}{double}\ k3\ =\ 0.0,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ k4\ =\ 0.0)}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ :\ cx\_(cx),\ cy\_(cy),\ cnx\_(0),\ cny\_(0),}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ coefficients\_(\{\ k0,\ k1,\ k2,\ k3,\ k4\ \})}
+\DoxyCodeLine{00033\ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1LscPolynomial_ae6a423f05aa3d4d8d4c046ffb20a3cdf}{sampleAtNormalizedPixelPos}}(\textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ y)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00037\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ dx\ =\ x\ -\/\ cnx\_;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ dy\ =\ y\ -\/\ cny\_;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ r\ =\ sqrt(dx\ *\ dx\ +\ dy\ *\ dy);}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ res\ =\ 1.0;}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ coefficients\_.size();\ i++)\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ res\ +=\ coefficients\_[i]\ *\ std::pow(r,\ (i\ +\ 1)\ *\ 2);}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
+\DoxyCodeLine{00046\ \ \ \ \ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1LscPolynomial_a21b0b9987376f31602a176be915774df}{getM}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00049\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ cpx\ =\ imageSize\_.\mbox{\hyperlink{classlibcamera_1_1Size_a5bdf8eb2cde21d66556ae9f56c2c700c}{width}}\ *\ cx\_;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ cpy\ =\ imageSize\_.\mbox{\hyperlink{classlibcamera_1_1Size_adf4bbd0053ac3659eaf4515eab64ba81}{height}}\ *\ cy\_;}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ mx\ =\ std::max(cpx,\ std::fabs(imageSize\_.\mbox{\hyperlink{classlibcamera_1_1Size_a5bdf8eb2cde21d66556ae9f56c2c700c}{width}}\ -\/\ cpx));}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ my\ =\ std::max(cpy,\ std::fabs(imageSize\_.\mbox{\hyperlink{classlibcamera_1_1Size_adf4bbd0053ac3659eaf4515eab64ba81}{height}}\ -\/\ cpy));}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sqrt(mx\ *\ mx\ +\ my\ *\ my);}
+\DoxyCodeLine{00056\ \ \ \ \ \}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1LscPolynomial_a064093131443d355f3637f3777dee22a}{setReferenceImageSize}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \&size)}
+\DoxyCodeLine{00059\ \ \ \ \ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ assert(!size.isNull());}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ imageSize\_\ =\ size;}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Calculate\ normalized\ centers\ */}}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ m\ =\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1LscPolynomial_a21b0b9987376f31602a176be915774df}{getM}}();}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ cnx\_\ =\ (size.width\ *\ cx\_)\ /\ m;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ cny\_\ =\ (size.height\ *\ cy\_)\ /\ m;}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{double}\ cx\_;}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{double}\ cy\_;}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{double}\ cnx\_;}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{double}\ cny\_;}
+\DoxyCodeLine{00074\ \ \ \ \ std::array<double,\ 5>\ coefficients\_;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ imageSize\_;}
+\DoxyCodeLine{00077\ \};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \}\ \textcolor{comment}{/*\ namespace\ ipa\ */}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#ifndef\ \_\_DOXYGEN\_\_}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00084\ \textcolor{keyword}{struct\ }YamlObject::Getter<ipa::LscPolynomial>\ \{}
+\DoxyCodeLine{00085\ \ \ \ \ std::optional<ipa::LscPolynomial>\ \mbox{\hyperlink{classlibcamera_1_1YamlObject_a925192c04e1bf5dce2cefaa6ea84e2d6}{get}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1YamlObject}{YamlObject}}\ \&obj)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00086\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ std::optional<double>\ cx\ =\ obj[\textcolor{stringliteral}{"{}cx"{}}].\mbox{\hyperlink{classlibcamera_1_1YamlObject_a925192c04e1bf5dce2cefaa6ea84e2d6}{get}}<\textcolor{keywordtype}{double}>();}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ std::optional<double>\ cy\ =\ obj[\textcolor{stringliteral}{"{}cy"{}}].\mbox{\hyperlink{classlibcamera_1_1YamlObject_a925192c04e1bf5dce2cefaa6ea84e2d6}{get}}<\textcolor{keywordtype}{double}>();}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ std::optional<double>\ k0\ =\ obj[\textcolor{stringliteral}{"{}k0"{}}].\mbox{\hyperlink{classlibcamera_1_1YamlObject_a925192c04e1bf5dce2cefaa6ea84e2d6}{get}}<\textcolor{keywordtype}{double}>();}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ std::optional<double>\ k1\ =\ obj[\textcolor{stringliteral}{"{}k1"{}}].\mbox{\hyperlink{classlibcamera_1_1YamlObject_a925192c04e1bf5dce2cefaa6ea84e2d6}{get}}<\textcolor{keywordtype}{double}>();}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ std::optional<double>\ k2\ =\ obj[\textcolor{stringliteral}{"{}k2"{}}].\mbox{\hyperlink{classlibcamera_1_1YamlObject_a925192c04e1bf5dce2cefaa6ea84e2d6}{get}}<\textcolor{keywordtype}{double}>();}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ std::optional<double>\ k3\ =\ obj[\textcolor{stringliteral}{"{}k3"{}}].\mbox{\hyperlink{classlibcamera_1_1YamlObject_a925192c04e1bf5dce2cefaa6ea84e2d6}{get}}<\textcolor{keywordtype}{double}>();}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ std::optional<double>\ k4\ =\ obj[\textcolor{stringliteral}{"{}k4"{}}].\mbox{\hyperlink{classlibcamera_1_1YamlObject_a925192c04e1bf5dce2cefaa6ea84e2d6}{get}}<\textcolor{keywordtype}{double}>();}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!(cx\ \&\&\ cy\ \&\&\ k0\ \&\&\ k1\ \&\&\ k2\ \&\&\ k3\ \&\&\ k4))}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{libcamera_2base_2log_8h_a3577749fb48d57a158b8ac1a0b3ab57e}{LOG}}(LscPolynomial,\ Error)}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Polynomial\ is\ missing\ a\ parameter"{}};}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1LscPolynomial}{ipa::LscPolynomial}}(*cx,\ *cy,\ *k0,\ *k1,\ *k2,\ *k3,\ *k4);}
+\DoxyCodeLine{00100\ \ \ \ \ \}}
+\DoxyCodeLine{00101\ \};}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \}\ \textcolor{comment}{/*\ namespace\ libcamera\ */}}
+
+\end{DoxyCode}

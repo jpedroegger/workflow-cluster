@@ -1,0 +1,52 @@
+\doxysection{ipc\+\_\+pipe\+\_\+unixsocket.\+h}
+\hypertarget{ipc__pipe__unixsocket_8h_source}{}\label{ipc__pipe__unixsocket_8h_source}\index{src/peripherals/camera/libcamera/include/libcamera/internal/ipc\_pipe\_unixsocket.h@{src/peripherals/camera/libcamera/include/libcamera/internal/ipc\_pipe\_unixsocket.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2020,\ Google\ Inc.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Image\ Processing\ Algorithm\ IPC\ module\ using\ unix\ socket}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ipc__pipe_8h}{libcamera/internal/ipc\_pipe.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ipc__unixsocket_8h}{libcamera/internal/ipc\_unixsocket.h}}"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacelibcamera}{libcamera}}\ \{}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }Process;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1IPCPipeUnixSocket}{IPCPipeUnixSocket}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classlibcamera_1_1IPCPipe}{IPCPipe}}}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1IPCPipeUnixSocket}{IPCPipeUnixSocket}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *ipaModulePath,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *ipaProxyWorkerPath);}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1IPCPipeUnixSocket}{\string~IPCPipeUnixSocket}}();}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1IPCPipeUnixSocket_a11a5b62316518ea68bdb8acf95567666}{sendSync}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1IPCMessage}{IPCMessage}}\ \&in,}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1IPCMessage}{IPCMessage}}\ *out\ =\ \textcolor{keyword}{nullptr})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1IPCPipeUnixSocket_a382b3a7a7f6ed10af10c2c4d0b56c477}{sendAsync}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1IPCMessage}{IPCMessage}}\ \&data)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{struct\ }CallData\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structlibcamera_1_1IPCUnixSocket_1_1Payload}{IPCUnixSocket::Payload}}\ *response;}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ done;}
+\DoxyCodeLine{00035\ \ \ \ \ \};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ readyRead();}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ call(\textcolor{keyword}{const}\ \mbox{\hyperlink{structlibcamera_1_1IPCUnixSocket_1_1Payload}{IPCUnixSocket::Payload}}\ \&message,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structlibcamera_1_1IPCUnixSocket_1_1Payload}{IPCUnixSocket::Payload}}\ *response,\ uint32\_t\ seq);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ std::unique\_ptr<Process>\ proc\_;}
+\DoxyCodeLine{00042\ \ \ \ \ std::unique\_ptr<IPCUnixSocket>\ socket\_;}
+\DoxyCodeLine{00043\ \ \ \ \ std::map<uint32\_t,\ CallData>\ callData\_;}
+\DoxyCodeLine{00044\ \};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \}\ \textcolor{comment}{/*\ namespace\ libcamera\ */}}
+
+\end{DoxyCode}

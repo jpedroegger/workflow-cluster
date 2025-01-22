@@ -1,0 +1,115 @@
+\doxysection{libcamera\+::Semaphore Class Reference}
+\hypertarget{classlibcamera_1_1Semaphore}{}\label{classlibcamera_1_1Semaphore}\index{libcamera::Semaphore@{libcamera::Semaphore}}
+
+
+General-\/purpose counting semaphore.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1Semaphore_a90b5132962fde8bf11450c2ca4a2fdb3}{Semaphore}} (unsigned int n=0)
+\begin{DoxyCompactList}\small\item\em Construct a semaphore with {\itshape n} resources. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classlibcamera_1_1Semaphore_a6f7388c198b17adfd0bcde0368d0c29c}{available}} () LIBCAMERA\+\_\+\+TSA\+\_\+\+EXCLUDES(mutex\+\_\+)
+\begin{DoxyCompactList}\small\item\em Retrieve the number of available resources. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1Semaphore_a60abc22a4c25592ec6c78cd888eeb8a9}{acquire}} (unsigned int n=1) LIBCAMERA\+\_\+\+TSA\+\_\+\+EXCLUDES(mutex\+\_\+)
+\begin{DoxyCompactList}\small\item\em Acquire {\itshape n} resources. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlibcamera_1_1Semaphore_aae3d125a055de724647f79b1fac4af59}{try\+Acquire}} (unsigned int n=1) LIBCAMERA\+\_\+\+TSA\+\_\+\+EXCLUDES(mutex\+\_\+)
+\begin{DoxyCompactList}\small\item\em Try to acquire {\itshape n} resources without blocking. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1Semaphore_a4dd1d0e84deb03a3a86c1116b09935ff}{release}} (unsigned int n=1) LIBCAMERA\+\_\+\+TSA\+\_\+\+EXCLUDES(mutex\+\_\+)
+\begin{DoxyCompactList}\small\item\em Release {\itshape n} resources. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+General-\/purpose counting semaphore. 
+
+A semaphore is a locking primitive that protects resources. It is created with an initial number of resources (which may be 0), and offers two primitives to acquire and release resources. The \doxylink{classlibcamera_1_1Semaphore_a60abc22a4c25592ec6c78cd888eeb8a9}{acquire()} function tries to acquire a number of resources, and blocks if not enough resources are available until they get released. The \doxylink{classlibcamera_1_1Semaphore_a4dd1d0e84deb03a3a86c1116b09935ff}{release()} function releases a number of resources, waking up any consumer blocked on an \doxylink{classlibcamera_1_1Semaphore_a60abc22a4c25592ec6c78cd888eeb8a9}{acquire()} call. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlibcamera_1_1Semaphore_a90b5132962fde8bf11450c2ca4a2fdb3}\label{classlibcamera_1_1Semaphore_a90b5132962fde8bf11450c2ca4a2fdb3} 
+\index{libcamera::Semaphore@{libcamera::Semaphore}!Semaphore@{Semaphore}}
+\index{Semaphore@{Semaphore}!libcamera::Semaphore@{libcamera::Semaphore}}
+\doxysubsubsection{\texorpdfstring{Semaphore()}{Semaphore()}}
+{\footnotesize\ttfamily libcamera\+::\+Semaphore\+::\+Semaphore (\begin{DoxyParamCaption}\item[{unsigned int}]{n = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Construct a semaphore with {\itshape n} resources. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em n} & The resource count \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1Semaphore_a60abc22a4c25592ec6c78cd888eeb8a9}\label{classlibcamera_1_1Semaphore_a60abc22a4c25592ec6c78cd888eeb8a9} 
+\index{libcamera::Semaphore@{libcamera::Semaphore}!acquire@{acquire}}
+\index{acquire@{acquire}!libcamera::Semaphore@{libcamera::Semaphore}}
+\doxysubsubsection{\texorpdfstring{acquire()}{acquire()}}
+{\footnotesize\ttfamily void libcamera\+::\+Semaphore\+::acquire (\begin{DoxyParamCaption}\item[{unsigned int}]{n = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+
+
+Acquire {\itshape n} resources. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em n} & The resource count\\
+\hline
+\end{DoxyParams}
+This function attempts to acquire {\itshape n} resources. If {\itshape n} is higher than the number of available resources, the call will block until enough resources become available. \Hypertarget{classlibcamera_1_1Semaphore_a6f7388c198b17adfd0bcde0368d0c29c}\label{classlibcamera_1_1Semaphore_a6f7388c198b17adfd0bcde0368d0c29c} 
+\index{libcamera::Semaphore@{libcamera::Semaphore}!available@{available}}
+\index{available@{available}!libcamera::Semaphore@{libcamera::Semaphore}}
+\doxysubsubsection{\texorpdfstring{available()}{available()}}
+{\footnotesize\ttfamily unsigned int libcamera\+::\+Semaphore\+::available (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieve the number of available resources. 
+
+\begin{DoxyReturn}{Returns}
+The number of available resources 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Semaphore_a4dd1d0e84deb03a3a86c1116b09935ff}\label{classlibcamera_1_1Semaphore_a4dd1d0e84deb03a3a86c1116b09935ff} 
+\index{libcamera::Semaphore@{libcamera::Semaphore}!release@{release}}
+\index{release@{release}!libcamera::Semaphore@{libcamera::Semaphore}}
+\doxysubsubsection{\texorpdfstring{release()}{release()}}
+{\footnotesize\ttfamily void libcamera\+::\+Semaphore\+::release (\begin{DoxyParamCaption}\item[{unsigned int}]{n = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+
+
+Release {\itshape n} resources. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em n} & The resource count\\
+\hline
+\end{DoxyParams}
+This function releases {\itshape n} resources, increasing the available resource count by {\itshape n}. If the number of available resources becomes large enough for any consumer blocked on an \doxylink{classlibcamera_1_1Semaphore_a60abc22a4c25592ec6c78cd888eeb8a9}{acquire()} call, those consumers get woken up. \Hypertarget{classlibcamera_1_1Semaphore_aae3d125a055de724647f79b1fac4af59}\label{classlibcamera_1_1Semaphore_aae3d125a055de724647f79b1fac4af59} 
+\index{libcamera::Semaphore@{libcamera::Semaphore}!tryAcquire@{tryAcquire}}
+\index{tryAcquire@{tryAcquire}!libcamera::Semaphore@{libcamera::Semaphore}}
+\doxysubsubsection{\texorpdfstring{tryAcquire()}{tryAcquire()}}
+{\footnotesize\ttfamily bool libcamera\+::\+Semaphore\+::try\+Acquire (\begin{DoxyParamCaption}\item[{unsigned int}]{n = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+
+
+Try to acquire {\itshape n} resources without blocking. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em n} & The resource count\\
+\hline
+\end{DoxyParams}
+This function attempts to acquire {\itshape n} resources. If {\itshape n} is higher than the number of available resources, it returns false immediately without acquiring any resource. Otherwise it acquires the resources and returns true.
+
+\begin{DoxyReturn}{Returns}
+True if the resources have been acquired, false otherwise 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/base/\mbox{\hyperlink{semaphore_8h}{semaphore.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/base/semaphore.\+cpp\end{DoxyCompactItemize}

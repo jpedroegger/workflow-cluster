@@ -1,0 +1,61 @@
+\doxysection{Camera\+Buffer Class Reference}
+\hypertarget{classCameraBuffer}{}\label{classCameraBuffer}\index{CameraBuffer@{CameraBuffer}}
+Inheritance diagram for Camera\+Buffer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCameraBuffer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classCameraBuffer_1_1Private}{Private}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classCameraBuffer_ad7e71f182d26179fbd2e337944d71a4f}\label{classCameraBuffer_ad7e71f182d26179fbd2e337944d71a4f} 
+{\bfseries Camera\+Buffer} (\mbox{\hyperlink{structnative__handle}{buffer\+\_\+handle\+\_\+t}} camera3\+Buffer, \mbox{\hyperlink{classlibcamera_1_1PixelFormat}{libcamera\+::\+Pixel\+Format}} pixel\+Format, const \mbox{\hyperlink{classlibcamera_1_1Size}{libcamera\+::\+Size}} \&size, int flags)
+\item 
+\Hypertarget{classCameraBuffer_a097009fef5a173d5aa32d1bd39da8bab}\label{classCameraBuffer_a097009fef5a173d5aa32d1bd39da8bab} 
+bool {\bfseries is\+Valid} () const
+\item 
+\Hypertarget{classCameraBuffer_a16bb8edc883f0a061956cdbf960af48f}\label{classCameraBuffer_a16bb8edc883f0a061956cdbf960af48f} 
+unsigned int {\bfseries num\+Planes} () const
+\item 
+\Hypertarget{classCameraBuffer_aea821cc558d4b95a57207a926b5bda8a}\label{classCameraBuffer_aea821cc558d4b95a57207a926b5bda8a} 
+\mbox{\hyperlink{classlibcamera_1_1Span}{libcamera\+::\+Span}}$<$ const uint8\+\_\+t $>$ {\bfseries plane} (unsigned int plane) const
+\item 
+\Hypertarget{classCameraBuffer_ae8c34ff22f24d9ab410878aadd94e223}\label{classCameraBuffer_ae8c34ff22f24d9ab410878aadd94e223} 
+\mbox{\hyperlink{classlibcamera_1_1Span}{libcamera\+::\+Span}}$<$ uint8\+\_\+t $>$ {\bfseries plane} (unsigned int plane)
+\item 
+\Hypertarget{classCameraBuffer_a3d934d7fa1aeea96eb9646cf3d8c2554}\label{classCameraBuffer_a3d934d7fa1aeea96eb9646cf3d8c2554} 
+unsigned int {\bfseries stride} (unsigned int plane) const
+\item 
+\Hypertarget{classCameraBuffer_ad8a56924df1c8d54c9140a4c4b703103}\label{classCameraBuffer_ad8a56924df1c8d54c9140a4c4b703103} 
+unsigned int {\bfseries offset} (unsigned int plane) const
+\item 
+\Hypertarget{classCameraBuffer_ab54dd76c27b263fb979fe1f28d1dd579}\label{classCameraBuffer_ab54dd76c27b263fb979fe1f28d1dd579} 
+unsigned int {\bfseries size} (unsigned int plane) const
+\item 
+\Hypertarget{classCameraBuffer_a4e79114bbd0c5e68716f3716f1c4ed4b}\label{classCameraBuffer_a4e79114bbd0c5e68716f3716f1c4ed4b} 
+size\+\_\+t {\bfseries jpeg\+Buffer\+Size} (size\+\_\+t max\+Jpeg\+Buffer\+Size) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1Extensible}{libcamera\+::\+Extensible}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1Extensible_afb1c6e39d8fe4fbeab1cbbbe65517f4c}{Extensible}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1Extensible_1_1Private}{Private}} $>$ d)
+\begin{DoxyCompactList}\small\item\em Construct an instance of an \doxylink{classlibcamera_1_1Extensible}{Extensible} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1Extensible}{libcamera\+::\+Extensible}}}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\const T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1Extensible_a6625afb4df192443c12d118f5f1a17ac}{\+\_\+d}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the private data instance. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1Extensible_a30a918eee516b7e1d97a7f346ce99fca}{\+\_\+d}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the private data instance.   \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/android/camera\+\_\+buffer.\+h\end{DoxyCompactItemize}

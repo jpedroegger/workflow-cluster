@@ -1,0 +1,169 @@
+\doxysection{params.\+h}
+\hypertarget{params_8h_source}{}\label{params_8h_source}\index{src/peripherals/camera/libcamera/src/ipa/rkisp1/params.h@{src/peripherals/camera/libcamera/src/ipa/rkisp1/params.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2024,\ Ideas\ On\ Board}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ RkISP1\ ISP\ Parameters}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <linux/rkisp1-\/config.h>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{class_8h}{libcamera/base/class.h}}>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <libcamera/base/span.h>}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacelibcamera}{libcamera}}\ \{}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{namespace\ }ipa::rkisp1\ \{}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{enum\ class}\ BlockType\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ Bls,}
+\DoxyCodeLine{00024\ \ \ \ \ Dpcc,}
+\DoxyCodeLine{00025\ \ \ \ \ Sdg,}
+\DoxyCodeLine{00026\ \ \ \ \ AwbGain,}
+\DoxyCodeLine{00027\ \ \ \ \ Flt,}
+\DoxyCodeLine{00028\ \ \ \ \ Bdm,}
+\DoxyCodeLine{00029\ \ \ \ \ Ctk,}
+\DoxyCodeLine{00030\ \ \ \ \ Goc,}
+\DoxyCodeLine{00031\ \ \ \ \ Dpf,}
+\DoxyCodeLine{00032\ \ \ \ \ DpfStrength,}
+\DoxyCodeLine{00033\ \ \ \ \ Cproc,}
+\DoxyCodeLine{00034\ \ \ \ \ Ie,}
+\DoxyCodeLine{00035\ \ \ \ \ Lsc,}
+\DoxyCodeLine{00036\ \ \ \ \ Awb,}
+\DoxyCodeLine{00037\ \ \ \ \ Hst,}
+\DoxyCodeLine{00038\ \ \ \ \ Aec,}
+\DoxyCodeLine{00039\ \ \ \ \ Afc,}
+\DoxyCodeLine{00040\ \ \ \ \ CompandBls,}
+\DoxyCodeLine{00041\ \ \ \ \ CompandExpand,}
+\DoxyCodeLine{00042\ \ \ \ \ CompandCompress,}
+\DoxyCodeLine{00043\ \};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{namespace\ }details\ \{}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{template}<BlockType\ B>}
+\DoxyCodeLine{00048\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structlibcamera_1_1ipa_1_1rkisp1_1_1details_1_1block__type}{block\_type}}\ \{}
+\DoxyCodeLine{00049\ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ RKISP1\_DEFINE\_BLOCK\_TYPE(blockType,\ blockStruct)\ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{template<>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{struct\ block\_type<BlockType::blockType>\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\ \ \ \ using\ type\ =\ struct\ rkisp1\_cif\_isp\_\#\#blockStruct\#\#\_config;\ \ \(\backslash\)}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\};}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ RKISP1\_DEFINE\_BLOCK\_TYPE(Bls,\ bls)}
+\DoxyCodeLine{00058\ RKISP1\_DEFINE\_BLOCK\_TYPE(Dpcc,\ dpcc)}
+\DoxyCodeLine{00059\ RKISP1\_DEFINE\_BLOCK\_TYPE(Sdg,\ sdg)}
+\DoxyCodeLine{00060\ RKISP1\_DEFINE\_BLOCK\_TYPE(AwbGain,\ awb\_gain)}
+\DoxyCodeLine{00061\ RKISP1\_DEFINE\_BLOCK\_TYPE(Flt,\ flt)}
+\DoxyCodeLine{00062\ RKISP1\_DEFINE\_BLOCK\_TYPE(Bdm,\ bdm)}
+\DoxyCodeLine{00063\ RKISP1\_DEFINE\_BLOCK\_TYPE(Ctk,\ ctk)}
+\DoxyCodeLine{00064\ RKISP1\_DEFINE\_BLOCK\_TYPE(Goc,\ goc)}
+\DoxyCodeLine{00065\ RKISP1\_DEFINE\_BLOCK\_TYPE(Dpf,\ dpf)}
+\DoxyCodeLine{00066\ RKISP1\_DEFINE\_BLOCK\_TYPE(DpfStrength,\ dpf\_strength)}
+\DoxyCodeLine{00067\ RKISP1\_DEFINE\_BLOCK\_TYPE(Cproc,\ cproc)}
+\DoxyCodeLine{00068\ RKISP1\_DEFINE\_BLOCK\_TYPE(Ie,\ ie)}
+\DoxyCodeLine{00069\ RKISP1\_DEFINE\_BLOCK\_TYPE(Lsc,\ lsc)}
+\DoxyCodeLine{00070\ RKISP1\_DEFINE\_BLOCK\_TYPE(Awb,\ awb\_meas)}
+\DoxyCodeLine{00071\ RKISP1\_DEFINE\_BLOCK\_TYPE(Hst,\ hst)}
+\DoxyCodeLine{00072\ RKISP1\_DEFINE\_BLOCK\_TYPE(Aec,\ aec)}
+\DoxyCodeLine{00073\ RKISP1\_DEFINE\_BLOCK\_TYPE(Afc,\ afc)}
+\DoxyCodeLine{00074\ RKISP1\_DEFINE\_BLOCK\_TYPE(CompandBls,\ compand\_bls)}
+\DoxyCodeLine{00075\ RKISP1\_DEFINE\_BLOCK\_TYPE(CompandExpand,\ compand\_curve)}
+\DoxyCodeLine{00076\ RKISP1\_DEFINE\_BLOCK\_TYPE(CompandCompress,\ compand\_curve)}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \}\ \textcolor{comment}{/*\ namespace\ details\ */}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1ipa_1_1rkisp1_1_1RkISP1Params}{RkISP1Params}};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1ipa_1_1rkisp1_1_1RkISP1ParamsBlockBase}{RkISP1ParamsBlockBase}}}
+\DoxyCodeLine{00083\ \{}
+\DoxyCodeLine{00084\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1rkisp1_1_1RkISP1ParamsBlockBase}{RkISP1ParamsBlockBase}}(\mbox{\hyperlink{classlibcamera_1_1ipa_1_1rkisp1_1_1RkISP1Params}{RkISP1Params}}\ *params,\ BlockType\ type,}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Span}{Span<uint8\_t>}}\ \&data);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Span}{Span<uint8\_t>}}\ data()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ data\_;\ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ setEnabled(\textcolor{keywordtype}{bool}\ enabled);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{class_8h_ace000c18250df4aeac259f1ab739c655}{LIBCAMERA\_DISABLE\_COPY}}(\mbox{\hyperlink{classlibcamera_1_1ipa_1_1rkisp1_1_1RkISP1ParamsBlockBase}{RkISP1ParamsBlockBase}})}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1rkisp1_1_1RkISP1Params}{RkISP1Params}}\ *params\_;}
+\DoxyCodeLine{00096\ \ \ \ \ BlockType\ type\_;}
+\DoxyCodeLine{00097\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Span}{Span<uint8\_t>}}\ header\_;}
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Span}{Span<uint8\_t>}}\ data\_;}
+\DoxyCodeLine{00099\ \};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{keyword}{template}<BlockType\ B>}
+\DoxyCodeLine{00102\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1ipa_1_1rkisp1_1_1RkISP1ParamsBlock}{RkISP1ParamsBlock}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1rkisp1_1_1RkISP1ParamsBlockBase}{RkISP1ParamsBlockBase}}}
+\DoxyCodeLine{00103\ \{}
+\DoxyCodeLine{00104\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{using\ }Type\ =\ \textcolor{keyword}{typename}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1rkisp1_1_1details_1_1block__type}{details::block\_type<B>::type}};}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1rkisp1_1_1RkISP1ParamsBlock}{RkISP1ParamsBlock}}(\mbox{\hyperlink{classlibcamera_1_1ipa_1_1rkisp1_1_1RkISP1Params}{RkISP1Params}}\ *params,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Span}{Span<uint8\_t>}}\ \&data)}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1rkisp1_1_1RkISP1ParamsBlockBase}{RkISP1ParamsBlockBase}}(params,\ B,\ data)}
+\DoxyCodeLine{00109\ \ \ \ \ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keyword}{const}\ Type\ *operator-\/>()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00113\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }Type\ *\textcolor{keyword}{>}(data().data());}
+\DoxyCodeLine{00115\ \ \ \ \ \}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ Type\ *operator-\/>()}
+\DoxyCodeLine{00118\ \ \ \ \ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{reinterpret\_cast<}Type\ *\textcolor{keyword}{>}(data().data());}
+\DoxyCodeLine{00120\ \ \ \ \ \}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keyword}{const}\ Type\ \&operator*()\ \textcolor{keyword}{const}\ \&}
+\DoxyCodeLine{00123\ \ \ \ \ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }Type\ *\textcolor{keyword}{>}(data().data());}
+\DoxyCodeLine{00125\ \ \ \ \ \}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ Type\ \&operator*()\ \&}
+\DoxyCodeLine{00128\ \ \ \ \ \{}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{reinterpret\_cast<}Type\ *\textcolor{keyword}{>}(data().data());}
+\DoxyCodeLine{00130\ \ \ \ \ \}}
+\DoxyCodeLine{00131\ \};}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1ipa_1_1rkisp1_1_1RkISP1Params}{RkISP1Params}}}
+\DoxyCodeLine{00134\ \{}
+\DoxyCodeLine{00135\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00136\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1rkisp1_1_1RkISP1Params}{RkISP1Params}}(uint32\_t\ format,\ \mbox{\hyperlink{classlibcamera_1_1Span}{Span<uint8\_t>}}\ data);}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keyword}{template}<BlockType\ B>}
+\DoxyCodeLine{00139\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1rkisp1_1_1RkISP1ParamsBlock}{RkISP1ParamsBlock<B>}}\ block()}
+\DoxyCodeLine{00140\ \ \ \ \ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1rkisp1_1_1RkISP1ParamsBlock}{RkISP1ParamsBlock<B>}}(\textcolor{keyword}{this},\ block(B));}
+\DoxyCodeLine{00142\ \ \ \ \ \}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ uint32\_t\ format()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ format\_;\ \}}
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ used\_;\ \}}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1ipa_1_1rkisp1_1_1RkISP1ParamsBlockBase}{RkISP1ParamsBlockBase}};}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Span}{Span<uint8\_t>}}\ block(BlockType\ type);}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordtype}{void}\ setBlockEnabled(BlockType\ type,\ \textcolor{keywordtype}{bool}\ enabled);}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ uint32\_t\ format\_;}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Span}{Span<uint8\_t>}}\ data\_;}
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ used\_;}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ std::map<BlockType,\ Span<uint8\_t>>\ blocks\_;}
+\DoxyCodeLine{00159\ \};}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \}\ \textcolor{comment}{/*\ namespace\ ipa::rkisp1\ */}}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \}\ \textcolor{comment}{/*\ namespace\ libcamera*/}}
+
+\end{DoxyCode}

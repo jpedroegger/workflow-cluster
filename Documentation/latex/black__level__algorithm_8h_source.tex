@@ -1,0 +1,29 @@
+\doxysection{black\+\_\+level\+\_\+algorithm.\+h}
+\hypertarget{black__level__algorithm_8h_source}{}\label{black__level__algorithm_8h_source}\index{src/peripherals/camera/libcamera/src/ipa/rpi/controller/black\_level\_algorithm.h@{src/peripherals/camera/libcamera/src/ipa/rpi/controller/black\_level\_algorithm.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ BSD-\/2-\/Clause\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2023,\ Raspberry\ Pi\ Ltd}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ black\ level\ control\ algorithm\ interface}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}algorithm.h"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }RPiController\ \{}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRPiController_1_1BlackLevelAlgorithm}{BlackLevelAlgorithm}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classRPiController_1_1Algorithm}{Algorithm}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{classRPiController_1_1BlackLevelAlgorithm}{BlackLevelAlgorithm}}(\mbox{\hyperlink{classRPiController_1_1Controller}{Controller}}\ *controller)}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classRPiController_1_1Algorithm}{Algorithm}}(controller)\ \{\}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{/*\ A\ black\ level\ algorithm\ must\ provide\ the\ following:\ */}}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ initialValues(uint16\_t\ \&blackLevelR,\ uint16\_t\ \&blackLevelG,}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ \&blackLevelB)\ =\ 0;}
+\DoxyCodeLine{00021\ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \}\ \textcolor{comment}{/*\ namespace\ RPiController\ */}}
+
+\end{DoxyCode}

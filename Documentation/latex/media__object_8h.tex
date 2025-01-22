@@ -1,0 +1,44 @@
+\doxysection{src/peripherals/camera/libcamera/include/libcamera/internal/media\+\_\+object.h File Reference}
+\hypertarget{media__object_8h}{}\label{media__object_8h}\index{src/peripherals/camera/libcamera/include/libcamera/internal/media\_object.h@{src/peripherals/camera/libcamera/include/libcamera/internal/media\_object.h}}
+
+
+Provides a class hierarchy that represents the media objects exposed by the Linux kernel Media Controller APIs.  
+
+
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$linux/media.\+h$>$}\newline
+{\ttfamily \#include $<$libcamera/base/class.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classlibcamera_1_1MediaObject}{libcamera\+::\+Media\+Object}}
+\begin{DoxyCompactList}\small\item\em Base class for all media objects. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classlibcamera_1_1MediaLink}{libcamera\+::\+Media\+Link}}
+\begin{DoxyCompactList}\small\item\em The \doxylink{classlibcamera_1_1MediaLink}{Media\+Link} represents a link between two pads in the media graph. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classlibcamera_1_1MediaPad}{libcamera\+::\+Media\+Pad}}
+\begin{DoxyCompactList}\small\item\em The \doxylink{classlibcamera_1_1MediaPad}{Media\+Pad} represents a pad of an entity in the media graph. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classlibcamera_1_1MediaEntity}{libcamera\+::\+Media\+Entity}}
+\begin{DoxyCompactList}\small\item\em The \doxylink{classlibcamera_1_1MediaEntity}{Media\+Entity} represents an entity in the media graph. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacelibcamera}{libcamera}}
+\begin{DoxyCompactList}\small\item\em Top-\/level libcamera namespace. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{namespacelibcamera_ad08fea79710eb203636df7d0121fe593}{libcamera\+::operator$<$$<$}} (std\+::ostream \&out, const \mbox{\hyperlink{classlibcamera_1_1MediaLink}{Media\+Link}} \&link)
+\begin{DoxyCompactList}\small\item\em Insert a text representation of a Link into an output stream. \end{DoxyCompactList}\item 
+std\+::ostream \& \mbox{\hyperlink{namespacelibcamera_a9728762c17a26822b991fe3177d908e8}{libcamera\+::operator$<$$<$}} (std\+::ostream \&out, const \mbox{\hyperlink{classlibcamera_1_1MediaPad}{Media\+Pad}} \&pad)
+\begin{DoxyCompactList}\small\item\em Insert a text representation of a \doxylink{classlibcamera_1_1MediaPad}{Media\+Pad} into an output stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides a class hierarchy that represents the media objects exposed by the Linux kernel Media Controller APIs. 
+
+The abstract Media\+Object class represents any Media Controller graph object identified by an id unique in the media device context. It is subclassed by the Media\+Entity, Media\+Pad and Media\+Link classes that represent the entities, pads and links respectively. They are populated based on the media graph information exposed by the Linux kernel through the MEDIA\+\_\+\+IOC\+\_\+\+G\+\_\+\+TOPOLOGY ioctl.
+
+As the media objects represent their kernel counterpart, information about the properties they expose can be found in the Linux kernel documentation.
+
+All media objects are meant to be created and destroyed solely by the Media\+Device and thus have private constructors and destructors. 

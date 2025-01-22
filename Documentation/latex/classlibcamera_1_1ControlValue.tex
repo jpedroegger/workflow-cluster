@@ -1,0 +1,301 @@
+\doxysection{libcamera\+::Control\+Value Class Reference}
+\hypertarget{classlibcamera_1_1ControlValue}{}\label{classlibcamera_1_1ControlValue}\index{libcamera::ControlValue@{libcamera::ControlValue}}
+
+
+Abstract type representing the value of a control.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1ControlValue_a8121fc11c868a2c6d153982a776914b0}{Control\+Value}} ()
+\begin{DoxyCompactList}\small\item\em Construct an empty \doxylink{classlibcamera_1_1ControlValue}{Control\+Value}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , std\+::enable\+\_\+if\+\_\+t$<$!\mbox{\hyperlink{structlibcamera_1_1details_1_1is__span}{details\+::is\+\_\+span}}$<$ T $>$\+::value \&\&\mbox{\hyperlink{structlibcamera_1_1details_1_1control__type}{details\+::control\+\_\+type}}$<$ T $>$\+::value \&\&!std\+::is\+\_\+same$<$ std\+::string, std\+::remove\+\_\+cv\+\_\+t$<$ T $>$ $>$\+::value, std\+::nullptr\+\_\+t $>$  = nullptr$>$ }\\\mbox{\hyperlink{classlibcamera_1_1ControlValue_aa2ce1aad94b5c9b22357a5ddab83366e}{Control\+Value}} (const T \&value)
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{classlibcamera_1_1ControlValue}{Control\+Value} of type T. \end{DoxyCompactList}\item 
+\Hypertarget{classlibcamera_1_1ControlValue_a1bf6bc3b6913b5e5e6890f36c532f850}\label{classlibcamera_1_1ControlValue_a1bf6bc3b6913b5e5e6890f36c532f850} 
+{\footnotesize template$<$typename T , std\+::enable\+\_\+if\+\_\+t$<$ \mbox{\hyperlink{structlibcamera_1_1details_1_1is__span}{details\+::is\+\_\+span}}$<$ T $>$\+::value\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}std\+::is\+\_\+same$<$ std\+::string, std\+::remove\+\_\+cv\+\_\+t$<$ T $>$ $>$\+::value, std\+::nullptr\+\_\+t $>$  = nullptr$>$ }\\{\bfseries Control\+Value} (const T \&value)
+\item 
+\mbox{\hyperlink{classlibcamera_1_1ControlValue_acfb158a7841b3aacb340a41ce34830b3}{Control\+Value}} (const \mbox{\hyperlink{classlibcamera_1_1ControlValue}{Control\+Value}} \&other)
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{classlibcamera_1_1ControlValue}{Control\+Value} with the content of {\itshape other}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1ControlValue}{Control\+Value}} \& \mbox{\hyperlink{classlibcamera_1_1ControlValue_a5d3d99c7ec5938d2601bbaa1dadfc40b}{operator=}} (const \mbox{\hyperlink{classlibcamera_1_1ControlValue}{Control\+Value}} \&other)
+\begin{DoxyCompactList}\small\item\em Replace the content of the \doxylink{classlibcamera_1_1ControlValue}{Control\+Value} with a copy of the content of {\itshape other}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacelibcamera_a40a8adae6eaa668ac965dc350ca2b295}{Control\+Type}} \mbox{\hyperlink{classlibcamera_1_1ControlValue_a92983704d12eb6a41e8971835712e350}{type}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the data type of the value. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlibcamera_1_1ControlValue_acc62a6ebd748117cd3c28b59f069f96b}{is\+None}} () const
+\begin{DoxyCompactList}\small\item\em Determine if the value is not initialised. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlibcamera_1_1ControlValue_a5b66e16ef2866b86021bc127385aa9f5}{is\+Array}} () const
+\begin{DoxyCompactList}\small\item\em Determine if the value stores an array. \end{DoxyCompactList}\item 
+std\+::size\+\_\+t \mbox{\hyperlink{classlibcamera_1_1ControlValue_ad88746b79fd63ac061a0d45bacb7b615}{num\+Elements}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the number of elements stored in the \doxylink{classlibcamera_1_1ControlValue}{Control\+Value}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1Span}{Span}}$<$ const uint8\+\_\+t $>$ \mbox{\hyperlink{classlibcamera_1_1ControlValue_afb2f5718386fa73103403725efea5d67}{data}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the raw data of a control value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1Span}{Span}}$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{classlibcamera_1_1ControlValue_a69d75f416c870f57715b6fb6e309a748}{data}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the raw data of a control value.   \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classlibcamera_1_1ControlValue_aa0f3ba6a628360b3b8557295f979761e}{to\+String}} () const
+\begin{DoxyCompactList}\small\item\em Assemble and return a string describing the value. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlibcamera_1_1ControlValue_a62e18e0af1c20433d39482918801a1c3}{operator==}} (const \mbox{\hyperlink{classlibcamera_1_1ControlValue}{Control\+Value}} \&other) const
+\begin{DoxyCompactList}\small\item\em Compare \doxylink{classlibcamera_1_1ControlValue}{Control\+Value} instances for equality. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlibcamera_1_1ControlValue_a87cee4f7e4e3d2f8c6d579328607bd82}{operator!=}} (const \mbox{\hyperlink{classlibcamera_1_1ControlValue}{Control\+Value}} \&other) const
+\begin{DoxyCompactList}\small\item\em Compare \doxylink{classlibcamera_1_1ControlValue}{Control\+Value} instances for non equality. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , std\+::enable\+\_\+if\+\_\+t$<$!\mbox{\hyperlink{structlibcamera_1_1details_1_1is__span}{details\+::is\+\_\+span}}$<$ T $>$\+::value \&\&!std\+::is\+\_\+same$<$ std\+::string, std\+::remove\+\_\+cv\+\_\+t$<$ T $>$ $>$\+::value, std\+::nullptr\+\_\+t $>$  = nullptr$>$ }\\T \mbox{\hyperlink{classlibcamera_1_1ControlValue_acaea6ca925e70b0a84ab4c75db0b3a2a}{get}} () const
+\begin{DoxyCompactList}\small\item\em Get the control value. \end{DoxyCompactList}\item 
+\Hypertarget{classlibcamera_1_1ControlValue_aed6978224cb1cf2ed9e6afdf4bfe6011}\label{classlibcamera_1_1ControlValue_aed6978224cb1cf2ed9e6afdf4bfe6011} 
+{\footnotesize template$<$typename T , std\+::enable\+\_\+if\+\_\+t$<$ \mbox{\hyperlink{structlibcamera_1_1details_1_1is__span}{details\+::is\+\_\+span}}$<$ T $>$\+::value\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}std\+::is\+\_\+same$<$ std\+::string, std\+::remove\+\_\+cv\+\_\+t$<$ T $>$ $>$\+::value, std\+::nullptr\+\_\+t $>$  = nullptr$>$ }\\T {\bfseries get} () const
+\item 
+{\footnotesize template$<$typename T , std\+::enable\+\_\+if\+\_\+t$<$!\mbox{\hyperlink{structlibcamera_1_1details_1_1is__span}{details\+::is\+\_\+span}}$<$ T $>$\+::value \&\&!std\+::is\+\_\+same$<$ std\+::string, std\+::remove\+\_\+cv\+\_\+t$<$ T $>$ $>$\+::value, std\+::nullptr\+\_\+t $>$  = nullptr$>$ }\\void \mbox{\hyperlink{classlibcamera_1_1ControlValue_a4c730bd3e85073e217139ae89610792a}{set}} (const T \&value)
+\begin{DoxyCompactList}\small\item\em Set the control value to {\itshape value}. \end{DoxyCompactList}\item 
+\Hypertarget{classlibcamera_1_1ControlValue_a4acbdd332d27987f437638799f6f29c0}\label{classlibcamera_1_1ControlValue_a4acbdd332d27987f437638799f6f29c0} 
+{\footnotesize template$<$typename T , std\+::enable\+\_\+if\+\_\+t$<$ \mbox{\hyperlink{structlibcamera_1_1details_1_1is__span}{details\+::is\+\_\+span}}$<$ T $>$\+::value\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}std\+::is\+\_\+same$<$ std\+::string, std\+::remove\+\_\+cv\+\_\+t$<$ T $>$ $>$\+::value, std\+::nullptr\+\_\+t $>$  = nullptr$>$ }\\void {\bfseries set} (const T \&value)
+\item 
+void \mbox{\hyperlink{classlibcamera_1_1ControlValue_a60d6cdbb9c33d1c09204d35ae851d617}{reserve}} (\mbox{\hyperlink{namespacelibcamera_a40a8adae6eaa668ac965dc350ca2b295}{Control\+Type}} \mbox{\hyperlink{classlibcamera_1_1ControlValue_a92983704d12eb6a41e8971835712e350}{type}}, bool \mbox{\hyperlink{classlibcamera_1_1ControlValue_a5b66e16ef2866b86021bc127385aa9f5}{is\+Array}}=false, std\+::size\+\_\+t \mbox{\hyperlink{classlibcamera_1_1ControlValue_ad88746b79fd63ac061a0d45bacb7b615}{num\+Elements}}=1)
+\begin{DoxyCompactList}\small\item\em Set the control type and reserve memory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract type representing the value of a control. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlibcamera_1_1ControlValue_a8121fc11c868a2c6d153982a776914b0}\label{classlibcamera_1_1ControlValue_a8121fc11c868a2c6d153982a776914b0} 
+\index{libcamera::ControlValue@{libcamera::ControlValue}!ControlValue@{ControlValue}}
+\index{ControlValue@{ControlValue}!libcamera::ControlValue@{libcamera::ControlValue}}
+\doxysubsubsection{\texorpdfstring{ControlValue()}{ControlValue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily libcamera\+::\+Control\+Value\+::\+Control\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct an empty \doxylink{classlibcamera_1_1ControlValue}{Control\+Value}. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000023}{Todo}}]Revisit the \doxylink{classlibcamera_1_1ControlValue}{Control\+Value} layout when stabilizing the ABI \end{DoxyRefDesc}
+\Hypertarget{classlibcamera_1_1ControlValue_aa2ce1aad94b5c9b22357a5ddab83366e}\label{classlibcamera_1_1ControlValue_aa2ce1aad94b5c9b22357a5ddab83366e} 
+\index{libcamera::ControlValue@{libcamera::ControlValue}!ControlValue@{ControlValue}}
+\index{ControlValue@{ControlValue}!libcamera::ControlValue@{libcamera::ControlValue}}
+\doxysubsubsection{\texorpdfstring{ControlValue()}{ControlValue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T , std\+::enable\+\_\+if\+\_\+t$<$!\mbox{\hyperlink{structlibcamera_1_1details_1_1is__span}{details\+::is\+\_\+span}}$<$ T $>$\+::value \&\&\mbox{\hyperlink{structlibcamera_1_1details_1_1control__type}{details\+::control\+\_\+type}}$<$ T $>$\+::value \&\&!std\+::is\+\_\+same$<$ std\+::string, std\+::remove\+\_\+cv\+\_\+t$<$ T $>$ $>$\+::value, std\+::nullptr\+\_\+t $>$  = nullptr$>$ \\
+template$<$ typename T $>$ T libcamera\+::\+Control\+Value\+::\+Control\+Value (\begin{DoxyParamCaption}\item[{const T \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a \doxylink{classlibcamera_1_1ControlValue}{Control\+Value} of type T. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & Initial value\\
+\hline
+\end{DoxyParams}
+This function constructs a new instance of \doxylink{classlibcamera_1_1ControlValue}{Control\+Value} and stores the {\itshape value} inside it. If the type {\itshape T} is equivalent to Span$<$\+R$>$, the instance stores an array of values of type {\itshape R}. Otherwise the instance stores a single value of type {\itshape T}. The \doxylink{classlibcamera_1_1ControlValue_ad88746b79fd63ac061a0d45bacb7b615}{num\+Elements()} and \doxylink{classlibcamera_1_1ControlValue_a92983704d12eb6a41e8971835712e350}{type()} are updated to reflect the stored value. \Hypertarget{classlibcamera_1_1ControlValue_acfb158a7841b3aacb340a41ce34830b3}\label{classlibcamera_1_1ControlValue_acfb158a7841b3aacb340a41ce34830b3} 
+\index{libcamera::ControlValue@{libcamera::ControlValue}!ControlValue@{ControlValue}}
+\index{ControlValue@{ControlValue}!libcamera::ControlValue@{libcamera::ControlValue}}
+\doxysubsubsection{\texorpdfstring{ControlValue()}{ControlValue()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily libcamera\+::\+Control\+Value\+::\+Control\+Value (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1ControlValue}{Control\+Value}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Construct a \doxylink{classlibcamera_1_1ControlValue}{Control\+Value} with the content of {\itshape other}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & The \doxylink{classlibcamera_1_1ControlValue}{Control\+Value} to copy content from \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1ControlValue_a69d75f416c870f57715b6fb6e309a748}\label{classlibcamera_1_1ControlValue_a69d75f416c870f57715b6fb6e309a748} 
+\index{libcamera::ControlValue@{libcamera::ControlValue}!data@{data}}
+\index{data@{data}!libcamera::ControlValue@{libcamera::ControlValue}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1Span}{Span}}$<$ uint8\+\_\+t $>$ libcamera\+::\+Control\+Value\+::data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieve the raw data of a control value.   
+
+\begin{DoxyReturn}{Returns}
+The raw data of the control value as a span of uint8\+\_\+t   
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ControlValue_afb2f5718386fa73103403725efea5d67}\label{classlibcamera_1_1ControlValue_afb2f5718386fa73103403725efea5d67} 
+\index{libcamera::ControlValue@{libcamera::ControlValue}!data@{data}}
+\index{data@{data}!libcamera::ControlValue@{libcamera::ControlValue}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1Span}{Span}}$<$ const uint8\+\_\+t $>$ libcamera\+::\+Control\+Value\+::data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retrieve the raw data of a control value. 
+
+\begin{DoxyReturn}{Returns}
+The raw data of the control value as a span of uint8\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ControlValue_acaea6ca925e70b0a84ab4c75db0b3a2a}\label{classlibcamera_1_1ControlValue_acaea6ca925e70b0a84ab4c75db0b3a2a} 
+\index{libcamera::ControlValue@{libcamera::ControlValue}!get@{get}}
+\index{get@{get}!libcamera::ControlValue@{libcamera::ControlValue}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily template$<$typename T , std\+::enable\+\_\+if\+\_\+t$<$!\mbox{\hyperlink{structlibcamera_1_1details_1_1is__span}{details\+::is\+\_\+span}}$<$ T $>$\+::value \&\&!std\+::is\+\_\+same$<$ std\+::string, std\+::remove\+\_\+cv\+\_\+t$<$ T $>$ $>$\+::value, std\+::nullptr\+\_\+t $>$  = nullptr$>$ \\
+template$<$ typename T $>$ T libcamera\+::\+Control\+Value\+::get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the control value. 
+
+This function returns the contained value as an instance of {\itshape T}. If the \doxylink{classlibcamera_1_1ControlValue}{Control\+Value} instance stores a single value, the type {\itshape T} shall match the stored value \doxylink{classlibcamera_1_1ControlValue_a92983704d12eb6a41e8971835712e350}{type()}. If the instance stores an array of values, the type {\itshape T} should be equal to Span$<$const R$>$, and the type {\itshape R} shall match the stored value \doxylink{classlibcamera_1_1ControlValue_a92983704d12eb6a41e8971835712e350}{type()}. The behaviour is undefined otherwise.
+
+Note that a \doxylink{classlibcamera_1_1ControlValue}{Control\+Value} instance that stores a non-\/array value is not equivalent to an instance that stores an array value containing a single element. The latter shall be accessed through a Span$<$const R$>$ type, while the former shall be accessed through a type {\itshape T} corresponding to \doxylink{classlibcamera_1_1ControlValue_a92983704d12eb6a41e8971835712e350}{type()}.
+
+\begin{DoxyReturn}{Returns}
+The control value 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ControlValue_a5b66e16ef2866b86021bc127385aa9f5}\label{classlibcamera_1_1ControlValue_a5b66e16ef2866b86021bc127385aa9f5} 
+\index{libcamera::ControlValue@{libcamera::ControlValue}!isArray@{isArray}}
+\index{isArray@{isArray}!libcamera::ControlValue@{libcamera::ControlValue}}
+\doxysubsubsection{\texorpdfstring{isArray()}{isArray()}}
+{\footnotesize\ttfamily libcamera\+::\+Control\+Value\+::is\+Array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Determine if the value stores an array. 
+
+\begin{DoxyReturn}{Returns}
+True if the value stores an array, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ControlValue_acc62a6ebd748117cd3c28b59f069f96b}\label{classlibcamera_1_1ControlValue_acc62a6ebd748117cd3c28b59f069f96b} 
+\index{libcamera::ControlValue@{libcamera::ControlValue}!isNone@{isNone}}
+\index{isNone@{isNone}!libcamera::ControlValue@{libcamera::ControlValue}}
+\doxysubsubsection{\texorpdfstring{isNone()}{isNone()}}
+{\footnotesize\ttfamily libcamera\+::\+Control\+Value\+::is\+None (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Determine if the value is not initialised. 
+
+\begin{DoxyReturn}{Returns}
+True if the value type is Control\+Type\+None, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ControlValue_ad88746b79fd63ac061a0d45bacb7b615}\label{classlibcamera_1_1ControlValue_ad88746b79fd63ac061a0d45bacb7b615} 
+\index{libcamera::ControlValue@{libcamera::ControlValue}!numElements@{numElements}}
+\index{numElements@{numElements}!libcamera::ControlValue@{libcamera::ControlValue}}
+\doxysubsubsection{\texorpdfstring{numElements()}{numElements()}}
+{\footnotesize\ttfamily libcamera\+::\+Control\+Value\+::num\+Elements (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the number of elements stored in the \doxylink{classlibcamera_1_1ControlValue}{Control\+Value}. 
+
+For instances storing an array, this function returns the number of elements in the array. For instances storing a string, it returns the length of the string, not counting the terminating \textquotesingle{}\textbackslash{}0\textquotesingle{}. Otherwise, it returns 1.
+
+\begin{DoxyReturn}{Returns}
+The number of elements stored in the \doxylink{classlibcamera_1_1ControlValue}{Control\+Value} 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ControlValue_a87cee4f7e4e3d2f8c6d579328607bd82}\label{classlibcamera_1_1ControlValue_a87cee4f7e4e3d2f8c6d579328607bd82} 
+\index{libcamera::ControlValue@{libcamera::ControlValue}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!libcamera::ControlValue@{libcamera::ControlValue}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool libcamera\+::\+Control\+Value\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1ControlValue}{Control\+Value}} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Compare \doxylink{classlibcamera_1_1ControlValue}{Control\+Value} instances for non equality. 
+
+\begin{DoxyReturn}{Returns}
+False if the values have identical types and values, true otherwise 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ControlValue_a5d3d99c7ec5938d2601bbaa1dadfc40b}\label{classlibcamera_1_1ControlValue_a5d3d99c7ec5938d2601bbaa1dadfc40b} 
+\index{libcamera::ControlValue@{libcamera::ControlValue}!operator=@{operator=}}
+\index{operator=@{operator=}!libcamera::ControlValue@{libcamera::ControlValue}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1ControlValue}{Control\+Value}} \& libcamera\+::\+Control\+Value\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1ControlValue}{Control\+Value}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Replace the content of the \doxylink{classlibcamera_1_1ControlValue}{Control\+Value} with a copy of the content of {\itshape other}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & The \doxylink{classlibcamera_1_1ControlValue}{Control\+Value} to copy content from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \doxylink{classlibcamera_1_1ControlValue}{Control\+Value} with its content replaced with the one of {\itshape other} 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ControlValue_a62e18e0af1c20433d39482918801a1c3}\label{classlibcamera_1_1ControlValue_a62e18e0af1c20433d39482918801a1c3} 
+\index{libcamera::ControlValue@{libcamera::ControlValue}!operator==@{operator==}}
+\index{operator==@{operator==}!libcamera::ControlValue@{libcamera::ControlValue}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool libcamera\+::\+Control\+Value\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1ControlValue}{Control\+Value}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+Compare \doxylink{classlibcamera_1_1ControlValue}{Control\+Value} instances for equality. 
+
+\begin{DoxyReturn}{Returns}
+True if the values have identical types and values, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ControlValue_a60d6cdbb9c33d1c09204d35ae851d617}\label{classlibcamera_1_1ControlValue_a60d6cdbb9c33d1c09204d35ae851d617} 
+\index{libcamera::ControlValue@{libcamera::ControlValue}!reserve@{reserve}}
+\index{reserve@{reserve}!libcamera::ControlValue@{libcamera::ControlValue}}
+\doxysubsubsection{\texorpdfstring{reserve()}{reserve()}}
+{\footnotesize\ttfamily void libcamera\+::\+Control\+Value\+::reserve (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacelibcamera_a40a8adae6eaa668ac965dc350ca2b295}{Control\+Type}}}]{type,  }\item[{bool}]{is\+Array = {\ttfamily false},  }\item[{std\+::size\+\_\+t}]{num\+Elements = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+
+
+Set the control type and reserve memory. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em type} & The control type \\
+\hline
+\mbox{\texttt{ in}}  & {\em is\+Array} & True to make the value an array \\
+\hline
+\mbox{\texttt{ in}}  & {\em num\+Elements} & The number of elements\\
+\hline
+\end{DoxyParams}
+This function sets the type of the control value to {\itshape type}, and reserves memory to store the control value. If {\itshape is\+Array} is true, the instance becomes an array control and storage for {\itshape num\+Elements} is reserved. Otherwise the instance becomes a simple control, num\+Elements is ignored, and storage for the single element is reserved. \Hypertarget{classlibcamera_1_1ControlValue_a4c730bd3e85073e217139ae89610792a}\label{classlibcamera_1_1ControlValue_a4c730bd3e85073e217139ae89610792a} 
+\index{libcamera::ControlValue@{libcamera::ControlValue}!set@{set}}
+\index{set@{set}!libcamera::ControlValue@{libcamera::ControlValue}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily template$<$typename T , std\+::enable\+\_\+if\+\_\+t$<$!\mbox{\hyperlink{structlibcamera_1_1details_1_1is__span}{details\+::is\+\_\+span}}$<$ T $>$\+::value \&\&!std\+::is\+\_\+same$<$ std\+::string, std\+::remove\+\_\+cv\+\_\+t$<$ T $>$ $>$\+::value, std\+::nullptr\+\_\+t $>$  = nullptr$>$ \\
+template$<$ typename T $>$ void libcamera\+::\+Control\+Value\+::set (\begin{DoxyParamCaption}\item[{const T \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the control value to {\itshape value}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & The control value\\
+\hline
+\end{DoxyParams}
+This function stores the {\itshape value} in the instance. If the type {\itshape T} is equivalent to Span$<$\+R$>$, the instance stores an array of values of type {\itshape R}. Otherwise the instance stores a single value of type {\itshape T}. The \doxylink{classlibcamera_1_1ControlValue_ad88746b79fd63ac061a0d45bacb7b615}{num\+Elements()} and \doxylink{classlibcamera_1_1ControlValue_a92983704d12eb6a41e8971835712e350}{type()} are updated to reflect the stored value.
+
+The entire content of {\itshape value} is copied to the instance, no reference to {\itshape value} or to the data it references is retained. This may be an expensive operation for Span$<$$>$ values that refer to large arrays. \Hypertarget{classlibcamera_1_1ControlValue_aa0f3ba6a628360b3b8557295f979761e}\label{classlibcamera_1_1ControlValue_aa0f3ba6a628360b3b8557295f979761e} 
+\index{libcamera::ControlValue@{libcamera::ControlValue}!toString@{toString}}
+\index{toString@{toString}!libcamera::ControlValue@{libcamera::ControlValue}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily std\+::string libcamera\+::\+Control\+Value\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Assemble and return a string describing the value. 
+
+\begin{DoxyReturn}{Returns}
+A string describing the \doxylink{classlibcamera_1_1ControlValue}{Control\+Value} 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ControlValue_a92983704d12eb6a41e8971835712e350}\label{classlibcamera_1_1ControlValue_a92983704d12eb6a41e8971835712e350} 
+\index{libcamera::ControlValue@{libcamera::ControlValue}!type@{type}}
+\index{type@{type}!libcamera::ControlValue@{libcamera::ControlValue}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily libcamera\+::\+Control\+Value\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the data type of the value. 
+
+\begin{DoxyReturn}{Returns}
+The value data type 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/\mbox{\hyperlink{controls_8h}{controls.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/controls.\+cpp\end{DoxyCompactItemize}

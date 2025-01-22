@@ -1,0 +1,26 @@
+\doxysection{contrast\+\_\+status.\+h}
+\hypertarget{contrast__status_8h_source}{}\label{contrast__status_8h_source}\index{src/peripherals/camera/libcamera/src/ipa/rpi/controller/contrast\_status.h@{src/peripherals/camera/libcamera/src/ipa/rpi/controller/contrast\_status.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ BSD-\/2-\/Clause\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2019,\ Raspberry\ Pi\ Ltd}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ contrast\ (gamma)\ control\ algorithm\ status}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pwl_8h}{libipa/pwl.h}}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ The\ "{}contrast"{}\ algorithm\ creates\ a\ gamma\ curve,\ optionally\ doing\ a\ little\ bit}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ of\ contrast\ stretching\ based\ on\ the\ AGC\ histogram.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structContrastStatus}{ContrastStatus}}\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Pwl}{libcamera::ipa::Pwl}}\ gammaCurve;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structIPAActiveState_1_1cproc_1_1brightness}{brightness}};}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{double}\ contrast;}
+\DoxyCodeLine{00020\ \};}
+
+\end{DoxyCode}

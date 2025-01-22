@@ -1,0 +1,78 @@
+\doxysection{framebuffer\+\_\+device\+\_\+t Struct Reference}
+\hypertarget{structframebuffer__device__t}{}\label{structframebuffer__device__t}\index{framebuffer\_device\_t@{framebuffer\_device\_t}}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structhw__device__t}{hw\+\_\+device\+\_\+t}} \mbox{\hyperlink{structframebuffer__device__t_ac68dfbd350e80323bd975d1709e0a7bd}{common}}
+\item 
+\Hypertarget{structframebuffer__device__t_af2749c848acb74f7741f880a6f81f83b}\label{structframebuffer__device__t_af2749c848acb74f7741f880a6f81f83b} 
+const uint32\+\_\+t {\bfseries flags}
+\item 
+\Hypertarget{structframebuffer__device__t_a7c45589eb4dd93c84e307820336f35cc}\label{structframebuffer__device__t_a7c45589eb4dd93c84e307820336f35cc} 
+const uint32\+\_\+t {\bfseries width}
+\item 
+\Hypertarget{structframebuffer__device__t_a9ed0fe4fe283da495dc531c91e23de73}\label{structframebuffer__device__t_a9ed0fe4fe283da495dc531c91e23de73} 
+const uint32\+\_\+t {\bfseries height}
+\item 
+\Hypertarget{structframebuffer__device__t_ab77be7b0767b95349b9e3e5ffed636a1}\label{structframebuffer__device__t_ab77be7b0767b95349b9e3e5ffed636a1} 
+const int {\bfseries stride}
+\item 
+\Hypertarget{structframebuffer__device__t_aa2a716c7bef35e4611273d9224d52a62}\label{structframebuffer__device__t_aa2a716c7bef35e4611273d9224d52a62} 
+const int {\bfseries format}
+\item 
+\Hypertarget{structframebuffer__device__t_a36b55076786058842c1d65eb1c545ef1}\label{structframebuffer__device__t_a36b55076786058842c1d65eb1c545ef1} 
+const float {\bfseries xdpi}
+\item 
+\Hypertarget{structframebuffer__device__t_a20552ea4cd2640c51cbd2a4224c2681c}\label{structframebuffer__device__t_a20552ea4cd2640c51cbd2a4224c2681c} 
+const float {\bfseries ydpi}
+\item 
+\Hypertarget{structframebuffer__device__t_abae759379d911654ce69537f805ff1fb}\label{structframebuffer__device__t_abae759379d911654ce69537f805ff1fb} 
+const float {\bfseries fps}
+\item 
+\Hypertarget{structframebuffer__device__t_a512b01523632bcd7fb510a6dc14eda75}\label{structframebuffer__device__t_a512b01523632bcd7fb510a6dc14eda75} 
+const int {\bfseries min\+Swap\+Interval}
+\item 
+\Hypertarget{structframebuffer__device__t_a195e4de00b393288c601b8d68414fb85}\label{structframebuffer__device__t_a195e4de00b393288c601b8d68414fb85} 
+const int {\bfseries max\+Swap\+Interval}
+\item 
+\Hypertarget{structframebuffer__device__t_af162eb205ae6a81d5a09e0ad04c7b85b}\label{structframebuffer__device__t_af162eb205ae6a81d5a09e0ad04c7b85b} 
+const int {\bfseries num\+Framebuffers}
+\item 
+\Hypertarget{structframebuffer__device__t_a7ba380fb05c42f5b4be1210d68d7b9b1}\label{structframebuffer__device__t_a7ba380fb05c42f5b4be1210d68d7b9b1} 
+int {\bfseries reserved} \mbox{[}7\mbox{]}
+\item 
+\Hypertarget{structframebuffer__device__t_aa212461c42514c4c638341b904291054}\label{structframebuffer__device__t_aa212461c42514c4c638341b904291054} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries set\+Swap\+Interval} )(struct \mbox{\hyperlink{structframebuffer__device__t}{framebuffer\+\_\+device\+\_\+t}} \texorpdfstring{$\ast$}{*}window, int interval)
+\item 
+\Hypertarget{structframebuffer__device__t_a8a0812c55c43b05eacfe130abe8b556e}\label{structframebuffer__device__t_a8a0812c55c43b05eacfe130abe8b556e} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries set\+Update\+Rect} )(struct \mbox{\hyperlink{structframebuffer__device__t}{framebuffer\+\_\+device\+\_\+t}} \texorpdfstring{$\ast$}{*}window, int left, int top, int width, int height)
+\item 
+\Hypertarget{structframebuffer__device__t_a2f22232444688f13084a2d5b4ae72fb7}\label{structframebuffer__device__t_a2f22232444688f13084a2d5b4ae72fb7} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries post} )(struct \mbox{\hyperlink{structframebuffer__device__t}{framebuffer\+\_\+device\+\_\+t}} \texorpdfstring{$\ast$}{*}dev, \mbox{\hyperlink{structnative__handle}{buffer\+\_\+handle\+\_\+t}} buffer)
+\item 
+\Hypertarget{structframebuffer__device__t_a329ffdbb3174be63a7ae275e7ab5567c}\label{structframebuffer__device__t_a329ffdbb3174be63a7ae275e7ab5567c} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries composition\+Complete} )(struct \mbox{\hyperlink{structframebuffer__device__t}{framebuffer\+\_\+device\+\_\+t}} \texorpdfstring{$\ast$}{*}dev)
+\item 
+\Hypertarget{structframebuffer__device__t_a130ed2f68df807add5f1697c164d6c52}\label{structframebuffer__device__t_a130ed2f68df807add5f1697c164d6c52} 
+void(\texorpdfstring{$\ast$}{*} {\bfseries dump} )(struct \mbox{\hyperlink{structframebuffer__device__t}{framebuffer\+\_\+device\+\_\+t}} \texorpdfstring{$\ast$}{*}dev, char \texorpdfstring{$\ast$}{*}buff, int buff\+\_\+len)
+\item 
+\Hypertarget{structframebuffer__device__t_ac1d6a05a1669904609ba11b24cd15f7d}\label{structframebuffer__device__t_ac1d6a05a1669904609ba11b24cd15f7d} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries enable\+Screen} )(struct \mbox{\hyperlink{structframebuffer__device__t}{framebuffer\+\_\+device\+\_\+t}} \texorpdfstring{$\ast$}{*}dev, int enable)
+\item 
+\Hypertarget{structframebuffer__device__t_adee349f46c9e1a43a3572b51bcbb0f5c}\label{structframebuffer__device__t_adee349f46c9e1a43a3572b51bcbb0f5c} 
+void \texorpdfstring{$\ast$}{*} {\bfseries reserved\+\_\+proc} \mbox{[}6\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structframebuffer__device__t_ac68dfbd350e80323bd975d1709e0a7bd}\label{structframebuffer__device__t_ac68dfbd350e80323bd975d1709e0a7bd} 
+\index{framebuffer\_device\_t@{framebuffer\_device\_t}!common@{common}}
+\index{common@{common}!framebuffer\_device\_t@{framebuffer\_device\_t}}
+\doxysubsubsection{\texorpdfstring{common}{common}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structhw__device__t}{hw\+\_\+device\+\_\+t}} framebuffer\+\_\+device\+\_\+t\+::common}
+
+Common methods of the framebuffer device. This {\itshape must} be the first member of \doxylink{structframebuffer__device__t}{framebuffer\+\_\+device\+\_\+t} as users of this structure will cast a \doxylink{structhw__device__t}{hw\+\_\+device\+\_\+t} to \doxylink{structframebuffer__device__t}{framebuffer\+\_\+device\+\_\+t} pointer in contexts where it\textquotesingle{}s known the \doxylink{structhw__device__t}{hw\+\_\+device\+\_\+t} references a \doxylink{structframebuffer__device__t}{framebuffer\+\_\+device\+\_\+t}. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/android/hardware/libhardware/include/hardware/fb.\+h\end{DoxyCompactItemize}

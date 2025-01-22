@@ -1,0 +1,426 @@
+\doxysection{media.\+h}
+\hypertarget{media_8h_source}{}\label{media_8h_source}\index{src/peripherals/camera/libcamera/include/linux/media.h@{src/peripherals/camera/libcamera/include/linux/media.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ GPL-\/2.0\ WITH\ Linux-\/syscall-\/note\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Multimedia\ device\ API}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2010\ Nokia\ Corporation}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ Contacts:\ Laurent\ Pinchart\ <laurent.pinchart@ideasonboard.com>}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ \ \ Sakari\ Ailus\ <sakari.ailus@iki.fi>}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ This\ program\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ version\ 2\ as}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ published\ by\ the\ Free\ Software\ Foundation.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ This\ program\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifndef\ \_\_LINUX\_MEDIA\_H}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ \_\_LINUX\_MEDIA\_H}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <linux/ioctl.h>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <linux/types.h>}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structmedia__device__info}{media\_device\_info}}\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{char}\ driver[16];}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{char}\ model[32];}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{char}\ serial[40];}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{char}\ bus\_info[32];}
+\DoxyCodeLine{00031\ \ \ \ \ \_\_u32\ media\_version;}
+\DoxyCodeLine{00032\ \ \ \ \ \_\_u32\ hw\_revision;}
+\DoxyCodeLine{00033\ \ \ \ \ \_\_u32\ driver\_version;}
+\DoxyCodeLine{00034\ \ \ \ \ \_\_u32\ reserved[31];}
+\DoxyCodeLine{00035\ \};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ *\ Base\ number\ ranges\ for\ entity\ functions}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ *\ NOTE:\ Userspace\ should\ not\ rely\ on\ these\ ranges\ to\ identify\ a\ group}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ *\ of\ function\ types,\ as\ newer\ functions\ can\ be\ added\ with\ any\ name\ within}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ *\ the\ full\ u32\ range.}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ *\ Some\ older\ functions\ use\ the\ MEDIA\_ENT\_F\_OLD\_*\_BASE\ range.\ Do\ not}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ *\ change\ this,\ this\ is\ for\ backwards\ compatibility.\ When\ adding\ new}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ *\ functions\ always\ use\ MEDIA\_ENT\_F\_BASE.}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_F\_BASE\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_F\_OLD\_BASE\ \ \ \ \ \ \ \ \ \ \ \ 0x00010000}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_F\_OLD\_SUBDEV\_BASE\ \ \ \ \ 0x00020000}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00053\ \textcolor{comment}{\ *\ Initial\ value\ to\ be\ used\ when\ a\ new\ entity\ is\ created}}
+\DoxyCodeLine{00054\ \textcolor{comment}{\ *\ Drivers\ should\ change\ it\ to\ something\ useful.}}
+\DoxyCodeLine{00055\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_F\_UNKNOWN\ \ \ \ \ \ \ \ \ MEDIA\_ENT\_F\_BASE}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00059\ \textcolor{comment}{\ *\ Subdevs\ are\ initialized\ with\ MEDIA\_ENT\_F\_V4L2\_SUBDEV\_UNKNOWN\ in\ order}}
+\DoxyCodeLine{00060\ \textcolor{comment}{\ *\ to\ preserve\ backward\ compatibility.\ Drivers\ must\ change\ to\ the\ proper}}
+\DoxyCodeLine{00061\ \textcolor{comment}{\ *\ subdev\ type\ before\ registering\ the\ entity.}}
+\DoxyCodeLine{00062\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_F\_V4L2\_SUBDEV\_UNKNOWN\ \ \ \ \ MEDIA\_ENT\_F\_OLD\_SUBDEV\_BASE}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00066\ \textcolor{comment}{\ *\ DVB\ entity\ functions}}
+\DoxyCodeLine{00067\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_F\_DTV\_DEMOD\ \ \ \ \ \ \ \ \ \ \ (MEDIA\_ENT\_F\_BASE\ +\ 0x00001)}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_F\_TS\_DEMUX\ \ \ \ \ \ \ \ \ \ \ \ (MEDIA\_ENT\_F\_BASE\ +\ 0x00002)}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_F\_DTV\_CA\ \ \ \ \ \ \ \ \ \ (MEDIA\_ENT\_F\_BASE\ +\ 0x00003)}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_F\_DTV\_NET\_DECAP\ \ \ \ \ \ \ (MEDIA\_ENT\_F\_BASE\ +\ 0x00004)}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00074\ \textcolor{comment}{\ *\ I/O\ entity\ functions}}
+\DoxyCodeLine{00075\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_F\_IO\_V4L\ \ \ \ \ \ \ \ \ \ (MEDIA\_ENT\_F\_OLD\_BASE\ +\ 1)}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_F\_IO\_DTV\ \ \ \ \ \ \ \ \ \ (MEDIA\_ENT\_F\_BASE\ +\ 0x01001)}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_F\_IO\_VBI\ \ \ \ \ \ \ \ \ \ (MEDIA\_ENT\_F\_BASE\ +\ 0x01002)}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_F\_IO\_SWRADIO\ \ \ \ \ \ \ \ \ \ (MEDIA\_ENT\_F\_BASE\ +\ 0x01003)}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00082\ \textcolor{comment}{\ *\ Sensor\ functions}}
+\DoxyCodeLine{00083\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_F\_CAM\_SENSOR\ \ \ \ \ \ \ \ \ \ (MEDIA\_ENT\_F\_OLD\_SUBDEV\_BASE\ +\ 1)}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_F\_FLASH\ \ \ \ \ \ \ \ \ \ \ (MEDIA\_ENT\_F\_OLD\_SUBDEV\_BASE\ +\ 2)}}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_F\_LENS\ \ \ \ \ \ \ \ \ \ \ \ (MEDIA\_ENT\_F\_OLD\_SUBDEV\_BASE\ +\ 3)}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00089\ \textcolor{comment}{\ *\ Digital\ TV,\ analog\ TV,\ radio\ and/or\ software\ defined\ radio\ tuner\ functions.}}
+\DoxyCodeLine{00090\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00091\ \textcolor{comment}{\ *\ It\ is\ a\ responsibility\ of\ the\ master/bridge\ drivers\ to\ add\ connectors}}
+\DoxyCodeLine{00092\ \textcolor{comment}{\ *\ and\ links\ for\ MEDIA\_ENT\_F\_TUNER.\ Please\ notice\ that\ some\ old\ tuners}}
+\DoxyCodeLine{00093\ \textcolor{comment}{\ *\ may\ require\ the\ usage\ of\ separate\ I2C\ chips\ to\ decode\ analog\ TV\ signals,}}
+\DoxyCodeLine{00094\ \textcolor{comment}{\ *\ when\ the\ master/bridge\ chipset\ doesn't\ have\ its\ own\ TV\ standard\ decoder.}}
+\DoxyCodeLine{00095\ \textcolor{comment}{\ *\ On\ such\ cases,\ the\ IF-\/PLL\ staging\ is\ mapped\ via\ one\ or\ two\ entities:}}
+\DoxyCodeLine{00096\ \textcolor{comment}{\ *\ MEDIA\_ENT\_F\_IF\_VID\_DECODER\ and/or\ MEDIA\_ENT\_F\_IF\_AUD\_DECODER.}}
+\DoxyCodeLine{00097\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_F\_TUNER\ \ \ \ \ \ \ \ \ \ \ (MEDIA\_ENT\_F\_OLD\_SUBDEV\_BASE\ +\ 5)}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00101\ \textcolor{comment}{\ *\ Analog\ TV\ IF-\/PLL\ decoder\ functions}}
+\DoxyCodeLine{00102\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00103\ \textcolor{comment}{\ *\ It\ is\ a\ responsibility\ of\ the\ master/bridge\ drivers\ to\ create\ links}}
+\DoxyCodeLine{00104\ \textcolor{comment}{\ *\ for\ MEDIA\_ENT\_F\_IF\_VID\_DECODER\ and\ MEDIA\_ENT\_F\_IF\_AUD\_DECODER.}}
+\DoxyCodeLine{00105\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_F\_IF\_VID\_DECODER\ \ \ \ \ \ (MEDIA\_ENT\_F\_BASE\ +\ 0x02001)}}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_F\_IF\_AUD\_DECODER\ \ \ \ \ \ (MEDIA\_ENT\_F\_BASE\ +\ 0x02002)}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00110\ \textcolor{comment}{\ *\ Audio\ entity\ functions}}
+\DoxyCodeLine{00111\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_F\_AUDIO\_CAPTURE\ \ \ \ \ \ \ (MEDIA\_ENT\_F\_BASE\ +\ 0x03001)}}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_F\_AUDIO\_PLAYBACK\ \ \ \ \ \ (MEDIA\_ENT\_F\_BASE\ +\ 0x03002)}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_F\_AUDIO\_MIXER\ \ \ \ \ \ \ \ \ (MEDIA\_ENT\_F\_BASE\ +\ 0x03003)}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00117\ \textcolor{comment}{\ *\ Processing\ entity\ functions}}
+\DoxyCodeLine{00118\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_F\_PROC\_VIDEO\_COMPOSER\ \ \ \ \ (MEDIA\_ENT\_F\_BASE\ +\ 0x4001)}}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_F\_PROC\_VIDEO\_PIXEL\_FORMATTER\ \ (MEDIA\_ENT\_F\_BASE\ +\ 0x4002)}}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_F\_PROC\_VIDEO\_PIXEL\_ENC\_CONV\ \ \ (MEDIA\_ENT\_F\_BASE\ +\ 0x4003)}}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_F\_PROC\_VIDEO\_LUT\ \ \ \ \ \ (MEDIA\_ENT\_F\_BASE\ +\ 0x4004)}}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_F\_PROC\_VIDEO\_SCALER\ \ \ \ \ \ \ (MEDIA\_ENT\_F\_BASE\ +\ 0x4005)}}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_F\_PROC\_VIDEO\_STATISTICS\ \ \ (MEDIA\_ENT\_F\_BASE\ +\ 0x4006)}}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_F\_PROC\_VIDEO\_ENCODER\ \ \ \ \ \ (MEDIA\_ENT\_F\_BASE\ +\ 0x4007)}}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_F\_PROC\_VIDEO\_DECODER\ \ \ \ \ \ (MEDIA\_ENT\_F\_BASE\ +\ 0x4008)}}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_F\_PROC\_VIDEO\_ISP\ \ \ \ \ \ (MEDIA\_ENT\_F\_BASE\ +\ 0x4009)}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00130\ \textcolor{comment}{\ *\ Switch\ and\ bridge\ entity\ functions}}
+\DoxyCodeLine{00131\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_F\_VID\_MUX\ \ \ \ \ \ \ \ \ (MEDIA\_ENT\_F\_BASE\ +\ 0x5001)}}
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_F\_VID\_IF\_BRIDGE\ \ \ \ \ \ \ (MEDIA\_ENT\_F\_BASE\ +\ 0x5002)}}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00136\ \textcolor{comment}{\ *\ Video\ decoder/encoder\ functions}}
+\DoxyCodeLine{00137\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_F\_ATV\_DECODER\ \ \ \ \ \ \ \ \ (MEDIA\_ENT\_F\_OLD\_SUBDEV\_BASE\ +\ 4)}}
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_F\_DV\_DECODER\ \ \ \ \ \ \ \ \ \ (MEDIA\_ENT\_F\_BASE\ +\ 0x6001)}}
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_F\_DV\_ENCODER\ \ \ \ \ \ \ \ \ \ (MEDIA\_ENT\_F\_BASE\ +\ 0x6002)}}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \textcolor{comment}{/*\ Entity\ flags\ */}}
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_FL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (1U\ <<\ 0)}}
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_FL\_CONNECTOR\ \ \ \ \ \ \ \ \ \ (1U\ <<\ 1)}}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \textcolor{comment}{/*\ OR\ with\ the\ entity\ id\ value\ to\ find\ the\ next\ entity\ */}}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_ID\_FLAG\_NEXT\ \ \ \ \ \ \ \ \ \ (1U\ <<\ 31)}}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structmedia__entity__desc}{media\_entity\_desc}}\ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \_\_u32\ id;}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordtype}{char}\ name[32];}
+\DoxyCodeLine{00152\ \ \ \ \ \_\_u32\ type;}
+\DoxyCodeLine{00153\ \ \ \ \ \_\_u32\ revision;}
+\DoxyCodeLine{00154\ \ \ \ \ \_\_u32\ flags;}
+\DoxyCodeLine{00155\ \ \ \ \ \_\_u32\ group\_id;}
+\DoxyCodeLine{00156\ \ \ \ \ \_\_u16\ pads;}
+\DoxyCodeLine{00157\ \ \ \ \ \_\_u16\ links;}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \ \ \ \ \_\_u32\ reserved[4];}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Node\ specifications\ */}}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \_\_u32\ major;}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \_\_u32\ minor;}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \}\ dev;}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00169\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ TODO:\ this\ shouldn't\ have\ been\ added\ without}}
+\DoxyCodeLine{00170\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ actual\ drivers\ that\ use\ this.\ When\ the\ first\ real\ driver}}
+\DoxyCodeLine{00171\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ appears\ that\ sets\ this\ information,\ special\ attention}}
+\DoxyCodeLine{00172\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ should\ be\ given\ whether\ this\ information\ is\ 1)\ enough,\ and}}
+\DoxyCodeLine{00173\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ 2)\ can\ deal\ with\ udev\ rules\ that\ rename\ devices.\ The\ struct}}
+\DoxyCodeLine{00174\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ dev\ would\ not\ be\ sufficient\ for\ this\ since\ that\ does\ not}}
+\DoxyCodeLine{00175\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ contain\ the\ subdevice\ information.\ In\ addition,\ struct\ dev}}
+\DoxyCodeLine{00176\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ can\ only\ refer\ to\ a\ single\ device,\ and\ not\ to\ multiple\ (e.g.}}
+\DoxyCodeLine{00177\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ pcm\ and\ mixer\ devices).}}
+\DoxyCodeLine{00178\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \_\_u32\ card;}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \_\_u32\ device;}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \_\_u32\ subdevice;}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \}\ alsa;}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00186\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ DEPRECATED:\ previous\ node\ specifications.\ Kept\ just\ to}}
+\DoxyCodeLine{00187\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ avoid\ breaking\ compilation.\ Use\ media\_entity\_desc.dev}}
+\DoxyCodeLine{00188\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ instead.}}
+\DoxyCodeLine{00189\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \_\_u32\ major;}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \_\_u32\ minor;}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \}\ v4l;}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \_\_u32\ major;}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \_\_u32\ minor;}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \}\ fb;}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ dvb;}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Sub-\/device\ specifications\ */}}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Nothing\ needed\ yet\ */}}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \_\_u8\ raw[184];}
+\DoxyCodeLine{00203\ \ \ \ \ \};}
+\DoxyCodeLine{00204\ \};}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \textcolor{preprocessor}{\#define\ MEDIA\_PAD\_FL\_SINK\ \ \ \ \ \ \ \ \ \ \ (1U\ <<\ 0)}}
+\DoxyCodeLine{00207\ \textcolor{preprocessor}{\#define\ MEDIA\_PAD\_FL\_SOURCE\ \ \ \ \ \ \ \ \ (1U\ <<\ 1)}}
+\DoxyCodeLine{00208\ \textcolor{preprocessor}{\#define\ MEDIA\_PAD\_FL\_MUST\_CONNECT\ \ \ \ \ \ \ (1U\ <<\ 2)}}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00210\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structmedia__pad__desc}{media\_pad\_desc}}\ \{}
+\DoxyCodeLine{00211\ \ \ \ \ \_\_u32\ entity;\ \ \ \ \ \ \ \textcolor{comment}{/*\ entity\ ID\ */}}
+\DoxyCodeLine{00212\ \ \ \ \ \_\_u16\ index;\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ pad\ index\ */}}
+\DoxyCodeLine{00213\ \ \ \ \ \_\_u32\ flags;\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ pad\ flags\ */}}
+\DoxyCodeLine{00214\ \ \ \ \ \_\_u32\ reserved[2];}
+\DoxyCodeLine{00215\ \};}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00217\ \textcolor{preprocessor}{\#define\ MEDIA\_LNK\_FL\_ENABLED\ \ \ \ \ \ \ \ \ \ \ \ (1U\ <<\ 0)}}
+\DoxyCodeLine{00218\ \textcolor{preprocessor}{\#define\ MEDIA\_LNK\_FL\_IMMUTABLE\ \ \ \ \ \ \ \ \ \ (1U\ <<\ 1)}}
+\DoxyCodeLine{00219\ \textcolor{preprocessor}{\#define\ MEDIA\_LNK\_FL\_DYNAMIC\ \ \ \ \ \ \ \ \ \ \ \ (1U\ <<\ 2)}}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00221\ \textcolor{preprocessor}{\#define\ MEDIA\_LNK\_FL\_LINK\_TYPE\ \ \ \ \ \ \ \ \ \ (0xf\ <<\ 28)}}
+\DoxyCodeLine{00222\ \textcolor{preprocessor}{\#\ \ define\ MEDIA\_LNK\_FL\_DATA\_LINK\ \ \ \ \ \ \ \ (0U\ <<\ 28)}}
+\DoxyCodeLine{00223\ \textcolor{preprocessor}{\#\ \ define\ MEDIA\_LNK\_FL\_INTERFACE\_LINK\ \ \ \ \ \ \ (1U\ <<\ 28)}}
+\DoxyCodeLine{00224\ \textcolor{preprocessor}{\#\ \ define\ MEDIA\_LNK\_FL\_ANCILLARY\_LINK\ \ \ \ \ \ \ (2U\ <<\ 28)}}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structmedia__link__desc}{media\_link\_desc}}\ \{}
+\DoxyCodeLine{00227\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structmedia__pad__desc}{media\_pad\_desc}}\ source;}
+\DoxyCodeLine{00228\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structmedia__pad__desc}{media\_pad\_desc}}\ sink;}
+\DoxyCodeLine{00229\ \ \ \ \ \_\_u32\ flags;}
+\DoxyCodeLine{00230\ \ \ \ \ \_\_u32\ reserved[2];}
+\DoxyCodeLine{00231\ \};}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00233\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structmedia__links__enum}{media\_links\_enum}}\ \{}
+\DoxyCodeLine{00234\ \ \ \ \ \_\_u32\ entity;}
+\DoxyCodeLine{00235\ \ \ \ \ \textcolor{comment}{/*\ Should\ have\ enough\ room\ for\ pads\ elements\ */}}
+\DoxyCodeLine{00236\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structmedia__pad__desc}{media\_pad\_desc}}\ *pads;}
+\DoxyCodeLine{00237\ \ \ \ \ \textcolor{comment}{/*\ Should\ have\ enough\ room\ for\ links\ elements\ */}}
+\DoxyCodeLine{00238\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structmedia__link__desc}{media\_link\_desc}}\ *links;}
+\DoxyCodeLine{00239\ \ \ \ \ \_\_u32\ reserved[4];}
+\DoxyCodeLine{00240\ \};}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00242\ \textcolor{comment}{/*\ Interface\ type\ ranges\ */}}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ \textcolor{preprocessor}{\#define\ MEDIA\_INTF\_T\_DVB\_BASE\ \ \ \ \ \ \ \ \ \ \ 0x00000100}}
+\DoxyCodeLine{00245\ \textcolor{preprocessor}{\#define\ MEDIA\_INTF\_T\_V4L\_BASE\ \ \ \ \ \ \ \ \ \ \ 0x00000200}}
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00247\ \textcolor{comment}{/*\ Interface\ types\ */}}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00249\ \textcolor{preprocessor}{\#define\ MEDIA\_INTF\_T\_DVB\_FE\ \ \ \ \ \ \ \ \ (MEDIA\_INTF\_T\_DVB\_BASE)}}
+\DoxyCodeLine{00250\ \textcolor{preprocessor}{\#define\ MEDIA\_INTF\_T\_DVB\_DEMUX\ \ \ \ \ \ \ \ \ \ (MEDIA\_INTF\_T\_DVB\_BASE\ +\ 1)}}
+\DoxyCodeLine{00251\ \textcolor{preprocessor}{\#define\ MEDIA\_INTF\_T\_DVB\_DVR\ \ \ \ \ \ \ \ \ \ \ \ (MEDIA\_INTF\_T\_DVB\_BASE\ +\ 2)}}
+\DoxyCodeLine{00252\ \textcolor{preprocessor}{\#define\ MEDIA\_INTF\_T\_DVB\_CA\ \ \ \ \ \ \ \ \ (MEDIA\_INTF\_T\_DVB\_BASE\ +\ 3)}}
+\DoxyCodeLine{00253\ \textcolor{preprocessor}{\#define\ MEDIA\_INTF\_T\_DVB\_NET\ \ \ \ \ \ \ \ \ \ \ \ (MEDIA\_INTF\_T\_DVB\_BASE\ +\ 4)}}
+\DoxyCodeLine{00254\ }
+\DoxyCodeLine{00255\ \textcolor{preprocessor}{\#define\ MEDIA\_INTF\_T\_V4L\_VIDEO\ \ \ \ \ \ \ \ \ \ (MEDIA\_INTF\_T\_V4L\_BASE)}}
+\DoxyCodeLine{00256\ \textcolor{preprocessor}{\#define\ MEDIA\_INTF\_T\_V4L\_VBI\ \ \ \ \ \ \ \ \ \ \ \ (MEDIA\_INTF\_T\_V4L\_BASE\ +\ 1)}}
+\DoxyCodeLine{00257\ \textcolor{preprocessor}{\#define\ MEDIA\_INTF\_T\_V4L\_RADIO\ \ \ \ \ \ \ \ \ \ (MEDIA\_INTF\_T\_V4L\_BASE\ +\ 2)}}
+\DoxyCodeLine{00258\ \textcolor{preprocessor}{\#define\ MEDIA\_INTF\_T\_V4L\_SUBDEV\ \ \ \ \ \ \ \ \ (MEDIA\_INTF\_T\_V4L\_BASE\ +\ 3)}}
+\DoxyCodeLine{00259\ \textcolor{preprocessor}{\#define\ MEDIA\_INTF\_T\_V4L\_SWRADIO\ \ \ \ \ \ \ \ (MEDIA\_INTF\_T\_V4L\_BASE\ +\ 4)}}
+\DoxyCodeLine{00260\ \textcolor{preprocessor}{\#define\ MEDIA\_INTF\_T\_V4L\_TOUCH\ \ \ \ \ \ \ \ \ \ (MEDIA\_INTF\_T\_V4L\_BASE\ +\ 5)}}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00262\ \textcolor{preprocessor}{\#define\ MEDIA\_INTF\_T\_ALSA\_BASE\ \ \ \ \ \ \ \ \ \ 0x00000300}}
+\DoxyCodeLine{00263\ \textcolor{preprocessor}{\#define\ MEDIA\_INTF\_T\_ALSA\_PCM\_CAPTURE\ \ \ \ \ \ \ (MEDIA\_INTF\_T\_ALSA\_BASE)}}
+\DoxyCodeLine{00264\ \textcolor{preprocessor}{\#define\ MEDIA\_INTF\_T\_ALSA\_PCM\_PLAYBACK\ \ \ \ \ \ (MEDIA\_INTF\_T\_ALSA\_BASE\ +\ 1)}}
+\DoxyCodeLine{00265\ \textcolor{preprocessor}{\#define\ MEDIA\_INTF\_T\_ALSA\_CONTROL\ \ \ \ \ \ \ (MEDIA\_INTF\_T\_ALSA\_BASE\ +\ 2)}}
+\DoxyCodeLine{00266\ }
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00268\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00269\ \textcolor{comment}{\ *\ MC\ next\ gen\ API\ definitions}}
+\DoxyCodeLine{00270\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00271\ }
+\DoxyCodeLine{00272\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00273\ \textcolor{comment}{\ *\ Appeared\ in\ 4.19.0.}}
+\DoxyCodeLine{00274\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00275\ \textcolor{comment}{\ *\ The\ media\_version\ argument\ comes\ from\ the\ media\_version\ field\ in}}
+\DoxyCodeLine{00276\ \textcolor{comment}{\ *\ struct\ media\_device\_info.}}
+\DoxyCodeLine{00277\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00278\ \textcolor{preprocessor}{\#define\ MEDIA\_V2\_ENTITY\_HAS\_FLAGS(media\_version)\ \(\backslash\)}}
+\DoxyCodeLine{00279\ \textcolor{preprocessor}{\ \ \ \ ((media\_version)\ >=\ ((4U\ <<\ 16)\ |\ (19U\ <<\ 8)\ |\ 0U))}}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00281\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structmedia__v2__entity}{media\_v2\_entity}}\ \{}
+\DoxyCodeLine{00282\ \ \ \ \ \_\_u32\ id;}
+\DoxyCodeLine{00283\ \ \ \ \ \textcolor{keywordtype}{char}\ name[64];}
+\DoxyCodeLine{00284\ \ \ \ \ \_\_u32\ function;\ \ \ \ \ \textcolor{comment}{/*\ Main\ function\ of\ the\ entity\ */}}
+\DoxyCodeLine{00285\ \ \ \ \ \_\_u32\ flags;}
+\DoxyCodeLine{00286\ \ \ \ \ \_\_u32\ reserved[5];}
+\DoxyCodeLine{00287\ \}\ \_\_attribute\_\_\ ((packed));}
+\DoxyCodeLine{00288\ }
+\DoxyCodeLine{00289\ \textcolor{comment}{/*\ Should\ match\ the\ specific\ fields\ at\ media\_intf\_devnode\ */}}
+\DoxyCodeLine{00290\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structmedia__v2__intf__devnode}{media\_v2\_intf\_devnode}}\ \{}
+\DoxyCodeLine{00291\ \ \ \ \ \_\_u32\ major;}
+\DoxyCodeLine{00292\ \ \ \ \ \_\_u32\ minor;}
+\DoxyCodeLine{00293\ \}\ \_\_attribute\_\_\ ((packed));}
+\DoxyCodeLine{00294\ }
+\DoxyCodeLine{00295\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structmedia__v2__interface}{media\_v2\_interface}}\ \{}
+\DoxyCodeLine{00296\ \ \ \ \ \_\_u32\ id;}
+\DoxyCodeLine{00297\ \ \ \ \ \_\_u32\ intf\_type;}
+\DoxyCodeLine{00298\ \ \ \ \ \_\_u32\ flags;}
+\DoxyCodeLine{00299\ \ \ \ \ \_\_u32\ reserved[9];}
+\DoxyCodeLine{00300\ }
+\DoxyCodeLine{00301\ \ \ \ \ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structmedia__v2__intf__devnode}{media\_v2\_intf\_devnode}}\ devnode;}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \_\_u32\ raw[16];}
+\DoxyCodeLine{00304\ \ \ \ \ \};}
+\DoxyCodeLine{00305\ \}\ \_\_attribute\_\_\ ((packed));}
+\DoxyCodeLine{00306\ }
+\DoxyCodeLine{00307\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00308\ \textcolor{comment}{\ *\ Appeared\ in\ 4.19.0.}}
+\DoxyCodeLine{00309\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00310\ \textcolor{comment}{\ *\ The\ media\_version\ argument\ comes\ from\ the\ media\_version\ field\ in}}
+\DoxyCodeLine{00311\ \textcolor{comment}{\ *\ struct\ media\_device\_info.}}
+\DoxyCodeLine{00312\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00313\ \textcolor{preprocessor}{\#define\ MEDIA\_V2\_PAD\_HAS\_INDEX(media\_version)\ \(\backslash\)}}
+\DoxyCodeLine{00314\ \textcolor{preprocessor}{\ \ \ \ ((media\_version)\ >=\ ((4U\ <<\ 16)\ |\ (19U\ <<\ 8)\ |\ 0U))}}
+\DoxyCodeLine{00315\ }
+\DoxyCodeLine{00316\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structmedia__v2__pad}{media\_v2\_pad}}\ \{}
+\DoxyCodeLine{00317\ \ \ \ \ \_\_u32\ id;}
+\DoxyCodeLine{00318\ \ \ \ \ \_\_u32\ entity\_id;}
+\DoxyCodeLine{00319\ \ \ \ \ \_\_u32\ flags;}
+\DoxyCodeLine{00320\ \ \ \ \ \_\_u32\ index;}
+\DoxyCodeLine{00321\ \ \ \ \ \_\_u32\ reserved[4];}
+\DoxyCodeLine{00322\ \}\ \_\_attribute\_\_\ ((packed));}
+\DoxyCodeLine{00323\ }
+\DoxyCodeLine{00324\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structmedia__v2__link}{media\_v2\_link}}\ \{}
+\DoxyCodeLine{00325\ \ \ \ \ \_\_u32\ id;}
+\DoxyCodeLine{00326\ \ \ \ \ \_\_u32\ source\_id;}
+\DoxyCodeLine{00327\ \ \ \ \ \_\_u32\ sink\_id;}
+\DoxyCodeLine{00328\ \ \ \ \ \_\_u32\ flags;}
+\DoxyCodeLine{00329\ \ \ \ \ \_\_u32\ reserved[6];}
+\DoxyCodeLine{00330\ \}\ \_\_attribute\_\_\ ((packed));}
+\DoxyCodeLine{00331\ }
+\DoxyCodeLine{00332\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structmedia__v2__topology}{media\_v2\_topology}}\ \{}
+\DoxyCodeLine{00333\ \ \ \ \ \_\_u64\ topology\_version;}
+\DoxyCodeLine{00334\ }
+\DoxyCodeLine{00335\ \ \ \ \ \_\_u32\ num\_entities;}
+\DoxyCodeLine{00336\ \ \ \ \ \_\_u32\ reserved1;}
+\DoxyCodeLine{00337\ \ \ \ \ \_\_u64\ ptr\_entities;}
+\DoxyCodeLine{00338\ }
+\DoxyCodeLine{00339\ \ \ \ \ \_\_u32\ num\_interfaces;}
+\DoxyCodeLine{00340\ \ \ \ \ \_\_u32\ reserved2;}
+\DoxyCodeLine{00341\ \ \ \ \ \_\_u64\ ptr\_interfaces;}
+\DoxyCodeLine{00342\ }
+\DoxyCodeLine{00343\ \ \ \ \ \_\_u32\ num\_pads;}
+\DoxyCodeLine{00344\ \ \ \ \ \_\_u32\ reserved3;}
+\DoxyCodeLine{00345\ \ \ \ \ \_\_u64\ ptr\_pads;}
+\DoxyCodeLine{00346\ }
+\DoxyCodeLine{00347\ \ \ \ \ \_\_u32\ num\_links;}
+\DoxyCodeLine{00348\ \ \ \ \ \_\_u32\ reserved4;}
+\DoxyCodeLine{00349\ \ \ \ \ \_\_u64\ ptr\_links;}
+\DoxyCodeLine{00350\ \}\ \_\_attribute\_\_\ ((packed));}
+\DoxyCodeLine{00351\ }
+\DoxyCodeLine{00352\ \textcolor{comment}{/*\ ioctls\ */}}
+\DoxyCodeLine{00353\ }
+\DoxyCodeLine{00354\ \textcolor{preprocessor}{\#define\ MEDIA\_IOC\_DEVICE\_INFO\ \ \ \_IOWR('|',\ 0x00,\ struct\ media\_device\_info)}}
+\DoxyCodeLine{00355\ \textcolor{preprocessor}{\#define\ MEDIA\_IOC\_ENUM\_ENTITIES\ \_IOWR('|',\ 0x01,\ struct\ media\_entity\_desc)}}
+\DoxyCodeLine{00356\ \textcolor{preprocessor}{\#define\ MEDIA\_IOC\_ENUM\_LINKS\ \ \ \ \_IOWR('|',\ 0x02,\ struct\ media\_links\_enum)}}
+\DoxyCodeLine{00357\ \textcolor{preprocessor}{\#define\ MEDIA\_IOC\_SETUP\_LINK\ \ \ \ \_IOWR('|',\ 0x03,\ struct\ media\_link\_desc)}}
+\DoxyCodeLine{00358\ \textcolor{preprocessor}{\#define\ MEDIA\_IOC\_G\_TOPOLOGY\ \ \ \ \_IOWR('|',\ 0x04,\ struct\ media\_v2\_topology)}}
+\DoxyCodeLine{00359\ \textcolor{preprocessor}{\#define\ MEDIA\_IOC\_REQUEST\_ALLOC\ \_IOR\ ('|',\ 0x05,\ int)}}
+\DoxyCodeLine{00360\ }
+\DoxyCodeLine{00361\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00362\ \textcolor{comment}{\ *\ These\ ioctls\ are\ called\ on\ the\ request\ file\ descriptor\ as\ returned}}
+\DoxyCodeLine{00363\ \textcolor{comment}{\ *\ by\ MEDIA\_IOC\_REQUEST\_ALLOC.}}
+\DoxyCodeLine{00364\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00365\ \textcolor{preprocessor}{\#define\ MEDIA\_REQUEST\_IOC\_QUEUE\ \ \ \ \ \_IO('|',\ \ 0x80)}}
+\DoxyCodeLine{00366\ \textcolor{preprocessor}{\#define\ MEDIA\_REQUEST\_IOC\_REINIT\ \ \ \ \_IO('|',\ \ 0x81)}}
+\DoxyCodeLine{00367\ }
+\DoxyCodeLine{00368\ }
+\DoxyCodeLine{00369\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00370\ \textcolor{comment}{\ *\ Legacy\ symbols\ used\ to\ avoid\ userspace\ compilation\ breakages.}}
+\DoxyCodeLine{00371\ \textcolor{comment}{\ *\ Do\ not\ use\ any\ of\ this\ in\ new\ applications!}}
+\DoxyCodeLine{00372\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00373\ \textcolor{comment}{\ *\ Those\ symbols\ map\ the\ entity\ function\ into\ types\ and\ should\ be}}
+\DoxyCodeLine{00374\ \textcolor{comment}{\ *\ used\ only\ on\ legacy\ programs\ for\ legacy\ hardware.\ Don't\ rely}}
+\DoxyCodeLine{00375\ \textcolor{comment}{\ *\ on\ those\ for\ MEDIA\_IOC\_G\_TOPOLOGY.}}
+\DoxyCodeLine{00376\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00377\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_TYPE\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ 16}}
+\DoxyCodeLine{00378\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_TYPE\_MASK\ \ \ \ \ \ \ \ \ 0x00ff0000}}
+\DoxyCodeLine{00379\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_SUBTYPE\_MASK\ \ \ \ \ \ \ \ \ \ 0x0000ffff}}
+\DoxyCodeLine{00380\ }
+\DoxyCodeLine{00381\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_T\_DEVNODE\_UNKNOWN\ \ \ \ \ (MEDIA\_ENT\_F\_OLD\_BASE\ |\ \(\backslash\)}}
+\DoxyCodeLine{00382\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MEDIA\_ENT\_SUBTYPE\_MASK)}}
+\DoxyCodeLine{00383\ }
+\DoxyCodeLine{00384\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_T\_DEVNODE\ \ \ \ \ \ \ \ \ MEDIA\_ENT\_F\_OLD\_BASE}}
+\DoxyCodeLine{00385\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_T\_DEVNODE\_V4L\ \ \ \ \ \ \ \ \ MEDIA\_ENT\_F\_IO\_V4L}}
+\DoxyCodeLine{00386\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_T\_DEVNODE\_FB\ \ \ \ \ \ \ \ \ \ (MEDIA\_ENT\_F\_OLD\_BASE\ +\ 2)}}
+\DoxyCodeLine{00387\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_T\_DEVNODE\_ALSA\ \ \ \ \ \ \ \ (MEDIA\_ENT\_F\_OLD\_BASE\ +\ 3)}}
+\DoxyCodeLine{00388\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_T\_DEVNODE\_DVB\ \ \ \ \ \ \ \ \ (MEDIA\_ENT\_F\_OLD\_BASE\ +\ 4)}}
+\DoxyCodeLine{00389\ }
+\DoxyCodeLine{00390\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_T\_UNKNOWN\ \ \ \ \ \ \ \ \ MEDIA\_ENT\_F\_UNKNOWN}}
+\DoxyCodeLine{00391\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_T\_V4L2\_VIDEO\ \ \ \ \ \ \ \ \ \ MEDIA\_ENT\_F\_IO\_V4L}}
+\DoxyCodeLine{00392\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_T\_V4L2\_SUBDEV\ \ \ \ \ \ \ \ \ MEDIA\_ENT\_F\_V4L2\_SUBDEV\_UNKNOWN}}
+\DoxyCodeLine{00393\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_T\_V4L2\_SUBDEV\_SENSOR\ \ \ \ \ \ MEDIA\_ENT\_F\_CAM\_SENSOR}}
+\DoxyCodeLine{00394\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_T\_V4L2\_SUBDEV\_FLASH\ \ \ \ \ \ \ MEDIA\_ENT\_F\_FLASH}}
+\DoxyCodeLine{00395\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_T\_V4L2\_SUBDEV\_LENS\ \ \ \ \ \ \ \ MEDIA\_ENT\_F\_LENS}}
+\DoxyCodeLine{00396\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_T\_V4L2\_SUBDEV\_DECODER\ \ \ \ \ MEDIA\_ENT\_F\_ATV\_DECODER}}
+\DoxyCodeLine{00397\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_T\_V4L2\_SUBDEV\_TUNER\ \ \ \ \ \ \ MEDIA\_ENT\_F\_TUNER}}
+\DoxyCodeLine{00398\ }
+\DoxyCodeLine{00399\ \textcolor{preprocessor}{\#define\ MEDIA\_ENT\_F\_DTV\_DECODER\ \ \ \ \ \ \ \ \ MEDIA\_ENT\_F\_DV\_DECODER}}
+\DoxyCodeLine{00400\ }
+\DoxyCodeLine{00401\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00402\ \textcolor{comment}{\ *\ There\ is\ still\ no\ full\ ALSA\ support\ in\ the\ media\ controller.\ These}}
+\DoxyCodeLine{00403\ \textcolor{comment}{\ *\ defines\ should\ not\ have\ been\ added\ and\ we\ leave\ them\ here\ only}}
+\DoxyCodeLine{00404\ \textcolor{comment}{\ *\ in\ case\ some\ application\ tries\ to\ use\ these\ defines.}}
+\DoxyCodeLine{00405\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00406\ \textcolor{comment}{\ *\ The\ ALSA\ defines\ that\ are\ in\ use\ have\ been\ moved\ into\ \_\_KERNEL\_\_}}
+\DoxyCodeLine{00407\ \textcolor{comment}{\ *\ scope.\ As\ support\ gets\ added\ to\ these\ interface\ types,\ they\ should}}
+\DoxyCodeLine{00408\ \textcolor{comment}{\ *\ be\ moved\ into\ \_\_KERNEL\_\_\ scope\ with\ the\ code\ that\ uses\ them.}}
+\DoxyCodeLine{00409\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00410\ \textcolor{preprocessor}{\#define\ MEDIA\_INTF\_T\_ALSA\_COMPRESS\ \ \ \ \ \ \ \ \ \ \ \ \ (MEDIA\_INTF\_T\_ALSA\_BASE\ +\ 3)}}
+\DoxyCodeLine{00411\ \textcolor{preprocessor}{\#define\ MEDIA\_INTF\_T\_ALSA\_RAWMIDI\ \ \ \ \ \ \ \ \ \ \ \ \ \ (MEDIA\_INTF\_T\_ALSA\_BASE\ +\ 4)}}
+\DoxyCodeLine{00412\ \textcolor{preprocessor}{\#define\ MEDIA\_INTF\_T\_ALSA\_HWDEP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (MEDIA\_INTF\_T\_ALSA\_BASE\ +\ 5)}}
+\DoxyCodeLine{00413\ \textcolor{preprocessor}{\#define\ MEDIA\_INTF\_T\_ALSA\_SEQUENCER\ \ \ \ \ \ \ \ \ \ \ \ (MEDIA\_INTF\_T\_ALSA\_BASE\ +\ 6)}}
+\DoxyCodeLine{00414\ \textcolor{preprocessor}{\#define\ MEDIA\_INTF\_T\_ALSA\_TIMER\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (MEDIA\_INTF\_T\_ALSA\_BASE\ +\ 7)}}
+\DoxyCodeLine{00415\ }
+\DoxyCodeLine{00416\ \textcolor{comment}{/*\ Obsolete\ symbol\ for\ media\_version,\ no\ longer\ used\ in\ the\ kernel\ */}}
+\DoxyCodeLine{00417\ \textcolor{preprocessor}{\#define\ MEDIA\_API\_VERSION\ \ \ \ \ \ \ \ \ \ \ ((0U\ <<\ 16)\ |\ (1U\ <<\ 8)\ |\ 0U)}}
+\DoxyCodeLine{00418\ }
+\DoxyCodeLine{00419\ }
+\DoxyCodeLine{00420\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_LINUX\_MEDIA\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

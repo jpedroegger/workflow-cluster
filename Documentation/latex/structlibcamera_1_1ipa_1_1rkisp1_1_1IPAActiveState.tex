@@ -1,0 +1,154 @@
+\doxysection{libcamera\+::ipa\+::rkisp1\+::IPAActive\+State Struct Reference}
+\hypertarget{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAActiveState}{}\label{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAActiveState}\index{libcamera::ipa::rkisp1::IPAActiveState@{libcamera::ipa::rkisp1::IPAActiveState}}
+
+
+Active state for algorithms.  
+
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>struct \{\\
+\>\>uint32\_t {\bfseries exposure}\\
+\>\>double {\bfseries gain}\\
+\>\} {\bfseries manual}\\
+\>struct \{\\
+\>\>uint32\_t {\bfseries exposure}\\
+\>\>double {\bfseries gain}\\
+\>\} {\bfseries automatic}\\
+\>bool {\bfseries autoEnabled}\\
+\>controls::AeConstraintModeEnum {\bfseries constraintMode}\\
+\>controls::AeExposureModeEnum {\bfseries exposureMode}\\
+\>controls::AeMeteringModeEnum {\bfseries meteringMode}\\
+\>\mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{utils::Duration}} {\bfseries maxFrameDuration}\\
+\} \mbox{\hyperlink{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAActiveState_ab7806bff92a08fbce3b8fe8c033fdf33}{agc}}\\
+
+\end{tabbing}\begin{DoxyCompactList}\small\item\em State for the Automatic Gain \doxylink{classlibcamera_1_1Control}{Control} algorithm. \end{DoxyCompactList}\item 
+\Hypertarget{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAActiveState_ac1f1b69a08c3c17833623884a09ce7f2}\label{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAActiveState_ac1f1b69a08c3c17833623884a09ce7f2} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>struct \{\\
+\>\>\mbox{\hyperlink{namespacelibcamera_1_1ipa_a00daf846a0a55af6fe111cba13f597ed}{RGB}}$<$ double $>$ {\bfseries manual}\\
+\>\>\mbox{\hyperlink{namespacelibcamera_1_1ipa_a00daf846a0a55af6fe111cba13f597ed}{RGB}}$<$ double $>$ {\bfseries automatic}\\
+\>\} {\bfseries gains}\\
+\>unsigned int {\bfseries temperatureK}\\
+\>bool {\bfseries autoEnabled}\\
+\} {\bfseries awb}\\
+
+\end{tabbing}\begin{DoxyCompactList}\small\item\em State for the Automatic White Balance algorithm. \end{DoxyCompactList}\item 
+\Hypertarget{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAActiveState_a2cf0b0b3796561292fcbb2c870427a36}\label{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAActiveState_a2cf0b0b3796561292fcbb2c870427a36} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>\mbox{\hyperlink{classlibcamera_1_1Matrix}{Matrix}}$<$ float, 3, 3 $>$ {\bfseries ccm}\\
+\} {\bfseries ccm}\\
+
+\end{tabbing}\item 
+\Hypertarget{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAActiveState_ab669f208bccc236f79031c9b3e70fbd3}\label{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAActiveState_ab669f208bccc236f79031c9b3e70fbd3} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>int8\_t {\bfseries brightness}\\
+\>uint8\_t {\bfseries contrast}\\
+\>uint8\_t {\bfseries saturation}\\
+\} {\bfseries cproc}\\
+
+\end{tabbing}\begin{DoxyCompactList}\small\item\em State for the \doxylink{classColor}{Color} Processing algorithm. \end{DoxyCompactList}\item 
+\Hypertarget{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAActiveState_a49458cc1386515d0627d89bab4ab69c4}\label{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAActiveState_a49458cc1386515d0627d89bab4ab69c4} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>bool {\bfseries denoise}\\
+\} {\bfseries dpf}\\
+
+\end{tabbing}\begin{DoxyCompactList}\small\item\em State for the Denoise Pre-\/\+Filter algorithm. \end{DoxyCompactList}\item 
+\Hypertarget{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAActiveState_a52edd617d4ecc054788caa0aee243a29}\label{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAActiveState_a52edd617d4ecc054788caa0aee243a29} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>uint8\_t {\bfseries denoise}\\
+\>uint8\_t {\bfseries sharpness}\\
+\} {\bfseries filter}\\
+
+\end{tabbing}\begin{DoxyCompactList}\small\item\em State for the Filter algorithm. \end{DoxyCompactList}\item 
+\Hypertarget{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAActiveState_a144a26b67d73acbe33ef987c8144c0d0}\label{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAActiveState_a144a26b67d73acbe33ef987c8144c0d0} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>double {\bfseries gamma}\\
+\} {\bfseries goc}\\
+
+\end{tabbing}\begin{DoxyCompactList}\small\item\em State for the goc algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Active state for algorithms. 
+
+The active state contains all algorithm-\/specific data that needs to be maintained by algorithms across frames. Unlike the session configuration, the active state is mutable and constantly updated by algorithms. The active state is accessible through the \doxylink{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAContext}{IPAContext} structure.
+
+The active state stores two distinct categories of information\+:
+
+
+\begin{DoxyItemize}
+\item The consolidated value of all algorithm controls. Requests passed to the queue\+Request() function store values for controls that the application wants to modify for that particular frame, and the queue\+Request() function updates the active state with those values. The active state thus contains a consolidated view of the value of all controls handled by the algorithm.
+\item The value of parameters computed by the algorithm when running in auto mode. Algorithms running in auto mode compute new parameters every time statistics buffers are received (either synchronously, or possibly in a background thread). The latest computed value of those parameters is stored in the active state in the process() function.
+\end{DoxyItemize}
+
+Each of the members in the active state belongs to a specific algorithm. A member may be read by any algorithm, but shall only be written by its owner. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAActiveState_ab7806bff92a08fbce3b8fe8c033fdf33}\label{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAActiveState_ab7806bff92a08fbce3b8fe8c033fdf33} 
+\index{libcamera::ipa::rkisp1::IPAActiveState@{libcamera::ipa::rkisp1::IPAActiveState}!agc@{agc}}
+\index{agc@{agc}!libcamera::ipa::rkisp1::IPAActiveState@{libcamera::ipa::rkisp1::IPAActiveState}}
+\doxysubsubsection{\texorpdfstring{agc}{agc}}
+{\footnotesize\ttfamily libcamera\+::ipa\+::soft\+::\+IPAActive\+State\+::agc}
+
+
+
+State for the Automatic Gain \doxylink{classlibcamera_1_1Control}{Control} algorithm. 
+
+Context for the AGC algorithm.
+
+The {\itshape automatic} variables track the latest values computed by algorithm based on the latest processed statistics. All other variables track the consolidated controls requested in queued requests. \Hypertarget{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAActiveState_a9a2557b5076c6a8f4048a4c6e7959a15}\label{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAActiveState_a9a2557b5076c6a8f4048a4c6e7959a15} 
+\index{libcamera::ipa::rkisp1::IPAActiveState@{libcamera::ipa::rkisp1::IPAActiveState}!autoEnabled@{autoEnabled}}
+\index{autoEnabled@{autoEnabled}!libcamera::ipa::rkisp1::IPAActiveState@{libcamera::ipa::rkisp1::IPAActiveState}}
+\doxysubsubsection{\texorpdfstring{autoEnabled}{autoEnabled}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAActiveState_ac1f1b69a08c3c17833623884a09ce7f2}{awb}} libcamera\+::ipa\+::rkisp1\+::\+IPAActive\+State\+::auto\+Enabled}
+
+
+
+Manual/automatic AGC state as set by the Ae\+Enable control. 
+
+Whether the Auto White Balance algorithm is enabled. \Hypertarget{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAActiveState_a99a953fb54e270458e2339e74ed6812e}\label{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAActiveState_a99a953fb54e270458e2339e74ed6812e} 
+\index{libcamera::ipa::rkisp1::IPAActiveState@{libcamera::ipa::rkisp1::IPAActiveState}!exposure@{exposure}}
+\index{exposure@{exposure}!libcamera::ipa::rkisp1::IPAActiveState@{libcamera::ipa::rkisp1::IPAActiveState}}
+\doxysubsubsection{\texorpdfstring{exposure}{exposure}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAActiveState_ab7806bff92a08fbce3b8fe8c033fdf33}{agc}} libcamera\+::ipa\+::soft\+::\+IPAActive\+State\+::exposure}
+
+
+
+Manual exposure time expressed as a number of lines as set by the Exposure\+Time control. 
+
+Current exposure value.
+
+Automatic exposure time expressed as a number of lines. \Hypertarget{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAActiveState_ae3a4a1015ec0bf0e8f81a2b38bb706db}\label{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAActiveState_ae3a4a1015ec0bf0e8f81a2b38bb706db} 
+\index{libcamera::ipa::rkisp1::IPAActiveState@{libcamera::ipa::rkisp1::IPAActiveState}!gain@{gain}}
+\index{gain@{gain}!libcamera::ipa::rkisp1::IPAActiveState@{libcamera::ipa::rkisp1::IPAActiveState}}
+\doxysubsubsection{\texorpdfstring{gain}{gain}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAActiveState_ab7806bff92a08fbce3b8fe8c033fdf33}{agc}} \mbox{\hyperlink{structIPAActiveState_1_1agc_1_1automatic}{automatic}} libcamera\+::ipa\+::rkisp1\+::\+IPAActive\+State\+::gain}
+
+
+
+Manual analogue gain as set by the Analogue\+Gain control. 
+
+Automatic analogue gain multiplier. 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/ipa/rkisp1/\mbox{\hyperlink{rkisp1_2ipa__context_8h}{ipa\+\_\+context.\+h}}\item 
+src/peripherals/camera/libcamera/src/ipa/rkisp1/ipa\+\_\+context.\+cpp\item 
+src/peripherals/camera/libcamera/src/ipa/simple/ipa\+\_\+context.\+cpp\end{DoxyCompactItemize}

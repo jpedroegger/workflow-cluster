@@ -1,0 +1,23 @@
+\doxysection{tonemap\+\_\+status.\+h}
+\hypertarget{tonemap__status_8h_source}{}\label{tonemap__status_8h_source}\index{src/peripherals/camera/libcamera/src/ipa/rpi/controller/tonemap\_status.h@{src/peripherals/camera/libcamera/src/ipa/rpi/controller/tonemap\_status.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ BSD-\/2-\/Clause\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2022\ Raspberry\ Pi\ Ltd}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Tonemap\ control\ algorithm\ status}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{pwl_8h}{libipa/pwl.h}}>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structTonemapStatus}{TonemapStatus}}\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ uint16\_t\ detailConstant;}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{double}\ detailSlope;}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{double}\ iirStrength;}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{double}\ strength;}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Pwl}{libcamera::ipa::Pwl}}\ tonemap;}
+\DoxyCodeLine{00017\ \};}
+
+\end{DoxyCode}

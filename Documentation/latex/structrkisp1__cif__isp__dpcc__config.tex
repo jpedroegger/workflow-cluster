@@ -1,0 +1,39 @@
+\doxysection{rkisp1\+\_\+cif\+\_\+isp\+\_\+dpcc\+\_\+config Struct Reference}
+\hypertarget{structrkisp1__cif__isp__dpcc__config}{}\label{structrkisp1__cif__isp__dpcc__config}\index{rkisp1\_cif\_isp\_dpcc\_config@{rkisp1\_cif\_isp\_dpcc\_config}}
+
+
+{\ttfamily \#include $<$rkisp1-\/config.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structrkisp1__cif__isp__dpcc__config_a326964c76d210574f17a4afd6a1babd8}\label{structrkisp1__cif__isp__dpcc__config_a326964c76d210574f17a4afd6a1babd8} 
+\+\_\+\+\_\+u32 {\bfseries mode}
+\item 
+\Hypertarget{structrkisp1__cif__isp__dpcc__config_a1ef97fb664161bf4bc2f4bc7ce1271c3}\label{structrkisp1__cif__isp__dpcc__config_a1ef97fb664161bf4bc2f4bc7ce1271c3} 
+\+\_\+\+\_\+u32 {\bfseries output\+\_\+mode}
+\item 
+\Hypertarget{structrkisp1__cif__isp__dpcc__config_a972dcb5946c8c1c9851b5d3b211d5669}\label{structrkisp1__cif__isp__dpcc__config_a972dcb5946c8c1c9851b5d3b211d5669} 
+\+\_\+\+\_\+u32 {\bfseries set\+\_\+use}
+\item 
+\Hypertarget{structrkisp1__cif__isp__dpcc__config_a59fb946ce82de59fe712bd6a791a4be0}\label{structrkisp1__cif__isp__dpcc__config_a59fb946ce82de59fe712bd6a791a4be0} 
+struct \mbox{\hyperlink{structrkisp1__cif__isp__dpcc__methods__config}{rkisp1\+\_\+cif\+\_\+isp\+\_\+dpcc\+\_\+methods\+\_\+config}} {\bfseries methods} \mbox{[}RKISP1\+\_\+\+CIF\+\_\+\+ISP\+\_\+\+DPCC\+\_\+\+METHODS\+\_\+\+MAX\mbox{]}
+\item 
+\Hypertarget{structrkisp1__cif__isp__dpcc__config_a41aa3e8f29bf617330b434a14c84a288}\label{structrkisp1__cif__isp__dpcc__config_a41aa3e8f29bf617330b434a14c84a288} 
+\+\_\+\+\_\+u32 {\bfseries ro\+\_\+limits}
+\item 
+\Hypertarget{structrkisp1__cif__isp__dpcc__config_a53c262436a1fd52289b6e1640c139fe3}\label{structrkisp1__cif__isp__dpcc__config_a53c262436a1fd52289b6e1640c139fe3} 
+\+\_\+\+\_\+u32 {\bfseries rnd\+\_\+offs}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structrkisp1__cif__isp__dpcc__config}{rkisp1\+\_\+cif\+\_\+isp\+\_\+dpcc\+\_\+config} -\/ Configuration used by DPCC
+
+Configuration used by Defect Pixel Cluster Correction. Three sets of methods can be configured and selected through the @set\+\_\+use field. The result is the logical OR of all enabled sets.
+
+@mode\+: DPCC mode (RKISP1\+\_\+\+CIF\+\_\+\+ISP\+\_\+\+DPCC\+\_\+\+MODE\+\_\+\texorpdfstring{$\ast$}{*}) @output\+\_\+mode\+: Interpolation output mode (RKISP1\+\_\+\+CIF\+\_\+\+ISP\+\_\+\+DPCC\+\_\+\+OUTPUT\+\_\+\+MODE\+\_\+\texorpdfstring{$\ast$}{*}) @set\+\_\+use\+: Methods sets selection (RKISP1\+\_\+\+CIF\+\_\+\+ISP\+\_\+\+DPCC\+\_\+\+SET\+\_\+\+USE\+\_\+\texorpdfstring{$\ast$}{*}) @methods\+: Methods sets configuration @ro\+\_\+limits\+: Rank order limits (RKISP1\+\_\+\+CIF\+\_\+\+ISP\+\_\+\+DPCC\+\_\+\+RO\+\_\+\+LIMITS\+\_\+\texorpdfstring{$\ast$}{*}) @rnd\+\_\+offs\+: Differential rank offsets for rank neighbor difference (RKISP1\+\_\+\+CIF\+\_\+\+ISP\+\_\+\+DPCC\+\_\+\+RND\+\_\+\+OFFS\+\_\+\texorpdfstring{$\ast$}{*}) 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/rkisp1-\/config.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,24 @@
+\doxysection{rkisp1\+\_\+cif\+\_\+isp\+\_\+gamma\+\_\+corr\+\_\+curve Struct Reference}
+\hypertarget{structrkisp1__cif__isp__gamma__corr__curve}{}\label{structrkisp1__cif__isp__gamma__corr__curve}\index{rkisp1\_cif\_isp\_gamma\_corr\_curve@{rkisp1\_cif\_isp\_gamma\_corr\_curve}}
+
+
+{\ttfamily \#include $<$rkisp1-\/config.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structrkisp1__cif__isp__gamma__corr__curve_aa2cd694f04d5c7cc1ad760a7dd9582b9}\label{structrkisp1__cif__isp__gamma__corr__curve_aa2cd694f04d5c7cc1ad760a7dd9582b9} 
+\+\_\+\+\_\+u16 {\bfseries gamma\+\_\+y} \mbox{[}RKISP1\+\_\+\+CIF\+\_\+\+ISP\+\_\+\+DEGAMMA\+\_\+\+CURVE\+\_\+\+SIZE\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structrkisp1__cif__isp__gamma__corr__curve}{rkisp1\+\_\+cif\+\_\+isp\+\_\+gamma\+\_\+corr\+\_\+curve} -\/ gamma curve point definition y-\/axis (output).
+
+The reset values define a linear curve which has the same effect as bypass. Reset values are\+: gamma\+\_\+y\mbox{[}0\mbox{]} = 0x0000, gamma\+\_\+y\mbox{[}1\mbox{]} = 0x0100, ... gamma\+\_\+y\mbox{[}15\mbox{]} = 0x0f00, gamma\+\_\+y\mbox{[}16\mbox{]} = 0xfff
+
+@gamma\+\_\+y\+: the values for the y-\/axis of gamma curve points. Each value is 12 bit. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/rkisp1-\/config.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,137 @@
+\doxysection{src/peripherals/camera/libcamera/include/libcamera/ipa/ipa\+\_\+controls.h File Reference}
+\hypertarget{ipa__controls_8h}{}\label{ipa__controls_8h}\index{src/peripherals/camera/libcamera/include/libcamera/ipa/ipa\_controls.h@{src/peripherals/camera/libcamera/include/libcamera/ipa/ipa\_controls.h}}
+
+
+Type definitions for serialized controls.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structipa__controls__header}{ipa\+\_\+controls\+\_\+header}}
+\begin{DoxyCompactList}\small\item\em Serialized control packet header. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structipa__control__value__entry}{ipa\+\_\+control\+\_\+value\+\_\+entry}}
+\begin{DoxyCompactList}\small\item\em Description of a serialized Control\+Value entry. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structipa__control__info__entry}{ipa\+\_\+control\+\_\+info\+\_\+entry}}
+\begin{DoxyCompactList}\small\item\em Description of a serialized Control\+Info entry. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{ipa__controls_8h_ab0636e3df8b5a856b6949abc81bc80d1}\label{ipa__controls_8h_ab0636e3df8b5a856b6949abc81bc80d1} 
+\#define {\bfseries IPA\+\_\+\+CONTROLS\+\_\+\+FORMAT\+\_\+\+VERSION}~1
+\begin{DoxyCompactList}\small\item\em The current control serialization format version. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{ipa__controls_8h_ae93b42c8b5a94e0e95fe87fc640013b6}\label{ipa__controls_8h_ae93b42c8b5a94e0e95fe87fc640013b6} 
+enum {\bfseries ipa\+\_\+controls\+\_\+id\+\_\+map\+\_\+type} \{ {\bfseries IPA\+\_\+\+CONTROL\+\_\+\+ID\+\_\+\+MAP\+\_\+\+CONTROLS}
+, {\bfseries IPA\+\_\+\+CONTROL\+\_\+\+ID\+\_\+\+MAP\+\_\+\+PROPERTIES}
+, {\bfseries IPA\+\_\+\+CONTROL\+\_\+\+ID\+\_\+\+MAP\+\_\+\+V4\+L2}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Type definitions for serialized controls. 
+
+This file defines binary formats to store Control\+List and Control\+Info\+Map instances in contiguous, self-\/contained memory areas called control packets. It describes the layout of the packets through a set of C structures. These formats shall be used when serializing Control\+List and Control\+Info\+Map to transfer them through the IPA C interface and IPA IPC transports.
+
+A control packet contains a list of entries, each of them describing a single control info or control value. The packet starts with a fixed-\/size header described by the \doxylink{structipa__controls__header}{ipa\+\_\+controls\+\_\+header} structure, followed by an array of fixed-\/size entries. Each entry is associated with data, stored either directly in the entry, or in a data section after the entries array.
+
+The following diagram describes the layout of the Control\+List packet.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ +-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+\ \ \ \ .\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .}
+\DoxyCodeLine{\ Header\ /\ |\ \mbox{\hyperlink{structipa__controls__header}{ipa\_controls\_header}}\ \ \ \ \ |\ \ \ \ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ |\ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ \ \ \ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \(\backslash\)\ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ \ \ \ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ +-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+\ \ \ \ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ /\ |\ \mbox{\hyperlink{structipa__control__value__entry}{ipa\_control\_value\_entry}}\ |\ \ \ \ |\ hdr.data\_offset\ \ \ \ \ \ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ |\ |\ \#0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ \ \ \ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |}
+\DoxyCodeLine{Control\ |\ +-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+\ \ \ \ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |}
+\DoxyCodeLine{\ \ value\ |\ |\ ...\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ \ \ \ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |}
+\DoxyCodeLine{entries\ |\ +-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+\ \ \ \ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ |\ |\ \mbox{\hyperlink{structipa__control__value__entry}{ipa\_control\_value\_entry}}\ |\ \ \ \ |\ \ \ \ \ \ \ \ \ \ \ \ \ hdr.size\ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \(\backslash\)\ |\ \#hdr.entries\ -\/\ 1\ \ \ \ \ \ \ \ |\ \ \ \ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ +-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+\ \ \ \ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ |\ empty\ space\ (optional)\ \ |\ \ \ \ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ +-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+\ <-\/-\/´\ \ .\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ /\ |\ ...\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ \ \ \ \ \ \ |\ entry[n].\mbox{\hyperlink{structipa__control__value__entry_a0149b36aaceca06dc04e37edcad3aadb}{offset}}\ \ \ |}
+\DoxyCodeLine{\ \ \ Data\ |\ |\ ...\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ \ \ \ \ \ \ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |}
+\DoxyCodeLine{section\ |\ |\ value\ data\ \textcolor{keywordflow}{for}\ entry\ \#n\ |\ <-\/-\/-\/-\/-\/´\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \(\backslash\)\ |\ ...\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ +-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ |\ empty\ space\ (optional)\ \ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ +-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+\ <-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/´}
+
+\end{DoxyCode}
+
+
+The packet header contains the size of the packet, the number of entries, and the offset from the beginning of the packet to the data section. The packet entries array immediately follows the header. The data section starts at the offset \doxylink{structipa__controls__header_afcc4caa0f6eb56f4357ab2441581ef9e}{ipa\+\_\+controls\+\_\+header\+::data\+\_\+offset} from the beginning of the packet, and shall be aligned to a multiple of 8 bytes.
+
+Entries are described by the \doxylink{structipa__control__value__entry}{ipa\+\_\+control\+\_\+value\+\_\+entry} structure. They contain the numerical ID of the control, its type, and the number of control values.
+
+The control values are stored in the data section in the platform\textquotesingle{}s native format. The \doxylink{structipa__control__value__entry_a0149b36aaceca06dc04e37edcad3aadb}{ipa\+\_\+control\+\_\+value\+\_\+entry\+::offset} field stores the offset from the beginning of the data section to the values.
+
+All control values in the data section shall be stored in the same order as the respective control entries, shall be aligned to a multiple of 8 bytes, and shall be contiguous in memory.
+
+Empty spaces may be present between the end of the entries array and the data section, and after the data section. They shall be ignored when parsing the packet.
+
+The following diagram describes the layout of the Control\+Info\+Map packet.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ +-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+\ \ \ \ .\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .}
+\DoxyCodeLine{\ Header\ /\ |\ \mbox{\hyperlink{structipa__controls__header}{ipa\_controls\_header}}\ \ \ \ \ |\ \ \ \ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ |\ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ \ \ \ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \(\backslash\)\ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ \ \ \ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ +-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+\ \ \ \ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ /\ |\ \mbox{\hyperlink{structipa__control__info__entry}{ipa\_control\_info\_entry}}\ \ |\ \ \ \ |\ hdr.data\_offset\ \ \ \ \ \ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ |\ |\ \#0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ \ \ \ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |}
+\DoxyCodeLine{Control\ |\ +-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+\ \ \ \ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |}
+\DoxyCodeLine{\ \ \ info\ |\ |\ ...\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ \ \ \ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |}
+\DoxyCodeLine{entries\ |\ +-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+\ \ \ \ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ |\ |\ \mbox{\hyperlink{structipa__control__info__entry}{ipa\_control\_info\_entry}}\ \ |\ \ \ \ |\ \ \ \ \ \ \ \ \ \ \ \ \ hdr.size\ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \(\backslash\)\ |\ \#hdr.entries\ -\/\ 1\ \ \ \ \ \ \ \ |\ \ \ \ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ +-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+\ \ \ \ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ |\ empty\ space\ (optional)\ \ |\ \ \ \ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ +-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+\ <-\/-\/´\ \ .\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ /\ |\ ...\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ \ \ \ \ \ \ |\ entry[n].\mbox{\hyperlink{structipa__control__info__entry_ab2e9fc6030eacf7f1b4f80da44015eb5}{offset}}\ \ \ |}
+\DoxyCodeLine{\ \ \ Data\ |\ |\ ...\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ \ \ \ \ \ \ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |}
+\DoxyCodeLine{section\ |\ |\ info\ data\ \textcolor{keywordflow}{for}\ entry\ \#n\ \ |\ <-\/-\/-\/-\/-\/´\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \(\backslash\)\ |\ ...\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ +-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ |\ empty\ space\ (optional)\ \ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ +-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+\ <-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/´}
+
+\end{DoxyCode}
+
+
+The packet header is identical to the Control\+List packet header.
+
+Entries are described by the \doxylink{structipa__control__info__entry}{ipa\+\_\+control\+\_\+info\+\_\+entry} structure. They contain the numerical ID and type of the control. The control info data is stored in the data section as described by the following diagram.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ +-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+\ \ \ \ \ \ \ .}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ /\ |\ ...\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ \ \ \ \ \ \ |\ entry[n].offset}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ |\ +-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+\ <-\/-\/-\/-\/-\/´}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ |\ |\ minimum\ value\ (\#n)\ \ \ \ \ \ |\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ Data\ |\ +-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+\ |}
+\DoxyCodeLine{section\ |\ |\ maximum\ value\ (\#n)\ \ \ \ \ \ |\ |\ Entry\ \#n}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ |\ +-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+\ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ |\ |\ \textcolor{keywordflow}{default}\ value\ (\#n)\ \ \ \ \ \ |\ /}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ |\ +-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \(\backslash\)\ |\ ...\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ +-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+}
+
+\end{DoxyCode}
+
+
+The minimum, maximum and default values are stored in the platform\textquotesingle{}s native data format. The \doxylink{structipa__control__info__entry_ab2e9fc6030eacf7f1b4f80da44015eb5}{ipa\+\_\+control\+\_\+info\+\_\+entry\+::offset} field stores the offset from the beginning of the data section to the info data.
+
+Info data in the data section shall be stored in the same order as the entries array, shall be aligned to a multiple of 8 bytes, and shall be contiguous in memory.
+
+As for the Control\+List packet, empty spaces may be present between the end of the entries array and the data section, and after the data section. They shall be ignored when parsing the packet. 

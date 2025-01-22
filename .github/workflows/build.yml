@@ -30,7 +30,18 @@ jobs:
       run: |
         sudo apt-get install -y qt6-base-dev qt6-tools-dev-tools
         sudo apt-get install -y qt6-multimedia-dev        
-        
+
+    - name: Check System Compatibility
+      run: |
+        echo "OS Information:"
+        lsb_release -a
+        echo "CPU Architecture:"
+        uname -m
+        echo "Memory Info:"
+        free -h
+        echo "Disk Space:"
+        df -h
+
     - name: Build the project
       run: |
         mkdir -p $BUILD_DIR

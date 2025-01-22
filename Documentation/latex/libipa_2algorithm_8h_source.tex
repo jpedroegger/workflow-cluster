@@ -1,0 +1,112 @@
+\doxysection{algorithm.\+h}
+\hypertarget{libipa_2algorithm_8h_source}{}\label{libipa_2algorithm_8h_source}\index{src/peripherals/camera/libcamera/src/ipa/libipa/algorithm.h@{src/peripherals/camera/libcamera/src/ipa/libipa/algorithm.h}}
+\mbox{\hyperlink{libipa_2algorithm_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2021,\ Ideas\ On\ Board}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ ISP\ control\ algorithm\ interface}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{controls_8h}{libcamera/controls.h}}>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacelibcamera}{libcamera}}\ \{}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }YamlObject;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{namespace\ }ipa\ \{}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ \_Module>}
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Algorithm}{Algorithm}}}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Algorithm_ac52491716c9cd932770dc1a02d7d9b25}{Module}}\ =\ \_Module;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Algorithm}{\string~Algorithm}}()\ \{\}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Algorithm_a68ad78f4d948f8cebefaaae22b743687}{init}}([[maybe\_unused]]\ \textcolor{keyword}{typename}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a2a12d05faa4f517f4dfcfa087063fd27}{Module::Context}}\ \&context,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ [[maybe\_unused]]\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1YamlObject}{YamlObject}}\ \&tuningData)}
+\DoxyCodeLine{00031\ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Algorithm_a5e3cd461b46cdd1d366bf211f87d8f3d}{configure}}([[maybe\_unused]]\ \textcolor{keyword}{typename}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a2a12d05faa4f517f4dfcfa087063fd27}{Module::Context}}\ \&context,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [[maybe\_unused]]\ \textcolor{keyword}{const}\ \textcolor{keyword}{typename}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a7c0b7a42c526c07bafeca4018b38b8c9}{Module::Config}}\ \&configInfo)}
+\DoxyCodeLine{00037\ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Algorithm_a307cf5dd6b48ccc1c772901c07e14afe}{queueRequest}}([[maybe\_unused]]\ \textcolor{keyword}{typename}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a2a12d05faa4f517f4dfcfa087063fd27}{Module::Context}}\ \&context,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [[maybe\_unused]]\ \textcolor{keyword}{const}\ uint32\_t\ frame,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [[maybe\_unused]]\ \textcolor{keyword}{typename}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a5a1bf7efd7811fb9da8ff311aeef3b1c}{Module::FrameContext}}\ \&frameContext,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [[maybe\_unused]]\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1ControlList}{ControlList}}\ \&controls)}
+\DoxyCodeLine{00045\ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ prepare([[maybe\_unused]]\ \textcolor{keyword}{typename}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a2a12d05faa4f517f4dfcfa087063fd27}{Module::Context}}\ \&context,}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [[maybe\_unused]]\ \textcolor{keyword}{const}\ uint32\_t\ frame,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [[maybe\_unused]]\ \textcolor{keyword}{typename}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a5a1bf7efd7811fb9da8ff311aeef3b1c}{Module::FrameContext}}\ \&frameContext,}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [[maybe\_unused]]\ \textcolor{keyword}{typename}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a48ee62113eed1c9ad7a001887dc59674}{Module::Params}}\ *params)}
+\DoxyCodeLine{00052\ \ \ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ process([[maybe\_unused]]\ \textcolor{keyword}{typename}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a2a12d05faa4f517f4dfcfa087063fd27}{Module::Context}}\ \&context,}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [[maybe\_unused]]\ \textcolor{keyword}{const}\ uint32\_t\ frame,}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [[maybe\_unused]]\ \textcolor{keyword}{typename}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a5a1bf7efd7811fb9da8ff311aeef3b1c}{Module::FrameContext}}\ \&frameContext,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [[maybe\_unused]]\ \textcolor{keyword}{const}\ \textcolor{keyword}{typename}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_afdcea0695dc0eb1226d66442a5647a41}{Module::Stats}}\ *stats,}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [[maybe\_unused]]\ \mbox{\hyperlink{classlibcamera_1_1ControlList}{ControlList}}\ \&metadata)}
+\DoxyCodeLine{00060\ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \}}
+\DoxyCodeLine{00062\ \};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ \_Module>}
+\DoxyCodeLine{00065\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1ipa_1_1AlgorithmFactoryBase}{AlgorithmFactoryBase}}}
+\DoxyCodeLine{00066\ \{}
+\DoxyCodeLine{00067\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1AlgorithmFactoryBase}{AlgorithmFactoryBase}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *name)}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ :\ name\_(name)}
+\DoxyCodeLine{00070\ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \_Module::registerAlgorithm(\textcolor{keyword}{this});}
+\DoxyCodeLine{00072\ \ \ \ \ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1AlgorithmFactoryBase}{\string~AlgorithmFactoryBase}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&name()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ name\_;\ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{virtual}\ std::unique\_ptr<Algorithm<\_Module>>\ create()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00081\ \ \ \ \ std::string\ name\_;}
+\DoxyCodeLine{00082\ \};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ \_Algorithm>}
+\DoxyCodeLine{00085\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1ipa_1_1AlgorithmFactory}{AlgorithmFactory}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1AlgorithmFactoryBase}{AlgorithmFactoryBase}}<typename\ \_Algorithm::Module>}
+\DoxyCodeLine{00086\ \{}
+\DoxyCodeLine{00087\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1AlgorithmFactory_aa5eff7bc2aa30091370eddc6d67e00bc}{AlgorithmFactory}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *name)}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1AlgorithmFactoryBase}{AlgorithmFactoryBase}}<typename\ \_Algorithm::\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module}{Module}}>(name)}
+\DoxyCodeLine{00090\ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1AlgorithmFactory}{\string~AlgorithmFactory}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ std::unique\_ptr<Algorithm<typename\ \_Algorithm::Module>>\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1AlgorithmFactory_a7abc6cb88497c701fb5c8d12655a764e}{create}}()\textcolor{keyword}{\ const\ override}}
+\DoxyCodeLine{00096\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<\_Algorithm>();}
+\DoxyCodeLine{00098\ \ \ \ \ \}}
+\DoxyCodeLine{00099\ \};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ REGISTER\_IPA\_ALGORITHM(algorithm,\ name)\ \(\backslash\)}}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{static\ AlgorithmFactory<algorithm>\ global\_\#\#algorithm\#\#Factory(name);}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \}\ \textcolor{comment}{/*\ namespace\ ipa\ */}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \}\ \textcolor{comment}{/*\ namespace\ libcamera\ */}}
+
+\end{DoxyCode}

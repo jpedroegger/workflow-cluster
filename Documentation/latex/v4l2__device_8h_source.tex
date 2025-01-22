@@ -1,0 +1,99 @@
+\doxysection{v4l2\+\_\+device.\+h}
+\hypertarget{v4l2__device_8h_source}{}\label{v4l2__device_8h_source}\index{src/peripherals/camera/libcamera/include/libcamera/internal/v4l2\_device.h@{src/peripherals/camera/libcamera/include/libcamera/internal/v4l2\_device.h}}
+\mbox{\hyperlink{v4l2__device_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2019,\ Google\ Inc.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Common\ base\ for\ V4L2\ video\ devices\ and\ subdevices}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <linux/videodev2.h>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{libcamera_2base_2log_8h}{libcamera/base/log.h}}>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{signal_8h}{libcamera/base/signal.h}}>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <libcamera/base/span.h>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{unique__fd_8h}{libcamera/base/unique\_fd.h}}>}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{color__space_8h}{libcamera/color\_space.h}}>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{controls_8h}{libcamera/controls.h}}>}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{formats_8h}{libcamera/internal/formats.h}}"{}}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacelibcamera}{libcamera}}\ \{}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }EventNotifier;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1V4L2Device}{V4L2Device}}\ :\ \textcolor{keyword}{protected}\ \mbox{\hyperlink{classlibcamera_1_1Loggable}{Loggable}}}
+\DoxyCodeLine{00032\ \{}
+\DoxyCodeLine{00033\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1V4L2Device_a51eaec36a14fcf77950cbeeb6a69593d}{close}}();}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classlibcamera_1_1V4L2Device_a1a1cbbf505ca93672c6f8086c2a9e3a0}{isOpen}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ fd\_.\mbox{\hyperlink{classlibcamera_1_1UniqueFD_a9f59956dd0184a2691c5cec6b1ce8283}{isValid}}();\ \}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1ControlInfoMap}{ControlInfoMap}}\ \&\mbox{\hyperlink{classlibcamera_1_1V4L2Device_a3da981578e5d7f23032bd902597c3a15}{controls}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ controls\_;\ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ControlList}{ControlList}}\ \mbox{\hyperlink{classlibcamera_1_1V4L2Device_aaaadfb4e56d3099f9a84fa0a7a3fec50}{getControls}}(\textcolor{keyword}{const}\ std::vector<uint32\_t>\ \&ids);}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1V4L2Device_ab0485054b749a15cb5152cc751c81750}{setControls}}(\mbox{\hyperlink{classlibcamera_1_1ControlList}{ControlList}}\ *ctrls);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structv4l2__query__ext__ctrl}{v4l2\_query\_ext\_ctrl}}\ *\mbox{\hyperlink{classlibcamera_1_1V4L2Device_acf0ec992186e2a248c810e9c42bd5794}{controlInfo}}(uint32\_t\ \textcolor{keywordtype}{id})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classlibcamera_1_1V4L2Device_afa2ad0ec434245d9c5cd910d784764f2}{deviceNode}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ deviceNode\_;\ \}}
+\DoxyCodeLine{00045\ \ \ \ \ std::string\ \mbox{\hyperlink{classlibcamera_1_1V4L2Device_a8454df564fffa7ad160468709aa172ff}{devicePath}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1V4L2Device_a22b82e6fa7c29f792c6458eba30fd135}{setFrameStartEnabled}}(\textcolor{keywordtype}{bool}\ enable);}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Signal}{Signal<uint32\_t>}}\ \mbox{\hyperlink{classlibcamera_1_1V4L2Device_a57ed50c44d1cd5c2cedab9b42e087e6c}{frameStart}};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1V4L2Device_a52bc2f8287edb89748a1fc88c3b684ee}{updateControlInfo}}();}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1V4L2Device}{V4L2Device}}(\textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classlibcamera_1_1V4L2Device_afa2ad0ec434245d9c5cd910d784764f2}{deviceNode}});}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1V4L2Device_a01e90d3566abf2e6299a31989d060f08}{\string~V4L2Device}}();}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1V4L2Device_a5cdee8ca74669a21480dbce6568551ec}{open}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ flags);}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1V4L2Device_ab5143b4bba37aea67885c61a2b3850d2}{setFd}}(\mbox{\hyperlink{classlibcamera_1_1UniqueFD}{UniqueFD}}\ \mbox{\hyperlink{classlibcamera_1_1V4L2Device_a6b77845cf4b1eddcfc8fdeabf1795f82}{fd}});}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1V4L2Device_a34c8a36a4c3d22beb3bf173f7c498d2d}{ioctl}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ request,\ \textcolor{keywordtype}{void}\ *argp);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1V4L2Device_a6b77845cf4b1eddcfc8fdeabf1795f82}{fd}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ fd\_.\mbox{\hyperlink{classlibcamera_1_1UniqueFD_a0769c043d5d1971da504a359fb35565c}{get}}();\ \}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{static}\ std::optional<ColorSpace>\ \mbox{\hyperlink{classlibcamera_1_1V4L2Device_ac6fba98c260ee82f4d82c0da6a34166e}{toColorSpace}}(\textcolor{keyword}{const}\ T\ \&v4l2Format,}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1PixelFormatInfo_a021bf0e82baec37b1523baa3322dc23c}{PixelFormatInfo::ColourEncoding}}\ colourEncoding);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1V4L2Device_a3b2d0bf205d45b91c6945018e92f3933}{fromColorSpace}}(\textcolor{keyword}{const}\ std::optional<ColorSpace>\ \&colorSpace,\ T\ \&v4l2Format);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{namespacelibcamera_a40a8adae6eaa668ac965dc350ca2b295}{ControlType}}\ v4l2CtrlType(uint32\_t\ ctrlType);}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{static}\ std::unique\_ptr<ControlId>\ v4l2ControlId(\textcolor{keyword}{const}\ \mbox{\hyperlink{structv4l2__query__ext__ctrl}{v4l2\_query\_ext\_ctrl}}\ \&ctrl);}
+\DoxyCodeLine{00073\ \ \ \ \ std::optional<ControlInfo>\ v4l2ControlInfo(\textcolor{keyword}{const}\ \mbox{\hyperlink{structv4l2__query__ext__ctrl}{v4l2\_query\_ext\_ctrl}}\ \&ctrl);}
+\DoxyCodeLine{00074\ \ \ \ \ std::optional<ControlInfo>\ v4l2MenuControlInfo(\textcolor{keyword}{const}\ \mbox{\hyperlink{structv4l2__query__ext__ctrl}{v4l2\_query\_ext\_ctrl}}\ \&ctrl);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ listControls();}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ updateControls(\mbox{\hyperlink{classlibcamera_1_1ControlList}{ControlList}}\ *ctrls,}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Span}{Span<const\ v4l2\_ext\_control>}}\ v4l2Ctrls);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ eventAvailable();}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ std::map<unsigned\ int,\ struct\ v4l2\_query\_ext\_ctrl>\ controlInfo\_;}
+\DoxyCodeLine{00083\ \ \ \ \ std::vector<std::unique\_ptr<ControlId>>\ controlIds\_;}
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{namespacelibcamera_a7d3fda0fdcda064b681b36fff326cdb7}{ControlIdMap}}\ controlIdMap\_;}
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ControlInfoMap}{ControlInfoMap}}\ controls\_;}
+\DoxyCodeLine{00086\ \ \ \ \ std::string\ deviceNode\_;}
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1UniqueFD}{UniqueFD}}\ fd\_;}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1EventNotifier}{EventNotifier}}\ *fdEventNotifier\_;}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{bool}\ frameStartEnabled\_;}
+\DoxyCodeLine{00091\ \};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \}\ \textcolor{comment}{/*\ namespace\ libcamera\ */}}
+
+\end{DoxyCode}

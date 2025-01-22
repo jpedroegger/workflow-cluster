@@ -1,0 +1,108 @@
+\doxysection{ipa\+\_\+context.\+h}
+\hypertarget{ipu3_2ipa__context_8h_source}{}\label{ipu3_2ipa__context_8h_source}\index{src/peripherals/camera/libcamera/src/ipa/ipu3/ipa\_context.h@{src/peripherals/camera/libcamera/src/ipa/ipu3/ipa\_context.h}}
+\mbox{\hyperlink{ipu3_2ipa__context_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2021,\ Google\ Inc.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ IPU3\ IPA\ Context}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <linux/intel-\/ipu3.h>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{include_2libcamera_2base_2utils_8h}{libcamera/base/utils.h}}>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{controls_8h}{libcamera/controls.h}}>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{geometry_8h}{libcamera/geometry.h}}>}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{fc__queue_8h}{libipa/fc\_queue.h}}>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacelibcamera}{libcamera}}\ \{}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{namespace\ }ipa::ipu3\ \{}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPASessionConfiguration}{IPASessionConfiguration}}\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structipu3__uapi__grid__config}{ipu3\_uapi\_grid\_config}}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPASessionConfiguration_a9ea2c6d3161ea0efe9e80d251206007a}{bdsGrid}};}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPASessionConfiguration_ae2a5ce697cc2ee3ddcce2108813e429b}{bdsOutputSize}};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPASessionConfiguration_a7ba862315ae6161195460e1b073c053a}{stride}};}
+\DoxyCodeLine{00029\ \ \ \ \ \}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPASessionConfiguration_af1729af4a607f41bad44ab249d75febd}{grid}};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structipu3__uapi__grid__config}{ipu3\_uapi\_grid\_config}}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPASessionConfiguration_a0c0495be63de6ed59477278650595201}{afGrid}};}
+\DoxyCodeLine{00033\ \ \ \ \ \}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPASessionConfiguration_a616f731fae56d9264064944e503e36be}{af}};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{utils::Duration}}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPASessionConfiguration_a34d78a5ffbc0ca9fc9127997cd3e68af}{minExposureTime}};}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{utils::Duration}}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPASessionConfiguration_a006954e217d3e26f279f59ddfa87d581}{maxExposureTime}};}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPASessionConfiguration_accea69d73118f8de12aa969cd8dcf7a3}{minAnalogueGain}};}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPASessionConfiguration_a2fa28bc3d14ce9ec073cf3a24d681684}{maxAnalogueGain}};}
+\DoxyCodeLine{00040\ \ \ \ \ \}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPASessionConfiguration_af51d14e93db0649017584715f8d67d52}{agc}};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ int32\_t\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPASessionConfiguration_a0c8948b8f1fd0b45efbfe8cd20614d2c}{defVBlank}};}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{utils::Duration}}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPASessionConfiguration_ae2228f984ecc890fbb2071f275ce813c}{lineDuration}};}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPASessionConfiguration_a1364f615654de9670361d7862d6816cf}{size}};}
+\DoxyCodeLine{00046\ \ \ \ \ \}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPASessionConfiguration_a9794d3453f454ef8ec4f5e7bed80ccf3}{sensor}};}
+\DoxyCodeLine{00047\ \};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAActiveState}{IPAActiveState}}\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAActiveState_a2962804bbee637f7a70930b427ae19f6}{focus}};}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAActiveState_ad674d78519cc05229459e079dccc258b}{maxVariance}};}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAActiveState_adb273e01d2e827b545afad4689ac698f}{stable}};}
+\DoxyCodeLine{00054\ \ \ \ \ \}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAActiveState_a6b472050cd33ac36ceb85303a3ebe27e}{af}};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAActiveState_a7d4372130db17063ec09256672754173}{exposure}};}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAActiveState_aca617f596bd80d98eba4abcc9fa19cee}{gain}};}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ uint32\_t\ constraintMode;}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ uint32\_t\ exposureMode;}
+\DoxyCodeLine{00061\ \ \ \ \ \}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAActiveState_a9b28ed10893926d55852ff9d2d20a932}{agc}};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAActiveState_a9c6cdd3e201e8e9ef72506381517f7c5}{red}};}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAActiveState_a86349a84ab292859104b04e6eb986dc6}{green}};}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAActiveState_a41c3741b9b880e6a3278b146acf0ce98}{blue}};}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAActiveState_aaa109a120426064103ab2ca6515ef5f0}{gains}};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAActiveState_a5d3c94ae89f0bcea6ef49507f800a639}{temperatureK}};}
+\DoxyCodeLine{00071\ \ \ \ \ \}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAActiveState_a745c412229fcdfb3123a7d2aaf9431aa}{awb}};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAActiveState_aed090c4cbe2ae40b6063f16465124d71}{gamma}};}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structipu3__uapi__gamma__corr__lut}{ipu3\_uapi\_gamma\_corr\_lut}}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAActiveState_a4d4619b3521e50b9ff1f8cfe04016543}{gammaCorrection}};}
+\DoxyCodeLine{00076\ \ \ \ \ \}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAActiveState_a018463188c83554909e9d49d7d746ca6}{toneMapping}};}
+\DoxyCodeLine{00077\ \};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAFrameContext}{IPAFrameContext}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1FrameContext}{FrameContext}}\ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAFrameContext_aa500813f9d5ab7034141490cc7077890}{exposure}};}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAFrameContext_a991609f653e9b18f7720c8fe08e511d4}{gain}};}
+\DoxyCodeLine{00083\ \ \ \ \ \}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAFrameContext_a0170a8ab3210c42fb7581385b6d3fc0d}{sensor}};}
+\DoxyCodeLine{00084\ \};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAContext}{IPAContext}}\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAContext}{IPAContext}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ frameContextSize)}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAContext_a7052224a7a5dbb0ef824d4fc1e939916}{frameContexts}}(frameContextSize)}
+\DoxyCodeLine{00089\ \ \ \ \ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPASessionConfiguration}{IPASessionConfiguration}}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAContext_a25085e66bcc15ff4cc3e1aa20e288f95}{configuration}};}
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAActiveState}{IPAActiveState}}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAContext_a12c8edeea85b7bc693beabc9a2f261ff}{activeState}};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1FCQueue}{FCQueue<IPAFrameContext>}}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAContext_a7052224a7a5dbb0ef824d4fc1e939916}{frameContexts}};}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ControlInfoMap_a737e0a528fd58dd5d4f976633322b0fb}{ControlInfoMap::Map}}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAContext_a43acc04c0b4456da0957d22643968a2a}{ctrlMap}};}
+\DoxyCodeLine{00098\ \};}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \}\ \textcolor{comment}{/*\ namespace\ ipa::ipu3\ */}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \}\ \textcolor{comment}{/*\ namespace\ libcamera*/}}
+
+\end{DoxyCode}

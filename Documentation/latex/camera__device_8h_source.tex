@@ -1,0 +1,137 @@
+\doxysection{camera\+\_\+device.\+h}
+\hypertarget{camera__device_8h_source}{}\label{camera__device_8h_source}\index{src/peripherals/camera/libcamera/src/android/camera\_device.h@{src/peripherals/camera/libcamera/src/android/camera\_device.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2019,\ Google\ Inc.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ libcamera\ Android\ Camera\ Device}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <hardware/camera3.h>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{class_8h}{libcamera/base/class.h}}>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{libcamera_2base_2log_8h}{libcamera/base/log.h}}>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{message_8h}{libcamera/base/message.h}}>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{mutex_8h}{libcamera/base/mutex.h}}>}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{libcamera_2camera_8h}{libcamera/camera.h}}>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{framebuffer_8h}{libcamera/framebuffer.h}}>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{geometry_8h}{libcamera/geometry.h}}>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{pixel__format_8h}{libcamera/pixel\_format.h}}>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{request_8h}{libcamera/request.h}}>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{stream_8h}{libcamera/stream.h}}>}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ "{}camera\_capabilities.h"{}}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ "{}camera\_metadata.h"{}}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ "{}camera\_stream.h"{}}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}hal\_framebuffer.h"{}}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}jpeg/encoder.h"{}}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCamera3RequestDescriptor}{Camera3RequestDescriptor}};}
+\DoxyCodeLine{00036\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structCameraConfigData}{CameraConfigData}};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCameraDevice}{CameraDevice}}\ :\ \textcolor{keyword}{protected}\ \mbox{\hyperlink{classlibcamera_1_1Loggable}{libcamera::Loggable}}}
+\DoxyCodeLine{00039\ \{}
+\DoxyCodeLine{00040\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{static}\ std::unique\_ptr<CameraDevice>\ create(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<libcamera::Camera>\ cam);}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{classCameraDevice}{\string~CameraDevice}}();}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{int}\ initialize(\textcolor{keyword}{const}\ \mbox{\hyperlink{structCameraConfigData}{CameraConfigData}}\ *cameraConfigData);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{int}\ open(\textcolor{keyword}{const}\ \mbox{\hyperlink{structhw__module__t}{hw\_module\_t}}\ *hardwareModule);}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ close();}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ flush();}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ id()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ id\_;\ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{structcamera3__device}{camera3\_device\_t}}\ *camera3Device()\ \{\ \textcolor{keywordflow}{return}\ \&camera3Device\_;\ \}}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classCameraCapabilities}{CameraCapabilities}}\ *capabilities()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \&capabilities\_;\ \}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{const}\ std::shared\_ptr<libcamera::Camera>\ \&camera()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ camera\_;\ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&maker()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ maker\_;\ \}}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&model()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ model\_;\ \}}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{int}\ facing()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ facing\_;\ \}}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{int}\ orientation()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ orientation\_;\ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ maxJpegBufferSize()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ setCallbacks(\textcolor{keyword}{const}\ \mbox{\hyperlink{structcamera3__callback__ops}{camera3\_callback\_ops\_t}}\ *callbacks);}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{const}\ camera\_metadata\_t\ *getStaticMetadata();}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{const}\ camera\_metadata\_t\ *constructDefaultRequestSettings(\textcolor{keywordtype}{int}\ type);}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{int}\ configureStreams(\mbox{\hyperlink{structcamera3__stream__configuration}{camera3\_stream\_configuration\_t}}\ *stream\_list);}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{int}\ processCaptureRequest(\mbox{\hyperlink{structcamera3__capture__request}{camera3\_capture\_request\_t}}\ *request);}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ requestComplete(\mbox{\hyperlink{classlibcamera_1_1Request}{libcamera::Request}}\ *request);}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCameraDevice_a16a5c2e3cc9504c1afdee3c593540dd1}{streamProcessingComplete}}(\mbox{\hyperlink{structCamera3RequestDescriptor_1_1StreamBuffer}{Camera3RequestDescriptor::StreamBuffer}}\ *bufferStream,}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Camera3RequestDescriptor::Status\ status);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00072\ \ \ \ \ std::string\ \mbox{\hyperlink{classCameraDevice_ad9d5e42ae5032c32a8c7032da68c30ea}{logPrefix}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{class_8h_a3dfeb3af0e6990136655ba6125587d2f}{LIBCAMERA\_DISABLE\_COPY\_AND\_MOVE}}(\mbox{\hyperlink{classCameraDevice}{CameraDevice}})}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{classCameraDevice}{CameraDevice}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ std::shared\_ptr<libcamera::Camera>\ camera);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{enum\ class}\ State\ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ Stopped,}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ Flushing,}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ Running,}
+\DoxyCodeLine{00083\ \ \ \ \ \};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ stop()\ LIBCAMERA\_TSA\_EXCLUDES(stateMutex\_);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ std::unique\_ptr<HALFrameBuffer>}
+\DoxyCodeLine{00088\ \ \ \ \ createFrameBuffer(\textcolor{keyword}{const}\ \mbox{\hyperlink{structnative__handle}{buffer\_handle\_t}}\ camera3buffer,}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1PixelFormat}{libcamera::PixelFormat}}\ pixelFormat,}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Size}{libcamera::Size}}\ \&size);}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ abortRequest(\mbox{\hyperlink{classCamera3RequestDescriptor}{Camera3RequestDescriptor}}\ *descriptor)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{bool}\ isValidRequest(\mbox{\hyperlink{structcamera3__capture__request}{camera3\_capture\_request\_t}}\ *request)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ notifyShutter(uint32\_t\ frameNumber,\ uint64\_t\ timestamp);}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{void}\ notifyError(uint32\_t\ frameNumber,\ \mbox{\hyperlink{structcamera3__stream}{camera3\_stream\_t}}\ *stream,}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ camera3\_error\_msg\_code\ code)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{int}\ processControls(\mbox{\hyperlink{classCamera3RequestDescriptor}{Camera3RequestDescriptor}}\ *descriptor);}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ completeDescriptor(\mbox{\hyperlink{classCamera3RequestDescriptor}{Camera3RequestDescriptor}}\ *descriptor)}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ LIBCAMERA\_TSA\_EXCLUDES(descriptorsMutex\_);}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{void}\ sendCaptureResults()\ LIBCAMERA\_TSA\_REQUIRES(descriptorsMutex\_);}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{void}\ setBufferStatus(\mbox{\hyperlink{structCamera3RequestDescriptor_1_1StreamBuffer}{Camera3RequestDescriptor::StreamBuffer}}\ \&buffer,}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Camera3RequestDescriptor::Status\ status);}
+\DoxyCodeLine{00102\ \ \ \ \ std::unique\_ptr<CameraMetadata>\ getResultMetadata(}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classCamera3RequestDescriptor}{Camera3RequestDescriptor}}\ \&descriptor)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ id\_;}
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{structcamera3__device}{camera3\_device\_t}}\ camera3Device\_;}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ libcamera::Mutex\ stateMutex\_;\ \textcolor{comment}{/*\ Protects\ access\ to\ the\ camera\ state.\ */}}
+\DoxyCodeLine{00109\ \ \ \ \ State\ state\_\ LIBCAMERA\_TSA\_GUARDED\_BY(stateMutex\_);}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ std::shared\_ptr<libcamera::Camera>\ camera\_;}
+\DoxyCodeLine{00112\ \ \ \ \ std::unique\_ptr<libcamera::CameraConfiguration>\ config\_;}
+\DoxyCodeLine{00113\ \ \ \ \ \mbox{\hyperlink{classCameraCapabilities}{CameraCapabilities}}\ capabilities\_;}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ std::map<unsigned\ int,\ std::unique\_ptr<CameraMetadata>>\ requestTemplates\_;}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structcamera3__callback__ops}{camera3\_callback\_ops\_t}}\ *callbacks\_;}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ std::vector<CameraStream>\ streams\_;}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ libcamera::Mutex\ descriptorsMutex\_\ LIBCAMERA\_TSA\_ACQUIRED\_AFTER(stateMutex\_);}
+\DoxyCodeLine{00121\ \ \ \ \ std::queue<std::unique\_ptr<Camera3RequestDescriptor>>\ descriptors\_}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ LIBCAMERA\_TSA\_GUARDED\_BY(descriptorsMutex\_);}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ std::string\ maker\_;}
+\DoxyCodeLine{00125\ \ \ \ \ std::string\ model\_;}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{int}\ facing\_;}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{int}\ orientation\_;}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ \mbox{\hyperlink{classCameraMetadata}{CameraMetadata}}\ lastSettings\_;}
+\DoxyCodeLine{00131\ \};}
+
+\end{DoxyCode}

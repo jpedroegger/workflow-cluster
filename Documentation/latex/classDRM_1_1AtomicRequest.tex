@@ -1,0 +1,38 @@
+\doxysection{DRM\+::Atomic\+Request Class Reference}
+\hypertarget{classDRM_1_1AtomicRequest}{}\label{classDRM_1_1AtomicRequest}\index{DRM::AtomicRequest@{DRM::AtomicRequest}}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classDRM_1_1AtomicRequest_a259fc5ce6f84870f414a9e7a3d697673}\label{classDRM_1_1AtomicRequest_a259fc5ce6f84870f414a9e7a3d697673} 
+enum {\bfseries Flags} \{ {\bfseries Flag\+Allow\+Modeset} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0)
+, {\bfseries Flag\+Async} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1)
+, {\bfseries Flag\+Test\+Only} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classDRM_1_1AtomicRequest_a81282305696530f8ae0063d314cedce6}\label{classDRM_1_1AtomicRequest_a81282305696530f8ae0063d314cedce6} 
+{\bfseries Atomic\+Request} (\mbox{\hyperlink{classDRM_1_1Device}{Device}} \texorpdfstring{$\ast$}{*}dev)
+\item 
+\Hypertarget{classDRM_1_1AtomicRequest_a9981b022cc9a851ce870b487448edb05}\label{classDRM_1_1AtomicRequest_a9981b022cc9a851ce870b487448edb05} 
+\mbox{\hyperlink{classDRM_1_1Device}{Device}} \texorpdfstring{$\ast$}{*} {\bfseries device} () const
+\item 
+\Hypertarget{classDRM_1_1AtomicRequest_a6c904c3df8c8603e819899bf932a16ee}\label{classDRM_1_1AtomicRequest_a6c904c3df8c8603e819899bf932a16ee} 
+bool {\bfseries is\+Valid} () const
+\item 
+\Hypertarget{classDRM_1_1AtomicRequest_a5e72ffca40de45e5159bc6297441af14}\label{classDRM_1_1AtomicRequest_a5e72ffca40de45e5159bc6297441af14} 
+int {\bfseries add\+Property} (const \mbox{\hyperlink{classDRM_1_1Object}{Object}} \texorpdfstring{$\ast$}{*}object, const std\+::string \&property, uint64\+\_\+t value)
+\item 
+\Hypertarget{classDRM_1_1AtomicRequest_af027895afda20d64a9624016b9b3532d}\label{classDRM_1_1AtomicRequest_af027895afda20d64a9624016b9b3532d} 
+int {\bfseries add\+Property} (const \mbox{\hyperlink{classDRM_1_1Object}{Object}} \texorpdfstring{$\ast$}{*}object, const std\+::string \&property, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classDRM_1_1Blob}{Blob}} $>$ blob)
+\item 
+\Hypertarget{classDRM_1_1AtomicRequest_a6895f665ca0aa6cb8d66861666b11813}\label{classDRM_1_1AtomicRequest_a6895f665ca0aa6cb8d66861666b11813} 
+int {\bfseries commit} (unsigned int flags=0)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/apps/cam/drm.\+h\item 
+src/peripherals/camera/libcamera/src/apps/cam/drm.\+cpp\end{DoxyCompactItemize}

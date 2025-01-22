@@ -1,0 +1,68 @@
+\doxysection{format\+\_\+converter.\+h}
+\hypertarget{format__converter_8h_source}{}\label{format__converter_8h_source}\index{src/peripherals/camera/libcamera/src/apps/qcam/format\_converter.h@{src/peripherals/camera/libcamera/src/apps/qcam/format\_converter.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ GPL-\/2.0-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2019,\ Google\ Inc.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Convert\ buffer\ to\ RGB}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <QSize>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{pixel__format_8h}{libcamera/pixel\_format.h}}>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classImage}{Image}};}
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }QImage;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classFormatConverter}{FormatConverter}}}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{int}\ configure(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1PixelFormat}{libcamera::PixelFormat}}\ \&format,\ \textcolor{keyword}{const}\ QSize\ \&size,}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ stride);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ convert(\textcolor{keyword}{const}\ \mbox{\hyperlink{classImage}{Image}}\ *src,\ \textcolor{keywordtype}{size\_t}\ size,\ QImage\ *dst);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{enum}\ FormatFamily\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ MJPEG,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ RGB,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ YUVPacked,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ YUVPlanar,}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ YUVSemiPlanar,}
+\DoxyCodeLine{00034\ \ \ \ \ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ convertRGB(\textcolor{keyword}{const}\ \mbox{\hyperlink{classImage}{Image}}\ *src,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *dst);}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ convertYUVPacked(\textcolor{keyword}{const}\ \mbox{\hyperlink{classImage}{Image}}\ *src,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *dst);}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ convertYUVPlanar(\textcolor{keyword}{const}\ \mbox{\hyperlink{classImage}{Image}}\ *src,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *dst);}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ convertYUVSemiPlanar(\textcolor{keyword}{const}\ \mbox{\hyperlink{classImage}{Image}}\ *src,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *dst);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1PixelFormat}{libcamera::PixelFormat}}\ format\_;}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ width\_;}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ height\_;}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ stride\_;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{enum}\ FormatFamily\ formatFamily\_;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{/*\ NV\ parameters\ */}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ horzSubSample\_;}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ vertSubSample\_;}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{bool}\ nvSwap\_;}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{comment}{/*\ RGB\ parameters\ */}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ bpp\_;}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ r\_pos\_;}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ g\_pos\_;}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ b\_pos\_;}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{comment}{/*\ YUV\ parameters\ */}}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ y\_pos\_;}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ cb\_pos\_;}
+\DoxyCodeLine{00062\ \};}
+
+\end{DoxyCode}

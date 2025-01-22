@@ -1,0 +1,318 @@
+\doxysection{geometry.\+h}
+\hypertarget{geometry_8h_source}{}\label{geometry_8h_source}\index{src/peripherals/camera/libcamera/include/libcamera/geometry.h@{src/peripherals/camera/libcamera/include/libcamera/geometry.h}}
+\mbox{\hyperlink{geometry_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2019,\ Google\ Inc.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Geometry-\/related\ classes}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <ostream>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <libcamera/base/compiler.h>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacelibcamera}{libcamera}}\ \{}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }Rectangle;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1Point}{Point}}}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{classlibcamera_1_1Point_a5509aa185caea93bcf6e0a68d10acb18}{Point}}()}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classlibcamera_1_1Point_a99ec1d160240a8c6903a0beb6f1d9c33}{x}}(0),\ \mbox{\hyperlink{classlibcamera_1_1Point_a0cbb3cbc820b3d4f8eed71be655f909e}{y}}(0)}
+\DoxyCodeLine{00025\ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{classlibcamera_1_1Point_aa45e2057e0b3f66db6de02b63dd26556}{Point}}(\textcolor{keywordtype}{int}\ xpos,\ \textcolor{keywordtype}{int}\ ypos)}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classlibcamera_1_1Point_a99ec1d160240a8c6903a0beb6f1d9c33}{x}}(xpos),\ \mbox{\hyperlink{classlibcamera_1_1Point_a0cbb3cbc820b3d4f8eed71be655f909e}{y}}(ypos)}
+\DoxyCodeLine{00030\ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1Point_a99ec1d160240a8c6903a0beb6f1d9c33}{x}};}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1Point_a0cbb3cbc820b3d4f8eed71be655f909e}{y}};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \mbox{\hyperlink{classlibcamera_1_1Point_ae2b0da400a78708dd1a4667bb8b080d2}{toString}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{classlibcamera_1_1Point}{Point}}\ \mbox{\hyperlink{classlibcamera_1_1Point_a6ed2f3834fba6398f1cf7a296ceae5fa}{operator-\/}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00039\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{\ -\/\mbox{\hyperlink{classlibcamera_1_1Point_a99ec1d160240a8c6903a0beb6f1d9c33}{x}},\ -\/\mbox{\hyperlink{classlibcamera_1_1Point_a0cbb3cbc820b3d4f8eed71be655f909e}{y}}\ \};}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{keywordtype}{bool}\ operator==(\textcolor{keyword}{const}\ Point\ \&lhs,\ \textcolor{keyword}{const}\ Point\ \&rhs);}
+\DoxyCodeLine{00045\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ operator!=(\textcolor{keyword}{const}\ Point\ \&lhs,\ \textcolor{keyword}{const}\ Point\ \&rhs)}
+\DoxyCodeLine{00046\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordflow}{return}\ !(lhs\ ==\ rhs);}
+\DoxyCodeLine{00048\ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ std::ostream\ \&operator<<(std::ostream\ \&out,\ \textcolor{keyword}{const}\ Point\ \&p);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1Size}{Size}}}
+\DoxyCodeLine{00053\ \{}
+\DoxyCodeLine{00054\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{classlibcamera_1_1Size_a44fd09edc6b2da725585cb00be6906a8}{Size}}()}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}(0,\ 0)}
+\DoxyCodeLine{00057\ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{classlibcamera_1_1Size_a86de8d4499e905783f355061de7d2b72}{Size}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ w,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ h)}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classlibcamera_1_1Size_a5bdf8eb2cde21d66556ae9f56c2c700c}{width}}(w),\ \mbox{\hyperlink{classlibcamera_1_1Size_adf4bbd0053ac3659eaf4515eab64ba81}{height}}(h)}
+\DoxyCodeLine{00062\ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1Size_a5bdf8eb2cde21d66556ae9f56c2c700c}{width}};}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1Size_adf4bbd0053ac3659eaf4515eab64ba81}{height}};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classlibcamera_1_1Size_a943251f772ca06110f811e63cf241b73}{isNull}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ !\mbox{\hyperlink{classlibcamera_1_1Size_a5bdf8eb2cde21d66556ae9f56c2c700c}{width}}\ \&\&\ !\mbox{\hyperlink{classlibcamera_1_1Size_adf4bbd0053ac3659eaf4515eab64ba81}{height}};\ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \mbox{\hyperlink{classlibcamera_1_1Size_a287a8238b720af55d5a73efeaae70b52}{toString}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \&\mbox{\hyperlink{classlibcamera_1_1Size_a62029f2581ed8a885bef2757ab180c04}{alignDownTo}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ hAlignment,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ vAlignment)}
+\DoxyCodeLine{00072\ \ \ \ \ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Size_a5bdf8eb2cde21d66556ae9f56c2c700c}{width}}\ =\ \mbox{\hyperlink{classlibcamera_1_1Size_a5bdf8eb2cde21d66556ae9f56c2c700c}{width}}\ /\ hAlignment\ *\ hAlignment;}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Size_adf4bbd0053ac3659eaf4515eab64ba81}{height}}\ =\ \mbox{\hyperlink{classlibcamera_1_1Size_adf4bbd0053ac3659eaf4515eab64ba81}{height}}\ /\ vAlignment\ *\ vAlignment;}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \&\mbox{\hyperlink{classlibcamera_1_1Size_a2488b808661172107f34afadc346c674}{alignUpTo}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ hAlignment,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ vAlignment)}
+\DoxyCodeLine{00079\ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Size_a5bdf8eb2cde21d66556ae9f56c2c700c}{width}}\ =\ (\mbox{\hyperlink{classlibcamera_1_1Size_a5bdf8eb2cde21d66556ae9f56c2c700c}{width}}\ +\ hAlignment\ -\/\ 1)\ /\ hAlignment\ *\ hAlignment;}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Size_adf4bbd0053ac3659eaf4515eab64ba81}{height}}\ =\ (\mbox{\hyperlink{classlibcamera_1_1Size_adf4bbd0053ac3659eaf4515eab64ba81}{height}}\ +\ vAlignment\ -\/\ 1)\ /\ vAlignment\ *\ vAlignment;}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00083\ \ \ \ \ \}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \&\mbox{\hyperlink{classlibcamera_1_1Size_a54454a26d28dcc85acc4583740adbc48}{boundTo}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \&bound)}
+\DoxyCodeLine{00086\ \ \ \ \ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Size_a5bdf8eb2cde21d66556ae9f56c2c700c}{width}}\ =\ std::min(\mbox{\hyperlink{classlibcamera_1_1Size_a5bdf8eb2cde21d66556ae9f56c2c700c}{width}},\ bound.\mbox{\hyperlink{classlibcamera_1_1Size_a5bdf8eb2cde21d66556ae9f56c2c700c}{width}});}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Size_adf4bbd0053ac3659eaf4515eab64ba81}{height}}\ =\ std::min(\mbox{\hyperlink{classlibcamera_1_1Size_adf4bbd0053ac3659eaf4515eab64ba81}{height}},\ bound.\mbox{\hyperlink{classlibcamera_1_1Size_adf4bbd0053ac3659eaf4515eab64ba81}{height}});}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00090\ \ \ \ \ \}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \&\mbox{\hyperlink{classlibcamera_1_1Size_aa33da8f2f66bfab2e9c79e7875903a13}{expandTo}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \&expand)}
+\DoxyCodeLine{00093\ \ \ \ \ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Size_a5bdf8eb2cde21d66556ae9f56c2c700c}{width}}\ =\ std::max(\mbox{\hyperlink{classlibcamera_1_1Size_a5bdf8eb2cde21d66556ae9f56c2c700c}{width}},\ expand.\mbox{\hyperlink{classlibcamera_1_1Size_a5bdf8eb2cde21d66556ae9f56c2c700c}{width}});}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Size_adf4bbd0053ac3659eaf4515eab64ba81}{height}}\ =\ std::max(\mbox{\hyperlink{classlibcamera_1_1Size_adf4bbd0053ac3659eaf4515eab64ba81}{height}},\ expand.\mbox{\hyperlink{classlibcamera_1_1Size_adf4bbd0053ac3659eaf4515eab64ba81}{height}});}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00097\ \ \ \ \ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \&\mbox{\hyperlink{classlibcamera_1_1Size_aeb4eff3b577f5d22d5ba5123d88396d3}{growBy}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \&margins)}
+\DoxyCodeLine{00100\ \ \ \ \ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Size_a5bdf8eb2cde21d66556ae9f56c2c700c}{width}}\ +=\ margins.\mbox{\hyperlink{classlibcamera_1_1Size_a5bdf8eb2cde21d66556ae9f56c2c700c}{width}};}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Size_adf4bbd0053ac3659eaf4515eab64ba81}{height}}\ +=\ margins.\mbox{\hyperlink{classlibcamera_1_1Size_adf4bbd0053ac3659eaf4515eab64ba81}{height}};}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00104\ \ \ \ \ \}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \&\mbox{\hyperlink{classlibcamera_1_1Size_a25eace20ab63d8db8213556f8edefa99}{shrinkBy}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \&margins)}
+\DoxyCodeLine{00107\ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Size_a5bdf8eb2cde21d66556ae9f56c2c700c}{width}}\ =\ \mbox{\hyperlink{classlibcamera_1_1Size_a5bdf8eb2cde21d66556ae9f56c2c700c}{width}}\ >\ margins.\mbox{\hyperlink{classlibcamera_1_1Size_a5bdf8eb2cde21d66556ae9f56c2c700c}{width}}\ ?\ \mbox{\hyperlink{classlibcamera_1_1Size_a5bdf8eb2cde21d66556ae9f56c2c700c}{width}}\ -\/\ margins.\mbox{\hyperlink{classlibcamera_1_1Size_a5bdf8eb2cde21d66556ae9f56c2c700c}{width}}\ :\ 0;}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Size_adf4bbd0053ac3659eaf4515eab64ba81}{height}}\ =\ \mbox{\hyperlink{classlibcamera_1_1Size_adf4bbd0053ac3659eaf4515eab64ba81}{height}}\ >\ margins.\mbox{\hyperlink{classlibcamera_1_1Size_adf4bbd0053ac3659eaf4515eab64ba81}{height}}\ ?\ \mbox{\hyperlink{classlibcamera_1_1Size_adf4bbd0053ac3659eaf4515eab64ba81}{height}}\ -\/\ margins.\mbox{\hyperlink{classlibcamera_1_1Size_adf4bbd0053ac3659eaf4515eab64ba81}{height}}\ :\ 0;}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00111\ \ \ \ \ \}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \_\_nodiscard\ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \mbox{\hyperlink{classlibcamera_1_1Size_a4fa3aa5072c30edcff35b2a6dd795f35}{alignedDownTo}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ hAlignment,}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ vAlignment)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00115\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Size_a5bdf8eb2cde21d66556ae9f56c2c700c}{width}}\ /\ hAlignment\ *\ hAlignment,}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Size_adf4bbd0053ac3659eaf4515eab64ba81}{height}}\ /\ vAlignment\ *\ vAlignment}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00120\ \ \ \ \ \}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \_\_nodiscard\ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \mbox{\hyperlink{classlibcamera_1_1Size_add28099d27d7dfaa786383b5e4c3b11a}{alignedUpTo}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ hAlignment,}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ vAlignment)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00124\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{classlibcamera_1_1Size_a5bdf8eb2cde21d66556ae9f56c2c700c}{width}}\ +\ hAlignment\ -\/\ 1)\ /\ hAlignment\ *\ hAlignment,}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{classlibcamera_1_1Size_adf4bbd0053ac3659eaf4515eab64ba81}{height}}\ +\ vAlignment\ -\/\ 1)\ /\ vAlignment\ *\ vAlignment}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00129\ \ \ \ \ \}}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ \_\_nodiscard\ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \mbox{\hyperlink{classlibcamera_1_1Size_aacd7e4f07e0e271b90aba67b9a21d1ed}{boundedTo}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \&bound)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00132\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ std::min(\mbox{\hyperlink{classlibcamera_1_1Size_a5bdf8eb2cde21d66556ae9f56c2c700c}{width}},\ bound.\mbox{\hyperlink{classlibcamera_1_1Size_a5bdf8eb2cde21d66556ae9f56c2c700c}{width}}),}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ std::min(\mbox{\hyperlink{classlibcamera_1_1Size_adf4bbd0053ac3659eaf4515eab64ba81}{height}},\ bound.\mbox{\hyperlink{classlibcamera_1_1Size_adf4bbd0053ac3659eaf4515eab64ba81}{height}})}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00137\ \ \ \ \ \}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \ \ \ \ \_\_nodiscard\ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \mbox{\hyperlink{classlibcamera_1_1Size_a346d13394c37c880393cef6b856d4407}{expandedTo}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \&expand)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00140\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ std::max(\mbox{\hyperlink{classlibcamera_1_1Size_a5bdf8eb2cde21d66556ae9f56c2c700c}{width}},\ expand.\mbox{\hyperlink{classlibcamera_1_1Size_a5bdf8eb2cde21d66556ae9f56c2c700c}{width}}),}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ std::max(\mbox{\hyperlink{classlibcamera_1_1Size_adf4bbd0053ac3659eaf4515eab64ba81}{height}},\ expand.\mbox{\hyperlink{classlibcamera_1_1Size_adf4bbd0053ac3659eaf4515eab64ba81}{height}})}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00145\ \ \ \ \ \}}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \ \ \_\_nodiscard\ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \mbox{\hyperlink{classlibcamera_1_1Size_a5b54b3d391ad3cf7f46b394556597a91}{grownBy}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \&margins)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00148\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Size_a5bdf8eb2cde21d66556ae9f56c2c700c}{width}}\ +\ margins.\mbox{\hyperlink{classlibcamera_1_1Size_a5bdf8eb2cde21d66556ae9f56c2c700c}{width}},}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Size_adf4bbd0053ac3659eaf4515eab64ba81}{height}}\ +\ margins.\mbox{\hyperlink{classlibcamera_1_1Size_adf4bbd0053ac3659eaf4515eab64ba81}{height}}}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00153\ \ \ \ \ \}}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ \_\_nodiscard\ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \mbox{\hyperlink{classlibcamera_1_1Size_a07b98cdb48088ad83231117d3c31b400}{shrunkBy}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \&margins)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00156\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Size_a5bdf8eb2cde21d66556ae9f56c2c700c}{width}}\ >\ margins.\mbox{\hyperlink{classlibcamera_1_1Size_a5bdf8eb2cde21d66556ae9f56c2c700c}{width}}\ ?\ \mbox{\hyperlink{classlibcamera_1_1Size_a5bdf8eb2cde21d66556ae9f56c2c700c}{width}}\ -\/\ margins.\mbox{\hyperlink{classlibcamera_1_1Size_a5bdf8eb2cde21d66556ae9f56c2c700c}{width}}\ :\ 0,}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Size_adf4bbd0053ac3659eaf4515eab64ba81}{height}}\ >\ margins.\mbox{\hyperlink{classlibcamera_1_1Size_adf4bbd0053ac3659eaf4515eab64ba81}{height}}\ ?\ \mbox{\hyperlink{classlibcamera_1_1Size_adf4bbd0053ac3659eaf4515eab64ba81}{height}}\ -\/\ margins.\mbox{\hyperlink{classlibcamera_1_1Size_adf4bbd0053ac3659eaf4515eab64ba81}{height}}\ :\ 0}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00161\ \ \ \ \ \}}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ \_\_nodiscard\ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \mbox{\hyperlink{classlibcamera_1_1Size_ab44f288148efb162ba9d2d54cf844242}{boundedToAspectRatio}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \&ratio)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00164\ \ \ \ \ \_\_nodiscard\ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \mbox{\hyperlink{classlibcamera_1_1Size_ac171509875241ae63e2a56dd3c68a125}{expandedToAspectRatio}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \&ratio)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \ \ \ \ \_\_nodiscard\ \mbox{\hyperlink{classlibcamera_1_1Rectangle}{Rectangle}}\ \mbox{\hyperlink{classlibcamera_1_1Size_a81356ac0a1b2229fa1f4874ac7848aed}{centeredTo}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Point}{Point}}\ \&center)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \mbox{\hyperlink{classlibcamera_1_1Size_ad24b1c42470671086839f18e04f5d3c3}{operator*}}(\textcolor{keywordtype}{float}\ factor)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00169\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \mbox{\hyperlink{classlibcamera_1_1Size_a306de151d0e5134d8a7c45198293ca1c}{operator/}}(\textcolor{keywordtype}{float}\ factor)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \&\mbox{\hyperlink{classlibcamera_1_1Size_afdb5f21cfe53b16ce6ee218c97737a68}{operator*=}}(\textcolor{keywordtype}{float}\ factor);}
+\DoxyCodeLine{00172\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \&\mbox{\hyperlink{classlibcamera_1_1Size_a053534ab91440607edfefa5b259236a6}{operator/=}}(\textcolor{keywordtype}{float}\ factor);}
+\DoxyCodeLine{00173\ \};}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \textcolor{keywordtype}{bool}\ operator==(\textcolor{keyword}{const}\ Size\ \&lhs,\ \textcolor{keyword}{const}\ Size\ \&rhs);}
+\DoxyCodeLine{00176\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespacelibcamera_aae5e9f4598b9b08891fb948be27a5bd7}{operator<}}(\textcolor{keyword}{const}\ Size\ \&lhs,\ \textcolor{keyword}{const}\ Size\ \&rhs);}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ operator!=(\textcolor{keyword}{const}\ Size\ \&lhs,\ \textcolor{keyword}{const}\ Size\ \&rhs)}
+\DoxyCodeLine{00179\ \{}
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keywordflow}{return}\ !(lhs\ ==\ rhs);}
+\DoxyCodeLine{00181\ \}}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ operator<=(\textcolor{keyword}{const}\ Size\ \&lhs,\ \textcolor{keyword}{const}\ Size\ \&rhs)}
+\DoxyCodeLine{00184\ \{}
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keywordflow}{return}\ lhs\ <\ rhs\ ||\ lhs\ ==\ rhs;}
+\DoxyCodeLine{00186\ \}}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ operator>(\textcolor{keyword}{const}\ Size\ \&lhs,\ \textcolor{keyword}{const}\ Size\ \&rhs)}
+\DoxyCodeLine{00189\ \{}
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keywordflow}{return}\ !(lhs\ <=\ rhs);}
+\DoxyCodeLine{00191\ \}}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ operator>=(\textcolor{keyword}{const}\ Size\ \&lhs,\ \textcolor{keyword}{const}\ Size\ \&rhs)}
+\DoxyCodeLine{00194\ \{}
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keywordflow}{return}\ !(lhs\ <\ rhs);}
+\DoxyCodeLine{00196\ \}}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ std::ostream\ \&operator<<(std::ostream\ \&out,\ \textcolor{keyword}{const}\ Size\ \&s);}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1SizeRange}{SizeRange}}}
+\DoxyCodeLine{00201\ \{}
+\DoxyCodeLine{00202\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00203\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1SizeRange_a9acedeeab8ab8691ac70accac73ad75c}{SizeRange}}()}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classlibcamera_1_1SizeRange_a79f543a65ddec8d83751c9060a374ac1}{hStep}}(0),\ \mbox{\hyperlink{classlibcamera_1_1SizeRange_a48a92bf815783958873a60707daebefe}{vStep}}(0)}
+\DoxyCodeLine{00205\ \ \ \ \ \{}
+\DoxyCodeLine{00206\ \ \ \ \ \}}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1SizeRange_a518a3f671616ee2e85349456749ff5d6}{SizeRange}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \&size)}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classlibcamera_1_1SizeRange_aa2232f1475cb5dfa6e2aa84e5bf8689f}{min}}(size),\ \mbox{\hyperlink{classlibcamera_1_1SizeRange_a69ddfb15a8a79b12374938e438220610}{max}}(size),\ \mbox{\hyperlink{classlibcamera_1_1SizeRange_a79f543a65ddec8d83751c9060a374ac1}{hStep}}(1),\ \mbox{\hyperlink{classlibcamera_1_1SizeRange_a48a92bf815783958873a60707daebefe}{vStep}}(1)}
+\DoxyCodeLine{00210\ \ \ \ \ \{}
+\DoxyCodeLine{00211\ \ \ \ \ \}}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1SizeRange_a2d9d41d94ab58c7b50fae33e32d11a30}{SizeRange}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \&minSize,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \&maxSize)}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classlibcamera_1_1SizeRange_aa2232f1475cb5dfa6e2aa84e5bf8689f}{min}}(minSize),\ \mbox{\hyperlink{classlibcamera_1_1SizeRange_a69ddfb15a8a79b12374938e438220610}{max}}(maxSize),\ \mbox{\hyperlink{classlibcamera_1_1SizeRange_a79f543a65ddec8d83751c9060a374ac1}{hStep}}(1),\ \mbox{\hyperlink{classlibcamera_1_1SizeRange_a48a92bf815783958873a60707daebefe}{vStep}}(1)}
+\DoxyCodeLine{00215\ \ \ \ \ \{}
+\DoxyCodeLine{00216\ \ \ \ \ \}}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1SizeRange_a0aa0da51cf936075d6d254dfa04f082d}{SizeRange}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \&minSize,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \&maxSize,}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ hstep,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ vstep)}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classlibcamera_1_1SizeRange_aa2232f1475cb5dfa6e2aa84e5bf8689f}{min}}(minSize),\ \mbox{\hyperlink{classlibcamera_1_1SizeRange_a69ddfb15a8a79b12374938e438220610}{max}}(maxSize),\ \mbox{\hyperlink{classlibcamera_1_1SizeRange_a79f543a65ddec8d83751c9060a374ac1}{hStep}}(hstep),\ \mbox{\hyperlink{classlibcamera_1_1SizeRange_a48a92bf815783958873a60707daebefe}{vStep}}(vstep)}
+\DoxyCodeLine{00221\ \ \ \ \ \{}
+\DoxyCodeLine{00222\ \ \ \ \ \}}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classlibcamera_1_1SizeRange_aaca97249b0a4aedd35686cb50dfa10f3}{contains}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \&size)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ \ \ \ \ std::string\ \mbox{\hyperlink{classlibcamera_1_1SizeRange_add8e546730ee1ed7a99de755e1ee8f95}{toString}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \mbox{\hyperlink{classlibcamera_1_1SizeRange_aa2232f1475cb5dfa6e2aa84e5bf8689f}{min}};}
+\DoxyCodeLine{00229\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \mbox{\hyperlink{classlibcamera_1_1SizeRange_a69ddfb15a8a79b12374938e438220610}{max}};}
+\DoxyCodeLine{00230\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1SizeRange_a79f543a65ddec8d83751c9060a374ac1}{hStep}};}
+\DoxyCodeLine{00231\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1SizeRange_a48a92bf815783958873a60707daebefe}{vStep}};}
+\DoxyCodeLine{00232\ \};}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespacelibcamera_a9a4ec66aa71938514d43ab027fe308db}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1SizeRange}{SizeRange}}\ \&lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1SizeRange}{SizeRange}}\ \&rhs);}
+\DoxyCodeLine{00235\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ operator!=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1SizeRange}{SizeRange}}\ \&lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1SizeRange}{SizeRange}}\ \&rhs)}
+\DoxyCodeLine{00236\ \{}
+\DoxyCodeLine{00237\ \ \ \ \ \textcolor{keywordflow}{return}\ !(lhs\ ==\ rhs);}
+\DoxyCodeLine{00238\ \}}
+\DoxyCodeLine{00239\ }
+\DoxyCodeLine{00240\ std::ostream\ \&operator<<(std::ostream\ \&out,\ \textcolor{keyword}{const}\ SizeRange\ \&sr);}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00242\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1Rectangle}{Rectangle}}}
+\DoxyCodeLine{00243\ \{}
+\DoxyCodeLine{00244\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{classlibcamera_1_1Rectangle_adb78476ea887d264ceee7922bfa43c69}{Rectangle}}()}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classlibcamera_1_1Rectangle}{Rectangle}}(0,\ 0,\ 0,\ 0)}
+\DoxyCodeLine{00247\ \ \ \ \ \{}
+\DoxyCodeLine{00248\ \ \ \ \ \}}
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00250\ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{classlibcamera_1_1Rectangle_a59ccd67560f140e48bb70c4448cc1c74}{Rectangle}}(\textcolor{keywordtype}{int}\ xpos,\ \textcolor{keywordtype}{int}\ ypos,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \&\mbox{\hyperlink{classlibcamera_1_1Rectangle_abd7077289114b7248b8fcef678ad5c2a}{size}})}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classlibcamera_1_1Rectangle_af2016608aee722b737b85694a1d1d52c}{x}}(xpos),\ \mbox{\hyperlink{classlibcamera_1_1Rectangle_a0e9e38aa81a1e812e003c29cc1ad1b02}{y}}(ypos),\ \mbox{\hyperlink{classlibcamera_1_1Rectangle_ab8cbf04b0e345eb9ba7038d1eb32565b}{width}}(\mbox{\hyperlink{classlibcamera_1_1Rectangle_abd7077289114b7248b8fcef678ad5c2a}{size}}.\mbox{\hyperlink{classlibcamera_1_1Rectangle_ab8cbf04b0e345eb9ba7038d1eb32565b}{width}}),\ \mbox{\hyperlink{classlibcamera_1_1Rectangle_a39b04c9198dfa82ea0e9f42191b6b6fe}{height}}(\mbox{\hyperlink{classlibcamera_1_1Rectangle_abd7077289114b7248b8fcef678ad5c2a}{size}}.\mbox{\hyperlink{classlibcamera_1_1Rectangle_a39b04c9198dfa82ea0e9f42191b6b6fe}{height}})}
+\DoxyCodeLine{00252\ \ \ \ \ \{}
+\DoxyCodeLine{00253\ \ \ \ \ \}}
+\DoxyCodeLine{00254\ }
+\DoxyCodeLine{00255\ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{classlibcamera_1_1Rectangle_a94332066625a5986ed7a51256af75a88}{Rectangle}}(\textcolor{keywordtype}{int}\ xpos,\ \textcolor{keywordtype}{int}\ ypos,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ w,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ h)}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classlibcamera_1_1Rectangle_af2016608aee722b737b85694a1d1d52c}{x}}(xpos),\ \mbox{\hyperlink{classlibcamera_1_1Rectangle_a0e9e38aa81a1e812e003c29cc1ad1b02}{y}}(ypos),\ \mbox{\hyperlink{classlibcamera_1_1Rectangle_ab8cbf04b0e345eb9ba7038d1eb32565b}{width}}(w),\ \mbox{\hyperlink{classlibcamera_1_1Rectangle_a39b04c9198dfa82ea0e9f42191b6b6fe}{height}}(h)}
+\DoxyCodeLine{00257\ \ \ \ \ \{}
+\DoxyCodeLine{00258\ \ \ \ \ \}}
+\DoxyCodeLine{00259\ }
+\DoxyCodeLine{00260\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classlibcamera_1_1Rectangle_a4a1c9f10ce8a2a86e2056a78dde3cd19}{Rectangle}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \&\mbox{\hyperlink{classlibcamera_1_1Rectangle_abd7077289114b7248b8fcef678ad5c2a}{size}})}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classlibcamera_1_1Rectangle_af2016608aee722b737b85694a1d1d52c}{x}}(0),\ \mbox{\hyperlink{classlibcamera_1_1Rectangle_a0e9e38aa81a1e812e003c29cc1ad1b02}{y}}(0),\ \mbox{\hyperlink{classlibcamera_1_1Rectangle_ab8cbf04b0e345eb9ba7038d1eb32565b}{width}}(\mbox{\hyperlink{classlibcamera_1_1Rectangle_abd7077289114b7248b8fcef678ad5c2a}{size}}.\mbox{\hyperlink{classlibcamera_1_1Rectangle_ab8cbf04b0e345eb9ba7038d1eb32565b}{width}}),\ \mbox{\hyperlink{classlibcamera_1_1Rectangle_a39b04c9198dfa82ea0e9f42191b6b6fe}{height}}(\mbox{\hyperlink{classlibcamera_1_1Rectangle_abd7077289114b7248b8fcef678ad5c2a}{size}}.\mbox{\hyperlink{classlibcamera_1_1Rectangle_a39b04c9198dfa82ea0e9f42191b6b6fe}{height}})}
+\DoxyCodeLine{00262\ \ \ \ \ \{}
+\DoxyCodeLine{00263\ \ \ \ \ \}}
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00265\ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{classlibcamera_1_1Rectangle_a24f885bcccd3de9151e6447b09e2f8ab}{Rectangle}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Point}{Point}}\ \&point1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Point}{Point}}\ \&point2)}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classlibcamera_1_1Rectangle}{Rectangle}}(std::min(point1.\mbox{\hyperlink{classlibcamera_1_1Rectangle_af2016608aee722b737b85694a1d1d52c}{x}},\ point2.\mbox{\hyperlink{classlibcamera_1_1Rectangle_af2016608aee722b737b85694a1d1d52c}{x}}),\ std::min(point1.\mbox{\hyperlink{classlibcamera_1_1Rectangle_a0e9e38aa81a1e812e003c29cc1ad1b02}{y}},\ point2.\mbox{\hyperlink{classlibcamera_1_1Rectangle_a0e9e38aa81a1e812e003c29cc1ad1b02}{y}}),}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ static\_cast<unsigned\ int>(std::max(point1.\mbox{\hyperlink{classlibcamera_1_1Rectangle_af2016608aee722b737b85694a1d1d52c}{x}},\ point2.\mbox{\hyperlink{classlibcamera_1_1Rectangle_af2016608aee722b737b85694a1d1d52c}{x}}))\ -\/}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ static\_cast<unsigned\ int>(std::min(point1.\mbox{\hyperlink{classlibcamera_1_1Rectangle_af2016608aee722b737b85694a1d1d52c}{x}},\ point2.\mbox{\hyperlink{classlibcamera_1_1Rectangle_af2016608aee722b737b85694a1d1d52c}{x}})),}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ static\_cast<unsigned\ int>(std::max(point1.\mbox{\hyperlink{classlibcamera_1_1Rectangle_a0e9e38aa81a1e812e003c29cc1ad1b02}{y}},\ point2.\mbox{\hyperlink{classlibcamera_1_1Rectangle_a0e9e38aa81a1e812e003c29cc1ad1b02}{y}}))\ -\/}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ static\_cast<unsigned\ int>(std::min(point1.\mbox{\hyperlink{classlibcamera_1_1Rectangle_a0e9e38aa81a1e812e003c29cc1ad1b02}{y}},\ point2.\mbox{\hyperlink{classlibcamera_1_1Rectangle_a0e9e38aa81a1e812e003c29cc1ad1b02}{y}})))}
+\DoxyCodeLine{00271\ \ \ \ \ \{}
+\DoxyCodeLine{00272\ \ \ \ \ \}}
+\DoxyCodeLine{00273\ }
+\DoxyCodeLine{00274\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1Rectangle_af2016608aee722b737b85694a1d1d52c}{x}};}
+\DoxyCodeLine{00275\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1Rectangle_a0e9e38aa81a1e812e003c29cc1ad1b02}{y}};}
+\DoxyCodeLine{00276\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1Rectangle_ab8cbf04b0e345eb9ba7038d1eb32565b}{width}};}
+\DoxyCodeLine{00277\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1Rectangle_a39b04c9198dfa82ea0e9f42191b6b6fe}{height}};}
+\DoxyCodeLine{00278\ }
+\DoxyCodeLine{00279\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classlibcamera_1_1Rectangle_aaeb62ce49e23a591b5b301a24b70b95f}{isNull}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ !\mbox{\hyperlink{classlibcamera_1_1Rectangle_ab8cbf04b0e345eb9ba7038d1eb32565b}{width}}\ \&\&\ !\mbox{\hyperlink{classlibcamera_1_1Rectangle_a39b04c9198dfa82ea0e9f42191b6b6fe}{height}};\ \}}
+\DoxyCodeLine{00280\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \mbox{\hyperlink{classlibcamera_1_1Rectangle_a647fad371d796424c46da79d8e06fe9e}{toString}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00281\ }
+\DoxyCodeLine{00282\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Point}{Point}}\ \mbox{\hyperlink{classlibcamera_1_1Rectangle_a0f43205265a4d865c50bf663f0359739}{center}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00283\ }
+\DoxyCodeLine{00284\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \mbox{\hyperlink{classlibcamera_1_1Rectangle_abd7077289114b7248b8fcef678ad5c2a}{size}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00285\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{\ \mbox{\hyperlink{classlibcamera_1_1Rectangle_ab8cbf04b0e345eb9ba7038d1eb32565b}{width}},\ \mbox{\hyperlink{classlibcamera_1_1Rectangle_a39b04c9198dfa82ea0e9f42191b6b6fe}{height}}\ \};}
+\DoxyCodeLine{00287\ \ \ \ \ \}}
+\DoxyCodeLine{00288\ }
+\DoxyCodeLine{00289\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Point}{Point}}\ \mbox{\hyperlink{classlibcamera_1_1Rectangle_a993b963aa1e41ff28ba01c67f27d1fb1}{topLeft}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00290\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{\ \mbox{\hyperlink{classlibcamera_1_1Rectangle_af2016608aee722b737b85694a1d1d52c}{x}},\ \mbox{\hyperlink{classlibcamera_1_1Rectangle_a0e9e38aa81a1e812e003c29cc1ad1b02}{y}}\ \};}
+\DoxyCodeLine{00292\ \ \ \ \ \}}
+\DoxyCodeLine{00293\ }
+\DoxyCodeLine{00294\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Rectangle}{Rectangle}}\ \&\mbox{\hyperlink{classlibcamera_1_1Rectangle_a0a99c55674394664d346fc2987670bbc}{scaleBy}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \&numerator,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \&denominator);}
+\DoxyCodeLine{00295\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Rectangle}{Rectangle}}\ \&\mbox{\hyperlink{classlibcamera_1_1Rectangle_abc65325db2b67b6f22ab40062cf15a58}{translateBy}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Point}{Point}}\ \&point);}
+\DoxyCodeLine{00296\ }
+\DoxyCodeLine{00297\ \ \ \ \ \_\_nodiscard\ \mbox{\hyperlink{classlibcamera_1_1Rectangle}{Rectangle}}\ \mbox{\hyperlink{classlibcamera_1_1Rectangle_af6ab6db441d6ebb0c3032c0b26df243e}{boundedTo}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Rectangle}{Rectangle}}\ \&bound)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00298\ \ \ \ \ \_\_nodiscard\ \mbox{\hyperlink{classlibcamera_1_1Rectangle}{Rectangle}}\ \mbox{\hyperlink{classlibcamera_1_1Rectangle_a9bfa2f29cf77cf32ff7cc5582ffaaad9}{enclosedIn}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Rectangle}{Rectangle}}\ \&boundary)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00299\ \ \ \ \ \_\_nodiscard\ \mbox{\hyperlink{classlibcamera_1_1Rectangle}{Rectangle}}\ \mbox{\hyperlink{classlibcamera_1_1Rectangle_afc1a9811450bb71a3272022cf26ecc8f}{scaledBy}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \&numerator,}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \&denominator)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00301\ \ \ \ \ \_\_nodiscard\ \mbox{\hyperlink{classlibcamera_1_1Rectangle}{Rectangle}}\ \mbox{\hyperlink{classlibcamera_1_1Rectangle_a163c7830382685392e04d84cda3cd36b}{translatedBy}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Point}{Point}}\ \&point)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00302\ \};}
+\DoxyCodeLine{00303\ }
+\DoxyCodeLine{00304\ \textcolor{keywordtype}{bool}\ operator==(\textcolor{keyword}{const}\ Rectangle\ \&lhs,\ \textcolor{keyword}{const}\ Rectangle\ \&rhs);}
+\DoxyCodeLine{00305\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ operator!=(\textcolor{keyword}{const}\ Rectangle\ \&lhs,\ \textcolor{keyword}{const}\ Rectangle\ \&rhs)}
+\DoxyCodeLine{00306\ \{}
+\DoxyCodeLine{00307\ \ \ \ \ \textcolor{keywordflow}{return}\ !(lhs\ ==\ rhs);}
+\DoxyCodeLine{00308\ \}}
+\DoxyCodeLine{00309\ }
+\DoxyCodeLine{00310\ std::ostream\ \&operator<<(std::ostream\ \&out,\ \textcolor{keyword}{const}\ Rectangle\ \&r);}
+\DoxyCodeLine{00311\ }
+\DoxyCodeLine{00312\ \}\ \textcolor{comment}{/*\ namespace\ libcamera\ */}}
+
+\end{DoxyCode}

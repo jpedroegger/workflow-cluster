@@ -1,0 +1,33 @@
+\doxysection{ipu3\+\_\+uapi\+\_\+bnr\+\_\+static\+\_\+config\+\_\+wb\+\_\+gains\+\_\+thr\+\_\+config Struct Reference}
+\hypertarget{structipu3__uapi__bnr__static__config__wb__gains__thr__config}{}\label{structipu3__uapi__bnr__static__config__wb__gains__thr__config}\index{ipu3\_uapi\_bnr\_static\_config\_wb\_gains\_thr\_config@{ipu3\_uapi\_bnr\_static\_config\_wb\_gains\_thr\_config}}
+
+
+{\ttfamily \#include $<$intel-\/ipu3.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structipu3__uapi__bnr__static__config__wb__gains__thr__config_aa9298f18b018855125c99b4664fc8025}\label{structipu3__uapi__bnr__static__config__wb__gains__thr__config_aa9298f18b018855125c99b4664fc8025} 
+\+\_\+\+\_\+u8 {\bfseries gr}
+\item 
+\Hypertarget{structipu3__uapi__bnr__static__config__wb__gains__thr__config_a182d97c0f4705b5426d643f57f711eca}\label{structipu3__uapi__bnr__static__config__wb__gains__thr__config_a182d97c0f4705b5426d643f57f711eca} 
+\+\_\+\+\_\+u8 {\bfseries r}
+\item 
+\Hypertarget{structipu3__uapi__bnr__static__config__wb__gains__thr__config_aa939ea8e5e8bed859c682899cbfbd8b5}\label{structipu3__uapi__bnr__static__config__wb__gains__thr__config_aa939ea8e5e8bed859c682899cbfbd8b5} 
+\+\_\+\+\_\+u8 {\bfseries b}
+\item 
+\Hypertarget{structipu3__uapi__bnr__static__config__wb__gains__thr__config_a3e2bbc3cfb2b92f9124b4ce00ff29fb9}\label{structipu3__uapi__bnr__static__config__wb__gains__thr__config_a3e2bbc3cfb2b92f9124b4ce00ff29fb9} 
+\+\_\+\+\_\+u8 {\bfseries gb}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structipu3__uapi__bnr__static__config__wb__gains__thr__config}{ipu3\+\_\+uapi\+\_\+bnr\+\_\+static\+\_\+config\+\_\+wb\+\_\+gains\+\_\+thr\+\_\+config} -\/ Threshold config
+
+@gr\+: white balance threshold gain for Gr channel. @r\+: white balance threshold gain for R channel. {\bfseries{}}\+: white balance threshold gain for B channel. @gb\+: white balance threshold gain for Gb channel.
+
+Defines the threshold that specifies how different a defect pixel can be from its neighbors.(used by dynamic defect pixel correction sub block) Precision u4.\+4 range \mbox{[}0, 8\mbox{]}. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/intel-\/ipu3.\+h\end{DoxyCompactItemize}

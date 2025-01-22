@@ -1,0 +1,365 @@
+\doxysection{libcamera\+::Rectangle Class Reference}
+\hypertarget{classlibcamera_1_1Rectangle}{}\label{classlibcamera_1_1Rectangle}\index{libcamera::Rectangle@{libcamera::Rectangle}}
+
+
+Describe a rectangle\textquotesingle{}s position and dimensions.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1Rectangle_adb78476ea887d264ceee7922bfa43c69}\label{classlibcamera_1_1Rectangle_adb78476ea887d264ceee7922bfa43c69} 
+constexpr {\bfseries Rectangle} ()
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{classlibcamera_1_1Rectangle}{Rectangle} with all coordinates set to 0. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{classlibcamera_1_1Rectangle_a59ccd67560f140e48bb70c4448cc1c74}{Rectangle}} (int xpos, int ypos, const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&\mbox{\hyperlink{classlibcamera_1_1Rectangle_abd7077289114b7248b8fcef678ad5c2a}{size}})
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{classlibcamera_1_1Rectangle}{Rectangle} with the given position and size. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{classlibcamera_1_1Rectangle_a94332066625a5986ed7a51256af75a88}{Rectangle}} (int xpos, int ypos, unsigned int w, unsigned int h)
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{classlibcamera_1_1Rectangle}{Rectangle} with the given position and size. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{classlibcamera_1_1Rectangle_a4a1c9f10ce8a2a86e2056a78dde3cd19}{Rectangle}} (const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&\mbox{\hyperlink{classlibcamera_1_1Rectangle_abd7077289114b7248b8fcef678ad5c2a}{size}})
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{classlibcamera_1_1Rectangle}{Rectangle} of {\itshape size} with its top left corner located at (0,0) \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{classlibcamera_1_1Rectangle_a24f885bcccd3de9151e6447b09e2f8ab}{Rectangle}} (const \mbox{\hyperlink{classlibcamera_1_1Point}{Point}} \&point1, const \mbox{\hyperlink{classlibcamera_1_1Point}{Point}} \&point2)
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{classlibcamera_1_1Rectangle}{Rectangle} from two opposite corners. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlibcamera_1_1Rectangle_aaeb62ce49e23a591b5b301a24b70b95f}{is\+Null}} () const
+\begin{DoxyCompactList}\small\item\em Check if the rectangle is null. \end{DoxyCompactList}\item 
+const std\+::string \mbox{\hyperlink{classlibcamera_1_1Rectangle_a647fad371d796424c46da79d8e06fe9e}{to\+String}} () const
+\begin{DoxyCompactList}\small\item\em Assemble and return a string describing the rectangle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1Point}{Point}} \mbox{\hyperlink{classlibcamera_1_1Rectangle_a0f43205265a4d865c50bf663f0359739}{center}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the center point of this rectangle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \mbox{\hyperlink{classlibcamera_1_1Rectangle_abd7077289114b7248b8fcef678ad5c2a}{size}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the size of this rectangle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1Point}{Point}} \mbox{\hyperlink{classlibcamera_1_1Rectangle_a993b963aa1e41ff28ba01c67f27d1fb1}{top\+Left}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the coordinates of the top left corner of this \doxylink{classlibcamera_1_1Rectangle}{Rectangle}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1Rectangle}{Rectangle}} \& \mbox{\hyperlink{classlibcamera_1_1Rectangle_a0a99c55674394664d346fc2987670bbc}{scale\+By}} (const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&numerator, const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&denominator)
+\begin{DoxyCompactList}\small\item\em Apply a non-\/uniform rational scaling in place to this \doxylink{classlibcamera_1_1Rectangle}{Rectangle}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1Rectangle}{Rectangle}} \& \mbox{\hyperlink{classlibcamera_1_1Rectangle_abc65325db2b67b6f22ab40062cf15a58}{translate\+By}} (const \mbox{\hyperlink{classlibcamera_1_1Point}{Point}} \&point)
+\begin{DoxyCompactList}\small\item\em Translate this \doxylink{classlibcamera_1_1Rectangle}{Rectangle} in place by the given \doxylink{classlibcamera_1_1Point}{Point}. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+nodiscard \mbox{\hyperlink{classlibcamera_1_1Rectangle}{Rectangle}} \mbox{\hyperlink{classlibcamera_1_1Rectangle_af6ab6db441d6ebb0c3032c0b26df243e}{bounded\+To}} (const \mbox{\hyperlink{classlibcamera_1_1Rectangle}{Rectangle}} \&bound) const
+\begin{DoxyCompactList}\small\item\em Calculate the intersection of this \doxylink{classlibcamera_1_1Rectangle}{Rectangle} with another. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+nodiscard \mbox{\hyperlink{classlibcamera_1_1Rectangle}{Rectangle}} \mbox{\hyperlink{classlibcamera_1_1Rectangle_a9bfa2f29cf77cf32ff7cc5582ffaaad9}{enclosed\+In}} (const \mbox{\hyperlink{classlibcamera_1_1Rectangle}{Rectangle}} \&boundary) const
+\begin{DoxyCompactList}\small\item\em Enclose a \doxylink{classlibcamera_1_1Rectangle}{Rectangle} so as not to exceed another \doxylink{classlibcamera_1_1Rectangle}{Rectangle}. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+nodiscard \mbox{\hyperlink{classlibcamera_1_1Rectangle}{Rectangle}} \mbox{\hyperlink{classlibcamera_1_1Rectangle_afc1a9811450bb71a3272022cf26ecc8f}{scaled\+By}} (const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&numerator, const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&denominator) const
+\begin{DoxyCompactList}\small\item\em Apply a non-\/uniform rational scaling to this \doxylink{classlibcamera_1_1Rectangle}{Rectangle}. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+nodiscard \mbox{\hyperlink{classlibcamera_1_1Rectangle}{Rectangle}} \mbox{\hyperlink{classlibcamera_1_1Rectangle_a163c7830382685392e04d84cda3cd36b}{translated\+By}} (const \mbox{\hyperlink{classlibcamera_1_1Point}{Point}} \&point) const
+\begin{DoxyCompactList}\small\item\em Translate a \doxylink{classlibcamera_1_1Rectangle}{Rectangle} by the given amounts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classlibcamera_1_1Rectangle_af2016608aee722b737b85694a1d1d52c}{x}}
+\begin{DoxyCompactList}\small\item\em The horizontal coordinate of the rectangle\textquotesingle{}s top-\/left corner. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classlibcamera_1_1Rectangle_a0e9e38aa81a1e812e003c29cc1ad1b02}{y}}
+\begin{DoxyCompactList}\small\item\em The vertical coordinate of the rectangle\textquotesingle{}s top-\/left corner. \end{DoxyCompactList}\item 
+\Hypertarget{classlibcamera_1_1Rectangle_ab8cbf04b0e345eb9ba7038d1eb32565b}\label{classlibcamera_1_1Rectangle_ab8cbf04b0e345eb9ba7038d1eb32565b} 
+unsigned int {\bfseries width}
+\begin{DoxyCompactList}\small\item\em The distance between the left and right sides. \end{DoxyCompactList}\item 
+\Hypertarget{classlibcamera_1_1Rectangle_a39b04c9198dfa82ea0e9f42191b6b6fe}\label{classlibcamera_1_1Rectangle_a39b04c9198dfa82ea0e9f42191b6b6fe} 
+unsigned int {\bfseries height}
+\begin{DoxyCompactList}\small\item\em The distance between the top and bottom sides. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Describe a rectangle\textquotesingle{}s position and dimensions. 
+
+Rectangles are used to identify an area of an image. They are specified by the coordinates of top-\/left corner and their horizontal and vertical size. By convention, the top-\/left corner is defined as the corner with the lowest x and y coordinates, regardless of the origin and direction of the axes.
+
+The measure unit of the rectangle coordinates and size, as well as the reference point from which the \doxylink{classlibcamera_1_1Rectangle_af2016608aee722b737b85694a1d1d52c}{Rectangle\+::x} and \doxylink{classlibcamera_1_1Rectangle_a0e9e38aa81a1e812e003c29cc1ad1b02}{Rectangle\+::y} displacements refers to, are defined by the context were rectangle is used. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlibcamera_1_1Rectangle_a59ccd67560f140e48bb70c4448cc1c74}\label{classlibcamera_1_1Rectangle_a59ccd67560f140e48bb70c4448cc1c74} 
+\index{libcamera::Rectangle@{libcamera::Rectangle}!Rectangle@{Rectangle}}
+\index{Rectangle@{Rectangle}!libcamera::Rectangle@{libcamera::Rectangle}}
+\doxysubsubsection{\texorpdfstring{Rectangle()}{Rectangle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily libcamera\+::\+Rectangle\+::\+Rectangle (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Construct a \doxylink{classlibcamera_1_1Rectangle}{Rectangle} with the given position and size. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em x} & The horizontal coordinate of the top-\/left corner \\
+\hline
+\mbox{\texttt{ in}}  & {\em y} & The vertical coordinate of the top-\/left corner \\
+\hline
+\mbox{\texttt{ in}}  & {\em size} & The size\\
+\hline
+\end{DoxyParams}
+The rectangle\textquotesingle{}s top-\/left corner is the point with the smaller x and y values. \Hypertarget{classlibcamera_1_1Rectangle_a94332066625a5986ed7a51256af75a88}\label{classlibcamera_1_1Rectangle_a94332066625a5986ed7a51256af75a88} 
+\index{libcamera::Rectangle@{libcamera::Rectangle}!Rectangle@{Rectangle}}
+\index{Rectangle@{Rectangle}!libcamera::Rectangle@{libcamera::Rectangle}}
+\doxysubsubsection{\texorpdfstring{Rectangle()}{Rectangle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily libcamera\+::\+Rectangle\+::\+Rectangle (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{unsigned int}]{width,  }\item[{unsigned int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Construct a \doxylink{classlibcamera_1_1Rectangle}{Rectangle} with the given position and size. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em x} & The horizontal coordinate of the top-\/left corner \\
+\hline
+\mbox{\texttt{ in}}  & {\em y} & The vertical coordinate of the top-\/left corner \\
+\hline
+\mbox{\texttt{ in}}  & {\em width} & The width \\
+\hline
+\mbox{\texttt{ in}}  & {\em height} & The height\\
+\hline
+\end{DoxyParams}
+The rectangle\textquotesingle{}s top-\/left corner is the point with the smaller x and y values. \Hypertarget{classlibcamera_1_1Rectangle_a4a1c9f10ce8a2a86e2056a78dde3cd19}\label{classlibcamera_1_1Rectangle_a4a1c9f10ce8a2a86e2056a78dde3cd19} 
+\index{libcamera::Rectangle@{libcamera::Rectangle}!Rectangle@{Rectangle}}
+\index{Rectangle@{Rectangle}!libcamera::Rectangle@{libcamera::Rectangle}}
+\doxysubsubsection{\texorpdfstring{Rectangle()}{Rectangle()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily libcamera\+::\+Rectangle\+::\+Rectangle (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [constexpr]}}
+
+
+
+Construct a \doxylink{classlibcamera_1_1Rectangle}{Rectangle} of {\itshape size} with its top left corner located at (0,0) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em size} & The desired \doxylink{classlibcamera_1_1Rectangle}{Rectangle} size \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classlibcamera_1_1Rectangle_a24f885bcccd3de9151e6447b09e2f8ab}\label{classlibcamera_1_1Rectangle_a24f885bcccd3de9151e6447b09e2f8ab} 
+\index{libcamera::Rectangle@{libcamera::Rectangle}!Rectangle@{Rectangle}}
+\index{Rectangle@{Rectangle}!libcamera::Rectangle@{libcamera::Rectangle}}
+\doxysubsubsection{\texorpdfstring{Rectangle()}{Rectangle()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily libcamera\+::\+Rectangle\+::\+Rectangle (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1Point}{Point}} \&}]{point1,  }\item[{const \mbox{\hyperlink{classlibcamera_1_1Point}{Point}} \&}]{point2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Construct a \doxylink{classlibcamera_1_1Rectangle}{Rectangle} from two opposite corners. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em point1} & One of corners of the rectangle \\
+\hline
+\mbox{\texttt{ in}}  & {\em point2} & The opposite corner of {\itshape point1} \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1Rectangle_af6ab6db441d6ebb0c3032c0b26df243e}\label{classlibcamera_1_1Rectangle_af6ab6db441d6ebb0c3032c0b26df243e} 
+\index{libcamera::Rectangle@{libcamera::Rectangle}!boundedTo@{boundedTo}}
+\index{boundedTo@{boundedTo}!libcamera::Rectangle@{libcamera::Rectangle}}
+\doxysubsubsection{\texorpdfstring{boundedTo()}{boundedTo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1Rectangle}{Rectangle}} libcamera\+::\+Rectangle\+::bounded\+To (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1Rectangle}{Rectangle}} \&}]{bound }\end{DoxyParamCaption}) const}
+
+
+
+Calculate the intersection of this \doxylink{classlibcamera_1_1Rectangle}{Rectangle} with another. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em bound} & The \doxylink{classlibcamera_1_1Rectangle}{Rectangle} that is intersected with this \doxylink{classlibcamera_1_1Rectangle}{Rectangle}\\
+\hline
+\end{DoxyParams}
+This function calculates the standard intersection of two rectangles. If the rectangles do not overlap in either the x or y direction, then the size of that dimension in the result (its width or height) is set to zero. Even when one dimension is set to zero, note that the other dimension may still have a positive value if there was some overlap.
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classlibcamera_1_1Rectangle}{Rectangle} that is the intersection of the input rectangles 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Rectangle_a0f43205265a4d865c50bf663f0359739}\label{classlibcamera_1_1Rectangle_a0f43205265a4d865c50bf663f0359739} 
+\index{libcamera::Rectangle@{libcamera::Rectangle}!center@{center}}
+\index{center@{center}!libcamera::Rectangle@{libcamera::Rectangle}}
+\doxysubsubsection{\texorpdfstring{center()}{center()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1Point}{Point}} libcamera\+::\+Rectangle\+::center (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retrieve the center point of this rectangle. 
+
+\begin{DoxyReturn}{Returns}
+The center \doxylink{classlibcamera_1_1Point}{Point} 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Rectangle_a9bfa2f29cf77cf32ff7cc5582ffaaad9}\label{classlibcamera_1_1Rectangle_a9bfa2f29cf77cf32ff7cc5582ffaaad9} 
+\index{libcamera::Rectangle@{libcamera::Rectangle}!enclosedIn@{enclosedIn}}
+\index{enclosedIn@{enclosedIn}!libcamera::Rectangle@{libcamera::Rectangle}}
+\doxysubsubsection{\texorpdfstring{enclosedIn()}{enclosedIn()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1Rectangle}{Rectangle}} libcamera\+::\+Rectangle\+::enclosed\+In (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1Rectangle}{Rectangle}} \&}]{boundary }\end{DoxyParamCaption}) const}
+
+
+
+Enclose a \doxylink{classlibcamera_1_1Rectangle}{Rectangle} so as not to exceed another \doxylink{classlibcamera_1_1Rectangle}{Rectangle}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em boundary} & The limit that the returned \doxylink{classlibcamera_1_1Rectangle}{Rectangle} will not exceed\\
+\hline
+\end{DoxyParams}
+The \doxylink{classlibcamera_1_1Rectangle}{Rectangle} is modified so that it does not exceed the given {\itshape boundary}. This process involves translating the \doxylink{classlibcamera_1_1Rectangle}{Rectangle} if any of its edges lie beyond {\itshape boundary}, so that those edges then lie along the boundary instead.
+
+If either width or height are larger than {\itshape boundary}, then the returned \doxylink{classlibcamera_1_1Rectangle}{Rectangle} is clipped to be no larger. But other than this, the \doxylink{classlibcamera_1_1Rectangle}{Rectangle} is not clipped or reduced in size, merely translated.
+
+Note that this is not a conventional \doxylink{classlibcamera_1_1Rectangle}{Rectangle} intersection function which is provided by \doxylink{classlibcamera_1_1Rectangle_af6ab6db441d6ebb0c3032c0b26df243e}{bounded\+To()}.
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classlibcamera_1_1Rectangle}{Rectangle} that does not extend beyond a boundary \doxylink{classlibcamera_1_1Rectangle}{Rectangle} 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Rectangle_aaeb62ce49e23a591b5b301a24b70b95f}\label{classlibcamera_1_1Rectangle_aaeb62ce49e23a591b5b301a24b70b95f} 
+\index{libcamera::Rectangle@{libcamera::Rectangle}!isNull@{isNull}}
+\index{isNull@{isNull}!libcamera::Rectangle@{libcamera::Rectangle}}
+\doxysubsubsection{\texorpdfstring{isNull()}{isNull()}}
+{\footnotesize\ttfamily bool libcamera\+::\+Rectangle\+::is\+Null (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check if the rectangle is null. 
+
+\begin{DoxyReturn}{Returns}
+True if both the width and height are 0, or false otherwise 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Rectangle_a0a99c55674394664d346fc2987670bbc}\label{classlibcamera_1_1Rectangle_a0a99c55674394664d346fc2987670bbc} 
+\index{libcamera::Rectangle@{libcamera::Rectangle}!scaleBy@{scaleBy}}
+\index{scaleBy@{scaleBy}!libcamera::Rectangle@{libcamera::Rectangle}}
+\doxysubsubsection{\texorpdfstring{scaleBy()}{scaleBy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1Rectangle}{Rectangle}} \& libcamera\+::\+Rectangle\+::scale\+By (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&}]{numerator,  }\item[{const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&}]{denominator }\end{DoxyParamCaption})}
+
+
+
+Apply a non-\/uniform rational scaling in place to this \doxylink{classlibcamera_1_1Rectangle}{Rectangle}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em numerator} & The numerators of the x and y scaling factors \\
+\hline
+\mbox{\texttt{ in}}  & {\em denominator} & The denominators of the x and y scaling factors\\
+\hline
+\end{DoxyParams}
+A non-\/uniform scaling is applied in place such the resulting x coordinates are multiplied by numerator.\+width / denominator.\+width, and similarly for the y coordinates (using height in place of width).
+
+\begin{DoxyReturn}{Returns}
+A reference to this object 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Rectangle_afc1a9811450bb71a3272022cf26ecc8f}\label{classlibcamera_1_1Rectangle_afc1a9811450bb71a3272022cf26ecc8f} 
+\index{libcamera::Rectangle@{libcamera::Rectangle}!scaledBy@{scaledBy}}
+\index{scaledBy@{scaledBy}!libcamera::Rectangle@{libcamera::Rectangle}}
+\doxysubsubsection{\texorpdfstring{scaledBy()}{scaledBy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1Rectangle}{Rectangle}} libcamera\+::\+Rectangle\+::scaled\+By (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&}]{numerator,  }\item[{const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&}]{denominator }\end{DoxyParamCaption}) const}
+
+
+
+Apply a non-\/uniform rational scaling to this \doxylink{classlibcamera_1_1Rectangle}{Rectangle}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em numerator} & The numerators of the x and y scaling factors \\
+\hline
+\mbox{\texttt{ in}}  & {\em denominator} & The denominators of the x and y scaling factors\\
+\hline
+\end{DoxyParams}
+A non-\/uniform scaling is applied such the resulting x coordinates are multiplied by numerator.\+width / denominator.\+width, and similarly for the y coordinates (using height in place of width).
+
+\begin{DoxyReturn}{Returns}
+The non-\/uniformly scaled \doxylink{classlibcamera_1_1Rectangle}{Rectangle} 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Rectangle_abd7077289114b7248b8fcef678ad5c2a}\label{classlibcamera_1_1Rectangle_abd7077289114b7248b8fcef678ad5c2a} 
+\index{libcamera::Rectangle@{libcamera::Rectangle}!size@{size}}
+\index{size@{size}!libcamera::Rectangle@{libcamera::Rectangle}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} libcamera\+::\+Rectangle\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the size of this rectangle. 
+
+\begin{DoxyReturn}{Returns}
+The \doxylink{classlibcamera_1_1Rectangle}{Rectangle} size 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Rectangle_a993b963aa1e41ff28ba01c67f27d1fb1}\label{classlibcamera_1_1Rectangle_a993b963aa1e41ff28ba01c67f27d1fb1} 
+\index{libcamera::Rectangle@{libcamera::Rectangle}!topLeft@{topLeft}}
+\index{topLeft@{topLeft}!libcamera::Rectangle@{libcamera::Rectangle}}
+\doxysubsubsection{\texorpdfstring{topLeft()}{topLeft()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1Point}{Point}} libcamera\+::\+Rectangle\+::top\+Left (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the coordinates of the top left corner of this \doxylink{classlibcamera_1_1Rectangle}{Rectangle}. 
+
+The rectangle\textquotesingle{}s top-\/left corner is the point with the smaller x and y values.
+
+\begin{DoxyReturn}{Returns}
+The \doxylink{classlibcamera_1_1Rectangle}{Rectangle}\textquotesingle{}s top left corner 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Rectangle_a647fad371d796424c46da79d8e06fe9e}\label{classlibcamera_1_1Rectangle_a647fad371d796424c46da79d8e06fe9e} 
+\index{libcamera::Rectangle@{libcamera::Rectangle}!toString@{toString}}
+\index{toString@{toString}!libcamera::Rectangle@{libcamera::Rectangle}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily const std\+::string libcamera\+::\+Rectangle\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Assemble and return a string describing the rectangle. 
+
+\begin{DoxyReturn}{Returns}
+A string describing the \doxylink{classlibcamera_1_1Rectangle}{Rectangle} 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Rectangle_abc65325db2b67b6f22ab40062cf15a58}\label{classlibcamera_1_1Rectangle_abc65325db2b67b6f22ab40062cf15a58} 
+\index{libcamera::Rectangle@{libcamera::Rectangle}!translateBy@{translateBy}}
+\index{translateBy@{translateBy}!libcamera::Rectangle@{libcamera::Rectangle}}
+\doxysubsubsection{\texorpdfstring{translateBy()}{translateBy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1Rectangle}{Rectangle}} \& libcamera\+::\+Rectangle\+::translate\+By (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1Point}{Point}} \&}]{point }\end{DoxyParamCaption})}
+
+
+
+Translate this \doxylink{classlibcamera_1_1Rectangle}{Rectangle} in place by the given \doxylink{classlibcamera_1_1Point}{Point}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em point} & The amount to translate the \doxylink{classlibcamera_1_1Rectangle}{Rectangle} by\\
+\hline
+\end{DoxyParams}
+The \doxylink{classlibcamera_1_1Rectangle}{Rectangle} is translated in the x-\/direction by the point\textquotesingle{}s x coordinate and in the y-\/direction by the point\textquotesingle{}s y coordinate.
+
+\begin{DoxyReturn}{Returns}
+A reference to this object 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Rectangle_a163c7830382685392e04d84cda3cd36b}\label{classlibcamera_1_1Rectangle_a163c7830382685392e04d84cda3cd36b} 
+\index{libcamera::Rectangle@{libcamera::Rectangle}!translatedBy@{translatedBy}}
+\index{translatedBy@{translatedBy}!libcamera::Rectangle@{libcamera::Rectangle}}
+\doxysubsubsection{\texorpdfstring{translatedBy()}{translatedBy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1Rectangle}{Rectangle}} libcamera\+::\+Rectangle\+::translated\+By (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1Point}{Point}} \&}]{point }\end{DoxyParamCaption}) const}
+
+
+
+Translate a \doxylink{classlibcamera_1_1Rectangle}{Rectangle} by the given amounts. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em point} & The amount to translate the \doxylink{classlibcamera_1_1Rectangle}{Rectangle} by\\
+\hline
+\end{DoxyParams}
+The \doxylink{classlibcamera_1_1Rectangle}{Rectangle} is translated in the x-\/direction by the point\textquotesingle{}s x coordinate and in the y-\/direction by the point\textquotesingle{}s y coordinate.
+
+\begin{DoxyReturn}{Returns}
+The translated \doxylink{classlibcamera_1_1Rectangle}{Rectangle} 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classlibcamera_1_1Rectangle_af2016608aee722b737b85694a1d1d52c}\label{classlibcamera_1_1Rectangle_af2016608aee722b737b85694a1d1d52c} 
+\index{libcamera::Rectangle@{libcamera::Rectangle}!x@{x}}
+\index{x@{x}!libcamera::Rectangle@{libcamera::Rectangle}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily libcamera\+::\+Rectangle\+::x}
+
+
+
+The horizontal coordinate of the rectangle\textquotesingle{}s top-\/left corner. 
+
+The rectangle\textquotesingle{}s top-\/left corner is the point with the smaller x and y values. \Hypertarget{classlibcamera_1_1Rectangle_a0e9e38aa81a1e812e003c29cc1ad1b02}\label{classlibcamera_1_1Rectangle_a0e9e38aa81a1e812e003c29cc1ad1b02} 
+\index{libcamera::Rectangle@{libcamera::Rectangle}!y@{y}}
+\index{y@{y}!libcamera::Rectangle@{libcamera::Rectangle}}
+\doxysubsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily libcamera\+::\+Rectangle\+::y}
+
+
+
+The vertical coordinate of the rectangle\textquotesingle{}s top-\/left corner. 
+
+The rectangle\textquotesingle{}s top-\/left corner is the point with the smaller x and y values. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/\mbox{\hyperlink{geometry_8h}{geometry.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/geometry.\+cpp\end{DoxyCompactItemize}

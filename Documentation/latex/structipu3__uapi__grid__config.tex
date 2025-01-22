@@ -1,0 +1,48 @@
+\doxysection{ipu3\+\_\+uapi\+\_\+grid\+\_\+config Struct Reference}
+\hypertarget{structipu3__uapi__grid__config}{}\label{structipu3__uapi__grid__config}\index{ipu3\_uapi\_grid\_config@{ipu3\_uapi\_grid\_config}}
+
+
+{\ttfamily \#include $<$intel-\/ipu3.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structipu3__uapi__grid__config_aa9ba290bff8238d469f0ce2198475de1}\label{structipu3__uapi__grid__config_aa9ba290bff8238d469f0ce2198475de1} 
+\+\_\+\+\_\+u8 {\bfseries width}
+\item 
+\Hypertarget{structipu3__uapi__grid__config_a8e4df91a7a5c675fa497a0659290359a}\label{structipu3__uapi__grid__config_a8e4df91a7a5c675fa497a0659290359a} 
+\+\_\+\+\_\+u8 {\bfseries height}
+\item 
+\Hypertarget{structipu3__uapi__grid__config_af0bc2bcbe0d0772856b62130c2541232}\label{structipu3__uapi__grid__config_af0bc2bcbe0d0772856b62130c2541232} 
+\+\_\+\+\_\+u16 {\bfseries block\+\_\+width\+\_\+log2}\+:3
+\item 
+\Hypertarget{structipu3__uapi__grid__config_add1ae79cb796aca2fbf4f49b318d399d}\label{structipu3__uapi__grid__config_add1ae79cb796aca2fbf4f49b318d399d} 
+\+\_\+\+\_\+u16 {\bfseries block\+\_\+height\+\_\+log2}\+:3
+\item 
+\Hypertarget{structipu3__uapi__grid__config_a94c490b1453aabc794459b5216fc7120}\label{structipu3__uapi__grid__config_a94c490b1453aabc794459b5216fc7120} 
+\+\_\+\+\_\+u16 {\bfseries height\+\_\+per\+\_\+slice}\+:8
+\item 
+\Hypertarget{structipu3__uapi__grid__config_aef00d5cc531277d98e62a33b948a6f11}\label{structipu3__uapi__grid__config_aef00d5cc531277d98e62a33b948a6f11} 
+\+\_\+\+\_\+u16 {\bfseries x\+\_\+start}
+\item 
+\Hypertarget{structipu3__uapi__grid__config_ad01384b315815571b069837aff0803b9}\label{structipu3__uapi__grid__config_ad01384b315815571b069837aff0803b9} 
+\+\_\+\+\_\+u16 {\bfseries y\+\_\+start}
+\item 
+\Hypertarget{structipu3__uapi__grid__config_a730a89602e475a9b2767d29c7ba49ca7}\label{structipu3__uapi__grid__config_a730a89602e475a9b2767d29c7ba49ca7} 
+\+\_\+\+\_\+u16 {\bfseries x\+\_\+end}
+\item 
+\Hypertarget{structipu3__uapi__grid__config_a7910ddad80d4b2ea8a1b3e287ff3b42f}\label{structipu3__uapi__grid__config_a7910ddad80d4b2ea8a1b3e287ff3b42f} 
+\+\_\+\+\_\+u16 {\bfseries y\+\_\+end}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structipu3__uapi__grid__config}{ipu3\+\_\+uapi\+\_\+grid\+\_\+config} -\/ Grid plane config
+
+@width\+: Grid horizontal dimensions, in number of grid blocks(cells). For AWB, the range is (16, 80). For AF/\+AE, the range is (16, 32). @height\+: Grid vertical dimensions, in number of grid cells. For AWB, the range is (16, 60). For AF/\+AE, the range is (16, 24). @block\+\_\+width\+\_\+log2\+: Log2 of the width of each cell in pixels. For AWB, the range is \mbox{[}3, 6\mbox{]}. For AF/\+AE, the range is \mbox{[}3, 7\mbox{]}. @block\+\_\+height\+\_\+log2\+: Log2 of the height of each cell in pixels. For AWB, the range is \mbox{[}3, 6\mbox{]}. For AF/\+AE, the range is \mbox{[}3, 7\mbox{]}. @height\+\_\+per\+\_\+slice\+: The number of blocks in vertical axis per slice. Default 2. @x\+\_\+start\+: X value of top left corner of Region of Interest(\+ROI). @y\+\_\+start\+: Y value of top left corner of ROI @x\+\_\+end\+: X value of bottom right corner of ROI @y\+\_\+end\+: Y value of bottom right corner of ROI
+
+Due to the size of total amount of collected data, most statistics create a grid-\/based output, and the data is then divided into "{}slices"{}. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/intel-\/ipu3.\+h\end{DoxyCompactItemize}

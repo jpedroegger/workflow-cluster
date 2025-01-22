@@ -1,0 +1,117 @@
+\doxysection{libcamera\+::ipa\+::rkisp1\+::algorithms\+::Dpf Class Reference}
+\hypertarget{classlibcamera_1_1ipa_1_1rkisp1_1_1algorithms_1_1Dpf}{}\label{classlibcamera_1_1ipa_1_1rkisp1_1_1algorithms_1_1Dpf}\index{libcamera::ipa::rkisp1::algorithms::Dpf@{libcamera::ipa::rkisp1::algorithms::Dpf}}
+
+
+Rk\+ISP1 Denoise Pre-\/\+Filter control.  
+
+
+Inheritance diagram for libcamera\+::ipa\+::rkisp1\+::algorithms\+::Dpf\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classlibcamera_1_1ipa_1_1rkisp1_1_1algorithms_1_1Dpf}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classlibcamera_1_1ipa_1_1rkisp1_1_1algorithms_1_1Dpf_a15643170bb334791b93a238211929941}{init}} (\mbox{\hyperlink{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAContext}{IPAContext}} \&context, const \mbox{\hyperlink{classlibcamera_1_1YamlObject}{Yaml\+Object}} \&tuning\+Data) override
+\begin{DoxyCompactList}\small\item\em Initialize the \doxylink{classlibcamera_1_1ipa_1_1rkisp1_1_1Algorithm}{Algorithm} with tuning data.   \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1ipa_1_1rkisp1_1_1algorithms_1_1Dpf_acbf471cd8551de1f086473c9bcd24367}{queue\+Request}} (\mbox{\hyperlink{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAContext}{IPAContext}} \&context, const uint32\+\_\+t frame, \mbox{\hyperlink{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAFrameContext}{IPAFrame\+Context}} \&frame\+Context, const \mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} \&controls) override
+\begin{DoxyCompactList}\small\item\em Provide control values to the algorithm.   \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1ipa_1_1rkisp1_1_1algorithms_1_1Dpf_a7dc0cd3be5857a4944f0809d665c2915}{prepare}} (\mbox{\hyperlink{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAContext}{IPAContext}} \&context, const uint32\+\_\+t frame, \mbox{\hyperlink{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAFrameContext}{IPAFrame\+Context}} \&frame\+Context, \mbox{\hyperlink{classlibcamera_1_1ipa_1_1rkisp1_1_1RkISP1Params}{Rk\+ISP1\+Params}} \texorpdfstring{$\ast$}{*}params) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Algorithm}{libcamera\+::ipa\+::\+Algorithm$<$ Module $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual int \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Algorithm_a68ad78f4d948f8cebefaaae22b743687}{init}} (typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a2a12d05faa4f517f4dfcfa087063fd27}{Module\+::\+Context}} \&context, const \mbox{\hyperlink{classlibcamera_1_1YamlObject}{Yaml\+Object}} \&tuning\+Data)
+\begin{DoxyCompactList}\small\item\em Initialize the \doxylink{classlibcamera_1_1ipa_1_1Algorithm}{Algorithm} with tuning data. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Algorithm_a5e3cd461b46cdd1d366bf211f87d8f3d}{configure}} (typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a2a12d05faa4f517f4dfcfa087063fd27}{Module\+::\+Context}} \&context, const typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a7c0b7a42c526c07bafeca4018b38b8c9}{Module\+::\+Config}} \&config\+Info)
+\begin{DoxyCompactList}\small\item\em Configure the \doxylink{classlibcamera_1_1ipa_1_1Algorithm}{Algorithm} given an IPAConfig\+Info. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Algorithm_a307cf5dd6b48ccc1c772901c07e14afe}{queue\+Request}} (typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a2a12d05faa4f517f4dfcfa087063fd27}{Module\+::\+Context}} \&context, const uint32\+\_\+t frame, typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a5a1bf7efd7811fb9da8ff311aeef3b1c}{Module\+::\+Frame\+Context}} \&frame\+Context, const \mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} \&controls)
+\begin{DoxyCompactList}\small\item\em Provide control values to the algorithm. \end{DoxyCompactList}\item 
+virtual void {\bfseries prepare} (typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a2a12d05faa4f517f4dfcfa087063fd27}{Module\+::\+Context}} \&context, const uint32\+\_\+t frame, typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a5a1bf7efd7811fb9da8ff311aeef3b1c}{Module\+::\+Frame\+Context}} \&frame\+Context, typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a48ee62113eed1c9ad7a001887dc59674}{Module\+::\+Params}} \texorpdfstring{$\ast$}{*}params)
+\item 
+virtual void {\bfseries process} (typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a2a12d05faa4f517f4dfcfa087063fd27}{Module\+::\+Context}} \&context, const uint32\+\_\+t frame, typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a5a1bf7efd7811fb9da8ff311aeef3b1c}{Module\+::\+Frame\+Context}} \&frame\+Context, const typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_afdcea0695dc0eb1226d66442a5647a41}{Module\+::\+Stats}} \texorpdfstring{$\ast$}{*}stats, \mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} \&metadata)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Algorithm}{libcamera\+::ipa\+::\+Algorithm$<$ Module $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+using {\bfseries Module} = \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Algorithm_ac52491716c9cd932770dc1a02d7d9b25}{Module}}
+\begin{DoxyCompactList}\small\item\em The IPA module type for this class of algorithms. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classlibcamera_1_1ipa_1_1rkisp1_1_1Algorithm}{libcamera\+::ipa\+::rkisp1\+::\+Algorithm}}}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries disabled\+\_\+}
+\item 
+bool {\bfseries supports\+Raw\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Rk\+ISP1 Denoise Pre-\/\+Filter control. 
+
+The denoise pre-\/filter algorithm is a bilateral filter which combines a range filter and a domain filter. The denoise pre-\/filter is applied before demosaicing. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1ipa_1_1rkisp1_1_1algorithms_1_1Dpf_a15643170bb334791b93a238211929941}\label{classlibcamera_1_1ipa_1_1rkisp1_1_1algorithms_1_1Dpf_a15643170bb334791b93a238211929941} 
+\index{libcamera::ipa::rkisp1::algorithms::Dpf@{libcamera::ipa::rkisp1::algorithms::Dpf}!init@{init}}
+\index{init@{init}!libcamera::ipa::rkisp1::algorithms::Dpf@{libcamera::ipa::rkisp1::algorithms::Dpf}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily int libcamera\+::ipa\+::rkisp1\+::algorithms\+::\+Dpf\+::init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAContext}{IPAContext}} \&}]{context,  }\item[{const \mbox{\hyperlink{classlibcamera_1_1YamlObject}{Yaml\+Object}} \&}]{tuning\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Initialize the \doxylink{classlibcamera_1_1ipa_1_1rkisp1_1_1Algorithm}{Algorithm} with tuning data.   
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em context} & The shared IPA context \\
+\hline
+\mbox{\texttt{ in}}  & {\em tuning\+Data} & The tuning data for the algorithm\\
+\hline
+\end{DoxyParams}
+This function is called once, when the IPA module is initialized, to initialize the algorithm. The {\itshape tuning\+Data} \doxylink{classlibcamera_1_1YamlObject}{Yaml\+Object} contains the tuning data for algorithm.
+
+\begin{DoxyReturn}{Returns}
+0 if successful, an error code otherwise   
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1rkisp1_1_1algorithms_1_1Dpf_a7dc0cd3be5857a4944f0809d665c2915}\label{classlibcamera_1_1ipa_1_1rkisp1_1_1algorithms_1_1Dpf_a7dc0cd3be5857a4944f0809d665c2915} 
+\index{libcamera::ipa::rkisp1::algorithms::Dpf@{libcamera::ipa::rkisp1::algorithms::Dpf}!prepare@{prepare}}
+\index{prepare@{prepare}!libcamera::ipa::rkisp1::algorithms::Dpf@{libcamera::ipa::rkisp1::algorithms::Dpf}}
+\doxysubsubsection{\texorpdfstring{prepare()}{prepare()}}
+{\footnotesize\ttfamily void libcamera\+::ipa\+::rkisp1\+::algorithms\+::\+Dpf\+::prepare (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAContext}{IPAContext}} \&}]{context,  }\item[{const uint32\+\_\+t}]{frame,  }\item[{\mbox{\hyperlink{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAFrameContext}{IPAFrame\+Context}} \&}]{frame\+Context,  }\item[{\mbox{\hyperlink{classlibcamera_1_1ipa_1_1rkisp1_1_1RkISP1Params}{Rk\+ISP1\+Params}} \texorpdfstring{$\ast$}{*}}]{params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+
+
+\Hypertarget{classlibcamera_1_1ipa_1_1rkisp1_1_1algorithms_1_1Dpf_acbf471cd8551de1f086473c9bcd24367}\label{classlibcamera_1_1ipa_1_1rkisp1_1_1algorithms_1_1Dpf_acbf471cd8551de1f086473c9bcd24367} 
+\index{libcamera::ipa::rkisp1::algorithms::Dpf@{libcamera::ipa::rkisp1::algorithms::Dpf}!queueRequest@{queueRequest}}
+\index{queueRequest@{queueRequest}!libcamera::ipa::rkisp1::algorithms::Dpf@{libcamera::ipa::rkisp1::algorithms::Dpf}}
+\doxysubsubsection{\texorpdfstring{queueRequest()}{queueRequest()}}
+{\footnotesize\ttfamily void libcamera\+::ipa\+::rkisp1\+::algorithms\+::\+Dpf\+::queue\+Request (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAContext}{IPAContext}} \&}]{context,  }\item[{const uint32\+\_\+t}]{frame,  }\item[{\mbox{\hyperlink{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAFrameContext}{IPAFrame\+Context}} \&}]{frame\+Context,  }\item[{const \mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} \&}]{controls }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Provide control values to the algorithm.   
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em context} & The shared IPA context \\
+\hline
+\mbox{\texttt{ in}}  & {\em frame} & The frame number to apply the control values \\
+\hline
+\mbox{\texttt{ in}}  & {\em frame\+Context} & The current frame\textquotesingle{}s context \\
+\hline
+\mbox{\texttt{ in}}  & {\em controls} & The list of user controls\\
+\hline
+\end{DoxyParams}
+This function is called for each request queued to the camera. It provides the controls stored in the request to the algorithm. The {\itshape frame} number is the \doxylink{classlibcamera_1_1Request}{Request} sequence number and identifies the desired corresponding frame to target for the controls to take effect.
+
+Algorithms shall read the applicable controls and store their value for later use during frame processing.   
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/ipa/rkisp1/algorithms/\mbox{\hyperlink{dpf_8h}{dpf.\+h}}\item 
+src/peripherals/camera/libcamera/src/ipa/rkisp1/algorithms/dpf.\+cpp\end{DoxyCompactItemize}

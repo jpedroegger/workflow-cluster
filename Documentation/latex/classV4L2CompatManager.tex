@@ -1,0 +1,43 @@
+\doxysection{V4\+L2\+Compat\+Manager Class Reference}
+\hypertarget{classV4L2CompatManager}{}\label{classV4L2CompatManager}\index{V4L2CompatManager@{V4L2CompatManager}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structV4L2CompatManager_1_1FileOperations}{File\+Operations}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classV4L2CompatManager_a151ba9eba4bc9edfd6dc0d2f3abe52ab}\label{classV4L2CompatManager_a151ba9eba4bc9edfd6dc0d2f3abe52ab} 
+const \mbox{\hyperlink{structV4L2CompatManager_1_1FileOperations}{File\+Operations}} \& {\bfseries fops} () const
+\item 
+\Hypertarget{classV4L2CompatManager_a530f16a14eff70b46669669e39cbba59}\label{classV4L2CompatManager_a530f16a14eff70b46669669e39cbba59} 
+int {\bfseries openat} (int dirfd, const char \texorpdfstring{$\ast$}{*}path, int oflag, mode\+\_\+t mode)
+\item 
+\Hypertarget{classV4L2CompatManager_a90841ffb2b3c4de16b8d2a12584d55fa}\label{classV4L2CompatManager_a90841ffb2b3c4de16b8d2a12584d55fa} 
+int {\bfseries dup} (int oldfd)
+\item 
+\Hypertarget{classV4L2CompatManager_a54867ad9b0ca007ab70f6c77b8334c62}\label{classV4L2CompatManager_a54867ad9b0ca007ab70f6c77b8334c62} 
+int {\bfseries close} (int fd)
+\item 
+\Hypertarget{classV4L2CompatManager_a3402cd2ec5a62bfd6582bbeaa72a3185}\label{classV4L2CompatManager_a3402cd2ec5a62bfd6582bbeaa72a3185} 
+void \texorpdfstring{$\ast$}{*} {\bfseries mmap} (void \texorpdfstring{$\ast$}{*}addr, size\+\_\+t length, int prot, int flags, int fd, off64\+\_\+t offset)
+\item 
+\Hypertarget{classV4L2CompatManager_a3a838acfeae794a6613b416be0950d5e}\label{classV4L2CompatManager_a3a838acfeae794a6613b416be0950d5e} 
+int {\bfseries munmap} (void \texorpdfstring{$\ast$}{*}addr, size\+\_\+t length)
+\item 
+\Hypertarget{classV4L2CompatManager_a0197465b9ae933af26d08251a5fdccfa}\label{classV4L2CompatManager_a0197465b9ae933af26d08251a5fdccfa} 
+int {\bfseries ioctl} (int fd, unsigned long request, void \texorpdfstring{$\ast$}{*}arg)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classV4L2CompatManager_ad77be555dfa2f465432afdd52ac8c517}\label{classV4L2CompatManager_ad77be555dfa2f465432afdd52ac8c517} 
+static \mbox{\hyperlink{classV4L2CompatManager}{V4\+L2\+Compat\+Manager}} \texorpdfstring{$\ast$}{*} {\bfseries instance} ()
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/v4l2/v4l2\+\_\+compat\+\_\+manager.\+h\item 
+src/peripherals/camera/libcamera/src/v4l2/v4l2\+\_\+compat\+\_\+manager.\+cpp\end{DoxyCompactItemize}

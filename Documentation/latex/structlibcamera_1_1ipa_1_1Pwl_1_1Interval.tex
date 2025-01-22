@@ -1,0 +1,108 @@
+\doxysection{libcamera\+::ipa\+::Pwl\+::Interval Class Reference}
+\hypertarget{structlibcamera_1_1ipa_1_1Pwl_1_1Interval}{}\label{structlibcamera_1_1ipa_1_1Pwl_1_1Interval}\index{libcamera::ipa::Pwl::Interval@{libcamera::ipa::Pwl::Interval}}
+
+
+Describe an interval in one-\/dimensional real space.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structlibcamera_1_1ipa_1_1Pwl_1_1Interval_a29d5f017b92bc1df8ad0621da6665d82}{Interval}} (double \+\_\+start, double \+\_\+end)
+\begin{DoxyCompactList}\small\item\em Construct an interval. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structlibcamera_1_1ipa_1_1Pwl_1_1Interval_a0744ccb80ca7a1f279582fff1d9bd9ab}{contains}} (double value)
+\begin{DoxyCompactList}\small\item\em Check if a given value falls within the interval. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{structlibcamera_1_1ipa_1_1Pwl_1_1Interval_a89857c962ee2c8d0a411ab8bbe6d6c70}{clamp}} (double value)
+\begin{DoxyCompactList}\small\item\em Clamp a value such that it is within the interval. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{structlibcamera_1_1ipa_1_1Pwl_1_1Interval_a87688b391247739897894b7fc04c4963}{length}} () const
+\begin{DoxyCompactList}\small\item\em Compute the length of the interval. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structlibcamera_1_1ipa_1_1Pwl_1_1Interval_a689264a7d09b86e8b9eaea711f046222}\label{structlibcamera_1_1ipa_1_1Pwl_1_1Interval_a689264a7d09b86e8b9eaea711f046222} 
+double {\bfseries start}
+\begin{DoxyCompactList}\small\item\em Start of the interval. \end{DoxyCompactList}\item 
+\Hypertarget{structlibcamera_1_1ipa_1_1Pwl_1_1Interval_ad779d7f5042fe585db27411cb072f7b4}\label{structlibcamera_1_1ipa_1_1Pwl_1_1Interval_ad779d7f5042fe585db27411cb072f7b4} 
+double {\bfseries end}
+\begin{DoxyCompactList}\small\item\em End of the interval. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Describe an interval in one-\/dimensional real space. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{structlibcamera_1_1ipa_1_1Pwl_1_1Interval_a29d5f017b92bc1df8ad0621da6665d82}\label{structlibcamera_1_1ipa_1_1Pwl_1_1Interval_a29d5f017b92bc1df8ad0621da6665d82} 
+\index{libcamera::ipa::Pwl::Interval@{libcamera::ipa::Pwl::Interval}!Interval@{Interval}}
+\index{Interval@{Interval}!libcamera::ipa::Pwl::Interval@{libcamera::ipa::Pwl::Interval}}
+\doxysubsubsection{\texorpdfstring{Interval()}{Interval()}}
+{\footnotesize\ttfamily libcamera\+::ipa\+::\+Pwl\+::\+Interval\+::\+Interval (\begin{DoxyParamCaption}\item[{double}]{\+\_\+start,  }\item[{double}]{\+\_\+end }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct an interval. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+start} & Start of the interval \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+end} & End of the interval \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structlibcamera_1_1ipa_1_1Pwl_1_1Interval_a89857c962ee2c8d0a411ab8bbe6d6c70}\label{structlibcamera_1_1ipa_1_1Pwl_1_1Interval_a89857c962ee2c8d0a411ab8bbe6d6c70} 
+\index{libcamera::ipa::Pwl::Interval@{libcamera::ipa::Pwl::Interval}!clamp@{clamp}}
+\index{clamp@{clamp}!libcamera::ipa::Pwl::Interval@{libcamera::ipa::Pwl::Interval}}
+\doxysubsubsection{\texorpdfstring{clamp()}{clamp()}}
+{\footnotesize\ttfamily libcamera\+::ipa\+::\+Pwl\+::\+Interval\+::clamp (\begin{DoxyParamCaption}\item[{double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Clamp a value such that it is within the interval. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & Value to clamp \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The clamped value 
+\end{DoxyReturn}
+\Hypertarget{structlibcamera_1_1ipa_1_1Pwl_1_1Interval_a0744ccb80ca7a1f279582fff1d9bd9ab}\label{structlibcamera_1_1ipa_1_1Pwl_1_1Interval_a0744ccb80ca7a1f279582fff1d9bd9ab} 
+\index{libcamera::ipa::Pwl::Interval@{libcamera::ipa::Pwl::Interval}!contains@{contains}}
+\index{contains@{contains}!libcamera::ipa::Pwl::Interval@{libcamera::ipa::Pwl::Interval}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily libcamera\+::ipa\+::\+Pwl\+::\+Interval\+::contains (\begin{DoxyParamCaption}\item[{double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check if a given value falls within the interval. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & Value to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the value falls within the interval, including its bounds, or false otherwise 
+\end{DoxyReturn}
+\Hypertarget{structlibcamera_1_1ipa_1_1Pwl_1_1Interval_a87688b391247739897894b7fc04c4963}\label{structlibcamera_1_1ipa_1_1Pwl_1_1Interval_a87688b391247739897894b7fc04c4963} 
+\index{libcamera::ipa::Pwl::Interval@{libcamera::ipa::Pwl::Interval}!length@{length}}
+\index{length@{length}!libcamera::ipa::Pwl::Interval@{libcamera::ipa::Pwl::Interval}}
+\doxysubsubsection{\texorpdfstring{length()}{length()}}
+{\footnotesize\ttfamily libcamera\+::ipa\+::\+Pwl\+::\+Interval\+::length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Compute the length of the interval. 
+
+\begin{DoxyReturn}{Returns}
+The length of the interval 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/ipa/libipa/\mbox{\hyperlink{pwl_8h}{pwl.\+h}}\item 
+src/peripherals/camera/libcamera/src/ipa/libipa/pwl.\+cpp\end{DoxyCompactItemize}

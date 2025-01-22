@@ -1,0 +1,28 @@
+\doxysection{I2c\+Interface\+Test.\+hpp}
+\hypertarget{I2cInterfaceTest_8hpp_source}{}\label{I2cInterfaceTest_8hpp_source}\index{src/bus\_interfaces/i2c\_interface/test/include/I2cInterfaceTest.hpp@{src/bus\_interfaces/i2c\_interface/test/include/I2cInterfaceTest.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}I2cInterface.hpp"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}MockI2cDriver.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <custom\_msgs/srv/i2c\_service.hpp>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <gmock/gmock.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <gtest/gtest.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <rclcpp/rclcpp.hpp>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classI2cInterfaceTest}{I2cInterfaceTest}}\ :\ \textcolor{keyword}{public}\ ::testing::Test}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetUp()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ TearDown()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ rclcpp::Client<custom\_msgs::srv::I2cService>::SharedPtr\ i2c\_client\_;}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ std::shared\_ptr<I2cInterface>\ test\_node\_;}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ rclcpp::executors::SingleThreadedExecutor::UniquePtr\ executor\_;}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ std::thread\ executor\_thread\_;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ std::shared\_ptr<MockI2cDriver>\ mock\_device\_;}
+\DoxyCodeLine{00022\ \};}
+
+\end{DoxyCode}

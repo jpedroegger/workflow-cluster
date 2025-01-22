@@ -1,0 +1,54 @@
+\doxysection{RPi\+Controller\+::Contrast\+Algorithm Class Reference}
+\hypertarget{classRPiController_1_1ContrastAlgorithm}{}\label{classRPiController_1_1ContrastAlgorithm}\index{RPiController::ContrastAlgorithm@{RPiController::ContrastAlgorithm}}
+Inheritance diagram for RPi\+Controller\+::Contrast\+Algorithm\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classRPiController_1_1ContrastAlgorithm}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classRPiController_1_1ContrastAlgorithm_a816a0903972e593dbf7dda88a3d0e691}\label{classRPiController_1_1ContrastAlgorithm_a816a0903972e593dbf7dda88a3d0e691} 
+{\bfseries Contrast\+Algorithm} (\mbox{\hyperlink{classRPiController_1_1Controller}{Controller}} \texorpdfstring{$\ast$}{*}controller)
+\item 
+\Hypertarget{classRPiController_1_1ContrastAlgorithm_aaa0239340db66214b9bab66037617634}\label{classRPiController_1_1ContrastAlgorithm_aaa0239340db66214b9bab66037617634} 
+virtual void {\bfseries set\+Brightness} (double \mbox{\hyperlink{structIPAActiveState_1_1cproc_1_1brightness}{brightness}})=0
+\item 
+\Hypertarget{classRPiController_1_1ContrastAlgorithm_ae00055d46cf02899fd4d74fef2a07995}\label{classRPiController_1_1ContrastAlgorithm_ae00055d46cf02899fd4d74fef2a07995} 
+virtual void {\bfseries set\+Contrast} (double contrast)=0
+\item 
+\Hypertarget{classRPiController_1_1ContrastAlgorithm_add4b540bdd45495bb68e9780481a73a9}\label{classRPiController_1_1ContrastAlgorithm_add4b540bdd45495bb68e9780481a73a9} 
+virtual void {\bfseries enable\+Ce} (bool enable)=0
+\item 
+\Hypertarget{classRPiController_1_1ContrastAlgorithm_aa63e985d1c9938392ed930751fef7464}\label{classRPiController_1_1ContrastAlgorithm_aa63e985d1c9938392ed930751fef7464} 
+virtual void {\bfseries restore\+Ce} ()=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classRPiController_1_1Algorithm}{RPi\+Controller\+::\+Algorithm}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Algorithm} (\mbox{\hyperlink{classRPiController_1_1Controller}{Controller}} \texorpdfstring{$\ast$}{*}controller)
+\item 
+virtual char const \texorpdfstring{$\ast$}{*} {\bfseries name} () const =0
+\item 
+virtual int {\bfseries read} (const \mbox{\hyperlink{classlibcamera_1_1YamlObject}{libcamera\+::\+Yaml\+Object}} \&params)
+\item 
+virtual void {\bfseries initialise} ()
+\item 
+virtual void {\bfseries switch\+Mode} (\mbox{\hyperlink{structCameraMode}{Camera\+Mode}} const \&camera\+Mode, Metadata \texorpdfstring{$\ast$}{*}metadata)
+\item 
+virtual void {\bfseries prepare} (Metadata \texorpdfstring{$\ast$}{*}image\+Metadata)
+\item 
+virtual void {\bfseries process} (Statistics\+Ptr \&stats, Metadata \texorpdfstring{$\ast$}{*}image\+Metadata)
+\item 
+Metadata \& {\bfseries get\+Global\+Metadata} () const
+\item 
+const std\+::string \& {\bfseries get\+Target} () const
+\item 
+const \mbox{\hyperlink{structRPiController_1_1Controller_1_1HardwareConfig}{Controller\+::\+Hardware\+Config}} \& {\bfseries get\+Hardware\+Config} () const
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/ipa/rpi/controller/contrast\+\_\+algorithm.\+h\end{DoxyCompactItemize}

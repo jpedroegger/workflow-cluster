@@ -1,0 +1,74 @@
+\doxysection{libcamera\+::ipa\+::ipu3\+::algorithms\+::Black\+Level\+Correction Class Reference}
+\hypertarget{classlibcamera_1_1ipa_1_1ipu3_1_1algorithms_1_1BlackLevelCorrection}{}\label{classlibcamera_1_1ipa_1_1ipu3_1_1algorithms_1_1BlackLevelCorrection}\index{libcamera::ipa::ipu3::algorithms::BlackLevelCorrection@{libcamera::ipa::ipu3::algorithms::BlackLevelCorrection}}
+
+
+A class to handle black level correction.  
+
+
+Inheritance diagram for libcamera\+::ipa\+::ipu3\+::algorithms\+::Black\+Level\+Correction\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlibcamera_1_1ipa_1_1ipu3_1_1algorithms_1_1BlackLevelCorrection}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classlibcamera_1_1ipa_1_1ipu3_1_1algorithms_1_1BlackLevelCorrection_a101a245dfb4a86be717f9f6f6df447f5}{prepare}} (\mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAContext}{IPAContext}} \&context, const uint32\+\_\+t frame, \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAFrameContext}{IPAFrame\+Context}} \&frame\+Context, \mbox{\hyperlink{structipu3__uapi__params}{ipu3\+\_\+uapi\+\_\+params}} \texorpdfstring{$\ast$}{*}params) override
+\begin{DoxyCompactList}\small\item\em Fill in the parameter structure, and enable black level correction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Algorithm}{libcamera\+::ipa\+::\+Algorithm$<$ Module $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual int \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Algorithm_a68ad78f4d948f8cebefaaae22b743687}{init}} (typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a2a12d05faa4f517f4dfcfa087063fd27}{Module\+::\+Context}} \&context, const \mbox{\hyperlink{classlibcamera_1_1YamlObject}{Yaml\+Object}} \&tuning\+Data)
+\begin{DoxyCompactList}\small\item\em Initialize the \doxylink{classlibcamera_1_1ipa_1_1Algorithm}{Algorithm} with tuning data. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Algorithm_a5e3cd461b46cdd1d366bf211f87d8f3d}{configure}} (typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a2a12d05faa4f517f4dfcfa087063fd27}{Module\+::\+Context}} \&context, const typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a7c0b7a42c526c07bafeca4018b38b8c9}{Module\+::\+Config}} \&config\+Info)
+\begin{DoxyCompactList}\small\item\em Configure the \doxylink{classlibcamera_1_1ipa_1_1Algorithm}{Algorithm} given an IPAConfig\+Info. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Algorithm_a307cf5dd6b48ccc1c772901c07e14afe}{queue\+Request}} (typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a2a12d05faa4f517f4dfcfa087063fd27}{Module\+::\+Context}} \&context, const uint32\+\_\+t frame, typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a5a1bf7efd7811fb9da8ff311aeef3b1c}{Module\+::\+Frame\+Context}} \&frame\+Context, const \mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} \&controls)
+\begin{DoxyCompactList}\small\item\em Provide control values to the algorithm. \end{DoxyCompactList}\item 
+virtual void {\bfseries prepare} (typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a2a12d05faa4f517f4dfcfa087063fd27}{Module\+::\+Context}} \&context, const uint32\+\_\+t frame, typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a5a1bf7efd7811fb9da8ff311aeef3b1c}{Module\+::\+Frame\+Context}} \&frame\+Context, typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a48ee62113eed1c9ad7a001887dc59674}{Module\+::\+Params}} \texorpdfstring{$\ast$}{*}params)
+\item 
+virtual void {\bfseries process} (typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a2a12d05faa4f517f4dfcfa087063fd27}{Module\+::\+Context}} \&context, const uint32\+\_\+t frame, typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a5a1bf7efd7811fb9da8ff311aeef3b1c}{Module\+::\+Frame\+Context}} \&frame\+Context, const typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_afdcea0695dc0eb1226d66442a5647a41}{Module\+::\+Stats}} \texorpdfstring{$\ast$}{*}stats, \mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} \&metadata)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Algorithm}{libcamera\+::ipa\+::\+Algorithm$<$ Module $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+using {\bfseries Module} = \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Algorithm_ac52491716c9cd932770dc1a02d7d9b25}{Module}}
+\begin{DoxyCompactList}\small\item\em The IPA module type for this class of algorithms. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class to handle black level correction. 
+
+The pixels output by the camera normally include a black level, because sensors do not always report a signal level of \textquotesingle{}0\textquotesingle{} for black. Pixels at or below this level should be considered black. To achieve that, the ImgU BLC algorithm subtracts a configurable offset from all pixels.
+
+The black level can be measured at runtime from an optical dark region of the camera sensor, or measured during the camera tuning process. The first option isn\textquotesingle{}t currently supported. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1ipa_1_1ipu3_1_1algorithms_1_1BlackLevelCorrection_a101a245dfb4a86be717f9f6f6df447f5}\label{classlibcamera_1_1ipa_1_1ipu3_1_1algorithms_1_1BlackLevelCorrection_a101a245dfb4a86be717f9f6f6df447f5} 
+\index{libcamera::ipa::ipu3::algorithms::BlackLevelCorrection@{libcamera::ipa::ipu3::algorithms::BlackLevelCorrection}!prepare@{prepare}}
+\index{prepare@{prepare}!libcamera::ipa::ipu3::algorithms::BlackLevelCorrection@{libcamera::ipa::ipu3::algorithms::BlackLevelCorrection}}
+\doxysubsubsection{\texorpdfstring{prepare()}{prepare()}}
+{\footnotesize\ttfamily void libcamera\+::ipa\+::ipu3\+::algorithms\+::\+Black\+Level\+Correction\+::prepare (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAContext}{IPAContext}} \&}]{context,  }\item[{const uint32\+\_\+t}]{frame,  }\item[{\mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAFrameContext}{IPAFrame\+Context}} \&}]{frame\+Context,  }\item[{\mbox{\hyperlink{structipu3__uapi__params}{ipu3\+\_\+uapi\+\_\+params}} \texorpdfstring{$\ast$}{*}}]{params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Fill in the parameter structure, and enable black level correction. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em context} & The shared IPA context \\
+\hline
+\mbox{\texttt{ in}}  & {\em frame} & The frame context sequence number \\
+\hline
+\mbox{\texttt{ in}}  & {\em frame\+Context} & The \doxylink{structlibcamera_1_1ipa_1_1FrameContext}{Frame\+Context} for this frame \\
+\hline
+\mbox{\texttt{ out}}  & {\em params} & The IPU3 parameters\\
+\hline
+\end{DoxyParams}
+Populate the IPU3 parameter structure with the correction values for each channel and enable the corresponding ImgU block processing. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/ipa/ipu3/algorithms/\mbox{\hyperlink{ipu3_2algorithms_2blc_8h}{blc.\+h}}\item 
+src/peripherals/camera/libcamera/src/ipa/ipu3/algorithms/blc.\+cpp\end{DoxyCompactItemize}

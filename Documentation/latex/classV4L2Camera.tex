@@ -1,0 +1,73 @@
+\doxysection{V4\+L2\+Camera Class Reference}
+\hypertarget{classV4L2Camera}{}\label{classV4L2Camera}\index{V4L2Camera@{V4L2Camera}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structV4L2Camera_1_1Buffer}{Buffer}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classV4L2Camera_add4ff7dbd7203fc3d0e99ff51c6828e5}\label{classV4L2Camera_add4ff7dbd7203fc3d0e99ff51c6828e5} 
+{\bfseries V4\+L2\+Camera} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1Camera}{libcamera\+::\+Camera}} $>$ camera)
+\item 
+\Hypertarget{classV4L2Camera_adc298943ee319449d34402cb3f1222eb}\label{classV4L2Camera_adc298943ee319449d34402cb3f1222eb} 
+int {\bfseries open} (\mbox{\hyperlink{structlibcamera_1_1StreamConfiguration}{libcamera\+::\+Stream\+Configuration}} \texorpdfstring{$\ast$}{*}stream\+Config)
+\item 
+\Hypertarget{classV4L2Camera_a1015d6e254a7f4c836d29b4be341e8da}\label{classV4L2Camera_a1015d6e254a7f4c836d29b4be341e8da} 
+void {\bfseries close} ()
+\item 
+\Hypertarget{classV4L2Camera_a7236c680aa5b23b512eaebfc48b21e3b}\label{classV4L2Camera_a7236c680aa5b23b512eaebfc48b21e3b} 
+void {\bfseries bind} (int efd)
+\item 
+\Hypertarget{classV4L2Camera_aee14026c61b9783d410faef1c1d1f8ae}\label{classV4L2Camera_aee14026c61b9783d410faef1c1d1f8ae} 
+void {\bfseries unbind} ()
+\item 
+\Hypertarget{classV4L2Camera_acfe44bd58408f1c9ce33b488b69d818b}\label{classV4L2Camera_acfe44bd58408f1c9ce33b488b69d818b} 
+std\+::vector$<$ \mbox{\hyperlink{structV4L2Camera_1_1Buffer}{Buffer}} $>$ {\bfseries completed\+Buffers} () LIBCAMERA\+\_\+\+TSA\+\_\+\+EXCLUDES(buffer\+Lock\+\_\+)
+\item 
+\Hypertarget{classV4L2Camera_a4c135e5da386ec5a7e744f0d49ac9c80}\label{classV4L2Camera_a4c135e5da386ec5a7e744f0d49ac9c80} 
+int {\bfseries configure} (\mbox{\hyperlink{structlibcamera_1_1StreamConfiguration}{libcamera\+::\+Stream\+Configuration}} \texorpdfstring{$\ast$}{*}stream\+Config\+Out, const \mbox{\hyperlink{classlibcamera_1_1Size}{libcamera\+::\+Size}} \&size, const \mbox{\hyperlink{classlibcamera_1_1PixelFormat}{libcamera\+::\+Pixel\+Format}} \&pixelformat, unsigned int buffer\+Count)
+\item 
+\Hypertarget{classV4L2Camera_a68f7ab4911981c8a6ef4eccf67c2d601}\label{classV4L2Camera_a68f7ab4911981c8a6ef4eccf67c2d601} 
+int {\bfseries validate\+Configuration} (const \mbox{\hyperlink{classlibcamera_1_1PixelFormat}{libcamera\+::\+Pixel\+Format}} \&pixelformat, const \mbox{\hyperlink{classlibcamera_1_1Size}{libcamera\+::\+Size}} \&size, \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration}{libcamera\+::\+Stream\+Configuration}} \texorpdfstring{$\ast$}{*}stream\+Config\+Out)
+\item 
+\Hypertarget{classV4L2Camera_acd4df8a6f40b056829871637d5036ad1}\label{classV4L2Camera_acd4df8a6f40b056829871637d5036ad1} 
+\mbox{\hyperlink{classlibcamera_1_1ControlList}{libcamera\+::\+Control\+List}} \& {\bfseries controls} ()
+\item 
+\Hypertarget{classV4L2Camera_a8317456e7a118a50292ae74a9625737e}\label{classV4L2Camera_a8317456e7a118a50292ae74a9625737e} 
+const \mbox{\hyperlink{classlibcamera_1_1ControlInfoMap}{libcamera\+::\+Control\+Info\+Map}} \& {\bfseries control\+Info} ()
+\item 
+\Hypertarget{classV4L2Camera_a4988ca825b5063ec0f658e1e2051d858}\label{classV4L2Camera_a4988ca825b5063ec0f658e1e2051d858} 
+int {\bfseries alloc\+Buffers} (unsigned int count)
+\item 
+\Hypertarget{classV4L2Camera_a6ca07a45883725bf1198f8c396dd7ff7}\label{classV4L2Camera_a6ca07a45883725bf1198f8c396dd7ff7} 
+void {\bfseries free\+Buffers} ()
+\item 
+\Hypertarget{classV4L2Camera_a1ec458788687be1a5c225b4e7c187735}\label{classV4L2Camera_a1ec458788687be1a5c225b4e7c187735} 
+int {\bfseries get\+Buffer\+Fd} (unsigned int index)
+\item 
+\Hypertarget{classV4L2Camera_ae681e52d7064b59cbd686a382fe85f22}\label{classV4L2Camera_ae681e52d7064b59cbd686a382fe85f22} 
+int {\bfseries stream\+On} ()
+\item 
+\Hypertarget{classV4L2Camera_a2b4b398985feb27992c4da7a28a2cdc2}\label{classV4L2Camera_a2b4b398985feb27992c4da7a28a2cdc2} 
+int {\bfseries stream\+Off} ()
+\item 
+\Hypertarget{classV4L2Camera_a6e8b6b1a3af3575b844c30dd11a272e6}\label{classV4L2Camera_a6e8b6b1a3af3575b844c30dd11a272e6} 
+int {\bfseries qbuf} (unsigned int index)
+\item 
+\Hypertarget{classV4L2Camera_a1f70fec407d94a29da4c3f2025c6815b}\label{classV4L2Camera_a1f70fec407d94a29da4c3f2025c6815b} 
+void {\bfseries wait\+For\+Buffer\+Available} () LIBCAMERA\+\_\+\+TSA\+\_\+\+EXCLUDES(buffer\+Mutex\+\_\+)
+\item 
+\Hypertarget{classV4L2Camera_aaadc9159e740e0065f7d8d80d6e9f2b8}\label{classV4L2Camera_aaadc9159e740e0065f7d8d80d6e9f2b8} 
+bool {\bfseries is\+Buffer\+Available} () LIBCAMERA\+\_\+\+TSA\+\_\+\+EXCLUDES(buffer\+Mutex\+\_\+)
+\item 
+\Hypertarget{classV4L2Camera_a08ba0021cd1f69f09ea3bb7e0dbade26}\label{classV4L2Camera_a08ba0021cd1f69f09ea3bb7e0dbade26} 
+bool {\bfseries is\+Running} ()
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/v4l2/v4l2\+\_\+camera.\+h\item 
+src/peripherals/camera/libcamera/src/v4l2/v4l2\+\_\+camera.\+cpp\end{DoxyCompactItemize}

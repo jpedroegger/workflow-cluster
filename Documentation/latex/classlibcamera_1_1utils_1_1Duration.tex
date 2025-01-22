@@ -1,0 +1,108 @@
+\doxysection{libcamera\+::utils\+::Duration Class Reference}
+\hypertarget{classlibcamera_1_1utils_1_1Duration}{}\label{classlibcamera_1_1utils_1_1Duration}\index{libcamera::utils::Duration@{libcamera::utils::Duration}}
+
+
+Helper class from std\+::chrono\+::duration that represents a time duration in nanoseconds with double precision.  
+
+
+Inheritance diagram for libcamera\+::utils\+::Duration\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlibcamera_1_1utils_1_1Duration}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Rep $>$ }\\constexpr \mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration_ac2a0c71f902b9c60c6a668e1d85b29a4}{Duration}} (const Rep \&r)
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{classlibcamera_1_1utils_1_1Duration}{Duration} with {\itshape r} ticks. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Rep , typename Period $>$ }\\constexpr \mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration_a99177c6f63965b3adf6ffe46ac905059}{Duration}} (const std\+::chrono\+::duration$<$ Rep, Period $>$ \&d)
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{classlibcamera_1_1utils_1_1Duration}{Duration} by converting an arbitrary std\+::chrono\+::duration. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Period $>$ }\\double \mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration_a18a443e58e43c58c0cfdd31f6aed78f8}{get}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the tick count, converted to the timebase provided by the template argument Period of type {\itshape std\+::ratio}. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration_a13e1bab87d33aa831be6033bb00fd5ee}{operator bool}} () const
+\begin{DoxyCompactList}\small\item\em Boolean operator to test if a {\itshape \doxylink{classlibcamera_1_1utils_1_1Duration}{Duration}} holds a non-\/zero time value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Helper class from std\+::chrono\+::duration that represents a time duration in nanoseconds with double precision. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlibcamera_1_1utils_1_1Duration_ac2a0c71f902b9c60c6a668e1d85b29a4}\label{classlibcamera_1_1utils_1_1Duration_ac2a0c71f902b9c60c6a668e1d85b29a4} 
+\index{libcamera::utils::Duration@{libcamera::utils::Duration}!Duration@{Duration}}
+\index{Duration@{Duration}!libcamera::utils::Duration@{libcamera::utils::Duration}}
+\doxysubsubsection{\texorpdfstring{Duration()}{Duration()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Rep $>$ \\
+libcamera\+::utils\+::\+Duration\+::\+Duration (\begin{DoxyParamCaption}\item[{const Rep \&}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [constexpr]}}
+
+
+
+Construct a \doxylink{classlibcamera_1_1utils_1_1Duration}{Duration} with {\itshape r} ticks. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em r} & The number of ticks\\
+\hline
+\end{DoxyParams}
+The constructed {\itshape \doxylink{classlibcamera_1_1utils_1_1Duration}{Duration}} object is internally represented in double precision with {\itshape r} nanoseconds ticks. \Hypertarget{classlibcamera_1_1utils_1_1Duration_a99177c6f63965b3adf6ffe46ac905059}\label{classlibcamera_1_1utils_1_1Duration_a99177c6f63965b3adf6ffe46ac905059} 
+\index{libcamera::utils::Duration@{libcamera::utils::Duration}!Duration@{Duration}}
+\index{Duration@{Duration}!libcamera::utils::Duration@{libcamera::utils::Duration}}
+\doxysubsubsection{\texorpdfstring{Duration()}{Duration()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Rep , typename Period $>$ \\
+libcamera\+::utils\+::\+Duration\+::\+Duration (\begin{DoxyParamCaption}\item[{const std\+::chrono\+::duration$<$ Rep, Period $>$ \&}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Construct a \doxylink{classlibcamera_1_1utils_1_1Duration}{Duration} by converting an arbitrary std\+::chrono\+::duration. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em d} & The std\+::chrono\+::duration object to convert from\\
+\hline
+\end{DoxyParams}
+The constructed {\itshape \doxylink{classlibcamera_1_1utils_1_1Duration}{Duration}} object is internally represented in double precision with nanoseconds ticks. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1utils_1_1Duration_a18a443e58e43c58c0cfdd31f6aed78f8}\label{classlibcamera_1_1utils_1_1Duration_a18a443e58e43c58c0cfdd31f6aed78f8} 
+\index{libcamera::utils::Duration@{libcamera::utils::Duration}!get@{get}}
+\index{get@{get}!libcamera::utils::Duration@{libcamera::utils::Duration}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily template$<$typename Period $>$ \\
+libcamera\+::utils\+::\+Duration\+::get$<$ Period $>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the tick count, converted to the timebase provided by the template argument Period of type {\itshape std\+::ratio}. 
+
+A typical usage example is given below\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{utils::Duration\ d\ =\ 5s;}
+\DoxyCodeLine{\textcolor{keywordtype}{double}\ d\_in\_ms\ =\ d.get<std::milli>();}
+
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+The tick count of the \doxylink{classlibcamera_1_1utils_1_1Duration}{Duration} expressed in {\itshape Period} 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1utils_1_1Duration_a13e1bab87d33aa831be6033bb00fd5ee}\label{classlibcamera_1_1utils_1_1Duration_a13e1bab87d33aa831be6033bb00fd5ee} 
+\index{libcamera::utils::Duration@{libcamera::utils::Duration}!operator bool@{operator bool}}
+\index{operator bool@{operator bool}!libcamera::utils::Duration@{libcamera::utils::Duration}}
+\doxysubsubsection{\texorpdfstring{operator bool()}{operator bool()}}
+{\footnotesize\ttfamily libcamera\+::utils\+::\+Duration\+::operator bool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [constexpr]}}
+
+
+
+Boolean operator to test if a {\itshape \doxylink{classlibcamera_1_1utils_1_1Duration}{Duration}} holds a non-\/zero time value. 
+
+\begin{DoxyReturn}{Returns}
+True if {\itshape \doxylink{classlibcamera_1_1utils_1_1Duration}{Duration}} is a non-\/zero time value, False otherwise 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/base/\mbox{\hyperlink{include_2libcamera_2base_2utils_8h}{utils.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/base/utils.\+cpp\end{DoxyCompactItemize}

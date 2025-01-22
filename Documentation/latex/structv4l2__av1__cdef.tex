@@ -1,0 +1,37 @@
+\doxysection{v4l2\+\_\+av1\+\_\+cdef Struct Reference}
+\hypertarget{structv4l2__av1__cdef}{}\label{structv4l2__av1__cdef}\index{v4l2\_av1\_cdef@{v4l2\_av1\_cdef}}
+
+
+{\ttfamily \#include $<$v4l2-\/controls.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structv4l2__av1__cdef_a8055a7e2fd3e6dfad02bc7462fea1f44}\label{structv4l2__av1__cdef_a8055a7e2fd3e6dfad02bc7462fea1f44} 
+\+\_\+\+\_\+u8 {\bfseries damping\+\_\+minus\+\_\+3}
+\item 
+\Hypertarget{structv4l2__av1__cdef_afc288eea3a35aa90cef726456e4ade9d}\label{structv4l2__av1__cdef_afc288eea3a35aa90cef726456e4ade9d} 
+\+\_\+\+\_\+u8 {\bfseries bits}
+\item 
+\Hypertarget{structv4l2__av1__cdef_a93cc72e41551d904fdff8ebdd8338b1a}\label{structv4l2__av1__cdef_a93cc72e41551d904fdff8ebdd8338b1a} 
+\+\_\+\+\_\+u8 {\bfseries y\+\_\+pri\+\_\+strength} \mbox{[}V4\+L2\+\_\+\+AV1\+\_\+\+CDEF\+\_\+\+MAX\mbox{]}
+\item 
+\Hypertarget{structv4l2__av1__cdef_afa3888fec1918926453c14c000e026eb}\label{structv4l2__av1__cdef_afa3888fec1918926453c14c000e026eb} 
+\+\_\+\+\_\+u8 {\bfseries y\+\_\+sec\+\_\+strength} \mbox{[}V4\+L2\+\_\+\+AV1\+\_\+\+CDEF\+\_\+\+MAX\mbox{]}
+\item 
+\Hypertarget{structv4l2__av1__cdef_a9237c7345ea82e6f2c1701e2567b670c}\label{structv4l2__av1__cdef_a9237c7345ea82e6f2c1701e2567b670c} 
+\+\_\+\+\_\+u8 {\bfseries uv\+\_\+pri\+\_\+strength} \mbox{[}V4\+L2\+\_\+\+AV1\+\_\+\+CDEF\+\_\+\+MAX\mbox{]}
+\item 
+\Hypertarget{structv4l2__av1__cdef_a0371d7f35d94e8f8ef291520df67aeb0}\label{structv4l2__av1__cdef_a0371d7f35d94e8f8ef291520df67aeb0} 
+\+\_\+\+\_\+u8 {\bfseries uv\+\_\+sec\+\_\+strength} \mbox{[}V4\+L2\+\_\+\+AV1\+\_\+\+CDEF\+\_\+\+MAX\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structv4l2__av1__cdef}{v4l2\+\_\+av1\+\_\+cdef} -\/ AV1 CDEF params semantics as described in section 6.\+10.\+14 "{}\+CDEF params semantics"{} of the AV1 specification
+
+@damping\+\_\+minus\+\_\+3\+: controls the amount of damping in the deringing filter. @bits\+: specifies the number of bits needed to specify which CDEF filter to apply. @y\+\_\+pri\+\_\+strength\+: specifies the strength of the primary filter. @y\+\_\+sec\+\_\+strength\+: specifies the strength of the secondary filter. @uv\+\_\+pri\+\_\+strength\+: specifies the strength of the primary filter. @uv\+\_\+sec\+\_\+strength\+: specifies the strength of the secondary filter. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/v4l2-\/controls.\+h\end{DoxyCompactItemize}

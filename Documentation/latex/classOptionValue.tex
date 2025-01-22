@@ -1,0 +1,278 @@
+\doxysection{Option\+Value Class Reference}
+\hypertarget{classOptionValue}{}\label{classOptionValue}\index{OptionValue@{OptionValue}}
+
+
+Container to store the value of an option.  
+
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classOptionValue_a92a82dbddf915921a76e2e85aa891816}\label{classOptionValue_a92a82dbddf915921a76e2e85aa891816} 
+enum \mbox{\hyperlink{classOptionValue_a92a82dbddf915921a76e2e85aa891816}{Value\+Type}} \{ \newline
+{\bfseries Value\+None}
+, {\bfseries Value\+Integer}
+, {\bfseries Value\+String}
+, {\bfseries Value\+Key\+Value}
+, \newline
+{\bfseries Value\+Array}
+ \}
+\begin{DoxyCompactList}\small\item\em The option value type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classOptionValue_a085f96d6c63862f9348527d901f7b04c}{Option\+Value}} ()
+\begin{DoxyCompactList}\small\item\em Construct an empty \doxylink{classOptionValue}{Option\+Value} instance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classOptionValue_a58ad4273d68eb7b23bf169f4afaf48ed}{Option\+Value}} (int value)
+\begin{DoxyCompactList}\small\item\em Construct an integer \doxylink{classOptionValue}{Option\+Value} instance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classOptionValue_a9bbe4c7146ccbe7f6f111d65abcf76a5}{Option\+Value}} (const char \texorpdfstring{$\ast$}{*}value)
+\begin{DoxyCompactList}\small\item\em Construct a string \doxylink{classOptionValue}{Option\+Value} instance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classOptionValue_a910ecdd34e958b08af8b513310f7b8ee}{Option\+Value}} (const std\+::string \&value)
+\begin{DoxyCompactList}\small\item\em Construct a string \doxylink{classOptionValue}{Option\+Value} instance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classOptionValue_ad8cf022b9240308750fe2519d153e464}{Option\+Value}} (const \mbox{\hyperlink{classKeyValueParser_1_1Options}{Key\+Value\+Parser\+::\+Options}} \&value)
+\begin{DoxyCompactList}\small\item\em Construct a key-\/value \doxylink{classOptionValue}{Option\+Value} instance. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classOptionValue_a076c129a3f18958a9a5cc269d1c97e49}{add\+Value}} (const \mbox{\hyperlink{classOptionValue}{Option\+Value}} \&value)
+\begin{DoxyCompactList}\small\item\em Add an entry to an array value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classOptionValue_a92a82dbddf915921a76e2e85aa891816}{Value\+Type}} \mbox{\hyperlink{classOptionValue_a40a32a4d332ffed0514c2290a340fbb3}{type}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the value type. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classOptionValue_af0d567111bca9f7af6a1d4af63d885c1}{empty}} () const
+\begin{DoxyCompactList}\small\item\em Check if the value is empty. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classOptionValue_a5f73e2214435e2dfd4d03f5d255694cd}{operator int}} () const
+\begin{DoxyCompactList}\small\item\em Cast the value to an int. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classOptionValue_afccb25f3e26c923c43272d114102800e}{operator std\+::string}} () const
+\begin{DoxyCompactList}\small\item\em Cast the value to a std\+::string. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classOptionValue_a59751c77e9d0cff8c48a9db12bd69c8e}{to\+Integer}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the value as an int. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classOptionValue_ac433f74bcd56426d9f86e7d5a0c82159}{to\+String}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the value as a std\+::string. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classKeyValueParser_1_1Options}{Key\+Value\+Parser\+::\+Options}} \& \mbox{\hyperlink{classOptionValue_a8fe0be5581604ff1580a2307e46f9a23}{to\+Key\+Values}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the value as a key-\/value list. \end{DoxyCompactList}\item 
+const std\+::vector$<$ \mbox{\hyperlink{classOptionValue}{Option\+Value}} $>$ \& \mbox{\hyperlink{classOptionValue_a76e4404f7830a61574bfd30d1f42ddf4}{to\+Array}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the value as an array. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classOptionsParser_1_1Options}{Options\+Parser\+::\+Options}} \& \mbox{\hyperlink{classOptionValue_ae0221d7d011f7e3bd02896043b66ea07}{children}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the list of child values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Container to store the value of an option. 
+
+The \doxylink{classOptionValue}{Option\+Value} class is a variant-\/type container to store the value of an option. It supports empty values, integers, strings, key-\/value lists, as well as arrays of those types. For array values, all array elements shall have the same type.
+
+\doxylink{classOptionValue}{Option\+Value} instances are organized in a tree-\/based structure that matches the parent-\/child relationship of the options added to the parser. Children are retrieved with the \doxylink{classOptionValue_ae0221d7d011f7e3bd02896043b66ea07}{children()} function, and are stored as an \doxylink{classOptionsBase}{Options\+Base$<$int$>$}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classOptionValue_a085f96d6c63862f9348527d901f7b04c}\label{classOptionValue_a085f96d6c63862f9348527d901f7b04c} 
+\index{OptionValue@{OptionValue}!OptionValue@{OptionValue}}
+\index{OptionValue@{OptionValue}!OptionValue@{OptionValue}}
+\doxysubsubsection{\texorpdfstring{OptionValue()}{OptionValue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily Option\+Value\+::\+Option\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct an empty \doxylink{classOptionValue}{Option\+Value} instance. 
+
+The value type is set to Value\+Type\+::\+Value\+None. \Hypertarget{classOptionValue_a58ad4273d68eb7b23bf169f4afaf48ed}\label{classOptionValue_a58ad4273d68eb7b23bf169f4afaf48ed} 
+\index{OptionValue@{OptionValue}!OptionValue@{OptionValue}}
+\index{OptionValue@{OptionValue}!OptionValue@{OptionValue}}
+\doxysubsubsection{\texorpdfstring{OptionValue()}{OptionValue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily Option\+Value\+::\+Option\+Value (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})}
+
+
+
+Construct an integer \doxylink{classOptionValue}{Option\+Value} instance. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & The integer value\\
+\hline
+\end{DoxyParams}
+The value type is set to Value\+Type\+::\+Value\+Integer. \Hypertarget{classOptionValue_a9bbe4c7146ccbe7f6f111d65abcf76a5}\label{classOptionValue_a9bbe4c7146ccbe7f6f111d65abcf76a5} 
+\index{OptionValue@{OptionValue}!OptionValue@{OptionValue}}
+\index{OptionValue@{OptionValue}!OptionValue@{OptionValue}}
+\doxysubsubsection{\texorpdfstring{OptionValue()}{OptionValue()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily Option\+Value\+::\+Option\+Value (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{value }\end{DoxyParamCaption})}
+
+
+
+Construct a string \doxylink{classOptionValue}{Option\+Value} instance. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & The string value\\
+\hline
+\end{DoxyParams}
+The value type is set to Value\+Type\+::\+Value\+String. \Hypertarget{classOptionValue_a910ecdd34e958b08af8b513310f7b8ee}\label{classOptionValue_a910ecdd34e958b08af8b513310f7b8ee} 
+\index{OptionValue@{OptionValue}!OptionValue@{OptionValue}}
+\index{OptionValue@{OptionValue}!OptionValue@{OptionValue}}
+\doxysubsubsection{\texorpdfstring{OptionValue()}{OptionValue()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily Option\+Value\+::\+Option\+Value (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Construct a string \doxylink{classOptionValue}{Option\+Value} instance. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & The string value\\
+\hline
+\end{DoxyParams}
+The value type is set to Value\+Type\+::\+Value\+String. \Hypertarget{classOptionValue_ad8cf022b9240308750fe2519d153e464}\label{classOptionValue_ad8cf022b9240308750fe2519d153e464} 
+\index{OptionValue@{OptionValue}!OptionValue@{OptionValue}}
+\index{OptionValue@{OptionValue}!OptionValue@{OptionValue}}
+\doxysubsubsection{\texorpdfstring{OptionValue()}{OptionValue()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily Option\+Value\+::\+Option\+Value (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classKeyValueParser_1_1Options}{Key\+Value\+Parser\+::\+Options}} \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Construct a key-\/value \doxylink{classOptionValue}{Option\+Value} instance. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & The key-\/value list\\
+\hline
+\end{DoxyParams}
+The value type is set to Value\+Type\+::\+Value\+Key\+Value. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classOptionValue_a076c129a3f18958a9a5cc269d1c97e49}\label{classOptionValue_a076c129a3f18958a9a5cc269d1c97e49} 
+\index{OptionValue@{OptionValue}!addValue@{addValue}}
+\index{addValue@{addValue}!OptionValue@{OptionValue}}
+\doxysubsubsection{\texorpdfstring{addValue()}{addValue()}}
+{\footnotesize\ttfamily void Option\+Value\+::add\+Value (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classOptionValue}{Option\+Value}} \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Add an entry to an array value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & The entry value\\
+\hline
+\end{DoxyParams}
+This function can only be called if the \doxylink{classOptionValue}{Option\+Value} type is Value\+Type\+::\+Value\+None or Value\+Type\+::\+Value\+Array. Upon return, the type will be set to Value\+Type\+::\+Value\+Array. \Hypertarget{classOptionValue_ae0221d7d011f7e3bd02896043b66ea07}\label{classOptionValue_ae0221d7d011f7e3bd02896043b66ea07} 
+\index{OptionValue@{OptionValue}!children@{children}}
+\index{children@{children}!OptionValue@{OptionValue}}
+\doxysubsubsection{\texorpdfstring{children()}{children()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classOptionsParser_1_1Options}{Options\+Parser\+::\+Options}} \& Option\+Value\+::children (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retrieve the list of child values. 
+
+\begin{DoxyReturn}{Returns}
+The list of child values 
+\end{DoxyReturn}
+\Hypertarget{classOptionValue_af0d567111bca9f7af6a1d4af63d885c1}\label{classOptionValue_af0d567111bca9f7af6a1d4af63d885c1} 
+\index{OptionValue@{OptionValue}!empty@{empty}}
+\index{empty@{empty}!OptionValue@{OptionValue}}
+\doxysubsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily Option\+Value\+::empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check if the value is empty. 
+
+\begin{DoxyReturn}{Returns}
+True if the value is empty (type set to Value\+Type\+::\+Value\+None), or false otherwise 
+\end{DoxyReturn}
+\Hypertarget{classOptionValue_a5f73e2214435e2dfd4d03f5d255694cd}\label{classOptionValue_a5f73e2214435e2dfd4d03f5d255694cd} 
+\index{OptionValue@{OptionValue}!operator int@{operator int}}
+\index{operator int@{operator int}!OptionValue@{OptionValue}}
+\doxysubsubsection{\texorpdfstring{operator int()}{operator int()}}
+{\footnotesize\ttfamily Option\+Value\+::operator int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Cast the value to an int. 
+
+\begin{DoxyReturn}{Returns}
+The option value as an int, or 0 if the value type isn\textquotesingle{}t Value\+Type\+::\+Value\+Integer 
+\end{DoxyReturn}
+\Hypertarget{classOptionValue_afccb25f3e26c923c43272d114102800e}\label{classOptionValue_afccb25f3e26c923c43272d114102800e} 
+\index{OptionValue@{OptionValue}!operator std::string@{operator std::string}}
+\index{operator std::string@{operator std::string}!OptionValue@{OptionValue}}
+\doxysubsubsection{\texorpdfstring{operator std::string()}{operator std::string()}}
+{\footnotesize\ttfamily Option\+Value\+::operator std\+::string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Cast the value to a std\+::string. 
+
+\begin{DoxyReturn}{Returns}
+The option value as an std\+::string, or an empty string if the value type isn\textquotesingle{}t Value\+Type\+::\+Value\+String 
+\end{DoxyReturn}
+\Hypertarget{classOptionValue_a76e4404f7830a61574bfd30d1f42ddf4}\label{classOptionValue_a76e4404f7830a61574bfd30d1f42ddf4} 
+\index{OptionValue@{OptionValue}!toArray@{toArray}}
+\index{toArray@{toArray}!OptionValue@{OptionValue}}
+\doxysubsubsection{\texorpdfstring{toArray()}{toArray()}}
+{\footnotesize\ttfamily const std\+::vector$<$ \mbox{\hyperlink{classOptionValue}{Option\+Value}} $>$ \& Option\+Value\+::to\+Array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retrieve the value as an array. 
+
+The behaviour is undefined if the value type isn\textquotesingle{}t Value\+Type\+::\+Value\+Array.
+
+\begin{DoxyReturn}{Returns}
+The option value as a std\+::vector of \doxylink{classOptionValue}{Option\+Value} 
+\end{DoxyReturn}
+\Hypertarget{classOptionValue_a59751c77e9d0cff8c48a9db12bd69c8e}\label{classOptionValue_a59751c77e9d0cff8c48a9db12bd69c8e} 
+\index{OptionValue@{OptionValue}!toInteger@{toInteger}}
+\index{toInteger@{toInteger}!OptionValue@{OptionValue}}
+\doxysubsubsection{\texorpdfstring{toInteger()}{toInteger()}}
+{\footnotesize\ttfamily int Option\+Value\+::to\+Integer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retrieve the value as an int. 
+
+\begin{DoxyReturn}{Returns}
+The option value as an int, or 0 if the value type isn\textquotesingle{}t Value\+Type\+::\+Value\+Integer 
+\end{DoxyReturn}
+\Hypertarget{classOptionValue_a8fe0be5581604ff1580a2307e46f9a23}\label{classOptionValue_a8fe0be5581604ff1580a2307e46f9a23} 
+\index{OptionValue@{OptionValue}!toKeyValues@{toKeyValues}}
+\index{toKeyValues@{toKeyValues}!OptionValue@{OptionValue}}
+\doxysubsubsection{\texorpdfstring{toKeyValues()}{toKeyValues()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classKeyValueParser_1_1Options}{Key\+Value\+Parser\+::\+Options}} \& Option\+Value\+::to\+Key\+Values (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retrieve the value as a key-\/value list. 
+
+The behaviour is undefined if the value type isn\textquotesingle{}t Value\+Type\+::\+Value\+Key\+Value.
+
+\begin{DoxyReturn}{Returns}
+The option value as a \doxylink{classKeyValueParser_1_1Options}{Key\+Value\+Parser\+::\+Options} 
+\end{DoxyReturn}
+\Hypertarget{classOptionValue_ac433f74bcd56426d9f86e7d5a0c82159}\label{classOptionValue_ac433f74bcd56426d9f86e7d5a0c82159} 
+\index{OptionValue@{OptionValue}!toString@{toString}}
+\index{toString@{toString}!OptionValue@{OptionValue}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily std\+::string Option\+Value\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retrieve the value as a std\+::string. 
+
+\begin{DoxyReturn}{Returns}
+The option value as a std\+::string, or an empty string if the value type isn\textquotesingle{}t Value\+Type\+::\+Value\+String 
+\end{DoxyReturn}
+\Hypertarget{classOptionValue_a40a32a4d332ffed0514c2290a340fbb3}\label{classOptionValue_a40a32a4d332ffed0514c2290a340fbb3} 
+\index{OptionValue@{OptionValue}!type@{type}}
+\index{type@{type}!OptionValue@{OptionValue}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily Option\+Value\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the value type. 
+
+\begin{DoxyReturn}{Returns}
+The value type 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/apps/common/options.\+h\item 
+src/peripherals/camera/libcamera/src/apps/common/options.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,43 @@
+\doxysection{ipu3\+\_\+uapi\+\_\+yuvp1\+\_\+y\+\_\+ee\+\_\+nr\+\_\+sense\+\_\+config Struct Reference}
+\hypertarget{structipu3__uapi__yuvp1__y__ee__nr__sense__config}{}\label{structipu3__uapi__yuvp1__y__ee__nr__sense__config}\index{ipu3\_uapi\_yuvp1\_y\_ee\_nr\_sense\_config@{ipu3\_uapi\_yuvp1\_y\_ee\_nr\_sense\_config}}
+
+
+{\ttfamily \#include $<$intel-\/ipu3.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__y__ee__nr__sense__config_aa6ec288e0c770a41d5d4c13f91aff3f7}\label{structipu3__uapi__yuvp1__y__ee__nr__sense__config_aa6ec288e0c770a41d5d4c13f91aff3f7} 
+\+\_\+\+\_\+u32 {\bfseries edge\+\_\+sense\+\_\+0}\+:13
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__y__ee__nr__sense__config_a9476ccc82f494906c0e7ee48b52ce5c4}\label{structipu3__uapi__yuvp1__y__ee__nr__sense__config_a9476ccc82f494906c0e7ee48b52ce5c4} 
+\+\_\+\+\_\+u32 {\bfseries reserved0}\+:3
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__y__ee__nr__sense__config_a81bf5f025f3be6f516eb8ee70ef27637}\label{structipu3__uapi__yuvp1__y__ee__nr__sense__config_a81bf5f025f3be6f516eb8ee70ef27637} 
+\+\_\+\+\_\+u32 {\bfseries delta\+\_\+edge\+\_\+sense}\+:13
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__y__ee__nr__sense__config_aaf85c75677a2d27b04f85cece4752609}\label{structipu3__uapi__yuvp1__y__ee__nr__sense__config_aaf85c75677a2d27b04f85cece4752609} 
+\+\_\+\+\_\+u32 {\bfseries reserved1}\+:3
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__y__ee__nr__sense__config_aa884ba1b385b87166a39399ec3b63298}\label{structipu3__uapi__yuvp1__y__ee__nr__sense__config_aa884ba1b385b87166a39399ec3b63298} 
+\+\_\+\+\_\+u32 {\bfseries corner\+\_\+sense\+\_\+0}\+:13
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__y__ee__nr__sense__config_a44814fe3dd04eb71ead8caa0a5b9219e}\label{structipu3__uapi__yuvp1__y__ee__nr__sense__config_a44814fe3dd04eb71ead8caa0a5b9219e} 
+\+\_\+\+\_\+u32 {\bfseries reserved2}\+:3
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__y__ee__nr__sense__config_a5ab4f0e089da8ad72ea0857f0c7f2552}\label{structipu3__uapi__yuvp1__y__ee__nr__sense__config_a5ab4f0e089da8ad72ea0857f0c7f2552} 
+\+\_\+\+\_\+u32 {\bfseries delta\+\_\+corner\+\_\+sense}\+:13
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__y__ee__nr__sense__config_a5293208a12901059013e20584c73646b}\label{structipu3__uapi__yuvp1__y__ee__nr__sense__config_a5293208a12901059013e20584c73646b} 
+\+\_\+\+\_\+u32 {\bfseries reserved3}\+:3
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structipu3__uapi__yuvp1__y__ee__nr__sense__config}{ipu3\+\_\+uapi\+\_\+yuvp1\+\_\+y\+\_\+ee\+\_\+nr\+\_\+sense\+\_\+config} -\/ Luma(\+Y) edge enhancement noise reduction sensitivity gains
+
+@edge\+\_\+sense\+\_\+0\+: Sensitivity of edge in dark area. u13.\+0, default 8191. @reserved0\+: reserved @delta\+\_\+edge\+\_\+sense\+: Difference in the sensitivity of edges between the bright and dark areas. u13.\+0, default 0. @reserved1\+: reserved @corner\+\_\+sense\+\_\+0\+: Sensitivity of corner in dark area. u13.\+0, default 0. @reserved2\+: reserved @delta\+\_\+corner\+\_\+sense\+: Difference in the sensitivity of corners between the bright and dark areas. u13.\+0, default 8191. @reserved3\+: reserved 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/intel-\/ipu3.\+h\end{DoxyCompactItemize}

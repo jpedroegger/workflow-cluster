@@ -1,0 +1,62 @@
+\doxysection{frame\+\_\+buffer\+\_\+allocator.\+h}
+\hypertarget{frame__buffer__allocator_8h_source}{}\label{frame__buffer__allocator_8h_source}\index{src/peripherals/camera/libcamera/src/android/frame\_buffer\_allocator.h@{src/peripherals/camera/libcamera/src/android/frame\_buffer\_allocator.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2021,\ Google\ Inc.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Interface\ definition\ to\ allocate\ Frame\ buffer\ in}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ platform\ dependent\ way.}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ \_\_ANDROID\_FRAME\_BUFFER\_ALLOCATOR\_H\_\_}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ \_\_ANDROID\_FRAME\_BUFFER\_ALLOCATOR\_H\_\_}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{class_8h}{libcamera/base/class.h}}>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{libcamera_2camera_8h}{libcamera/camera.h}}>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{geometry_8h}{libcamera/geometry.h}}>}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}hal\_framebuffer.h"{}}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCameraDevice}{CameraDevice}};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPlatformFrameBufferAllocator}{PlatformFrameBufferAllocator}}\ :\ \mbox{\hyperlink{classlibcamera_1_1Extensible}{libcamera::Extensible}}}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_8h_a173cff214f6288d300840b7b474b7803}{LIBCAMERA\_DECLARE\_PRIVATE}}()}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classPlatformFrameBufferAllocator}{PlatformFrameBufferAllocator}}(\mbox{\hyperlink{classCameraDevice}{CameraDevice}}\ *\textcolor{keyword}{const}\ cameraDevice);}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{classPlatformFrameBufferAllocator}{\string~PlatformFrameBufferAllocator}}();}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ \ \ \ \ *\ FrameBuffer\ owns\ the\ underlying\ buffer.\ Returns\ nullptr\ on\ failure.}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ \ \ \ \ *\ Note:\ The\ returned\ FrameBuffer\ needs\ to\ be\ destroyed\ before}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ \ \ \ \ *\ PlatformFrameBufferAllocator\ is\ destroyed.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00035\ \ \ \ \ std::unique\_ptr<HALFrameBuffer>\ allocate(}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ halPixelFormat,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Size}{libcamera::Size}}\ \&size,\ uint32\_t\ usage);}
+\DoxyCodeLine{00037\ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ PUBLIC\_FRAME\_BUFFER\_ALLOCATOR\_IMPLEMENTATION\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{PlatformFrameBufferAllocator::PlatformFrameBufferAllocator(\ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\ \ \ \ CameraDevice\ *const\ cameraDevice)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\ \ \ \ :\ Extensible(std::make\_unique<Private>(cameraDevice))\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{PlatformFrameBufferAllocator::\string~PlatformFrameBufferAllocator()\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{std::unique\_ptr<HALFrameBuffer>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{PlatformFrameBufferAllocator::allocate(int\ halPixelFormat,\ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ const\ libcamera::Size\ \&size,\ \(\backslash\)}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ usage)\ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\ \ \ \ return\ \_d()-\/>allocate(halPixelFormat,\ size,\ usage);\ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\}}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_ANDROID\_FRAME\_BUFFER\_ALLOCATOR\_H\_\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

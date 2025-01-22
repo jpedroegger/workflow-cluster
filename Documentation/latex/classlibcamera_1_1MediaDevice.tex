@@ -1,0 +1,463 @@
+\doxysection{libcamera\+::Media\+Device Class Reference}
+\hypertarget{classlibcamera_1_1MediaDevice}{}\label{classlibcamera_1_1MediaDevice}\index{libcamera::MediaDevice@{libcamera::MediaDevice}}
+
+
+The \doxylink{classlibcamera_1_1MediaDevice}{Media\+Device} represents a Media Controller device with its full graph of connected objects.  
+
+
+Inheritance diagram for libcamera\+::Media\+Device\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlibcamera_1_1MediaDevice}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1MediaDevice_ab950a4880c2bea6d94bfd6ecfe46e5f5}{Media\+Device}} (const std\+::string \&\mbox{\hyperlink{classlibcamera_1_1MediaDevice_a91e03b4de6c518698f45dcdd3475413b}{device\+Node}})
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{classlibcamera_1_1MediaDevice}{Media\+Device}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlibcamera_1_1MediaDevice_a02fd5f5a3d81330a87f1ee53511866ef}{acquire}} ()
+\begin{DoxyCompactList}\small\item\em Claim a device for exclusive use. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1MediaDevice_a511ae507d3fffc097e938a7f55eb801c}{release}} ()
+\begin{DoxyCompactList}\small\item\em Release a device previously claimed for exclusive use. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlibcamera_1_1MediaDevice_ae3b1d5fc997c44051ebc92cf5b6906ca}{busy}} () const
+\begin{DoxyCompactList}\small\item\em Check if a device is in use. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlibcamera_1_1MediaDevice_aafab9ceead67be818337139645d3d9f9}{lock}} ()
+\begin{DoxyCompactList}\small\item\em Lock the device to prevent it from being used by other instances of libcamera. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1MediaDevice_afa3b83f5f3fe2af9b4a8b5d518518386}{unlock}} ()
+\begin{DoxyCompactList}\small\item\em Unlock the device and free it for use for libcamera instances. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classlibcamera_1_1MediaDevice_a8fe692b0d3675cff3e162305db246c25}{populate}} ()
+\begin{DoxyCompactList}\small\item\em Populate the \doxylink{classlibcamera_1_1MediaDevice}{Media\+Device} with device information and media objects. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlibcamera_1_1MediaDevice_a73dc250ada9bdcb33e94be03faf96ebc}{is\+Valid}} () const
+\begin{DoxyCompactList}\small\item\em Query whether the media graph has been populated and is valid. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{classlibcamera_1_1MediaDevice_a6543509be9b4f6dbfa4dcca402bff115}{driver}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the media device driver name. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{classlibcamera_1_1MediaDevice_a91e03b4de6c518698f45dcdd3475413b}{device\+Node}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the media device node path. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{classlibcamera_1_1MediaDevice_a73f32f10c2087b482e44e0acd93b29e8}{model}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the media device model name. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classlibcamera_1_1MediaDevice_afd096dd0104ddc8737f56cf23e28d8d6}{version}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the media device API version. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classlibcamera_1_1MediaDevice_aef5e696a1e7f318ea20daf557f77e6d7}{hw\+Revision}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the media device hardware revision. \end{DoxyCompactList}\item 
+const std\+::vector$<$ \mbox{\hyperlink{classlibcamera_1_1MediaEntity}{Media\+Entity}} \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{classlibcamera_1_1MediaDevice_ac2cbe6c1a8721e7a26ec3cf81d1fca93}{entities}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the list of entities in the media graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1MediaEntity}{Media\+Entity}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1MediaDevice_ad5d9279329ef4987ceece2694b33e230}{get\+Entity\+By\+Name}} (const std\+::string \&name) const
+\begin{DoxyCompactList}\small\item\em Return the \doxylink{classlibcamera_1_1MediaEntity}{Media\+Entity} with name {\itshape name}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1MediaLink}{Media\+Link}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1MediaDevice_ab8a926b86f0ae67f56544b10e72cb83f}{link}} (const std\+::string \&source\+Name, unsigned int source\+Idx, const std\+::string \&sink\+Name, unsigned int sink\+Idx)
+\begin{DoxyCompactList}\small\item\em Retrieve the \doxylink{classlibcamera_1_1MediaLink}{Media\+Link} connecting two pads, identified by entity names and pad indexes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1MediaLink}{Media\+Link}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1MediaDevice_a84ada727fc400e022fb8814191c54869}{link}} (const \mbox{\hyperlink{classlibcamera_1_1MediaEntity}{Media\+Entity}} \texorpdfstring{$\ast$}{*}source, unsigned int source\+Idx, const \mbox{\hyperlink{classlibcamera_1_1MediaEntity}{Media\+Entity}} \texorpdfstring{$\ast$}{*}sink, unsigned int sink\+Idx)
+\begin{DoxyCompactList}\small\item\em Retrieve the \doxylink{classlibcamera_1_1MediaLink}{Media\+Link} connecting two pads, identified by the entities they belong to and pad indexes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1MediaLink}{Media\+Link}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1MediaDevice_a8ab25ee1197502a3fb2c18d9fbd229a5}{link}} (const \mbox{\hyperlink{classlibcamera_1_1MediaPad}{Media\+Pad}} \texorpdfstring{$\ast$}{*}source, const \mbox{\hyperlink{classlibcamera_1_1MediaPad}{Media\+Pad}} \texorpdfstring{$\ast$}{*}sink)
+\begin{DoxyCompactList}\small\item\em Retrieve the \doxylink{classlibcamera_1_1MediaLink}{Media\+Link} that connects two pads. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classlibcamera_1_1MediaDevice_a182bb41cfc7fcfa080327f8ff26070f0}{disable\+Links}} ()
+\begin{DoxyCompactList}\small\item\em Disable all links in the media device. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1Signal}{Signal}} \mbox{\hyperlink{classlibcamera_1_1MediaDevice_a5d1572fad6ad84bc88274d80cc86c80f}{disconnected}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classlibcamera_1_1Signal}{Signal} emitted when the media device is disconnected from the system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classlibcamera_1_1MediaDevice_a15b5bc0dc607109830666d53dfe019e5}{log\+Prefix}} () const override
+\begin{DoxyCompactList}\small\item\em Retrieve a string to be prefixed to the log message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1Loggable}{libcamera\+::\+Loggable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1LogMessage}{Log\+Message}} \mbox{\hyperlink{classlibcamera_1_1Loggable_a56b00f844b75b5d08cad898ed9c6181e}{\+\_\+log}} (const \mbox{\hyperlink{classlibcamera_1_1LogCategory}{Log\+Category}} \texorpdfstring{$\ast$}{*}category, \mbox{\hyperlink{namespacelibcamera_a68f26f5a54a5bb105f2e7422215a0ca3}{Log\+Severity}} severity, const char \texorpdfstring{$\ast$}{*}file\+Name=\+\_\+\+\_\+builtin\+\_\+\+FILE(), unsigned int line=\+\_\+\+\_\+builtin\+\_\+\+LINE()) const
+\begin{DoxyCompactList}\small\item\em Create a temporary \doxylink{classlibcamera_1_1LogMessage}{Log\+Message} object to log a message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1MediaDevice_a800478ed3dd75f2b9240c05bae5f89c5}\label{classlibcamera_1_1MediaDevice_a800478ed3dd75f2b9240c05bae5f89c5} 
+int {\bfseries Media\+Link\+::set\+Enabled} (bool enable)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{classlibcamera_1_1MediaDevice}{Media\+Device} represents a Media Controller device with its full graph of connected objects. 
+
+A \doxylink{classlibcamera_1_1MediaDevice}{Media\+Device} instance is associated with a media controller device node when created, and that association is kept for the lifetime of the \doxylink{classlibcamera_1_1MediaDevice}{Media\+Device} instance.
+
+The instance is created with an empty media graph. Before performing any other operation, it must be populate by calling \doxylink{classlibcamera_1_1MediaDevice_a8fe692b0d3675cff3e162305db246c25}{populate()}. Instances of \doxylink{classlibcamera_1_1MediaEntity}{Media\+Entity}, \doxylink{classlibcamera_1_1MediaPad}{Media\+Pad} and \doxylink{classlibcamera_1_1MediaLink}{Media\+Link} are created to model the media graph, and stored in a map indexed by object id.
+
+The graph is valid once successfully populated, as reported by the \doxylink{classlibcamera_1_1MediaDevice_a73dc250ada9bdcb33e94be03faf96ebc}{is\+Valid()} function. It can be queried to list all \doxylink{classlibcamera_1_1MediaDevice_ac2cbe6c1a8721e7a26ec3cf81d1fca93}{entities()}, or entities can be looked up by name with \doxylink{classlibcamera_1_1MediaDevice_ad5d9279329ef4987ceece2694b33e230}{get\+Entity\+By\+Name()}. The graph can be traversed from entity to entity through pads and links as exposed by the corresponding classes.
+
+Media devices can be claimed for exclusive use with \doxylink{classlibcamera_1_1MediaDevice_a02fd5f5a3d81330a87f1ee53511866ef}{acquire()}, released with \doxylink{classlibcamera_1_1MediaDevice_a511ae507d3fffc097e938a7f55eb801c}{release()} and tested with \doxylink{classlibcamera_1_1MediaDevice_ae3b1d5fc997c44051ebc92cf5b6906ca}{busy()}. This mechanism is aimed at pipeline managers to claim media devices they support during enumeration. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlibcamera_1_1MediaDevice_ab950a4880c2bea6d94bfd6ecfe46e5f5}\label{classlibcamera_1_1MediaDevice_ab950a4880c2bea6d94bfd6ecfe46e5f5} 
+\index{libcamera::MediaDevice@{libcamera::MediaDevice}!MediaDevice@{MediaDevice}}
+\index{MediaDevice@{MediaDevice}!libcamera::MediaDevice@{libcamera::MediaDevice}}
+\doxysubsubsection{\texorpdfstring{MediaDevice()}{MediaDevice()}}
+{\footnotesize\ttfamily libcamera\+::\+Media\+Device\+::\+Media\+Device (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{device\+Node }\end{DoxyParamCaption})}
+
+
+
+Construct a \doxylink{classlibcamera_1_1MediaDevice}{Media\+Device}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em device\+Node} & The media device node path\\
+\hline
+\end{DoxyParams}
+Once constructed the media device is invalid, and must be populated with \doxylink{classlibcamera_1_1MediaDevice_a8fe692b0d3675cff3e162305db246c25}{populate()} before the media graph can be queried. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1MediaDevice_a02fd5f5a3d81330a87f1ee53511866ef}\label{classlibcamera_1_1MediaDevice_a02fd5f5a3d81330a87f1ee53511866ef} 
+\index{libcamera::MediaDevice@{libcamera::MediaDevice}!acquire@{acquire}}
+\index{acquire@{acquire}!libcamera::MediaDevice@{libcamera::MediaDevice}}
+\doxysubsubsection{\texorpdfstring{acquire()}{acquire()}}
+{\footnotesize\ttfamily bool libcamera\+::\+Media\+Device\+::acquire (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Claim a device for exclusive use. 
+
+The device claiming mechanism offers simple media device access arbitration between multiple users. When the media device is created, it is available to all users. Users can query the media graph to determine whether they can support the device and, if they do, claim the device for exclusive use. Other users are then expected to skip over media devices in use as reported by the \doxylink{classlibcamera_1_1MediaDevice_ae3b1d5fc997c44051ebc92cf5b6906ca}{busy()} function.
+
+Once claimed the device shall be released by its user when not needed anymore by calling the \doxylink{classlibcamera_1_1MediaDevice_a511ae507d3fffc097e938a7f55eb801c}{release()} function. Acquiring the media device opens a file descriptor to the device which is kept open until \doxylink{classlibcamera_1_1MediaDevice_a511ae507d3fffc097e938a7f55eb801c}{release()} is called.
+
+Exclusive access is only guaranteed if all users of the media device abide by the device claiming mechanism, as it isn\textquotesingle{}t enforced by the media device itself.
+
+\begin{DoxyReturn}{Returns}
+true if the device was successfully claimed, or false if it was already in use 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classlibcamera_1_1MediaDevice_a511ae507d3fffc097e938a7f55eb801c}{release()}, \doxylink{classlibcamera_1_1MediaDevice_ae3b1d5fc997c44051ebc92cf5b6906ca}{busy()} 
+\end{DoxySeeAlso}
+\Hypertarget{classlibcamera_1_1MediaDevice_ae3b1d5fc997c44051ebc92cf5b6906ca}\label{classlibcamera_1_1MediaDevice_ae3b1d5fc997c44051ebc92cf5b6906ca} 
+\index{libcamera::MediaDevice@{libcamera::MediaDevice}!busy@{busy}}
+\index{busy@{busy}!libcamera::MediaDevice@{libcamera::MediaDevice}}
+\doxysubsubsection{\texorpdfstring{busy()}{busy()}}
+{\footnotesize\ttfamily libcamera\+::\+Media\+Device\+::busy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check if a device is in use. 
+
+\begin{DoxyReturn}{Returns}
+true if the device has been claimed for exclusive use, or false if it is available 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classlibcamera_1_1MediaDevice_a02fd5f5a3d81330a87f1ee53511866ef}{acquire()}, \doxylink{classlibcamera_1_1MediaDevice_a511ae507d3fffc097e938a7f55eb801c}{release()} 
+\end{DoxySeeAlso}
+\Hypertarget{classlibcamera_1_1MediaDevice_a91e03b4de6c518698f45dcdd3475413b}\label{classlibcamera_1_1MediaDevice_a91e03b4de6c518698f45dcdd3475413b} 
+\index{libcamera::MediaDevice@{libcamera::MediaDevice}!deviceNode@{deviceNode}}
+\index{deviceNode@{deviceNode}!libcamera::MediaDevice@{libcamera::MediaDevice}}
+\doxysubsubsection{\texorpdfstring{deviceNode()}{deviceNode()}}
+{\footnotesize\ttfamily libcamera\+::\+Media\+Device\+::device\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the media device node path. 
+
+\begin{DoxyReturn}{Returns}
+The \doxylink{classlibcamera_1_1MediaDevice}{Media\+Device} device\+Node path 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1MediaDevice_a182bb41cfc7fcfa080327f8ff26070f0}\label{classlibcamera_1_1MediaDevice_a182bb41cfc7fcfa080327f8ff26070f0} 
+\index{libcamera::MediaDevice@{libcamera::MediaDevice}!disableLinks@{disableLinks}}
+\index{disableLinks@{disableLinks}!libcamera::MediaDevice@{libcamera::MediaDevice}}
+\doxysubsubsection{\texorpdfstring{disableLinks()}{disableLinks()}}
+{\footnotesize\ttfamily int libcamera\+::\+Media\+Device\+::disable\+Links (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Disable all links in the media device. 
+
+Disable all the media device links, clearing the MEDIA\+\_\+\+LNK\+\_\+\+FL\+\_\+\+ENABLED flag on links which are not flagged as IMMUTABLE.
+
+\begin{DoxyReturn}{Returns}
+0 on success or a negative error code otherwise 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1MediaDevice_a6543509be9b4f6dbfa4dcca402bff115}\label{classlibcamera_1_1MediaDevice_a6543509be9b4f6dbfa4dcca402bff115} 
+\index{libcamera::MediaDevice@{libcamera::MediaDevice}!driver@{driver}}
+\index{driver@{driver}!libcamera::MediaDevice@{libcamera::MediaDevice}}
+\doxysubsubsection{\texorpdfstring{driver()}{driver()}}
+{\footnotesize\ttfamily libcamera\+::\+Media\+Device\+::driver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the media device driver name. 
+
+\begin{DoxyReturn}{Returns}
+The name of the kernel driver that handles the \doxylink{classlibcamera_1_1MediaDevice}{Media\+Device} 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1MediaDevice_ac2cbe6c1a8721e7a26ec3cf81d1fca93}\label{classlibcamera_1_1MediaDevice_ac2cbe6c1a8721e7a26ec3cf81d1fca93} 
+\index{libcamera::MediaDevice@{libcamera::MediaDevice}!entities@{entities}}
+\index{entities@{entities}!libcamera::MediaDevice@{libcamera::MediaDevice}}
+\doxysubsubsection{\texorpdfstring{entities()}{entities()}}
+{\footnotesize\ttfamily libcamera\+::\+Media\+Device\+::entities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the list of entities in the media graph. 
+
+\begin{DoxyReturn}{Returns}
+The list of Media\+Entities registered in the \doxylink{classlibcamera_1_1MediaDevice}{Media\+Device} 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1MediaDevice_ad5d9279329ef4987ceece2694b33e230}\label{classlibcamera_1_1MediaDevice_ad5d9279329ef4987ceece2694b33e230} 
+\index{libcamera::MediaDevice@{libcamera::MediaDevice}!getEntityByName@{getEntityByName}}
+\index{getEntityByName@{getEntityByName}!libcamera::MediaDevice@{libcamera::MediaDevice}}
+\doxysubsubsection{\texorpdfstring{getEntityByName()}{getEntityByName()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1MediaEntity}{Media\+Entity}} \texorpdfstring{$\ast$}{*} libcamera\+::\+Media\+Device\+::get\+Entity\+By\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption}) const}
+
+
+
+Return the \doxylink{classlibcamera_1_1MediaEntity}{Media\+Entity} with name {\itshape name}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em name} & The entity name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The entity with {\itshape name}, or nullptr if no such entity is found 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1MediaDevice_aef5e696a1e7f318ea20daf557f77e6d7}\label{classlibcamera_1_1MediaDevice_aef5e696a1e7f318ea20daf557f77e6d7} 
+\index{libcamera::MediaDevice@{libcamera::MediaDevice}!hwRevision@{hwRevision}}
+\index{hwRevision@{hwRevision}!libcamera::MediaDevice@{libcamera::MediaDevice}}
+\doxysubsubsection{\texorpdfstring{hwRevision()}{hwRevision()}}
+{\footnotesize\ttfamily libcamera\+::\+Media\+Device\+::hw\+Revision (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the media device hardware revision. 
+
+The hardware revision is in a driver-\/specific format.
+
+\begin{DoxyReturn}{Returns}
+The \doxylink{classlibcamera_1_1MediaDevice}{Media\+Device} hardware revision 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1MediaDevice_a73dc250ada9bdcb33e94be03faf96ebc}\label{classlibcamera_1_1MediaDevice_a73dc250ada9bdcb33e94be03faf96ebc} 
+\index{libcamera::MediaDevice@{libcamera::MediaDevice}!isValid@{isValid}}
+\index{isValid@{isValid}!libcamera::MediaDevice@{libcamera::MediaDevice}}
+\doxysubsubsection{\texorpdfstring{isValid()}{isValid()}}
+{\footnotesize\ttfamily libcamera\+::\+Media\+Device\+::is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Query whether the media graph has been populated and is valid. 
+
+\begin{DoxyReturn}{Returns}
+true if the media graph is valid, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1MediaDevice_a84ada727fc400e022fb8814191c54869}\label{classlibcamera_1_1MediaDevice_a84ada727fc400e022fb8814191c54869} 
+\index{libcamera::MediaDevice@{libcamera::MediaDevice}!link@{link}}
+\index{link@{link}!libcamera::MediaDevice@{libcamera::MediaDevice}}
+\doxysubsubsection{\texorpdfstring{link()}{link()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1MediaLink}{Media\+Link}} \texorpdfstring{$\ast$}{*} libcamera\+::\+Media\+Device\+::link (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1MediaEntity}{Media\+Entity}} \texorpdfstring{$\ast$}{*}}]{source,  }\item[{unsigned int}]{source\+Idx,  }\item[{const \mbox{\hyperlink{classlibcamera_1_1MediaEntity}{Media\+Entity}} \texorpdfstring{$\ast$}{*}}]{sink,  }\item[{unsigned int}]{sink\+Idx }\end{DoxyParamCaption})}
+
+
+
+Retrieve the \doxylink{classlibcamera_1_1MediaLink}{Media\+Link} connecting two pads, identified by the entities they belong to and pad indexes. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em source} & The source entity \\
+\hline
+\mbox{\texttt{ in}}  & {\em source\+Idx} & The index of the source pad \\
+\hline
+\mbox{\texttt{ in}}  & {\em sink} & The sink entity \\
+\hline
+\mbox{\texttt{ in}}  & {\em sink\+Idx} & The index of the sink pad\\
+\hline
+\end{DoxyParams}
+Find the link that connects the pads at index {\itshape source\+Idx} of the source entity {\itshape source}, to the pad at index {\itshape sink\+Idx} of the sink entity {\itshape sink}, if any.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classlibcamera_1_1MediaDevice_ab8a926b86f0ae67f56544b10e72cb83f}{link(const std\+::string \&source\+Name, unsigned int source\+Idx,          const std\+::string \&sink\+Name, unsigned int sink\+Idx)} 
+
+\doxylink{classlibcamera_1_1MediaDevice_a8ab25ee1197502a3fb2c18d9fbd229a5}{link(const Media\+Pad \texorpdfstring{$\ast$}{*}source, const Media\+Pad \texorpdfstring{$\ast$}{*}sink)}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+The link that connects the two pads, or nullptr if no such a link exists 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1MediaDevice_a8ab25ee1197502a3fb2c18d9fbd229a5}\label{classlibcamera_1_1MediaDevice_a8ab25ee1197502a3fb2c18d9fbd229a5} 
+\index{libcamera::MediaDevice@{libcamera::MediaDevice}!link@{link}}
+\index{link@{link}!libcamera::MediaDevice@{libcamera::MediaDevice}}
+\doxysubsubsection{\texorpdfstring{link()}{link()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1MediaLink}{Media\+Link}} \texorpdfstring{$\ast$}{*} libcamera\+::\+Media\+Device\+::link (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1MediaPad}{Media\+Pad}} \texorpdfstring{$\ast$}{*}}]{source,  }\item[{const \mbox{\hyperlink{classlibcamera_1_1MediaPad}{Media\+Pad}} \texorpdfstring{$\ast$}{*}}]{sink }\end{DoxyParamCaption})}
+
+
+
+Retrieve the \doxylink{classlibcamera_1_1MediaLink}{Media\+Link} that connects two pads. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em source} & The source pad \\
+\hline
+\mbox{\texttt{ in}}  & {\em sink} & The sink pad\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classlibcamera_1_1MediaDevice_ab8a926b86f0ae67f56544b10e72cb83f}{link(const std\+::string \&source\+Name, unsigned int source\+Idx,          const std\+::string \&sink\+Name, unsigned int sink\+Idx)} 
+
+\doxylink{classlibcamera_1_1MediaDevice_a84ada727fc400e022fb8814191c54869}{link(const Media\+Entity \texorpdfstring{$\ast$}{*}source, unsigned int source\+Idx,          const Media\+Entity \texorpdfstring{$\ast$}{*}sink, unsigned int sink\+Idx)}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+The link that connects the two pads, or nullptr if no such a link exists 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1MediaDevice_ab8a926b86f0ae67f56544b10e72cb83f}\label{classlibcamera_1_1MediaDevice_ab8a926b86f0ae67f56544b10e72cb83f} 
+\index{libcamera::MediaDevice@{libcamera::MediaDevice}!link@{link}}
+\index{link@{link}!libcamera::MediaDevice@{libcamera::MediaDevice}}
+\doxysubsubsection{\texorpdfstring{link()}{link()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1MediaLink}{Media\+Link}} \texorpdfstring{$\ast$}{*} libcamera\+::\+Media\+Device\+::link (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{source\+Name,  }\item[{unsigned int}]{source\+Idx,  }\item[{const std\+::string \&}]{sink\+Name,  }\item[{unsigned int}]{sink\+Idx }\end{DoxyParamCaption})}
+
+
+
+Retrieve the \doxylink{classlibcamera_1_1MediaLink}{Media\+Link} connecting two pads, identified by entity names and pad indexes. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em source\+Name} & The source entity name \\
+\hline
+\mbox{\texttt{ in}}  & {\em source\+Idx} & The index of the source pad \\
+\hline
+\mbox{\texttt{ in}}  & {\em sink\+Name} & The sink entity name \\
+\hline
+\mbox{\texttt{ in}}  & {\em sink\+Idx} & The index of the sink pad\\
+\hline
+\end{DoxyParams}
+Find the link that connects the pads at index {\itshape source\+Idx} of the source entity with name {\itshape source\+Name}, to the pad at index {\itshape sink\+Idx} of the sink entity with name {\itshape sink\+Name}, if any.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classlibcamera_1_1MediaDevice_a84ada727fc400e022fb8814191c54869}{link(const Media\+Entity \texorpdfstring{$\ast$}{*}source, unsigned int source\+Idx,          const Media\+Entity \texorpdfstring{$\ast$}{*}sink, unsigned int sink\+Idx)} 
+
+\doxylink{classlibcamera_1_1MediaDevice_a8ab25ee1197502a3fb2c18d9fbd229a5}{link(const Media\+Pad \texorpdfstring{$\ast$}{*}source, const Media\+Pad \texorpdfstring{$\ast$}{*}sink)}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+The link that connects the two pads, or nullptr if no such a link exists 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1MediaDevice_aafab9ceead67be818337139645d3d9f9}\label{classlibcamera_1_1MediaDevice_aafab9ceead67be818337139645d3d9f9} 
+\index{libcamera::MediaDevice@{libcamera::MediaDevice}!lock@{lock}}
+\index{lock@{lock}!libcamera::MediaDevice@{libcamera::MediaDevice}}
+\doxysubsubsection{\texorpdfstring{lock()}{lock()}}
+{\footnotesize\ttfamily bool libcamera\+::\+Media\+Device\+::lock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Lock the device to prevent it from being used by other instances of libcamera. 
+
+Multiple instances of libcamera might be running on the same system, at the same time. To allow the different instances to coexist, system resources in the form of media devices must be accessible for enumerating the cameras they provide at all times, while still allowing an instance to lock a resource while it prepares to actively use a camera from the resource.
+
+This function shall not be called from a pipeline handler implementation directly, as the base \doxylink{classlibcamera_1_1PipelineHandler}{Pipeline\+Handler} implementation handles this on the behalf of the specified implementation.
+
+\begin{DoxyReturn}{Returns}
+True if the device could be locked, false otherwise 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classlibcamera_1_1MediaDevice_afa3b83f5f3fe2af9b4a8b5d518518386}{unlock()} 
+\end{DoxySeeAlso}
+\Hypertarget{classlibcamera_1_1MediaDevice_a15b5bc0dc607109830666d53dfe019e5}\label{classlibcamera_1_1MediaDevice_a15b5bc0dc607109830666d53dfe019e5} 
+\index{libcamera::MediaDevice@{libcamera::MediaDevice}!logPrefix@{logPrefix}}
+\index{logPrefix@{logPrefix}!libcamera::MediaDevice@{libcamera::MediaDevice}}
+\doxysubsubsection{\texorpdfstring{logPrefix()}{logPrefix()}}
+{\footnotesize\ttfamily std\+::string libcamera\+::\+Media\+Device\+::log\+Prefix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Retrieve a string to be prefixed to the log message. 
+
+This function allows classes inheriting from the \doxylink{classlibcamera_1_1Loggable}{Loggable} class to extend the logger with an object-\/specific prefix output right before the log message contents.
+
+\begin{DoxyReturn}{Returns}
+A string to be prefixed to the log message 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classlibcamera_1_1Loggable_a4cc48b0ae7215ceb4bfae6f192b2b3ee}{libcamera\+::\+Loggable}}.
+
+\Hypertarget{classlibcamera_1_1MediaDevice_a73f32f10c2087b482e44e0acd93b29e8}\label{classlibcamera_1_1MediaDevice_a73f32f10c2087b482e44e0acd93b29e8} 
+\index{libcamera::MediaDevice@{libcamera::MediaDevice}!model@{model}}
+\index{model@{model}!libcamera::MediaDevice@{libcamera::MediaDevice}}
+\doxysubsubsection{\texorpdfstring{model()}{model()}}
+{\footnotesize\ttfamily libcamera\+::\+Media\+Device\+::model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the media device model name. 
+
+\begin{DoxyReturn}{Returns}
+The \doxylink{classlibcamera_1_1MediaDevice}{Media\+Device} model name 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1MediaDevice_a8fe692b0d3675cff3e162305db246c25}\label{classlibcamera_1_1MediaDevice_a8fe692b0d3675cff3e162305db246c25} 
+\index{libcamera::MediaDevice@{libcamera::MediaDevice}!populate@{populate}}
+\index{populate@{populate}!libcamera::MediaDevice@{libcamera::MediaDevice}}
+\doxysubsubsection{\texorpdfstring{populate()}{populate()}}
+{\footnotesize\ttfamily int libcamera\+::\+Media\+Device\+::populate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Populate the \doxylink{classlibcamera_1_1MediaDevice}{Media\+Device} with device information and media objects. 
+
+This function retrieves the media device information and enumerates all media objects in the media device graph and creates their \doxylink{classlibcamera_1_1MediaObject}{Media\+Object} representations. All entities, pads and links are stored as \doxylink{classlibcamera_1_1MediaEntity}{Media\+Entity}, \doxylink{classlibcamera_1_1MediaPad}{Media\+Pad} and \doxylink{classlibcamera_1_1MediaLink}{Media\+Link} respectively, with cross-\/references between objects. Interfaces are not processed.
+
+Entities are stored in a separate list in the \doxylink{classlibcamera_1_1MediaDevice}{Media\+Device} to ease lookup, while pads are accessible from the entity they belong to and links from the pads they connect.
+
+\begin{DoxyReturn}{Returns}
+0 on success or a negative error code otherwise 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1MediaDevice_a511ae507d3fffc097e938a7f55eb801c}\label{classlibcamera_1_1MediaDevice_a511ae507d3fffc097e938a7f55eb801c} 
+\index{libcamera::MediaDevice@{libcamera::MediaDevice}!release@{release}}
+\index{release@{release}!libcamera::MediaDevice@{libcamera::MediaDevice}}
+\doxysubsubsection{\texorpdfstring{release()}{release()}}
+{\footnotesize\ttfamily void libcamera\+::\+Media\+Device\+::release (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Release a device previously claimed for exclusive use. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classlibcamera_1_1MediaDevice_a02fd5f5a3d81330a87f1ee53511866ef}{acquire()}, \doxylink{classlibcamera_1_1MediaDevice_ae3b1d5fc997c44051ebc92cf5b6906ca}{busy()} 
+\end{DoxySeeAlso}
+\Hypertarget{classlibcamera_1_1MediaDevice_afa3b83f5f3fe2af9b4a8b5d518518386}\label{classlibcamera_1_1MediaDevice_afa3b83f5f3fe2af9b4a8b5d518518386} 
+\index{libcamera::MediaDevice@{libcamera::MediaDevice}!unlock@{unlock}}
+\index{unlock@{unlock}!libcamera::MediaDevice@{libcamera::MediaDevice}}
+\doxysubsubsection{\texorpdfstring{unlock()}{unlock()}}
+{\footnotesize\ttfamily void libcamera\+::\+Media\+Device\+::unlock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Unlock the device and free it for use for libcamera instances. 
+
+This function shall not be called from a pipeline handler implementation directly, as the base \doxylink{classlibcamera_1_1PipelineHandler}{Pipeline\+Handler} implementation handles this on the behalf of the specified implementation.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classlibcamera_1_1MediaDevice_aafab9ceead67be818337139645d3d9f9}{lock()} 
+\end{DoxySeeAlso}
+\Hypertarget{classlibcamera_1_1MediaDevice_afd096dd0104ddc8737f56cf23e28d8d6}\label{classlibcamera_1_1MediaDevice_afd096dd0104ddc8737f56cf23e28d8d6} 
+\index{libcamera::MediaDevice@{libcamera::MediaDevice}!version@{version}}
+\index{version@{version}!libcamera::MediaDevice@{libcamera::MediaDevice}}
+\doxysubsubsection{\texorpdfstring{version()}{version()}}
+{\footnotesize\ttfamily libcamera\+::\+Media\+Device\+::version (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the media device API version. 
+
+The version is formatted with the KERNEL\+\_\+\+VERSION() macro.
+
+\begin{DoxyReturn}{Returns}
+The \doxylink{classlibcamera_1_1MediaDevice}{Media\+Device} API version 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classlibcamera_1_1MediaDevice_a5d1572fad6ad84bc88274d80cc86c80f}\label{classlibcamera_1_1MediaDevice_a5d1572fad6ad84bc88274d80cc86c80f} 
+\index{libcamera::MediaDevice@{libcamera::MediaDevice}!disconnected@{disconnected}}
+\index{disconnected@{disconnected}!libcamera::MediaDevice@{libcamera::MediaDevice}}
+\doxysubsubsection{\texorpdfstring{disconnected}{disconnected}}
+{\footnotesize\ttfamily libcamera\+::\+Media\+Device\+::disconnected}
+
+
+
+\doxylink{classlibcamera_1_1Signal}{Signal} emitted when the media device is disconnected from the system. 
+
+This signal is emitted when the device enumerator detects that the media device has been removed from the system. For hot-\/pluggable devices this is usually caused by physical device disconnection, but can also result from driver unloading for most devices. The media device is passed as a parameter. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/internal/\mbox{\hyperlink{media__device_8h}{media\+\_\+device.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/media\+\_\+device.\+cpp\end{DoxyCompactItemize}

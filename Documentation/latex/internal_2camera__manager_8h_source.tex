@@ -1,0 +1,77 @@
+\doxysection{camera\+\_\+manager.\+h}
+\hypertarget{internal_2camera__manager_8h_source}{}\label{internal_2camera__manager_8h_source}\index{src/peripherals/camera/libcamera/include/libcamera/internal/camera\_manager.h@{src/peripherals/camera/libcamera/include/libcamera/internal/camera\_manager.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2023,\ Ideas\ on\ Board\ Oy.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Camera\ manager\ private\ data}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{camera__manager_8h}{libcamera/camera\_manager.h}}>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <sys/types.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{class_8h}{libcamera/base/class.h}}>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{mutex_8h}{libcamera/base/mutex.h}}>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{thread_8h}{libcamera/base/thread.h}}>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <libcamera/base/thread\_annotations.h>}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{process_8h}{libcamera/internal/process.h}}"{}}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacelibcamera}{libcamera}}\ \{}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }Camera;}
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }DeviceEnumerator;}
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }IPAManager;}
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }PipelineHandlerFactoryBase;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1CameraManager_1_1Private}{CameraManager::Private}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classlibcamera_1_1Extensible_1_1Private}{Extensible::Private}},\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classlibcamera_1_1Thread}{Thread}}}
+\DoxyCodeLine{00031\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_8h_af850b1c484bfa1f484a53c6c2ac7fbad}{LIBCAMERA\_DECLARE\_PUBLIC}}(\mbox{\hyperlink{classlibcamera_1_1CameraManager}{CameraManager}})}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1CameraManager_1_1Private}{Private}}();}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{int}\ start();}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1CameraManager_1_1Private_a51fcc386c6ea5dc81b29e7334d9f1d39}{addCamera}}(std::shared\_ptr<Camera>\ camera)\ LIBCAMERA\_TSA\_EXCLUDES(mutex\_);}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1CameraManager_1_1Private_a613cf80645af31d6d76c4799678020af}{removeCamera}}(std::shared\_ptr<Camera>\ camera)\ LIBCAMERA\_TSA\_EXCLUDES(mutex\_);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1IPAManager}{IPAManager}}\ *\mbox{\hyperlink{classlibcamera_1_1CameraManager_1_1Private_a34ef2138d2186d9feb36a7a67354e792}{ipaManager}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ ipaManager\_.get();\ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1CameraManager_1_1Private_a2495e76af68debe46f1fbdc770a73085}{run}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{int}\ init();}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ createPipelineHandlers();}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ pipelineFactoryMatch(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerFactoryBase}{PipelineHandlerFactoryBase}}\ *factory);}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ cleanup()\ LIBCAMERA\_TSA\_EXCLUDES(mutex\_);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00053\ \textcolor{comment}{\ \ \ \ \ *\ This\ mutex\ protects}}
+\DoxyCodeLine{00054\ \textcolor{comment}{\ \ \ \ \ *}}
+\DoxyCodeLine{00055\ \textcolor{comment}{\ \ \ \ \ *\ -\/\ initialized\_\ and\ status\_\ during\ initialization}}
+\DoxyCodeLine{00056\ \textcolor{comment}{\ \ \ \ \ *\ -\/\ cameras\_\ after\ initialization}}
+\DoxyCodeLine{00057\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00058\ \ \ \ \ mutable\ \mbox{\hyperlink{classMutex}{Mutex}}\ mutex\_;}
+\DoxyCodeLine{00059\ \ \ \ \ std::vector<std::shared\_ptr<\mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}}>>\ cameras\_\ LIBCAMERA\_TSA\_GUARDED\_BY(mutex\_);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ConditionVariable}{ConditionVariable}}\ cv\_;}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{bool}\ initialized\_\ LIBCAMERA\_TSA\_GUARDED\_BY(mutex\_);}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{int}\ status\_\ LIBCAMERA\_TSA\_GUARDED\_BY(mutex\_);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ std::unique\_ptr<\mbox{\hyperlink{classlibcamera_1_1DeviceEnumerator}{DeviceEnumerator}}>\ enumerator\_;}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ std::unique\_ptr<\mbox{\hyperlink{classlibcamera_1_1IPAManager}{IPAManager}}>\ ipaManager\_;}
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ProcessManager}{ProcessManager}}\ processManager\_;}
+\DoxyCodeLine{00069\ \};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \}\ \textcolor{comment}{/*\ namespace\ libcamera\ */}}
+
+\end{DoxyCode}

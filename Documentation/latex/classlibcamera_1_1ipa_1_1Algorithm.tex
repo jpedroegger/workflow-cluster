@@ -1,0 +1,127 @@
+\doxysection{libcamera\+::ipa\+::Algorithm\texorpdfstring{$<$}{<} \+\_\+\+Module \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classlibcamera_1_1ipa_1_1Algorithm}{}\label{classlibcamera_1_1ipa_1_1Algorithm}\index{libcamera::ipa::Algorithm$<$ \_Module $>$@{libcamera::ipa::Algorithm$<$ \_Module $>$}}
+
+
+The base class for all IPA algorithms.  
+
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1ipa_1_1Algorithm_ac52491716c9cd932770dc1a02d7d9b25}\label{classlibcamera_1_1ipa_1_1Algorithm_ac52491716c9cd932770dc1a02d7d9b25} 
+using {\bfseries Module} = \+\_\+\+Module
+\begin{DoxyCompactList}\small\item\em The IPA module type for this class of algorithms. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Algorithm_a68ad78f4d948f8cebefaaae22b743687}{init}} (typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a2a12d05faa4f517f4dfcfa087063fd27}{Module\+::\+Context}} \&context, const \mbox{\hyperlink{classlibcamera_1_1YamlObject}{Yaml\+Object}} \&tuning\+Data)
+\begin{DoxyCompactList}\small\item\em Initialize the \doxylink{classlibcamera_1_1ipa_1_1Algorithm}{Algorithm} with tuning data. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Algorithm_a5e3cd461b46cdd1d366bf211f87d8f3d}{configure}} (typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a2a12d05faa4f517f4dfcfa087063fd27}{Module\+::\+Context}} \&context, const typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a7c0b7a42c526c07bafeca4018b38b8c9}{Module\+::\+Config}} \&config\+Info)
+\begin{DoxyCompactList}\small\item\em Configure the \doxylink{classlibcamera_1_1ipa_1_1Algorithm}{Algorithm} given an IPAConfig\+Info. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Algorithm_a307cf5dd6b48ccc1c772901c07e14afe}{queue\+Request}} (typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a2a12d05faa4f517f4dfcfa087063fd27}{Module\+::\+Context}} \&context, const uint32\+\_\+t frame, typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a5a1bf7efd7811fb9da8ff311aeef3b1c}{Module\+::\+Frame\+Context}} \&frame\+Context, const \mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} \&controls)
+\begin{DoxyCompactList}\small\item\em Provide control values to the algorithm. \end{DoxyCompactList}\item 
+\Hypertarget{classlibcamera_1_1ipa_1_1Algorithm_adb5e02af3c5966e4ceaaacf9c48c2a3b}\label{classlibcamera_1_1ipa_1_1Algorithm_adb5e02af3c5966e4ceaaacf9c48c2a3b} 
+virtual void {\bfseries prepare} (typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a2a12d05faa4f517f4dfcfa087063fd27}{Module\+::\+Context}} \&context, const uint32\+\_\+t frame, typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a5a1bf7efd7811fb9da8ff311aeef3b1c}{Module\+::\+Frame\+Context}} \&frame\+Context, typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a48ee62113eed1c9ad7a001887dc59674}{Module\+::\+Params}} \texorpdfstring{$\ast$}{*}params)
+\item 
+\Hypertarget{classlibcamera_1_1ipa_1_1Algorithm_a1b3c85b3838ce7c1780b46f09ad16e59}\label{classlibcamera_1_1ipa_1_1Algorithm_a1b3c85b3838ce7c1780b46f09ad16e59} 
+virtual void {\bfseries process} (typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a2a12d05faa4f517f4dfcfa087063fd27}{Module\+::\+Context}} \&context, const uint32\+\_\+t frame, typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a5a1bf7efd7811fb9da8ff311aeef3b1c}{Module\+::\+Frame\+Context}} \&frame\+Context, const typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_afdcea0695dc0eb1226d66442a5647a41}{Module\+::\+Stats}} \texorpdfstring{$\ast$}{*}stats, \mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} \&metadata)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename \+\_\+\+Module$>$\newline
+class libcamera\+::ipa\+::\+Algorithm$<$ \+\_\+\+Module $>$}
+The base class for all IPA algorithms. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em \doxylink{classlibcamera_1_1ipa_1_1Module}{Module}} & The IPA module type for this class of algorithms\\
+\hline
+\end{DoxyTemplParams}
+The \doxylink{classlibcamera_1_1ipa_1_1Algorithm}{Algorithm} class defines a standard interface for IPA algorithms compatible with the {\itshape \doxylink{classlibcamera_1_1ipa_1_1Module}{Module}}. By abstracting algorithms, it makes possible the implementation of generic code to manage algorithms regardless of their specific type.
+
+To specialize the \doxylink{classlibcamera_1_1ipa_1_1Algorithm}{Algorithm} class template, an IPA module shall specialize the \doxylink{classlibcamera_1_1ipa_1_1Module}{Module} class template with module-\/specific context and configuration types, and pass the specialized \doxylink{classlibcamera_1_1ipa_1_1Module}{Module} class as the {\itshape \doxylink{classlibcamera_1_1ipa_1_1Module}{Module}} template argument. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1ipa_1_1Algorithm_a5e3cd461b46cdd1d366bf211f87d8f3d}\label{classlibcamera_1_1ipa_1_1Algorithm_a5e3cd461b46cdd1d366bf211f87d8f3d} 
+\index{libcamera::ipa::Algorithm$<$ \_Module $>$@{libcamera::ipa::Algorithm$<$ \_Module $>$}!configure@{configure}}
+\index{configure@{configure}!libcamera::ipa::Algorithm$<$ \_Module $>$@{libcamera::ipa::Algorithm$<$ \_Module $>$}}
+\doxysubsubsection{\texorpdfstring{configure()}{configure()}}
+{\footnotesize\ttfamily template$<$typename \+\_\+\+Module $>$ \\
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Algorithm}{libcamera\+::ipa\+::\+Algorithm}}$<$ \+\_\+\+Module $>$\+::configure (\begin{DoxyParamCaption}\item[{typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a2a12d05faa4f517f4dfcfa087063fd27}{Module\+::\+Context}} \&}]{context,  }\item[{const typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a7c0b7a42c526c07bafeca4018b38b8c9}{Module\+::\+Config}} \&}]{config\+Info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Configure the \doxylink{classlibcamera_1_1ipa_1_1Algorithm}{Algorithm} given an IPAConfig\+Info. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em context} & The shared IPA context \\
+\hline
+\mbox{\texttt{ in}}  & {\em config\+Info} & The IPA configuration data, received from the pipeline handler\\
+\hline
+\end{DoxyParams}
+Algorithms may implement a configure operation to pre-\/calculate parameters prior to commencing streaming.
+
+Configuration state may be stored in the IPASession\+Configuration structure of the IPAContext.
+
+\begin{DoxyReturn}{Returns}
+0 if successful, an error code otherwise 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1Algorithm_a68ad78f4d948f8cebefaaae22b743687}\label{classlibcamera_1_1ipa_1_1Algorithm_a68ad78f4d948f8cebefaaae22b743687} 
+\index{libcamera::ipa::Algorithm$<$ \_Module $>$@{libcamera::ipa::Algorithm$<$ \_Module $>$}!init@{init}}
+\index{init@{init}!libcamera::ipa::Algorithm$<$ \_Module $>$@{libcamera::ipa::Algorithm$<$ \_Module $>$}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily template$<$typename \+\_\+\+Module $>$ \\
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Algorithm}{libcamera\+::ipa\+::\+Algorithm}}$<$ \+\_\+\+Module $>$\+::init (\begin{DoxyParamCaption}\item[{typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a2a12d05faa4f517f4dfcfa087063fd27}{Module\+::\+Context}} \&}]{context,  }\item[{const \mbox{\hyperlink{classlibcamera_1_1YamlObject}{Yaml\+Object}} \&}]{tuning\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Initialize the \doxylink{classlibcamera_1_1ipa_1_1Algorithm}{Algorithm} with tuning data. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em context} & The shared IPA context \\
+\hline
+\mbox{\texttt{ in}}  & {\em tuning\+Data} & The tuning data for the algorithm\\
+\hline
+\end{DoxyParams}
+This function is called once, when the IPA module is initialized, to initialize the algorithm. The {\itshape tuning\+Data} \doxylink{classlibcamera_1_1YamlObject}{Yaml\+Object} contains the tuning data for algorithm.
+
+\begin{DoxyReturn}{Returns}
+0 if successful, an error code otherwise 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1Algorithm_a307cf5dd6b48ccc1c772901c07e14afe}\label{classlibcamera_1_1ipa_1_1Algorithm_a307cf5dd6b48ccc1c772901c07e14afe} 
+\index{libcamera::ipa::Algorithm$<$ \_Module $>$@{libcamera::ipa::Algorithm$<$ \_Module $>$}!queueRequest@{queueRequest}}
+\index{queueRequest@{queueRequest}!libcamera::ipa::Algorithm$<$ \_Module $>$@{libcamera::ipa::Algorithm$<$ \_Module $>$}}
+\doxysubsubsection{\texorpdfstring{queueRequest()}{queueRequest()}}
+{\footnotesize\ttfamily template$<$typename \+\_\+\+Module $>$ \\
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Algorithm}{libcamera\+::ipa\+::\+Algorithm}}$<$ \+\_\+\+Module $>$\+::queue\+Request (\begin{DoxyParamCaption}\item[{typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a2a12d05faa4f517f4dfcfa087063fd27}{Module\+::\+Context}} \&}]{context,  }\item[{const uint32\+\_\+t}]{frame,  }\item[{typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a5a1bf7efd7811fb9da8ff311aeef3b1c}{Module\+::\+Frame\+Context}} \&}]{frame\+Context,  }\item[{const \mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} \&}]{controls }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Provide control values to the algorithm. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em context} & The shared IPA context \\
+\hline
+\mbox{\texttt{ in}}  & {\em frame} & The frame number to apply the control values \\
+\hline
+\mbox{\texttt{ in}}  & {\em frame\+Context} & The current frame\textquotesingle{}s context \\
+\hline
+\mbox{\texttt{ in}}  & {\em controls} & The list of user controls\\
+\hline
+\end{DoxyParams}
+This function is called for each request queued to the camera. It provides the controls stored in the request to the algorithm. The {\itshape frame} number is the \doxylink{classlibcamera_1_1Request}{Request} sequence number and identifies the desired corresponding frame to target for the controls to take effect.
+
+Algorithms shall read the applicable controls and store their value for later use during frame processing. 
+
+Reimplemented in \mbox{\hyperlink{classlibcamera_1_1ipa_1_1soft_1_1algorithms_1_1Lut_ac4af444e9dcaba3af2c59af42485ee17}{libcamera\+::ipa\+::soft\+::algorithms\+::\+Lut}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/ipa/libipa/\mbox{\hyperlink{libipa_2algorithm_8h}{algorithm.\+h}}\item 
+src/peripherals/camera/libcamera/src/ipa/libipa/algorithm.\+cpp\end{DoxyCompactItemize}

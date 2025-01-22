@@ -1,0 +1,232 @@
+\doxysection{libcamera\+::Signal\texorpdfstring{$<$}{<} Args \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classlibcamera_1_1Signal}{}\label{classlibcamera_1_1Signal}\index{libcamera::Signal$<$ Args $>$@{libcamera::Signal$<$ Args $>$}}
+
+
+Generic signal and slot communication mechanism.  
+
+
+Inheritance diagram for libcamera\+::Signal\texorpdfstring{$<$}{<} Args \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlibcamera_1_1Signal}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1Signal_af58bcd6143d038fdc692ff34274a5849}\label{classlibcamera_1_1Signal_af58bcd6143d038fdc692ff34274a5849} 
+{\footnotesize template$<$typename T , typename R , std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+base\+\_\+of$<$ \mbox{\hyperlink{classlibcamera_1_1Object}{Object}}, T $>$\+::value $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ }\\void {\bfseries connect} (T \texorpdfstring{$\ast$}{*}obj, R(T\+::\texorpdfstring{$\ast$}{*}func)(Args...), \mbox{\hyperlink{namespacelibcamera_ae2c8412791b9597d590a7d0b2c9e2919}{Connection\+Type}} type=\mbox{\hyperlink{namespacelibcamera_ae2c8412791b9597d590a7d0b2c9e2919a8d659af865521275ccdc99d8d233431f}{Connection\+Type\+Auto}})
+\item 
+{\footnotesize template$<$typename T , typename R , std\+::enable\+\_\+if\+\_\+t$<$!std\+::is\+\_\+base\+\_\+of$<$ \mbox{\hyperlink{classlibcamera_1_1Object}{Object}}, T $>$\+::value $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ }\\void \mbox{\hyperlink{classlibcamera_1_1Signal_a2c96582a926a36cd967aba4f719343f4}{connect}} (T \texorpdfstring{$\ast$}{*}obj, R(T\+::\texorpdfstring{$\ast$}{*}func)(Args...))
+\begin{DoxyCompactList}\small\item\em Connect the signal to a member function slot. \end{DoxyCompactList}\item 
+\Hypertarget{classlibcamera_1_1Signal_a43cd34b94f962c5c650a8d88528e0c63}\label{classlibcamera_1_1Signal_a43cd34b94f962c5c650a8d88528e0c63} 
+{\footnotesize template$<$typename T , typename Func , std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+base\+\_\+of$<$ \mbox{\hyperlink{classlibcamera_1_1Object}{Object}}, T $>$\+::value $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ }\\void {\bfseries connect} (T \texorpdfstring{$\ast$}{*}obj, Func func, \mbox{\hyperlink{namespacelibcamera_ae2c8412791b9597d590a7d0b2c9e2919}{Connection\+Type}} type=\mbox{\hyperlink{namespacelibcamera_ae2c8412791b9597d590a7d0b2c9e2919a8d659af865521275ccdc99d8d233431f}{Connection\+Type\+Auto}})
+\item 
+{\footnotesize template$<$typename T , typename Func , std\+::enable\+\_\+if\+\_\+t$<$!std\+::is\+\_\+base\+\_\+of$<$ \mbox{\hyperlink{classlibcamera_1_1Object}{Object}}, T $>$\+::value $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ }\\void \mbox{\hyperlink{classlibcamera_1_1Signal_a2bd0c9823d6ec818246d37daa50aa46e}{connect}} (T \texorpdfstring{$\ast$}{*}obj, Func func)
+\begin{DoxyCompactList}\small\item\em Connect the signal to a function object slot. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename R $>$ }\\void \mbox{\hyperlink{classlibcamera_1_1Signal_ab25fdec0fbcad0d9e40da7d3c3490533}{connect}} (R(\texorpdfstring{$\ast$}{*}func)(Args...))
+\begin{DoxyCompactList}\small\item\em Connect the signal to a static function slot. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1Signal_a82245d8d536e3fd8787fd6374236a6c3}{disconnect}} ()
+\begin{DoxyCompactList}\small\item\em Disconnect the signal from all slots. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classlibcamera_1_1Signal_a74ab03c0a1bcc3ea3abac7a18196a58b}{disconnect}} (T \texorpdfstring{$\ast$}{*}obj)
+\begin{DoxyCompactList}\small\item\em Disconnect the signal from all slots of the {\itshape object}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename R $>$ }\\void \mbox{\hyperlink{classlibcamera_1_1Signal_aca13a150ff1e0962ffb1f45f712df553}{disconnect}} (T \texorpdfstring{$\ast$}{*}obj, R(T\+::\texorpdfstring{$\ast$}{*}func)(Args...))
+\begin{DoxyCompactList}\small\item\em Disconnect the signal from the {\itshape object} slot member function {\itshape func}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename R $>$ }\\void \mbox{\hyperlink{classlibcamera_1_1Signal_a61e969624eb98bad84716fb9a7ce568b}{disconnect}} (R(\texorpdfstring{$\ast$}{*}func)(Args...))
+\begin{DoxyCompactList}\small\item\em Disconnect the signal from the slot static function {\itshape func}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1Signal_af43678536a3a1fa2592a093a1d4af59a}{emit}} (Args... args)
+\begin{DoxyCompactList}\small\item\em Emit the signal and call all connected slots. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1SignalBase}{libcamera\+::\+Signal\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries disconnect} (\mbox{\hyperlink{classlibcamera_1_1Object}{Object}} \texorpdfstring{$\ast$}{*}object)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Types inherited from \mbox{\hyperlink{classlibcamera_1_1SignalBase}{libcamera\+::\+Signal\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+using {\bfseries Slot\+List} = std\+::list$<$ \mbox{\hyperlink{classlibcamera_1_1BoundMethodBase}{Bound\+Method\+Base}} \texorpdfstring{$\ast$}{*} $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1SignalBase}{libcamera\+::\+Signal\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries connect} (\mbox{\hyperlink{classlibcamera_1_1BoundMethodBase}{Bound\+Method\+Base}} \texorpdfstring{$\ast$}{*}slot)
+\item 
+void {\bfseries disconnect} (std\+::function$<$ bool(Slot\+List\+::iterator \&)$>$ match)
+\item 
+Slot\+List {\bfseries slots} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename... Args$>$\newline
+class libcamera\+::\+Signal$<$ Args $>$}
+Generic signal and slot communication mechanism. 
+
+Signals and slots are a language construct aimed at communication between objects through the observer pattern without the need for boilerplate code. See \href{http://doc.qt.io/qt-6/signalsandslots.html}{\texttt{ http\+://doc.\+qt.\+io/qt-\/6/signalsandslots.\+html}} for more information.
+
+Signals model events that can be observed from objects unrelated to the event source. Slots are functions that are called in response to a signal. Signals can be connected to and disconnected from slots dynamically at runtime. When a signal is emitted, all connected slots are called sequentially in the order they have been connected.
+
+Signals are defined with zero, one or more typed parameters. They are emitted with a value for each of the parameters, and those values are passed to the connected slots.
+
+Slots are normal static or class member functions. In order to be connected to a signal, their signature must match the signal type (taking the same arguments as the signal and returning void).
+
+Connecting a signal to a slot results in the slot being called with the arguments passed to the \doxylink{classlibcamera_1_1Signal_af43678536a3a1fa2592a093a1d4af59a}{emit()} function when the signal is emitted. Multiple slots can be connected to the same signal, and multiple signals can connected to the same slot.
+
+When a slot belongs to an instance of the \doxylink{classlibcamera_1_1Object}{Object} class, the slot is called in the context of the thread that the object is bound to. If the signal is emitted from the same thread, the slot will be called synchronously, before \doxylink{classlibcamera_1_1Signal_af43678536a3a1fa2592a093a1d4af59a}{Signal\+::emit()} returns. If the signal is emitted from a different thread, the slot will be called asynchronously from the object\textquotesingle{}s thread\textquotesingle{}s event loop, after the \doxylink{classlibcamera_1_1Signal_af43678536a3a1fa2592a093a1d4af59a}{Signal\+::emit()} function returns, with a copy of the signal\textquotesingle{}s arguments. The emitter shall thus ensure that any pointer or reference passed through the signal will remain valid after the signal is emitted.
+
+Duplicate connections between a signal and a slot are not expected and use of the \doxylink{classlibcamera_1_1Object}{Object} class to manage signals will enforce this restriction. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1Signal_ab25fdec0fbcad0d9e40da7d3c3490533}\label{classlibcamera_1_1Signal_ab25fdec0fbcad0d9e40da7d3c3490533} 
+\index{libcamera::Signal$<$ Args $>$@{libcamera::Signal$<$ Args $>$}!connect@{connect}}
+\index{connect@{connect}!libcamera::Signal$<$ Args $>$@{libcamera::Signal$<$ Args $>$}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+template$<$typename R $>$ \\
+\mbox{\hyperlink{classlibcamera_1_1Signal}{libcamera\+::\+Signal}}$<$ Args $>$\+::connect (\begin{DoxyParamCaption}\item[{R(\texorpdfstring{$\ast$}{*})(Args...)}]{func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Connect the signal to a static function slot. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em func} & The slot static function\\
+\hline
+\end{DoxyParams}
+\textbackslash{}context This function is \textbackslash{}threadsafe. \Hypertarget{classlibcamera_1_1Signal_a2bd0c9823d6ec818246d37daa50aa46e}\label{classlibcamera_1_1Signal_a2bd0c9823d6ec818246d37daa50aa46e} 
+\index{libcamera::Signal$<$ Args $>$@{libcamera::Signal$<$ Args $>$}!connect@{connect}}
+\index{connect@{connect}!libcamera::Signal$<$ Args $>$@{libcamera::Signal$<$ Args $>$}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+template$<$typename T , typename Func , std\+::enable\+\_\+if\+\_\+t$<$!std\+::is\+\_\+base\+\_\+of$<$ \mbox{\hyperlink{classlibcamera_1_1Object}{Object}}, T $>$\+::value $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+\mbox{\hyperlink{classlibcamera_1_1Signal}{libcamera\+::\+Signal}}$<$ Args $>$\+::connect (\begin{DoxyParamCaption}\item[{T \texorpdfstring{$\ast$}{*}}]{object,  }\item[{Func}]{func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Connect the signal to a function object slot. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em object} & The slot object pointer \\
+\hline
+\mbox{\texttt{ in}}  & {\em func} & The function object\\
+\hline
+\end{DoxyParams}
+If the typename T inherits from \doxylink{classlibcamera_1_1Object}{Object}, the signal will be automatically disconnected from the {\itshape func} slot of {\itshape object} when {\itshape object} is destroyed. Otherwise the caller shall disconnect signals manually before destroying {\itshape object}.
+
+The function object is typically a lambda function, but may be any object that satisfies the Function\+Object named requirements. The types of the function object arguments shall match the types of the signal arguments.
+
+No matching \doxylink{classlibcamera_1_1Signal_a82245d8d536e3fd8787fd6374236a6c3}{disconnect()} function exist, as it wouldn\textquotesingle{}t be possible to pass to a \doxylink{classlibcamera_1_1Signal_a82245d8d536e3fd8787fd6374236a6c3}{disconnect()} function the same lambda that was passed to connect(). The connection created by this function can not be removed selectively if the signal is connected to multiple slots of the same receiver, but may be otherwise be removed using the \doxylink{classlibcamera_1_1Signal_a74ab03c0a1bcc3ea3abac7a18196a58b}{disconnect(\+T \texorpdfstring{$\ast$}{*}object)} function.
+
+\textbackslash{}context This function is \textbackslash{}threadsafe. \Hypertarget{classlibcamera_1_1Signal_a2c96582a926a36cd967aba4f719343f4}\label{classlibcamera_1_1Signal_a2c96582a926a36cd967aba4f719343f4} 
+\index{libcamera::Signal$<$ Args $>$@{libcamera::Signal$<$ Args $>$}!connect@{connect}}
+\index{connect@{connect}!libcamera::Signal$<$ Args $>$@{libcamera::Signal$<$ Args $>$}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+template$<$typename T , typename R , std\+::enable\+\_\+if\+\_\+t$<$!std\+::is\+\_\+base\+\_\+of$<$ \mbox{\hyperlink{classlibcamera_1_1Object}{Object}}, T $>$\+::value $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+\mbox{\hyperlink{classlibcamera_1_1Signal}{libcamera\+::\+Signal}}$<$ Args $>$\+::connect (\begin{DoxyParamCaption}\item[{T \texorpdfstring{$\ast$}{*}}]{object,  }\item[{R(T\+::\texorpdfstring{$\ast$}{*})(Args...)}]{func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Connect the signal to a member function slot. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em object} & The slot object pointer \\
+\hline
+\mbox{\texttt{ in}}  & {\em func} & The slot member function\\
+\hline
+\end{DoxyParams}
+If the typename T inherits from \doxylink{classlibcamera_1_1Object}{Object}, the signal will be automatically disconnected from the {\itshape func} slot of {\itshape object} when {\itshape object} is destroyed. Otherwise the caller shall disconnect signals manually before destroying {\itshape object}.
+
+\textbackslash{}context This function is \textbackslash{}threadsafe. \Hypertarget{classlibcamera_1_1Signal_a82245d8d536e3fd8787fd6374236a6c3}\label{classlibcamera_1_1Signal_a82245d8d536e3fd8787fd6374236a6c3} 
+\index{libcamera::Signal$<$ Args $>$@{libcamera::Signal$<$ Args $>$}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!libcamera::Signal$<$ Args $>$@{libcamera::Signal$<$ Args $>$}}
+\doxysubsubsection{\texorpdfstring{disconnect()}{disconnect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+\mbox{\hyperlink{classlibcamera_1_1Signal}{libcamera\+::\+Signal}}$<$ Args $>$\+::disconnect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Disconnect the signal from all slots. 
+
+\textbackslash{}context This function is \textbackslash{}threadsafe. \Hypertarget{classlibcamera_1_1Signal_a61e969624eb98bad84716fb9a7ce568b}\label{classlibcamera_1_1Signal_a61e969624eb98bad84716fb9a7ce568b} 
+\index{libcamera::Signal$<$ Args $>$@{libcamera::Signal$<$ Args $>$}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!libcamera::Signal$<$ Args $>$@{libcamera::Signal$<$ Args $>$}}
+\doxysubsubsection{\texorpdfstring{disconnect()}{disconnect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+template$<$typename R $>$ \\
+\mbox{\hyperlink{classlibcamera_1_1Signal}{libcamera\+::\+Signal}}$<$ Args $>$\+::disconnect (\begin{DoxyParamCaption}\item[{R(\texorpdfstring{$\ast$}{*})(Args...)}]{func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Disconnect the signal from the slot static function {\itshape func}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em func} & The slot static function to disconnect\\
+\hline
+\end{DoxyParams}
+\textbackslash{}context This function is \textbackslash{}threadsafe. \Hypertarget{classlibcamera_1_1Signal_a74ab03c0a1bcc3ea3abac7a18196a58b}\label{classlibcamera_1_1Signal_a74ab03c0a1bcc3ea3abac7a18196a58b} 
+\index{libcamera::Signal$<$ Args $>$@{libcamera::Signal$<$ Args $>$}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!libcamera::Signal$<$ Args $>$@{libcamera::Signal$<$ Args $>$}}
+\doxysubsubsection{\texorpdfstring{disconnect()}{disconnect()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+template$<$typename T $>$ \\
+\mbox{\hyperlink{classlibcamera_1_1Signal}{libcamera\+::\+Signal}}$<$ Args $>$\+::disconnect (\begin{DoxyParamCaption}\item[{T \texorpdfstring{$\ast$}{*}}]{object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Disconnect the signal from all slots of the {\itshape object}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em object} & The object pointer whose slots to disconnect\\
+\hline
+\end{DoxyParams}
+\textbackslash{}context This function is \textbackslash{}threadsafe. \Hypertarget{classlibcamera_1_1Signal_aca13a150ff1e0962ffb1f45f712df553}\label{classlibcamera_1_1Signal_aca13a150ff1e0962ffb1f45f712df553} 
+\index{libcamera::Signal$<$ Args $>$@{libcamera::Signal$<$ Args $>$}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!libcamera::Signal$<$ Args $>$@{libcamera::Signal$<$ Args $>$}}
+\doxysubsubsection{\texorpdfstring{disconnect()}{disconnect()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+template$<$typename T , typename R $>$ \\
+\mbox{\hyperlink{classlibcamera_1_1Signal}{libcamera\+::\+Signal}}$<$ Args $>$\+::disconnect (\begin{DoxyParamCaption}\item[{T \texorpdfstring{$\ast$}{*}}]{object,  }\item[{R(T\+::\texorpdfstring{$\ast$}{*})(Args...)}]{func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Disconnect the signal from the {\itshape object} slot member function {\itshape func}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em object} & The object pointer whose slots to disconnect \\
+\hline
+\mbox{\texttt{ in}}  & {\em func} & The slot member function to disconnect\\
+\hline
+\end{DoxyParams}
+\textbackslash{}context This function is \textbackslash{}threadsafe. \Hypertarget{classlibcamera_1_1Signal_af43678536a3a1fa2592a093a1d4af59a}\label{classlibcamera_1_1Signal_af43678536a3a1fa2592a093a1d4af59a} 
+\index{libcamera::Signal$<$ Args $>$@{libcamera::Signal$<$ Args $>$}!emit@{emit}}
+\index{emit@{emit}!libcamera::Signal$<$ Args $>$@{libcamera::Signal$<$ Args $>$}}
+\doxysubsubsection{\texorpdfstring{emit()}{emit()}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+\mbox{\hyperlink{classlibcamera_1_1Signal}{libcamera\+::\+Signal}}$<$ Args $>$\+::emit (\begin{DoxyParamCaption}\item[{Args...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Emit the signal and call all connected slots. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & The arguments passed to the connected slots\\
+\hline
+\end{DoxyParams}
+Emitting a signal calls all connected slots synchronously and sequentially in the order the slots have been connected. The arguments passed to the \doxylink{classlibcamera_1_1Signal_af43678536a3a1fa2592a093a1d4af59a}{emit()} function are passed to the slot functions unchanged. If a slot modifies one of the arguments (when passed by pointer or reference), the modification is thus visible to all subsequently called slots.
+
+This function is not \textbackslash{}threadsafe, but thread-\/safety is guaranteed against concurrent connect() and \doxylink{classlibcamera_1_1Signal_a82245d8d536e3fd8787fd6374236a6c3}{disconnect()} calls. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/base/\mbox{\hyperlink{object_8h}{object.\+h}}\item 
+src/peripherals/camera/libcamera/include/libcamera/base/\mbox{\hyperlink{signal_8h}{signal.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/base/signal.\+cpp\end{DoxyCompactItemize}

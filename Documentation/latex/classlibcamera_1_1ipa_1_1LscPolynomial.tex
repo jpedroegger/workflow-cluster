@@ -1,0 +1,116 @@
+\doxysection{libcamera\+::ipa\+::Lsc\+Polynomial Class Reference}
+\hypertarget{classlibcamera_1_1ipa_1_1LscPolynomial}{}\label{classlibcamera_1_1ipa_1_1LscPolynomial}\index{libcamera::ipa::LscPolynomial@{libcamera::ipa::LscPolynomial}}
+
+
+Class for handling even polynomials used in lens shading correction.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1LscPolynomial_a6612a3616761a93e4fbca387b86ec960}{Lsc\+Polynomial}} (double cx=0.\+0, double cy=0.\+0, double k0=0.\+0, double k1=0.\+0, double k2=0.\+0, double k3=0.\+0, double k4=0.\+0)
+\begin{DoxyCompactList}\small\item\em Construct a polynomial using the given coefficients. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classlibcamera_1_1ipa_1_1LscPolynomial_ae6a423f05aa3d4d8d4c046ffb20a3cdf}{sample\+At\+Normalized\+Pixel\+Pos}} (double x, double y) const
+\begin{DoxyCompactList}\small\item\em Sample the polynomial at the given normalized pixel position. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classlibcamera_1_1ipa_1_1LscPolynomial_a21b0b9987376f31602a176be915774df}{getM}} () const
+\begin{DoxyCompactList}\small\item\em Get the value m as described in the dng specification. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1ipa_1_1LscPolynomial_a064093131443d355f3637f3777dee22a}{set\+Reference\+Image\+Size}} (const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&size)
+\begin{DoxyCompactList}\small\item\em Set the reference image size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for handling even polynomials used in lens shading correction. 
+
+Shading artifacts of camera lenses can be modeled using even radial polynomials. This class implements a polynomial with 5 coefficients which follows the definition of the Fix\+Vignette\+Radial opcode in the Adobe DNG specification. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlibcamera_1_1ipa_1_1LscPolynomial_a6612a3616761a93e4fbca387b86ec960}\label{classlibcamera_1_1ipa_1_1LscPolynomial_a6612a3616761a93e4fbca387b86ec960} 
+\index{libcamera::ipa::LscPolynomial@{libcamera::ipa::LscPolynomial}!LscPolynomial@{LscPolynomial}}
+\index{LscPolynomial@{LscPolynomial}!libcamera::ipa::LscPolynomial@{libcamera::ipa::LscPolynomial}}
+\doxysubsubsection{\texorpdfstring{LscPolynomial()}{LscPolynomial()}}
+{\footnotesize\ttfamily libcamera\+::ipa\+::\+Lsc\+Polynomial\+::\+Lsc\+Polynomial (\begin{DoxyParamCaption}\item[{double}]{cx = {\ttfamily 0.0},  }\item[{double}]{cy = {\ttfamily 0.0},  }\item[{double}]{k0 = {\ttfamily 0.0},  }\item[{double}]{k1 = {\ttfamily 0.0},  }\item[{double}]{k2 = {\ttfamily 0.0},  }\item[{double}]{k3 = {\ttfamily 0.0},  }\item[{double}]{k4 = {\ttfamily 0.0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a polynomial using the given coefficients. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cx} & Center-\/x relative to the image in normalized coordinates (0..1) \\
+\hline
+{\em cy} & Center-\/y relative to the image in normalized coordinates (0..1) \\
+\hline
+{\em k0} & Coefficient of the polynomial \\
+\hline
+{\em k1} & Coefficient of the polynomial \\
+\hline
+{\em k2} & Coefficient of the polynomial \\
+\hline
+{\em k3} & Coefficient of the polynomial \\
+\hline
+{\em k4} & Coefficient of the polynomial \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1ipa_1_1LscPolynomial_a21b0b9987376f31602a176be915774df}\label{classlibcamera_1_1ipa_1_1LscPolynomial_a21b0b9987376f31602a176be915774df} 
+\index{libcamera::ipa::LscPolynomial@{libcamera::ipa::LscPolynomial}!getM@{getM}}
+\index{getM@{getM}!libcamera::ipa::LscPolynomial@{libcamera::ipa::LscPolynomial}}
+\doxysubsubsection{\texorpdfstring{getM()}{getM()}}
+{\footnotesize\ttfamily libcamera\+::ipa\+::\+Lsc\+Polynomial\+::getM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the value m as described in the dng specification. 
+
+Returns m according to dng spec. m represents the Euclidean distance (in pixels) from the optical center to the farthest pixel in the image.
+
+\begin{DoxyReturn}{Returns}
+The sampled value 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1LscPolynomial_ae6a423f05aa3d4d8d4c046ffb20a3cdf}\label{classlibcamera_1_1ipa_1_1LscPolynomial_ae6a423f05aa3d4d8d4c046ffb20a3cdf} 
+\index{libcamera::ipa::LscPolynomial@{libcamera::ipa::LscPolynomial}!sampleAtNormalizedPixelPos@{sampleAtNormalizedPixelPos}}
+\index{sampleAtNormalizedPixelPos@{sampleAtNormalizedPixelPos}!libcamera::ipa::LscPolynomial@{libcamera::ipa::LscPolynomial}}
+\doxysubsubsection{\texorpdfstring{sampleAtNormalizedPixelPos()}{sampleAtNormalizedPixelPos()}}
+{\footnotesize\ttfamily libcamera\+::ipa\+::\+Lsc\+Polynomial\+::sample\+At\+Normalized\+Pixel\+Pos (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sample the polynomial at the given normalized pixel position. 
+
+This functions samples the polynomial at the given pixel position divided by the value returned by \doxylink{classlibcamera_1_1ipa_1_1LscPolynomial_a21b0b9987376f31602a176be915774df}{get\+M()}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & x position in normalized coordinates \\
+\hline
+{\em y} & y position in normalized coordinates \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The sampled value 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1LscPolynomial_a064093131443d355f3637f3777dee22a}\label{classlibcamera_1_1ipa_1_1LscPolynomial_a064093131443d355f3637f3777dee22a} 
+\index{libcamera::ipa::LscPolynomial@{libcamera::ipa::LscPolynomial}!setReferenceImageSize@{setReferenceImageSize}}
+\index{setReferenceImageSize@{setReferenceImageSize}!libcamera::ipa::LscPolynomial@{libcamera::ipa::LscPolynomial}}
+\doxysubsubsection{\texorpdfstring{setReferenceImageSize()}{setReferenceImageSize()}}
+{\footnotesize\ttfamily libcamera\+::ipa\+::\+Lsc\+Polynomial\+::set\+Reference\+Image\+Size (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the reference image size. 
+
+Set the reference image size that is used for subsequent calls to \doxylink{classlibcamera_1_1ipa_1_1LscPolynomial_a21b0b9987376f31602a176be915774df}{get\+M()} and \doxylink{classlibcamera_1_1ipa_1_1LscPolynomial_ae6a423f05aa3d4d8d4c046ffb20a3cdf}{sample\+At\+Normalized\+Pixel\+Pos()}
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & The size of the reference image \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/ipa/libipa/\mbox{\hyperlink{lsc__polynomial_8h}{lsc\+\_\+polynomial.\+h}}\item 
+src/peripherals/camera/libcamera/src/ipa/libipa/lsc\+\_\+polynomial.\+cpp\end{DoxyCompactItemize}

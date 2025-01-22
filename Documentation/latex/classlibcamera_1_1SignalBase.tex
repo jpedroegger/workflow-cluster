@@ -1,0 +1,38 @@
+\doxysection{libcamera\+::Signal\+Base Class Reference}
+\hypertarget{classlibcamera_1_1SignalBase}{}\label{classlibcamera_1_1SignalBase}\index{libcamera::SignalBase@{libcamera::SignalBase}}
+Inheritance diagram for libcamera\+::Signal\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=9.790210cm]{classlibcamera_1_1SignalBase}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1SignalBase_a721e8f7c48485b71d333acb8a44ab1dc}\label{classlibcamera_1_1SignalBase_a721e8f7c48485b71d333acb8a44ab1dc} 
+void {\bfseries disconnect} (\mbox{\hyperlink{classlibcamera_1_1Object}{Object}} \texorpdfstring{$\ast$}{*}object)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1SignalBase_addb1f821b7514d286980442265d29bb1}\label{classlibcamera_1_1SignalBase_addb1f821b7514d286980442265d29bb1} 
+using {\bfseries Slot\+List} = std\+::list$<$ \mbox{\hyperlink{classlibcamera_1_1BoundMethodBase}{Bound\+Method\+Base}} \texorpdfstring{$\ast$}{*} $>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1SignalBase_a62699268497e1e294b63575b83481950}\label{classlibcamera_1_1SignalBase_a62699268497e1e294b63575b83481950} 
+void {\bfseries connect} (\mbox{\hyperlink{classlibcamera_1_1BoundMethodBase}{Bound\+Method\+Base}} \texorpdfstring{$\ast$}{*}slot)
+\item 
+\Hypertarget{classlibcamera_1_1SignalBase_aabea3848014086e659a62ef18feade9b}\label{classlibcamera_1_1SignalBase_aabea3848014086e659a62ef18feade9b} 
+void {\bfseries disconnect} (std\+::function$<$ bool(Slot\+List\+::iterator \&)$>$ match)
+\item 
+\Hypertarget{classlibcamera_1_1SignalBase_a6d1d37caa8eebd150d6e1df1cb6f76b8}\label{classlibcamera_1_1SignalBase_a6d1d37caa8eebd150d6e1df1cb6f76b8} 
+Slot\+List {\bfseries slots} ()
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/base/\mbox{\hyperlink{signal_8h}{signal.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/base/signal.\+cpp\end{DoxyCompactItemize}

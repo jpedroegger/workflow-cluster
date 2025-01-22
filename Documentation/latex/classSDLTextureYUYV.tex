@@ -1,0 +1,56 @@
+\doxysection{SDLTexture\+YUYV Class Reference}
+\hypertarget{classSDLTextureYUYV}{}\label{classSDLTextureYUYV}\index{SDLTextureYUYV@{SDLTextureYUYV}}
+Inheritance diagram for SDLTexture\+YUYV\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classSDLTextureYUYV}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classSDLTextureYUYV_a219c536240372c8e323932e789cb2443}\label{classSDLTextureYUYV_a219c536240372c8e323932e789cb2443} 
+{\bfseries SDLTexture\+YUYV} (const SDL\+\_\+\+Rect \&rect, unsigned int stride)
+\item 
+void \mbox{\hyperlink{classSDLTextureYUYV_a65fcea1e545ef726c81f06945e3a38e9}{update}} (const std\+::vector$<$ \mbox{\hyperlink{classlibcamera_1_1Span}{libcamera\+::\+Span}}$<$ const uint8\+\_\+t $>$ $>$ \&data) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classSDLTexture}{SDLTexture}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries SDLTexture} (const SDL\+\_\+\+Rect \&rect, uint32\+\_\+t pixel\+Format, const int stride)
+\item 
+int {\bfseries create} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer)
+\item 
+SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*} {\bfseries get} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classSDLTexture}{SDLTexture}}}
+\begin{DoxyCompactItemize}
+\item 
+SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*} {\bfseries ptr\+\_\+}
+\item 
+const SDL\+\_\+\+Rect {\bfseries rect\+\_\+}
+\item 
+const uint32\+\_\+t {\bfseries pixel\+Format\+\_\+}
+\item 
+const int {\bfseries stride\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSDLTextureYUYV_a65fcea1e545ef726c81f06945e3a38e9}\label{classSDLTextureYUYV_a65fcea1e545ef726c81f06945e3a38e9} 
+\index{SDLTextureYUYV@{SDLTextureYUYV}!update@{update}}
+\index{update@{update}!SDLTextureYUYV@{SDLTextureYUYV}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void SDLTexture\+YUYV\+::update (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classlibcamera_1_1Span}{libcamera\+::\+Span}}$<$ const uint8\+\_\+t $>$ $>$ \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classSDLTexture}{SDLTexture}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/apps/cam/sdl\+\_\+texture\+\_\+yuv.\+h\item 
+src/peripherals/camera/libcamera/src/apps/cam/sdl\+\_\+texture\+\_\+yuv.\+cpp\end{DoxyCompactItemize}

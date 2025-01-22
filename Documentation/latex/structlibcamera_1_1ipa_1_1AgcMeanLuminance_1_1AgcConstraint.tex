@@ -1,0 +1,63 @@
+\doxysection{libcamera\+::ipa\+::Agc\+Mean\+Luminance\+::Agc\+Constraint Struct Reference}
+\hypertarget{structlibcamera_1_1ipa_1_1AgcMeanLuminance_1_1AgcConstraint}{}\label{structlibcamera_1_1ipa_1_1AgcMeanLuminance_1_1AgcConstraint}\index{libcamera::ipa::AgcMeanLuminance::AgcConstraint@{libcamera::ipa::AgcMeanLuminance::AgcConstraint}}
+
+
+The boundaries and target for an Ae\+Constraint\+Mode constraint.  
+
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{structlibcamera_1_1ipa_1_1AgcMeanLuminance_1_1AgcConstraint_a784f23cb354934b0615e2dbc75578759}{Bound}} \{ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1AgcMeanLuminance_1_1AgcConstraint_a784f23cb354934b0615e2dbc75578759ab75fcdd2d72d9e000beab48622402d93}{Lower}} = 0
+, \mbox{\hyperlink{structlibcamera_1_1ipa_1_1AgcMeanLuminance_1_1AgcConstraint_a784f23cb354934b0615e2dbc75578759a19de5b94f7b83900d4b296d9fa491aec}{Upper}} = 1
+ \}
+\begin{DoxyCompactList}\small\item\em Specify whether the constraint defines a lower or upper bound. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structlibcamera_1_1ipa_1_1AgcMeanLuminance_1_1AgcConstraint_a9c9785cc5e190e74b987f23bc340e8f5}\label{structlibcamera_1_1ipa_1_1AgcMeanLuminance_1_1AgcConstraint_a9c9785cc5e190e74b987f23bc340e8f5} 
+\mbox{\hyperlink{structlibcamera_1_1ipa_1_1AgcMeanLuminance_1_1AgcConstraint_a784f23cb354934b0615e2dbc75578759}{Bound}} {\bfseries bound}
+\begin{DoxyCompactList}\small\item\em The type of constraint bound. \end{DoxyCompactList}\item 
+\Hypertarget{structlibcamera_1_1ipa_1_1AgcMeanLuminance_1_1AgcConstraint_a95b530a3f2976471ac000927552e4426}\label{structlibcamera_1_1ipa_1_1AgcMeanLuminance_1_1AgcConstraint_a95b530a3f2976471ac000927552e4426} 
+double {\bfseries q\+Lo}
+\begin{DoxyCompactList}\small\item\em The lower quantile to use for the constraint. \end{DoxyCompactList}\item 
+\Hypertarget{structlibcamera_1_1ipa_1_1AgcMeanLuminance_1_1AgcConstraint_a2c2d55f5375f87bac64c33fd9fe3d5a7}\label{structlibcamera_1_1ipa_1_1AgcMeanLuminance_1_1AgcConstraint_a2c2d55f5375f87bac64c33fd9fe3d5a7} 
+double {\bfseries q\+Hi}
+\begin{DoxyCompactList}\small\item\em The upper quantile to use for the constraint. \end{DoxyCompactList}\item 
+\Hypertarget{structlibcamera_1_1ipa_1_1AgcMeanLuminance_1_1AgcConstraint_ac0537ed89cd30457bea5d4b0439dfd69}\label{structlibcamera_1_1ipa_1_1AgcMeanLuminance_1_1AgcConstraint_ac0537ed89cd30457bea5d4b0439dfd69} 
+double {\bfseries y\+Target}
+\begin{DoxyCompactList}\small\item\em The luminance target for the constraint. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The boundaries and target for an Ae\+Constraint\+Mode constraint. 
+
+This structure describes an Ae\+Constraint\+Mode constraint for the purposes of this algorithm. These constraints are expressed as a pair of quantile boundaries for a histogram, along with a luminance target and a bounds-\/type. The algorithm uses the constraints by ensuring that the defined portion of a luminance histogram (I.\+E. lying between the two quantiles) is above or below the given luminance value. 
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{structlibcamera_1_1ipa_1_1AgcMeanLuminance_1_1AgcConstraint_a784f23cb354934b0615e2dbc75578759}\label{structlibcamera_1_1ipa_1_1AgcMeanLuminance_1_1AgcConstraint_a784f23cb354934b0615e2dbc75578759} 
+\index{libcamera::ipa::AgcMeanLuminance::AgcConstraint@{libcamera::ipa::AgcMeanLuminance::AgcConstraint}!Bound@{Bound}}
+\index{Bound@{Bound}!libcamera::ipa::AgcMeanLuminance::AgcConstraint@{libcamera::ipa::AgcMeanLuminance::AgcConstraint}}
+\doxysubsubsection{\texorpdfstring{Bound}{Bound}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{structlibcamera_1_1ipa_1_1AgcMeanLuminance_1_1AgcConstraint_a784f23cb354934b0615e2dbc75578759}{libcamera\+::ipa\+::\+Agc\+Mean\+Luminance\+::\+Agc\+Constraint\+::\+Bound}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Specify whether the constraint defines a lower or upper bound. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Lower@{Lower}!libcamera::ipa::AgcMeanLuminance::AgcConstraint@{libcamera::ipa::AgcMeanLuminance::AgcConstraint}}\index{libcamera::ipa::AgcMeanLuminance::AgcConstraint@{libcamera::ipa::AgcMeanLuminance::AgcConstraint}!Lower@{Lower}}}\Hypertarget{structlibcamera_1_1ipa_1_1AgcMeanLuminance_1_1AgcConstraint_a784f23cb354934b0615e2dbc75578759ab75fcdd2d72d9e000beab48622402d93}\label{structlibcamera_1_1ipa_1_1AgcMeanLuminance_1_1AgcConstraint_a784f23cb354934b0615e2dbc75578759ab75fcdd2d72d9e000beab48622402d93} 
+Lower&The constraint defines a lower bound. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Upper@{Upper}!libcamera::ipa::AgcMeanLuminance::AgcConstraint@{libcamera::ipa::AgcMeanLuminance::AgcConstraint}}\index{libcamera::ipa::AgcMeanLuminance::AgcConstraint@{libcamera::ipa::AgcMeanLuminance::AgcConstraint}!Upper@{Upper}}}\Hypertarget{structlibcamera_1_1ipa_1_1AgcMeanLuminance_1_1AgcConstraint_a784f23cb354934b0615e2dbc75578759a19de5b94f7b83900d4b296d9fa491aec}\label{structlibcamera_1_1ipa_1_1AgcMeanLuminance_1_1AgcConstraint_a784f23cb354934b0615e2dbc75578759a19de5b94f7b83900d4b296d9fa491aec} 
+Upper&The constraint defines an upper bound. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/ipa/libipa/\mbox{\hyperlink{agc__mean__luminance_8h}{agc\+\_\+mean\+\_\+luminance.\+h}}\item 
+src/peripherals/camera/libcamera/src/ipa/libipa/agc\+\_\+mean\+\_\+luminance.\+cpp\end{DoxyCompactItemize}

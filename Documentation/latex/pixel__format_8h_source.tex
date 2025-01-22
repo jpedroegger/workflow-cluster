@@ -1,0 +1,56 @@
+\doxysection{pixel\+\_\+format.\+h}
+\hypertarget{pixel__format_8h_source}{}\label{pixel__format_8h_source}\index{src/peripherals/camera/libcamera/include/libcamera/pixel\_format.h@{src/peripherals/camera/libcamera/include/libcamera/pixel\_format.h}}
+\mbox{\hyperlink{pixel__format_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2019,\ Google\ Inc.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ libcamera\ Pixel\ Format}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <ostream>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacelibcamera}{libcamera}}\ \{}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1PixelFormat}{PixelFormat}}}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{classlibcamera_1_1PixelFormat_a43fb76ceab1968a7e5f30a1850187d71}{PixelFormat}}()}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ :\ fourcc\_(0),\ modifier\_(0)}
+\DoxyCodeLine{00021\ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{explicit}\ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{classlibcamera_1_1PixelFormat_a2c2f0ca78585a130d293aac230e82ca2}{PixelFormat}}(uint32\_t\ \mbox{\hyperlink{classlibcamera_1_1PixelFormat_ad2a53a4a70756f31280d386550de5f05}{fourcc}},\ uint64\_t\ \mbox{\hyperlink{classlibcamera_1_1PixelFormat_a07930c4dd453825daaf584f6de1ed5b2}{modifier}}\ =\ 0)}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ :\ fourcc\_(\mbox{\hyperlink{classlibcamera_1_1PixelFormat_ad2a53a4a70756f31280d386550de5f05}{fourcc}}),\ modifier\_(\mbox{\hyperlink{classlibcamera_1_1PixelFormat_a07930c4dd453825daaf584f6de1ed5b2}{modifier}})}
+\DoxyCodeLine{00026\ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classlibcamera_1_1PixelFormat_ac110b603c5c6b15306a13a76b744337f}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1PixelFormat}{PixelFormat}}\ \&other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classlibcamera_1_1PixelFormat_acd41b50346f5fae8dfefbe8dfe3f4b0f}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1PixelFormat}{PixelFormat}}\ \&other)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ !(*\textcolor{keyword}{this}\ ==\ other);\ \}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classlibcamera_1_1PixelFormat_a11480adadc60214d5628ecbd8dae1a00}{operator<}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1PixelFormat}{PixelFormat}}\ \&other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classlibcamera_1_1PixelFormat_ac17dd80cd0de120fbab4b2cf47abcf5f}{isValid}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ fourcc\_\ !=\ 0;\ \}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{operator}\ uint32\_t()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ fourcc\_;\ \}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{constexpr}\ uint32\_t\ \mbox{\hyperlink{classlibcamera_1_1PixelFormat_ad2a53a4a70756f31280d386550de5f05}{fourcc}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ fourcc\_;\ \}}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{constexpr}\ uint64\_t\ \mbox{\hyperlink{classlibcamera_1_1PixelFormat_a07930c4dd453825daaf584f6de1ed5b2}{modifier}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ modifier\_;\ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ std::string\ \mbox{\hyperlink{classlibcamera_1_1PixelFormat_afcd8a5ba12160c8ccedf6a75cbf90628}{toString}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classlibcamera_1_1PixelFormat}{PixelFormat}}\ \mbox{\hyperlink{classlibcamera_1_1PixelFormat_a39a0a637e77fa8f9f86fad3e0c5771f6}{fromString}}(\textcolor{keyword}{const}\ std::string\ \&name);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00044\ \ \ \ \ uint32\_t\ fourcc\_;}
+\DoxyCodeLine{00045\ \ \ \ \ uint64\_t\ modifier\_;}
+\DoxyCodeLine{00046\ \};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ std::ostream\ \&operator<<(std::ostream\ \&out,\ \textcolor{keyword}{const}\ PixelFormat\ \&f);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \}\ \textcolor{comment}{/*\ namespace\ libcamera\ */}}
+
+\end{DoxyCode}

@@ -1,0 +1,70 @@
+\doxysection{camera3\+\_\+callback\+\_\+ops Struct Reference}
+\hypertarget{structcamera3__callback__ops}{}\label{structcamera3__callback__ops}\index{camera3\_callback\_ops@{camera3\_callback\_ops}}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structcamera3__callback__ops_a987cbb09119c45af6f5dad24ad813704}{process\+\_\+capture\+\_\+result}} )(const struct \mbox{\hyperlink{structcamera3__callback__ops}{camera3\+\_\+callback\+\_\+ops}} \texorpdfstring{$\ast$}{*}, const \mbox{\hyperlink{structcamera3__capture__result}{camera3\+\_\+capture\+\_\+result\+\_\+t}} \texorpdfstring{$\ast$}{*}result)
+\item 
+void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structcamera3__callback__ops_a6b866f7b468e677ce586580fab546768}{notify}} )(const struct \mbox{\hyperlink{structcamera3__callback__ops}{camera3\+\_\+callback\+\_\+ops}} \texorpdfstring{$\ast$}{*}, const \mbox{\hyperlink{structcamera3__notify__msg}{camera3\+\_\+notify\+\_\+msg\+\_\+t}} \texorpdfstring{$\ast$}{*}msg)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structcamera3__callback__ops_a6b866f7b468e677ce586580fab546768}\label{structcamera3__callback__ops_a6b866f7b468e677ce586580fab546768} 
+\index{camera3\_callback\_ops@{camera3\_callback\_ops}!notify@{notify}}
+\index{notify@{notify}!camera3\_callback\_ops@{camera3\_callback\_ops}}
+\doxysubsubsection{\texorpdfstring{notify}{notify}}
+{\footnotesize\ttfamily void(\texorpdfstring{$\ast$}{*} camera3\+\_\+callback\+\_\+ops\+::notify) (const struct \mbox{\hyperlink{structcamera3__callback__ops}{camera3\+\_\+callback\+\_\+ops}} \texorpdfstring{$\ast$}{*}, const \mbox{\hyperlink{structcamera3__notify__msg}{camera3\+\_\+notify\+\_\+msg\+\_\+t}} \texorpdfstring{$\ast$}{*}msg)}
+
+notify\+:
+
+Asynchronous notification callback from the HAL, fired for various reasons. Only for information independent of frame capture, or that require specific timing. The ownership of the message structure remains with the HAL, and the msg only needs to be valid for the duration of this call.
+
+Multiple threads may call \doxylink{structcamera3__callback__ops_a6b866f7b468e677ce586580fab546768}{notify()} simultaneously.
+
+\texorpdfstring{$<$}{<}= CAMERA\+\_\+\+DEVICE\+\_\+\+API\+\_\+\+VERSION\+\_\+3\+\_\+1\+:
+
+The notification for the start of exposure for a given request must be sent by the HAL before the first call to \doxylink{structcamera3__callback__ops_a987cbb09119c45af6f5dad24ad813704}{process\+\_\+capture\+\_\+result()} for that request is made.
+
+\texorpdfstring{$>$}{>}= CAMERA\+\_\+\+DEVICE\+\_\+\+API\+\_\+\+VERSION\+\_\+3\+\_\+2\+:
+
+Buffers delivered to the framework will not be dispatched to the application layer until a start of exposure timestamp (or input image\textquotesingle{}s start of exposure timestamp for a reprocess request) has been received via a SHUTTER \doxylink{structcamera3__callback__ops_a6b866f7b468e677ce586580fab546768}{notify()} call. It is highly recommended to dispatch this call as early as possible.
+
+\DoxyHorRuler{0}
+ Performance requirements\+:
+
+This is a non-\/blocking call. The framework will return this call in 5ms. \Hypertarget{structcamera3__callback__ops_a987cbb09119c45af6f5dad24ad813704}\label{structcamera3__callback__ops_a987cbb09119c45af6f5dad24ad813704} 
+\index{camera3\_callback\_ops@{camera3\_callback\_ops}!process\_capture\_result@{process\_capture\_result}}
+\index{process\_capture\_result@{process\_capture\_result}!camera3\_callback\_ops@{camera3\_callback\_ops}}
+\doxysubsubsection{\texorpdfstring{process\_capture\_result}{process\_capture\_result}}
+{\footnotesize\ttfamily void(\texorpdfstring{$\ast$}{*} camera3\+\_\+callback\+\_\+ops\+::process\+\_\+capture\+\_\+result) (const struct \mbox{\hyperlink{structcamera3__callback__ops}{camera3\+\_\+callback\+\_\+ops}} \texorpdfstring{$\ast$}{*}, const \mbox{\hyperlink{structcamera3__capture__result}{camera3\+\_\+capture\+\_\+result\+\_\+t}} \texorpdfstring{$\ast$}{*}result)}
+
+process\+\_\+capture\+\_\+result\+:
+
+Send results from a completed capture to the framework. \doxylink{structcamera3__callback__ops_a987cbb09119c45af6f5dad24ad813704}{process\+\_\+capture\+\_\+result()} may be invoked multiple times by the HAL in response to a single capture request. This allows, for example, the metadata and low-\/resolution buffers to be returned in one call, and post-\/processed JPEG buffers in a later call, once it is available. Each call must include the frame number of the request it is returning metadata or buffers for.
+
+A component (buffer or metadata) of the complete result may only be included in one process\+\_\+capture\+\_\+result call. A buffer for each stream, and the result metadata, must be returned by the HAL for each request in one of the process\+\_\+capture\+\_\+result calls, even in case of errors producing some of the output. A call to \doxylink{structcamera3__callback__ops_a987cbb09119c45af6f5dad24ad813704}{process\+\_\+capture\+\_\+result()} with neither output buffers or result metadata is not allowed.
+
+The order of returning metadata and buffers for a single result does not matter, but buffers for a given stream must be returned in FIFO order. So the buffer for request 5 for stream A must always be returned before the buffer for request 6 for stream A. This also applies to the result metadata; the metadata for request 5 must be returned before the metadata for request 6.
+
+However, different streams are independent of each other, so it is acceptable and expected that the buffer for request 5 for stream A may be returned after the buffer for request 6 for stream B is. And it is acceptable that the result metadata for request 6 for stream B is returned before the buffer for request 5 for stream A is.
+
+The HAL retains ownership of result structure, which only needs to be valid to access during this call. The framework will copy whatever it needs before this call returns.
+
+The output buffers do not need to be filled yet; the framework will wait on the stream buffer release sync fence before reading the buffer data. Therefore, this method should be called by the HAL as soon as possible, even if some or all of the output buffers are still in being filled. The HAL must include valid release sync fences into each output\+\_\+buffers stream buffer entry, or -\/1 if that stream buffer is already filled.
+
+If the result buffer cannot be constructed for a request, the HAL should return an empty metadata buffer, but still provide the output buffers and their sync fences. In addition, \doxylink{structcamera3__callback__ops_a6b866f7b468e677ce586580fab546768}{notify()} must be called with an ERROR\+\_\+\+RESULT message.
+
+If an output buffer cannot be filled, its status field must be set to STATUS\+\_\+\+ERROR. In addition, \doxylink{structcamera3__callback__ops_a6b866f7b468e677ce586580fab546768}{notify()} must be called with a ERROR\+\_\+\+BUFFER message.
+
+If the entire capture has failed, then this method still needs to be called to return the output buffers to the framework. All the buffer statuses should be STATUS\+\_\+\+ERROR, and the result metadata should be an empty buffer. In addition, \doxylink{structcamera3__callback__ops_a6b866f7b468e677ce586580fab546768}{notify()} must be called with a ERROR\+\_\+\+REQUEST message. In this case, individual ERROR\+\_\+\+RESULT/\+ERROR\+\_\+\+BUFFER messages should not be sent.
+
+Performance requirements\+:
+
+This is a non-\/blocking call. The framework will return this call in 5ms.
+
+The pipeline latency (see S7 for definition) should be less than or equal to 4 frame intervals, and must be less than or equal to 8 frame intervals. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/android/hardware/libhardware/include/hardware/camera3.\+h\end{DoxyCompactItemize}

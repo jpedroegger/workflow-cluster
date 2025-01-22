@@ -1,0 +1,34 @@
+\doxysection{v4l2\+\_\+subdev\+\_\+crop Struct Reference}
+\hypertarget{structv4l2__subdev__crop}{}\label{structv4l2__subdev__crop}\index{v4l2\_subdev\_crop@{v4l2\_subdev\_crop}}
+
+
+{\ttfamily \#include $<$v4l2-\/subdev.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structv4l2__subdev__crop_a411630e1befd6f32d9547f031eca79b2}\label{structv4l2__subdev__crop_a411630e1befd6f32d9547f031eca79b2} 
+\+\_\+\+\_\+u32 {\bfseries which}
+\item 
+\Hypertarget{structv4l2__subdev__crop_ad616dd1f5c16181a99ab01dedf03bd08}\label{structv4l2__subdev__crop_ad616dd1f5c16181a99ab01dedf03bd08} 
+\+\_\+\+\_\+u32 {\bfseries pad}
+\item 
+\Hypertarget{structv4l2__subdev__crop_aeec28ce49b644b1d9ee815d0d0137f51}\label{structv4l2__subdev__crop_aeec28ce49b644b1d9ee815d0d0137f51} 
+struct \mbox{\hyperlink{structv4l2__rect}{v4l2\+\_\+rect}} {\bfseries rect}
+\item 
+\Hypertarget{structv4l2__subdev__crop_ae623ce2d75a4b6e4c484e23e8e96e859}\label{structv4l2__subdev__crop_ae623ce2d75a4b6e4c484e23e8e96e859} 
+\+\_\+\+\_\+u32 {\bfseries stream}
+\item 
+\Hypertarget{structv4l2__subdev__crop_a511fb9848a059496ea036f9d0dc1fe64}\label{structv4l2__subdev__crop_a511fb9848a059496ea036f9d0dc1fe64} 
+\+\_\+\+\_\+u32 {\bfseries reserved} \mbox{[}7\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structv4l2__subdev__crop}{v4l2\+\_\+subdev\+\_\+crop} -\/ Pad-\/level crop settings @which\+: format type (from enum v4l2\+\_\+subdev\+\_\+format\+\_\+whence) @pad\+: pad number, as reported by the media API @rect\+: pad crop rectangle boundaries @stream\+: stream number, defined in subdev routing @reserved\+: drivers and applications must zero this array
+
+The subdev crop API is an obsolete interface and may be removed in the future. It is superseded by the selection API. No new extensions to this structure will be accepted. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/v4l2-\/subdev.\+h\end{DoxyCompactItemize}

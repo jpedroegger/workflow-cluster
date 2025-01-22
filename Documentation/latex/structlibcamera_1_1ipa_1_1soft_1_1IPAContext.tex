@@ -1,0 +1,37 @@
+\doxysection{libcamera\+::ipa\+::soft\+::IPAContext Struct Reference}
+\hypertarget{structlibcamera_1_1ipa_1_1soft_1_1IPAContext}{}\label{structlibcamera_1_1ipa_1_1soft_1_1IPAContext}\index{libcamera::ipa::soft::IPAContext@{libcamera::ipa::soft::IPAContext}}
+
+
+Global IPA context data shared between all algorithms.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structlibcamera_1_1ipa_1_1soft_1_1IPAContext_af2060654508d09144491cab30e4a6aa4}\label{structlibcamera_1_1ipa_1_1soft_1_1IPAContext_af2060654508d09144491cab30e4a6aa4} 
+{\bfseries IPAContext} (unsigned int frame\+Context\+Size)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structlibcamera_1_1ipa_1_1soft_1_1IPAContext_a6ad114d20d6d27860a8e14706593efa9}\label{structlibcamera_1_1ipa_1_1soft_1_1IPAContext_a6ad114d20d6d27860a8e14706593efa9} 
+\mbox{\hyperlink{structlibcamera_1_1ipa_1_1soft_1_1IPASessionConfiguration}{IPASession\+Configuration}} {\bfseries configuration}
+\begin{DoxyCompactList}\small\item\em The IPA session configuration, immutable during the session. \end{DoxyCompactList}\item 
+\Hypertarget{structlibcamera_1_1ipa_1_1soft_1_1IPAContext_a38acddb9bcaa40a868c05341633704e4}\label{structlibcamera_1_1ipa_1_1soft_1_1IPAContext_a38acddb9bcaa40a868c05341633704e4} 
+\mbox{\hyperlink{structlibcamera_1_1ipa_1_1soft_1_1IPAActiveState}{IPAActive\+State}} {\bfseries active\+State}
+\begin{DoxyCompactList}\small\item\em The current state of IPA algorithms. \end{DoxyCompactList}\item 
+\Hypertarget{structlibcamera_1_1ipa_1_1soft_1_1IPAContext_a5730fade1de22a59e128f300fde22c14}\label{structlibcamera_1_1ipa_1_1soft_1_1IPAContext_a5730fade1de22a59e128f300fde22c14} 
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1FCQueue}{FCQueue}}$<$ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1soft_1_1IPAFrameContext}{IPAFrame\+Context}} $>$ {\bfseries frame\+Contexts}
+\begin{DoxyCompactList}\small\item\em Ring buffer of the IPAFrame\+Context(s) \end{DoxyCompactList}\item 
+\Hypertarget{structlibcamera_1_1ipa_1_1soft_1_1IPAContext_a3fa62fe7d93068ee89d0851168e39456}\label{structlibcamera_1_1ipa_1_1soft_1_1IPAContext_a3fa62fe7d93068ee89d0851168e39456} 
+\mbox{\hyperlink{classlibcamera_1_1ControlInfoMap_a737e0a528fd58dd5d4f976633322b0fb}{Control\+Info\+Map\+::\+Map}} {\bfseries ctrl\+Map}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Global IPA context data shared between all algorithms. 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/ipa/simple/\mbox{\hyperlink{simple_2ipa__context_8h}{ipa\+\_\+context.\+h}}\item 
+src/peripherals/camera/libcamera/src/ipa/simple/ipa\+\_\+context.\+cpp\end{DoxyCompactItemize}

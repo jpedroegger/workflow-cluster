@@ -1,0 +1,161 @@
+\doxysection{md\+\_\+parser.\+h}
+\hypertarget{md__parser_8h_source}{}\label{md__parser_8h_source}\index{src/peripherals/camera/libcamera/src/ipa/rpi/cam\_helper/md\_parser.h@{src/peripherals/camera/libcamera/src/ipa/rpi/cam\_helper/md\_parser.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ BSD-\/2-\/Clause\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2019,\ Raspberry\ Pi\ Ltd}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ image\ sensor\ metadata\ parser\ interface}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <initializer\_list>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <libcamera/base/span.h>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ Camera\ metadata\ parser\ class.\ Usage\ as\ shown\ below.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ Setup:}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ Usually\ the\ metadata\ parser\ will\ be\ made\ as\ part\ of\ the\ CamHelper\ class\ so}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ application\ code\ doesn't\ have\ to\ worry\ which\ kind\ to\ instantiate.\ But\ for}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ the\ sake\ of\ example\ let's\ suppose\ we're\ parsing\ imx219\ metadata.}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ MdParser\ *parser\ =\ new\ MdParserSmia(\{\ expHiReg,\ expLoReg,\ gainReg\ \});}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ parser-\/>SetBitsPerPixel(bpp);}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ parser-\/>SetLineLengthBytes(pitch);}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ parser-\/>SetNumLines(2);}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ *\ Note\ 1:\ if\ you\ don't\ know\ how\ many\ lines\ there\ are,\ the\ size\ of\ the\ input}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ *\ buffer\ is\ used\ as\ a\ limit\ instead.}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ *\ Note\ 2:\ if\ you\ don't\ know\ the\ line\ length,\ you\ can\ leave\ the\ line\ length\ unset}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ *\ (or\ set\ to\ zero)\ and\ the\ parser\ will\ hunt\ for\ the\ line\ start\ instead.}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ *\ Then\ on\ every\ frame:}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ *\ RegisterMap\ registers;}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ *\ if\ (parser-\/>Parse(buffer,\ registers)\ !=\ MdParser::OK)}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ *\ \ \ \ \ much\ badness;}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ *\ Metadata\ metadata;}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ *\ CamHelper::PopulateMetadata(registers,\ metadata);}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ *\ (Note\ that\ the\ CamHelper\ class\ converts\ to/from\ exposure\ lines\ and\ time,}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ *\ and\ gain\_code\ /\ actual\ gain.)}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ *\ If\ you\ suspect\ your\ embedded\ data\ may\ have\ changed\ its\ layout,\ change\ any\ line}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ *\ lengths,\ number\ of\ lines,\ bits\ per\ pixel\ etc.\ that\ are\ different,\ and}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ *\ then:}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00051\ \textcolor{comment}{\ *\ parser-\/>Reset();}}
+\DoxyCodeLine{00052\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00053\ \textcolor{comment}{\ *\ before\ calling\ Parse\ again.}}
+\DoxyCodeLine{00054\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{namespace\ }RPiController\ \{}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{comment}{/*\ Abstract\ base\ class\ from\ which\ other\ metadata\ parsers\ are\ derived.\ */}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRPiController_1_1MdParser}{MdParser}}}
+\DoxyCodeLine{00061\ \{}
+\DoxyCodeLine{00062\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{using\ }RegisterMap\ =\ std::map<uint32\_t,\ uint32\_t>;}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00066\ \textcolor{comment}{\ \ \ \ \ *\ Parser\ status\ codes:}}
+\DoxyCodeLine{00067\ \textcolor{comment}{\ \ \ \ \ *\ OK\ \ \ \ \ \ \ -\/\ success}}
+\DoxyCodeLine{00068\ \textcolor{comment}{\ \ \ \ \ *\ NOTFOUND\ -\/\ value\ such\ as\ exposure\ or\ gain\ was\ not\ found}}
+\DoxyCodeLine{00069\ \textcolor{comment}{\ \ \ \ \ *\ ERROR\ \ \ \ -\/\ all\ other\ errors}}
+\DoxyCodeLine{00070\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{enum}\ Status\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ OK\ =\ 0,}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ NOTFOUND\ =\ 1,}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ ERROR\ =\ 2}
+\DoxyCodeLine{00075\ \ \ \ \ \};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{classRPiController_1_1MdParser}{MdParser}}()}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ :\ reset\_(\textcolor{keyword}{true}),\ bitsPerPixel\_(0),\ numLines\_(0),\ lineLengthBytes\_(0)}
+\DoxyCodeLine{00079\ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classRPiController_1_1MdParser}{\string~MdParser}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ reset()}
+\DoxyCodeLine{00085\ \ \ \ \ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ reset\_\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00087\ \ \ \ \ \}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{void}\ setBitsPerPixel(\textcolor{keywordtype}{int}\ bpp)}
+\DoxyCodeLine{00090\ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ bitsPerPixel\_\ =\ bpp;}
+\DoxyCodeLine{00092\ \ \ \ \ \}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{void}\ setNumLines(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ numLines)}
+\DoxyCodeLine{00095\ \ \ \ \ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ numLines\_\ =\ numLines;}
+\DoxyCodeLine{00097\ \ \ \ \ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{void}\ setLineLengthBytes(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ numBytes)}
+\DoxyCodeLine{00100\ \ \ \ \ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ lineLengthBytes\_\ =\ numBytes;}
+\DoxyCodeLine{00102\ \ \ \ \ \}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{virtual}\ Status\ parse(\mbox{\hyperlink{classlibcamera_1_1Span}{libcamera::Span<const\ uint8\_t>}}\ buffer,}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RegisterMap\ \&registers)\ =\ 0;}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{bool}\ reset\_;}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{int}\ bitsPerPixel\_;}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ numLines\_;}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ lineLengthBytes\_;}
+\DoxyCodeLine{00112\ \};}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00115\ \textcolor{comment}{\ *\ This\ isn't\ a\ full\ implementation\ of\ a\ metadata\ parser\ for\ SMIA\ sensors,}}
+\DoxyCodeLine{00116\ \textcolor{comment}{\ *\ however,\ it\ does\ provide\ the\ findRegs\ function\ which\ will\ prove\ useful\ and}}
+\DoxyCodeLine{00117\ \textcolor{comment}{\ *\ make\ it\ easier\ to\ implement\ parsers\ for\ other\ SMIA-\/like\ sensors\ (see}}
+\DoxyCodeLine{00118\ \textcolor{comment}{\ *\ md\_parser\_imx219.cpp\ for\ an\ example).}}
+\DoxyCodeLine{00119\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRPiController_1_1MdParserSmia}{MdParserSmia}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classRPiController_1_1MdParser}{MdParser}}}
+\DoxyCodeLine{00122\ \{}
+\DoxyCodeLine{00123\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00124\ \ \ \ \ \mbox{\hyperlink{classRPiController_1_1MdParserSmia}{MdParserSmia}}(std::initializer\_list<uint32\_t>\ registerList);}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ MdParser::Status\ parse(\mbox{\hyperlink{classlibcamera_1_1Span}{libcamera::Span<const\ uint8\_t>}}\ buffer,}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RegisterMap\ \&registers)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{comment}{/*\ Maps\ register\ address\ to\ offset\ in\ the\ buffer.\ */}}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keyword}{using\ }OffsetMap\ =\ std::map<uint32\_t,\ std::optional<uint32\_t>>;}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00134\ \textcolor{comment}{\ \ \ \ \ *\ Note\ that\ error\ codes\ >\ 0\ are\ regarded\ as\ non-\/fatal;\ codes\ <\ 0}}
+\DoxyCodeLine{00135\ \textcolor{comment}{\ \ \ \ \ *\ indicate\ a\ bad\ data\ buffer.\ Status\ codes\ are:}}
+\DoxyCodeLine{00136\ \textcolor{comment}{\ \ \ \ \ *\ ParseOk\ \ \ \ \ -\/\ found\ all\ registers,\ much\ happiness}}
+\DoxyCodeLine{00137\ \textcolor{comment}{\ \ \ \ \ *\ MissingRegs\ -\/\ some\ registers\ found;\ should\ this\ be\ a\ hard\ error?}}
+\DoxyCodeLine{00138\ \textcolor{comment}{\ \ \ \ \ *\ The\ remaining\ codes\ are\ all\ hard\ errors.}}
+\DoxyCodeLine{00139\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keyword}{enum}\ ParseStatus\ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ ParseOk\ \ \ \ \ \ =\ \ 0,}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ MissingRegs\ \ =\ \ 1,}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ NoLineStart\ \ =\ -\/1,}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ IllegalTag\ \ \ =\ -\/2,}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ BadDummy\ \ \ \ \ =\ -\/3,}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ BadLineEnd\ \ \ =\ -\/4,}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ BadPadding\ \ \ =\ -\/5}
+\DoxyCodeLine{00148\ \ \ \ \ \};}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \ \ ParseStatus\ findRegs(\mbox{\hyperlink{classlibcamera_1_1Span}{libcamera::Span<const\ uint8\_t>}}\ buffer);}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \ \ \ \ OffsetMap\ offsets\_;}
+\DoxyCodeLine{00153\ \};}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \}\ \textcolor{comment}{/*\ namespace\ RPi\ */}}
+
+\end{DoxyCode}

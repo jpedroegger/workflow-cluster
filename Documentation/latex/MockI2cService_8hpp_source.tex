@@ -1,0 +1,28 @@
+\doxysection{Mock\+I2c\+Service.\+hpp}
+\hypertarget{MockI2cService_8hpp_source}{}\label{MockI2cService_8hpp_source}\index{src/drivers/pca9685\_driver/test/include/MockI2cService.hpp@{src/drivers/pca9685\_driver/test/include/MockI2cService.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ <custom\_msgs/srv/i2c\_service.hpp>}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <gmock/gmock.h>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <rclcpp/rclcpp.hpp>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMockI2cService}{MockI2cService}}}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ MOCK\_METHOD(\textcolor{keywordtype}{void},\ HandleRequest,}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keyword}{const}\ custom\_msgs::srv::I2cService\_Request\&,}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ custom\_msgs::srv::I2cService\_Response\&));}
+\DoxyCodeLine{00021\ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMockI2cServiceNode}{MockI2cServiceNode}}\ :\ \textcolor{keyword}{public}\ rclcpp::Node}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMockI2cServiceNode}{MockI2cServiceNode}}();}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMockI2cService}{MockI2cService}}\&\ getMockService();}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ rclcpp::Service<custom\_msgs::srv::I2cService>::SharedPtr\ i2c\_service\_;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMockI2cService}{MockI2cService}}\ mock\_service\_;}
+\DoxyCodeLine{00032\ \};}
+
+\end{DoxyCode}

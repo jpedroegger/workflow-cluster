@@ -1,0 +1,46 @@
+\doxysection{ipu3\+\_\+uapi\+\_\+bubble\+\_\+info Struct Reference}
+\hypertarget{structipu3__uapi__bubble__info}{}\label{structipu3__uapi__bubble__info}\index{ipu3\_uapi\_bubble\_info@{ipu3\_uapi\_bubble\_info}}
+
+
+{\ttfamily \#include $<$intel-\/ipu3.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structipu3__uapi__bubble__info_a4209263332124ac69b91294ca34fbf10}\label{structipu3__uapi__bubble__info_a4209263332124ac69b91294ca34fbf10} 
+\+\_\+\+\_\+u32 num\+\_\+of\+\_\+stripes {\bfseries \+\_\+\+\_\+attribute\+\_\+\+\_\+} ((aligned(32)))
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structipu3__uapi__bubble__info_a834d2ebb3b8a6e4317837de8288b7f15}\label{structipu3__uapi__bubble__info_a834d2ebb3b8a6e4317837de8288b7f15} 
+\+\_\+\+\_\+u8 {\bfseries padding} \mbox{[}28\mbox{]}
+\item 
+\Hypertarget{structipu3__uapi__bubble__info_abe92b8bf2556585a44b6d43ee8b374eb}\label{structipu3__uapi__bubble__info_abe92b8bf2556585a44b6d43ee8b374eb} 
+\+\_\+\+\_\+u32 {\bfseries num\+\_\+sets}
+\item 
+\Hypertarget{structipu3__uapi__bubble__info_ad41ce0a06b0ea61640cd2525e3356f19}\label{structipu3__uapi__bubble__info_ad41ce0a06b0ea61640cd2525e3356f19} 
+\+\_\+\+\_\+u8 {\bfseries padding1} \mbox{[}28\mbox{]}
+\item 
+\Hypertarget{structipu3__uapi__bubble__info_aee11a51fa19b35e5646f1fe526747bee}\label{structipu3__uapi__bubble__info_aee11a51fa19b35e5646f1fe526747bee} 
+\+\_\+\+\_\+u32 {\bfseries size\+\_\+of\+\_\+set}
+\item 
+\Hypertarget{structipu3__uapi__bubble__info_a139b6a130a188437e5107ec90593fad8}\label{structipu3__uapi__bubble__info_a139b6a130a188437e5107ec90593fad8} 
+\+\_\+\+\_\+u8 {\bfseries padding2} \mbox{[}28\mbox{]}
+\item 
+\Hypertarget{structipu3__uapi__bubble__info_ad516aff55dc0e165c8467b899167575e}\label{structipu3__uapi__bubble__info_ad516aff55dc0e165c8467b899167575e} 
+\+\_\+\+\_\+u32 {\bfseries bubble\+\_\+size}
+\item 
+\Hypertarget{structipu3__uapi__bubble__info_a7c2d1f4352fea2dcc68d8708b55d4099}\label{structipu3__uapi__bubble__info_a7c2d1f4352fea2dcc68d8708b55d4099} 
+\+\_\+\+\_\+u8 {\bfseries padding3} \mbox{[}28\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structipu3__uapi__bubble__info}{ipu3\+\_\+uapi\+\_\+bubble\+\_\+info} -\/ Bubble info for host side debugging
+
+@num\+\_\+of\+\_\+stripes\+: A single frame is divided into several parts called stripes due to limitation on line buffer memory. The separation between the stripes is vertical. Each such stripe is processed as a single frame by the ISP pipe. @padding\+: padding bytes. @num\+\_\+sets\+: number of sets. @padding1\+: padding bytes. @size\+\_\+of\+\_\+set\+: set size. @padding2\+: padding bytes. @bubble\+\_\+size\+: is the amount of padding in the bubble expressed in "{}sets"{}. @padding3\+: padding bytes. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/intel-\/ipu3.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,34 @@
+\doxysection{src/peripherals/camera/libcamera/include/libcamera/base/mutex.h File Reference}
+\hypertarget{mutex_8h}{}\label{mutex_8h}\index{src/peripherals/camera/libcamera/include/libcamera/base/mutex.h@{src/peripherals/camera/libcamera/include/libcamera/base/mutex.h}}
+
+
+\doxylink{classMutex}{Mutex} classes with clang thread safety annotation.  
+
+
+{\ttfamily \#include $<$condition\+\_\+variable$>$}\newline
+{\ttfamily \#include $<$mutex$>$}\newline
+{\ttfamily \#include $<$libcamera/base/private.\+h$>$}\newline
+{\ttfamily \#include $<$libcamera/base/thread\+\_\+annotations.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classlibcamera_1_1MutexLocker}{libcamera\+::\+Mutex\+Locker}}
+\begin{DoxyCompactList}\small\item\em std\+::unique\+\_\+lock wrapper with clang thread safety annotation \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classlibcamera_1_1ConditionVariable}{libcamera\+::\+Condition\+Variable}}
+\begin{DoxyCompactList}\small\item\em std\+::condition\+\_\+variable wrapper integrating with \doxylink{classlibcamera_1_1MutexLocker}{Mutex\+Locker} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacelibcamera}{libcamera}}
+\begin{DoxyCompactList}\small\item\em Top-\/level libcamera namespace. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{namespacelibcamera_a4430714fc338b50a404cd953b123f9d3}\label{namespacelibcamera_a4430714fc338b50a404cd953b123f9d3} 
+class {\bfseries libcamera\+::\+LIBCAMERA\+\_\+\+TSA\+\_\+\+CAPABILITY} ("{}mutex"{}) \mbox{\hyperlink{classMutex}{Mutex}} final
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classMutex}{Mutex} classes with clang thread safety annotation. 
+

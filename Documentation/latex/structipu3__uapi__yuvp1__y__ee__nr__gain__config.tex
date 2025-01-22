@@ -1,0 +1,43 @@
+\doxysection{ipu3\+\_\+uapi\+\_\+yuvp1\+\_\+y\+\_\+ee\+\_\+nr\+\_\+gain\+\_\+config Struct Reference}
+\hypertarget{structipu3__uapi__yuvp1__y__ee__nr__gain__config}{}\label{structipu3__uapi__yuvp1__y__ee__nr__gain__config}\index{ipu3\_uapi\_yuvp1\_y\_ee\_nr\_gain\_config@{ipu3\_uapi\_yuvp1\_y\_ee\_nr\_gain\_config}}
+
+
+{\ttfamily \#include $<$intel-\/ipu3.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__y__ee__nr__gain__config_a54edc4a763c21c6ad77ed436392517ce}\label{structipu3__uapi__yuvp1__y__ee__nr__gain__config_a54edc4a763c21c6ad77ed436392517ce} 
+\+\_\+\+\_\+u32 {\bfseries gain\+\_\+pos\+\_\+0}\+:5
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__y__ee__nr__gain__config_aed202a0b53c8b53a6c1c71f2abc5e15e}\label{structipu3__uapi__yuvp1__y__ee__nr__gain__config_aed202a0b53c8b53a6c1c71f2abc5e15e} 
+\+\_\+\+\_\+u32 {\bfseries reserved0}\+:3
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__y__ee__nr__gain__config_ae5ed48a083ba6418c081c94a0149f358}\label{structipu3__uapi__yuvp1__y__ee__nr__gain__config_ae5ed48a083ba6418c081c94a0149f358} 
+\+\_\+\+\_\+u32 {\bfseries delta\+\_\+gain\+\_\+posi}\+:5
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__y__ee__nr__gain__config_a6feec2ad0daae9de9fb2caa015bbeb27}\label{structipu3__uapi__yuvp1__y__ee__nr__gain__config_a6feec2ad0daae9de9fb2caa015bbeb27} 
+\+\_\+\+\_\+u32 {\bfseries reserved1}\+:3
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__y__ee__nr__gain__config_ab89926dccc0435b2fd63fd5346d6eaaa}\label{structipu3__uapi__yuvp1__y__ee__nr__gain__config_ab89926dccc0435b2fd63fd5346d6eaaa} 
+\+\_\+\+\_\+u32 {\bfseries gain\+\_\+neg\+\_\+0}\+:5
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__y__ee__nr__gain__config_a3399e56e5bedd398e8371d38116c01bf}\label{structipu3__uapi__yuvp1__y__ee__nr__gain__config_a3399e56e5bedd398e8371d38116c01bf} 
+\+\_\+\+\_\+u32 {\bfseries reserved2}\+:3
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__y__ee__nr__gain__config_a677b01c1c2da4d9bc15f5a9498471bac}\label{structipu3__uapi__yuvp1__y__ee__nr__gain__config_a677b01c1c2da4d9bc15f5a9498471bac} 
+\+\_\+\+\_\+u32 {\bfseries delta\+\_\+gain\+\_\+neg}\+:5
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__y__ee__nr__gain__config_afa3b28689ca9b107df14a74b19b365aa}\label{structipu3__uapi__yuvp1__y__ee__nr__gain__config_afa3b28689ca9b107df14a74b19b365aa} 
+\+\_\+\+\_\+u32 {\bfseries reserved3}\+:3
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structipu3__uapi__yuvp1__y__ee__nr__gain__config}{ipu3\+\_\+uapi\+\_\+yuvp1\+\_\+y\+\_\+ee\+\_\+nr\+\_\+gain\+\_\+config} -\/ Luma(\+Y) edge enhancement noise reduction gain config
+
+@gain\+\_\+pos\+\_\+0\+: Gain for positive edge in dark area. u5.\+0, \mbox{[}0, 16\mbox{]}, default 2. @reserved0\+: reserved @delta\+\_\+gain\+\_\+posi\+: Difference in the gain of edges between the bright and dark areas for positive edges. u5.\+0, \mbox{[}0, 16\mbox{]}, default 0. @reserved1\+: reserved @gain\+\_\+neg\+\_\+0\+: Gain for negative edge in dark area. u5.\+0, \mbox{[}0, 16\mbox{]}, default 8. @reserved2\+: reserved @delta\+\_\+gain\+\_\+neg\+: Difference in the gain of edges between the bright and dark areas for negative edges. u5.\+0, \mbox{[}0, 16\mbox{]}, default 0. @reserved3\+: reserved 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/intel-\/ipu3.\+h\end{DoxyCompactItemize}

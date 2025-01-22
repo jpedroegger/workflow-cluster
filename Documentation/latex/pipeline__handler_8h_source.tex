@@ -1,0 +1,151 @@
+\doxysection{pipeline\+\_\+handler.\+h}
+\hypertarget{pipeline__handler_8h_source}{}\label{pipeline__handler_8h_source}\index{src/peripherals/camera/libcamera/include/libcamera/internal/pipeline\_handler.h@{src/peripherals/camera/libcamera/include/libcamera/internal/pipeline\_handler.h}}
+\mbox{\hyperlink{pipeline__handler_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2018,\ Google\ Inc.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Pipeline\ handler\ infrastructure}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <sys/types.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{object_8h}{libcamera/base/object.h}}>}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{controls_8h}{libcamera/controls.h}}>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{stream_8h}{libcamera/stream.h}}>}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacelibcamera}{libcamera}}\ \{}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }Camera;}
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }CameraConfiguration;}
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }CameraManager;}
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }DeviceEnumerator;}
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }DeviceMatch;}
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }FrameBuffer;}
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }MediaDevice;}
+\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }PipelineHandler;}
+\DoxyCodeLine{00031\ \textcolor{keyword}{class\ }Request;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1PipelineHandler}{PipelineHandler}}\ :\ \textcolor{keyword}{public}\ std::enable\_shared\_from\_this<PipelineHandler>,}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classlibcamera_1_1Object}{Object}}}
+\DoxyCodeLine{00035\ \{}
+\DoxyCodeLine{00036\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1PipelineHandler}{PipelineHandler}}(\mbox{\hyperlink{classlibcamera_1_1CameraManager}{CameraManager}}\ *manager);}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classlibcamera_1_1PipelineHandler}{\string~PipelineHandler}}();}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classlibcamera_1_1PipelineHandler_a7cd5b652a2414b543ec20ba9dabf61b6}{match}}(\mbox{\hyperlink{classlibcamera_1_1DeviceEnumerator}{DeviceEnumerator}}\ *enumerator)\ =\ 0;}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1MediaDevice}{MediaDevice}}\ *\mbox{\hyperlink{classlibcamera_1_1PipelineHandler_a77e424fe704e7b26094164b9189e0f84}{acquireMediaDevice}}(\mbox{\hyperlink{classlibcamera_1_1DeviceEnumerator}{DeviceEnumerator}}\ *enumerator,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1DeviceMatch}{DeviceMatch}}\ \&dm);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classlibcamera_1_1PipelineHandler_a57ddfa7d422aefd4f99a382d6d711ffa}{acquire}}(\mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}}\ *camera);}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1PipelineHandler_aead119b03920f468fa3bd091bfd65e5b}{release}}(\mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}}\ *camera);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{virtual}\ std::unique\_ptr<CameraConfiguration>\ \mbox{\hyperlink{classlibcamera_1_1PipelineHandler_a83bbbe0826fb159253535ef077cb4343}{generateConfiguration}}(\mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}}\ *camera,}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Span}{Span<const\ StreamRole>}}\ roles)\ =\ 0;}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1PipelineHandler_a930f2a9cdfb51dfb4b9ca3824e84fc29}{configure}}(\mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}}\ *camera,\ \mbox{\hyperlink{classlibcamera_1_1CameraConfiguration}{CameraConfiguration}}\ *config)\ =\ 0;}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1PipelineHandler_a7d1ebc70382e672e5546cd5d6cdeca76}{exportFrameBuffers}}(\mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}}\ *camera,\ \mbox{\hyperlink{classlibcamera_1_1Stream}{Stream}}\ *stream,}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::unique\_ptr<FrameBuffer>>\ *buffers)\ =\ 0;}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1PipelineHandler_a55e09cd47690f72b7c93483dc1372626}{start}}(\mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}}\ *camera,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1ControlList}{ControlList}}\ *controls)\ =\ 0;}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1PipelineHandler_ab30b037abfb09bd548c53c9f9196a184}{stop}}(\mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}}\ *camera);}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classlibcamera_1_1PipelineHandler_aac41ce2a1957534be1d1dd77145218e6}{hasPendingRequests}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}}\ *camera)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1PipelineHandler_a9ca1e760238bd7cce8b78092333e2c6a}{registerRequest}}(\mbox{\hyperlink{classlibcamera_1_1Request}{Request}}\ *request);}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1PipelineHandler_aa82dffe399ac974ecb375cbb2a2074dd}{queueRequest}}(\mbox{\hyperlink{classlibcamera_1_1Request}{Request}}\ *request);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classlibcamera_1_1PipelineHandler_ad388abbf81afa644f366326dc41d7b63}{completeBuffer}}(\mbox{\hyperlink{classlibcamera_1_1Request}{Request}}\ *request,\ \mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{FrameBuffer}}\ *buffer);}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1PipelineHandler_a4184b62419a6e658c6a86438023519b2}{completeRequest}}(\mbox{\hyperlink{classlibcamera_1_1Request}{Request}}\ *request);}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1PipelineHandler_aa0b8456fa90a7395aab6452ce800a160}{cancelRequest}}(\mbox{\hyperlink{classlibcamera_1_1Request}{Request}}\ *request);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ std::string\ \mbox{\hyperlink{classlibcamera_1_1PipelineHandler_a6d96ced1bc15f35c8c7065a312931e30}{configurationFile}}(\textcolor{keyword}{const}\ std::string\ \&subdir,}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classlibcamera_1_1PipelineHandler_a48262f4e8cc73803f0aeea8229330ee4}{name}})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{classlibcamera_1_1PipelineHandler_a48262f4e8cc73803f0aeea8229330ee4}{name}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ name\_;\ \}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1CameraManager}{CameraManager}}\ *\mbox{\hyperlink{classlibcamera_1_1PipelineHandler_ac20b6e64ab88efefa436a06ffa1834c3}{cameraManager}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classlibcamera_1_1PipelineHandler_ae78c43450c383e9bb8757cf01c70dc4e}{manager\_}};\ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1PipelineHandler_a97bc7a1ac8e7128d4b3dff91eb03f2a4}{registerCamera}}(std::shared\_ptr<Camera>\ camera);}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1PipelineHandler_a25b18b2f7a20e726485880cae509204d}{hotplugMediaDevice}}(\mbox{\hyperlink{classlibcamera_1_1MediaDevice}{MediaDevice}}\ *media);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1PipelineHandler_a106914cca210640c9da9ee1f0419e83c}{queueRequestDevice}}(\mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}}\ *camera,\ \mbox{\hyperlink{classlibcamera_1_1Request}{Request}}\ *request)\ =\ 0;}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1PipelineHandler_a3080cc9159e9b31d4ea2376903b94efd}{stopDevice}}(\mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}}\ *camera)\ =\ 0;}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classlibcamera_1_1PipelineHandler_a6f7d619636c8988aeed3afd43ce8ed02}{acquireDevice}}(\mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}}\ *camera);}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1PipelineHandler_a53f4bee6b4c1f4b071b5e2f7584a93f8}{releaseDevice}}(\mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}}\ *camera);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1CameraManager}{CameraManager}}\ *\mbox{\hyperlink{classlibcamera_1_1PipelineHandler_ae78c43450c383e9bb8757cf01c70dc4e}{manager\_}};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ unlockMediaDevices();}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{void}\ mediaDeviceDisconnected(\mbox{\hyperlink{classlibcamera_1_1MediaDevice}{MediaDevice}}\ *media);}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ disconnect();}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ doQueueRequest(\mbox{\hyperlink{classlibcamera_1_1Request}{Request}}\ *request);}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ doQueueRequests();}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ std::vector<std::shared\_ptr<MediaDevice>>\ mediaDevices\_;}
+\DoxyCodeLine{00094\ \ \ \ \ std::vector<std::weak\_ptr<Camera>>\ cameras\_;}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ std::queue<Request\ *>\ waitingRequests\_;}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *name\_;}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ useCount\_;}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1PipelineHandlerFactoryBase}{PipelineHandlerFactoryBase}};}
+\DoxyCodeLine{00102\ \};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1PipelineHandlerFactoryBase}{PipelineHandlerFactoryBase}}}
+\DoxyCodeLine{00105\ \{}
+\DoxyCodeLine{00106\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00107\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerFactoryBase}{PipelineHandlerFactoryBase}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{classlibcamera_1_1PipelineHandlerFactoryBase_a7e51edd15527f45e6e9ee0e00f7be6dc}{name}});}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerFactoryBase}{\string~PipelineHandlerFactoryBase}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ std::shared\_ptr<PipelineHandler>\ \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerFactoryBase_ada3bc5859a7dc78b30683da70ec707ca}{create}}(\mbox{\hyperlink{classlibcamera_1_1CameraManager}{CameraManager}}\ *manager)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classlibcamera_1_1PipelineHandlerFactoryBase_a7e51edd15527f45e6e9ee0e00f7be6dc}{name}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ name\_;\ \}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keyword}{static}\ std::vector<PipelineHandlerFactoryBase\ *>\ \&\mbox{\hyperlink{classlibcamera_1_1PipelineHandlerFactoryBase_ad7616357a5b8d824f22713554a844ce5}{factories}}();}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerFactoryBase}{PipelineHandlerFactoryBase}}\ *\mbox{\hyperlink{classlibcamera_1_1PipelineHandlerFactoryBase_a55d4bfb4530c2b7d54ca278390cd00c7}{getFactoryByName}}(\textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classlibcamera_1_1PipelineHandlerFactoryBase_a7e51edd15527f45e6e9ee0e00f7be6dc}{name}});}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ registerType(\mbox{\hyperlink{classlibcamera_1_1PipelineHandlerFactoryBase}{PipelineHandlerFactoryBase}}\ *factory);}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keyword}{virtual}\ std::unique\_ptr<PipelineHandler>}
+\DoxyCodeLine{00121\ \ \ \ \ createInstance(\mbox{\hyperlink{classlibcamera_1_1CameraManager}{CameraManager}}\ *manager)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ std::string\ name\_;}
+\DoxyCodeLine{00124\ \};}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ \_PipelineHandler>}
+\DoxyCodeLine{00127\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1PipelineHandlerFactory}{PipelineHandlerFactory}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerFactoryBase}{PipelineHandlerFactoryBase}}}
+\DoxyCodeLine{00128\ \{}
+\DoxyCodeLine{00129\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00130\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerFactory_a9fff66424a8fe954bde1b7d07562f3ae}{PipelineHandlerFactory}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{classlibcamera_1_1PipelineHandlerFactoryBase_a7e51edd15527f45e6e9ee0e00f7be6dc}{name}})}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerFactoryBase}{PipelineHandlerFactoryBase}}(\mbox{\hyperlink{classlibcamera_1_1PipelineHandlerFactoryBase_a7e51edd15527f45e6e9ee0e00f7be6dc}{name}})}
+\DoxyCodeLine{00132\ \ \ \ \ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \}}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ std::unique\_ptr<PipelineHandler>}
+\DoxyCodeLine{00136\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerFactory_afd94fa437046d5ff5f1339aa8ee674b8}{createInstance}}(\mbox{\hyperlink{classlibcamera_1_1CameraManager}{CameraManager}}\ *manager)\textcolor{keyword}{\ const\ override}}
+\DoxyCodeLine{00137\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<\_PipelineHandler>(manager);}
+\DoxyCodeLine{00139\ \ \ \ \ \}}
+\DoxyCodeLine{00140\ \};}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\#define\ REGISTER\_PIPELINE\_HANDLER(handler,\ name)\ \(\backslash\)}}
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\ \ \ \ static\ PipelineHandlerFactory<handler>\ global\_\#\#handler\#\#Factory(name);}}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \}\ \textcolor{comment}{/*\ namespace\ libcamera\ */}}
+
+\end{DoxyCode}

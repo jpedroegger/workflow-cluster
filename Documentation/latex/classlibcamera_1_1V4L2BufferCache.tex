@@ -1,0 +1,105 @@
+\doxysection{libcamera\+::V4\+L2\+Buffer\+Cache Class Reference}
+\hypertarget{classlibcamera_1_1V4L2BufferCache}{}\label{classlibcamera_1_1V4L2BufferCache}\index{libcamera::V4L2BufferCache@{libcamera::V4L2BufferCache}}
+
+
+Hot cache of associations between V4\+L2 buffer indexes and \doxylink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1V4L2BufferCache_a2e85353e7d8aaeb616be5dd642830401}{V4\+L2\+Buffer\+Cache}} (unsigned int num\+Entries)
+\begin{DoxyCompactList}\small\item\em Create an empty cache with {\itshape num\+Entries} entries. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1V4L2BufferCache_abf2d3fdf1877c5db0ea73a4ccc17ed46}{V4\+L2\+Buffer\+Cache}} (const std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} $>$ $>$ \&buffers)
+\begin{DoxyCompactList}\small\item\em Create a pre-\/populated cache. \end{DoxyCompactList}\item 
+\Hypertarget{classlibcamera_1_1V4L2BufferCache_a4e21a0ffb5ddcceef741f8469e49bb25}\label{classlibcamera_1_1V4L2BufferCache_a4e21a0ffb5ddcceef741f8469e49bb25} 
+bool {\bfseries is\+Empty} () const
+\begin{DoxyCompactList}\small\item\em Check if all the entries in the cache are unused. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classlibcamera_1_1V4L2BufferCache_a3d9dba272a22e92dca0dcbf55097ded3}{get}} (const \mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} \&buffer)
+\begin{DoxyCompactList}\small\item\em Find the best V4\+L2 buffer for a \doxylink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1V4L2BufferCache_a561f0eee632e4a465f1813abe29abdea}{put}} (unsigned int index)
+\begin{DoxyCompactList}\small\item\em Mark buffer {\itshape index} as free in the cache. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Hot cache of associations between V4\+L2 buffer indexes and \doxylink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}. 
+
+When importing buffers, V4\+L2 performs lazy mapping of dmabuf instances at VIDIOC\+\_\+\+QBUF (or VIDIOC\+\_\+\+PREPARE\+\_\+\+BUF) time and keeps the mapping associated with the V4\+L2 buffer, as identified by its index. If the same V4\+L2 buffer is then reused and queued with different dmabufs, the old dmabufs will be unmapped and the new ones mapped. To keep this process efficient, it is crucial to consistently use the same V4\+L2 buffer for given dmabufs through the whole duration of a capture cycle.
+
+The \doxylink{classlibcamera_1_1V4L2BufferCache}{V4\+L2\+Buffer\+Cache} class keeps a map of previous dmabufs to V4\+L2 buffer index associations to help selecting V4\+L2 buffers. It tracks, for every entry, if the V4\+L2 buffer is in use, and offers lookup of the best free V4\+L2 buffer for a set of dmabufs. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlibcamera_1_1V4L2BufferCache_a2e85353e7d8aaeb616be5dd642830401}\label{classlibcamera_1_1V4L2BufferCache_a2e85353e7d8aaeb616be5dd642830401} 
+\index{libcamera::V4L2BufferCache@{libcamera::V4L2BufferCache}!V4L2BufferCache@{V4L2BufferCache}}
+\index{V4L2BufferCache@{V4L2BufferCache}!libcamera::V4L2BufferCache@{libcamera::V4L2BufferCache}}
+\doxysubsubsection{\texorpdfstring{V4L2BufferCache()}{V4L2BufferCache()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily libcamera\+::\+V4\+L2\+Buffer\+Cache\+::\+V4\+L2\+Buffer\+Cache (\begin{DoxyParamCaption}\item[{unsigned int}]{num\+Entries }\end{DoxyParamCaption})}
+
+
+
+Create an empty cache with {\itshape num\+Entries} entries. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em num\+Entries} & Number of entries to reserve in the cache\\
+\hline
+\end{DoxyParams}
+Create a cache with {\itshape num\+Entries} entries all marked as unused. The entries will be populated as the cache is used. This is typically used to implement buffer import, with buffers added to the cache as they are queued. \Hypertarget{classlibcamera_1_1V4L2BufferCache_abf2d3fdf1877c5db0ea73a4ccc17ed46}\label{classlibcamera_1_1V4L2BufferCache_abf2d3fdf1877c5db0ea73a4ccc17ed46} 
+\index{libcamera::V4L2BufferCache@{libcamera::V4L2BufferCache}!V4L2BufferCache@{V4L2BufferCache}}
+\index{V4L2BufferCache@{V4L2BufferCache}!libcamera::V4L2BufferCache@{libcamera::V4L2BufferCache}}
+\doxysubsubsection{\texorpdfstring{V4L2BufferCache()}{V4L2BufferCache()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily libcamera\+::\+V4\+L2\+Buffer\+Cache\+::\+V4\+L2\+Buffer\+Cache (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} $>$ $>$ \&}]{buffers }\end{DoxyParamCaption})}
+
+
+
+Create a pre-\/populated cache. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em buffers} & Array of buffers to pre-\/populated with\\
+\hline
+\end{DoxyParams}
+Create a cache pre-\/populated with {\itshape buffers}. This is typically used to implement buffer export, with all buffers added to the cache when they are allocated. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1V4L2BufferCache_a3d9dba272a22e92dca0dcbf55097ded3}\label{classlibcamera_1_1V4L2BufferCache_a3d9dba272a22e92dca0dcbf55097ded3} 
+\index{libcamera::V4L2BufferCache@{libcamera::V4L2BufferCache}!get@{get}}
+\index{get@{get}!libcamera::V4L2BufferCache@{libcamera::V4L2BufferCache}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily int libcamera\+::\+V4\+L2\+Buffer\+Cache\+::get (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} \&}]{buffer }\end{DoxyParamCaption})}
+
+
+
+Find the best V4\+L2 buffer for a \doxylink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em buffer} & The \doxylink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}\\
+\hline
+\end{DoxyParams}
+Find the best V4\+L2 buffer index to be used for the \doxylink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer} {\itshape buffer} based on previous mappings of frame buffers to V4\+L2 buffers. If a free V4\+L2 buffer previously used with the same dmabufs as {\itshape buffer} is found in the cache, return its index. Otherwise return the index of the first free V4\+L2 buffer and record its association with the dmabufs of {\itshape buffer}.
+
+\begin{DoxyReturn}{Returns}
+The index of the best V4\+L2 buffer, or -\/ENOENT if no free V4\+L2 buffer is available 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1V4L2BufferCache_a561f0eee632e4a465f1813abe29abdea}\label{classlibcamera_1_1V4L2BufferCache_a561f0eee632e4a465f1813abe29abdea} 
+\index{libcamera::V4L2BufferCache@{libcamera::V4L2BufferCache}!put@{put}}
+\index{put@{put}!libcamera::V4L2BufferCache@{libcamera::V4L2BufferCache}}
+\doxysubsubsection{\texorpdfstring{put()}{put()}}
+{\footnotesize\ttfamily void libcamera\+::\+V4\+L2\+Buffer\+Cache\+::put (\begin{DoxyParamCaption}\item[{unsigned int}]{index }\end{DoxyParamCaption})}
+
+
+
+Mark buffer {\itshape index} as free in the cache. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em index} & The V4\+L2 buffer index \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/internal/\mbox{\hyperlink{v4l2__videodevice_8h}{v4l2\+\_\+videodevice.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/v4l2\+\_\+videodevice.\+cpp\end{DoxyCompactItemize}

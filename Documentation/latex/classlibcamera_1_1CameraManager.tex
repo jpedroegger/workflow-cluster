@@ -1,0 +1,221 @@
+\doxysection{libcamera\+::Camera\+Manager Class Reference}
+\hypertarget{classlibcamera_1_1CameraManager}{}\label{classlibcamera_1_1CameraManager}\index{libcamera::CameraManager@{libcamera::CameraManager}}
+
+
+Provide access and manage all cameras in the system.  
+
+
+Inheritance diagram for libcamera\+::Camera\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlibcamera_1_1CameraManager}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classlibcamera_1_1CameraManager_1_1Private}{Private}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1CameraManager_ae8647ec4748314069fbc5e0ee3c3e74b}{\texorpdfstring{$\sim$}{\string~}\+Camera\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the camera manager. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classlibcamera_1_1CameraManager_a49e322880a2a26013bb0076788b298c5}{start}} ()
+\begin{DoxyCompactList}\small\item\em Start the camera manager. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1CameraManager_abcf2a1b9ca720891e6bd83b3c542bb61}{stop}} ()
+\begin{DoxyCompactList}\small\item\em Stop the camera manager. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}} $>$ $>$ \mbox{\hyperlink{classlibcamera_1_1CameraManager_a3b20427687e9920b256625838bea8f9a}{cameras}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve all available cameras. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}} $>$ \mbox{\hyperlink{classlibcamera_1_1CameraManager_abd8bfe0d85cedf2ec5c4549d05de7f09}{get}} (const std\+::string \&id)
+\begin{DoxyCompactList}\small\item\em Get a camera based on ID. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1Object}{libcamera\+::\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1Object_a0425e0a986630b5881558378fad91687}{Object}} (\mbox{\hyperlink{classlibcamera_1_1Object}{Object}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classlibcamera_1_1Object_a469143548519e7ac9525e5b2b45e983f}{parent}}=nullptr)
+\begin{DoxyCompactList}\small\item\em Construct an \doxylink{classlibcamera_1_1Object}{Object} instance. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classlibcamera_1_1Object_ad52c17ff4161b166ae71e766d0649b97}{\texorpdfstring{$\sim$}{\string~}\+Object}} ()
+\begin{DoxyCompactList}\small\item\em Destroy an \doxylink{classlibcamera_1_1Object}{Object} instance. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1Object_a7432a52a2e69a29cfe8144929686d1e6}{delete\+Later}} ()
+\begin{DoxyCompactList}\small\item\em Schedule deletion of the instance in the thread it belongs to. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1Object_af9ae92dfe5f3741c64ebdec61a2f5bef}{post\+Message}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1Message}{Message}} $>$ msg)
+\begin{DoxyCompactList}\small\item\em Post a message to the object\textquotesingle{}s thread. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename R , typename... Func\+Args, typename... Args, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+base\+\_\+of$<$ \mbox{\hyperlink{classlibcamera_1_1Object}{Object}}, T $>$\+::value $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ }\\R \mbox{\hyperlink{classlibcamera_1_1Object_a2a4ea2209e289e2aabb75c5718d5b4a7}{invoke\+Method}} (R(T\+::\texorpdfstring{$\ast$}{*}func)(Func\+Args...), \mbox{\hyperlink{namespacelibcamera_ae2c8412791b9597d590a7d0b2c9e2919}{Connection\+Type}} type, Args \&\&... args)
+\begin{DoxyCompactList}\small\item\em Invoke a method asynchronously on an \doxylink{classlibcamera_1_1Object}{Object} instance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1Thread}{Thread}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1Object_aca52b8790edc25af65d6fe937355577b}{thread}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the thread the object is bound to \textbackslash{}context This function is \textbackslash{}threadsafe. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1Object_a8045a16ae8a093722466ca7129db6fc2}{move\+To\+Thread}} (\mbox{\hyperlink{classlibcamera_1_1Thread}{Thread}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classlibcamera_1_1Object_aca52b8790edc25af65d6fe937355577b}{thread}})
+\begin{DoxyCompactList}\small\item\em Move the object and all its children to a different thread. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1Object}{Object}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1Object_a469143548519e7ac9525e5b2b45e983f}{parent}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the object\textquotesingle{}s parent. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1Extensible}{libcamera\+::\+Extensible}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1Extensible_afb1c6e39d8fe4fbeab1cbbbe65517f4c}{Extensible}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1Extensible_1_1Private}{Private}} $>$ d)
+\begin{DoxyCompactList}\small\item\em Construct an instance of an \doxylink{classlibcamera_1_1Extensible}{Extensible} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const std\+::string \& \mbox{\hyperlink{classlibcamera_1_1CameraManager_a491b49c074dfc3c55e791b2b63437011}{version}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the libcamera version string \textbackslash{}context This function is {\itshape threadsafe}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1Signal}{Signal}}$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}} $>$ $>$ \mbox{\hyperlink{classlibcamera_1_1CameraManager_a6c2071f9f9228348b5943c0de7234b21}{camera\+Added}}
+\begin{DoxyCompactList}\small\item\em Notify of a new camera added to the system. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1Signal}{Signal}}$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}} $>$ $>$ \mbox{\hyperlink{classlibcamera_1_1CameraManager_a710506c6dde09353c702537cf6106b90}{camera\+Removed}}
+\begin{DoxyCompactList}\small\item\em Notify of a new camera removed from the system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1Object}{libcamera\+::\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classlibcamera_1_1Object_a5328cab1412743716aa2748eeded8e80}{message}} (\mbox{\hyperlink{classlibcamera_1_1Message}{Message}} \texorpdfstring{$\ast$}{*}msg)
+\begin{DoxyCompactList}\small\item\em \doxylink{classlibcamera_1_1Message}{Message} handler for the object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlibcamera_1_1Object_a6e81f2a2524dbe12daed49597cf66a57}{assert\+Thread\+Bound}} (const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classlibcamera_1_1Object_a5328cab1412743716aa2748eeded8e80}{message}})
+\begin{DoxyCompactList}\small\item\em Check if the caller complies with thread-\/bound constraints. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1Extensible}{libcamera\+::\+Extensible}}}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\const T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1Extensible_a6625afb4df192443c12d118f5f1a17ac}{\+\_\+d}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the private data instance. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1Extensible_a30a918eee516b7e1d97a7f346ce99fca}{\+\_\+d}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the private data instance.   \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provide access and manage all cameras in the system. 
+
+The camera manager is the entry point to libcamera. It enumerates devices, associates them with pipeline managers, and provides access to the cameras in the system to applications. The manager owns all \doxylink{classlibcamera_1_1Camera}{Camera} objects and handles hot-\/plugging and hot-\/unplugging to manage the lifetime of cameras.
+
+To interact with libcamera, an application starts by creating a camera manager instance. Only a single instance of the camera manager may exist at a time. Attempting to create a second instance without first deleting the existing instance results in undefined behaviour.
+
+The manager is initially stopped, and shall be started with \doxylink{classlibcamera_1_1CameraManager_a49e322880a2a26013bb0076788b298c5}{start()}. This will enumerate all the cameras present in the system, which can then be listed with list() and retrieved with \doxylink{classlibcamera_1_1CameraManager_abd8bfe0d85cedf2ec5c4549d05de7f09}{get()}.
+
+Cameras are shared through std\+::shared\+\_\+ptr$<$$>$, ensuring that a camera will stay valid until the last reference is released without requiring any special action from the application. Once the application has released all the references it held to cameras, the camera manager can be stopped with \doxylink{classlibcamera_1_1CameraManager_abcf2a1b9ca720891e6bd83b3c542bb61}{stop()}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlibcamera_1_1CameraManager_ae8647ec4748314069fbc5e0ee3c3e74b}\label{classlibcamera_1_1CameraManager_ae8647ec4748314069fbc5e0ee3c3e74b} 
+\index{libcamera::CameraManager@{libcamera::CameraManager}!````~CameraManager@{\texorpdfstring{$\sim$}{\string~}CameraManager}}
+\index{````~CameraManager@{\texorpdfstring{$\sim$}{\string~}CameraManager}!libcamera::CameraManager@{libcamera::CameraManager}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CameraManager()}{\string~CameraManager()}}
+{\footnotesize\ttfamily libcamera\+::\+Camera\+Manager\+::\texorpdfstring{$\sim$}{\string~}\+Camera\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy the camera manager. 
+
+Destroying the camera manager stops it if it is currently running. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1CameraManager_a3b20427687e9920b256625838bea8f9a}\label{classlibcamera_1_1CameraManager_a3b20427687e9920b256625838bea8f9a} 
+\index{libcamera::CameraManager@{libcamera::CameraManager}!cameras@{cameras}}
+\index{cameras@{cameras}!libcamera::CameraManager@{libcamera::CameraManager}}
+\doxysubsubsection{\texorpdfstring{cameras()}{cameras()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}} $>$ $>$ libcamera\+::\+Camera\+Manager\+::cameras (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retrieve all available cameras. 
+
+Before calling this function the caller is responsible for ensuring that the camera manager is running.
+
+\textbackslash{}context This function is \textbackslash{}threadsafe.
+
+\begin{DoxyReturn}{Returns}
+List of all available cameras 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1CameraManager_abd8bfe0d85cedf2ec5c4549d05de7f09}\label{classlibcamera_1_1CameraManager_abd8bfe0d85cedf2ec5c4549d05de7f09} 
+\index{libcamera::CameraManager@{libcamera::CameraManager}!get@{get}}
+\index{get@{get}!libcamera::CameraManager@{libcamera::CameraManager}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}} $>$ libcamera\+::\+Camera\+Manager\+::get (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id }\end{DoxyParamCaption})}
+
+
+
+Get a camera based on ID. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em id} & ID of camera to get\\
+\hline
+\end{DoxyParams}
+Before calling this function the caller is responsible for ensuring that the camera manager is running.
+
+\textbackslash{}context This function is \textbackslash{}threadsafe.
+
+\begin{DoxyReturn}{Returns}
+Shared pointer to \doxylink{classlibcamera_1_1Camera}{Camera} object or nullptr if camera not found 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1CameraManager_a49e322880a2a26013bb0076788b298c5}\label{classlibcamera_1_1CameraManager_a49e322880a2a26013bb0076788b298c5} 
+\index{libcamera::CameraManager@{libcamera::CameraManager}!start@{start}}
+\index{start@{start}!libcamera::CameraManager@{libcamera::CameraManager}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily int libcamera\+::\+Camera\+Manager\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Start the camera manager. 
+
+Start the camera manager and enumerate all devices in the system. Once the start has been confirmed the user is free to list and otherwise interact with cameras in the system until either the camera manager is stopped or the camera is unplugged from the system.
+
+\begin{DoxyReturn}{Returns}
+0 on success or a negative error code otherwise 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1CameraManager_abcf2a1b9ca720891e6bd83b3c542bb61}\label{classlibcamera_1_1CameraManager_abcf2a1b9ca720891e6bd83b3c542bb61} 
+\index{libcamera::CameraManager@{libcamera::CameraManager}!stop@{stop}}
+\index{stop@{stop}!libcamera::CameraManager@{libcamera::CameraManager}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void libcamera\+::\+Camera\+Manager\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Stop the camera manager. 
+
+Before stopping the camera manager the caller is responsible for making sure all cameras provided by the manager are returned to the manager.
+
+After the manager has been stopped no resource provided by the camera manager should be consider valid or functional even if they for one reason or another have yet to be deleted. \Hypertarget{classlibcamera_1_1CameraManager_a491b49c074dfc3c55e791b2b63437011}\label{classlibcamera_1_1CameraManager_a491b49c074dfc3c55e791b2b63437011} 
+\index{libcamera::CameraManager@{libcamera::CameraManager}!version@{version}}
+\index{version@{version}!libcamera::CameraManager@{libcamera::CameraManager}}
+\doxysubsubsection{\texorpdfstring{version()}{version()}}
+{\footnotesize\ttfamily const std\+::string \& libcamera\+::\+Camera\+Manager\+::version (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Retrieve the libcamera version string \textbackslash{}context This function is {\itshape threadsafe}. 
+
+\begin{DoxyReturn}{Returns}
+The libcamera version string 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classlibcamera_1_1CameraManager_a6c2071f9f9228348b5943c0de7234b21}\label{classlibcamera_1_1CameraManager_a6c2071f9f9228348b5943c0de7234b21} 
+\index{libcamera::CameraManager@{libcamera::CameraManager}!cameraAdded@{cameraAdded}}
+\index{cameraAdded@{cameraAdded}!libcamera::CameraManager@{libcamera::CameraManager}}
+\doxysubsubsection{\texorpdfstring{cameraAdded}{cameraAdded}}
+{\footnotesize\ttfamily libcamera\+::\+Camera\+Manager\+::camera\+Added}
+
+
+
+Notify of a new camera added to the system. 
+
+This signal is emitted when a new camera is detected and successfully handled by the camera manager. The notification occurs alike for cameras detected when the manager is started with \doxylink{classlibcamera_1_1CameraManager_a49e322880a2a26013bb0076788b298c5}{start()} or when new cameras are later connected to the system. When the signal is emitted the new camera is already available from the list of \doxylink{classlibcamera_1_1CameraManager_a3b20427687e9920b256625838bea8f9a}{cameras()}.
+
+The signal is emitted from the \doxylink{classlibcamera_1_1CameraManager}{Camera\+Manager} thread. Applications shall minimize the time spent in the signal handler and shall in particular not perform any blocking operation. \Hypertarget{classlibcamera_1_1CameraManager_a710506c6dde09353c702537cf6106b90}\label{classlibcamera_1_1CameraManager_a710506c6dde09353c702537cf6106b90} 
+\index{libcamera::CameraManager@{libcamera::CameraManager}!cameraRemoved@{cameraRemoved}}
+\index{cameraRemoved@{cameraRemoved}!libcamera::CameraManager@{libcamera::CameraManager}}
+\doxysubsubsection{\texorpdfstring{cameraRemoved}{cameraRemoved}}
+{\footnotesize\ttfamily libcamera\+::\+Camera\+Manager\+::camera\+Removed}
+
+
+
+Notify of a new camera removed from the system. 
+
+This signal is emitted when a camera is removed from the system. When the signal is emitted the camera is not available from the list of \doxylink{classlibcamera_1_1CameraManager_a3b20427687e9920b256625838bea8f9a}{cameras()} anymore.
+
+The signal is emitted from the \doxylink{classlibcamera_1_1CameraManager}{Camera\+Manager} thread. Applications shall minimize the time spent in the signal handler and shall in particular not perform any blocking operation. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/\mbox{\hyperlink{camera__manager_8h}{camera\+\_\+manager.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/camera\+\_\+manager.\+cpp\end{DoxyCompactItemize}

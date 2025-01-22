@@ -1,0 +1,196 @@
+\doxysection{libcamera\+::ipa\+::Interpolator\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classlibcamera_1_1ipa_1_1Interpolator}{}\label{classlibcamera_1_1ipa_1_1Interpolator}\index{libcamera::ipa::Interpolator$<$ T $>$@{libcamera::ipa::Interpolator$<$ T $>$}}
+
+
+Class for storing, retrieving, and interpolating objects.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1ipa_1_1Interpolator_a8574af7a9da617fe469f1525295fe84c}\label{classlibcamera_1_1ipa_1_1Interpolator_a8574af7a9da617fe469f1525295fe84c} 
+{\bfseries Interpolator} ()=default
+\begin{DoxyCompactList}\small\item\em Construct an empty interpolator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Interpolator_a766620b0f43743ff2289c411f9cfe744}{Interpolator}} (const std\+::map$<$ unsigned int, T $>$ \&data)
+\begin{DoxyCompactList}\small\item\em Construct an interpolator from a map of objects. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Interpolator_ab96345cc35bbc91a17981579d89a96a1}{Interpolator}} (std\+::map$<$ unsigned int, T $>$ \&\&data)
+\begin{DoxyCompactList}\small\item\em Construct an interpolator from a map of objects. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Interpolator_aef2e9c1386c5ef0344304aa523605072}{read\+Yaml}} (const \mbox{\hyperlink{classlibcamera_1_1YamlObject}{libcamera\+::\+Yaml\+Object}} \&yaml, const std\+::string \&key\+\_\+name, const std\+::string \&value\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Initialize an \doxylink{classlibcamera_1_1ipa_1_1Interpolator}{Interpolator} instance from yaml. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Interpolator_a919edb214d355c268de3b029aef1bff5}{set\+Quantization}} (const unsigned int q)
+\begin{DoxyCompactList}\small\item\em Set the quantization value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Interpolator_a79927dfe409f66540afddb925c91b951}{set\+Data}} (std\+::map$<$ unsigned int, T $>$ \&\&data)
+\begin{DoxyCompactList}\small\item\em Set the internal map. \end{DoxyCompactList}\item 
+const T \& \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Interpolator_a3838db93b9e259b9a5121a954c14db24}{get\+Interpolated}} (unsigned int key, unsigned int \texorpdfstring{$\ast$}{*}quantized\+Key=nullptr)
+\begin{DoxyCompactList}\small\item\em Retrieve an interpolated value for the given key. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Interpolator_affe746a3898de046ad30e0fbdbcc5b40}{interpolate}} (const T \&a, const T \&b, T \&dest, double lambda)
+\begin{DoxyCompactList}\small\item\em Interpolate between two instances of T. \end{DoxyCompactList}\item 
+\Hypertarget{classlibcamera_1_1ipa_1_1Interpolator_a6b65be1822a132b4c646773692ebedab}\label{classlibcamera_1_1ipa_1_1Interpolator_a6b65be1822a132b4c646773692ebedab} 
+void {\bfseries interpolate} (const \mbox{\hyperlink{structlibcamera_1_1ipa_1_1rkisp1_1_1algorithms_1_1LensShadingCorrection_1_1Components}{rkisp1\+::algorithms\+::\+Lens\+Shading\+Correction\+::\+Components}} \&a, const \mbox{\hyperlink{structlibcamera_1_1ipa_1_1rkisp1_1_1algorithms_1_1LensShadingCorrection_1_1Components}{rkisp1\+::algorithms\+::\+Lens\+Shading\+Correction\+::\+Components}} \&b, \mbox{\hyperlink{structlibcamera_1_1ipa_1_1rkisp1_1_1algorithms_1_1LensShadingCorrection_1_1Components}{rkisp1\+::algorithms\+::\+Lens\+Shading\+Correction\+::\+Components}} \&dest, double lambda)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class libcamera\+::ipa\+::\+Interpolator$<$ T $>$}
+Class for storing, retrieving, and interpolating objects. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of objects stored in the interpolator\\
+\hline
+\end{DoxyTemplParams}
+The main use case is to pass a map from color temperatures to corresponding objects (eg. matrices for color correction), and then requesting a interpolated object for a specific color temperature. This class will abstract away the interpolation portion. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlibcamera_1_1ipa_1_1Interpolator_a766620b0f43743ff2289c411f9cfe744}\label{classlibcamera_1_1ipa_1_1Interpolator_a766620b0f43743ff2289c411f9cfe744} 
+\index{libcamera::ipa::Interpolator$<$ T $>$@{libcamera::ipa::Interpolator$<$ T $>$}!Interpolator@{Interpolator}}
+\index{Interpolator@{Interpolator}!libcamera::ipa::Interpolator$<$ T $>$@{libcamera::ipa::Interpolator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Interpolator()}{Interpolator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Interpolator}{libcamera\+::ipa\+::\+Interpolator}}$<$ T $>$\+::\+Interpolator (\begin{DoxyParamCaption}\item[{const std\+::map$<$ unsigned int, T $>$ \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct an interpolator from a map of objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Map from which to construct the interpolator \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classlibcamera_1_1ipa_1_1Interpolator_ab96345cc35bbc91a17981579d89a96a1}\label{classlibcamera_1_1ipa_1_1Interpolator_ab96345cc35bbc91a17981579d89a96a1} 
+\index{libcamera::ipa::Interpolator$<$ T $>$@{libcamera::ipa::Interpolator$<$ T $>$}!Interpolator@{Interpolator}}
+\index{Interpolator@{Interpolator}!libcamera::ipa::Interpolator$<$ T $>$@{libcamera::ipa::Interpolator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Interpolator()}{Interpolator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Interpolator}{libcamera\+::ipa\+::\+Interpolator}}$<$ T $>$\+::\+Interpolator (\begin{DoxyParamCaption}\item[{std\+::map$<$ unsigned int, T $>$ \&\&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct an interpolator from a map of objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Map from which to construct the interpolator \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1ipa_1_1Interpolator_a3838db93b9e259b9a5121a954c14db24}\label{classlibcamera_1_1ipa_1_1Interpolator_a3838db93b9e259b9a5121a954c14db24} 
+\index{libcamera::ipa::Interpolator$<$ T $>$@{libcamera::ipa::Interpolator$<$ T $>$}!getInterpolated@{getInterpolated}}
+\index{getInterpolated@{getInterpolated}!libcamera::ipa::Interpolator$<$ T $>$@{libcamera::ipa::Interpolator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getInterpolated()}{getInterpolated()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+const T \& \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Interpolator}{libcamera\+::ipa\+::\+Interpolator}}$<$ T $>$\+::get\+Interpolated (\begin{DoxyParamCaption}\item[{unsigned int}]{key,  }\item[{unsigned int \texorpdfstring{$\ast$}{*}}]{quantized\+Key = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve an interpolated value for the given key. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em key} & The unsigned integer key of the object to retrieve \\
+\hline
+\mbox{\texttt{ out}}  & {\em quantized\+Key} & If provided, the key value after quantization \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The object corresponding to the key. The object is cached internally, so on successive calls with the same key (after quantization) interpolation is not recalculated. 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1Interpolator_affe746a3898de046ad30e0fbdbcc5b40}\label{classlibcamera_1_1ipa_1_1Interpolator_affe746a3898de046ad30e0fbdbcc5b40} 
+\index{libcamera::ipa::Interpolator$<$ T $>$@{libcamera::ipa::Interpolator$<$ T $>$}!interpolate@{interpolate}}
+\index{interpolate@{interpolate}!libcamera::ipa::Interpolator$<$ T $>$@{libcamera::ipa::Interpolator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{interpolate()}{interpolate()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Interpolator}{libcamera\+::ipa\+::\+Interpolator}}$<$ T $>$\+::interpolate (\begin{DoxyParamCaption}\item[{const T \&}]{a,  }\item[{const T \&}]{b,  }\item[{T \&}]{dest,  }\item[{double}]{lambda }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Interpolate between two instances of T. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & The first value to interpolate \\
+\hline
+{\em b} & The second value to interpolate \\
+\hline
+{\em dest} & The destination for the interpolated value \\
+\hline
+{\em lambda} & The interpolation factor (0..1)\\
+\hline
+\end{DoxyParams}
+Interpolates between {\itshape a} and {\itshape b} according to {\itshape lambda}. It calculates dest = a \texorpdfstring{$\ast$}{*} (1.\+0 -\/ lambda) + b \texorpdfstring{$\ast$}{*} lambda;
+
+If T supports multiplication with double and addition, this function can be used as is. For other types this function can be overwritten using partial template specialization. \Hypertarget{classlibcamera_1_1ipa_1_1Interpolator_aef2e9c1386c5ef0344304aa523605072}\label{classlibcamera_1_1ipa_1_1Interpolator_aef2e9c1386c5ef0344304aa523605072} 
+\index{libcamera::ipa::Interpolator$<$ T $>$@{libcamera::ipa::Interpolator$<$ T $>$}!readYaml@{readYaml}}
+\index{readYaml@{readYaml}!libcamera::ipa::Interpolator$<$ T $>$@{libcamera::ipa::Interpolator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{readYaml()}{readYaml()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Interpolator}{libcamera\+::ipa\+::\+Interpolator}}$<$ T $>$\+::read\+Yaml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1YamlObject}{libcamera\+::\+Yaml\+Object}} \&}]{yaml,  }\item[{const std\+::string \&}]{key\+\_\+name,  }\item[{const std\+::string \&}]{value\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initialize an \doxylink{classlibcamera_1_1ipa_1_1Interpolator}{Interpolator} instance from yaml. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of data stored in the interpolator \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em yaml} & The yaml object that contains the map of unsigned integers to objects \\
+\hline
+\mbox{\texttt{ in}}  & {\em key\+\_\+name} & The name of the key in the yaml object \\
+\hline
+\mbox{\texttt{ in}}  & {\em value\+\_\+name} & The name of the value in the yaml object\\
+\hline
+\end{DoxyParams}
+The yaml object is expected to be a list of maps. Each map has two or more pairs\+: one of {\itshape key\+\_\+name} to the key value (usually color temperature), and one or more of {\itshape value\+\_\+name} to the object. This is a bit difficult to explain, so here is an example (in python, as it is easier to parse than yaml)\+: \mbox{[} \{ \textquotesingle{}ct\textquotesingle{}\+: 2860, \textquotesingle{}ccm\textquotesingle{}\+: \mbox{[} 2.\+12089, -\/0.\+52461, -\/0.\+59629, -\/0.\+85342, 2.\+80445, -\/0.\+95103, -\/0.\+26897, -\/1.\+14788, 2.\+41685 \mbox{]}, \textquotesingle{}offsets\textquotesingle{}\+: \mbox{[} 0, 0, 0 \mbox{]} \},
+
+\{ \textquotesingle{}ct\textquotesingle{}\+: 2960, \textquotesingle{}ccm\textquotesingle{}\+: \mbox{[} 2.\+26962, -\/0.\+54174, -\/0.\+72789, -\/0.\+77008, 2.\+60271, -\/0.\+83262, -\/0.\+26036, -\/1.\+51254, 2.\+77289 \mbox{]}, \textquotesingle{}offsets\textquotesingle{}\+: \mbox{[} 0, 0, 0 \mbox{]} \},
+
+\{ \textquotesingle{}ct\textquotesingle{}\+: 3603, \textquotesingle{}ccm\textquotesingle{}\+: \mbox{[} 2.\+18644, -\/0.\+66148, -\/0.\+52496, -\/0.\+77828, 2.\+69474, -\/0.\+91645, -\/0.\+25239, -\/0.\+83059, 2.\+08298 \mbox{]}, \textquotesingle{}offsets\textquotesingle{}\+: \mbox{[} 0, 0, 0 \mbox{]} \}, \mbox{]}
+
+In this case, {\itshape key\+\_\+name} would be \textquotesingle{}ct\textquotesingle{}, and {\itshape value\+\_\+name} can be either \textquotesingle{}ccm\textquotesingle{} or \textquotesingle{}offsets\textquotesingle{}. This way multiple interpolators can be defined in one set of color temperature ranges in the tuning file, and they can be retrieved separately with the {\itshape value\+\_\+name} parameter.
+
+\begin{DoxyReturn}{Returns}
+Zero on success, negative error code otherwise 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1Interpolator_a79927dfe409f66540afddb925c91b951}\label{classlibcamera_1_1ipa_1_1Interpolator_a79927dfe409f66540afddb925c91b951} 
+\index{libcamera::ipa::Interpolator$<$ T $>$@{libcamera::ipa::Interpolator$<$ T $>$}!setData@{setData}}
+\index{setData@{setData}!libcamera::ipa::Interpolator$<$ T $>$@{libcamera::ipa::Interpolator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setData()}{setData()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Interpolator}{libcamera\+::ipa\+::\+Interpolator}}$<$ T $>$\+::set\+Data (\begin{DoxyParamCaption}\item[{std\+::map$<$ unsigned int, T $>$ \&\&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the internal map. 
+
+Overwrites the internal map using move semantics. \Hypertarget{classlibcamera_1_1ipa_1_1Interpolator_a919edb214d355c268de3b029aef1bff5}\label{classlibcamera_1_1ipa_1_1Interpolator_a919edb214d355c268de3b029aef1bff5} 
+\index{libcamera::ipa::Interpolator$<$ T $>$@{libcamera::ipa::Interpolator$<$ T $>$}!setQuantization@{setQuantization}}
+\index{setQuantization@{setQuantization}!libcamera::ipa::Interpolator$<$ T $>$@{libcamera::ipa::Interpolator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setQuantization()}{setQuantization()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Interpolator}{libcamera\+::ipa\+::\+Interpolator}}$<$ T $>$\+::set\+Quantization (\begin{DoxyParamCaption}\item[{const unsigned int}]{q }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the quantization value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em q} & The quantization value\\
+\hline
+\end{DoxyParams}
+Sets the quantization value. When this is set, \textquotesingle{}key\textquotesingle{} gets quantized to this size, before doing the interpolation. This can help in reducing the number of updates pushed to the hardware.
+
+Note that normally a threshold needs to be combined with quantization. Otherwise a value that swings around the edge of the quantization step will lead to constant updates. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/ipa/libipa/\mbox{\hyperlink{interpolator_8h}{interpolator.\+h}}\item 
+src/peripherals/camera/libcamera/src/ipa/libipa/interpolator.\+cpp\end{DoxyCompactItemize}

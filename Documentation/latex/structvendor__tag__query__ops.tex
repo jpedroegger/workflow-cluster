@@ -1,0 +1,53 @@
+\doxysection{vendor\+\_\+tag\+\_\+query\+\_\+ops Struct Reference}
+\hypertarget{structvendor__tag__query__ops}{}\label{structvendor__tag__query__ops}\index{vendor\_tag\_query\_ops@{vendor\_tag\_query\_ops}}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const char \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structvendor__tag__query__ops_aaaa3a92312dd7a5e671d1592bdd75d46}{get\+\_\+camera\+\_\+vendor\+\_\+section\+\_\+name}} )(const \mbox{\hyperlink{structvendor__tag__query__ops}{vendor\+\_\+tag\+\_\+query\+\_\+ops\+\_\+t}} \texorpdfstring{$\ast$}{*}v, uint32\+\_\+t tag)
+\item 
+const char \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structvendor__tag__query__ops_ad2226c78aaf7c3b4d9d25ee29e0dce9f}{get\+\_\+camera\+\_\+vendor\+\_\+tag\+\_\+name}} )(const \mbox{\hyperlink{structvendor__tag__query__ops}{vendor\+\_\+tag\+\_\+query\+\_\+ops\+\_\+t}} \texorpdfstring{$\ast$}{*}v, uint32\+\_\+t tag)
+\item 
+int(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structvendor__tag__query__ops_acfc72cf39c53374b5c7c68ab0bb570a9}{get\+\_\+camera\+\_\+vendor\+\_\+tag\+\_\+type}} )(const \mbox{\hyperlink{structvendor__tag__query__ops}{vendor\+\_\+tag\+\_\+query\+\_\+ops\+\_\+t}} \texorpdfstring{$\ast$}{*}v, uint32\+\_\+t tag)
+\item 
+int(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structvendor__tag__query__ops_a8cbdfc456151fa47c58aec35996b9e5e}{get\+\_\+camera\+\_\+vendor\+\_\+tag\+\_\+count}} )(const \mbox{\hyperlink{structvendor__tag__query__ops}{vendor\+\_\+tag\+\_\+query\+\_\+ops\+\_\+t}} \texorpdfstring{$\ast$}{*}v)
+\item 
+void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structvendor__tag__query__ops_a297c9c2ea9c7ec2f06414fed0d1ac665}{get\+\_\+camera\+\_\+vendor\+\_\+tags}} )(const \mbox{\hyperlink{structvendor__tag__query__ops}{vendor\+\_\+tag\+\_\+query\+\_\+ops\+\_\+t}} \texorpdfstring{$\ast$}{*}v, uint32\+\_\+t \texorpdfstring{$\ast$}{*}tag\+\_\+array)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structvendor__tag__query__ops_aaaa3a92312dd7a5e671d1592bdd75d46}\label{structvendor__tag__query__ops_aaaa3a92312dd7a5e671d1592bdd75d46} 
+\index{vendor\_tag\_query\_ops@{vendor\_tag\_query\_ops}!get\_camera\_vendor\_section\_name@{get\_camera\_vendor\_section\_name}}
+\index{get\_camera\_vendor\_section\_name@{get\_camera\_vendor\_section\_name}!vendor\_tag\_query\_ops@{vendor\_tag\_query\_ops}}
+\doxysubsubsection{\texorpdfstring{get\_camera\_vendor\_section\_name}{get\_camera\_vendor\_section\_name}}
+{\footnotesize\ttfamily const char \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} vendor\+\_\+tag\+\_\+query\+\_\+ops\+::get\+\_\+camera\+\_\+vendor\+\_\+section\+\_\+name) (const \mbox{\hyperlink{structvendor__tag__query__ops}{vendor\+\_\+tag\+\_\+query\+\_\+ops\+\_\+t}} \texorpdfstring{$\ast$}{*}v, uint32\+\_\+t tag)}
+
+Get vendor section name for a vendor-\/specified entry tag. Only called for tags \texorpdfstring{$>$}{>}= 0x80000000. The section name must start with the name of the vendor in the Java package style. For example, Camera\+Zoom inc must prefix their sections with "{}com.\+camerazoom."{} Must return NULL if the tag is outside the bounds of vendor-\/defined sections. \Hypertarget{structvendor__tag__query__ops_a8cbdfc456151fa47c58aec35996b9e5e}\label{structvendor__tag__query__ops_a8cbdfc456151fa47c58aec35996b9e5e} 
+\index{vendor\_tag\_query\_ops@{vendor\_tag\_query\_ops}!get\_camera\_vendor\_tag\_count@{get\_camera\_vendor\_tag\_count}}
+\index{get\_camera\_vendor\_tag\_count@{get\_camera\_vendor\_tag\_count}!vendor\_tag\_query\_ops@{vendor\_tag\_query\_ops}}
+\doxysubsubsection{\texorpdfstring{get\_camera\_vendor\_tag\_count}{get\_camera\_vendor\_tag\_count}}
+{\footnotesize\ttfamily int(\texorpdfstring{$\ast$}{*} vendor\+\_\+tag\+\_\+query\+\_\+ops\+::get\+\_\+camera\+\_\+vendor\+\_\+tag\+\_\+count) (const \mbox{\hyperlink{structvendor__tag__query__ops}{vendor\+\_\+tag\+\_\+query\+\_\+ops\+\_\+t}} \texorpdfstring{$\ast$}{*}v)}
+
+Get the number of vendor tags supported on this platform. Used to calculate the size of buffer needed for holding the array of all tags returned by \doxylink{structvendor__tag__query__ops_a297c9c2ea9c7ec2f06414fed0d1ac665}{get\+\_\+camera\+\_\+vendor\+\_\+tags()}. \Hypertarget{structvendor__tag__query__ops_ad2226c78aaf7c3b4d9d25ee29e0dce9f}\label{structvendor__tag__query__ops_ad2226c78aaf7c3b4d9d25ee29e0dce9f} 
+\index{vendor\_tag\_query\_ops@{vendor\_tag\_query\_ops}!get\_camera\_vendor\_tag\_name@{get\_camera\_vendor\_tag\_name}}
+\index{get\_camera\_vendor\_tag\_name@{get\_camera\_vendor\_tag\_name}!vendor\_tag\_query\_ops@{vendor\_tag\_query\_ops}}
+\doxysubsubsection{\texorpdfstring{get\_camera\_vendor\_tag\_name}{get\_camera\_vendor\_tag\_name}}
+{\footnotesize\ttfamily const char \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} vendor\+\_\+tag\+\_\+query\+\_\+ops\+::get\+\_\+camera\+\_\+vendor\+\_\+tag\+\_\+name) (const \mbox{\hyperlink{structvendor__tag__query__ops}{vendor\+\_\+tag\+\_\+query\+\_\+ops\+\_\+t}} \texorpdfstring{$\ast$}{*}v, uint32\+\_\+t tag)}
+
+Get tag name for a vendor-\/specified entry tag. Only called for tags \texorpdfstring{$>$}{>}= 0x80000000. Must return NULL if the tag is outside the bounds of vendor-\/defined sections. \Hypertarget{structvendor__tag__query__ops_acfc72cf39c53374b5c7c68ab0bb570a9}\label{structvendor__tag__query__ops_acfc72cf39c53374b5c7c68ab0bb570a9} 
+\index{vendor\_tag\_query\_ops@{vendor\_tag\_query\_ops}!get\_camera\_vendor\_tag\_type@{get\_camera\_vendor\_tag\_type}}
+\index{get\_camera\_vendor\_tag\_type@{get\_camera\_vendor\_tag\_type}!vendor\_tag\_query\_ops@{vendor\_tag\_query\_ops}}
+\doxysubsubsection{\texorpdfstring{get\_camera\_vendor\_tag\_type}{get\_camera\_vendor\_tag\_type}}
+{\footnotesize\ttfamily int(\texorpdfstring{$\ast$}{*} vendor\+\_\+tag\+\_\+query\+\_\+ops\+::get\+\_\+camera\+\_\+vendor\+\_\+tag\+\_\+type) (const \mbox{\hyperlink{structvendor__tag__query__ops}{vendor\+\_\+tag\+\_\+query\+\_\+ops\+\_\+t}} \texorpdfstring{$\ast$}{*}v, uint32\+\_\+t tag)}
+
+Get tag type for a vendor-\/specified entry tag. Only called for tags \texorpdfstring{$>$}{>}= 0x80000000. Must return -\/1 if the tag is outside the bounds of vendor-\/defined sections. \Hypertarget{structvendor__tag__query__ops_a297c9c2ea9c7ec2f06414fed0d1ac665}\label{structvendor__tag__query__ops_a297c9c2ea9c7ec2f06414fed0d1ac665} 
+\index{vendor\_tag\_query\_ops@{vendor\_tag\_query\_ops}!get\_camera\_vendor\_tags@{get\_camera\_vendor\_tags}}
+\index{get\_camera\_vendor\_tags@{get\_camera\_vendor\_tags}!vendor\_tag\_query\_ops@{vendor\_tag\_query\_ops}}
+\doxysubsubsection{\texorpdfstring{get\_camera\_vendor\_tags}{get\_camera\_vendor\_tags}}
+{\footnotesize\ttfamily void(\texorpdfstring{$\ast$}{*} vendor\+\_\+tag\+\_\+query\+\_\+ops\+::get\+\_\+camera\+\_\+vendor\+\_\+tags) (const \mbox{\hyperlink{structvendor__tag__query__ops}{vendor\+\_\+tag\+\_\+query\+\_\+ops\+\_\+t}} \texorpdfstring{$\ast$}{*}v, uint32\+\_\+t \texorpdfstring{$\ast$}{*}tag\+\_\+array)}
+
+Fill an array with all the supported vendor tags on this platform. \doxylink{structvendor__tag__query__ops_a8cbdfc456151fa47c58aec35996b9e5e}{get\+\_\+camera\+\_\+vendor\+\_\+tag\+\_\+count()} returns the number of tags supported, and tag\+\_\+array should be allocated with enough space to hold all of the tags. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/android/metadata/system/camera\+\_\+metadata.\+h\end{DoxyCompactItemize}

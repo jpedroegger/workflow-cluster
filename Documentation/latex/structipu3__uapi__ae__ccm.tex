@@ -1,0 +1,38 @@
+\doxysection{ipu3\+\_\+uapi\+\_\+ae\+\_\+ccm Struct Reference}
+\hypertarget{structipu3__uapi__ae__ccm}{}\label{structipu3__uapi__ae__ccm}\index{ipu3\_uapi\_ae\_ccm@{ipu3\_uapi\_ae\_ccm}}
+
+
+{\ttfamily \#include $<$intel-\/ipu3.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structipu3__uapi__ae__ccm_a0eef0efd9095079cbfabd4b4ee405f0d}\label{structipu3__uapi__ae__ccm_a0eef0efd9095079cbfabd4b4ee405f0d} 
+\+\_\+\+\_\+u16 {\bfseries gain\+\_\+gr}
+\item 
+\Hypertarget{structipu3__uapi__ae__ccm_a450599f02715c0168b6190d2d8207835}\label{structipu3__uapi__ae__ccm_a450599f02715c0168b6190d2d8207835} 
+\+\_\+\+\_\+u16 {\bfseries gain\+\_\+r}
+\item 
+\Hypertarget{structipu3__uapi__ae__ccm_ab9c7825d6c651d0a5c51910a5db70f91}\label{structipu3__uapi__ae__ccm_ab9c7825d6c651d0a5c51910a5db70f91} 
+\+\_\+\+\_\+u16 {\bfseries gain\+\_\+b}
+\item 
+\Hypertarget{structipu3__uapi__ae__ccm_a986b6efc65c1b16e263bb8de0ce87e4f}\label{structipu3__uapi__ae__ccm_a986b6efc65c1b16e263bb8de0ce87e4f} 
+\+\_\+\+\_\+u16 {\bfseries gain\+\_\+gb}
+\item 
+\Hypertarget{structipu3__uapi__ae__ccm_ade5c58bf2076e9a42f085380b1a802eb}\label{structipu3__uapi__ae__ccm_ade5c58bf2076e9a42f085380b1a802eb} 
+\+\_\+\+\_\+s16 {\bfseries mat} \mbox{[}16\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structipu3__uapi__ae__ccm}{ipu3\+\_\+uapi\+\_\+ae\+\_\+ccm} -\/ AE coefficients for WB and CCM
+
+@gain\+\_\+gr\+: WB gain factor for the gr channels. Default 256. @gain\+\_\+r\+: WB gain factor for the r channel. Default 256. @gain\+\_\+b\+: WB gain factor for the b channel. Default 256. @gain\+\_\+gb\+: WB gain factor for the gb channels. Default 256. @mat\+: 4x4 matrix that transforms Bayer quad output from WB to RGB+Y.
+
+Default\+: 128, 0, 0, 0, 0, 128, 0, 0, 0, 0, 128, 0, 0, 0, 0, 128,
+
+As part of the raw frame pre-\/process stage, the WB and color conversion need to be applied to expose the impact of these gain operations. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/intel-\/ipu3.\+h\end{DoxyCompactItemize}

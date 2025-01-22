@@ -1,0 +1,66 @@
+\doxysection{src/peripherals/camera/libcamera/include/libcamera/transform.h File Reference}
+\hypertarget{transform_8h}{}\label{transform_8h}\index{src/peripherals/camera/libcamera/include/libcamera/transform.h@{src/peripherals/camera/libcamera/include/libcamera/transform.h}}
+
+
+Enum to represent and manipulate 2D plane transforms.  
+
+
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacelibcamera}{libcamera}}
+\begin{DoxyCompactList}\small\item\em Top-\/level libcamera namespace. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571}{libcamera\+::\+Transform}} \+: int \{ \newline
+\mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571ac9c5c65fb4af9cf90eb99b3b84424189}{libcamera\+::\+Identity}} = 0
+, \mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571a4bb6c9559a08829b1fd0a5eedd2eecb5}{libcamera\+::\+Rot0}} = Identity
+, \mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571a01725f7032dd7fc3bc68806a46628cdd}{libcamera\+::\+HFlip}} = 1
+, \mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571a0b5d83f7ecb707aee4151b6575ca5af7}{libcamera\+::\+VFlip}} = 2
+, \newline
+\mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571ab999446b23b657dfbbce99e636bf9fbc}{libcamera\+::\+HVFlip}} = HFlip \texorpdfstring{$\vert$}{|} VFlip
+, \mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571af35f5bfafcf9cdad2100127dfc0109fd}{libcamera\+::\+Rot180}} = HVFlip
+, \mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571aaf70b1ac863830a4e1ce6268c8399f54}{libcamera\+::\+Transpose}} = 4
+, \mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571abd039fd6afddf90dab22307d3a18d11a}{libcamera\+::\+Rot270}} = HFlip \texorpdfstring{$\vert$}{|} Transpose
+, \newline
+\mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571ad5251a97af7b4036b4528a54405ea2ad}{libcamera\+::\+Rot90}} = VFlip \texorpdfstring{$\vert$}{|} Transpose
+, \mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571adaa7494d424939ff93c1c9396b065732}{libcamera\+::\+Rot180\+Transpose}} = HFlip \texorpdfstring{$\vert$}{|} VFlip \texorpdfstring{$\vert$}{|} Transpose
+ \}
+\begin{DoxyCompactList}\small\item\em Enum to represent a 2D plane transform. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+constexpr \mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571}{Transform}} \mbox{\hyperlink{namespacelibcamera_a04a94402416992e6164e720a4361f07d}{libcamera\+::operator\&}} (\mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571}{Transform}} t0, \mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571}{Transform}} t1)
+\begin{DoxyCompactList}\small\item\em Apply bitwise AND operator between the bits in the two transforms. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571}{Transform}} \mbox{\hyperlink{namespacelibcamera_ab0b0c1a24c06ae3893c9d525c1c5adb1}{libcamera\+::operator\texorpdfstring{$\vert$}{|}}} (\mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571}{Transform}} t0, \mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571}{Transform}} t1)
+\begin{DoxyCompactList}\small\item\em Apply bitwise OR operator between the bits in the two transforms. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571}{Transform}} \mbox{\hyperlink{namespacelibcamera_ac20975566193b5cb8cb939b22690029e}{libcamera\+::operator\texorpdfstring{$^\wedge$}{\string^}}} (\mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571}{Transform}} t0, \mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571}{Transform}} t1)
+\begin{DoxyCompactList}\small\item\em Apply bitwise XOR operator between the bits in the two transforms. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571}{Transform}} \& \mbox{\hyperlink{namespacelibcamera_ad8c3446aaadc4a7c9ca04b562f23f4aa}{libcamera\+::operator\&=}} (\mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571}{Transform}} \&t0, \mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571}{Transform}} t1)
+\begin{DoxyCompactList}\small\item\em Apply bitwise AND-\/assignment operator between the bits in the two transforms. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571}{Transform}} \& \mbox{\hyperlink{namespacelibcamera_aaf801287560cc4bab22afd4a2abe1c8d}{libcamera\+::operator\texorpdfstring{$\vert$}{|}=}} (\mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571}{Transform}} \&t0, \mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571}{Transform}} t1)
+\begin{DoxyCompactList}\small\item\em Apply bitwise OR-\/assignment operator between the bits in the two transforms. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571}{Transform}} \& \mbox{\hyperlink{namespacelibcamera_a9c135676b0426feaeff12799fd5d71b5}{libcamera\+::operator\texorpdfstring{$^\wedge$}{\string^}=}} (\mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571}{Transform}} \&t0, \mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571}{Transform}} t1)
+\begin{DoxyCompactList}\small\item\em Apply bitwise XOR-\/assignment operator between the bits in the two transforms. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571}{Transform}} \mbox{\hyperlink{namespacelibcamera_a582c114db169ee1cbbd4a7bc42661f09}{libcamera\+::operator\texorpdfstring{$\ast$}{*}}} (\mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571}{Transform}} t0, \mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571}{Transform}} t1)
+\begin{DoxyCompactList}\small\item\em Compose two transforms by applying {\itshape t0} first then {\itshape t1}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571}{Transform}} \mbox{\hyperlink{namespacelibcamera_ae470c767d80e939243374f4fa4cd29fd}{libcamera\+::operator-\/}} (\mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571}{Transform}} t)
+\begin{DoxyCompactList}\small\item\em Invert a transform. \end{DoxyCompactList}\item 
+constexpr bool \mbox{\hyperlink{namespacelibcamera_a089dfb388ad5d75d8b75025bc29282a4}{libcamera\+::operator!}} (\mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571}{Transform}} t)
+\begin{DoxyCompactList}\small\item\em Return {\ttfamily true} if the transform is the {\ttfamily Identity}, otherwise {\ttfamily false} \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571}{Transform}} \mbox{\hyperlink{namespacelibcamera_a38d00196ddd880f184b0b8b6afbac7aa}{libcamera\+::operator\texorpdfstring{$\sim$}{\string~}}} (\mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571}{Transform}} t)
+\begin{DoxyCompactList}\small\item\em Return the transform with all the bits inverted individually. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571}{Transform}} \mbox{\hyperlink{namespacelibcamera_a3c5f3e974000ca0d041bf8e4603f4959}{libcamera\+::transform\+From\+Rotation}} (int angle, bool \texorpdfstring{$\ast$}{*}success)
+\begin{DoxyCompactList}\small\item\em Return the transform representing a rotation of the given angle clockwise. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571}{Transform}} \mbox{\hyperlink{namespacelibcamera_ad729db99741d9b04e5ad6a58bb493a2c}{libcamera\+::operator/}} (const \mbox{\hyperlink{namespacelibcamera_a80ea01625b93ecfe879249ac60c79384}{Orientation}} \&o1, const \mbox{\hyperlink{namespacelibcamera_a80ea01625b93ecfe879249ac60c79384}{Orientation}} \&o2)
+\begin{DoxyCompactList}\small\item\em Return the Transform that applied to {\itshape o2} gives {\itshape o1}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacelibcamera_a80ea01625b93ecfe879249ac60c79384}{Orientation}} \mbox{\hyperlink{namespacelibcamera_aa3714da6d73d2c21990f5900cbabe37d}{libcamera\+::operator\texorpdfstring{$\ast$}{*}}} (const \mbox{\hyperlink{namespacelibcamera_a80ea01625b93ecfe879249ac60c79384}{Orientation}} \&o, const \mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571}{Transform}} \&t)
+\begin{DoxyCompactList}\small\item\em Apply the Transform {\itshape t} on the orientation {\itshape o}. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespacelibcamera_a9c8a5f0360baaaea3075a28bd59a16e3}{libcamera\+::transform\+To\+String}} (\mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571}{Transform}} t)
+\begin{DoxyCompactList}\small\item\em Return a character string describing the transform. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Enum to represent and manipulate 2D plane transforms. 
+

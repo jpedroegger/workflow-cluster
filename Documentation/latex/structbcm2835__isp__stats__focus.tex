@@ -1,0 +1,25 @@
+\doxysection{bcm2835\+\_\+isp\+\_\+stats\+\_\+focus Struct Reference}
+\hypertarget{structbcm2835__isp__stats__focus}{}\label{structbcm2835__isp__stats__focus}\index{bcm2835\_isp\_stats\_focus@{bcm2835\_isp\_stats\_focus}}
+
+
+{\ttfamily \#include $<$bcm2835-\/isp.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structbcm2835__isp__stats__focus_acd2bdf72192b4b6afb5579c2560084c1}\label{structbcm2835__isp__stats__focus_acd2bdf72192b4b6afb5579c2560084c1} 
+\+\_\+\+\_\+u64 {\bfseries contrast\+\_\+val} \mbox{[}2\mbox{]}\mbox{[}2\mbox{]}
+\item 
+\Hypertarget{structbcm2835__isp__stats__focus_a76f477f1f42df9f8e81b524bb2ad0328}\label{structbcm2835__isp__stats__focus_a76f477f1f42df9f8e81b524bb2ad0328} 
+\+\_\+\+\_\+u32 {\bfseries contrast\+\_\+val\+\_\+num} \mbox{[}2\mbox{]}\mbox{[}2\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structbcm2835__isp__stats__focus}{bcm2835\+\_\+isp\+\_\+stats\+\_\+focus} -\/ Focus statistics.
+
+@contrast\+\_\+val\+: Focus measure -\/ accumulated output of the focus filter. In the first dimension, index \mbox{[}0\mbox{]} counts pixels below a preset threshold, and index \mbox{[}1\mbox{]} counts pixels above the threshold. In the second dimension, index \mbox{[}0\mbox{]} uses the first predefined filter, and index \mbox{[}1\mbox{]} uses the second predefined filter. @contrast\+\_\+val\+\_\+num\+: The number of counted pixels in the above accumulation. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/bcm2835-\/isp.\+h\end{DoxyCompactItemize}

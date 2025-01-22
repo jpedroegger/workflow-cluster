@@ -1,0 +1,56 @@
+\doxysection{v4l2\+\_\+ctrl\+\_\+h264\+\_\+pps Struct Reference}
+\hypertarget{structv4l2__ctrl__h264__pps}{}\label{structv4l2__ctrl__h264__pps}\index{v4l2\_ctrl\_h264\_pps@{v4l2\_ctrl\_h264\_pps}}
+
+
+{\ttfamily \#include $<$v4l2-\/controls.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structv4l2__ctrl__h264__pps_a6faf5d16e88ef053b57881019e2e30fd}\label{structv4l2__ctrl__h264__pps_a6faf5d16e88ef053b57881019e2e30fd} 
+\+\_\+\+\_\+u8 {\bfseries pic\+\_\+parameter\+\_\+set\+\_\+id}
+\item 
+\Hypertarget{structv4l2__ctrl__h264__pps_aaefecd1c5219a1db8430fb0bb4dca7f5}\label{structv4l2__ctrl__h264__pps_aaefecd1c5219a1db8430fb0bb4dca7f5} 
+\+\_\+\+\_\+u8 {\bfseries seq\+\_\+parameter\+\_\+set\+\_\+id}
+\item 
+\Hypertarget{structv4l2__ctrl__h264__pps_a28109d2122102901cca2de89842db9e2}\label{structv4l2__ctrl__h264__pps_a28109d2122102901cca2de89842db9e2} 
+\+\_\+\+\_\+u8 {\bfseries num\+\_\+slice\+\_\+groups\+\_\+minus1}
+\item 
+\Hypertarget{structv4l2__ctrl__h264__pps_ae3d78f38de545f379fbb9c65c6df77fb}\label{structv4l2__ctrl__h264__pps_ae3d78f38de545f379fbb9c65c6df77fb} 
+\+\_\+\+\_\+u8 {\bfseries num\+\_\+ref\+\_\+idx\+\_\+l0\+\_\+default\+\_\+active\+\_\+minus1}
+\item 
+\Hypertarget{structv4l2__ctrl__h264__pps_a7e8b9704d2892e5e09490655e6b292d2}\label{structv4l2__ctrl__h264__pps_a7e8b9704d2892e5e09490655e6b292d2} 
+\+\_\+\+\_\+u8 {\bfseries num\+\_\+ref\+\_\+idx\+\_\+l1\+\_\+default\+\_\+active\+\_\+minus1}
+\item 
+\Hypertarget{structv4l2__ctrl__h264__pps_a6166034d653911790a669580769c6105}\label{structv4l2__ctrl__h264__pps_a6166034d653911790a669580769c6105} 
+\+\_\+\+\_\+u8 {\bfseries weighted\+\_\+bipred\+\_\+idc}
+\item 
+\Hypertarget{structv4l2__ctrl__h264__pps_adb524fcfaf95b62875316c760d232603}\label{structv4l2__ctrl__h264__pps_adb524fcfaf95b62875316c760d232603} 
+\+\_\+\+\_\+s8 {\bfseries pic\+\_\+init\+\_\+qp\+\_\+minus26}
+\item 
+\Hypertarget{structv4l2__ctrl__h264__pps_a5b38bd132daba3d598763aea8e52ef7d}\label{structv4l2__ctrl__h264__pps_a5b38bd132daba3d598763aea8e52ef7d} 
+\+\_\+\+\_\+s8 {\bfseries pic\+\_\+init\+\_\+qs\+\_\+minus26}
+\item 
+\Hypertarget{structv4l2__ctrl__h264__pps_a67ac371fc7d721754e3a95093fe2a7c8}\label{structv4l2__ctrl__h264__pps_a67ac371fc7d721754e3a95093fe2a7c8} 
+\+\_\+\+\_\+s8 {\bfseries chroma\+\_\+qp\+\_\+index\+\_\+offset}
+\item 
+\Hypertarget{structv4l2__ctrl__h264__pps_a5b5d1891d989fb6e7e4c2a473a4c15bc}\label{structv4l2__ctrl__h264__pps_a5b5d1891d989fb6e7e4c2a473a4c15bc} 
+\+\_\+\+\_\+s8 {\bfseries second\+\_\+chroma\+\_\+qp\+\_\+index\+\_\+offset}
+\item 
+\Hypertarget{structv4l2__ctrl__h264__pps_aefcb9d788d41521f0f287598897274c1}\label{structv4l2__ctrl__h264__pps_aefcb9d788d41521f0f287598897274c1} 
+\+\_\+\+\_\+u16 {\bfseries flags}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structv4l2__ctrl__h264__pps}{v4l2\+\_\+ctrl\+\_\+h264\+\_\+pps} -\/ H264 picture parameter set
+
+Except where noted, all the members on this picture parameter set structure match the picture parameter set syntax as specified by the H264 specification.
+
+In particular, V4\+L2\+\_\+\+H264\+\_\+\+PPS\+\_\+\+FLAG\+\_\+\+SCALING\+\_\+\+MATRIX\+\_\+\+PRESENT flag has a specific meaning. This flag should be set if a non-\/flat scaling matrix applies to the picture. In this case, applications are expected to use V4\+L2\+\_\+\+CID\+\_\+\+STATELESS\+\_\+\+H264\+\_\+\+SCALING\+\_\+\+MATRIX, to pass the values of the non-\/flat matrices.
+
+@pic\+\_\+parameter\+\_\+set\+\_\+id\+: see H264 specification. @seq\+\_\+parameter\+\_\+set\+\_\+id\+: see H264 specification. @num\+\_\+slice\+\_\+groups\+\_\+minus1\+: see H264 specification. @num\+\_\+ref\+\_\+idx\+\_\+l0\+\_\+default\+\_\+active\+\_\+minus1\+: see H264 specification. @num\+\_\+ref\+\_\+idx\+\_\+l1\+\_\+default\+\_\+active\+\_\+minus1\+: see H264 specification. @weighted\+\_\+bipred\+\_\+idc\+: see H264 specification. @pic\+\_\+init\+\_\+qp\+\_\+minus26\+: see H264 specification. @pic\+\_\+init\+\_\+qs\+\_\+minus26\+: see H264 specification. @chroma\+\_\+qp\+\_\+index\+\_\+offset\+: see H264 specification. @second\+\_\+chroma\+\_\+qp\+\_\+index\+\_\+offset\+: see H264 specification. @flags\+: see V4\+L2\+\_\+\+H264\+\_\+\+PPS\+\_\+\+FLAG\+\_\+\{\}. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/v4l2-\/controls.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,67 @@
+\doxysection{libcamera\+::Backtrace Class Reference}
+\hypertarget{classlibcamera_1_1Backtrace}{}\label{classlibcamera_1_1Backtrace}\index{libcamera::Backtrace@{libcamera::Backtrace}}
+
+
+Representation of a call stack backtrace.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1Backtrace_a330b7c9133d7c7c8e4a03e6f9d668caf}{Backtrace}} ()
+\begin{DoxyCompactList}\small\item\em Construct a backtrace. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classlibcamera_1_1Backtrace_a5a9e4418bd25bd10e3cbe8761801e68e}{to\+String}} (unsigned int skip\+Levels=0) const
+\begin{DoxyCompactList}\small\item\em Convert a backtrace to a string representation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Representation of a call stack backtrace. 
+
+The \doxylink{classlibcamera_1_1Backtrace}{Backtrace} class represents a function call stack. Constructing an instance captures the call stack at the point the instance is constructed. The instance can later be used to access the call stack and to generate a human-\/readable representation with the \doxylink{classlibcamera_1_1Backtrace_a5a9e4418bd25bd10e3cbe8761801e68e}{to\+String()} function.
+
+Depending on the platform, different backends can be used to generate the backtrace. The \doxylink{classlibcamera_1_1Backtrace}{Backtrace} class provides a best effort to capture accurate backtraces, but doesn\textquotesingle{}t offer any guarantee of a particular backtrace format. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlibcamera_1_1Backtrace_a330b7c9133d7c7c8e4a03e6f9d668caf}\label{classlibcamera_1_1Backtrace_a330b7c9133d7c7c8e4a03e6f9d668caf} 
+\index{libcamera::Backtrace@{libcamera::Backtrace}!Backtrace@{Backtrace}}
+\index{Backtrace@{Backtrace}!libcamera::Backtrace@{libcamera::Backtrace}}
+\doxysubsubsection{\texorpdfstring{Backtrace()}{Backtrace()}}
+{\footnotesize\ttfamily libcamera\+::\+Backtrace\+::\+Backtrace (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a backtrace. 
+
+The backtrace captures the call stack at the point where it is constructed. It can later be converted to a string with \doxylink{classlibcamera_1_1Backtrace_a5a9e4418bd25bd10e3cbe8761801e68e}{to\+String()}. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1Backtrace_a5a9e4418bd25bd10e3cbe8761801e68e}\label{classlibcamera_1_1Backtrace_a5a9e4418bd25bd10e3cbe8761801e68e} 
+\index{libcamera::Backtrace@{libcamera::Backtrace}!toString@{toString}}
+\index{toString@{toString}!libcamera::Backtrace@{libcamera::Backtrace}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily std\+::string libcamera\+::\+Backtrace\+::to\+String (\begin{DoxyParamCaption}\item[{unsigned int}]{skip\+Levels = {\ttfamily 0} }\end{DoxyParamCaption}) const}
+
+
+
+Convert a backtrace to a string representation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em skip\+Levels} & Number of initial levels to skip in the backtrace\\
+\hline
+\end{DoxyParams}
+The string representation of the backtrace is a multi-\/line string, with one line per call stack entry. The format of the entries isn\textquotesingle{}t specified and is platform-\/dependent.
+
+The {\itshape skip\+Levels} parameter indicates how many initial entries to skip from the backtrace. This can be used to hide functions that wrap the construction of the \doxylink{classlibcamera_1_1Backtrace}{Backtrace} instance from the call stack. The \doxylink{classlibcamera_1_1Backtrace}{Backtrace} constructor itself is automatically skipped and never shown in the backtrace.
+
+If backtrace generation fails for any reason (usually because the platform doesn\textquotesingle{}t support this feature), an empty string is returned.
+
+\begin{DoxyReturn}{Returns}
+A string representation of the backtrace, or an empty string if backtrace generation isn\textquotesingle{}t possible 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/base/\mbox{\hyperlink{backtrace_8h}{backtrace.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/base/backtrace.\+cpp\end{DoxyCompactItemize}

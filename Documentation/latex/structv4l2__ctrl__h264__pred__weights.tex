@@ -1,0 +1,30 @@
+\doxysection{v4l2\+\_\+ctrl\+\_\+h264\+\_\+pred\+\_\+weights Struct Reference}
+\hypertarget{structv4l2__ctrl__h264__pred__weights}{}\label{structv4l2__ctrl__h264__pred__weights}\index{v4l2\_ctrl\_h264\_pred\_weights@{v4l2\_ctrl\_h264\_pred\_weights}}
+
+
+{\ttfamily \#include $<$v4l2-\/controls.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structv4l2__ctrl__h264__pred__weights_a640d0e14ef748cd3f036f29e34b055a3}\label{structv4l2__ctrl__h264__pred__weights_a640d0e14ef748cd3f036f29e34b055a3} 
+\+\_\+\+\_\+u16 {\bfseries luma\+\_\+log2\+\_\+weight\+\_\+denom}
+\item 
+\Hypertarget{structv4l2__ctrl__h264__pred__weights_abe8af18853124e5e2c89e1a1bb062f9c}\label{structv4l2__ctrl__h264__pred__weights_abe8af18853124e5e2c89e1a1bb062f9c} 
+\+\_\+\+\_\+u16 {\bfseries chroma\+\_\+log2\+\_\+weight\+\_\+denom}
+\item 
+\Hypertarget{structv4l2__ctrl__h264__pred__weights_a016d78940292e378b4de9c69ca05d58c}\label{structv4l2__ctrl__h264__pred__weights_a016d78940292e378b4de9c69ca05d58c} 
+struct \mbox{\hyperlink{structv4l2__h264__weight__factors}{v4l2\+\_\+h264\+\_\+weight\+\_\+factors}} {\bfseries weight\+\_\+factors} \mbox{[}2\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structv4l2__ctrl__h264__pred__weights}{v4l2\+\_\+ctrl\+\_\+h264\+\_\+pred\+\_\+weights} -\/ Prediction weight table
+
+Prediction weight table, which matches the syntax specified by the H264 specification.
+
+@luma\+\_\+log2\+\_\+weight\+\_\+denom\+: see H264 specification. @chroma\+\_\+log2\+\_\+weight\+\_\+denom\+: see H264 specification. @weight\+\_\+factors\+: luma and chroma weight factors. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/v4l2-\/controls.\+h\end{DoxyCompactItemize}

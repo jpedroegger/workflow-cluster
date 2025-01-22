@@ -1,0 +1,86 @@
+\doxysection{RPi\+Controller\+::Tonemap Class Reference}
+\hypertarget{classRPiController_1_1Tonemap}{}\label{classRPiController_1_1Tonemap}\index{RPiController::Tonemap@{RPiController::Tonemap}}
+Inheritance diagram for RPi\+Controller\+::Tonemap\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classRPiController_1_1Tonemap}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classRPiController_1_1Tonemap_a55e686802948575fe0354cac97e29899}\label{classRPiController_1_1Tonemap_a55e686802948575fe0354cac97e29899} 
+{\bfseries Tonemap} (\mbox{\hyperlink{classRPiController_1_1Controller}{Controller}} \texorpdfstring{$\ast$}{*}controller=NULL)
+\item 
+char const \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classRPiController_1_1Tonemap_a4ffc1e27061c8aecff84ce0d5b6f2f2a}{name}} () const override
+\item 
+int \mbox{\hyperlink{classRPiController_1_1Tonemap_af11ef0feff47bd5d65cf9396df57c3ad}{read}} (const \mbox{\hyperlink{classlibcamera_1_1YamlObject}{libcamera\+::\+Yaml\+Object}} \&params) override
+\item 
+void \mbox{\hyperlink{classRPiController_1_1Tonemap_a187470bc294bfa13d9ba812600bf180d}{initialise}} () override
+\item 
+void \mbox{\hyperlink{classRPiController_1_1Tonemap_aa3b394c2b70b7f6797d57e33ae38e395}{prepare}} (Metadata \texorpdfstring{$\ast$}{*}image\+Metadata) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classRPiController_1_1Algorithm}{RPi\+Controller\+::\+Algorithm}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Algorithm} (\mbox{\hyperlink{classRPiController_1_1Controller}{Controller}} \texorpdfstring{$\ast$}{*}controller)
+\item 
+virtual void {\bfseries switch\+Mode} (\mbox{\hyperlink{structCameraMode}{Camera\+Mode}} const \&camera\+Mode, Metadata \texorpdfstring{$\ast$}{*}metadata)
+\item 
+virtual void {\bfseries process} (Statistics\+Ptr \&stats, Metadata \texorpdfstring{$\ast$}{*}image\+Metadata)
+\item 
+Metadata \& {\bfseries get\+Global\+Metadata} () const
+\item 
+const std\+::string \& {\bfseries get\+Target} () const
+\item 
+const \mbox{\hyperlink{structRPiController_1_1Controller_1_1HardwareConfig}{Controller\+::\+Hardware\+Config}} \& {\bfseries get\+Hardware\+Config} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classRPiController_1_1Tonemap_a187470bc294bfa13d9ba812600bf180d}\label{classRPiController_1_1Tonemap_a187470bc294bfa13d9ba812600bf180d} 
+\index{RPiController::Tonemap@{RPiController::Tonemap}!initialise@{initialise}}
+\index{initialise@{initialise}!RPiController::Tonemap@{RPiController::Tonemap}}
+\doxysubsubsection{\texorpdfstring{initialise()}{initialise()}}
+{\footnotesize\ttfamily void Tonemap\+::initialise (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classRPiController_1_1Algorithm}{RPi\+Controller\+::\+Algorithm}}.
+
+\Hypertarget{classRPiController_1_1Tonemap_a4ffc1e27061c8aecff84ce0d5b6f2f2a}\label{classRPiController_1_1Tonemap_a4ffc1e27061c8aecff84ce0d5b6f2f2a} 
+\index{RPiController::Tonemap@{RPiController::Tonemap}!name@{name}}
+\index{name@{name}!RPiController::Tonemap@{RPiController::Tonemap}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily char const  \texorpdfstring{$\ast$}{*} Tonemap\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classRPiController_1_1Algorithm}{RPi\+Controller\+::\+Algorithm}}.
+
+\Hypertarget{classRPiController_1_1Tonemap_aa3b394c2b70b7f6797d57e33ae38e395}\label{classRPiController_1_1Tonemap_aa3b394c2b70b7f6797d57e33ae38e395} 
+\index{RPiController::Tonemap@{RPiController::Tonemap}!prepare@{prepare}}
+\index{prepare@{prepare}!RPiController::Tonemap@{RPiController::Tonemap}}
+\doxysubsubsection{\texorpdfstring{prepare()}{prepare()}}
+{\footnotesize\ttfamily void Tonemap\+::prepare (\begin{DoxyParamCaption}\item[{Metadata \texorpdfstring{$\ast$}{*}}]{image\+Metadata }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classRPiController_1_1Algorithm}{RPi\+Controller\+::\+Algorithm}}.
+
+\Hypertarget{classRPiController_1_1Tonemap_af11ef0feff47bd5d65cf9396df57c3ad}\label{classRPiController_1_1Tonemap_af11ef0feff47bd5d65cf9396df57c3ad} 
+\index{RPiController::Tonemap@{RPiController::Tonemap}!read@{read}}
+\index{read@{read}!RPiController::Tonemap@{RPiController::Tonemap}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily int Tonemap\+::read (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1YamlObject}{libcamera\+::\+Yaml\+Object}} \&}]{params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classRPiController_1_1Algorithm}{RPi\+Controller\+::\+Algorithm}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/ipa/rpi/controller/rpi/tonemap.\+h\item 
+src/peripherals/camera/libcamera/src/ipa/rpi/controller/rpi/tonemap.\+cpp\end{DoxyCompactItemize}

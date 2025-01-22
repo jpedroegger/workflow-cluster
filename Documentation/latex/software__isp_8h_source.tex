@@ -1,0 +1,110 @@
+\doxysection{software\+\_\+isp.\+h}
+\hypertarget{software__isp_8h_source}{}\label{software__isp_8h_source}\index{src/peripherals/camera/libcamera/include/libcamera/internal/software\_isp/software\_isp.h@{src/peripherals/camera/libcamera/include/libcamera/internal/software\_isp/software\_isp.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2023,\ Linaro\ Ltd}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Simple\ software\ ISP\ implementation}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <initializer\_list>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <tuple>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{class_8h}{libcamera/base/class.h}}>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{libcamera_2base_2log_8h}{libcamera/base/log.h}}>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{signal_8h}{libcamera/base/signal.h}}>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{thread_8h}{libcamera/base/thread.h}}>}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{geometry_8h}{libcamera/geometry.h}}>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{pixel__format_8h}{libcamera/pixel\_format.h}}>}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <libcamera/ipa/soft\_ipa\_interface.h>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <libcamera/ipa/soft\_ipa\_proxy.h>}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{camera__sensor_8h}{libcamera/internal/camera\_sensor.h}}"{}}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ "{}libcamera/internal/dma\_buf\_allocator.h"{}}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pipeline__handler_8h}{libcamera/internal/pipeline\_handler.h}}"{}}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}libcamera/internal/shared\_mem\_object.h"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}libcamera/internal/software\_isp/debayer\_params.h"{}}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacelibcamera}{libcamera}}\ \{}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{class\ }DebayerCpu;}
+\DoxyCodeLine{00039\ \textcolor{keyword}{class\ }FrameBuffer;}
+\DoxyCodeLine{00040\ \textcolor{keyword}{class\ }PixelFormat;}
+\DoxyCodeLine{00041\ \textcolor{keyword}{class\ }Stream;}
+\DoxyCodeLine{00042\ \textcolor{keyword}{struct\ }StreamConfiguration;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \mbox{\hyperlink{libcamera_2base_2log_8h_a051a13068200cd8f4e845a4c7101b423}{LOG\_DECLARE\_CATEGORY}}(SoftwareIsp)}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ class\ \mbox{\hyperlink{classlibcamera_1_1SoftwareIsp}{SoftwareIsp}}}
+\DoxyCodeLine{00047\ \{}
+\DoxyCodeLine{00048\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1SoftwareIsp}{SoftwareIsp}}(\mbox{\hyperlink{classlibcamera_1_1PipelineHandler}{PipelineHandler}}\ *pipe,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1CameraSensor}{CameraSensor}}\ *sensor,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ControlInfoMap}{ControlInfoMap}}\ *ipaControls);}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1SoftwareIsp}{\string~SoftwareIsp}}();}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1SoftwareIsp_a440e705a54470011b7b0db99f60a8255}{loadConfiguration}}([[maybe\_unused]]\ \textcolor{keyword}{const}\ std::string\ \&filename)\ \{\ \textcolor{keywordflow}{return}\ 0;\ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{bool}\ isValid()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ std::vector<PixelFormat>\ formats(\mbox{\hyperlink{classlibcamera_1_1PixelFormat}{PixelFormat}}\ input);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1SizeRange}{SizeRange}}\ sizes(\mbox{\hyperlink{classlibcamera_1_1PixelFormat}{PixelFormat}}\ inputFormat,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \&inputSize);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ std::tuple<unsigned\ int,\ unsigned\ int>}
+\DoxyCodeLine{00062\ \ \ \ \ strideAndFrameSize(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1PixelFormat}{PixelFormat}}\ \&outputFormat,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \&size);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{int}\ configure(\textcolor{keyword}{const}\ \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration}{StreamConfiguration}}\ \&inputCfg,}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::reference\_wrapper<StreamConfiguration>>\ \&outputCfgs,}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ ipa::soft::IPAConfigInfo\ \&configInfo);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{int}\ exportBuffers(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Stream}{Stream}}\ *stream,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ count,}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::unique\_ptr<FrameBuffer>>\ *buffers);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ processStats(\textcolor{keyword}{const}\ uint32\_t\ frame,\ \textcolor{keyword}{const}\ uint32\_t\ bufferId,}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1ControlList}{ControlList}}\ \&sensorControls);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{int}\ start();}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ stop();}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ queueRequest(\textcolor{keyword}{const}\ uint32\_t\ frame,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1ControlList}{ControlList}}\ \&controls);}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{int}\ queueBuffers(uint32\_t\ frame,\ \mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{FrameBuffer}}\ *input,}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::map<const\ Stream\ *,\ FrameBuffer\ *>\ \&outputs);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ process(uint32\_t\ frame,\ \mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{FrameBuffer}}\ *input,\ \mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{FrameBuffer}}\ *output);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Signal}{Signal<FrameBuffer\ *>}}\ \mbox{\hyperlink{classlibcamera_1_1SoftwareIsp_a80429362805e8821ab9e82549f9b98f3}{inputBufferReady}};}
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Signal}{Signal<FrameBuffer\ *>}}\ \mbox{\hyperlink{classlibcamera_1_1SoftwareIsp_a0b5e960bb1944f0557a63780b571fe86}{outputBufferReady}};}
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Signal}{Signal<uint32\_t,\ uint32\_t>}}\ \mbox{\hyperlink{classlibcamera_1_1SoftwareIsp_af7e7dc0dc59e60cf6ec75a9fd430cd2a}{ispStatsReady}};}
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Signal}{Signal<const\ ControlList\ \&>}}\ \mbox{\hyperlink{classlibcamera_1_1SoftwareIsp_a84fdecc7d4b382f65a6c80d895ffc1df}{setSensorControls}};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{void}\ saveIspParams();}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ setSensorCtrls(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1ControlList}{ControlList}}\ \&sensorControls);}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ statsReady(uint32\_t\ frame,\ uint32\_t\ bufferId);}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{void}\ inputReady(\mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{FrameBuffer}}\ *input);}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ outputReady(\mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{FrameBuffer}}\ *output);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ std::unique\_ptr<DebayerCpu>\ debayer\_;}
+\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Thread}{Thread}}\ ispWorkerThread\_;}
+\DoxyCodeLine{00097\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1SharedMemObject}{SharedMemObject<DebayerParams>}}\ sharedParams\_;}
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{structlibcamera_1_1DebayerParams}{DebayerParams}}\ debayerParams\_;}
+\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1DmaBufAllocator}{DmaBufAllocator}}\ dmaHeap\_;}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ std::unique\_ptr<ipa::soft::IPAProxySoft>\ ipa\_;}
+\DoxyCodeLine{00102\ \};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \}\ \textcolor{comment}{/*\ namespace\ libcamera\ */}}
+
+\end{DoxyCode}

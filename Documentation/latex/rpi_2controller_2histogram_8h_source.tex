@@ -1,0 +1,61 @@
+\doxysection{histogram.\+h}
+\hypertarget{rpi_2controller_2histogram_8h_source}{}\label{rpi_2controller_2histogram_8h_source}\index{src/peripherals/camera/libcamera/src/ipa/rpi/controller/histogram.h@{src/peripherals/camera/libcamera/src/ipa/rpi/controller/histogram.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ BSD-\/2-\/Clause\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2019,\ Raspberry\ Pi\ Ltd}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ histogram\ calculation\ interface}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ A\ simple\ histogram\ class,\ for\ use\ in\ particular\ to\ find\ "{}quantiles"{}\ and}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ averages\ between\ "{}quantiles"{}.}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{namespace\ }RPiController\ \{}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRPiController_1_1Histogram}{Histogram}}}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{classRPiController_1_1Histogram}{Histogram}}()}
+\DoxyCodeLine{00024\ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ cumulative\_.push\_back(0);}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>\ \mbox{\hyperlink{classRPiController_1_1Histogram}{Histogram}}(T\ *histogram,\ \textcolor{keywordtype}{int}\ num)}
+\DoxyCodeLine{00029\ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ assert(num);}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ cumulative\_.reserve(num\ +\ 1);}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ cumulative\_.push\_back(0);}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ num;\ i++)}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ cumulative\_.push\_back(cumulative\_.back()\ +}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ histogram[i]);}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+\DoxyCodeLine{00037\ \ \ \ \ uint32\_t\ bins()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ cumulative\_.size()\ -\/\ 1;\ \}}
+\DoxyCodeLine{00038\ \ \ \ \ uint64\_t\ total()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ cumulative\_[cumulative\_.size()\ -\/\ 1];\ \}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{/*\ Cumulative\ frequency\ up\ to\ a\ (fractional)\ point\ in\ a\ bin.\ */}}
+\DoxyCodeLine{00040\ \ \ \ \ uint64\_t\ cumulativeFreq(\textcolor{keywordtype}{double}\ bin)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{comment}{/*\ Return\ the\ mean\ value\ between\ two\ (fractional)\ bins.\ */}}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{double}\ interBinMean(\textcolor{keywordtype}{double}\ binLo,\ \textcolor{keywordtype}{double}\ binHi)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ \ \ \ \ *\ Return\ the\ (fractional)\ bin\ of\ the\ point\ q\ (0\ <=\ q\ <=\ 1)\ through\ the}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ \ \ \ \ *\ histogram.\ Optionally\ provide\ limits\ to\ help.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{double}\ quantile(\textcolor{keywordtype}{double}\ q,\ \textcolor{keywordtype}{int}\ first\ =\ -\/1,\ \textcolor{keywordtype}{int}\ last\ =\ -\/1)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{/*\ Return\ the\ average\ histogram\ bin\ value\ between\ the\ two\ quantiles.\ */}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{double}\ interQuantileMean(\textcolor{keywordtype}{double}\ qLo,\ \textcolor{keywordtype}{double}\ qHi)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00052\ \ \ \ \ std::vector<uint64\_t>\ cumulative\_;}
+\DoxyCodeLine{00053\ \};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \}\ \textcolor{comment}{/*\ namespace\ RPiController\ */}}
+
+\end{DoxyCode}

@@ -1,0 +1,42 @@
+\doxysection{libcamera\+::Rk\+ISP1\+Self\+Path Class Reference}
+\hypertarget{classlibcamera_1_1RkISP1SelfPath}{}\label{classlibcamera_1_1RkISP1SelfPath}\index{libcamera::RkISP1SelfPath@{libcamera::RkISP1SelfPath}}
+Inheritance diagram for libcamera\+::Rk\+ISP1\+Self\+Path\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlibcamera_1_1RkISP1SelfPath}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1RkISP1Path}{libcamera\+::\+Rk\+ISP1\+Path}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Rk\+ISP1\+Path} (const char \texorpdfstring{$\ast$}{*}name, const \mbox{\hyperlink{classlibcamera_1_1Span}{Span}}$<$ const \mbox{\hyperlink{classlibcamera_1_1PixelFormat}{Pixel\+Format}} $>$ \&formats)
+\item 
+bool {\bfseries init} (\mbox{\hyperlink{classlibcamera_1_1MediaDevice}{Media\+Device}} \texorpdfstring{$\ast$}{*}media)
+\item 
+int {\bfseries set\+Enabled} (bool enable)
+\item 
+bool {\bfseries is\+Enabled} () const
+\item 
+\mbox{\hyperlink{structlibcamera_1_1StreamConfiguration}{Stream\+Configuration}} {\bfseries generate\+Configuration} (const \mbox{\hyperlink{classlibcamera_1_1CameraSensor}{Camera\+Sensor}} \texorpdfstring{$\ast$}{*}sensor, const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&resolution, \mbox{\hyperlink{namespacelibcamera_a295d1f5e7828d95c0b0aabc0a8baac03}{Stream\+Role}} role)
+\item 
+\mbox{\hyperlink{classlibcamera_1_1CameraConfiguration_a64163f21db2fe1ce0a6af5a6f6847744}{Camera\+Configuration\+::\+Status}} {\bfseries validate} (const \mbox{\hyperlink{classlibcamera_1_1CameraSensor}{Camera\+Sensor}} \texorpdfstring{$\ast$}{*}sensor, const std\+::optional$<$ \mbox{\hyperlink{classlibcamera_1_1SensorConfiguration}{Sensor\+Configuration}} $>$ \&sensor\+Config, \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration}{Stream\+Configuration}} \texorpdfstring{$\ast$}{*}cfg)
+\item 
+int {\bfseries configure} (const \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration}{Stream\+Configuration}} \&config, const \mbox{\hyperlink{structlibcamera_1_1V4L2SubdeviceFormat}{V4\+L2\+Subdevice\+Format}} \&input\+Format)
+\item 
+int {\bfseries export\+Buffers} (unsigned int buffer\+Count, std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} $>$ $>$ \texorpdfstring{$\ast$}{*}buffers)
+\item 
+int {\bfseries start} ()
+\item 
+void {\bfseries stop} ()
+\item 
+int {\bfseries queue\+Buffer} (\mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} \texorpdfstring{$\ast$}{*}buffer)
+\item 
+\mbox{\hyperlink{classlibcamera_1_1Signal}{Signal}}$<$ \mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} \texorpdfstring{$\ast$}{*} $>$ \& {\bfseries buffer\+Ready} ()
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/libcamera/pipeline/rkisp1/rkisp1\+\_\+path.\+h\item 
+src/peripherals/camera/libcamera/src/libcamera/pipeline/rkisp1/rkisp1\+\_\+path.\+cpp\end{DoxyCompactItemize}

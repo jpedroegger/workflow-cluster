@@ -1,0 +1,29 @@
+\doxysection{src/peripherals/camera/libcamera/src/libcamera/software\+\_\+isp/software\+\_\+isp.cpp File Reference}
+\hypertarget{software__isp_8cpp}{}\label{software__isp_8cpp}\index{src/peripherals/camera/libcamera/src/libcamera/software\_isp/software\_isp.cpp@{src/peripherals/camera/libcamera/src/libcamera/software\_isp/software\_isp.cpp}}
+
+
+Simple software ISP implementation.  
+
+
+{\ttfamily \#include "{}libcamera/internal/software\+\_\+isp/software\+\_\+isp.\+h"{}}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$sys/mman.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$libcamera/controls.\+h$>$}\newline
+{\ttfamily \#include $<$libcamera/formats.\+h$>$}\newline
+{\ttfamily \#include $<$libcamera/stream.\+h$>$}\newline
+{\ttfamily \#include "{}libcamera/internal/ipa\+\_\+manager.\+h"{}}\newline
+{\ttfamily \#include "{}libcamera/internal/software\+\_\+isp/debayer\+\_\+params.\+h"{}}\newline
+{\ttfamily \#include "{}debayer\+\_\+cpu.\+h"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacelibcamera}{libcamera}}
+\begin{DoxyCompactList}\small\item\em Top-\/level libcamera namespace. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Simple software ISP implementation. 
+

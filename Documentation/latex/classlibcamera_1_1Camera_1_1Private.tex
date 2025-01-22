@@ -1,0 +1,166 @@
+\doxysection{libcamera\+::Camera\+::Private Class Reference}
+\hypertarget{classlibcamera_1_1Camera_1_1Private}{}\label{classlibcamera_1_1Camera_1_1Private}\index{libcamera::Camera::Private@{libcamera::Camera::Private}}
+
+
+Base class for camera private data.  
+
+
+Inheritance diagram for libcamera\+::Camera\+::Private\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=11.000000cm]{classlibcamera_1_1Camera_1_1Private}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1Camera_1_1Private_a9a4e997ad0fab497b95350f7bc82ec16}{Private}} (\mbox{\hyperlink{classlibcamera_1_1PipelineHandler}{Pipeline\+Handler}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classlibcamera_1_1Camera_1_1Private_a765fac25ebdff5caf7be65a181cba38c}{pipe}})
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{classlibcamera_1_1Camera_1_1Private}{Camera\+::\+Private} instance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1PipelineHandler}{Pipeline\+Handler}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1Camera_1_1Private_a765fac25ebdff5caf7be65a181cba38c}{pipe}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the pipeline handler related to this camera. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classlibcamera_1_1CameraControlValidator}{Camera\+Control\+Validator}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1Camera_1_1Private_ab3b02eaffac28effb9752c332318062b}{validator}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the control validator related to this camera. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1Extensible_1_1Private}{libcamera\+::\+Extensible\+::\+Private}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Private} ()
+\begin{DoxyCompactList}\small\item\em Construct an instance of an \doxylink{classlibcamera_1_1Extensible}{Extensible} class private data. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\const T \texorpdfstring{$\ast$}{*} {\bfseries \+\_\+o} () const
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \texorpdfstring{$\ast$}{*} {\bfseries \+\_\+o} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::list$<$ \mbox{\hyperlink{classlibcamera_1_1Request}{Request}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classlibcamera_1_1Camera_1_1Private_ae5de4f5bb004bf9039363c9fd9e6240a}{queued\+Requests\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The list of queued and not yet completed requests. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map}} \mbox{\hyperlink{classlibcamera_1_1Camera_1_1Private_ab4e183eb4dabe929d1b2bbbb519b969f}{control\+Info\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The set of controls supported by the camera. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} \mbox{\hyperlink{classlibcamera_1_1Camera_1_1Private_ad31f12f5ed9c1fbe25750902f4791064}{properties\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The list of properties supported by the camera. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classlibcamera_1_1Camera_1_1Private_ace8c943a338ec3c0aa8b56c05b97463d}{request\+Sequence\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The queuing sequence number of the request. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for camera private data. 
+
+The \doxylink{classlibcamera_1_1Camera_1_1Private}{Camera\+::\+Private} class stores all private data associated with a camera. In addition to hiding core \doxylink{classlibcamera_1_1Camera}{Camera} data from the public API, it is expected to be subclassed by pipeline handlers to store pipeline-\/specific data.
+
+Pipeline handlers can obtain the \doxylink{classlibcamera_1_1Camera_1_1Private}{Camera\+::\+Private} instance associated with a camera by calling \doxylink{classlibcamera_1_1Extensible_a30a918eee516b7e1d97a7f346ce99fca}{Camera\+::\+\_\+d()}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlibcamera_1_1Camera_1_1Private_a9a4e997ad0fab497b95350f7bc82ec16}\label{classlibcamera_1_1Camera_1_1Private_a9a4e997ad0fab497b95350f7bc82ec16} 
+\index{libcamera::Camera::Private@{libcamera::Camera::Private}!Private@{Private}}
+\index{Private@{Private}!libcamera::Camera::Private@{libcamera::Camera::Private}}
+\doxysubsubsection{\texorpdfstring{Private()}{Private()}}
+{\footnotesize\ttfamily libcamera\+::\+Camera\+::\+Private\+::\+Private (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1PipelineHandler}{Pipeline\+Handler}} \texorpdfstring{$\ast$}{*}}]{pipe }\end{DoxyParamCaption})}
+
+
+
+Construct a \doxylink{classlibcamera_1_1Camera_1_1Private}{Camera\+::\+Private} instance. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em pipe} & The pipeline handler responsible for the camera device \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classlibcamera_1_1Camera_1_1Private_a31ebfc28f89f51ed3cd0c71ddc5c018c}\label{classlibcamera_1_1Camera_1_1Private_a31ebfc28f89f51ed3cd0c71ddc5c018c} 
+\index{libcamera::Camera::Private@{libcamera::Camera::Private}!````~Private@{\texorpdfstring{$\sim$}{\string~}Private}}
+\index{````~Private@{\texorpdfstring{$\sim$}{\string~}Private}!libcamera::Camera::Private@{libcamera::Camera::Private}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Private()}{\string~Private()}}
+{\footnotesize\ttfamily libcamera\+::\+Camera\+::\+Private\+::\texorpdfstring{$\sim$}{\string~}\+Private (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classlibcamera_1_1Extensible_1_1Private}{libcamera\+::\+Extensible\+::\+Private}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1Camera_1_1Private_a765fac25ebdff5caf7be65a181cba38c}\label{classlibcamera_1_1Camera_1_1Private_a765fac25ebdff5caf7be65a181cba38c} 
+\index{libcamera::Camera::Private@{libcamera::Camera::Private}!pipe@{pipe}}
+\index{pipe@{pipe}!libcamera::Camera::Private@{libcamera::Camera::Private}}
+\doxysubsubsection{\texorpdfstring{pipe()}{pipe()}}
+{\footnotesize\ttfamily libcamera\+::\+Camera\+::\+Private\+::pipe (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the pipeline handler related to this camera. 
+
+\begin{DoxyReturn}{Returns}
+The pipeline handler that created this camera 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Camera_1_1Private_ab3b02eaffac28effb9752c332318062b}\label{classlibcamera_1_1Camera_1_1Private_ab3b02eaffac28effb9752c332318062b} 
+\index{libcamera::Camera::Private@{libcamera::Camera::Private}!validator@{validator}}
+\index{validator@{validator}!libcamera::Camera::Private@{libcamera::Camera::Private}}
+\doxysubsubsection{\texorpdfstring{validator()}{validator()}}
+{\footnotesize\ttfamily libcamera\+::\+Camera\+::\+Private\+::validator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the control validator related to this camera. 
+
+\begin{DoxyReturn}{Returns}
+The control validator associated with this camera 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classlibcamera_1_1Camera_1_1Private_ab4e183eb4dabe929d1b2bbbb519b969f}\label{classlibcamera_1_1Camera_1_1Private_ab4e183eb4dabe929d1b2bbbb519b969f} 
+\index{libcamera::Camera::Private@{libcamera::Camera::Private}!controlInfo\_@{controlInfo\_}}
+\index{controlInfo\_@{controlInfo\_}!libcamera::Camera::Private@{libcamera::Camera::Private}}
+\doxysubsubsection{\texorpdfstring{controlInfo\_}{controlInfo\_}}
+{\footnotesize\ttfamily libcamera\+::\+Camera\+::\+Private\+::control\+Info\+\_\+}
+
+
+
+The set of controls supported by the camera. 
+
+The control information shall be initialised by the pipeline handler when creating the camera.
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000018}{Todo}}]This member was initially meant to stay constant after the camera is created. Several pipeline handlers are already updating it when the camera is configured. Update the documentation accordingly, and possibly the API as well, when implementing official support for control info updates. \end{DoxyRefDesc}
+\Hypertarget{classlibcamera_1_1Camera_1_1Private_ad31f12f5ed9c1fbe25750902f4791064}\label{classlibcamera_1_1Camera_1_1Private_ad31f12f5ed9c1fbe25750902f4791064} 
+\index{libcamera::Camera::Private@{libcamera::Camera::Private}!properties\_@{properties\_}}
+\index{properties\_@{properties\_}!libcamera::Camera::Private@{libcamera::Camera::Private}}
+\doxysubsubsection{\texorpdfstring{properties\_}{properties\_}}
+{\footnotesize\ttfamily libcamera\+::\+Camera\+::\+Private\+::properties\+\_\+}
+
+
+
+The list of properties supported by the camera. 
+
+The list of camera properties shall be initialised by the pipeline handler when creating the camera, and shall not be modified afterwards. \Hypertarget{classlibcamera_1_1Camera_1_1Private_ae5de4f5bb004bf9039363c9fd9e6240a}\label{classlibcamera_1_1Camera_1_1Private_ae5de4f5bb004bf9039363c9fd9e6240a} 
+\index{libcamera::Camera::Private@{libcamera::Camera::Private}!queuedRequests\_@{queuedRequests\_}}
+\index{queuedRequests\_@{queuedRequests\_}!libcamera::Camera::Private@{libcamera::Camera::Private}}
+\doxysubsubsection{\texorpdfstring{queuedRequests\_}{queuedRequests\_}}
+{\footnotesize\ttfamily libcamera\+::\+Camera\+::\+Private\+::queued\+Requests\+\_\+}
+
+
+
+The list of queued and not yet completed requests. 
+
+This list tracks requests queued in order to ensure completion of all requests when the pipeline handler is stopped.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classlibcamera_1_1PipelineHandler_aa82dffe399ac974ecb375cbb2a2074dd}{Pipeline\+Handler\+::queue\+Request()}, \doxylink{classlibcamera_1_1PipelineHandler_ab30b037abfb09bd548c53c9f9196a184}{Pipeline\+Handler\+::stop()}, \doxylink{classlibcamera_1_1PipelineHandler_a4184b62419a6e658c6a86438023519b2}{Pipeline\+Handler\+::complete\+Request()} 
+\end{DoxySeeAlso}
+\Hypertarget{classlibcamera_1_1Camera_1_1Private_ace8c943a338ec3c0aa8b56c05b97463d}\label{classlibcamera_1_1Camera_1_1Private_ace8c943a338ec3c0aa8b56c05b97463d} 
+\index{libcamera::Camera::Private@{libcamera::Camera::Private}!requestSequence\_@{requestSequence\_}}
+\index{requestSequence\_@{requestSequence\_}!libcamera::Camera::Private@{libcamera::Camera::Private}}
+\doxysubsubsection{\texorpdfstring{requestSequence\_}{requestSequence\_}}
+{\footnotesize\ttfamily libcamera\+::\+Camera\+::\+Private\+::request\+Sequence\+\_\+}
+
+
+
+The queuing sequence number of the request. 
+
+When requests are queued, they are given a per-\/camera sequence number to facilitate debugging of internal request usage.
+
+The request\+Sequence\+\_\+ tracks the number of requests queued to a camera over a single capture session. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/internal/camera.\+h\item 
+src/peripherals/camera/libcamera/src/libcamera/camera.\+cpp\end{DoxyCompactItemize}

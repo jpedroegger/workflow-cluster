@@ -1,0 +1,137 @@
+\doxysection{interpolator.\+h}
+\hypertarget{interpolator_8h_source}{}\label{interpolator_8h_source}\index{src/peripherals/camera/libcamera/src/ipa/libipa/interpolator.h@{src/peripherals/camera/libcamera/src/ipa/libipa/interpolator.h}}
+\mbox{\hyperlink{interpolator_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2024,\ Paul\ Elder\ <paul.elder@ideasonboard.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Helper\ class\ for\ interpolating\ maps\ of\ objects}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <tuple>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{libcamera_2base_2log_8h}{libcamera/base/log.h}}>}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{yaml__parser_8h}{libcamera/internal/yaml\_parser.h}}"{}}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacelibcamera}{libcamera}}\ \{}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \mbox{\hyperlink{libcamera_2base_2log_8h_a051a13068200cd8f4e845a4c7101b423}{LOG\_DECLARE\_CATEGORY}}(Interpolator)}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{namespace\ }ipa\ \{}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Interpolator}{Interpolator}}}
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00029\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Interpolator_a8574af7a9da617fe469f1525295fe84c}{Interpolator}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Interpolator_a766620b0f43743ff2289c411f9cfe744}{Interpolator}}(\textcolor{keyword}{const}\ std::map<unsigned\ int,\ T>\ \&data)}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ :\ data\_(data)}
+\DoxyCodeLine{00033\ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Interpolator_ab96345cc35bbc91a17981579d89a96a1}{Interpolator}}(std::map<unsigned\ int,\ T>\ \&\&data)}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ :\ data\_(std::move(data))}
+\DoxyCodeLine{00037\ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Interpolator}{\string~Interpolator}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Interpolator_aef2e9c1386c5ef0344304aa523605072}{readYaml}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1YamlObject}{libcamera::YamlObject}}\ \&yaml,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&key\_name,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&value\_name)}
+\DoxyCodeLine{00045\ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ data\_.clear();}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ lastInterpolatedKey\_.reset();}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!yaml.\mbox{\hyperlink{classlibcamera_1_1YamlObject_a3cc415c3859e55bd57866c3ae515cf15}{isList}}())\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{libcamera_2base_2log_8h_a3577749fb48d57a158b8ac1a0b3ab57e}{LOG}}(\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Interpolator}{Interpolator}},\ Error)\ <<\ \textcolor{stringliteral}{"{}yaml\ object\ must\ be\ a\ list"{}};}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/EINVAL;}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&value\ :\ yaml.\mbox{\hyperlink{classlibcamera_1_1YamlObject_afda1fc710962215ea21fe6b4f8d584ae}{asList}}())\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ ct\ =\ std::stoul(value[key\_name].get<std::string>(\textcolor{stringliteral}{"{}"{}}));}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ std::optional<T>\ data\ =}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value[value\_name].get<T>();}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!data)\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/EINVAL;}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ data\_[ct]\ =\ *data;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (data\_.size()\ <\ 1)\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{libcamera_2base_2log_8h_a3577749fb48d57a158b8ac1a0b3ab57e}{LOG}}(\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Interpolator}{Interpolator}},\ Error)\ <<\ \textcolor{stringliteral}{"{}Need\ at\ least\ one\ element"{}};}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/EINVAL;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00071\ \ \ \ \ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Interpolator_a919edb214d355c268de3b029aef1bff5}{setQuantization}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ q)}
+\DoxyCodeLine{00074\ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ quantization\_\ =\ q;}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Interpolator_a79927dfe409f66540afddb925c91b951}{setData}}(std::map<unsigned\ int,\ T>\ \&\&data)}
+\DoxyCodeLine{00079\ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ data\_\ =\ std::move(data);}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ lastInterpolatedKey\_.reset();}
+\DoxyCodeLine{00082\ \ \ \ \ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{const}\ T\ \&\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Interpolator_a3838db93b9e259b9a5121a954c14db24}{getInterpolated}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ key,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ *quantizedKey\ =\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00085\ \ \ \ \ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{libcamera_2base_2log_8h_ac22830a985e1daed0c9eadba8c6f606e}{ASSERT}}(data\_.size()\ >\ 0);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (quantization\_\ >\ 0)}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ key\ =\ std::lround(key\ /\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(quantization\_))\ *\ quantization\_;}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (quantizedKey)}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ *quantizedKey\ =\ key;}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (lastInterpolatedKey\_.has\_value()\ \&\&}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ *lastInterpolatedKey\_\ ==\ key)}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ lastInterpolatedValue\_;}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ data\_.lower\_bound(key);}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ ==\ data\_.begin())}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ it-\/>second;}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ ==\ data\_.end())}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::prev(it)-\/>second;}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it-\/>first\ ==\ key)}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ it-\/>second;}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it2\ =\ std::prev(it);}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ lambda\ =\ (key\ -\/\ it2-\/>first)\ /\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(it-\/>first\ -\/\ it2-\/>first);}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Interpolator_affe746a3898de046ad30e0fbdbcc5b40}{interpolate}}(it2-\/>second,\ it-\/>second,\ lastInterpolatedValue\_,\ lambda);}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ lastInterpolatedKey\_\ =\ key;}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ lastInterpolatedValue\_;}
+\DoxyCodeLine{00115\ \ \ \ \ \}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Interpolator_affe746a3898de046ad30e0fbdbcc5b40}{interpolate}}(\textcolor{keyword}{const}\ T\ \&a,\ \textcolor{keyword}{const}\ T\ \&b,\ T\ \&dest,\ \textcolor{keywordtype}{double}\ lambda)}
+\DoxyCodeLine{00118\ \ \ \ \ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ dest\ =\ a\ *\ (1.0\ -\/\ lambda)\ +\ b\ *\ lambda;}
+\DoxyCodeLine{00120\ \ \ \ \ \}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00123\ \ \ \ \ std::map<unsigned\ int,\ T>\ data\_;}
+\DoxyCodeLine{00124\ \ \ \ \ T\ lastInterpolatedValue\_;}
+\DoxyCodeLine{00125\ \ \ \ \ std::optional<unsigned\ int>\ lastInterpolatedKey\_;}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ quantization\_\ =\ 0;}
+\DoxyCodeLine{00127\ \};}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \}\ \textcolor{comment}{/*\ namespace\ ipa\ */}}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \}\ \textcolor{comment}{/*\ namespace\ libcamera\ */}}
+
+\end{DoxyCode}

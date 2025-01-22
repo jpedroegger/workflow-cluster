@@ -1,0 +1,67 @@
+\doxysection{src/peripherals/camera/libcamera/include/libcamera/base/flags.h File Reference}
+\hypertarget{flags_8h}{}\label{flags_8h}\index{src/peripherals/camera/libcamera/include/libcamera/base/flags.h@{src/peripherals/camera/libcamera/include/libcamera/base/flags.h}}
+
+
+Enum-\/based bit fields.  
+
+
+{\ttfamily \#include $<$type\+\_\+traits$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classlibcamera_1_1Flags}{libcamera\+::\+Flags$<$ E $>$}}
+\begin{DoxyCompactList}\small\item\em Type-\/safe container for enum-\/based bitfields. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structlibcamera_1_1flags__enable__operators}{libcamera\+::flags\+\_\+enable\+\_\+operators$<$ E $>$}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacelibcamera}{libcamera}}
+\begin{DoxyCompactList}\small\item\em Top-\/level libcamera namespace. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{flags_8h_af343143bcb24209ae99e7bf7e28936a1}{LIBCAMERA\+\_\+\+FLAGS\+\_\+\+ENABLE\+\_\+\+OPERATORS}}(\+\_\+enum)
+\begin{DoxyCompactList}\small\item\em Enable bitwise operations on the {\itshape enum} enumeration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{namespacelibcamera_a57eb0cfb87931a55e9d251d86c064292}\label{namespacelibcamera_a57eb0cfb87931a55e9d251d86c064292} 
+{\footnotesize template$<$typename E $>$ }\\std\+::enable\+\_\+if\+\_\+t$<$ \mbox{\hyperlink{structlibcamera_1_1flags__enable__operators}{flags\+\_\+enable\+\_\+operators}}$<$ E $>$\+::enable, \mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}}$<$ E $>$ $>$ {\bfseries libcamera\+::operator\texorpdfstring{$\vert$}{|}} (E lhs, E rhs)
+\item 
+\Hypertarget{namespacelibcamera_ae9a75badbb2540197e309c5d626fe389}\label{namespacelibcamera_ae9a75badbb2540197e309c5d626fe389} 
+{\footnotesize template$<$typename E $>$ }\\std\+::enable\+\_\+if\+\_\+t$<$ \mbox{\hyperlink{structlibcamera_1_1flags__enable__operators}{flags\+\_\+enable\+\_\+operators}}$<$ E $>$\+::enable, \mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}}$<$ E $>$ $>$ {\bfseries libcamera\+::operator\&} (E lhs, E rhs)
+\item 
+\Hypertarget{namespacelibcamera_adcb72df4b1262afc5a4c417d37c1051a}\label{namespacelibcamera_adcb72df4b1262afc5a4c417d37c1051a} 
+{\footnotesize template$<$typename E $>$ }\\std\+::enable\+\_\+if\+\_\+t$<$ \mbox{\hyperlink{structlibcamera_1_1flags__enable__operators}{flags\+\_\+enable\+\_\+operators}}$<$ E $>$\+::enable, \mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}}$<$ E $>$ $>$ {\bfseries libcamera\+::operator\texorpdfstring{$^\wedge$}{\string^}} (E lhs, E rhs)
+\item 
+\Hypertarget{namespacelibcamera_a6fc8fa1dc848026109c61962aecbe885}\label{namespacelibcamera_a6fc8fa1dc848026109c61962aecbe885} 
+{\footnotesize template$<$typename E $>$ }\\std\+::enable\+\_\+if\+\_\+t$<$ \mbox{\hyperlink{structlibcamera_1_1flags__enable__operators}{flags\+\_\+enable\+\_\+operators}}$<$ E $>$\+::enable, \mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}}$<$ E $>$ $>$ {\bfseries libcamera\+::operator\texorpdfstring{$\sim$}{\string~}} (E rhs)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Enum-\/based bit fields. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{flags_8h_af343143bcb24209ae99e7bf7e28936a1}\label{flags_8h_af343143bcb24209ae99e7bf7e28936a1} 
+\index{flags.h@{flags.h}!LIBCAMERA\_FLAGS\_ENABLE\_OPERATORS@{LIBCAMERA\_FLAGS\_ENABLE\_OPERATORS}}
+\index{LIBCAMERA\_FLAGS\_ENABLE\_OPERATORS@{LIBCAMERA\_FLAGS\_ENABLE\_OPERATORS}!flags.h@{flags.h}}
+\doxysubsubsection{\texorpdfstring{LIBCAMERA\_FLAGS\_ENABLE\_OPERATORS}{LIBCAMERA\_FLAGS\_ENABLE\_OPERATORS}}
+{\footnotesize\ttfamily \#define LIBCAMERA\+\_\+\+FLAGS\+\_\+\+ENABLE\+\_\+\+OPERATORS(\begin{DoxyParamCaption}\item[{}]{\+\_\+enum }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\textcolor{keyword}{struct\ }flags\_enable\_operators<\_enum>\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ enable\ =\ \textcolor{keyword}{true};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+
+
+Enable bitwise operations on the {\itshape enum} enumeration. 
+
+This macro enables the bitwise AND, OR, XOR and NOT operators on the given {\itshape enum}. This allows the enum values to be safely used in bitwise operations with the Flags$<$$>$ class. 

@@ -1,0 +1,33 @@
+\doxysection{buffer\+\_\+source.\+h}
+\hypertarget{buffer__source_8h_source}{}\label{buffer__source_8h_source}\index{src/peripherals/camera/libcamera/test/libtest/buffer\_source.h@{src/peripherals/camera/libcamera/test/libtest/buffer\_source.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ GPL-\/2.0-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2020,\ Google\ Inc.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ libcamera\ camera\ test\ helper\ to\ create\ FrameBuffers}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{stream_8h}{libcamera/stream.h}}>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{media__device_8h}{libcamera/internal/media\_device.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{v4l2__videodevice_8h}{libcamera/internal/v4l2\_videodevice.h}}"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBufferSource}{BufferSource}}}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{classBufferSource}{BufferSource}}();}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{classBufferSource}{\string~BufferSource}}();}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ allocate(\textcolor{keyword}{const}\ \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration}{libcamera::StreamConfiguration}}\ \&config);}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::unique\_ptr<libcamera::FrameBuffer>>\ \&buffers();}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00025\ \ \ \ \ std::shared\_ptr<libcamera::MediaDevice>\ media\_;}
+\DoxyCodeLine{00026\ \ \ \ \ std::vector<std::unique\_ptr<libcamera::FrameBuffer>>\ buffers\_;}
+\DoxyCodeLine{00027\ \};}
+
+\end{DoxyCode}

@@ -1,0 +1,202 @@
+\doxysection{libcamera\+::Control\+Info Class Reference}
+\hypertarget{classlibcamera_1_1ControlInfo}{}\label{classlibcamera_1_1ControlInfo}\index{libcamera::ControlInfo@{libcamera::ControlInfo}}
+
+
+Describe the limits of valid values for a \doxylink{classlibcamera_1_1Control}{Control}.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1ControlInfo_a91fad79e607bb93276fd52bc6d8d13f5}{Control\+Info}} (const \mbox{\hyperlink{classlibcamera_1_1ControlValue}{Control\+Value}} \&\mbox{\hyperlink{classlibcamera_1_1ControlInfo_afb9582361884572819f28ed3e692cb50}{min}}=\{\}, const \mbox{\hyperlink{classlibcamera_1_1ControlValue}{Control\+Value}} \&\mbox{\hyperlink{classlibcamera_1_1ControlInfo_ace0e212b17680d64466520d251f1cb4e}{max}}=\{\}, const \mbox{\hyperlink{classlibcamera_1_1ControlValue}{Control\+Value}} \&\mbox{\hyperlink{classlibcamera_1_1ControlInfo_af38b4491c70b0101c1dd665645317560}{def}}=\{\})
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{classlibcamera_1_1ControlInfo}{Control\+Info} with minimum and maximum range parameters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1ControlInfo_aed18b742c5d2cee7565417d51339315f}{Control\+Info}} (\mbox{\hyperlink{classlibcamera_1_1Span}{Span}}$<$ const \mbox{\hyperlink{classlibcamera_1_1ControlValue}{Control\+Value}} $>$ \mbox{\hyperlink{classlibcamera_1_1ControlInfo_a51aa2edf48c4ee436f5eebbcd2efe960}{values}}, const \mbox{\hyperlink{classlibcamera_1_1ControlValue}{Control\+Value}} \&\mbox{\hyperlink{classlibcamera_1_1ControlInfo_af38b4491c70b0101c1dd665645317560}{def}}=\{\})
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{classlibcamera_1_1ControlInfo}{Control\+Info} from the list of valid values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1ControlInfo_a8876e5b6e72743679480202fc3f0a7fb}{Control\+Info}} (std\+::set$<$ bool $>$ \mbox{\hyperlink{classlibcamera_1_1ControlInfo_a51aa2edf48c4ee436f5eebbcd2efe960}{values}}, bool \mbox{\hyperlink{classlibcamera_1_1ControlInfo_af38b4491c70b0101c1dd665645317560}{def}})
+\begin{DoxyCompactList}\small\item\em Construct a boolean \doxylink{classlibcamera_1_1ControlInfo}{Control\+Info} with both boolean values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1ControlInfo_a2d0804a71eb1b366364630184f72c544}{Control\+Info}} (bool value)
+\begin{DoxyCompactList}\small\item\em Construct a boolean \doxylink{classlibcamera_1_1ControlInfo}{Control\+Info} with only one valid value. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classlibcamera_1_1ControlValue}{Control\+Value}} \& \mbox{\hyperlink{classlibcamera_1_1ControlInfo_afb9582361884572819f28ed3e692cb50}{min}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the minimum value of the control. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classlibcamera_1_1ControlValue}{Control\+Value}} \& \mbox{\hyperlink{classlibcamera_1_1ControlInfo_ace0e212b17680d64466520d251f1cb4e}{max}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the maximum value of the control. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classlibcamera_1_1ControlValue}{Control\+Value}} \& \mbox{\hyperlink{classlibcamera_1_1ControlInfo_af38b4491c70b0101c1dd665645317560}{def}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the default value of the control. \end{DoxyCompactList}\item 
+const std\+::vector$<$ \mbox{\hyperlink{classlibcamera_1_1ControlValue}{Control\+Value}} $>$ \& \mbox{\hyperlink{classlibcamera_1_1ControlInfo_a51aa2edf48c4ee436f5eebbcd2efe960}{values}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the list of valid values. \end{DoxyCompactList}\item 
+\Hypertarget{classlibcamera_1_1ControlInfo_a5ba95ac3e0ec8eb9dd0446ece94a1dfd}\label{classlibcamera_1_1ControlInfo_a5ba95ac3e0ec8eb9dd0446ece94a1dfd} 
+std\+::string {\bfseries to\+String} () const
+\begin{DoxyCompactList}\small\item\em Provide a string representation of the \doxylink{classlibcamera_1_1ControlInfo}{Control\+Info}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlibcamera_1_1ControlInfo_a9e062176b75297466ecd3a59c495ed8d}{operator==}} (const \mbox{\hyperlink{classlibcamera_1_1ControlInfo}{Control\+Info}} \&other) const
+\begin{DoxyCompactList}\small\item\em Compare \doxylink{classlibcamera_1_1ControlInfo}{Control\+Info} instances for equality. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlibcamera_1_1ControlInfo_aafa1560a999ece715bf1a32302001843}{operator!=}} (const \mbox{\hyperlink{classlibcamera_1_1ControlInfo}{Control\+Info}} \&other) const
+\begin{DoxyCompactList}\small\item\em Compare \doxylink{classlibcamera_1_1ControlInfo}{Control\+Info} instances for non equality. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Describe the limits of valid values for a \doxylink{classlibcamera_1_1Control}{Control}. 
+
+The \doxylink{classlibcamera_1_1ControlInfo}{Control\+Info} expresses the constraints on valid values for a control. The constraints depend on the object the control applies to, and are constant for the lifetime of that object. They are typically constructed by pipeline handlers to describe the controls they support. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlibcamera_1_1ControlInfo_a91fad79e607bb93276fd52bc6d8d13f5}\label{classlibcamera_1_1ControlInfo_a91fad79e607bb93276fd52bc6d8d13f5} 
+\index{libcamera::ControlInfo@{libcamera::ControlInfo}!ControlInfo@{ControlInfo}}
+\index{ControlInfo@{ControlInfo}!libcamera::ControlInfo@{libcamera::ControlInfo}}
+\doxysubsubsection{\texorpdfstring{ControlInfo()}{ControlInfo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily libcamera\+::\+Control\+Info\+::\+Control\+Info (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1ControlValue}{Control\+Value}} \&}]{min = {\ttfamily \{\}},  }\item[{const \mbox{\hyperlink{classlibcamera_1_1ControlValue}{Control\+Value}} \&}]{max = {\ttfamily \{\}},  }\item[{const \mbox{\hyperlink{classlibcamera_1_1ControlValue}{Control\+Value}} \&}]{def = {\ttfamily \{\}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct a \doxylink{classlibcamera_1_1ControlInfo}{Control\+Info} with minimum and maximum range parameters. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em min} & The control minimum value \\
+\hline
+\mbox{\texttt{ in}}  & {\em max} & The control maximum value \\
+\hline
+\mbox{\texttt{ in}}  & {\em def} & The control default value \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classlibcamera_1_1ControlInfo_aed18b742c5d2cee7565417d51339315f}\label{classlibcamera_1_1ControlInfo_aed18b742c5d2cee7565417d51339315f} 
+\index{libcamera::ControlInfo@{libcamera::ControlInfo}!ControlInfo@{ControlInfo}}
+\index{ControlInfo@{ControlInfo}!libcamera::ControlInfo@{libcamera::ControlInfo}}
+\doxysubsubsection{\texorpdfstring{ControlInfo()}{ControlInfo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily libcamera\+::\+Control\+Info\+::\+Control\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1Span}{Span}}$<$ const \mbox{\hyperlink{classlibcamera_1_1ControlValue}{Control\+Value}} $>$}]{values,  }\item[{const \mbox{\hyperlink{classlibcamera_1_1ControlValue}{Control\+Value}} \&}]{def = {\ttfamily \{\}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct a \doxylink{classlibcamera_1_1ControlInfo}{Control\+Info} from the list of valid values. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em values} & The control valid values \\
+\hline
+\mbox{\texttt{ in}}  & {\em def} & The control default value\\
+\hline
+\end{DoxyParams}
+Construct a \doxylink{classlibcamera_1_1ControlInfo}{Control\+Info} from a list of valid values. The \doxylink{classlibcamera_1_1ControlInfo}{Control\+Info} minimum and maximum values are set to the first and last members of the values list respectively. The default value is set to {\itshape def} if provided, or to the minimum value otherwise. \Hypertarget{classlibcamera_1_1ControlInfo_a8876e5b6e72743679480202fc3f0a7fb}\label{classlibcamera_1_1ControlInfo_a8876e5b6e72743679480202fc3f0a7fb} 
+\index{libcamera::ControlInfo@{libcamera::ControlInfo}!ControlInfo@{ControlInfo}}
+\index{ControlInfo@{ControlInfo}!libcamera::ControlInfo@{libcamera::ControlInfo}}
+\doxysubsubsection{\texorpdfstring{ControlInfo()}{ControlInfo()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily libcamera\+::\+Control\+Info\+::\+Control\+Info (\begin{DoxyParamCaption}\item[{std\+::set$<$ bool $>$}]{values,  }\item[{bool}]{def }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct a boolean \doxylink{classlibcamera_1_1ControlInfo}{Control\+Info} with both boolean values. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em values} & The control valid boolean values (both true and false) \\
+\hline
+\mbox{\texttt{ in}}  & {\em def} & The control default boolean value\\
+\hline
+\end{DoxyParams}
+Construct a \doxylink{classlibcamera_1_1ControlInfo}{Control\+Info} for a boolean control, where both true and false are valid values. {\itshape values} must be \{ false, true \} (the order is irrelevant). The minimum value will always be false, and the maximum always true. The default value is {\itshape def}. \Hypertarget{classlibcamera_1_1ControlInfo_a2d0804a71eb1b366364630184f72c544}\label{classlibcamera_1_1ControlInfo_a2d0804a71eb1b366364630184f72c544} 
+\index{libcamera::ControlInfo@{libcamera::ControlInfo}!ControlInfo@{ControlInfo}}
+\index{ControlInfo@{ControlInfo}!libcamera::ControlInfo@{libcamera::ControlInfo}}
+\doxysubsubsection{\texorpdfstring{ControlInfo()}{ControlInfo()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily libcamera\+::\+Control\+Info\+::\+Control\+Info (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct a boolean \doxylink{classlibcamera_1_1ControlInfo}{Control\+Info} with only one valid value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & The control valid boolean value\\
+\hline
+\end{DoxyParams}
+Construct a \doxylink{classlibcamera_1_1ControlInfo}{Control\+Info} for a boolean control, where there is only valid value. The minimum, maximum, and default values will all be {\itshape value}. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1ControlInfo_af38b4491c70b0101c1dd665645317560}\label{classlibcamera_1_1ControlInfo_af38b4491c70b0101c1dd665645317560} 
+\index{libcamera::ControlInfo@{libcamera::ControlInfo}!def@{def}}
+\index{def@{def}!libcamera::ControlInfo@{libcamera::ControlInfo}}
+\doxysubsubsection{\texorpdfstring{def()}{def()}}
+{\footnotesize\ttfamily libcamera\+::\+Control\+Info\+::def (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the default value of the control. 
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classlibcamera_1_1ControlValue}{Control\+Value} with the default value for the control 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ControlInfo_ace0e212b17680d64466520d251f1cb4e}\label{classlibcamera_1_1ControlInfo_ace0e212b17680d64466520d251f1cb4e} 
+\index{libcamera::ControlInfo@{libcamera::ControlInfo}!max@{max}}
+\index{max@{max}!libcamera::ControlInfo@{libcamera::ControlInfo}}
+\doxysubsubsection{\texorpdfstring{max()}{max()}}
+{\footnotesize\ttfamily libcamera\+::\+Control\+Info\+::max (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the maximum value of the control. 
+
+For string controls, this is the maximum length of the string, not counting the terminating \textquotesingle{}\textbackslash{}0\textquotesingle{}. For all other control types, this is the maximum value of each element.
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classlibcamera_1_1ControlValue}{Control\+Value} with the maximum value for the control 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ControlInfo_afb9582361884572819f28ed3e692cb50}\label{classlibcamera_1_1ControlInfo_afb9582361884572819f28ed3e692cb50} 
+\index{libcamera::ControlInfo@{libcamera::ControlInfo}!min@{min}}
+\index{min@{min}!libcamera::ControlInfo@{libcamera::ControlInfo}}
+\doxysubsubsection{\texorpdfstring{min()}{min()}}
+{\footnotesize\ttfamily libcamera\+::\+Control\+Info\+::min (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the minimum value of the control. 
+
+For string controls, this is the minimum length of the string, not counting the terminating \textquotesingle{}\textbackslash{}0\textquotesingle{}. For all other control types, this is the minimum value of each element.
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classlibcamera_1_1ControlValue}{Control\+Value} with the minimum value for the control 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ControlInfo_aafa1560a999ece715bf1a32302001843}\label{classlibcamera_1_1ControlInfo_aafa1560a999ece715bf1a32302001843} 
+\index{libcamera::ControlInfo@{libcamera::ControlInfo}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!libcamera::ControlInfo@{libcamera::ControlInfo}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool libcamera\+::\+Control\+Info\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1ControlInfo}{Control\+Info}} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Compare \doxylink{classlibcamera_1_1ControlInfo}{Control\+Info} instances for non equality. 
+
+\begin{DoxyReturn}{Returns}
+True if the constraints have different min and max, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ControlInfo_a9e062176b75297466ecd3a59c495ed8d}\label{classlibcamera_1_1ControlInfo_a9e062176b75297466ecd3a59c495ed8d} 
+\index{libcamera::ControlInfo@{libcamera::ControlInfo}!operator==@{operator==}}
+\index{operator==@{operator==}!libcamera::ControlInfo@{libcamera::ControlInfo}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool libcamera\+::\+Control\+Info\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1ControlInfo}{Control\+Info}} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Compare \doxylink{classlibcamera_1_1ControlInfo}{Control\+Info} instances for equality. 
+
+\begin{DoxyReturn}{Returns}
+True if the constraints have identical min and max, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ControlInfo_a51aa2edf48c4ee436f5eebbcd2efe960}\label{classlibcamera_1_1ControlInfo_a51aa2edf48c4ee436f5eebbcd2efe960} 
+\index{libcamera::ControlInfo@{libcamera::ControlInfo}!values@{values}}
+\index{values@{values}!libcamera::ControlInfo@{libcamera::ControlInfo}}
+\doxysubsubsection{\texorpdfstring{values()}{values()}}
+{\footnotesize\ttfamily libcamera\+::\+Control\+Info\+::values (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the list of valid values. 
+
+For controls that support a pre-\/defined number of values, the enumeration of those is reported through a vector of \doxylink{classlibcamera_1_1ControlValue}{Control\+Value} instances accessible with this function.
+
+\begin{DoxyReturn}{Returns}
+A vector of \doxylink{classlibcamera_1_1ControlValue}{Control\+Value} representing the control valid values 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/\mbox{\hyperlink{controls_8h}{controls.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/controls.\+cpp\end{DoxyCompactItemize}

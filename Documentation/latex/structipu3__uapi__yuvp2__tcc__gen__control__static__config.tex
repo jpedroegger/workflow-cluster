@@ -1,0 +1,43 @@
+\doxysection{ipu3\+\_\+uapi\+\_\+yuvp2\+\_\+tcc\+\_\+gen\+\_\+control\+\_\+static\+\_\+config Struct Reference}
+\hypertarget{structipu3__uapi__yuvp2__tcc__gen__control__static__config}{}\label{structipu3__uapi__yuvp2__tcc__gen__control__static__config}\index{ipu3\_uapi\_yuvp2\_tcc\_gen\_control\_static\_config@{ipu3\_uapi\_yuvp2\_tcc\_gen\_control\_static\_config}}
+
+
+{\ttfamily \#include $<$intel-\/ipu3.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structipu3__uapi__yuvp2__tcc__gen__control__static__config_ac6fc00b040712d3826393138cc913e89}\label{structipu3__uapi__yuvp2__tcc__gen__control__static__config_ac6fc00b040712d3826393138cc913e89} 
+\+\_\+\+\_\+u32 {\bfseries en}\+:1
+\item 
+\Hypertarget{structipu3__uapi__yuvp2__tcc__gen__control__static__config_ab36db2f9e3aca2201cd03d5863ec86fd}\label{structipu3__uapi__yuvp2__tcc__gen__control__static__config_ab36db2f9e3aca2201cd03d5863ec86fd} 
+\+\_\+\+\_\+u32 {\bfseries blend\+\_\+shift}\+:3
+\item 
+\Hypertarget{structipu3__uapi__yuvp2__tcc__gen__control__static__config_aeca24e959533f29b659000369157d869}\label{structipu3__uapi__yuvp2__tcc__gen__control__static__config_aeca24e959533f29b659000369157d869} 
+\+\_\+\+\_\+u32 {\bfseries gain\+\_\+according\+\_\+to\+\_\+y\+\_\+only}\+:1
+\item 
+\Hypertarget{structipu3__uapi__yuvp2__tcc__gen__control__static__config_abcf4d393ab32aef370bb852d7d50b1e6}\label{structipu3__uapi__yuvp2__tcc__gen__control__static__config_abcf4d393ab32aef370bb852d7d50b1e6} 
+\+\_\+\+\_\+u32 {\bfseries reserved0}\+:11
+\item 
+\Hypertarget{structipu3__uapi__yuvp2__tcc__gen__control__static__config_a6e41e47e2d19a1332aea739ed1c37616}\label{structipu3__uapi__yuvp2__tcc__gen__control__static__config_a6e41e47e2d19a1332aea739ed1c37616} 
+\+\_\+\+\_\+s32 {\bfseries gamma}\+:5
+\item 
+\Hypertarget{structipu3__uapi__yuvp2__tcc__gen__control__static__config_ad06cf958256e9682f1f12000020e2dc2}\label{structipu3__uapi__yuvp2__tcc__gen__control__static__config_ad06cf958256e9682f1f12000020e2dc2} 
+\+\_\+\+\_\+u32 {\bfseries reserved1}\+:3
+\item 
+\Hypertarget{structipu3__uapi__yuvp2__tcc__gen__control__static__config_ae4aaa851ad846f4724c3f22a1c6015d6}\label{structipu3__uapi__yuvp2__tcc__gen__control__static__config_ae4aaa851ad846f4724c3f22a1c6015d6} 
+\+\_\+\+\_\+s32 {\bfseries delta}\+:5
+\item 
+\Hypertarget{structipu3__uapi__yuvp2__tcc__gen__control__static__config_ab038a0507b1ccac191ad74e8f908b210}\label{structipu3__uapi__yuvp2__tcc__gen__control__static__config_ab038a0507b1ccac191ad74e8f908b210} 
+\+\_\+\+\_\+u32 {\bfseries reserved2}\+:3
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structipu3__uapi__yuvp2__tcc__gen__control__static__config}{ipu3\+\_\+uapi\+\_\+yuvp2\+\_\+tcc\+\_\+gen\+\_\+control\+\_\+static\+\_\+config} -\/ Total color correction general control config
+
+@en\+: 0 -\/ TCC disabled. Output = input 1 -\/ TCC enabled. @blend\+\_\+shift\+: blend shift, Range\mbox{[}3, 4\mbox{]}, default NA. @gain\+\_\+according\+\_\+to\+\_\+y\+\_\+only\+: 0\+: Gain is calculated according to YUV, 1\+: Gain is calculated according to Y only @reserved0\+: reserved @gamma\+: Final blending coefficients. Values\mbox{[}-\/16, 16\mbox{]}, default NA. @reserved1\+: reserved @delta\+: Final blending coefficients. Values\mbox{[}-\/16, 16\mbox{]}, default NA. @reserved2\+: reserved 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/intel-\/ipu3.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,50 @@
+\doxysection{ipu3\+\_\+uapi\+\_\+params Struct Reference}
+\hypertarget{structipu3__uapi__params}{}\label{structipu3__uapi__params}\index{ipu3\_uapi\_params@{ipu3\_uapi\_params}}
+
+
+{\ttfamily \#include $<$intel-\/ipu3.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structipu3__uapi__params_a57c37c6d3c478451311c32baa3014426}\label{structipu3__uapi__params_a57c37c6d3c478451311c32baa3014426} 
+struct \mbox{\hyperlink{structipu3__uapi__flags}{ipu3\+\_\+uapi\+\_\+flags}} use {\bfseries \+\_\+\+\_\+attribute\+\_\+\+\_\+} ((aligned(32)))
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structipu3__uapi__params_acc6bdc388219e832aebad436d0a0ff4d}\label{structipu3__uapi__params_acc6bdc388219e832aebad436d0a0ff4d} 
+struct \mbox{\hyperlink{structipu3__uapi__acc__param}{ipu3\+\_\+uapi\+\_\+acc\+\_\+param}} {\bfseries acc\+\_\+param}
+\item 
+\Hypertarget{structipu3__uapi__params_ae17f1484d5380d7719af0fc289c2e37b}\label{structipu3__uapi__params_ae17f1484d5380d7719af0fc289c2e37b} 
+struct \mbox{\hyperlink{structipu3__uapi__isp__lin__vmem__params}{ipu3\+\_\+uapi\+\_\+isp\+\_\+lin\+\_\+vmem\+\_\+params}} {\bfseries lin\+\_\+vmem\+\_\+params}
+\item 
+\Hypertarget{structipu3__uapi__params_a6757c429cb639b6e3231215a537b5468}\label{structipu3__uapi__params_a6757c429cb639b6e3231215a537b5468} 
+struct \mbox{\hyperlink{structipu3__uapi__isp__tnr3__vmem__params}{ipu3\+\_\+uapi\+\_\+isp\+\_\+tnr3\+\_\+vmem\+\_\+params}} {\bfseries tnr3\+\_\+vmem\+\_\+params}
+\item 
+\Hypertarget{structipu3__uapi__params_a7b291691c544cc3db7fbae9cf7ecc6be}\label{structipu3__uapi__params_a7b291691c544cc3db7fbae9cf7ecc6be} 
+struct \mbox{\hyperlink{structipu3__uapi__isp__xnr3__vmem__params}{ipu3\+\_\+uapi\+\_\+isp\+\_\+xnr3\+\_\+vmem\+\_\+params}} {\bfseries xnr3\+\_\+vmem\+\_\+params}
+\item 
+\Hypertarget{structipu3__uapi__params_ab8890caeb707fdb729941ff50165d677}\label{structipu3__uapi__params_ab8890caeb707fdb729941ff50165d677} 
+struct \mbox{\hyperlink{structipu3__uapi__isp__tnr3__params}{ipu3\+\_\+uapi\+\_\+isp\+\_\+tnr3\+\_\+params}} {\bfseries tnr3\+\_\+dmem\+\_\+params}
+\item 
+\Hypertarget{structipu3__uapi__params_a5d777ef5880e1d242d8bab197d104c9f}\label{structipu3__uapi__params_a5d777ef5880e1d242d8bab197d104c9f} 
+struct \mbox{\hyperlink{structipu3__uapi__isp__xnr3__params}{ipu3\+\_\+uapi\+\_\+isp\+\_\+xnr3\+\_\+params}} {\bfseries xnr3\+\_\+dmem\+\_\+params}
+\item 
+\Hypertarget{structipu3__uapi__params_a5690dd6a478cd33cf60df2b9135a962b}\label{structipu3__uapi__params_a5690dd6a478cd33cf60df2b9135a962b} 
+struct \mbox{\hyperlink{structipu3__uapi__obgrid__param}{ipu3\+\_\+uapi\+\_\+obgrid\+\_\+param}} {\bfseries obgrid\+\_\+param}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structipu3__uapi__params}{ipu3\+\_\+uapi\+\_\+params} -\/ V4\+L2\+\_\+\+META\+\_\+\+FMT\+\_\+\+IPU3\+\_\+\+PARAMS
+
+@use\+: select which parameters to apply, see \&\doxylink{structipu3__uapi__flags}{ipu3\+\_\+uapi\+\_\+flags} @acc\+\_\+param\+: ACC parameters, as specified by \&\doxylink{structipu3__uapi__acc__param}{ipu3\+\_\+uapi\+\_\+acc\+\_\+param} @lin\+\_\+vmem\+\_\+params\+: linearization VMEM, as specified by \&\doxylink{structipu3__uapi__isp__lin__vmem__params}{ipu3\+\_\+uapi\+\_\+isp\+\_\+lin\+\_\+vmem\+\_\+params} @tnr3\+\_\+vmem\+\_\+params\+: tnr3 VMEM as specified by \&\doxylink{structipu3__uapi__isp__tnr3__vmem__params}{ipu3\+\_\+uapi\+\_\+isp\+\_\+tnr3\+\_\+vmem\+\_\+params} @xnr3\+\_\+vmem\+\_\+params\+: xnr3 VMEM as specified by \&\doxylink{structipu3__uapi__isp__xnr3__vmem__params}{ipu3\+\_\+uapi\+\_\+isp\+\_\+xnr3\+\_\+vmem\+\_\+params} @tnr3\+\_\+dmem\+\_\+params\+: tnr3 DMEM as specified by \&\doxylink{structipu3__uapi__isp__tnr3__params}{ipu3\+\_\+uapi\+\_\+isp\+\_\+tnr3\+\_\+params} @xnr3\+\_\+dmem\+\_\+params\+: xnr3 DMEM as specified by \&\doxylink{structipu3__uapi__isp__xnr3__params}{ipu3\+\_\+uapi\+\_\+isp\+\_\+xnr3\+\_\+params} @obgrid\+\_\+param\+: obgrid parameters as specified by \&\doxylink{structipu3__uapi__obgrid__param}{ipu3\+\_\+uapi\+\_\+obgrid\+\_\+param}
+
+The video queue "{}parameters"{} is of format V4\+L2\+\_\+\+META\+\_\+\+FMT\+\_\+\+IPU3\+\_\+\+PARAMS. This is a "{}single plane"{} \doxylink{structv4l2__meta__format}{v4l2\+\_\+meta\+\_\+format} using V4\+L2\+\_\+\+BUF\+\_\+\+TYPE\+\_\+\+META\+\_\+\+OUTPUT.
+
+struct \doxylink{structipu3__uapi__params}{ipu3\+\_\+uapi\+\_\+params} as defined below contains a lot of parameters and \doxylink{structipu3__uapi__flags}{ipu3\+\_\+uapi\+\_\+flags} selects which parameters to apply. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/intel-\/ipu3.\+h\end{DoxyCompactItemize}

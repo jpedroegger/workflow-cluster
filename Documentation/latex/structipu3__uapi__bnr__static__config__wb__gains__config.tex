@@ -1,0 +1,35 @@
+\doxysection{ipu3\+\_\+uapi\+\_\+bnr\+\_\+static\+\_\+config\+\_\+wb\+\_\+gains\+\_\+config Struct Reference}
+\hypertarget{structipu3__uapi__bnr__static__config__wb__gains__config}{}\label{structipu3__uapi__bnr__static__config__wb__gains__config}\index{ipu3\_uapi\_bnr\_static\_config\_wb\_gains\_config@{ipu3\_uapi\_bnr\_static\_config\_wb\_gains\_config}}
+
+
+{\ttfamily \#include $<$intel-\/ipu3.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structipu3__uapi__bnr__static__config__wb__gains__config_a8d8ae567f3c1cbd367a5aff298d50f9a}\label{structipu3__uapi__bnr__static__config__wb__gains__config_a8d8ae567f3c1cbd367a5aff298d50f9a} 
+\+\_\+\+\_\+u16 {\bfseries gr}
+\item 
+\Hypertarget{structipu3__uapi__bnr__static__config__wb__gains__config_aeb771a9e04904d01c102e8ac2a850af1}\label{structipu3__uapi__bnr__static__config__wb__gains__config_aeb771a9e04904d01c102e8ac2a850af1} 
+\+\_\+\+\_\+u16 {\bfseries r}
+\item 
+\Hypertarget{structipu3__uapi__bnr__static__config__wb__gains__config_ab08f7c2a89c592f0da17c9ee9ac7cfc3}\label{structipu3__uapi__bnr__static__config__wb__gains__config_ab08f7c2a89c592f0da17c9ee9ac7cfc3} 
+\+\_\+\+\_\+u16 {\bfseries b}
+\item 
+\Hypertarget{structipu3__uapi__bnr__static__config__wb__gains__config_aa7bf8e613590645f2f68795779dd196d}\label{structipu3__uapi__bnr__static__config__wb__gains__config_aa7bf8e613590645f2f68795779dd196d} 
+\+\_\+\+\_\+u16 {\bfseries gb}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structipu3__uapi__bnr__static__config__wb__gains__config}{ipu3\+\_\+uapi\+\_\+bnr\+\_\+static\+\_\+config\+\_\+wb\+\_\+gains\+\_\+config} -\/ White balance gains
+
+@gr\+: white balance gain for Gr channel. @r\+: white balance gain for R channel. {\bfseries{}}\+: white balance gain for B channel. @gb\+: white balance gain for Gb channel.
+
+For BNR parameters WB gain factor for the three channels \mbox{[}Ggr, Ggb, Gb, Gr\mbox{]}. Their precision is U3.\+13 and the range is (0, 8) and the actual gain is Gx + 1, it is typically Gx = 1.
+
+Pout = \{Pin \texorpdfstring{$\ast$}{*} (1 + Gx)\}. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/intel-\/ipu3.\+h\end{DoxyCompactItemize}

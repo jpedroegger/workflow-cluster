@@ -1,0 +1,53 @@
+\doxysection{libcamera\+::Rk\+ISP1\+Path Class Reference}
+\hypertarget{classlibcamera_1_1RkISP1Path}{}\label{classlibcamera_1_1RkISP1Path}\index{libcamera::RkISP1Path@{libcamera::RkISP1Path}}
+Inheritance diagram for libcamera\+::Rk\+ISP1\+Path\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlibcamera_1_1RkISP1Path}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1RkISP1Path_a46e7adde4be13160902ad49df2170ce8}\label{classlibcamera_1_1RkISP1Path_a46e7adde4be13160902ad49df2170ce8} 
+{\bfseries Rk\+ISP1\+Path} (const char \texorpdfstring{$\ast$}{*}name, const \mbox{\hyperlink{classlibcamera_1_1Span}{Span}}$<$ const \mbox{\hyperlink{classlibcamera_1_1PixelFormat}{Pixel\+Format}} $>$ \&formats)
+\item 
+\Hypertarget{classlibcamera_1_1RkISP1Path_ac6305a95d4c63c039d24567f339cb4fd}\label{classlibcamera_1_1RkISP1Path_ac6305a95d4c63c039d24567f339cb4fd} 
+bool {\bfseries init} (\mbox{\hyperlink{classlibcamera_1_1MediaDevice}{Media\+Device}} \texorpdfstring{$\ast$}{*}media)
+\item 
+\Hypertarget{classlibcamera_1_1RkISP1Path_a3f8e294b367d958c3dd447d4fc80f182}\label{classlibcamera_1_1RkISP1Path_a3f8e294b367d958c3dd447d4fc80f182} 
+int {\bfseries set\+Enabled} (bool enable)
+\item 
+\Hypertarget{classlibcamera_1_1RkISP1Path_acfc091dd25cd37880380274c358177f4}\label{classlibcamera_1_1RkISP1Path_acfc091dd25cd37880380274c358177f4} 
+bool {\bfseries is\+Enabled} () const
+\item 
+\Hypertarget{classlibcamera_1_1RkISP1Path_a4d967d90085245b5b9798f72ae4c5008}\label{classlibcamera_1_1RkISP1Path_a4d967d90085245b5b9798f72ae4c5008} 
+\mbox{\hyperlink{structlibcamera_1_1StreamConfiguration}{Stream\+Configuration}} {\bfseries generate\+Configuration} (const \mbox{\hyperlink{classlibcamera_1_1CameraSensor}{Camera\+Sensor}} \texorpdfstring{$\ast$}{*}sensor, const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&resolution, \mbox{\hyperlink{namespacelibcamera_a295d1f5e7828d95c0b0aabc0a8baac03}{Stream\+Role}} role)
+\item 
+\Hypertarget{classlibcamera_1_1RkISP1Path_a54b14041d32b031555b8ddf2fc903306}\label{classlibcamera_1_1RkISP1Path_a54b14041d32b031555b8ddf2fc903306} 
+\mbox{\hyperlink{classlibcamera_1_1CameraConfiguration_a64163f21db2fe1ce0a6af5a6f6847744}{Camera\+Configuration\+::\+Status}} {\bfseries validate} (const \mbox{\hyperlink{classlibcamera_1_1CameraSensor}{Camera\+Sensor}} \texorpdfstring{$\ast$}{*}sensor, const std\+::optional$<$ \mbox{\hyperlink{classlibcamera_1_1SensorConfiguration}{Sensor\+Configuration}} $>$ \&sensor\+Config, \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration}{Stream\+Configuration}} \texorpdfstring{$\ast$}{*}cfg)
+\item 
+\Hypertarget{classlibcamera_1_1RkISP1Path_a22f978cb2f2c1fcaebc41d463f23bae0}\label{classlibcamera_1_1RkISP1Path_a22f978cb2f2c1fcaebc41d463f23bae0} 
+int {\bfseries configure} (const \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration}{Stream\+Configuration}} \&config, const \mbox{\hyperlink{structlibcamera_1_1V4L2SubdeviceFormat}{V4\+L2\+Subdevice\+Format}} \&input\+Format)
+\item 
+\Hypertarget{classlibcamera_1_1RkISP1Path_a4d408baccd2644bea69d2a44a29864f4}\label{classlibcamera_1_1RkISP1Path_a4d408baccd2644bea69d2a44a29864f4} 
+int {\bfseries export\+Buffers} (unsigned int buffer\+Count, std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} $>$ $>$ \texorpdfstring{$\ast$}{*}buffers)
+\item 
+\Hypertarget{classlibcamera_1_1RkISP1Path_a5676e6fb60654f3057a45f587d96c882}\label{classlibcamera_1_1RkISP1Path_a5676e6fb60654f3057a45f587d96c882} 
+int {\bfseries start} ()
+\item 
+\Hypertarget{classlibcamera_1_1RkISP1Path_a1b45f43d7796f6bb36f5bd9739768ced}\label{classlibcamera_1_1RkISP1Path_a1b45f43d7796f6bb36f5bd9739768ced} 
+void {\bfseries stop} ()
+\item 
+\Hypertarget{classlibcamera_1_1RkISP1Path_aca1c60c8697e2a3d2b85c4432680723b}\label{classlibcamera_1_1RkISP1Path_aca1c60c8697e2a3d2b85c4432680723b} 
+int {\bfseries queue\+Buffer} (\mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} \texorpdfstring{$\ast$}{*}buffer)
+\item 
+\Hypertarget{classlibcamera_1_1RkISP1Path_a6b6d7162b9109e668f9a26674680bb84}\label{classlibcamera_1_1RkISP1Path_a6b6d7162b9109e668f9a26674680bb84} 
+\mbox{\hyperlink{classlibcamera_1_1Signal}{Signal}}$<$ \mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} \texorpdfstring{$\ast$}{*} $>$ \& {\bfseries buffer\+Ready} ()
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/libcamera/pipeline/rkisp1/rkisp1\+\_\+path.\+h\item 
+src/peripherals/camera/libcamera/src/libcamera/pipeline/rkisp1/rkisp1\+\_\+path.\+cpp\end{DoxyCompactItemize}

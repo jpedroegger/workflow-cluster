@@ -1,0 +1,43 @@
+\doxysection{v4l2\+\_\+h264\+\_\+dpb\+\_\+entry Struct Reference}
+\hypertarget{structv4l2__h264__dpb__entry}{}\label{structv4l2__h264__dpb__entry}\index{v4l2\_h264\_dpb\_entry@{v4l2\_h264\_dpb\_entry}}
+
+
+{\ttfamily \#include $<$v4l2-\/controls.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structv4l2__h264__dpb__entry_a39c85b15d5878ce3593b92f01b182119}\label{structv4l2__h264__dpb__entry_a39c85b15d5878ce3593b92f01b182119} 
+\+\_\+\+\_\+u64 {\bfseries reference\+\_\+ts}
+\item 
+\Hypertarget{structv4l2__h264__dpb__entry_ab34c6ff07814673709bb335f2ca1a8dc}\label{structv4l2__h264__dpb__entry_ab34c6ff07814673709bb335f2ca1a8dc} 
+\+\_\+\+\_\+u32 {\bfseries pic\+\_\+num}
+\item 
+\Hypertarget{structv4l2__h264__dpb__entry_af49514c56586893fc868edee3b7cb263}\label{structv4l2__h264__dpb__entry_af49514c56586893fc868edee3b7cb263} 
+\+\_\+\+\_\+u16 {\bfseries frame\+\_\+num}
+\item 
+\Hypertarget{structv4l2__h264__dpb__entry_a04f90c55b54d29d18a3fc150d245d1df}\label{structv4l2__h264__dpb__entry_a04f90c55b54d29d18a3fc150d245d1df} 
+\+\_\+\+\_\+u8 {\bfseries fields}
+\item 
+\Hypertarget{structv4l2__h264__dpb__entry_a0176b4448b845d3f0a4ccc16511ef913}\label{structv4l2__h264__dpb__entry_a0176b4448b845d3f0a4ccc16511ef913} 
+\+\_\+\+\_\+u8 {\bfseries reserved} \mbox{[}5\mbox{]}
+\item 
+\Hypertarget{structv4l2__h264__dpb__entry_af3b5f36dba31a54746d7ea0396754ab9}\label{structv4l2__h264__dpb__entry_af3b5f36dba31a54746d7ea0396754ab9} 
+\+\_\+\+\_\+s32 {\bfseries top\+\_\+field\+\_\+order\+\_\+cnt}
+\item 
+\Hypertarget{structv4l2__h264__dpb__entry_af766fc41dedbd3555ffdb27579fcf098}\label{structv4l2__h264__dpb__entry_af766fc41dedbd3555ffdb27579fcf098} 
+\+\_\+\+\_\+s32 {\bfseries bottom\+\_\+field\+\_\+order\+\_\+cnt}
+\item 
+\Hypertarget{structv4l2__h264__dpb__entry_ad9493df7da89dbee265c7732418b36e0}\label{structv4l2__h264__dpb__entry_ad9493df7da89dbee265c7732418b36e0} 
+\+\_\+\+\_\+u32 {\bfseries flags}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structv4l2__h264__dpb__entry}{v4l2\+\_\+h264\+\_\+dpb\+\_\+entry} -\/ H264 decoded picture buffer entry
+
+@reference\+\_\+ts\+: timestamp of the V4\+L2 capture buffer to use as reference. The timestamp refers to the timestamp field in struct \doxylink{structv4l2__buffer}{v4l2\+\_\+buffer}. Use v4l2\+\_\+timeval\+\_\+to\+\_\+ns() to convert the struct timeval to a \+\_\+\+\_\+u64. @pic\+\_\+num\+: matches Pic\+Num variable assigned during the reference picture lists construction process. @frame\+\_\+num\+: frame identifier which matches frame\+\_\+num syntax element. @fields\+: indicates how the DPB entry is referenced. Valid values are V4\+L2\+\_\+\+H264\+\_\+\{\}\+\_\+\+REF. @reserved\+: padding field. Should be zeroed by applications. @top\+\_\+field\+\_\+order\+\_\+cnt\+: matches Top\+Field\+Order\+Cnt picture value. @bottom\+\_\+field\+\_\+order\+\_\+cnt\+: matches Bottom\+Field\+Order\+Cnt picture value. Note that picture field is indicated by v4l2\+\_\+buffer.\+field. @flags\+: see V4\+L2\+\_\+\+H264\+\_\+\+DPB\+\_\+\+ENTRY\+\_\+\+FLAG\+\_\+\{\}. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/v4l2-\/controls.\+h\end{DoxyCompactItemize}

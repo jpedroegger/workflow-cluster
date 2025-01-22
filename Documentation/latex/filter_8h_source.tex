@@ -1,0 +1,39 @@
+\doxysection{filter.\+h}
+\hypertarget{filter_8h_source}{}\label{filter_8h_source}\index{src/peripherals/camera/libcamera/src/ipa/rkisp1/algorithms/filter.h@{src/peripherals/camera/libcamera/src/ipa/rkisp1/algorithms/filter.h}}
+\mbox{\hyperlink{filter_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2021-\/2022,\ Ideas\ On\ Board}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ RkISP1\ Filter\ control}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <sys/types.h>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}algorithm.h"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacelibcamera}{libcamera}}\ \{}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }ipa::rkisp1::algorithms\ \{}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1ipa_1_1rkisp1_1_1algorithms_1_1Filter}{Filter}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1rkisp1_1_1Algorithm}{Algorithm}}}
+\DoxyCodeLine{00019\ \{}
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1rkisp1_1_1algorithms_1_1Filter}{Filter}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1rkisp1_1_1algorithms_1_1Filter}{\string~Filter}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1rkisp1_1_1algorithms_1_1Filter_a075e404ed79dcfb1b848f6bcf4e084cb}{queueRequest}}(\mbox{\hyperlink{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAContext}{IPAContext}}\ \&context,\ \textcolor{keyword}{const}\ uint32\_t\ frame,}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAFrameContext}{IPAFrameContext}}\ \&frameContext,}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1ControlList}{ControlList}}\ \&controls)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1rkisp1_1_1algorithms_1_1Filter_af86c265316c182420bc2f3122371ff9d}{prepare}}(\mbox{\hyperlink{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAContext}{IPAContext}}\ \&context,\ \textcolor{keyword}{const}\ uint32\_t\ frame,}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAFrameContext}{IPAFrameContext}}\ \&frameContext,}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1rkisp1_1_1RkISP1Params}{RkISP1Params}}\ *params)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00030\ \};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \}\ \textcolor{comment}{/*\ namespace\ ipa::rkisp1::algorithms\ */}}
+\DoxyCodeLine{00033\ \}\ \textcolor{comment}{/*\ namespace\ libcamera\ */}}
+
+\end{DoxyCode}

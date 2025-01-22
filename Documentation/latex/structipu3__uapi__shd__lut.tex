@@ -1,0 +1,38 @@
+\doxysection{ipu3\+\_\+uapi\+\_\+shd\+\_\+lut Struct Reference}
+\hypertarget{structipu3__uapi__shd__lut}{}\label{structipu3__uapi__shd__lut}\index{ipu3\_uapi\_shd\_lut@{ipu3\_uapi\_shd\_lut}}
+
+
+{\ttfamily \#include $<$intel-\/ipu3.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structipu3__uapi__shd__lut_ae82537b1139fb1fb711413978bb19aa1}\label{structipu3__uapi__shd__lut_ae82537b1139fb1fb711413978bb19aa1} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>struct \{\\
+\>\>\_\_u16 {\bfseries r}\\
+\>\>\_\_u16 {\bfseries gr}\\
+\>\} {\bfseries r\_and\_gr} \mbox{[}IPU3\_UAPI\_SHD\_MAX\_CELLS\_PER\_SET\mbox{]}\\
+\>\_\_u8 {\bfseries reserved1} \mbox{[}24\mbox{]}\\
+\>struct \{\\
+\>\>\_\_u16 {\bfseries gb}\\
+\>\>\_\_u16 {\bfseries b}\\
+\>\} {\bfseries gb\_and\_b} \mbox{[}IPU3\_UAPI\_SHD\_MAX\_CELLS\_PER\_SET\mbox{]}\\
+\>\_\_u8 {\bfseries reserved2} \mbox{[}24\mbox{]}\\
+\} {\bfseries sets} \mbox{[}IPU3\_UAPI\_SHD\_MAX\_CFG\_SETS\mbox{]}\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structipu3__uapi__shd__lut}{ipu3\+\_\+uapi\+\_\+shd\+\_\+lut} -\/ Shading gain factor lookup table.
+
+@sets\+: array @sets.r\+\_\+and\+\_\+gr\+: Red and GreenR Lookup table. @sets.r\+\_\+and\+\_\+gr.\+r\+: Red shading factor. @sets.r\+\_\+and\+\_\+gr.\+gr\+: GreenR shading factor. @sets.reserved1\+: reserved @sets.gb\+\_\+and\+\_\+b\+: GreenB and Blue Lookup table. @sets.gb\+\_\+and\+\_\+b.\+gb\+: GreenB shading factor. @sets.gb\+\_\+and\+\_\+b.\+b\+: Blue shading factor. @sets.reserved2\+: reserved
+
+Map to shading correction LUT register set. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/intel-\/ipu3.\+h\end{DoxyCompactItemize}

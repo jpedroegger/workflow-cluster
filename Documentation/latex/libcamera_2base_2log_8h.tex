@@ -1,0 +1,156 @@
+\doxysection{src/peripherals/camera/libcamera/include/libcamera/base/log.h File Reference}
+\hypertarget{libcamera_2base_2log_8h}{}\label{libcamera_2base_2log_8h}\index{src/peripherals/camera/libcamera/include/libcamera/base/log.h@{src/peripherals/camera/libcamera/include/libcamera/base/log.h}}
+
+
+Logging infrastructure.  
+
+
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$libcamera/base/private.\+h$>$}\newline
+{\ttfamily \#include $<$libcamera/base/class.\+h$>$}\newline
+{\ttfamily \#include $<$libcamera/base/utils.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classlibcamera_1_1LogCategory}{libcamera\+::\+Log\+Category}}
+\begin{DoxyCompactList}\small\item\em A category of log message. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classlibcamera_1_1LogMessage}{libcamera\+::\+Log\+Message}}
+\begin{DoxyCompactList}\small\item\em Internal log message representation. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classlibcamera_1_1Loggable}{libcamera\+::\+Loggable}}
+\begin{DoxyCompactList}\small\item\em Base class to support log message extensions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacelibcamera}{libcamera}}
+\begin{DoxyCompactList}\small\item\em Top-\/level libcamera namespace. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{libcamera_2base_2log_8h_a051a13068200cd8f4e845a4c7101b423}{LOG\+\_\+\+DECLARE\+\_\+\+CATEGORY}}(name)
+\begin{DoxyCompactList}\small\item\em Declare a category of log messages. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{libcamera_2base_2log_8h_a10ea1cebc2546f136f2dfd354b45d069}{LOG\+\_\+\+DEFINE\+\_\+\+CATEGORY}}(name)
+\begin{DoxyCompactList}\small\item\em Define a category of log messages. \end{DoxyCompactList}\item 
+\Hypertarget{libcamera_2base_2log_8h_a812263f270a8f331ab0f3e22c759cff9}\label{libcamera_2base_2log_8h_a812263f270a8f331ab0f3e22c759cff9} 
+\#define {\bfseries \+\_\+\+LOG\+\_\+\+CATEGORY}(name)~log\+Category\#\#name
+\item 
+\Hypertarget{libcamera_2base_2log_8h_acc46036d8ae7c2d305fcb7834a1dff25}\label{libcamera_2base_2log_8h_acc46036d8ae7c2d305fcb7834a1dff25} 
+\#define {\bfseries \+\_\+\+LOG1}(severity)~ \+\_\+log(nullptr, Log\#\#severity).stream()
+\item 
+\Hypertarget{libcamera_2base_2log_8h_a9b8bbdc2e1df268231b676ee65bf2a78}\label{libcamera_2base_2log_8h_a9b8bbdc2e1df268231b676ee65bf2a78} 
+\#define {\bfseries \+\_\+\+LOG2}(category,  severity)~ \+\_\+log(\&\+\_\+\+LOG\+\_\+\+CATEGORY(category)(), Log\#\#severity).stream()
+\item 
+\Hypertarget{libcamera_2base_2log_8h_ab3ee9339bcad4620d486d5b39abfd926}\label{libcamera_2base_2log_8h_ab3ee9339bcad4620d486d5b39abfd926} 
+\#define {\bfseries \+\_\+\+LOG\+\_\+\+MACRO}(\+\_\+1,  \+\_\+2,  NAME, ...)~NAME
+\item 
+\#define \mbox{\hyperlink{libcamera_2base_2log_8h_a3577749fb48d57a158b8ac1a0b3ab57e}{LOG}}(...)
+\begin{DoxyCompactList}\small\item\em Log a message. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{libcamera_2base_2log_8h_ac22830a985e1daed0c9eadba8c6f606e}{ASSERT}}(condition)
+\begin{DoxyCompactList}\small\item\em Abort program execution if assertion fails. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespacelibcamera_a68f26f5a54a5bb105f2e7422215a0ca3}{libcamera\+::\+Log\+Severity}} \{ \newline
+{\bfseries Log\+Invalid} = -\/1
+, \mbox{\hyperlink{namespacelibcamera_a68f26f5a54a5bb105f2e7422215a0ca3a702e337f6d02b2a01510bf2a819e3f0b}{libcamera\+::\+Log\+Debug}} = 0
+, \mbox{\hyperlink{namespacelibcamera_a68f26f5a54a5bb105f2e7422215a0ca3a73bd36efdc51a25caaeb9ef379d89a24}{libcamera\+::\+Log\+Info}}
+, \mbox{\hyperlink{namespacelibcamera_a68f26f5a54a5bb105f2e7422215a0ca3a121ec67e822d9cf38ac768871f114fcd}{libcamera\+::\+Log\+Warning}}
+, \newline
+\mbox{\hyperlink{namespacelibcamera_a68f26f5a54a5bb105f2e7422215a0ca3a3eb60da0153e56376fb75234dcf7d32e}{libcamera\+::\+Log\+Error}}
+, \mbox{\hyperlink{namespacelibcamera_a68f26f5a54a5bb105f2e7422215a0ca3a376d34588a854cead48833a4662f8092}{libcamera\+::\+Log\+Fatal}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1LogMessage}{Log\+Message}} \mbox{\hyperlink{namespacelibcamera_a1921244466953ec1310eb4194d6dcc1a}{libcamera\+::\+\_\+log}} (const \mbox{\hyperlink{classlibcamera_1_1LogCategory}{Log\+Category}} \texorpdfstring{$\ast$}{*}category, \mbox{\hyperlink{namespacelibcamera_a68f26f5a54a5bb105f2e7422215a0ca3}{Log\+Severity}} severity, const char \texorpdfstring{$\ast$}{*}file\+Name, unsigned int line)
+\begin{DoxyCompactList}\small\item\em Create a temporary \doxylink{classlibcamera_1_1LogMessage}{Log\+Message} object to log a message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Logging infrastructure. 
+
+libcamera includes a logging infrastructure used through the library that allows inspection of internal operation in a user-\/configurable way. The log messages are grouped in categories that represent areas of libcamera, and output of messages for each category can be controlled by independent log levels.
+
+The levels are configurable through the LIBCAMERA\+\_\+\+LOG\+\_\+\+LEVELS environment variable that contains a comma-\/separated list of \textquotesingle{}category\+:level\textquotesingle{} pairs.
+
+The category names are strings and can include a wildcard (\textquotesingle{}\texorpdfstring{$\ast$}{*}\textquotesingle{}) character at the end to match multiple categories.
+
+The level are either numeric values, or strings containing the log level name. The available log levels are DEBUG, INFO, WARN, ERROR and FATAL. Log message with a level higher than or equal to the configured log level for their category are output to the log, while other messages are silently discarded.
+
+By default log messages are output to std\+::cerr. They can be redirected to a log file by setting the LIBCAMERA\+\_\+\+LOG\+\_\+\+FILE environment variable to the name of the file. The file must be writable and is truncated if it exists. If any error occurs when opening the file, the file is ignored and the log is output to std\+::cerr. 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{libcamera_2base_2log_8h_ac22830a985e1daed0c9eadba8c6f606e}\label{libcamera_2base_2log_8h_ac22830a985e1daed0c9eadba8c6f606e} 
+\index{log.h@{log.h}!ASSERT@{ASSERT}}
+\index{ASSERT@{ASSERT}!log.h@{log.h}}
+\doxysubsubsection{\texorpdfstring{ASSERT}{ASSERT}}
+{\footnotesize\ttfamily \#define ASSERT(\begin{DoxyParamCaption}\item[{}]{condition }\end{DoxyParamCaption})}
+
+
+
+Abort program execution if assertion fails. 
+
+If {\itshape condition} is false, \doxylink{libcamera_2base_2log_8h_ac22830a985e1daed0c9eadba8c6f606e}{ASSERT()} logs an error message with the Fatal log level and aborts program execution.
+
+If the macro NDEBUG is defined before including log.\+h, \doxylink{libcamera_2base_2log_8h_ac22830a985e1daed0c9eadba8c6f606e}{ASSERT()} generates no code.
+
+Using conditions that have side effects with \doxylink{libcamera_2base_2log_8h_ac22830a985e1daed0c9eadba8c6f606e}{ASSERT()} is not recommended, as these effects would depend on whether NDEBUG is defined or not. Similarly, \doxylink{libcamera_2base_2log_8h_ac22830a985e1daed0c9eadba8c6f606e}{ASSERT()} should not be used to check for errors that can occur under normal conditions as those checks would then be removed when compiling with NDEBUG. \Hypertarget{libcamera_2base_2log_8h_a3577749fb48d57a158b8ac1a0b3ab57e}\label{libcamera_2base_2log_8h_a3577749fb48d57a158b8ac1a0b3ab57e} 
+\index{log.h@{log.h}!LOG@{LOG}}
+\index{LOG@{LOG}!log.h@{log.h}}
+\doxysubsubsection{\texorpdfstring{LOG}{LOG}}
+{\footnotesize\ttfamily \#define LOG(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+Log a message. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em category} & Category (optional) \\
+\hline
+\mbox{\texttt{ in}}  & {\em severity} & Severity\\
+\hline
+\end{DoxyParams}
+Return an std\+::ostream reference to which a message can be logged using the iostream API. The {\itshape category}, if specified, sets the message category. When absent the default category is used. The {\itshape severity} controls whether the message is printed or discarded, depending on the log level for the category.
+
+If the severity is set to Fatal, execution is aborted and the program terminates immediately after printing the message.
+
+\begin{DoxyWarning}{Warning}
+Logging from the destructor of a global object, either directly or indirectly, results in undefined behaviour.
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000011}{Todo}}]Allow logging from destructors of global objects to the largest possible extent \end{DoxyRefDesc}
+\Hypertarget{libcamera_2base_2log_8h_a051a13068200cd8f4e845a4c7101b423}\label{libcamera_2base_2log_8h_a051a13068200cd8f4e845a4c7101b423} 
+\index{log.h@{log.h}!LOG\_DECLARE\_CATEGORY@{LOG\_DECLARE\_CATEGORY}}
+\index{LOG\_DECLARE\_CATEGORY@{LOG\_DECLARE\_CATEGORY}!log.h@{log.h}}
+\doxysubsubsection{\texorpdfstring{LOG\_DECLARE\_CATEGORY}{LOG\_DECLARE\_CATEGORY}}
+{\footnotesize\ttfamily \#define LOG\+\_\+\+DECLARE\+\_\+\+CATEGORY(\begin{DoxyParamCaption}\item[{}]{name }\end{DoxyParamCaption})}
+
+
+
+Declare a category of log messages. 
+
+This macro is used to declare a log category defined in another compilation unit by the \doxylink{libcamera_2base_2log_8h_a10ea1cebc2546f136f2dfd354b45d069}{LOG\+\_\+\+DEFINE\+\_\+\+CATEGORY()} macro.
+
+The \doxylink{libcamera_2base_2log_8h_a051a13068200cd8f4e845a4c7101b423}{LOG\+\_\+\+DECLARE\+\_\+\+CATEGORY()} macro must be used in the libcamera namespace.
+
+\begin{DoxySeeAlso}{See also}
+Log\+Category 
+\end{DoxySeeAlso}
+\Hypertarget{libcamera_2base_2log_8h_a10ea1cebc2546f136f2dfd354b45d069}\label{libcamera_2base_2log_8h_a10ea1cebc2546f136f2dfd354b45d069} 
+\index{log.h@{log.h}!LOG\_DEFINE\_CATEGORY@{LOG\_DEFINE\_CATEGORY}}
+\index{LOG\_DEFINE\_CATEGORY@{LOG\_DEFINE\_CATEGORY}!log.h@{log.h}}
+\doxysubsubsection{\texorpdfstring{LOG\_DEFINE\_CATEGORY}{LOG\_DEFINE\_CATEGORY}}
+{\footnotesize\ttfamily \#define LOG\+\_\+\+DEFINE\+\_\+\+CATEGORY(\begin{DoxyParamCaption}\item[{}]{name }\end{DoxyParamCaption})}
+
+
+
+Define a category of log messages. 
+
+This macro is used to define a log category that can then be used with the LOGC() macro. Category names shall be unique, if a category is shared between compilation units, it shall be defined in one compilation unit only and declared with \doxylink{libcamera_2base_2log_8h_a051a13068200cd8f4e845a4c7101b423}{LOG\+\_\+\+DECLARE\+\_\+\+CATEGORY()} in the other compilation units.
+
+The \doxylink{libcamera_2base_2log_8h_a10ea1cebc2546f136f2dfd354b45d069}{LOG\+\_\+\+DEFINE\+\_\+\+CATEGORY()} macro must be used in the libcamera namespace.
+
+\begin{DoxySeeAlso}{See also}
+Log\+Category 
+\end{DoxySeeAlso}

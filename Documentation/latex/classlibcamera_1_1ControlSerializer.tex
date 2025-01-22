@@ -1,0 +1,295 @@
+\doxysection{libcamera\+::Control\+Serializer Class Reference}
+\hypertarget{classlibcamera_1_1ControlSerializer}{}\label{classlibcamera_1_1ControlSerializer}\index{libcamera::ControlSerializer@{libcamera::ControlSerializer}}
+
+
+Serializer and deserializer for control-\/related classes.  
+
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{classlibcamera_1_1ControlSerializer_ab9e1ddb99053ced82820d33788e1d3c5}{Role}} \{ \mbox{\hyperlink{classlibcamera_1_1ControlSerializer_ab9e1ddb99053ced82820d33788e1d3c5af56ec2ab97d604832d90f6394e3f341f}{Proxy}}
+, \mbox{\hyperlink{classlibcamera_1_1ControlSerializer_ab9e1ddb99053ced82820d33788e1d3c5a62efb9ec331e364b96efe68c8b03ca20}{Worker}}
+ \}
+\begin{DoxyCompactList}\small\item\em Define the role of the IPC component using the control serializer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1ControlSerializer_a34fde1491dcad727c6500a3c29ca384c}{Control\+Serializer}} (\mbox{\hyperlink{classlibcamera_1_1ControlSerializer_ab9e1ddb99053ced82820d33788e1d3c5}{Role}} role)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{classlibcamera_1_1ControlSerializer}{Control\+Serializer}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1ControlSerializer_a6613ac42ffac5ee1c43d7fcfcc5d94a9}{reset}} ()
+\begin{DoxyCompactList}\small\item\em Reset the serializer. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classlibcamera_1_1ControlSerializer_ae69caefffdd2d36b274e151fed253f19}{serialize}} (const \mbox{\hyperlink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map}} \&info\+Map, \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer}{Byte\+Stream\+Buffer}} \&buffer)
+\begin{DoxyCompactList}\small\item\em Serialize a \doxylink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map} in a buffer. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classlibcamera_1_1ControlSerializer_a6514fddb760b5980e4df20be679ba5ac}{serialize}} (const \mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} \&list, \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer}{Byte\+Stream\+Buffer}} \&buffer)
+\begin{DoxyCompactList}\small\item\em Serialize a \doxylink{classlibcamera_1_1ControlList}{Control\+List} in a buffer. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{classlibcamera_1_1ControlSerializer_a3161079c829d0f03e4c22fbbffe18919}{deserialize}} (\mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer}{Byte\+Stream\+Buffer}} \&buffer)
+\begin{DoxyCompactList}\small\item\em Deserialize an object from a binary buffer. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlibcamera_1_1ControlSerializer_a77db7d13d69386cbf83ac245f6791893}{is\+Cached}} (const \mbox{\hyperlink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map}} \&info\+Map)
+\begin{DoxyCompactList}\small\item\em Check if a \doxylink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map} is cached. \end{DoxyCompactList}\item 
+template$<$$>$ \mbox{\hyperlink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map}} \mbox{\hyperlink{classlibcamera_1_1ControlSerializer_aad8c06e31fce42fbd9b0dd7464ad9078}{deserialize}} (\mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer}{Byte\+Stream\+Buffer}} \&buffer)
+\begin{DoxyCompactList}\small\item\em Deserialize a \doxylink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map} from a binary buffer. \end{DoxyCompactList}\item 
+template$<$$>$ \mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} \mbox{\hyperlink{classlibcamera_1_1ControlSerializer_a78b877b5b75936d3264f2229ff92ef82}{deserialize}} (\mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer}{Byte\+Stream\+Buffer}} \&buffer)
+\begin{DoxyCompactList}\small\item\em Deserialize a \doxylink{classlibcamera_1_1ControlList}{Control\+List} from a binary buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static size\+\_\+t \mbox{\hyperlink{classlibcamera_1_1ControlSerializer_a1dd33ddfa20b84fbc37fbd876769e8c3}{binary\+Size}} (const \mbox{\hyperlink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map}} \&info\+Map)
+\begin{DoxyCompactList}\small\item\em Retrieve the size in bytes required to serialize a \doxylink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map}. \end{DoxyCompactList}\item 
+static size\+\_\+t \mbox{\hyperlink{classlibcamera_1_1ControlSerializer_aa82f73722342b25fc7de6eb11691b838}{binary\+Size}} (const \mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} \&list)
+\begin{DoxyCompactList}\small\item\em Retrieve the size in bytes required to serialize a \doxylink{classlibcamera_1_1ControlList}{Control\+List}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Serializer and deserializer for control-\/related classes. 
+
+The control serializer is a helper to serialize and deserialize \doxylink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map} and \doxylink{classlibcamera_1_1ControlValue}{Control\+Value} instances for the purpose of communication with IPA modules.
+
+Neither the \doxylink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map} nor the \doxylink{classlibcamera_1_1ControlList}{Control\+List} are self-\/contained data container. \doxylink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map} references an external \doxylink{classlibcamera_1_1ControlId}{Control\+Id} in each of its entries, and \doxylink{classlibcamera_1_1ControlList}{Control\+List} references a \doxylink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map} for the purpose of validation. Serializing and deserializing those objects thus requires a context that maintains the associations between them. The control serializer fulfils this task.
+
+\doxylink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map} instances can be serialized on their own, but require \doxylink{classlibcamera_1_1ControlId}{Control\+Id} instances to be provided at deserialization time. The serializer recreates those \doxylink{classlibcamera_1_1ControlId}{Control\+Id} instances and stores them in an internal cache, from which the \doxylink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map} is populated.
+
+\doxylink{classlibcamera_1_1ControlList}{Control\+List} instances need to be associated with a \doxylink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map} when deserialized. To make this possible, the control lists are serialized with a handle to their \doxylink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map}, and the map is looked up from the handle at deserialization time. To make this possible, the serializer assigns a numerical handle to \doxylink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map} instances when they are serialized, and stores the mapping between handle and \doxylink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map} both when serializing (for the pipeline handler side) and deserializing (for the IPA side) them. This mapping is used when serializing a \doxylink{classlibcamera_1_1ControlList}{Control\+List} to include the corresponding \doxylink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map} handle in the binary data, and when deserializing to retrieve the corresponding \doxylink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map}.
+
+As independent \doxylink{classlibcamera_1_1ControlSerializer}{Control\+Serializer} instances are used on both sides of the IPC boundary, and the two instances operate without a shared point of control, there is a potential risk of collision of the numerical handles assigned to each serialized \doxylink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map}. For this reason the control serializer is initialized with a seed and the handle is incremented by 2, so that instances initialized with a different seed operate on a separate numerical space, avoiding any collision risk.
+
+In order to perform those tasks, the serializer keeps an internal state that needs to be properly populated. This mechanism requires the \doxylink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map} corresponding to a \doxylink{classlibcamera_1_1ControlList}{Control\+List} to have been serialized or deserialized before the \doxylink{classlibcamera_1_1ControlList}{Control\+List} is serialized or deserialized. Failure to comply with that constraint results in serialization or deserialization failure of the \doxylink{classlibcamera_1_1ControlList}{Control\+List}.
+
+The serializer can be \doxylink{classlibcamera_1_1ControlSerializer_a6613ac42ffac5ee1c43d7fcfcc5d94a9}{reset()} to clear its internal state. This may be performed when reconfiguring an IPA to avoid constant growth of the internal state, especially if the contents of the \doxylink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map} instances change at that time. A reset of the serializer invalidates all \doxylink{classlibcamera_1_1ControlList}{Control\+List} and \doxylink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map} that have been previously deserialized. The caller shall thus proceed with care to avoid stale references. 
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{classlibcamera_1_1ControlSerializer_ab9e1ddb99053ced82820d33788e1d3c5}\label{classlibcamera_1_1ControlSerializer_ab9e1ddb99053ced82820d33788e1d3c5} 
+\index{libcamera::ControlSerializer@{libcamera::ControlSerializer}!Role@{Role}}
+\index{Role@{Role}!libcamera::ControlSerializer@{libcamera::ControlSerializer}}
+\doxysubsubsection{\texorpdfstring{Role}{Role}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{classlibcamera_1_1ControlSerializer_ab9e1ddb99053ced82820d33788e1d3c5}{libcamera\+::\+Control\+Serializer\+::\+Role}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Define the role of the IPC component using the control serializer. 
+
+The role of the component that creates the serializer is used to initialize the handles numerical space. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Proxy@{Proxy}!libcamera::ControlSerializer@{libcamera::ControlSerializer}}\index{libcamera::ControlSerializer@{libcamera::ControlSerializer}!Proxy@{Proxy}}}\Hypertarget{classlibcamera_1_1ControlSerializer_ab9e1ddb99053ced82820d33788e1d3c5af56ec2ab97d604832d90f6394e3f341f}\label{classlibcamera_1_1ControlSerializer_ab9e1ddb99053ced82820d33788e1d3c5af56ec2ab97d604832d90f6394e3f341f} 
+Proxy&The control serializer is used by the IPC Proxy classes. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Worker@{Worker}!libcamera::ControlSerializer@{libcamera::ControlSerializer}}\index{libcamera::ControlSerializer@{libcamera::ControlSerializer}!Worker@{Worker}}}\Hypertarget{classlibcamera_1_1ControlSerializer_ab9e1ddb99053ced82820d33788e1d3c5a62efb9ec331e364b96efe68c8b03ca20}\label{classlibcamera_1_1ControlSerializer_ab9e1ddb99053ced82820d33788e1d3c5a62efb9ec331e364b96efe68c8b03ca20} 
+Worker&The control serializer is used by the IPC Proxy\+Worker classes. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlibcamera_1_1ControlSerializer_a34fde1491dcad727c6500a3c29ca384c}\label{classlibcamera_1_1ControlSerializer_a34fde1491dcad727c6500a3c29ca384c} 
+\index{libcamera::ControlSerializer@{libcamera::ControlSerializer}!ControlSerializer@{ControlSerializer}}
+\index{ControlSerializer@{ControlSerializer}!libcamera::ControlSerializer@{libcamera::ControlSerializer}}
+\doxysubsubsection{\texorpdfstring{ControlSerializer()}{ControlSerializer()}}
+{\footnotesize\ttfamily libcamera\+::\+Control\+Serializer\+::\+Control\+Serializer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1ControlSerializer_ab9e1ddb99053ced82820d33788e1d3c5}{Role}}}]{role }\end{DoxyParamCaption})}
+
+
+
+Construct a new \doxylink{classlibcamera_1_1ControlSerializer}{Control\+Serializer}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em role} & The role of the IPC component using the serializer \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1ControlSerializer_a1dd33ddfa20b84fbc37fbd876769e8c3}\label{classlibcamera_1_1ControlSerializer_a1dd33ddfa20b84fbc37fbd876769e8c3} 
+\index{libcamera::ControlSerializer@{libcamera::ControlSerializer}!binarySize@{binarySize}}
+\index{binarySize@{binarySize}!libcamera::ControlSerializer@{libcamera::ControlSerializer}}
+\doxysubsubsection{\texorpdfstring{binarySize()}{binarySize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily size\+\_\+t libcamera\+::\+Control\+Serializer\+::binary\+Size (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map}} \&}]{info\+Map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retrieve the size in bytes required to serialize a \doxylink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em info\+Map} & The control info map\\
+\hline
+\end{DoxyParams}
+Compute and return the size in bytes required to store the serialized \doxylink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map}.
+
+\begin{DoxyReturn}{Returns}
+The size in bytes required to store the serialized \doxylink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map} 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ControlSerializer_aa82f73722342b25fc7de6eb11691b838}\label{classlibcamera_1_1ControlSerializer_aa82f73722342b25fc7de6eb11691b838} 
+\index{libcamera::ControlSerializer@{libcamera::ControlSerializer}!binarySize@{binarySize}}
+\index{binarySize@{binarySize}!libcamera::ControlSerializer@{libcamera::ControlSerializer}}
+\doxysubsubsection{\texorpdfstring{binarySize()}{binarySize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily size\+\_\+t libcamera\+::\+Control\+Serializer\+::binary\+Size (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} \&}]{list }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retrieve the size in bytes required to serialize a \doxylink{classlibcamera_1_1ControlList}{Control\+List}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em list} & The control list\\
+\hline
+\end{DoxyParams}
+Compute and return the size in bytes required to store the serialized \doxylink{classlibcamera_1_1ControlList}{Control\+List}.
+
+\begin{DoxyReturn}{Returns}
+The size in bytes required to store the serialized \doxylink{classlibcamera_1_1ControlList}{Control\+List} 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ControlSerializer_a3161079c829d0f03e4c22fbbffe18919}\label{classlibcamera_1_1ControlSerializer_a3161079c829d0f03e4c22fbbffe18919} 
+\index{libcamera::ControlSerializer@{libcamera::ControlSerializer}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!libcamera::ControlSerializer@{libcamera::ControlSerializer}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+template$<$ typename T $>$ T libcamera\+::\+Control\+Serializer\+::deserialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer}{Byte\+Stream\+Buffer}} \&}]{buffer }\end{DoxyParamCaption})}
+
+
+
+Deserialize an object from a binary buffer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em buffer} & The memory buffer that contains the object\\
+\hline
+\end{DoxyParams}
+This function is only valid when specialized for \doxylink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map} or \doxylink{classlibcamera_1_1ControlList}{Control\+List}. Any other typename {\itshape T} is not supported. \Hypertarget{classlibcamera_1_1ControlSerializer_aad8c06e31fce42fbd9b0dd7464ad9078}\label{classlibcamera_1_1ControlSerializer_aad8c06e31fce42fbd9b0dd7464ad9078} 
+\index{libcamera::ControlSerializer@{libcamera::ControlSerializer}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!libcamera::ControlSerializer@{libcamera::ControlSerializer}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+\mbox{\hyperlink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map}} libcamera\+::\+Control\+Serializer\+::deserialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer}{Byte\+Stream\+Buffer}} \&}]{buffer }\end{DoxyParamCaption})}
+
+
+
+Deserialize a \doxylink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map} from a binary buffer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em buffer} & The memory buffer that contains the serialized map\\
+\hline
+\end{DoxyParams}
+Re-\/construct a \doxylink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map} from a binary {\itshape buffer} containing data serialized using the \doxylink{classlibcamera_1_1ControlSerializer_ae69caefffdd2d36b274e151fed253f19}{serialize()} function.
+
+\begin{DoxyReturn}{Returns}
+The deserialized \doxylink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map} 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000022}{Todo}}]Find a way to preserve the control name for debugging purpose. \end{DoxyRefDesc}
+\Hypertarget{classlibcamera_1_1ControlSerializer_a78b877b5b75936d3264f2229ff92ef82}\label{classlibcamera_1_1ControlSerializer_a78b877b5b75936d3264f2229ff92ef82} 
+\index{libcamera::ControlSerializer@{libcamera::ControlSerializer}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!libcamera::ControlSerializer@{libcamera::ControlSerializer}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+\mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} libcamera\+::\+Control\+Serializer\+::deserialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer}{Byte\+Stream\+Buffer}} \&}]{buffer }\end{DoxyParamCaption})}
+
+
+
+Deserialize a \doxylink{classlibcamera_1_1ControlList}{Control\+List} from a binary buffer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em buffer} & The memory buffer that contains the serialized list\\
+\hline
+\end{DoxyParams}
+Re-\/construct a \doxylink{classlibcamera_1_1ControlList}{Control\+List} from a binary {\itshape buffer} containing data serialized using the \doxylink{classlibcamera_1_1ControlSerializer_ae69caefffdd2d36b274e151fed253f19}{serialize()} function.
+
+\begin{DoxyReturn}{Returns}
+The deserialized \doxylink{classlibcamera_1_1ControlList}{Control\+List} 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ControlSerializer_a77db7d13d69386cbf83ac245f6791893}\label{classlibcamera_1_1ControlSerializer_a77db7d13d69386cbf83ac245f6791893} 
+\index{libcamera::ControlSerializer@{libcamera::ControlSerializer}!isCached@{isCached}}
+\index{isCached@{isCached}!libcamera::ControlSerializer@{libcamera::ControlSerializer}}
+\doxysubsubsection{\texorpdfstring{isCached()}{isCached()}}
+{\footnotesize\ttfamily bool libcamera\+::\+Control\+Serializer\+::is\+Cached (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map}} \&}]{info\+Map }\end{DoxyParamCaption})}
+
+
+
+Check if a \doxylink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map} is cached. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em info\+Map} & The \doxylink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map} to check\\
+\hline
+\end{DoxyParams}
+The \doxylink{classlibcamera_1_1ControlSerializer}{Control\+Serializer} caches all Control\+Info\+Maps that it has (de)serialized. This function checks if {\itshape info\+Map} is in the cache.
+
+\begin{DoxyReturn}{Returns}
+True if {\itshape info\+Map} is in the cache or false otherwise 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ControlSerializer_a6613ac42ffac5ee1c43d7fcfcc5d94a9}\label{classlibcamera_1_1ControlSerializer_a6613ac42ffac5ee1c43d7fcfcc5d94a9} 
+\index{libcamera::ControlSerializer@{libcamera::ControlSerializer}!reset@{reset}}
+\index{reset@{reset}!libcamera::ControlSerializer@{libcamera::ControlSerializer}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void libcamera\+::\+Control\+Serializer\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reset the serializer. 
+
+Reset the internal state of the serializer. This invalidates all the \doxylink{classlibcamera_1_1ControlList}{Control\+List} and \doxylink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map} that have been previously deserialized. \Hypertarget{classlibcamera_1_1ControlSerializer_ae69caefffdd2d36b274e151fed253f19}\label{classlibcamera_1_1ControlSerializer_ae69caefffdd2d36b274e151fed253f19} 
+\index{libcamera::ControlSerializer@{libcamera::ControlSerializer}!serialize@{serialize}}
+\index{serialize@{serialize}!libcamera::ControlSerializer@{libcamera::ControlSerializer}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int libcamera\+::\+Control\+Serializer\+::serialize (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map}} \&}]{info\+Map,  }\item[{\mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer}{Byte\+Stream\+Buffer}} \&}]{buffer }\end{DoxyParamCaption})}
+
+
+
+Serialize a \doxylink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map} in a buffer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em info\+Map} & The control info map to serialize \\
+\hline
+\mbox{\texttt{ in}}  & {\em buffer} & The memory buffer where to serialize the \doxylink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map}\\
+\hline
+\end{DoxyParams}
+Serialize the {\itshape info\+Map} into the {\itshape buffer} using the serialization format defined by the IPA context interface in \doxylink{ipa__controls_8h}{ipa\+\_\+controls.\+h}.
+
+The serializer stores a reference to the {\itshape info\+Map} internally. The caller shall ensure that {\itshape info\+Map} stays valid until the serializer is \doxylink{classlibcamera_1_1ControlSerializer_a6613ac42ffac5ee1c43d7fcfcc5d94a9}{reset()}.
+
+\begin{DoxyReturn}{Returns}
+0 on success, a negative error code otherwise 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em -\/\+ENOSPC} & Not enough space is available in the buffer \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{classlibcamera_1_1ControlSerializer_a6514fddb760b5980e4df20be679ba5ac}\label{classlibcamera_1_1ControlSerializer_a6514fddb760b5980e4df20be679ba5ac} 
+\index{libcamera::ControlSerializer@{libcamera::ControlSerializer}!serialize@{serialize}}
+\index{serialize@{serialize}!libcamera::ControlSerializer@{libcamera::ControlSerializer}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int libcamera\+::\+Control\+Serializer\+::serialize (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} \&}]{list,  }\item[{\mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer}{Byte\+Stream\+Buffer}} \&}]{buffer }\end{DoxyParamCaption})}
+
+
+
+Serialize a \doxylink{classlibcamera_1_1ControlList}{Control\+List} in a buffer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em list} & The control list to serialize \\
+\hline
+\mbox{\texttt{ in}}  & {\em buffer} & The memory buffer where to serialize the \doxylink{classlibcamera_1_1ControlList}{Control\+List}\\
+\hline
+\end{DoxyParams}
+Serialize the {\itshape list} into the {\itshape buffer} using the serialization format defined by the IPA context interface in \doxylink{ipa__controls_8h}{ipa\+\_\+controls.\+h}.
+
+\begin{DoxyReturn}{Returns}
+0 on success, a negative error code otherwise 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em -\/\+ENOENT} & The \doxylink{classlibcamera_1_1ControlList}{Control\+List} is related to an unknown \doxylink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map} \\
+\hline
+{\em -\/\+ENOSPC} & Not enough space is available in the buffer \\
+\hline
+\end{DoxyRetVals}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/internal/\mbox{\hyperlink{control__serializer_8h}{control\+\_\+serializer.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/control\+\_\+serializer.\+cpp\end{DoxyCompactItemize}

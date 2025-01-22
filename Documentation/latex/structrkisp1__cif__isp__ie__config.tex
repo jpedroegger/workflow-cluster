@@ -1,0 +1,43 @@
+\doxysection{rkisp1\+\_\+cif\+\_\+isp\+\_\+ie\+\_\+config Struct Reference}
+\hypertarget{structrkisp1__cif__isp__ie__config}{}\label{structrkisp1__cif__isp__ie__config}\index{rkisp1\_cif\_isp\_ie\_config@{rkisp1\_cif\_isp\_ie\_config}}
+
+
+{\ttfamily \#include $<$rkisp1-\/config.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structrkisp1__cif__isp__ie__config_a73a542db3e9238bc6912eb1c777a1539}\label{structrkisp1__cif__isp__ie__config_a73a542db3e9238bc6912eb1c777a1539} 
+\+\_\+\+\_\+u16 {\bfseries effect}
+\item 
+\Hypertarget{structrkisp1__cif__isp__ie__config_adb3e6ad053b8a7d7b58e6046956fd46c}\label{structrkisp1__cif__isp__ie__config_adb3e6ad053b8a7d7b58e6046956fd46c} 
+\+\_\+\+\_\+u16 {\bfseries color\+\_\+sel}
+\item 
+\Hypertarget{structrkisp1__cif__isp__ie__config_a94aa1fec85f22140c1f65c5106e327df}\label{structrkisp1__cif__isp__ie__config_a94aa1fec85f22140c1f65c5106e327df} 
+\+\_\+\+\_\+u16 {\bfseries eff\+\_\+mat\+\_\+1}
+\item 
+\Hypertarget{structrkisp1__cif__isp__ie__config_a2cc7ed6a3569040a7f4c5fb4dc4595dd}\label{structrkisp1__cif__isp__ie__config_a2cc7ed6a3569040a7f4c5fb4dc4595dd} 
+\+\_\+\+\_\+u16 {\bfseries eff\+\_\+mat\+\_\+2}
+\item 
+\Hypertarget{structrkisp1__cif__isp__ie__config_a904d3ca20642e22ae2ead4b2344a1194}\label{structrkisp1__cif__isp__ie__config_a904d3ca20642e22ae2ead4b2344a1194} 
+\+\_\+\+\_\+u16 {\bfseries eff\+\_\+mat\+\_\+3}
+\item 
+\Hypertarget{structrkisp1__cif__isp__ie__config_a4bfa63e083dd86e52a427d6a027e5344}\label{structrkisp1__cif__isp__ie__config_a4bfa63e083dd86e52a427d6a027e5344} 
+\+\_\+\+\_\+u16 {\bfseries eff\+\_\+mat\+\_\+4}
+\item 
+\Hypertarget{structrkisp1__cif__isp__ie__config_a8560e26394357ffd0d216290d3decd9a}\label{structrkisp1__cif__isp__ie__config_a8560e26394357ffd0d216290d3decd9a} 
+\+\_\+\+\_\+u16 {\bfseries eff\+\_\+mat\+\_\+5}
+\item 
+\Hypertarget{structrkisp1__cif__isp__ie__config_a7b1a913bdceef84edf626333721393dc}\label{structrkisp1__cif__isp__ie__config_a7b1a913bdceef84edf626333721393dc} 
+\+\_\+\+\_\+u16 {\bfseries eff\+\_\+tint}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structrkisp1__cif__isp__ie__config}{rkisp1\+\_\+cif\+\_\+isp\+\_\+ie\+\_\+config} -\/ Configuration used by image effects
+
+@effect\+: values from \textquotesingle{}enum v4l2\+\_\+colorfx\textquotesingle{}. Possible values are\+: V4\+L2\+\_\+\+COLORFX\+\_\+\+SEPIA, V4\+L2\+\_\+\+COLORFX\+\_\+\+SET\+\_\+\+CBCR, V4\+L2\+\_\+\+COLORFX\+\_\+\+AQUA, V4\+L2\+\_\+\+COLORFX\+\_\+\+EMBOSS, V4\+L2\+\_\+\+COLORFX\+\_\+\+SKETCH, V4\+L2\+\_\+\+COLORFX\+\_\+\+BW, V4\+L2\+\_\+\+COLORFX\+\_\+\+NEGATIVE @color\+\_\+sel\+: bits 0\+:2 -\/ colors bitmask (001 -\/ blue, 010 -\/ green, 100 -\/ red). bits 8\+:15 -\/ Threshold value of the RGB colors for the color selection effect. @eff\+\_\+mat\+\_\+1\+: 3x3 Matrix Coefficients for Emboss Effect 1 @eff\+\_\+mat\+\_\+2\+: 3x3 Matrix Coefficients for Emboss Effect 2 @eff\+\_\+mat\+\_\+3\+: 3x3 Matrix Coefficients for Emboss 3/\+Sketch 1 @eff\+\_\+mat\+\_\+4\+: 3x3 Matrix Coefficients for Sketch Effect 2 @eff\+\_\+mat\+\_\+5\+: 3x3 Matrix Coefficients for Sketch Effect 3 @eff\+\_\+tint\+: Chrominance increment values of tint (used for sepia effect) 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/rkisp1-\/config.\+h\end{DoxyCompactItemize}

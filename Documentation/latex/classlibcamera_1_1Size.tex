@@ -1,0 +1,496 @@
+\doxysection{libcamera\+::Size Class Reference}
+\hypertarget{classlibcamera_1_1Size}{}\label{classlibcamera_1_1Size}\index{libcamera::Size@{libcamera::Size}}
+
+
+Describe a two-\/dimensional size.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1Size_a44fd09edc6b2da725585cb00be6906a8}\label{classlibcamera_1_1Size_a44fd09edc6b2da725585cb00be6906a8} 
+constexpr {\bfseries Size} ()
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{classlibcamera_1_1Size}{Size} with width and height set to 0. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{classlibcamera_1_1Size_a86de8d4499e905783f355061de7d2b72}{Size}} (unsigned int w, unsigned int h)
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{classlibcamera_1_1Size}{Size} with given {\itshape width} and {\itshape height}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlibcamera_1_1Size_a943251f772ca06110f811e63cf241b73}{is\+Null}} () const
+\begin{DoxyCompactList}\small\item\em Check if the size is null. \end{DoxyCompactList}\item 
+const std\+::string \mbox{\hyperlink{classlibcamera_1_1Size_a287a8238b720af55d5a73efeaae70b52}{to\+String}} () const
+\begin{DoxyCompactList}\small\item\em Assemble and return a string describing the size. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \& \mbox{\hyperlink{classlibcamera_1_1Size_a62029f2581ed8a885bef2757ab180c04}{align\+Down\+To}} (unsigned int h\+Alignment, unsigned int v\+Alignment)
+\begin{DoxyCompactList}\small\item\em Align the size down horizontally and vertically in place. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \& \mbox{\hyperlink{classlibcamera_1_1Size_a2488b808661172107f34afadc346c674}{align\+Up\+To}} (unsigned int h\+Alignment, unsigned int v\+Alignment)
+\begin{DoxyCompactList}\small\item\em Align the size up horizontally and vertically in place. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \& \mbox{\hyperlink{classlibcamera_1_1Size_a54454a26d28dcc85acc4583740adbc48}{bound\+To}} (const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&bound)
+\begin{DoxyCompactList}\small\item\em Bound the size to {\itshape bound} in place. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \& \mbox{\hyperlink{classlibcamera_1_1Size_aa33da8f2f66bfab2e9c79e7875903a13}{expand\+To}} (const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&expand)
+\begin{DoxyCompactList}\small\item\em Expand the size to {\itshape expand}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \& \mbox{\hyperlink{classlibcamera_1_1Size_aeb4eff3b577f5d22d5ba5123d88396d3}{grow\+By}} (const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&margins)
+\begin{DoxyCompactList}\small\item\em Grow the size by {\itshape margins} in place. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \& \mbox{\hyperlink{classlibcamera_1_1Size_a25eace20ab63d8db8213556f8edefa99}{shrink\+By}} (const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&margins)
+\begin{DoxyCompactList}\small\item\em Shrink the size by {\itshape margins} in place. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+nodiscard constexpr \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \mbox{\hyperlink{classlibcamera_1_1Size_a4fa3aa5072c30edcff35b2a6dd795f35}{aligned\+Down\+To}} (unsigned int h\+Alignment, unsigned int v\+Alignment) const
+\begin{DoxyCompactList}\small\item\em Align the size down horizontally and vertically. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+nodiscard constexpr \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \mbox{\hyperlink{classlibcamera_1_1Size_add28099d27d7dfaa786383b5e4c3b11a}{aligned\+Up\+To}} (unsigned int h\+Alignment, unsigned int v\+Alignment) const
+\begin{DoxyCompactList}\small\item\em Align the size up horizontally and vertically. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+nodiscard constexpr \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \mbox{\hyperlink{classlibcamera_1_1Size_aacd7e4f07e0e271b90aba67b9a21d1ed}{bounded\+To}} (const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&bound) const
+\begin{DoxyCompactList}\small\item\em Bound the size to {\itshape bound}. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+nodiscard constexpr \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \mbox{\hyperlink{classlibcamera_1_1Size_a346d13394c37c880393cef6b856d4407}{expanded\+To}} (const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&expand) const
+\begin{DoxyCompactList}\small\item\em Expand the size to {\itshape expand}. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+nodiscard constexpr \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \mbox{\hyperlink{classlibcamera_1_1Size_a5b54b3d391ad3cf7f46b394556597a91}{grown\+By}} (const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&margins) const
+\begin{DoxyCompactList}\small\item\em Grow the size by {\itshape margins}. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+nodiscard constexpr \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \mbox{\hyperlink{classlibcamera_1_1Size_a07b98cdb48088ad83231117d3c31b400}{shrunk\+By}} (const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&margins) const
+\begin{DoxyCompactList}\small\item\em Shrink the size by {\itshape margins}. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+nodiscard \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \mbox{\hyperlink{classlibcamera_1_1Size_ab44f288148efb162ba9d2d54cf844242}{bounded\+To\+Aspect\+Ratio}} (const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&ratio) const
+\begin{DoxyCompactList}\small\item\em Bound the size down to match the aspect ratio given by {\itshape ratio}. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+nodiscard \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \mbox{\hyperlink{classlibcamera_1_1Size_ac171509875241ae63e2a56dd3c68a125}{expanded\+To\+Aspect\+Ratio}} (const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&ratio) const
+\begin{DoxyCompactList}\small\item\em Expand the size to match the aspect ratio given by {\itshape ratio}. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+nodiscard \mbox{\hyperlink{classlibcamera_1_1Rectangle}{Rectangle}} \mbox{\hyperlink{classlibcamera_1_1Size_a81356ac0a1b2229fa1f4874ac7848aed}{centered\+To}} (const \mbox{\hyperlink{classlibcamera_1_1Point}{Point}} \&center) const
+\begin{DoxyCompactList}\small\item\em Center a rectangle of this size at a given \doxylink{classlibcamera_1_1Point}{Point}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \mbox{\hyperlink{classlibcamera_1_1Size_ad24b1c42470671086839f18e04f5d3c3}{operator\texorpdfstring{$\ast$}{*}}} (float factor) const
+\begin{DoxyCompactList}\small\item\em Scale size up by the given factor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \mbox{\hyperlink{classlibcamera_1_1Size_a306de151d0e5134d8a7c45198293ca1c}{operator/}} (float factor) const
+\begin{DoxyCompactList}\small\item\em Scale size down by the given factor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \& \mbox{\hyperlink{classlibcamera_1_1Size_afdb5f21cfe53b16ce6ee218c97737a68}{operator\texorpdfstring{$\ast$}{*}=}} (float factor)
+\begin{DoxyCompactList}\small\item\em Scale this size up by the given factor in place. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \& \mbox{\hyperlink{classlibcamera_1_1Size_a053534ab91440607edfefa5b259236a6}{operator/=}} (float factor)
+\begin{DoxyCompactList}\small\item\em Scale this size down by the given factor in place. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1Size_a5bdf8eb2cde21d66556ae9f56c2c700c}\label{classlibcamera_1_1Size_a5bdf8eb2cde21d66556ae9f56c2c700c} 
+unsigned int {\bfseries width}
+\begin{DoxyCompactList}\small\item\em The \doxylink{classlibcamera_1_1Size}{Size} width. \end{DoxyCompactList}\item 
+\Hypertarget{classlibcamera_1_1Size_adf4bbd0053ac3659eaf4515eab64ba81}\label{classlibcamera_1_1Size_adf4bbd0053ac3659eaf4515eab64ba81} 
+unsigned int {\bfseries height}
+\begin{DoxyCompactList}\small\item\em The \doxylink{classlibcamera_1_1Size}{Size} height. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Describe a two-\/dimensional size. 
+
+The \doxylink{classlibcamera_1_1Size}{Size} class defines a two-\/dimensional size with integer precision. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlibcamera_1_1Size_a86de8d4499e905783f355061de7d2b72}\label{classlibcamera_1_1Size_a86de8d4499e905783f355061de7d2b72} 
+\index{libcamera::Size@{libcamera::Size}!Size@{Size}}
+\index{Size@{Size}!libcamera::Size@{libcamera::Size}}
+\doxysubsubsection{\texorpdfstring{Size()}{Size()}}
+{\footnotesize\ttfamily libcamera\+::\+Size\+::\+Size (\begin{DoxyParamCaption}\item[{unsigned int}]{width,  }\item[{unsigned int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Construct a \doxylink{classlibcamera_1_1Size}{Size} with given {\itshape width} and {\itshape height}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em width} & The \doxylink{classlibcamera_1_1Size}{Size} width \\
+\hline
+\mbox{\texttt{ in}}  & {\em height} & The \doxylink{classlibcamera_1_1Size}{Size} height \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1Size_a62029f2581ed8a885bef2757ab180c04}\label{classlibcamera_1_1Size_a62029f2581ed8a885bef2757ab180c04} 
+\index{libcamera::Size@{libcamera::Size}!alignDownTo@{alignDownTo}}
+\index{alignDownTo@{alignDownTo}!libcamera::Size@{libcamera::Size}}
+\doxysubsubsection{\texorpdfstring{alignDownTo()}{alignDownTo()}}
+{\footnotesize\ttfamily libcamera\+::\+Size\+::align\+Down\+To (\begin{DoxyParamCaption}\item[{unsigned int}]{h\+Alignment,  }\item[{unsigned int}]{v\+Alignment }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Align the size down horizontally and vertically in place. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em h\+Alignment} & Horizontal alignment \\
+\hline
+\mbox{\texttt{ in}}  & {\em v\+Alignment} & Vertical alignment\\
+\hline
+\end{DoxyParams}
+This functions rounds the width and height down to the nearest multiple of {\itshape h\+Alignment} and {\itshape v\+Alignment} respectively.
+
+\begin{DoxyReturn}{Returns}
+A reference to this object 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Size_a4fa3aa5072c30edcff35b2a6dd795f35}\label{classlibcamera_1_1Size_a4fa3aa5072c30edcff35b2a6dd795f35} 
+\index{libcamera::Size@{libcamera::Size}!alignedDownTo@{alignedDownTo}}
+\index{alignedDownTo@{alignedDownTo}!libcamera::Size@{libcamera::Size}}
+\doxysubsubsection{\texorpdfstring{alignedDownTo()}{alignedDownTo()}}
+{\footnotesize\ttfamily libcamera\+::\+Size\+::aligned\+Down\+To (\begin{DoxyParamCaption}\item[{unsigned int}]{h\+Alignment,  }\item[{unsigned int}]{v\+Alignment }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Align the size down horizontally and vertically. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em h\+Alignment} & Horizontal alignment \\
+\hline
+\mbox{\texttt{ in}}  & {\em v\+Alignment} & Vertical alignment \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classlibcamera_1_1Size}{Size} whose width and height are equal to the width and height of this size rounded down to the nearest multiple of {\itshape h\+Alignment} and {\itshape v\+Alignment} respectively 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Size_add28099d27d7dfaa786383b5e4c3b11a}\label{classlibcamera_1_1Size_add28099d27d7dfaa786383b5e4c3b11a} 
+\index{libcamera::Size@{libcamera::Size}!alignedUpTo@{alignedUpTo}}
+\index{alignedUpTo@{alignedUpTo}!libcamera::Size@{libcamera::Size}}
+\doxysubsubsection{\texorpdfstring{alignedUpTo()}{alignedUpTo()}}
+{\footnotesize\ttfamily libcamera\+::\+Size\+::aligned\+Up\+To (\begin{DoxyParamCaption}\item[{unsigned int}]{h\+Alignment,  }\item[{unsigned int}]{v\+Alignment }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Align the size up horizontally and vertically. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em h\+Alignment} & Horizontal alignment \\
+\hline
+\mbox{\texttt{ in}}  & {\em v\+Alignment} & Vertical alignment \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classlibcamera_1_1Size}{Size} whose width and height are equal to the width and height of this size rounded up to the nearest multiple of {\itshape h\+Alignment} and {\itshape v\+Alignment} respectively 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Size_a2488b808661172107f34afadc346c674}\label{classlibcamera_1_1Size_a2488b808661172107f34afadc346c674} 
+\index{libcamera::Size@{libcamera::Size}!alignUpTo@{alignUpTo}}
+\index{alignUpTo@{alignUpTo}!libcamera::Size@{libcamera::Size}}
+\doxysubsubsection{\texorpdfstring{alignUpTo()}{alignUpTo()}}
+{\footnotesize\ttfamily libcamera\+::\+Size\+::align\+Up\+To (\begin{DoxyParamCaption}\item[{unsigned int}]{h\+Alignment,  }\item[{unsigned int}]{v\+Alignment }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Align the size up horizontally and vertically in place. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em h\+Alignment} & Horizontal alignment \\
+\hline
+\mbox{\texttt{ in}}  & {\em v\+Alignment} & Vertical alignment\\
+\hline
+\end{DoxyParams}
+This functions rounds the width and height up to the nearest multiple of {\itshape h\+Alignment} and {\itshape v\+Alignment} respectively.
+
+\begin{DoxyReturn}{Returns}
+A reference to this object 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Size_aacd7e4f07e0e271b90aba67b9a21d1ed}\label{classlibcamera_1_1Size_aacd7e4f07e0e271b90aba67b9a21d1ed} 
+\index{libcamera::Size@{libcamera::Size}!boundedTo@{boundedTo}}
+\index{boundedTo@{boundedTo}!libcamera::Size@{libcamera::Size}}
+\doxysubsubsection{\texorpdfstring{boundedTo()}{boundedTo()}}
+{\footnotesize\ttfamily libcamera\+::\+Size\+::bounded\+To (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&}]{bound }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Bound the size to {\itshape bound}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em bound} & The maximum size \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classlibcamera_1_1Size}{Size} whose width and height are the minimum of the width and height of this size and the {\itshape bound} size 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Size_ab44f288148efb162ba9d2d54cf844242}\label{classlibcamera_1_1Size_ab44f288148efb162ba9d2d54cf844242} 
+\index{libcamera::Size@{libcamera::Size}!boundedToAspectRatio@{boundedToAspectRatio}}
+\index{boundedToAspectRatio@{boundedToAspectRatio}!libcamera::Size@{libcamera::Size}}
+\doxysubsubsection{\texorpdfstring{boundedToAspectRatio()}{boundedToAspectRatio()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} libcamera\+::\+Size\+::bounded\+To\+Aspect\+Ratio (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&}]{ratio }\end{DoxyParamCaption}) const}
+
+
+
+Bound the size down to match the aspect ratio given by {\itshape ratio}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ratio} & The size whose aspect ratio must be matched\\
+\hline
+\end{DoxyParams}
+The behaviour of this function is undefined if either the width or the height of the {\itshape ratio} is zero.
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classlibcamera_1_1Size}{Size} whose width and height are equal to the width and height of this \doxylink{classlibcamera_1_1Size}{Size} aligned down to the aspect ratio of {\itshape ratio} 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Size_a54454a26d28dcc85acc4583740adbc48}\label{classlibcamera_1_1Size_a54454a26d28dcc85acc4583740adbc48} 
+\index{libcamera::Size@{libcamera::Size}!boundTo@{boundTo}}
+\index{boundTo@{boundTo}!libcamera::Size@{libcamera::Size}}
+\doxysubsubsection{\texorpdfstring{boundTo()}{boundTo()}}
+{\footnotesize\ttfamily libcamera\+::\+Size\+::bound\+To (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&}]{bound }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Bound the size to {\itshape bound} in place. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em bound} & The maximum size\\
+\hline
+\end{DoxyParams}
+This function sets the width and height to the minimum of this size and the {\itshape bound} size.
+
+\begin{DoxyReturn}{Returns}
+A reference to this object 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Size_a81356ac0a1b2229fa1f4874ac7848aed}\label{classlibcamera_1_1Size_a81356ac0a1b2229fa1f4874ac7848aed} 
+\index{libcamera::Size@{libcamera::Size}!centeredTo@{centeredTo}}
+\index{centeredTo@{centeredTo}!libcamera::Size@{libcamera::Size}}
+\doxysubsubsection{\texorpdfstring{centeredTo()}{centeredTo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1Rectangle}{Rectangle}} libcamera\+::\+Size\+::centered\+To (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1Point}{Point}} \&}]{center }\end{DoxyParamCaption}) const}
+
+
+
+Center a rectangle of this size at a given \doxylink{classlibcamera_1_1Point}{Point}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em center} & The center point the \doxylink{classlibcamera_1_1Rectangle}{Rectangle} is to have\\
+\hline
+\end{DoxyParams}
+A \doxylink{classlibcamera_1_1Rectangle}{Rectangle} of this object\textquotesingle{}s size is positioned so that its center is at the given \doxylink{classlibcamera_1_1Point}{Point}.
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classlibcamera_1_1Rectangle}{Rectangle} of this size, centered at the given \doxylink{classlibcamera_1_1Point}{Point}. 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Size_a346d13394c37c880393cef6b856d4407}\label{classlibcamera_1_1Size_a346d13394c37c880393cef6b856d4407} 
+\index{libcamera::Size@{libcamera::Size}!expandedTo@{expandedTo}}
+\index{expandedTo@{expandedTo}!libcamera::Size@{libcamera::Size}}
+\doxysubsubsection{\texorpdfstring{expandedTo()}{expandedTo()}}
+{\footnotesize\ttfamily libcamera\+::\+Size\+::expanded\+To (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&}]{expand }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Expand the size to {\itshape expand}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em expand} & The minimum size \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classlibcamera_1_1Size}{Size} whose width and height are the maximum of the width and height of this size and the {\itshape expand} size 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Size_ac171509875241ae63e2a56dd3c68a125}\label{classlibcamera_1_1Size_ac171509875241ae63e2a56dd3c68a125} 
+\index{libcamera::Size@{libcamera::Size}!expandedToAspectRatio@{expandedToAspectRatio}}
+\index{expandedToAspectRatio@{expandedToAspectRatio}!libcamera::Size@{libcamera::Size}}
+\doxysubsubsection{\texorpdfstring{expandedToAspectRatio()}{expandedToAspectRatio()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} libcamera\+::\+Size\+::expanded\+To\+Aspect\+Ratio (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&}]{ratio }\end{DoxyParamCaption}) const}
+
+
+
+Expand the size to match the aspect ratio given by {\itshape ratio}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ratio} & The size whose aspect ratio must be matched\\
+\hline
+\end{DoxyParams}
+The behaviour of this function is undefined if either the width or the height of the {\itshape ratio} is zero.
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classlibcamera_1_1Size}{Size} whose width and height are equal to the width and height of this \doxylink{classlibcamera_1_1Size}{Size} expanded up to the aspect ratio of {\itshape ratio} 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Size_aa33da8f2f66bfab2e9c79e7875903a13}\label{classlibcamera_1_1Size_aa33da8f2f66bfab2e9c79e7875903a13} 
+\index{libcamera::Size@{libcamera::Size}!expandTo@{expandTo}}
+\index{expandTo@{expandTo}!libcamera::Size@{libcamera::Size}}
+\doxysubsubsection{\texorpdfstring{expandTo()}{expandTo()}}
+{\footnotesize\ttfamily libcamera\+::\+Size\+::expand\+To (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&}]{expand }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Expand the size to {\itshape expand}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em expand} & The minimum size\\
+\hline
+\end{DoxyParams}
+This function sets the width and height to the maximum of this size and the {\itshape expand} size.
+
+\begin{DoxyReturn}{Returns}
+A reference to this object 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Size_aeb4eff3b577f5d22d5ba5123d88396d3}\label{classlibcamera_1_1Size_aeb4eff3b577f5d22d5ba5123d88396d3} 
+\index{libcamera::Size@{libcamera::Size}!growBy@{growBy}}
+\index{growBy@{growBy}!libcamera::Size@{libcamera::Size}}
+\doxysubsubsection{\texorpdfstring{growBy()}{growBy()}}
+{\footnotesize\ttfamily libcamera\+::\+Size\+::grow\+By (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&}]{margins }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Grow the size by {\itshape margins} in place. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em margins} & The margins to add to the size\\
+\hline
+\end{DoxyParams}
+This function adds the width and height of the {\itshape margin} size to this size.
+
+\begin{DoxyReturn}{Returns}
+A reference to this object 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Size_a5b54b3d391ad3cf7f46b394556597a91}\label{classlibcamera_1_1Size_a5b54b3d391ad3cf7f46b394556597a91} 
+\index{libcamera::Size@{libcamera::Size}!grownBy@{grownBy}}
+\index{grownBy@{grownBy}!libcamera::Size@{libcamera::Size}}
+\doxysubsubsection{\texorpdfstring{grownBy()}{grownBy()}}
+{\footnotesize\ttfamily libcamera\+::\+Size\+::grown\+By (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&}]{margins }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Grow the size by {\itshape margins}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em margins} & The margins to add to the size \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classlibcamera_1_1Size}{Size} whose width and height are the sum of the width and height of this size and the {\itshape margins} size 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Size_a943251f772ca06110f811e63cf241b73}\label{classlibcamera_1_1Size_a943251f772ca06110f811e63cf241b73} 
+\index{libcamera::Size@{libcamera::Size}!isNull@{isNull}}
+\index{isNull@{isNull}!libcamera::Size@{libcamera::Size}}
+\doxysubsubsection{\texorpdfstring{isNull()}{isNull()}}
+{\footnotesize\ttfamily bool libcamera\+::\+Size\+::is\+Null (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check if the size is null. 
+
+\begin{DoxyReturn}{Returns}
+True if both the width and height are 0, or false otherwise 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Size_ad24b1c42470671086839f18e04f5d3c3}\label{classlibcamera_1_1Size_ad24b1c42470671086839f18e04f5d3c3} 
+\index{libcamera::Size@{libcamera::Size}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!libcamera::Size@{libcamera::Size}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} libcamera\+::\+Size\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{float}]{factor }\end{DoxyParamCaption}) const}
+
+
+
+Scale size up by the given factor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em factor} & The factor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The scaled \doxylink{classlibcamera_1_1Size}{Size} 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Size_afdb5f21cfe53b16ce6ee218c97737a68}\label{classlibcamera_1_1Size_afdb5f21cfe53b16ce6ee218c97737a68} 
+\index{libcamera::Size@{libcamera::Size}!operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}}
+\index{operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}!libcamera::Size@{libcamera::Size}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}=()}{operator*=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \& libcamera\+::\+Size\+::operator\texorpdfstring{$\ast$}{*}= (\begin{DoxyParamCaption}\item[{float}]{factor }\end{DoxyParamCaption})}
+
+
+
+Scale this size up by the given factor in place. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em factor} & The factor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to this object 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Size_a306de151d0e5134d8a7c45198293ca1c}\label{classlibcamera_1_1Size_a306de151d0e5134d8a7c45198293ca1c} 
+\index{libcamera::Size@{libcamera::Size}!operator/@{operator/}}
+\index{operator/@{operator/}!libcamera::Size@{libcamera::Size}}
+\doxysubsubsection{\texorpdfstring{operator/()}{operator/()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} libcamera\+::\+Size\+::operator/ (\begin{DoxyParamCaption}\item[{float}]{factor }\end{DoxyParamCaption}) const}
+
+
+
+Scale size down by the given factor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em factor} & The factor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The scaled \doxylink{classlibcamera_1_1Size}{Size} 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Size_a053534ab91440607edfefa5b259236a6}\label{classlibcamera_1_1Size_a053534ab91440607edfefa5b259236a6} 
+\index{libcamera::Size@{libcamera::Size}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!libcamera::Size@{libcamera::Size}}
+\doxysubsubsection{\texorpdfstring{operator/=()}{operator/=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \& libcamera\+::\+Size\+::operator/= (\begin{DoxyParamCaption}\item[{float}]{factor }\end{DoxyParamCaption})}
+
+
+
+Scale this size down by the given factor in place. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em factor} & The factor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to this object 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Size_a25eace20ab63d8db8213556f8edefa99}\label{classlibcamera_1_1Size_a25eace20ab63d8db8213556f8edefa99} 
+\index{libcamera::Size@{libcamera::Size}!shrinkBy@{shrinkBy}}
+\index{shrinkBy@{shrinkBy}!libcamera::Size@{libcamera::Size}}
+\doxysubsubsection{\texorpdfstring{shrinkBy()}{shrinkBy()}}
+{\footnotesize\ttfamily libcamera\+::\+Size\+::shrink\+By (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&}]{margins }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Shrink the size by {\itshape margins} in place. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em margins} & The margins to subtract to the size\\
+\hline
+\end{DoxyParams}
+This function subtracts the width and height of the {\itshape margin} size from this size. If the width or height of the size are smaller than those of {\itshape margins}, the result is clamped to 0.
+
+\begin{DoxyReturn}{Returns}
+A reference to this object 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Size_a07b98cdb48088ad83231117d3c31b400}\label{classlibcamera_1_1Size_a07b98cdb48088ad83231117d3c31b400} 
+\index{libcamera::Size@{libcamera::Size}!shrunkBy@{shrunkBy}}
+\index{shrunkBy@{shrunkBy}!libcamera::Size@{libcamera::Size}}
+\doxysubsubsection{\texorpdfstring{shrunkBy()}{shrunkBy()}}
+{\footnotesize\ttfamily libcamera\+::\+Size\+::shrunk\+By (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&}]{margins }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Shrink the size by {\itshape margins}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em margins} & The margins to subtract to the size\\
+\hline
+\end{DoxyParams}
+If the width or height of the size are smaller than those of {\itshape margins}, the resulting size has its width or height clamped to 0.
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classlibcamera_1_1Size}{Size} whose width and height are the difference of the width and height of this size and the {\itshape margins} size, clamped to 0 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Size_a287a8238b720af55d5a73efeaae70b52}\label{classlibcamera_1_1Size_a287a8238b720af55d5a73efeaae70b52} 
+\index{libcamera::Size@{libcamera::Size}!toString@{toString}}
+\index{toString@{toString}!libcamera::Size@{libcamera::Size}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily const std\+::string libcamera\+::\+Size\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Assemble and return a string describing the size. 
+
+\begin{DoxyReturn}{Returns}
+A string describing the size 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/\mbox{\hyperlink{geometry_8h}{geometry.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/geometry.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,47 @@
+\doxysection{RPi\+Controller\+::Algorithm Class Reference}
+\hypertarget{classRPiController_1_1Algorithm}{}\label{classRPiController_1_1Algorithm}\index{RPiController::Algorithm@{RPiController::Algorithm}}
+Inheritance diagram for RPi\+Controller\+::Algorithm\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{classRPiController_1_1Algorithm}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classRPiController_1_1Algorithm_a58c8c7defa9f33c3e52612576382de56}\label{classRPiController_1_1Algorithm_a58c8c7defa9f33c3e52612576382de56} 
+{\bfseries Algorithm} (\mbox{\hyperlink{classRPiController_1_1Controller}{Controller}} \texorpdfstring{$\ast$}{*}controller)
+\item 
+\Hypertarget{classRPiController_1_1Algorithm_a324ee6264bd8ecf8734794d1384e161d}\label{classRPiController_1_1Algorithm_a324ee6264bd8ecf8734794d1384e161d} 
+virtual char const \texorpdfstring{$\ast$}{*} {\bfseries name} () const =0
+\item 
+\Hypertarget{classRPiController_1_1Algorithm_a2ae96c9fd2563613c1c2ce100d2c3006}\label{classRPiController_1_1Algorithm_a2ae96c9fd2563613c1c2ce100d2c3006} 
+virtual int {\bfseries read} (const \mbox{\hyperlink{classlibcamera_1_1YamlObject}{libcamera\+::\+Yaml\+Object}} \&params)
+\item 
+\Hypertarget{classRPiController_1_1Algorithm_a0f3fbd8fc1fe40c0ef63126e35426941}\label{classRPiController_1_1Algorithm_a0f3fbd8fc1fe40c0ef63126e35426941} 
+virtual void {\bfseries initialise} ()
+\item 
+\Hypertarget{classRPiController_1_1Algorithm_afad3d8df7a0277dbe040b38d1be79e5a}\label{classRPiController_1_1Algorithm_afad3d8df7a0277dbe040b38d1be79e5a} 
+virtual void {\bfseries switch\+Mode} (\mbox{\hyperlink{structCameraMode}{Camera\+Mode}} const \&camera\+Mode, Metadata \texorpdfstring{$\ast$}{*}metadata)
+\item 
+\Hypertarget{classRPiController_1_1Algorithm_a49d12ca397d426a97d791a636d83ec09}\label{classRPiController_1_1Algorithm_a49d12ca397d426a97d791a636d83ec09} 
+virtual void {\bfseries prepare} (Metadata \texorpdfstring{$\ast$}{*}image\+Metadata)
+\item 
+\Hypertarget{classRPiController_1_1Algorithm_a7e7ba109f4169c9083fa96d696e10243}\label{classRPiController_1_1Algorithm_a7e7ba109f4169c9083fa96d696e10243} 
+virtual void {\bfseries process} (Statistics\+Ptr \&stats, Metadata \texorpdfstring{$\ast$}{*}image\+Metadata)
+\item 
+\Hypertarget{classRPiController_1_1Algorithm_a7d270a52adca3b57e6144f49699821e2}\label{classRPiController_1_1Algorithm_a7d270a52adca3b57e6144f49699821e2} 
+Metadata \& {\bfseries get\+Global\+Metadata} () const
+\item 
+\Hypertarget{classRPiController_1_1Algorithm_a2eed36bd0fb341cc57f9c651c2a55fcd}\label{classRPiController_1_1Algorithm_a2eed36bd0fb341cc57f9c651c2a55fcd} 
+const std\+::string \& {\bfseries get\+Target} () const
+\item 
+\Hypertarget{classRPiController_1_1Algorithm_a35445411c69d2422fa63e93f9db9db99}\label{classRPiController_1_1Algorithm_a35445411c69d2422fa63e93f9db9db99} 
+const \mbox{\hyperlink{structRPiController_1_1Controller_1_1HardwareConfig}{Controller\+::\+Hardware\+Config}} \& {\bfseries get\+Hardware\+Config} () const
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/ipa/rpi/controller/algorithm.\+h\item 
+src/peripherals/camera/libcamera/src/ipa/rpi/controller/algorithm.\+cpp\end{DoxyCompactItemize}

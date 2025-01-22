@@ -1,0 +1,44 @@
+\doxysection{libcamera\+::Frame\+Buffer\+::Plane Struct Reference}
+\hypertarget{structlibcamera_1_1FrameBuffer_1_1Plane}{}\label{structlibcamera_1_1FrameBuffer_1_1Plane}\index{libcamera::FrameBuffer::Plane@{libcamera::FrameBuffer::Plane}}
+
+
+A memory region to store a single plane of a frame.  
+
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structlibcamera_1_1FrameBuffer_1_1Plane_ac938f50358c7eb5ee656ec5bced0f537}\label{structlibcamera_1_1FrameBuffer_1_1Plane_ac938f50358c7eb5ee656ec5bced0f537} 
+\mbox{\hyperlink{classlibcamera_1_1SharedFD}{Shared\+FD}} {\bfseries fd}
+\begin{DoxyCompactList}\small\item\em The dmabuf file descriptor. \end{DoxyCompactList}\item 
+\Hypertarget{structlibcamera_1_1FrameBuffer_1_1Plane_a5589ec383d6bf2b2c0612129be2f078e}\label{structlibcamera_1_1FrameBuffer_1_1Plane_a5589ec383d6bf2b2c0612129be2f078e} 
+unsigned int {\bfseries offset} = \mbox{\hyperlink{structlibcamera_1_1FrameBuffer_1_1Plane_abdee27ccdd9490e7539e4d3822f854cd}{k\+Invalid\+Offset}}
+\begin{DoxyCompactList}\small\item\em The plane offset in bytes. \end{DoxyCompactList}\item 
+\Hypertarget{structlibcamera_1_1FrameBuffer_1_1Plane_a0a28cdf7cac9b4a7a4f44b20aa9d3111}\label{structlibcamera_1_1FrameBuffer_1_1Plane_a0a28cdf7cac9b4a7a4f44b20aa9d3111} 
+unsigned int {\bfseries length}
+\begin{DoxyCompactList}\small\item\em The plane length in bytes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structlibcamera_1_1FrameBuffer_1_1Plane_abdee27ccdd9490e7539e4d3822f854cd}\label{structlibcamera_1_1FrameBuffer_1_1Plane_abdee27ccdd9490e7539e4d3822f854cd} 
+static constexpr unsigned int {\bfseries k\+Invalid\+Offset} = std\+::numeric\+\_\+limits$<$unsigned int$>$\+::max()
+\begin{DoxyCompactList}\small\item\em Invalid offset value, to identify uninitialized planes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A memory region to store a single plane of a frame. 
+
+Planar pixel formats use multiple memory regions to store the different colour components of a frame. The \doxylink{structlibcamera_1_1FrameBuffer_1_1Plane}{Plane} structure describes such a memory region by a dmabuf file descriptor, an offset within the dmabuf and a length. A \doxylink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer} then contains one or multiple planes, depending on the pixel format of the frames it is meant to store.
+
+The offset identifies the location of the plane data from the start of the memory referenced by the dmabuf file descriptor. Multiple planes may be stored in the same dmabuf, in which case they will reference the same dmabuf and different offsets. No two planes may overlap, as specified by their offset and length.
+
+To support DMA access, planes are associated with dmabuf objects represented by \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} handles. The \doxylink{structlibcamera_1_1FrameBuffer_1_1Plane}{Plane} class doesn\textquotesingle{}t handle mapping of the memory to the CPU, but applications and IPAs may use the dmabuf file descriptors to map the plane memory with mmap() and access its contents.
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000028}{Todo}}]Specify how an application shall decide whether to use a single or multiple dmabufs, based on the camera requirements. \end{DoxyRefDesc}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/\mbox{\hyperlink{framebuffer_8h}{framebuffer.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/framebuffer.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,90 @@
+\doxysection{process.\+h}
+\hypertarget{process_8h_source}{}\label{process_8h_source}\index{src/peripherals/camera/libcamera/include/libcamera/internal/process.h@{src/peripherals/camera/libcamera/include/libcamera/internal/process.h}}
+\mbox{\hyperlink{process_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2019,\ Google\ Inc.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Process\ object}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{signal_8h}{signal.h}}>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{signal_8h}{libcamera/base/signal.h}}>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{unique__fd_8h}{libcamera/base/unique\_fd.h}}>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacelibcamera}{libcamera}}\ \{}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }EventNotifier;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1Process}{Process}}\ final}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{classlibcamera_1_1Process_a826f917f3d1118206f0621254db23f21}{ExitStatus}}\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Process_a826f917f3d1118206f0621254db23f21a8be3e782c2eac2f36864480e5350904a}{NotExited}},}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Process_a826f917f3d1118206f0621254db23f21a27d4ed0afe429fc5d31cc32f59c6962e}{NormalExit}},}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Process_a826f917f3d1118206f0621254db23f21af193df19fb924fff7384bbdcb1037452}{SignalExit}},}
+\DoxyCodeLine{00028\ \ \ \ \ \};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Process}{Process}}();}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Process}{\string~Process}}();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1Process_a33b8d9aa509cc573c8e2d9b7da65179e}{start}}(\textcolor{keyword}{const}\ std::string\ \&path,}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::string>\ \&args\ =\ std::vector<std::string>(),}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<int>\ \&fds\ =\ std::vector<int>());}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Process_a826f917f3d1118206f0621254db23f21}{ExitStatus}}\ \mbox{\hyperlink{classlibcamera_1_1Process_ab94be606a51da890c2273d47fe262787}{exitStatus}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ exitStatus\_;\ \}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1Process_a235f2c851b5962600480bbaf11eb30c2}{exitCode}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ exitCode\_;\ \}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1Process_a1898dc069d405275d1c6761731a48fad}{kill}}();}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Signal}{Signal<enum\ ExitStatus,\ int>}}\ \mbox{\hyperlink{classlibcamera_1_1Process_a91e787bf85a26caf470d19c759a127a2}{finished}};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ closeAllFdsExcept(\textcolor{keyword}{const}\ std::vector<int>\ \&fds);}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{int}\ isolate();}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ died(\textcolor{keywordtype}{int}\ wstatus);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ pid\_t\ pid\_;}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{bool}\ running\_;}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{classlibcamera_1_1Process_a826f917f3d1118206f0621254db23f21}{ExitStatus}}\ exitStatus\_;}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{int}\ exitCode\_;}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1ProcessManager}{ProcessManager}};}
+\DoxyCodeLine{00055\ \};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1ProcessManager}{ProcessManager}}}
+\DoxyCodeLine{00058\ \{}
+\DoxyCodeLine{00059\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ProcessManager_aab5a24aa2f56eebb013e94a5b0b74b18}{ProcessManager}}();}
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ProcessManager}{\string~ProcessManager}}();}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1ProcessManager_a3f30392724106a1a61f80f09a54c73cb}{registerProcess}}(\mbox{\hyperlink{classlibcamera_1_1Process}{Process}}\ *proc);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classlibcamera_1_1ProcessManager}{ProcessManager}}\ *\mbox{\hyperlink{classlibcamera_1_1ProcessManager_a0afd5b2d1c57fe138b52c0eda3664d79}{instance}}();}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1ProcessManager_a378867dbf3b2ef6a76fdf89b27b7c84a}{writePipe}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }sigaction\ \&\mbox{\hyperlink{classlibcamera_1_1ProcessManager_accd87be4598594e3eededa20bf343892}{oldsa}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classlibcamera_1_1ProcessManager}{ProcessManager}}\ *self\_;}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ sighandler();}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ std::list<Process\ *>\ processes\_;}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{struct\ }sigaction\ oldsa\_;}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1EventNotifier}{EventNotifier}}\ *sigEvent\_;}
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1UniqueFD}{UniqueFD}}\ pipe\_[2];}
+\DoxyCodeLine{00082\ \};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \}\ \textcolor{comment}{/*\ namespace\ libcamera\ */}}
+
+\end{DoxyCode}

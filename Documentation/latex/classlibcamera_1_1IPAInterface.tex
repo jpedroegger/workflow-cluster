@@ -1,0 +1,33 @@
+\doxysection{libcamera\+::IPAInterface Class Reference}
+\hypertarget{classlibcamera_1_1IPAInterface}{}\label{classlibcamera_1_1IPAInterface}\index{libcamera::IPAInterface@{libcamera::IPAInterface}}
+
+
+C++ Interface for IPA implementation.  
+
+
+Inheritance diagram for libcamera\+::IPAInterface\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlibcamera_1_1IPAInterface}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Detailed Description}
+C++ Interface for IPA implementation. 
+
+This pure virtual class defines a skeletal C++ API for IPA modules. Specializations of this class must be defined in a mojom file in include/libcamera/ipa/ (see the IPA Writers Guide for details on how to do so).
+
+Due to process isolation all arguments to the \doxylink{classlibcamera_1_1IPAInterface}{IPAInterface} member functions and signals may need to be transferred over IPC. The class thus uses serializable data types only. The IPA C++ interface defines custom data structures that mirror core libcamera structures when the latter are not suitable, such as IPAStream to carry \doxylink{structlibcamera_1_1StreamConfiguration}{Stream\+Configuration} data.
+
+Custom data structures may also be defined in the mojom file, in which case the (de)serialization will automatically be generated. If any other libcamera structures are to be used as parameters, then a (de)serializer for them must be implemented in \doxylink{classlibcamera_1_1IPADataSerializer}{IPAData\+Serializer}.
+
+The pipeline handlers shall use the \doxylink{classlibcamera_1_1IPAManager}{IPAManager} to locate a compatible \doxylink{classlibcamera_1_1IPAInterface}{IPAInterface}. The interface may then be used to interact with the IPA module.
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000033}{Todo}}]Figure out how to generate \doxylink{classlibcamera_1_1IPAInterface}{IPAInterface} documentation. \end{DoxyRefDesc}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/ipa/\mbox{\hyperlink{ipa__interface_8h}{ipa\+\_\+interface.\+h}}\end{DoxyCompactItemize}

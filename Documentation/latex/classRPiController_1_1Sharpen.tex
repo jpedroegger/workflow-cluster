@@ -1,0 +1,103 @@
+\doxysection{RPi\+Controller\+::Sharpen Class Reference}
+\hypertarget{classRPiController_1_1Sharpen}{}\label{classRPiController_1_1Sharpen}\index{RPiController::Sharpen@{RPiController::Sharpen}}
+Inheritance diagram for RPi\+Controller\+::Sharpen\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classRPiController_1_1Sharpen}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classRPiController_1_1Sharpen_af1d0e08a3e44d853cf898954a3f9c991}\label{classRPiController_1_1Sharpen_af1d0e08a3e44d853cf898954a3f9c991} 
+{\bfseries Sharpen} (\mbox{\hyperlink{classRPiController_1_1Controller}{Controller}} \texorpdfstring{$\ast$}{*}controller)
+\item 
+char const \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classRPiController_1_1Sharpen_a9fc9da433155d22198d13623e8d13e6d}{name}} () const override
+\item 
+void \mbox{\hyperlink{classRPiController_1_1Sharpen_ad99009ac6d0ea183ded0697c158282a0}{switch\+Mode}} (\mbox{\hyperlink{structCameraMode}{Camera\+Mode}} const \&camera\+Mode, Metadata \texorpdfstring{$\ast$}{*}metadata) override
+\item 
+int \mbox{\hyperlink{classRPiController_1_1Sharpen_afab64888991ae9eb8591bde7442b67e9}{read}} (const \mbox{\hyperlink{classlibcamera_1_1YamlObject}{libcamera\+::\+Yaml\+Object}} \&params) override
+\item 
+void \mbox{\hyperlink{classRPiController_1_1Sharpen_a8a6c8984e1d7c5e078947d89d61dc328}{set\+Strength}} (double strength) override
+\item 
+void \mbox{\hyperlink{classRPiController_1_1Sharpen_a68f1cfcfcc1b00397258180aa02c4f0c}{prepare}} (Metadata \texorpdfstring{$\ast$}{*}image\+Metadata) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classRPiController_1_1SharpenAlgorithm}{RPi\+Controller\+::\+Sharpen\+Algorithm}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Sharpen\+Algorithm} (\mbox{\hyperlink{classRPiController_1_1Controller}{Controller}} \texorpdfstring{$\ast$}{*}controller)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classRPiController_1_1Algorithm}{RPi\+Controller\+::\+Algorithm}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Algorithm} (\mbox{\hyperlink{classRPiController_1_1Controller}{Controller}} \texorpdfstring{$\ast$}{*}controller)
+\item 
+virtual void {\bfseries initialise} ()
+\item 
+virtual void {\bfseries process} (Statistics\+Ptr \&stats, Metadata \texorpdfstring{$\ast$}{*}image\+Metadata)
+\item 
+Metadata \& {\bfseries get\+Global\+Metadata} () const
+\item 
+const std\+::string \& {\bfseries get\+Target} () const
+\item 
+const \mbox{\hyperlink{structRPiController_1_1Controller_1_1HardwareConfig}{Controller\+::\+Hardware\+Config}} \& {\bfseries get\+Hardware\+Config} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classRPiController_1_1Sharpen_a9fc9da433155d22198d13623e8d13e6d}\label{classRPiController_1_1Sharpen_a9fc9da433155d22198d13623e8d13e6d} 
+\index{RPiController::Sharpen@{RPiController::Sharpen}!name@{name}}
+\index{name@{name}!RPiController::Sharpen@{RPiController::Sharpen}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily char const  \texorpdfstring{$\ast$}{*} Sharpen\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classRPiController_1_1Algorithm}{RPi\+Controller\+::\+Algorithm}}.
+
+\Hypertarget{classRPiController_1_1Sharpen_a68f1cfcfcc1b00397258180aa02c4f0c}\label{classRPiController_1_1Sharpen_a68f1cfcfcc1b00397258180aa02c4f0c} 
+\index{RPiController::Sharpen@{RPiController::Sharpen}!prepare@{prepare}}
+\index{prepare@{prepare}!RPiController::Sharpen@{RPiController::Sharpen}}
+\doxysubsubsection{\texorpdfstring{prepare()}{prepare()}}
+{\footnotesize\ttfamily void Sharpen\+::prepare (\begin{DoxyParamCaption}\item[{Metadata \texorpdfstring{$\ast$}{*}}]{image\+Metadata }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classRPiController_1_1Algorithm}{RPi\+Controller\+::\+Algorithm}}.
+
+\Hypertarget{classRPiController_1_1Sharpen_afab64888991ae9eb8591bde7442b67e9}\label{classRPiController_1_1Sharpen_afab64888991ae9eb8591bde7442b67e9} 
+\index{RPiController::Sharpen@{RPiController::Sharpen}!read@{read}}
+\index{read@{read}!RPiController::Sharpen@{RPiController::Sharpen}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily int Sharpen\+::read (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1YamlObject}{libcamera\+::\+Yaml\+Object}} \&}]{params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classRPiController_1_1Algorithm}{RPi\+Controller\+::\+Algorithm}}.
+
+\Hypertarget{classRPiController_1_1Sharpen_a8a6c8984e1d7c5e078947d89d61dc328}\label{classRPiController_1_1Sharpen_a8a6c8984e1d7c5e078947d89d61dc328} 
+\index{RPiController::Sharpen@{RPiController::Sharpen}!setStrength@{setStrength}}
+\index{setStrength@{setStrength}!RPiController::Sharpen@{RPiController::Sharpen}}
+\doxysubsubsection{\texorpdfstring{setStrength()}{setStrength()}}
+{\footnotesize\ttfamily void Sharpen\+::set\+Strength (\begin{DoxyParamCaption}\item[{double}]{strength }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classRPiController_1_1SharpenAlgorithm}{RPi\+Controller\+::\+Sharpen\+Algorithm}}.
+
+\Hypertarget{classRPiController_1_1Sharpen_ad99009ac6d0ea183ded0697c158282a0}\label{classRPiController_1_1Sharpen_ad99009ac6d0ea183ded0697c158282a0} 
+\index{RPiController::Sharpen@{RPiController::Sharpen}!switchMode@{switchMode}}
+\index{switchMode@{switchMode}!RPiController::Sharpen@{RPiController::Sharpen}}
+\doxysubsubsection{\texorpdfstring{switchMode()}{switchMode()}}
+{\footnotesize\ttfamily void Sharpen\+::switch\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCameraMode}{Camera\+Mode}} const \&}]{camera\+Mode,  }\item[{Metadata \texorpdfstring{$\ast$}{*}}]{metadata }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classRPiController_1_1Algorithm}{RPi\+Controller\+::\+Algorithm}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/ipa/rpi/controller/rpi/sharpen.\+h\item 
+src/peripherals/camera/libcamera/src/ipa/rpi/controller/rpi/sharpen.\+cpp\end{DoxyCompactItemize}

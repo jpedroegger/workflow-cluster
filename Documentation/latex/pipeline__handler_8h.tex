@@ -1,0 +1,62 @@
+\doxysection{src/peripherals/camera/libcamera/include/libcamera/internal/pipeline\+\_\+handler.h File Reference}
+\hypertarget{pipeline__handler_8h}{}\label{pipeline__handler_8h}\index{src/peripherals/camera/libcamera/include/libcamera/internal/pipeline\_handler.h@{src/peripherals/camera/libcamera/include/libcamera/internal/pipeline\_handler.h}}
+
+
+Create pipelines and cameras from a set of media devices.  
+
+
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$queue$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$libcamera/base/object.\+h$>$}\newline
+{\ttfamily \#include $<$libcamera/controls.\+h$>$}\newline
+{\ttfamily \#include $<$libcamera/stream.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classlibcamera_1_1PipelineHandler}{libcamera\+::\+Pipeline\+Handler}}
+\begin{DoxyCompactList}\small\item\em Create and manage cameras based on a set of media devices. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerFactoryBase}{libcamera\+::\+Pipeline\+Handler\+Factory\+Base}}
+\begin{DoxyCompactList}\small\item\em Base class for pipeline handler factories. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerFactory}{libcamera\+::\+Pipeline\+Handler\+Factory$<$ \+\_\+\+Pipeline\+Handler $>$}}
+\begin{DoxyCompactList}\small\item\em Registration of \doxylink{classlibcamera_1_1PipelineHandler}{Pipeline\+Handler} classes and creation of instances. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacelibcamera}{libcamera}}
+\begin{DoxyCompactList}\small\item\em Top-\/level libcamera namespace. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pipeline__handler_8h_a8dae35473d8718ef287a93c2092c47bb}{REGISTER\+\_\+\+PIPELINE\+\_\+\+HANDLER}}(handler,  name)~ static Pipeline\+Handler\+Factory$<$handler$>$ global\+\_\+\#\#handler\#\#Factory(name);
+\begin{DoxyCompactList}\small\item\em Register a pipeline handler with the pipeline handler factory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Create pipelines and cameras from a set of media devices. 
+
+Each pipeline supported by libcamera needs to be backed by a pipeline handler implementation that operate on a set of media devices. The pipeline handler is responsible for matching the media devices it requires with the devices present in the system, and once all those devices can be acquired, create corresponding Camera instances.
+
+Every subclass of Pipeline\+Handler shall be registered with libcamera using the \doxylink{pipeline__handler_8h_a8dae35473d8718ef287a93c2092c47bb}{REGISTER\+\_\+\+PIPELINE\+\_\+\+HANDLER()} macro. 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{pipeline__handler_8h_a8dae35473d8718ef287a93c2092c47bb}\label{pipeline__handler_8h_a8dae35473d8718ef287a93c2092c47bb} 
+\index{pipeline\_handler.h@{pipeline\_handler.h}!REGISTER\_PIPELINE\_HANDLER@{REGISTER\_PIPELINE\_HANDLER}}
+\index{REGISTER\_PIPELINE\_HANDLER@{REGISTER\_PIPELINE\_HANDLER}!pipeline\_handler.h@{pipeline\_handler.h}}
+\doxysubsubsection{\texorpdfstring{REGISTER\_PIPELINE\_HANDLER}{REGISTER\_PIPELINE\_HANDLER}}
+{\footnotesize\ttfamily \#define REGISTER\+\_\+\+PIPELINE\+\_\+\+HANDLER(\begin{DoxyParamCaption}\item[{}]{handler,  }\item[{}]{name }\end{DoxyParamCaption})~ static Pipeline\+Handler\+Factory$<$handler$>$ global\+\_\+\#\#handler\#\#Factory(name);}
+
+
+
+Register a pipeline handler with the pipeline handler factory. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em handler} & Class name of Pipeline\+Handler derived class to register \\
+\hline
+\mbox{\texttt{ in}}  & {\em name} & Name assigned to the pipeline handler, matching the pipeline subdirectory name in the source tree.\\
+\hline
+\end{DoxyParams}
+Register a Pipeline\+Handler subclass with the factory and make it available to try and match devices. 

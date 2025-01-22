@@ -1,0 +1,29 @@
+\doxysection{V4\+L2\+Camera\+Proxy Class Reference}
+\hypertarget{classV4L2CameraProxy}{}\label{classV4L2CameraProxy}\index{V4L2CameraProxy@{V4L2CameraProxy}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classV4L2CameraProxy_a96307b78a49682c9cf2afeb01e3e9c61}\label{classV4L2CameraProxy_a96307b78a49682c9cf2afeb01e3e9c61} 
+{\bfseries V4\+L2\+Camera\+Proxy} (unsigned int index, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1Camera}{libcamera\+::\+Camera}} $>$ camera)
+\item 
+\Hypertarget{classV4L2CameraProxy_acc08c7a6959ef15f19fcdd27e42391c4}\label{classV4L2CameraProxy_acc08c7a6959ef15f19fcdd27e42391c4} 
+int {\bfseries open} (\mbox{\hyperlink{classV4L2CameraFile}{V4\+L2\+Camera\+File}} \texorpdfstring{$\ast$}{*}file) LIBCAMERA\+\_\+\+TSA\+\_\+\+EXCLUDES(proxy\+Mutex\+\_\+)
+\item 
+\Hypertarget{classV4L2CameraProxy_a85a76d396c7f9d6777b5f3bd81dce46c}\label{classV4L2CameraProxy_a85a76d396c7f9d6777b5f3bd81dce46c} 
+void {\bfseries close} (\mbox{\hyperlink{classV4L2CameraFile}{V4\+L2\+Camera\+File}} \texorpdfstring{$\ast$}{*}file) LIBCAMERA\+\_\+\+TSA\+\_\+\+EXCLUDES(proxy\+Mutex\+\_\+)
+\item 
+\Hypertarget{classV4L2CameraProxy_a1badfbf34fc3f6a8fa1d86ba9c372507}\label{classV4L2CameraProxy_a1badfbf34fc3f6a8fa1d86ba9c372507} 
+void \texorpdfstring{$\ast$}{*} {\bfseries mmap} (\mbox{\hyperlink{classV4L2CameraFile}{V4\+L2\+Camera\+File}} \texorpdfstring{$\ast$}{*}file, void \texorpdfstring{$\ast$}{*}addr, size\+\_\+t length, int prot, int flags, off64\+\_\+t offset) LIBCAMERA\+\_\+\+TSA\+\_\+\+EXCLUDES(proxy\+Mutex\+\_\+)
+\item 
+\Hypertarget{classV4L2CameraProxy_ad3a80544edcd3f1e4a7b5c516d734811}\label{classV4L2CameraProxy_ad3a80544edcd3f1e4a7b5c516d734811} 
+int {\bfseries munmap} (\mbox{\hyperlink{classV4L2CameraFile}{V4\+L2\+Camera\+File}} \texorpdfstring{$\ast$}{*}file, void \texorpdfstring{$\ast$}{*}addr, size\+\_\+t length) LIBCAMERA\+\_\+\+TSA\+\_\+\+EXCLUDES(proxy\+Mutex\+\_\+)
+\item 
+\Hypertarget{classV4L2CameraProxy_a4e3d37ecf6936a4d9ae0d198b148feb1}\label{classV4L2CameraProxy_a4e3d37ecf6936a4d9ae0d198b148feb1} 
+int {\bfseries ioctl} (\mbox{\hyperlink{classV4L2CameraFile}{V4\+L2\+Camera\+File}} \texorpdfstring{$\ast$}{*}file, unsigned long request, void \texorpdfstring{$\ast$}{*}arg) LIBCAMERA\+\_\+\+TSA\+\_\+\+EXCLUDES(proxy\+Mutex\+\_\+)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/v4l2/v4l2\+\_\+camera\+\_\+proxy.\+h\item 
+src/peripherals/camera/libcamera/src/v4l2/v4l2\+\_\+camera\+\_\+proxy.\+cpp\end{DoxyCompactItemize}

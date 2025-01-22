@@ -1,0 +1,458 @@
+\doxysection{libcamera\+::Flags\texorpdfstring{$<$}{<} E \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classlibcamera_1_1Flags}{}\label{classlibcamera_1_1Flags}\index{libcamera::Flags$<$ E $>$@{libcamera::Flags$<$ E $>$}}
+
+
+Type-\/safe container for enum-\/based bitfields.  
+
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1Flags_aa81b05753651c98e8604e26941f2517a}\label{classlibcamera_1_1Flags_aa81b05753651c98e8604e26941f2517a} 
+using {\bfseries Type} = std\+::underlying\+\_\+type\+\_\+t$<$ E $>$
+\begin{DoxyCompactList}\small\item\em The underlying data type of the enum. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1Flags_aac499f77c245c6e3ca29e5d38b5806df}\label{classlibcamera_1_1Flags_aac499f77c245c6e3ca29e5d38b5806df} 
+constexpr {\bfseries Flags} ()
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{classlibcamera_1_1Flags}{Flags} instance with a zero value. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{classlibcamera_1_1Flags_a9ce65ae409e2d79fcb8fcbce4d3c5b6b}{Flags}} (E flag)
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{classlibcamera_1_1Flags}{Flags} instance storing the {\itshape flag}. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}} \& \mbox{\hyperlink{classlibcamera_1_1Flags_a9251cd87847d52842f5355bce8ee3846}{operator\&=}} (E flag)
+\begin{DoxyCompactList}\small\item\em Store the bitwise AND of this \doxylink{classlibcamera_1_1Flags}{Flags} and the {\itshape flag} in this \doxylink{classlibcamera_1_1Flags}{Flags}. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}} \& \mbox{\hyperlink{classlibcamera_1_1Flags_afda71d20bed0739fa60f4e48c2a838b1}{operator\&=}} (\mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}} other)
+\begin{DoxyCompactList}\small\item\em Store the bitwise AND of this \doxylink{classlibcamera_1_1Flags}{Flags} and the {\itshape other} \doxylink{classlibcamera_1_1Flags}{Flags} in this \doxylink{classlibcamera_1_1Flags}{Flags}. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}} \& \mbox{\hyperlink{classlibcamera_1_1Flags_aeae743fbf4768f42c61f34df9cceb43c}{operator\texorpdfstring{$\vert$}{|}=}} (E flag)
+\begin{DoxyCompactList}\small\item\em Store the bitwise OR of this \doxylink{classlibcamera_1_1Flags}{Flags} and the {\itshape flag} in this \doxylink{classlibcamera_1_1Flags}{Flags}. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}} \& \mbox{\hyperlink{classlibcamera_1_1Flags_aa0ddef8f555cb9f9e7564032aa8a2c32}{operator\texorpdfstring{$\vert$}{|}=}} (\mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}} other)
+\begin{DoxyCompactList}\small\item\em Store the bitwise OR of this \doxylink{classlibcamera_1_1Flags}{Flags} and the {\itshape other} \doxylink{classlibcamera_1_1Flags}{Flags} in this \doxylink{classlibcamera_1_1Flags}{Flags}. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}} \& \mbox{\hyperlink{classlibcamera_1_1Flags_a572f3a007d248da654a590ad16da4c86}{operator\texorpdfstring{$^\wedge$}{\string^}=}} (E flag)
+\begin{DoxyCompactList}\small\item\em Store the bitwise XOR of this \doxylink{classlibcamera_1_1Flags}{Flags} and the {\itshape flag} in this \doxylink{classlibcamera_1_1Flags}{Flags}. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}} \& \mbox{\hyperlink{classlibcamera_1_1Flags_a7d13e0dbde0454251a3ca285304ec399}{operator\texorpdfstring{$^\wedge$}{\string^}=}} (\mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}} other)
+\begin{DoxyCompactList}\small\item\em Store the bitwise XOR of this \doxylink{classlibcamera_1_1Flags}{Flags} and the {\itshape other} \doxylink{classlibcamera_1_1Flags}{Flags} in this \doxylink{classlibcamera_1_1Flags}{Flags}. \end{DoxyCompactList}\item 
+constexpr bool \mbox{\hyperlink{classlibcamera_1_1Flags_a4ebe934023e99398c5a4b0faa6f2e75e}{operator==}} (E flag)
+\begin{DoxyCompactList}\small\item\em Compare flags for equality. \end{DoxyCompactList}\item 
+constexpr bool \mbox{\hyperlink{classlibcamera_1_1Flags_a9503c27b3f5811ed3eafa96749cbf2aa}{operator==}} (\mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}} other)
+\begin{DoxyCompactList}\small\item\em Compare flags for equality. \end{DoxyCompactList}\item 
+constexpr bool \mbox{\hyperlink{classlibcamera_1_1Flags_ad157ef16f61f6ab55bdfcd399788de8e}{operator!=}} (E flag)
+\begin{DoxyCompactList}\small\item\em Compare flags for non-\/equality. \end{DoxyCompactList}\item 
+constexpr bool \mbox{\hyperlink{classlibcamera_1_1Flags_acbe8eda8a9b4a37a04b32d29e79ac8c4}{operator!=}} (\mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}} other)
+\begin{DoxyCompactList}\small\item\em Compare flags for non-\/equality. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{classlibcamera_1_1Flags_a6fb9d7006260fa9a66f4d5b91dd53e67}{operator Type}} () const
+\begin{DoxyCompactList}\small\item\em Convert the \doxylink{classlibcamera_1_1Flags}{Flags} to the underlying integer type. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{classlibcamera_1_1Flags_a5a0bbba87e6b981928bc953292036735}{operator bool}} () const
+\begin{DoxyCompactList}\small\item\em Convert the \doxylink{classlibcamera_1_1Flags}{Flags} to a boolean. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}} \mbox{\hyperlink{classlibcamera_1_1Flags_af4cfe45f48896d97730fa747a5b383d4}{operator\&}} (E flag) const
+\begin{DoxyCompactList}\small\item\em Compute the bitwise AND of this \doxylink{classlibcamera_1_1Flags}{Flags} and the {\itshape flag}. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}} \mbox{\hyperlink{classlibcamera_1_1Flags_a42404beb445ab712e6e4669070b4e152}{operator\&}} (\mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}} other) const
+\begin{DoxyCompactList}\small\item\em Compute the bitwise AND of this \doxylink{classlibcamera_1_1Flags}{Flags} and the {\itshape other} \doxylink{classlibcamera_1_1Flags}{Flags}. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}} \mbox{\hyperlink{classlibcamera_1_1Flags_a9387b3ef01840e2b4c95979565d2398b}{operator\texorpdfstring{$\vert$}{|}}} (E flag) const
+\begin{DoxyCompactList}\small\item\em Compute the bitwise OR of this \doxylink{classlibcamera_1_1Flags}{Flags} and the {\itshape flag}. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}} \mbox{\hyperlink{classlibcamera_1_1Flags_a4ccdde21c38bd7e880532b94b38017e9}{operator\texorpdfstring{$\vert$}{|}}} (\mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}} other) const
+\begin{DoxyCompactList}\small\item\em Compute the bitwise OR of this \doxylink{classlibcamera_1_1Flags}{Flags} and the {\itshape other} \doxylink{classlibcamera_1_1Flags}{Flags}. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}} \mbox{\hyperlink{classlibcamera_1_1Flags_a81153a50565b040364f8d908ee6f78d5}{operator\texorpdfstring{$^\wedge$}{\string^}}} (E flag) const
+\begin{DoxyCompactList}\small\item\em Compute the bitwise XOR of this \doxylink{classlibcamera_1_1Flags}{Flags} and the {\itshape flag}. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}} \mbox{\hyperlink{classlibcamera_1_1Flags_ac9ba4180e25cc6c11ea5199c30b1c797}{operator\texorpdfstring{$^\wedge$}{\string^}}} (\mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}} other) const
+\begin{DoxyCompactList}\small\item\em Compute the bitwise XOR of this \doxylink{classlibcamera_1_1Flags}{Flags} and the {\itshape other} \doxylink{classlibcamera_1_1Flags}{Flags}. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}} \mbox{\hyperlink{classlibcamera_1_1Flags_a95a29f83d645409d76686b277cd8b02f}{operator\texorpdfstring{$\sim$}{\string~}}} () const
+\begin{DoxyCompactList}\small\item\em Compute the bitwise NOT of this \doxylink{classlibcamera_1_1Flags}{Flags}. \end{DoxyCompactList}\item 
+constexpr bool \mbox{\hyperlink{classlibcamera_1_1Flags_ab273e53499d0f27e28460c5c3bc8c347}{operator!}} () const
+\begin{DoxyCompactList}\small\item\em Check if flags are set. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename E$>$\newline
+class libcamera\+::\+Flags$<$ E $>$}
+Type-\/safe container for enum-\/based bitfields. 
+
+The \doxylink{classlibcamera_1_1Flags}{Flags} template class provides type-\/safe bitwise operators on enum values. It allows using enum types for bitfields, while preventing unsafe casts from integer types and mixing of flags from different enum types.
+
+To use the \doxylink{classlibcamera_1_1Flags}{Flags} class, declare an enum containing the desired bit flags, and use the Flags$<$enum$>$ class to store bitfields based on the enum. If bitwise operators on the underlying enum are also desired, they can be enabled with the \doxylink{flags_8h_af343143bcb24209ae99e7bf7e28936a1}{LIBCAMERA\+\_\+\+FLAGS\+\_\+\+ENABLE\+\_\+\+OPERATORS(enum)} macro. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlibcamera_1_1Flags_a9ce65ae409e2d79fcb8fcbce4d3c5b6b}\label{classlibcamera_1_1Flags_a9ce65ae409e2d79fcb8fcbce4d3c5b6b} 
+\index{libcamera::Flags$<$ E $>$@{libcamera::Flags$<$ E $>$}!Flags@{Flags}}
+\index{Flags@{Flags}!libcamera::Flags$<$ E $>$@{libcamera::Flags$<$ E $>$}}
+\doxysubsubsection{\texorpdfstring{Flags()}{Flags()}}
+{\footnotesize\ttfamily template$<$typename E $>$ \\
+\mbox{\hyperlink{classlibcamera_1_1Flags}{libcamera\+::\+Flags}}$<$ E $>$\+::\+Flags (\begin{DoxyParamCaption}\item[{E}]{flag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Construct a \doxylink{classlibcamera_1_1Flags}{Flags} instance storing the {\itshape flag}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em flag} & The initial value \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1Flags_a5a0bbba87e6b981928bc953292036735}\label{classlibcamera_1_1Flags_a5a0bbba87e6b981928bc953292036735} 
+\index{libcamera::Flags$<$ E $>$@{libcamera::Flags$<$ E $>$}!operator bool@{operator bool}}
+\index{operator bool@{operator bool}!libcamera::Flags$<$ E $>$@{libcamera::Flags$<$ E $>$}}
+\doxysubsubsection{\texorpdfstring{operator bool()}{operator bool()}}
+{\footnotesize\ttfamily template$<$typename E $>$ \\
+\mbox{\hyperlink{classlibcamera_1_1Flags}{libcamera\+::\+Flags}}$<$ E $>$\+::operator bool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [constexpr]}}
+
+
+
+Convert the \doxylink{classlibcamera_1_1Flags}{Flags} to a boolean. 
+
+\begin{DoxyReturn}{Returns}
+True if at least one flag is set, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Flags_a6fb9d7006260fa9a66f4d5b91dd53e67}\label{classlibcamera_1_1Flags_a6fb9d7006260fa9a66f4d5b91dd53e67} 
+\index{libcamera::Flags$<$ E $>$@{libcamera::Flags$<$ E $>$}!operator Type@{operator Type}}
+\index{operator Type@{operator Type}!libcamera::Flags$<$ E $>$@{libcamera::Flags$<$ E $>$}}
+\doxysubsubsection{\texorpdfstring{operator Type()}{operator Type()}}
+{\footnotesize\ttfamily template$<$typename E $>$ \\
+\mbox{\hyperlink{classlibcamera_1_1Flags}{libcamera\+::\+Flags}}$<$ E $>$\+::operator \mbox{\hyperlink{classlibcamera_1_1Flags_aa81b05753651c98e8604e26941f2517a}{Type}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [constexpr]}}
+
+
+
+Convert the \doxylink{classlibcamera_1_1Flags}{Flags} to the underlying integer type. 
+
+\begin{DoxyReturn}{Returns}
+The \doxylink{classlibcamera_1_1Flags}{Flags} value as an integer 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Flags_ab273e53499d0f27e28460c5c3bc8c347}\label{classlibcamera_1_1Flags_ab273e53499d0f27e28460c5c3bc8c347} 
+\index{libcamera::Flags$<$ E $>$@{libcamera::Flags$<$ E $>$}!operator"!@{operator"!}}
+\index{operator"!@{operator"!}!libcamera::Flags$<$ E $>$@{libcamera::Flags$<$ E $>$}}
+\doxysubsubsection{\texorpdfstring{operator"!()}{operator!()}}
+{\footnotesize\ttfamily template$<$typename E $>$ \\
+bool \mbox{\hyperlink{classlibcamera_1_1Flags}{libcamera\+::\+Flags}}$<$ E $>$\+::operator! (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Check if flags are set. 
+
+\begin{DoxyReturn}{Returns}
+True if no flags is set, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Flags_ad157ef16f61f6ab55bdfcd399788de8e}\label{classlibcamera_1_1Flags_ad157ef16f61f6ab55bdfcd399788de8e} 
+\index{libcamera::Flags$<$ E $>$@{libcamera::Flags$<$ E $>$}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!libcamera::Flags$<$ E $>$@{libcamera::Flags$<$ E $>$}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename E $>$ \\
+bool \mbox{\hyperlink{classlibcamera_1_1Flags}{libcamera\+::\+Flags}}$<$ E $>$\mbox{\hyperlink{classlibcamera_1_1Flags_ab273e53499d0f27e28460c5c3bc8c347}{\+::operator!}}= (\begin{DoxyParamCaption}\item[{E}]{flag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Compare flags for non-\/equality. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em flag} & The second operand \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the \doxylink{classlibcamera_1_1Flags}{Flags} and {\itshape flag} are not equal, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Flags_acbe8eda8a9b4a37a04b32d29e79ac8c4}\label{classlibcamera_1_1Flags_acbe8eda8a9b4a37a04b32d29e79ac8c4} 
+\index{libcamera::Flags$<$ E $>$@{libcamera::Flags$<$ E $>$}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!libcamera::Flags$<$ E $>$@{libcamera::Flags$<$ E $>$}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename E $>$ \\
+bool \mbox{\hyperlink{classlibcamera_1_1Flags}{libcamera\+::\+Flags}}$<$ E $>$\mbox{\hyperlink{classlibcamera_1_1Flags_ab273e53499d0f27e28460c5c3bc8c347}{\+::operator!}}= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}}$<$ E $>$}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Compare flags for non-\/equality. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & The second operand \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the \doxylink{classlibcamera_1_1Flags}{Flags} and {\itshape other} are not equal, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Flags_af4cfe45f48896d97730fa747a5b383d4}\label{classlibcamera_1_1Flags_af4cfe45f48896d97730fa747a5b383d4} 
+\index{libcamera::Flags$<$ E $>$@{libcamera::Flags$<$ E $>$}!operator\&@{operator\&}}
+\index{operator\&@{operator\&}!libcamera::Flags$<$ E $>$@{libcamera::Flags$<$ E $>$}}
+\doxysubsubsection{\texorpdfstring{operator\&()}{operator\&()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename E $>$ \\
+\mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}} \mbox{\hyperlink{classlibcamera_1_1Flags}{libcamera\+::\+Flags}}$<$ E $>$\+::operator\& (\begin{DoxyParamCaption}\item[{E}]{flag }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Compute the bitwise AND of this \doxylink{classlibcamera_1_1Flags}{Flags} and the {\itshape flag}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em flag} & The second operand \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classlibcamera_1_1Flags}{Flags} containing the result of the AND operation 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Flags_a42404beb445ab712e6e4669070b4e152}\label{classlibcamera_1_1Flags_a42404beb445ab712e6e4669070b4e152} 
+\index{libcamera::Flags$<$ E $>$@{libcamera::Flags$<$ E $>$}!operator\&@{operator\&}}
+\index{operator\&@{operator\&}!libcamera::Flags$<$ E $>$@{libcamera::Flags$<$ E $>$}}
+\doxysubsubsection{\texorpdfstring{operator\&()}{operator\&()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename E $>$ \\
+\mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}} \mbox{\hyperlink{classlibcamera_1_1Flags}{libcamera\+::\+Flags}}$<$ E $>$\+::operator\& (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}}$<$ E $>$}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Compute the bitwise AND of this \doxylink{classlibcamera_1_1Flags}{Flags} and the {\itshape other} \doxylink{classlibcamera_1_1Flags}{Flags}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & The second operand \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classlibcamera_1_1Flags}{Flags} containing the result of the AND operation 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Flags_a9251cd87847d52842f5355bce8ee3846}\label{classlibcamera_1_1Flags_a9251cd87847d52842f5355bce8ee3846} 
+\index{libcamera::Flags$<$ E $>$@{libcamera::Flags$<$ E $>$}!operator\&=@{operator\&=}}
+\index{operator\&=@{operator\&=}!libcamera::Flags$<$ E $>$@{libcamera::Flags$<$ E $>$}}
+\doxysubsubsection{\texorpdfstring{operator\&=()}{operator\&=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename E $>$ \\
+\mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}} \& \mbox{\hyperlink{classlibcamera_1_1Flags}{libcamera\+::\+Flags}}$<$ E $>$\+::operator\&= (\begin{DoxyParamCaption}\item[{E}]{flag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Store the bitwise AND of this \doxylink{classlibcamera_1_1Flags}{Flags} and the {\itshape flag} in this \doxylink{classlibcamera_1_1Flags}{Flags}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em flag} & The second operand \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to this \doxylink{classlibcamera_1_1Flags}{Flags} 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Flags_afda71d20bed0739fa60f4e48c2a838b1}\label{classlibcamera_1_1Flags_afda71d20bed0739fa60f4e48c2a838b1} 
+\index{libcamera::Flags$<$ E $>$@{libcamera::Flags$<$ E $>$}!operator\&=@{operator\&=}}
+\index{operator\&=@{operator\&=}!libcamera::Flags$<$ E $>$@{libcamera::Flags$<$ E $>$}}
+\doxysubsubsection{\texorpdfstring{operator\&=()}{operator\&=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename E $>$ \\
+\mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}} \& \mbox{\hyperlink{classlibcamera_1_1Flags}{libcamera\+::\+Flags}}$<$ E $>$\+::operator\&= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}}$<$ E $>$}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Store the bitwise AND of this \doxylink{classlibcamera_1_1Flags}{Flags} and the {\itshape other} \doxylink{classlibcamera_1_1Flags}{Flags} in this \doxylink{classlibcamera_1_1Flags}{Flags}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & The second operand \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to this \doxylink{classlibcamera_1_1Flags}{Flags} 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Flags_a4ebe934023e99398c5a4b0faa6f2e75e}\label{classlibcamera_1_1Flags_a4ebe934023e99398c5a4b0faa6f2e75e} 
+\index{libcamera::Flags$<$ E $>$@{libcamera::Flags$<$ E $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!libcamera::Flags$<$ E $>$@{libcamera::Flags$<$ E $>$}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename E $>$ \\
+bool \mbox{\hyperlink{classlibcamera_1_1Flags}{libcamera\+::\+Flags}}$<$ E $>$\+::operator== (\begin{DoxyParamCaption}\item[{E}]{flag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Compare flags for equality. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em flag} & The second operand \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the \doxylink{classlibcamera_1_1Flags}{Flags} and {\itshape flag} are equal, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Flags_a9503c27b3f5811ed3eafa96749cbf2aa}\label{classlibcamera_1_1Flags_a9503c27b3f5811ed3eafa96749cbf2aa} 
+\index{libcamera::Flags$<$ E $>$@{libcamera::Flags$<$ E $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!libcamera::Flags$<$ E $>$@{libcamera::Flags$<$ E $>$}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename E $>$ \\
+bool \mbox{\hyperlink{classlibcamera_1_1Flags}{libcamera\+::\+Flags}}$<$ E $>$\+::operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}}$<$ E $>$}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Compare flags for equality. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & The second operand \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the \doxylink{classlibcamera_1_1Flags}{Flags} and {\itshape other} are equal, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Flags_a81153a50565b040364f8d908ee6f78d5}\label{classlibcamera_1_1Flags_a81153a50565b040364f8d908ee6f78d5} 
+\index{libcamera::Flags$<$ E $>$@{libcamera::Flags$<$ E $>$}!operator\texorpdfstring{$^\wedge$}{\string^}@{operator\texorpdfstring{$^\wedge$}{\string^}}}
+\index{operator\texorpdfstring{$^\wedge$}{\string^}@{operator\texorpdfstring{$^\wedge$}{\string^}}!libcamera::Flags$<$ E $>$@{libcamera::Flags$<$ E $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$^\wedge$}{\string^}()}{operator\string^()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename E $>$ \\
+\mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}} \mbox{\hyperlink{classlibcamera_1_1Flags}{libcamera\+::\+Flags}}$<$ E $>$\+::operator\texorpdfstring{$^\wedge$}{\string^} (\begin{DoxyParamCaption}\item[{E}]{flag }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Compute the bitwise XOR of this \doxylink{classlibcamera_1_1Flags}{Flags} and the {\itshape flag}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em flag} & The second operand \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classlibcamera_1_1Flags}{Flags} containing the result of the XOR operation 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Flags_ac9ba4180e25cc6c11ea5199c30b1c797}\label{classlibcamera_1_1Flags_ac9ba4180e25cc6c11ea5199c30b1c797} 
+\index{libcamera::Flags$<$ E $>$@{libcamera::Flags$<$ E $>$}!operator\texorpdfstring{$^\wedge$}{\string^}@{operator\texorpdfstring{$^\wedge$}{\string^}}}
+\index{operator\texorpdfstring{$^\wedge$}{\string^}@{operator\texorpdfstring{$^\wedge$}{\string^}}!libcamera::Flags$<$ E $>$@{libcamera::Flags$<$ E $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$^\wedge$}{\string^}()}{operator\string^()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename E $>$ \\
+\mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}} \mbox{\hyperlink{classlibcamera_1_1Flags}{libcamera\+::\+Flags}}$<$ E $>$\+::operator\texorpdfstring{$^\wedge$}{\string^} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}}$<$ E $>$}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Compute the bitwise XOR of this \doxylink{classlibcamera_1_1Flags}{Flags} and the {\itshape other} \doxylink{classlibcamera_1_1Flags}{Flags}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & The second operand \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classlibcamera_1_1Flags}{Flags} containing the result of the XOR operation 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Flags_a572f3a007d248da654a590ad16da4c86}\label{classlibcamera_1_1Flags_a572f3a007d248da654a590ad16da4c86} 
+\index{libcamera::Flags$<$ E $>$@{libcamera::Flags$<$ E $>$}!operator\texorpdfstring{$^\wedge$}{\string^}=@{operator\texorpdfstring{$^\wedge$}{\string^}=}}
+\index{operator\texorpdfstring{$^\wedge$}{\string^}=@{operator\texorpdfstring{$^\wedge$}{\string^}=}!libcamera::Flags$<$ E $>$@{libcamera::Flags$<$ E $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$^\wedge$}{\string^}=()}{operator\string^=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename E $>$ \\
+\mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}} \& \mbox{\hyperlink{classlibcamera_1_1Flags}{libcamera\+::\+Flags}}$<$ E $>$\+::operator\texorpdfstring{$^\wedge$}{\string^}= (\begin{DoxyParamCaption}\item[{E}]{flag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Store the bitwise XOR of this \doxylink{classlibcamera_1_1Flags}{Flags} and the {\itshape flag} in this \doxylink{classlibcamera_1_1Flags}{Flags}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em flag} & The second operand \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to this \doxylink{classlibcamera_1_1Flags}{Flags} 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Flags_a7d13e0dbde0454251a3ca285304ec399}\label{classlibcamera_1_1Flags_a7d13e0dbde0454251a3ca285304ec399} 
+\index{libcamera::Flags$<$ E $>$@{libcamera::Flags$<$ E $>$}!operator\texorpdfstring{$^\wedge$}{\string^}=@{operator\texorpdfstring{$^\wedge$}{\string^}=}}
+\index{operator\texorpdfstring{$^\wedge$}{\string^}=@{operator\texorpdfstring{$^\wedge$}{\string^}=}!libcamera::Flags$<$ E $>$@{libcamera::Flags$<$ E $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$^\wedge$}{\string^}=()}{operator\string^=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename E $>$ \\
+\mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}} \& \mbox{\hyperlink{classlibcamera_1_1Flags}{libcamera\+::\+Flags}}$<$ E $>$\+::operator\texorpdfstring{$^\wedge$}{\string^}= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}}$<$ E $>$}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Store the bitwise XOR of this \doxylink{classlibcamera_1_1Flags}{Flags} and the {\itshape other} \doxylink{classlibcamera_1_1Flags}{Flags} in this \doxylink{classlibcamera_1_1Flags}{Flags}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & The second operand \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to this \doxylink{classlibcamera_1_1Flags}{Flags} 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Flags_a9387b3ef01840e2b4c95979565d2398b}\label{classlibcamera_1_1Flags_a9387b3ef01840e2b4c95979565d2398b} 
+\index{libcamera::Flags$<$ E $>$@{libcamera::Flags$<$ E $>$}!operator\texttt{"|}@{operator\texttt{"|}}}
+\index{operator\texttt{"|}@{operator\texttt{"|}}!libcamera::Flags$<$ E $>$@{libcamera::Flags$<$ E $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texttt{"|}()}{operator|()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename E $>$ \\
+\mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}} \mbox{\hyperlink{classlibcamera_1_1Flags}{libcamera\+::\+Flags}}$<$ E $>$\+::operator\texorpdfstring{$\vert$}{|} (\begin{DoxyParamCaption}\item[{E}]{flag }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Compute the bitwise OR of this \doxylink{classlibcamera_1_1Flags}{Flags} and the {\itshape flag}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em flag} & The second operand \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classlibcamera_1_1Flags}{Flags} containing the result of the OR operation 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Flags_a4ccdde21c38bd7e880532b94b38017e9}\label{classlibcamera_1_1Flags_a4ccdde21c38bd7e880532b94b38017e9} 
+\index{libcamera::Flags$<$ E $>$@{libcamera::Flags$<$ E $>$}!operator\texttt{"|}@{operator\texttt{"|}}}
+\index{operator\texttt{"|}@{operator\texttt{"|}}!libcamera::Flags$<$ E $>$@{libcamera::Flags$<$ E $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texttt{"|}()}{operator|()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename E $>$ \\
+\mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}} \mbox{\hyperlink{classlibcamera_1_1Flags}{libcamera\+::\+Flags}}$<$ E $>$\+::operator\texorpdfstring{$\vert$}{|} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}}$<$ E $>$}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Compute the bitwise OR of this \doxylink{classlibcamera_1_1Flags}{Flags} and the {\itshape other} \doxylink{classlibcamera_1_1Flags}{Flags}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & The second operand \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classlibcamera_1_1Flags}{Flags} containing the result of the OR operation 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Flags_aeae743fbf4768f42c61f34df9cceb43c}\label{classlibcamera_1_1Flags_aeae743fbf4768f42c61f34df9cceb43c} 
+\index{libcamera::Flags$<$ E $>$@{libcamera::Flags$<$ E $>$}!operator\texttt{"|}=@{operator\texttt{"|}=}}
+\index{operator\texttt{"|}=@{operator\texttt{"|}=}!libcamera::Flags$<$ E $>$@{libcamera::Flags$<$ E $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texttt{"|}=()}{operator|=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename E $>$ \\
+\mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}} \& \mbox{\hyperlink{classlibcamera_1_1Flags}{libcamera\+::\+Flags}}$<$ E $>$\+::operator\texorpdfstring{$\vert$}{|}= (\begin{DoxyParamCaption}\item[{E}]{flag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Store the bitwise OR of this \doxylink{classlibcamera_1_1Flags}{Flags} and the {\itshape flag} in this \doxylink{classlibcamera_1_1Flags}{Flags}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em flag} & The second operand \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to this \doxylink{classlibcamera_1_1Flags}{Flags} 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Flags_aa0ddef8f555cb9f9e7564032aa8a2c32}\label{classlibcamera_1_1Flags_aa0ddef8f555cb9f9e7564032aa8a2c32} 
+\index{libcamera::Flags$<$ E $>$@{libcamera::Flags$<$ E $>$}!operator\texttt{"|}=@{operator\texttt{"|}=}}
+\index{operator\texttt{"|}=@{operator\texttt{"|}=}!libcamera::Flags$<$ E $>$@{libcamera::Flags$<$ E $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texttt{"|}=()}{operator|=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename E $>$ \\
+\mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}} \& \mbox{\hyperlink{classlibcamera_1_1Flags}{libcamera\+::\+Flags}}$<$ E $>$\+::operator\texorpdfstring{$\vert$}{|}= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}}$<$ E $>$}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Store the bitwise OR of this \doxylink{classlibcamera_1_1Flags}{Flags} and the {\itshape other} \doxylink{classlibcamera_1_1Flags}{Flags} in this \doxylink{classlibcamera_1_1Flags}{Flags}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & The second operand \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to this \doxylink{classlibcamera_1_1Flags}{Flags} 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Flags_a95a29f83d645409d76686b277cd8b02f}\label{classlibcamera_1_1Flags_a95a29f83d645409d76686b277cd8b02f} 
+\index{libcamera::Flags$<$ E $>$@{libcamera::Flags$<$ E $>$}!operator\texorpdfstring{$\sim$}{\string~}@{operator\texorpdfstring{$\sim$}{\string~}}}
+\index{operator\texorpdfstring{$\sim$}{\string~}@{operator\texorpdfstring{$\sim$}{\string~}}!libcamera::Flags$<$ E $>$@{libcamera::Flags$<$ E $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\sim$}{\string~}()}{operator\string~()}}
+{\footnotesize\ttfamily template$<$typename E $>$ \\
+\mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}} \mbox{\hyperlink{classlibcamera_1_1Flags}{libcamera\+::\+Flags}}$<$ E $>$\+::operator\texorpdfstring{$\sim$}{\string~} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Compute the bitwise NOT of this \doxylink{classlibcamera_1_1Flags}{Flags}. 
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classlibcamera_1_1Flags}{Flags} containing the result of the NOT operation 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/base/\mbox{\hyperlink{flags_8h}{flags.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/base/flags.\+cpp\end{DoxyCompactItemize}

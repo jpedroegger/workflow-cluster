@@ -1,0 +1,36 @@
+\doxysection{ipu3\+\_\+uapi\+\_\+awb\+\_\+config\+\_\+s Struct Reference}
+\hypertarget{structipu3__uapi__awb__config__s}{}\label{structipu3__uapi__awb__config__s}\index{ipu3\_uapi\_awb\_config\_s@{ipu3\_uapi\_awb\_config\_s}}
+
+
+{\ttfamily \#include $<$intel-\/ipu3.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structipu3__uapi__awb__config__s_acb2774c79a7597ab312a51f4b9343670}\label{structipu3__uapi__awb__config__s_acb2774c79a7597ab312a51f4b9343670} 
+\+\_\+\+\_\+u16 {\bfseries rgbs\+\_\+thr\+\_\+gr}
+\item 
+\Hypertarget{structipu3__uapi__awb__config__s_a4c94333507dc75bab5cdae542603821e}\label{structipu3__uapi__awb__config__s_a4c94333507dc75bab5cdae542603821e} 
+\+\_\+\+\_\+u16 {\bfseries rgbs\+\_\+thr\+\_\+r}
+\item 
+\Hypertarget{structipu3__uapi__awb__config__s_a37e00b92cf1a753a90fdbe38046e8c40}\label{structipu3__uapi__awb__config__s_a37e00b92cf1a753a90fdbe38046e8c40} 
+\+\_\+\+\_\+u16 {\bfseries rgbs\+\_\+thr\+\_\+gb}
+\item 
+\Hypertarget{structipu3__uapi__awb__config__s_a3ac92833f82262de0935bfee99e25212}\label{structipu3__uapi__awb__config__s_a3ac92833f82262de0935bfee99e25212} 
+\+\_\+\+\_\+u16 {\bfseries rgbs\+\_\+thr\+\_\+b}
+\item 
+\Hypertarget{structipu3__uapi__awb__config__s_ae84d3f0595ab473c6adf1a695c99bd58}\label{structipu3__uapi__awb__config__s_ae84d3f0595ab473c6adf1a695c99bd58} 
+struct \mbox{\hyperlink{structipu3__uapi__grid__config}{ipu3\+\_\+uapi\+\_\+grid\+\_\+config}} {\bfseries grid}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structipu3__uapi__awb__config__s}{ipu3\+\_\+uapi\+\_\+awb\+\_\+config\+\_\+s} -\/ AWB config
+
+@rgbs\+\_\+thr\+\_\+gr\+: gr threshold value. @rgbs\+\_\+thr\+\_\+r\+: Red threshold value. @rgbs\+\_\+thr\+\_\+gb\+: gb threshold value. @rgbs\+\_\+thr\+\_\+b\+: Blue threshold value. @grid\+: \&\doxylink{structipu3__uapi__grid__config}{ipu3\+\_\+uapi\+\_\+grid\+\_\+config}, the default grid resolution is 16x16 cells.
+
+The threshold is a saturation measure range \mbox{[}0, 8191\mbox{]}, 8191 is default. Values over threshold may be optionally rejected for averaging. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/intel-\/ipu3.\+h\end{DoxyCompactItemize}

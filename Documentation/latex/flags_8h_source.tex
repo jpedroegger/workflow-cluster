@@ -1,0 +1,199 @@
+\doxysection{flags.\+h}
+\hypertarget{flags_8h_source}{}\label{flags_8h_source}\index{src/peripherals/camera/libcamera/include/libcamera/base/flags.h@{src/peripherals/camera/libcamera/include/libcamera/base/flags.h}}
+\mbox{\hyperlink{flags_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2020,\ Google\ Inc.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Type-\/safe\ enum-\/based\ bitfields}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <type\_traits>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacelibcamera}{libcamera}}\ \{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ E>}
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}}}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{static\_assert}(std::is\_enum<E>::value,}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Flags<>\ template\ parameter\ must\ be\ an\ enum"{}});}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classlibcamera_1_1Flags_aa81b05753651c98e8604e26941f2517a}{Type}}\ =\ std::underlying\_type\_t<E>;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{classlibcamera_1_1Flags_aac499f77c245c6e3ca29e5d38b5806df}{Flags}}()}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ :\ value\_(0)}
+\DoxyCodeLine{00025\ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{classlibcamera_1_1Flags_a9ce65ae409e2d79fcb8fcbce4d3c5b6b}{Flags}}(E\ flag)}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ :\ value\_(static\_cast<\mbox{\hyperlink{classlibcamera_1_1Flags_aa81b05753651c98e8604e26941f2517a}{Type}}>(flag))}
+\DoxyCodeLine{00030\ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}}\ \&\mbox{\hyperlink{classlibcamera_1_1Flags_a9251cd87847d52842f5355bce8ee3846}{operator\&=}}(E\ flag)}
+\DoxyCodeLine{00034\ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ value\_\ \&=\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{classlibcamera_1_1Flags_aa81b05753651c98e8604e26941f2517a}{Type}}\textcolor{keyword}{>}(flag);}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}}\ \&\mbox{\hyperlink{classlibcamera_1_1Flags_afda71d20bed0739fa60f4e48c2a838b1}{operator\&=}}(\mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}}\ other)}
+\DoxyCodeLine{00040\ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ value\_\ \&=\ other.value\_;}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00043\ \ \ \ \ \}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}}\ \&\mbox{\hyperlink{classlibcamera_1_1Flags_aeae743fbf4768f42c61f34df9cceb43c}{operator|=}}(E\ flag)}
+\DoxyCodeLine{00046\ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ value\_\ |=\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{classlibcamera_1_1Flags_aa81b05753651c98e8604e26941f2517a}{Type}}\textcolor{keyword}{>}(flag);}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00049\ \ \ \ \ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}}\ \&\mbox{\hyperlink{classlibcamera_1_1Flags_aa0ddef8f555cb9f9e7564032aa8a2c32}{operator|=}}(\mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}}\ other)}
+\DoxyCodeLine{00052\ \ \ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ value\_\ |=\ other.value\_;}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00055\ \ \ \ \ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}}\ \&\mbox{\hyperlink{classlibcamera_1_1Flags_a572f3a007d248da654a590ad16da4c86}{operator\string^=}}(E\ flag)}
+\DoxyCodeLine{00058\ \ \ \ \ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ value\_\ \string^=\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{classlibcamera_1_1Flags_aa81b05753651c98e8604e26941f2517a}{Type}}\textcolor{keyword}{>}(flag);}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00061\ \ \ \ \ \}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}}\ \&\mbox{\hyperlink{classlibcamera_1_1Flags_a7d13e0dbde0454251a3ca285304ec399}{operator\string^=}}(\mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}}\ other)}
+\DoxyCodeLine{00064\ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ value\_\ \string^=\ other.value\_;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classlibcamera_1_1Flags_a4ebe934023e99398c5a4b0faa6f2e75e}{operator==}}(E\ flag)}
+\DoxyCodeLine{00070\ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ value\_\ ==\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{classlibcamera_1_1Flags_aa81b05753651c98e8604e26941f2517a}{Type}}\textcolor{keyword}{>}(flag);}
+\DoxyCodeLine{00072\ \ \ \ \ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classlibcamera_1_1Flags_a9503c27b3f5811ed3eafa96749cbf2aa}{operator==}}(\mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}}\ other)}
+\DoxyCodeLine{00075\ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ value\_\ ==\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{classlibcamera_1_1Flags_aa81b05753651c98e8604e26941f2517a}{Type}}\textcolor{keyword}{>}(other);}
+\DoxyCodeLine{00077\ \ \ \ \ \}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classlibcamera_1_1Flags_ad157ef16f61f6ab55bdfcd399788de8e}{operator!=}}(E\ flag)}
+\DoxyCodeLine{00080\ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ value\_\ !=\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{classlibcamera_1_1Flags_aa81b05753651c98e8604e26941f2517a}{Type}}\textcolor{keyword}{>}(flag);}
+\DoxyCodeLine{00082\ \ \ \ \ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classlibcamera_1_1Flags_acbe8eda8a9b4a37a04b32d29e79ac8c4}{operator!=}}(\mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}}\ other)}
+\DoxyCodeLine{00085\ \ \ \ \ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ value\_\ !=\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{classlibcamera_1_1Flags_aa81b05753651c98e8604e26941f2517a}{Type}}\textcolor{keyword}{>}(other);}
+\DoxyCodeLine{00087\ \ \ \ \ \}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{explicit}\ \textcolor{keyword}{operator}\ \mbox{\hyperlink{classlibcamera_1_1Flags_aa81b05753651c98e8604e26941f2517a}{Type}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00090\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ value\_;}
+\DoxyCodeLine{00092\ \ \ \ \ \}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{explicit}\ \textcolor{keyword}{operator}\ bool()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00095\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ !!value\_;}
+\DoxyCodeLine{00097\ \ \ \ \ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}}\ \mbox{\hyperlink{classlibcamera_1_1Flags_af4cfe45f48896d97730fa747a5b383d4}{operator\&}}(E\ flag)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00100\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classlibcamera_1_1Flags_aac499f77c245c6e3ca29e5d38b5806df}{Flags}}(\textcolor{keyword}{static\_cast<}E\textcolor{keyword}{>}(value\_\ \&\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{classlibcamera_1_1Flags_aa81b05753651c98e8604e26941f2517a}{Type}}\textcolor{keyword}{>}(flag)));}
+\DoxyCodeLine{00102\ \ \ \ \ \}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}}\ \mbox{\hyperlink{classlibcamera_1_1Flags_a42404beb445ab712e6e4669070b4e152}{operator\&}}(\mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}}\ other)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00105\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classlibcamera_1_1Flags_aac499f77c245c6e3ca29e5d38b5806df}{Flags}}(\textcolor{keyword}{static\_cast<}E\textcolor{keyword}{>}(value\_\ \&\ other.value\_));}
+\DoxyCodeLine{00107\ \ \ \ \ \}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}}\ \mbox{\hyperlink{classlibcamera_1_1Flags_a9387b3ef01840e2b4c95979565d2398b}{operator|}}(E\ flag)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00110\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classlibcamera_1_1Flags_aac499f77c245c6e3ca29e5d38b5806df}{Flags}}(\textcolor{keyword}{static\_cast<}E\textcolor{keyword}{>}(value\_\ |\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{classlibcamera_1_1Flags_aa81b05753651c98e8604e26941f2517a}{Type}}\textcolor{keyword}{>}(flag)));}
+\DoxyCodeLine{00112\ \ \ \ \ \}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}}\ \mbox{\hyperlink{classlibcamera_1_1Flags_a4ccdde21c38bd7e880532b94b38017e9}{operator|}}(\mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}}\ other)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00115\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classlibcamera_1_1Flags_aac499f77c245c6e3ca29e5d38b5806df}{Flags}}(\textcolor{keyword}{static\_cast<}E\textcolor{keyword}{>}(value\_\ |\ other.value\_));}
+\DoxyCodeLine{00117\ \ \ \ \ \}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}}\ \mbox{\hyperlink{classlibcamera_1_1Flags_a81153a50565b040364f8d908ee6f78d5}{operator\string^}}(E\ flag)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00120\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classlibcamera_1_1Flags_aac499f77c245c6e3ca29e5d38b5806df}{Flags}}(\textcolor{keyword}{static\_cast<}E\textcolor{keyword}{>}(value\_\ \string^\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{classlibcamera_1_1Flags_aa81b05753651c98e8604e26941f2517a}{Type}}\textcolor{keyword}{>}(flag)));}
+\DoxyCodeLine{00122\ \ \ \ \ \}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}}\ \mbox{\hyperlink{classlibcamera_1_1Flags_ac9ba4180e25cc6c11ea5199c30b1c797}{operator\string^}}(\mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}}\ other)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00125\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classlibcamera_1_1Flags_aac499f77c245c6e3ca29e5d38b5806df}{Flags}}(\textcolor{keyword}{static\_cast<}E\textcolor{keyword}{>}(value\_\ \string^\ other.value\_));}
+\DoxyCodeLine{00127\ \ \ \ \ \}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}}\ \mbox{\hyperlink{classlibcamera_1_1Flags_a95a29f83d645409d76686b277cd8b02f}{operator\string~}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00130\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classlibcamera_1_1Flags_aac499f77c245c6e3ca29e5d38b5806df}{Flags}}(\textcolor{keyword}{static\_cast<}E\textcolor{keyword}{>}(\string~value\_));}
+\DoxyCodeLine{00132\ \ \ \ \ \}}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classlibcamera_1_1Flags_ab273e53499d0f27e28460c5c3bc8c347}{operator!}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00135\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ !value\_;}
+\DoxyCodeLine{00137\ \ \ \ \ \}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00140\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Flags_aa81b05753651c98e8604e26941f2517a}{Type}}\ value\_;}
+\DoxyCodeLine{00141\ \};}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#ifndef\ \_\_DOXYGEN\_\_}}
+\DoxyCodeLine{00144\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ E>}
+\DoxyCodeLine{00145\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structlibcamera_1_1flags__enable__operators}{flags\_enable\_operators}}\ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ enable\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00147\ \};}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ E>}
+\DoxyCodeLine{00150\ std::enable\_if\_t<flags\_enable\_operators<E>::enable,\ \mbox{\hyperlink{classlibcamera_1_1Flags}{Flags<E>}}>}
+\DoxyCodeLine{00151\ operator|(E\ lhs,\ E\ rhs)}
+\DoxyCodeLine{00152\ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keyword}{using\ }type\ =\ std::underlying\_type\_t<E>;}
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classlibcamera_1_1Flags}{Flags<E>}}(\textcolor{keyword}{static\_cast<}E\textcolor{keyword}{>}(\textcolor{keyword}{static\_cast<}type\textcolor{keyword}{>}(lhs)\ |\ \textcolor{keyword}{static\_cast<}type\textcolor{keyword}{>}(rhs)));}
+\DoxyCodeLine{00155\ \}}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ E>}
+\DoxyCodeLine{00158\ std::enable\_if\_t<flags\_enable\_operators<E>::enable,\ Flags<E>>}
+\DoxyCodeLine{00159\ operator\&(E\ lhs,\ E\ rhs)}
+\DoxyCodeLine{00160\ \{}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keyword}{using\ }type\ =\ std::underlying\_type\_t<E>;}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordflow}{return}\ Flags<E>(\textcolor{keyword}{static\_cast<}E\textcolor{keyword}{>}(\textcolor{keyword}{static\_cast<}type\textcolor{keyword}{>}(lhs)\ \&\ \textcolor{keyword}{static\_cast<}type\textcolor{keyword}{>}(rhs)));}
+\DoxyCodeLine{00163\ \}}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ E>}
+\DoxyCodeLine{00166\ std::enable\_if\_t<flags\_enable\_operators<E>::enable,\ Flags<E>>}
+\DoxyCodeLine{00167\ operator\string^(E\ lhs,\ E\ rhs)}
+\DoxyCodeLine{00168\ \{}
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keyword}{using\ }type\ =\ std::underlying\_type\_t<E>;}
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keywordflow}{return}\ Flags<E>(\textcolor{keyword}{static\_cast<}E\textcolor{keyword}{>}(\textcolor{keyword}{static\_cast<}type\textcolor{keyword}{>}(lhs)\ \string^\ \textcolor{keyword}{static\_cast<}type\textcolor{keyword}{>}(rhs)));}
+\DoxyCodeLine{00171\ \}}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ E>}
+\DoxyCodeLine{00174\ std::enable\_if\_t<flags\_enable\_operators<E>::enable,\ Flags<E>>}
+\DoxyCodeLine{00175\ operator\string~(E\ rhs)}
+\DoxyCodeLine{00176\ \{}
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keyword}{using\ }type\ =\ std::underlying\_type\_t<E>;}
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keywordflow}{return}\ Flags<E>(\textcolor{keyword}{static\_cast<}E\textcolor{keyword}{>}(\string~\textcolor{keyword}{static\_cast<}type\textcolor{keyword}{>}(rhs)));}
+\DoxyCodeLine{00179\ \}}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \textcolor{preprocessor}{\#define\ LIBCAMERA\_FLAGS\_ENABLE\_OPERATORS(\_enum)\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00182\ \textcolor{preprocessor}{template<>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00183\ \textcolor{preprocessor}{struct\ flags\_enable\_operators<\_enum>\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00184\ \textcolor{preprocessor}{\ \ \ \ static\ const\ bool\ enable\ =\ true;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00185\ \textcolor{preprocessor}{\};}}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ \textcolor{preprocessor}{\#else\ }\textcolor{comment}{/*\ \_\_DOXYGEN\_\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \textcolor{preprocessor}{\#define\ LIBCAMERA\_FLAGS\_ENABLE\_OPERATORS(\_enum)}}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_DOXYGEN\_\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \}\ \textcolor{comment}{/*\ namespace\ libcamera\ */}}
+
+\end{DoxyCode}

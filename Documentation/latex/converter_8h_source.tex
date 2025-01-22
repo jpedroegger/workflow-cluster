@@ -1,0 +1,132 @@
+\doxysection{converter.\+h}
+\hypertarget{converter_8h_source}{}\label{converter_8h_source}\index{src/peripherals/camera/libcamera/include/libcamera/internal/converter.h@{src/peripherals/camera/libcamera/include/libcamera/internal/converter.h}}
+\mbox{\hyperlink{converter_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2020,\ Laurent\ Pinchart}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Copyright\ 2022\ NXP}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ Generic\ format\ converter\ interface}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <initializer\_list>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <tuple>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{class_8h}{libcamera/base/class.h}}>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{flags_8h}{libcamera/base/flags.h}}>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{signal_8h}{libcamera/base/signal.h}}>}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{geometry_8h}{libcamera/geometry.h}}>}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacelibcamera}{libcamera}}\ \{}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }FrameBuffer;}
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }MediaDevice;}
+\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }PixelFormat;}
+\DoxyCodeLine{00031\ \textcolor{keyword}{class\ }Stream;}
+\DoxyCodeLine{00032\ \textcolor{keyword}{struct\ }StreamConfiguration;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1Converter}{Converter}}}
+\DoxyCodeLine{00035\ \{}
+\DoxyCodeLine{00036\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{classlibcamera_1_1Converter_aad8df1624aace6e89bbee69c7cac9bff}{Feature}}\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Converter_aad8df1624aace6e89bbee69c7cac9bffa6adf97f83acf6453d4a6a4b1070f3754}{None}}\ =\ 0,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Converter_aad8df1624aace6e89bbee69c7cac9bffad5f0ed2a1fb2a735fbbb8282f1083752}{InputCrop}}\ =\ (1\ <<\ 0),}
+\DoxyCodeLine{00040\ \ \ \ \ \};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classlibcamera_1_1Flags}{Features}}\ =\ \mbox{\hyperlink{classlibcamera_1_1Flags}{Flags<Feature>}};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Converter}{Converter}}(\mbox{\hyperlink{classlibcamera_1_1MediaDevice}{MediaDevice}}\ *media,\ \mbox{\hyperlink{classlibcamera_1_1Flags}{Features}}\ \mbox{\hyperlink{classlibcamera_1_1Converter_aa9486ea36fe00d9fcace8eec627d7337}{features}}\ =\ \mbox{\hyperlink{classlibcamera_1_1Converter_aad8df1624aace6e89bbee69c7cac9bffa6adf97f83acf6453d4a6a4b1070f3754}{Feature::None}});}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classlibcamera_1_1Converter}{\string~Converter}}();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1Converter_a5bf5cd3d555b9c0c0464ee12afdf5679}{loadConfiguration}}(\textcolor{keyword}{const}\ std::string\ \&filename)\ =\ 0;}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classlibcamera_1_1Converter_a486c69caaee7c795d199bcfe370c84b3}{isValid}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{virtual}\ std::vector<PixelFormat>\ \mbox{\hyperlink{classlibcamera_1_1Converter_a66f89e1dbc69da4aaf6c3a490fce26e4}{formats}}(\mbox{\hyperlink{classlibcamera_1_1PixelFormat}{PixelFormat}}\ input)\ =\ 0;}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classlibcamera_1_1SizeRange}{SizeRange}}\ \mbox{\hyperlink{classlibcamera_1_1Converter_aef0c94fde9d9e66288fdde2a760a0ecd}{sizes}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \&input)\ =\ 0;}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{virtual}\ std::tuple<unsigned\ int,\ unsigned\ int>}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Converter_a503fb9c89cfea5677e97360e44609bca}{strideAndFrameSize}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1PixelFormat}{PixelFormat}}\ \&pixelFormat,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \&size)\ =\ 0;}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1Converter_ae43846f3b69f67072ae729049a2f98e8}{configure}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration}{StreamConfiguration}}\ \&inputCfg,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::reference\_wrapper<StreamConfiguration>>\ \&outputCfgs)\ =\ 0;}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1Converter_a69c0ed8b07e5898ba71b6a5c6e39727e}{exportBuffers}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Stream}{Stream}}\ *stream,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ count,}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::unique\_ptr<FrameBuffer>>\ *buffers)\ =\ 0;}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1Converter_a70672654c74c9494baa352264091ff26}{start}}()\ =\ 0;}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1Converter_a455ecb65fe384843f439bf25e432e79c}{stop}}()\ =\ 0;}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1Converter_a790c46a741ca39ed9b645d2078f2e95f}{queueBuffers}}(\mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{FrameBuffer}}\ *input,}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::map<const\ Stream\ *,\ FrameBuffer\ *>\ \&outputs)\ =\ 0;}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1Converter_abe0da723d9b61d80aecdef1f8cc31034}{setInputCrop}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Stream}{Stream}}\ *stream,\ \mbox{\hyperlink{classlibcamera_1_1Rectangle}{Rectangle}}\ *rect)\ =\ 0;}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{virtual}\ std::pair<Rectangle,\ Rectangle>\ \mbox{\hyperlink{classlibcamera_1_1Converter_ae5d867e91f7de65f362fd3358e505c4b}{inputCropBounds}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Stream}{Stream}}\ *stream)\ =\ 0;}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Signal}{Signal<FrameBuffer\ *>}}\ \mbox{\hyperlink{classlibcamera_1_1Converter_ad16cfd5682fd4bfbd274ac431824f9b3}{inputBufferReady}};}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Signal}{Signal<FrameBuffer\ *>}}\ \mbox{\hyperlink{classlibcamera_1_1Converter_a4021a73b713028e5a1691444a98fb735}{outputBufferReady}};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classlibcamera_1_1Converter_a15fde327131535d0a230279164a7c1c9}{deviceNode}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ deviceNode\_;\ \}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Flags}{Features}}\ \mbox{\hyperlink{classlibcamera_1_1Converter_aa9486ea36fe00d9fcace8eec627d7337}{features}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classlibcamera_1_1Converter_ac954c1d5dd1e31c5bf8424bfd4373925}{features\_}};\ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Flags}{Features}}\ \mbox{\hyperlink{classlibcamera_1_1Converter_ac954c1d5dd1e31c5bf8424bfd4373925}{features\_}};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00082\ \ \ \ \ std::string\ deviceNode\_;}
+\DoxyCodeLine{00083\ \};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1ConverterFactoryBase}{ConverterFactoryBase}}}
+\DoxyCodeLine{00086\ \{}
+\DoxyCodeLine{00087\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ConverterFactoryBase}{ConverterFactoryBase}}(\textcolor{keyword}{const}\ std::string\ name,\ std::initializer\_list<std::string>\ \mbox{\hyperlink{classlibcamera_1_1ConverterFactoryBase_a7b7c0c130233b05d69d95dbd0cb634be}{compatibles}});}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classlibcamera_1_1ConverterFactoryBase}{\string~ConverterFactoryBase}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::string>\ \&\mbox{\hyperlink{classlibcamera_1_1ConverterFactoryBase_a7b7c0c130233b05d69d95dbd0cb634be}{compatibles}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ compatibles\_;\ \}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{static}\ std::unique\_ptr<Converter>\ create(\mbox{\hyperlink{classlibcamera_1_1MediaDevice}{MediaDevice}}\ *media);}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keyword}{static}\ std::vector<ConverterFactoryBase\ *>\ \&\mbox{\hyperlink{classlibcamera_1_1ConverterFactoryBase_a4b8ef7e5270de11d84f05915bd8508c0}{factories}}();}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keyword}{static}\ std::vector<std::string>\ \mbox{\hyperlink{classlibcamera_1_1ConverterFactoryBase_aa8e17c0ed44f59548158bf4211aa6fb3}{names}}();}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{class_8h_a3dfeb3af0e6990136655ba6125587d2f}{LIBCAMERA\_DISABLE\_COPY\_AND\_MOVE}}(\mbox{\hyperlink{classlibcamera_1_1ConverterFactoryBase}{ConverterFactoryBase}})}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ registerType(\mbox{\hyperlink{classlibcamera_1_1ConverterFactoryBase}{ConverterFactoryBase}}\ *factory);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keyword}{virtual}\ std::unique\_ptr<Converter>\ createInstance(\mbox{\hyperlink{classlibcamera_1_1MediaDevice}{MediaDevice}}\ *media)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ std::string\ name\_;}
+\DoxyCodeLine{00105\ \ \ \ \ std::vector<std::string>\ compatibles\_;}
+\DoxyCodeLine{00106\ \};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ \_Converter>}
+\DoxyCodeLine{00109\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1ConverterFactory}{ConverterFactory}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classlibcamera_1_1ConverterFactoryBase}{ConverterFactoryBase}}}
+\DoxyCodeLine{00110\ \{}
+\DoxyCodeLine{00111\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00112\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ConverterFactory_a457eafe6442218259fc3c61dec609c48}{ConverterFactory}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *name,\ std::initializer\_list<std::string>\ \mbox{\hyperlink{classlibcamera_1_1ConverterFactoryBase_a7b7c0c130233b05d69d95dbd0cb634be}{compatibles}})}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classlibcamera_1_1ConverterFactoryBase}{ConverterFactoryBase}}(name,\ \mbox{\hyperlink{classlibcamera_1_1ConverterFactoryBase_a7b7c0c130233b05d69d95dbd0cb634be}{compatibles}})}
+\DoxyCodeLine{00114\ \ \ \ \ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ std::unique\_ptr<Converter>\ \mbox{\hyperlink{classlibcamera_1_1ConverterFactory_a028cc2cd79ac650566f42fe39a96f285}{createInstance}}(\mbox{\hyperlink{classlibcamera_1_1MediaDevice}{MediaDevice}}\ *media)\textcolor{keyword}{\ const\ override}}
+\DoxyCodeLine{00118\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<\_Converter>(media);}
+\DoxyCodeLine{00120\ \ \ \ \ \}}
+\DoxyCodeLine{00121\ \};}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#define\ REGISTER\_CONVERTER(name,\ converter,\ compatibles)\ \(\backslash\)}}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\ \ \ \ static\ ConverterFactory<converter>\ global\_\#\#converter\#\#Factory(name,\ compatibles);}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \}\ \textcolor{comment}{/*\ namespace\ libcamera\ */}}
+
+\end{DoxyCode}

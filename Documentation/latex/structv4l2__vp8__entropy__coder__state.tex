@@ -1,0 +1,33 @@
+\doxysection{v4l2\+\_\+vp8\+\_\+entropy\+\_\+coder\+\_\+state Struct Reference}
+\hypertarget{structv4l2__vp8__entropy__coder__state}{}\label{structv4l2__vp8__entropy__coder__state}\index{v4l2\_vp8\_entropy\_coder\_state@{v4l2\_vp8\_entropy\_coder\_state}}
+
+
+{\ttfamily \#include $<$v4l2-\/controls.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structv4l2__vp8__entropy__coder__state_a8f6c277afa2dd15c884d50b72410162a}\label{structv4l2__vp8__entropy__coder__state_a8f6c277afa2dd15c884d50b72410162a} 
+\+\_\+\+\_\+u8 {\bfseries range}
+\item 
+\Hypertarget{structv4l2__vp8__entropy__coder__state_a29fb5960ca5dc6394463a210048b1a09}\label{structv4l2__vp8__entropy__coder__state_a29fb5960ca5dc6394463a210048b1a09} 
+\+\_\+\+\_\+u8 {\bfseries value}
+\item 
+\Hypertarget{structv4l2__vp8__entropy__coder__state_af1ad943324fd15ba6e8087189856c978}\label{structv4l2__vp8__entropy__coder__state_af1ad943324fd15ba6e8087189856c978} 
+\+\_\+\+\_\+u8 {\bfseries bit\+\_\+count}
+\item 
+\Hypertarget{structv4l2__vp8__entropy__coder__state_ae3570bac29a8a3bfe4759bcc1f2011e5}\label{structv4l2__vp8__entropy__coder__state_ae3570bac29a8a3bfe4759bcc1f2011e5} 
+\+\_\+\+\_\+u8 {\bfseries padding}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structv4l2__vp8__entropy__coder__state}{v4l2\+\_\+vp8\+\_\+entropy\+\_\+coder\+\_\+state} -\/ VP8 boolean coder state
+
+@range\+: coder state value for "{}\+Range"{} @value\+: coder state value for "{}\+Value"{} @bit\+\_\+count\+: number of bits left in range "{}\+Value"{}. @padding\+: padding field. Should be zeroed by applications.
+
+This structure contains the state for the boolean coder, as explained in section \textquotesingle{}7. Boolean Entropy Decoder\textquotesingle{} of the VP8 specification. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/v4l2-\/controls.\+h\end{DoxyCompactItemize}

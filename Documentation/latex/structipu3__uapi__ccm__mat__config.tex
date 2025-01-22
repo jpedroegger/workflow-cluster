@@ -1,0 +1,59 @@
+\doxysection{ipu3\+\_\+uapi\+\_\+ccm\+\_\+mat\+\_\+config Struct Reference}
+\hypertarget{structipu3__uapi__ccm__mat__config}{}\label{structipu3__uapi__ccm__mat__config}\index{ipu3\_uapi\_ccm\_mat\_config@{ipu3\_uapi\_ccm\_mat\_config}}
+
+
+{\ttfamily \#include $<$intel-\/ipu3.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structipu3__uapi__ccm__mat__config_a0ff720c7c44df2dde6fb72721048ce48}\label{structipu3__uapi__ccm__mat__config_a0ff720c7c44df2dde6fb72721048ce48} 
+\+\_\+\+\_\+s16 {\bfseries coeff\+\_\+m11}
+\item 
+\Hypertarget{structipu3__uapi__ccm__mat__config_a08358ba623616816fb8fdf96cf15e985}\label{structipu3__uapi__ccm__mat__config_a08358ba623616816fb8fdf96cf15e985} 
+\+\_\+\+\_\+s16 {\bfseries coeff\+\_\+m12}
+\item 
+\Hypertarget{structipu3__uapi__ccm__mat__config_ae0b47012d29fd33d331efae03761ec42}\label{structipu3__uapi__ccm__mat__config_ae0b47012d29fd33d331efae03761ec42} 
+\+\_\+\+\_\+s16 {\bfseries coeff\+\_\+m13}
+\item 
+\Hypertarget{structipu3__uapi__ccm__mat__config_a449fe59a7ce2c7d6eedf8a889d0b0749}\label{structipu3__uapi__ccm__mat__config_a449fe59a7ce2c7d6eedf8a889d0b0749} 
+\+\_\+\+\_\+s16 {\bfseries coeff\+\_\+o\+\_\+r}
+\item 
+\Hypertarget{structipu3__uapi__ccm__mat__config_a843dfa26b4eeaac6836cae3a2c381294}\label{structipu3__uapi__ccm__mat__config_a843dfa26b4eeaac6836cae3a2c381294} 
+\+\_\+\+\_\+s16 {\bfseries coeff\+\_\+m21}
+\item 
+\Hypertarget{structipu3__uapi__ccm__mat__config_a7aac2690b5faaa4fcf74c46da0b9726a}\label{structipu3__uapi__ccm__mat__config_a7aac2690b5faaa4fcf74c46da0b9726a} 
+\+\_\+\+\_\+s16 {\bfseries coeff\+\_\+m22}
+\item 
+\Hypertarget{structipu3__uapi__ccm__mat__config_a48e80e29e649fc0127641d6ece7bb176}\label{structipu3__uapi__ccm__mat__config_a48e80e29e649fc0127641d6ece7bb176} 
+\+\_\+\+\_\+s16 {\bfseries coeff\+\_\+m23}
+\item 
+\Hypertarget{structipu3__uapi__ccm__mat__config_aeb3364f6db502d1da22005ce6acb6d02}\label{structipu3__uapi__ccm__mat__config_aeb3364f6db502d1da22005ce6acb6d02} 
+\+\_\+\+\_\+s16 {\bfseries coeff\+\_\+o\+\_\+g}
+\item 
+\Hypertarget{structipu3__uapi__ccm__mat__config_a734e22103ee8b5701efde8b73157742d}\label{structipu3__uapi__ccm__mat__config_a734e22103ee8b5701efde8b73157742d} 
+\+\_\+\+\_\+s16 {\bfseries coeff\+\_\+m31}
+\item 
+\Hypertarget{structipu3__uapi__ccm__mat__config_a870c28f9cb0198150147e7d2b1eb417f}\label{structipu3__uapi__ccm__mat__config_a870c28f9cb0198150147e7d2b1eb417f} 
+\+\_\+\+\_\+s16 {\bfseries coeff\+\_\+m32}
+\item 
+\Hypertarget{structipu3__uapi__ccm__mat__config_a7f074fdb8eb149d7f4ab77987803e85a}\label{structipu3__uapi__ccm__mat__config_a7f074fdb8eb149d7f4ab77987803e85a} 
+\+\_\+\+\_\+s16 {\bfseries coeff\+\_\+m33}
+\item 
+\Hypertarget{structipu3__uapi__ccm__mat__config_a4eb47404ddcb8e6ca7418c0b2f356691}\label{structipu3__uapi__ccm__mat__config_a4eb47404ddcb8e6ca7418c0b2f356691} 
+\+\_\+\+\_\+s16 {\bfseries coeff\+\_\+o\+\_\+b}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structipu3__uapi__ccm__mat__config}{ipu3\+\_\+uapi\+\_\+ccm\+\_\+mat\+\_\+config} -\/ \doxylink{classColor}{Color} correction matrix
+
+@coeff\+\_\+m11\+: CCM 3x3 coefficient, range \mbox{[}-\/65536, 65535\mbox{]} @coeff\+\_\+m12\+: CCM 3x3 coefficient, range \mbox{[}-\/8192, 8191\mbox{]} @coeff\+\_\+m13\+: CCM 3x3 coefficient, range \mbox{[}-\/32768, 32767\mbox{]} @coeff\+\_\+o\+\_\+r\+: Bias 3x1 coefficient, range \mbox{[}-\/8191, 8181\mbox{]} @coeff\+\_\+m21\+: CCM 3x3 coefficient, range \mbox{[}-\/32767, 32767\mbox{]} @coeff\+\_\+m22\+: CCM 3x3 coefficient, range \mbox{[}-\/8192, 8191\mbox{]} @coeff\+\_\+m23\+: CCM 3x3 coefficient, range \mbox{[}-\/32768, 32767\mbox{]} @coeff\+\_\+o\+\_\+g\+: Bias 3x1 coefficient, range \mbox{[}-\/8191, 8181\mbox{]} @coeff\+\_\+m31\+: CCM 3x3 coefficient, range \mbox{[}-\/32768, 32767\mbox{]} @coeff\+\_\+m32\+: CCM 3x3 coefficient, range \mbox{[}-\/8192, 8191\mbox{]} @coeff\+\_\+m33\+: CCM 3x3 coefficient, range \mbox{[}-\/32768, 32767\mbox{]} @coeff\+\_\+o\+\_\+b\+: Bias 3x1 coefficient, range \mbox{[}-\/8191, 8181\mbox{]}
+
+Transform sensor specific color space to standard s\+RGB by applying 3x3 matrix and adding a bias vector O. The transformation is basically a rotation and translation in the 3-\/dimensional color spaces. Here are the defaults\+:
+
+9775, -\/2671, 1087, 0 -\/1071, 8303, 815, 0 -\/23, -\/7887, 16103, 0 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/intel-\/ipu3.\+h\end{DoxyCompactItemize}

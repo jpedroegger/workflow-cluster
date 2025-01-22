@@ -1,0 +1,140 @@
+\doxysection{libcamera\+::Media\+Bus\+Format\+Info Class Reference}
+\hypertarget{classlibcamera_1_1MediaBusFormatInfo}{}\label{classlibcamera_1_1MediaBusFormatInfo}\index{libcamera::MediaBusFormatInfo@{libcamera::MediaBusFormatInfo}}
+
+
+Information about media bus formats.  
+
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{classlibcamera_1_1MediaBusFormatInfo_ad94d035569f86104bdea5194d30e9b03}{Type}} \{ \mbox{\hyperlink{classlibcamera_1_1MediaBusFormatInfo_ad94d035569f86104bdea5194d30e9b03abe53a0541a6d36f6ecb879fa2c584b08}{Image}}
+, \mbox{\hyperlink{classlibcamera_1_1MediaBusFormatInfo_ad94d035569f86104bdea5194d30e9b03ace21470ab49d1d1976bc3dc72438c183}{Metadata}}
+, \mbox{\hyperlink{classlibcamera_1_1MediaBusFormatInfo_ad94d035569f86104bdea5194d30e9b03aa7c4c0dd6b570e011f1bb75abaf67e05}{Embedded\+Data}}
+ \}
+\begin{DoxyCompactList}\small\item\em The format type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classlibcamera_1_1MediaBusFormatInfo_a447212f2d5b1b3dd75eca932f2c4c3d5}{is\+Valid}} () const
+\begin{DoxyCompactList}\small\item\em Check if the media bus format info is valid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const \mbox{\hyperlink{classlibcamera_1_1MediaBusFormatInfo}{Media\+Bus\+Format\+Info}} \& \mbox{\hyperlink{classlibcamera_1_1MediaBusFormatInfo_abfba3bc836c01fce02f2ac87def42dcc}{info}} (uint32\+\_\+t \mbox{\hyperlink{classlibcamera_1_1MediaBusFormatInfo_a96501d70f27fcbe367ff193bcd4e0cdf}{code}})
+\begin{DoxyCompactList}\small\item\em Retrieve information about a media bus format. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1MediaBusFormatInfo_aaf3728beb96e91bcc03bcadc19e19966}\label{classlibcamera_1_1MediaBusFormatInfo_aaf3728beb96e91bcc03bcadc19e19966} 
+const char \texorpdfstring{$\ast$}{*} {\bfseries name}
+\begin{DoxyCompactList}\small\item\em The format name as a human-\/readable string, used as the text representation of the format. \end{DoxyCompactList}\item 
+\Hypertarget{classlibcamera_1_1MediaBusFormatInfo_a96501d70f27fcbe367ff193bcd4e0cdf}\label{classlibcamera_1_1MediaBusFormatInfo_a96501d70f27fcbe367ff193bcd4e0cdf} 
+uint32\+\_\+t {\bfseries code}
+\begin{DoxyCompactList}\small\item\em The media bus format code described by this instance (MEDIA\+\_\+\+BUS\+\_\+\+FMT\+\_\+\texorpdfstring{$\ast$}{*}) \end{DoxyCompactList}\item 
+\Hypertarget{classlibcamera_1_1MediaBusFormatInfo_aae4530e7e504506d9bb00ceab4eacf09}\label{classlibcamera_1_1MediaBusFormatInfo_aae4530e7e504506d9bb00ceab4eacf09} 
+\mbox{\hyperlink{classlibcamera_1_1MediaBusFormatInfo_ad94d035569f86104bdea5194d30e9b03}{Type}} {\bfseries type}
+\begin{DoxyCompactList}\small\item\em The media bus format type. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classlibcamera_1_1MediaBusFormatInfo_a0e717dca2688c3f14aa5afdb04426de0}{bits\+Per\+Pixel}}
+\begin{DoxyCompactList}\small\item\em The average number of bits per pixel. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1PixelFormatInfo_a021bf0e82baec37b1523baa3322dc23c}{Pixel\+Format\+Info\+::\+Colour\+Encoding}} \mbox{\hyperlink{classlibcamera_1_1MediaBusFormatInfo_ade579e4bae68eae9929adc415d583a28}{colour\+Encoding}}
+\begin{DoxyCompactList}\small\item\em The colour encoding type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Information about media bus formats. 
+
+The \doxylink{classlibcamera_1_1MediaBusFormatInfo}{Media\+Bus\+Format\+Info} class groups together information describing a media bus format. It facilitates handling of media bus formats by providing data commonly used in pipeline handlers. 
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{classlibcamera_1_1MediaBusFormatInfo_ad94d035569f86104bdea5194d30e9b03}\label{classlibcamera_1_1MediaBusFormatInfo_ad94d035569f86104bdea5194d30e9b03} 
+\index{libcamera::MediaBusFormatInfo@{libcamera::MediaBusFormatInfo}!Type@{Type}}
+\index{Type@{Type}!libcamera::MediaBusFormatInfo@{libcamera::MediaBusFormatInfo}}
+\doxysubsubsection{\texorpdfstring{Type}{Type}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{classlibcamera_1_1MediaBusFormatInfo_ad94d035569f86104bdea5194d30e9b03}{libcamera\+::\+Media\+Bus\+Format\+Info\+::\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+The format type. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Image@{Image}!libcamera::MediaBusFormatInfo@{libcamera::MediaBusFormatInfo}}\index{libcamera::MediaBusFormatInfo@{libcamera::MediaBusFormatInfo}!Image@{Image}}}\Hypertarget{classlibcamera_1_1MediaBusFormatInfo_ad94d035569f86104bdea5194d30e9b03abe53a0541a6d36f6ecb879fa2c584b08}\label{classlibcamera_1_1MediaBusFormatInfo_ad94d035569f86104bdea5194d30e9b03abe53a0541a6d36f6ecb879fa2c584b08} 
+Image&The format describes image data. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Metadata@{Metadata}!libcamera::MediaBusFormatInfo@{libcamera::MediaBusFormatInfo}}\index{libcamera::MediaBusFormatInfo@{libcamera::MediaBusFormatInfo}!Metadata@{Metadata}}}\Hypertarget{classlibcamera_1_1MediaBusFormatInfo_ad94d035569f86104bdea5194d30e9b03ace21470ab49d1d1976bc3dc72438c183}\label{classlibcamera_1_1MediaBusFormatInfo_ad94d035569f86104bdea5194d30e9b03ace21470ab49d1d1976bc3dc72438c183} 
+Metadata&The format describes generic metadata. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EmbeddedData@{EmbeddedData}!libcamera::MediaBusFormatInfo@{libcamera::MediaBusFormatInfo}}\index{libcamera::MediaBusFormatInfo@{libcamera::MediaBusFormatInfo}!EmbeddedData@{EmbeddedData}}}\Hypertarget{classlibcamera_1_1MediaBusFormatInfo_ad94d035569f86104bdea5194d30e9b03aa7c4c0dd6b570e011f1bb75abaf67e05}\label{classlibcamera_1_1MediaBusFormatInfo_ad94d035569f86104bdea5194d30e9b03aa7c4c0dd6b570e011f1bb75abaf67e05} 
+Embedded\+Data&The format describes sensor embedded data. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1MediaBusFormatInfo_abfba3bc836c01fce02f2ac87def42dcc}\label{classlibcamera_1_1MediaBusFormatInfo_abfba3bc836c01fce02f2ac87def42dcc} 
+\index{libcamera::MediaBusFormatInfo@{libcamera::MediaBusFormatInfo}!info@{info}}
+\index{info@{info}!libcamera::MediaBusFormatInfo@{libcamera::MediaBusFormatInfo}}
+\doxysubsubsection{\texorpdfstring{info()}{info()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classlibcamera_1_1MediaBusFormatInfo}{Media\+Bus\+Format\+Info}} \& libcamera\+::\+Media\+Bus\+Format\+Info\+::info (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retrieve information about a media bus format. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em code} & The media bus format code \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \doxylink{classlibcamera_1_1MediaBusFormatInfo}{Media\+Bus\+Format\+Info} describing the {\itshape code} if known, or an invalid \doxylink{classlibcamera_1_1MediaBusFormatInfo}{Media\+Bus\+Format\+Info} otherwise 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1MediaBusFormatInfo_a447212f2d5b1b3dd75eca932f2c4c3d5}\label{classlibcamera_1_1MediaBusFormatInfo_a447212f2d5b1b3dd75eca932f2c4c3d5} 
+\index{libcamera::MediaBusFormatInfo@{libcamera::MediaBusFormatInfo}!isValid@{isValid}}
+\index{isValid@{isValid}!libcamera::MediaBusFormatInfo@{libcamera::MediaBusFormatInfo}}
+\doxysubsubsection{\texorpdfstring{isValid()}{isValid()}}
+{\footnotesize\ttfamily bool libcamera\+::\+Media\+Bus\+Format\+Info\+::is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check if the media bus format info is valid. 
+
+\begin{DoxyReturn}{Returns}
+True if the media bus format info is valid, false otherwise 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classlibcamera_1_1MediaBusFormatInfo_a0e717dca2688c3f14aa5afdb04426de0}\label{classlibcamera_1_1MediaBusFormatInfo_a0e717dca2688c3f14aa5afdb04426de0} 
+\index{libcamera::MediaBusFormatInfo@{libcamera::MediaBusFormatInfo}!bitsPerPixel@{bitsPerPixel}}
+\index{bitsPerPixel@{bitsPerPixel}!libcamera::MediaBusFormatInfo@{libcamera::MediaBusFormatInfo}}
+\doxysubsubsection{\texorpdfstring{bitsPerPixel}{bitsPerPixel}}
+{\footnotesize\ttfamily libcamera\+::\+Media\+Bus\+Format\+Info\+::bits\+Per\+Pixel}
+
+
+
+The average number of bits per pixel. 
+
+The number of bits per pixel averages the total number of bits for all colour components over the whole image, excluding any padding bits or padding pixels.
+
+For formats that transmit multiple or fractional pixels per sample, the value will differ from the bus width.
+
+Formats that don\textquotesingle{}t have a fixed number of bits per pixel, such as compressed formats, or device-\/specific embedded data formats, report 0 in this field. \Hypertarget{classlibcamera_1_1MediaBusFormatInfo_ade579e4bae68eae9929adc415d583a28}\label{classlibcamera_1_1MediaBusFormatInfo_ade579e4bae68eae9929adc415d583a28} 
+\index{libcamera::MediaBusFormatInfo@{libcamera::MediaBusFormatInfo}!colourEncoding@{colourEncoding}}
+\index{colourEncoding@{colourEncoding}!libcamera::MediaBusFormatInfo@{libcamera::MediaBusFormatInfo}}
+\doxysubsubsection{\texorpdfstring{colourEncoding}{colourEncoding}}
+{\footnotesize\ttfamily libcamera\+::\+Media\+Bus\+Format\+Info\+::colour\+Encoding}
+
+
+
+The colour encoding type. 
+
+This field is valid for \doxylink{classlibcamera_1_1MediaBusFormatInfo_ad94d035569f86104bdea5194d30e9b03abe53a0541a6d36f6ecb879fa2c584b08}{Type\+::\+Image} formats only. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/internal/\mbox{\hyperlink{v4l2__subdevice_8h}{v4l2\+\_\+subdevice.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/v4l2\+\_\+subdevice.\+cpp\end{DoxyCompactItemize}

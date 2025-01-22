@@ -1,0 +1,82 @@
+\doxysection{af\+\_\+algorithm.\+h}
+\hypertarget{af__algorithm_8h_source}{}\label{af__algorithm_8h_source}\index{src/peripherals/camera/libcamera/src/ipa/rpi/controller/af\_algorithm.h@{src/peripherals/camera/libcamera/src/ipa/rpi/controller/af\_algorithm.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ BSD-\/2-\/Clause\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2022,\ Raspberry\ Pi\ Ltd}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ af\_algorithm.hpp\ -\/\ auto\ focus\ algorithm\ interface}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <libcamera/base/span.h>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}algorithm.h"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }RPiController\ \{}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRPiController_1_1AfAlgorithm}{AfAlgorithm}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classRPiController_1_1Algorithm}{Algorithm}}}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{classRPiController_1_1AfAlgorithm}{AfAlgorithm}}(\mbox{\hyperlink{classRPiController_1_1Controller}{Controller}}\ *controller)}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classRPiController_1_1Algorithm}{Algorithm}}(controller)\ \{\}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ \ \ \ \ *\ An\ autofocus\ algorithm\ should\ provide\ the\ following\ calls.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ \ \ \ \ *}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ \ \ \ \ *\ Where\ a\ ControlList\ combines\ a\ change\ of\ AfMode\ with\ other\ AF}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ \ \ \ \ *\ controls,\ setMode()\ should\ be\ called\ first,\ to\ ensure\ the}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ \ \ \ \ *\ algorithm\ will\ be\ in\ the\ correct\ state\ to\ handle\ controls.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ \ \ \ \ *}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ \ \ \ \ *\ setLensPosition()\ returns\ true\ if\ the\ mode\ was\ AfModeManual\ and}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ \ \ \ \ *\ the\ lens\ position\ has\ changed,\ otherwise\ returns\ false.\ When\ it}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ \ \ \ \ *\ returns\ true,\ hwpos\ should\ be\ sent\ immediately\ to\ the\ lens\ driver.}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ \ \ \ \ *}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ \ \ \ \ *\ getMode()\ is\ provided\ mainly\ for\ validating\ controls.}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ \ \ \ \ *\ getLensPosition()\ is\ provided\ for\ populating\ DeviceStatus.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{enum}\ AfRange\ \{\ AfRangeNormal\ =\ 0,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AfRangeMacro,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AfRangeFull,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AfRangeMax\ \};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{enum}\ AfSpeed\ \{\ AfSpeedNormal\ =\ 0,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AfSpeedFast,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AfSpeedMax\ \};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{enum}\ AfMode\ \{\ AfModeManual\ =\ 0,}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AfModeAuto,}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AfModeContinuous\ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{enum}\ AfPause\ \{\ AfPauseImmediate\ =\ 0,}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AfPauseDeferred,}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AfPauseResume\ \};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ setRange([[maybe\_unused]]\ AfRange\ range)}
+\DoxyCodeLine{00056\ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ setSpeed([[maybe\_unused]]\ AfSpeed\ speed)}
+\DoxyCodeLine{00059\ \ \ \ \ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ setMetering([[maybe\_unused]]\ \textcolor{keywordtype}{bool}\ use\_windows)}
+\DoxyCodeLine{00062\ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \}}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ setWindows([[maybe\_unused]]\ \mbox{\hyperlink{classlibcamera_1_1Span}{libcamera::Span<libcamera::Rectangle\ const>}}\ \textcolor{keyword}{const}\ \&wins)}
+\DoxyCodeLine{00065\ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ setMode(AfMode\ mode)\ =\ 0;}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{virtual}\ AfMode\ getMode()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ setLensPosition(\textcolor{keywordtype}{double}\ dioptres,\ int32\_t\ *hwpos)\ =\ 0;}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{virtual}\ std::optional<double>\ getLensPosition()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ triggerScan()\ =\ 0;}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ cancelScan()\ =\ 0;}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ pause(AfPause\ pause)\ =\ 0;}
+\DoxyCodeLine{00074\ \};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \}\ \textcolor{comment}{//\ namespace\ RPiController}}
+
+\end{DoxyCode}

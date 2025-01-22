@@ -1,0 +1,130 @@
+\doxysection{libcamera\+::Delayed\+Controls Class Reference}
+\hypertarget{classlibcamera_1_1DelayedControls}{}\label{classlibcamera_1_1DelayedControls}\index{libcamera::DelayedControls@{libcamera::DelayedControls}}
+
+
+Helper to deal with controls that take effect with a delay.  
+
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structlibcamera_1_1DelayedControls_1_1ControlParams}{Control\+Params}}
+\begin{DoxyCompactList}\small\item\em Parameters associated with controls handled by the {\itshape \doxylink{classlibcamera_1_1DelayedControls}{Delayed\+Controls}} helper class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1DelayedControls_a2ccde2c61b6c20567ca10188dd555dc7}{Delayed\+Controls}} (\mbox{\hyperlink{classlibcamera_1_1V4L2Device}{V4\+L2\+Device}} \texorpdfstring{$\ast$}{*}device, const std\+::unordered\+\_\+map$<$ uint32\+\_\+t, \mbox{\hyperlink{structlibcamera_1_1DelayedControls_1_1ControlParams}{Control\+Params}} $>$ \&control\+Params)
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{classlibcamera_1_1DelayedControls}{Delayed\+Controls} instance. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1DelayedControls_a7f1f0e7b61b8e4de431bb279296950dd}{reset}} ()
+\begin{DoxyCompactList}\small\item\em Reset state machine. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlibcamera_1_1DelayedControls_a6e4ac7f9c74b6f62d4c47f0e455ba84c}{push}} (const \mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} \&controls)
+\begin{DoxyCompactList}\small\item\em Push a set of controls on the queue. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} \mbox{\hyperlink{classlibcamera_1_1DelayedControls_a43828396917694dabb8f260e61b83e88}{get}} (uint32\+\_\+t sequence)
+\begin{DoxyCompactList}\small\item\em Read back controls in effect at a sequence number. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1DelayedControls_a87b491f735cbf0473111edded25fe897}{apply\+Controls}} (uint32\+\_\+t sequence)
+\begin{DoxyCompactList}\small\item\em Inform \doxylink{classlibcamera_1_1DelayedControls}{Delayed\+Controls} of the start of a new frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Helper to deal with controls that take effect with a delay. 
+
+Some sensor controls take effect with a delay as the sensor needs time to adjust, for example exposure and analog gain. This is a helper class to deal with such controls and the intended users are pipeline handlers.
+
+The idea is to extend the concept of the buffer depth of a pipeline the application needs to maintain to also cover controls. Just as with buffer depth if the application keeps the number of requests queued above the control depth the controls are guaranteed to take effect for the correct request. The control depth is determined by the control with the greatest delay. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlibcamera_1_1DelayedControls_a2ccde2c61b6c20567ca10188dd555dc7}\label{classlibcamera_1_1DelayedControls_a2ccde2c61b6c20567ca10188dd555dc7} 
+\index{libcamera::DelayedControls@{libcamera::DelayedControls}!DelayedControls@{DelayedControls}}
+\index{DelayedControls@{DelayedControls}!libcamera::DelayedControls@{libcamera::DelayedControls}}
+\doxysubsubsection{\texorpdfstring{DelayedControls()}{DelayedControls()}}
+{\footnotesize\ttfamily libcamera\+::\+Delayed\+Controls\+::\+Delayed\+Controls (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1V4L2Device}{V4\+L2\+Device}} \texorpdfstring{$\ast$}{*}}]{device,  }\item[{const std\+::unordered\+\_\+map$<$ uint32\+\_\+t, \mbox{\hyperlink{structlibcamera_1_1DelayedControls_1_1ControlParams}{Control\+Params}} $>$ \&}]{control\+Params }\end{DoxyParamCaption})}
+
+
+
+Construct a \doxylink{classlibcamera_1_1DelayedControls}{Delayed\+Controls} instance. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em device} & The V4\+L2 device the controls have to be applied to \\
+\hline
+\mbox{\texttt{ in}}  & {\em control\+Params} & Map of the numerical V4\+L2 control ids to their associated control parameters.\\
+\hline
+\end{DoxyParams}
+The control parameters comprise of delays (in frames) and a priority write flag. If this flag is set, the relevant control is written separately from, and ahead of the rest of the batched controls.
+
+Only controls specified in {\itshape control\+Params} are handled. If it\textquotesingle{}s desired to mix delayed controls and controls that take effect immediately the immediate controls must be listed in the {\itshape control\+Params} map with a delay value of 0. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1DelayedControls_a87b491f735cbf0473111edded25fe897}\label{classlibcamera_1_1DelayedControls_a87b491f735cbf0473111edded25fe897} 
+\index{libcamera::DelayedControls@{libcamera::DelayedControls}!applyControls@{applyControls}}
+\index{applyControls@{applyControls}!libcamera::DelayedControls@{libcamera::DelayedControls}}
+\doxysubsubsection{\texorpdfstring{applyControls()}{applyControls()}}
+{\footnotesize\ttfamily void libcamera\+::\+Delayed\+Controls\+::apply\+Controls (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{sequence }\end{DoxyParamCaption})}
+
+
+
+Inform \doxylink{classlibcamera_1_1DelayedControls}{Delayed\+Controls} of the start of a new frame. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em sequence} & Sequence number of the frame that started\\
+\hline
+\end{DoxyParams}
+Inform the state machine that a new frame has started and of its sequence number. Any user of these helpers is responsible to inform the helper about the start of any frame. This can be connected with ease to the start of a exposure (SOE) V4\+L2 event. \Hypertarget{classlibcamera_1_1DelayedControls_a43828396917694dabb8f260e61b83e88}\label{classlibcamera_1_1DelayedControls_a43828396917694dabb8f260e61b83e88} 
+\index{libcamera::DelayedControls@{libcamera::DelayedControls}!get@{get}}
+\index{get@{get}!libcamera::DelayedControls@{libcamera::DelayedControls}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} libcamera\+::\+Delayed\+Controls\+::get (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{sequence }\end{DoxyParamCaption})}
+
+
+
+Read back controls in effect at a sequence number. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em sequence} & The sequence number to get controls for\\
+\hline
+\end{DoxyParams}
+Read back what controls where in effect at a specific sequence number. The history is a ring buffer of 16 entries where new and old values coexist. It\textquotesingle{}s the callers responsibility to not read too old sequence numbers that have been pushed out of the history.
+
+Historic values are evicted by pushing new values onto the queue using \doxylink{classlibcamera_1_1DelayedControls_a6e4ac7f9c74b6f62d4c47f0e455ba84c}{push()}. The max history from the current sequence number that yields valid values are thus 16 minus number of controls pushed.
+
+\begin{DoxyReturn}{Returns}
+The controls at {\itshape sequence} number 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1DelayedControls_a6e4ac7f9c74b6f62d4c47f0e455ba84c}\label{classlibcamera_1_1DelayedControls_a6e4ac7f9c74b6f62d4c47f0e455ba84c} 
+\index{libcamera::DelayedControls@{libcamera::DelayedControls}!push@{push}}
+\index{push@{push}!libcamera::DelayedControls@{libcamera::DelayedControls}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}}
+{\footnotesize\ttfamily bool libcamera\+::\+Delayed\+Controls\+::push (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} \&}]{controls }\end{DoxyParamCaption})}
+
+
+
+Push a set of controls on the queue. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em controls} & List of controls to add to the device queue\\
+\hline
+\end{DoxyParams}
+Push a set of controls to the control queue. This increases the control queue depth by one.
+
+\begin{DoxyReturn}{Returns}
+true if {\itshape controls} are accepted, or false otherwise 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1DelayedControls_a7f1f0e7b61b8e4de431bb279296950dd}\label{classlibcamera_1_1DelayedControls_a7f1f0e7b61b8e4de431bb279296950dd} 
+\index{libcamera::DelayedControls@{libcamera::DelayedControls}!reset@{reset}}
+\index{reset@{reset}!libcamera::DelayedControls@{libcamera::DelayedControls}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void libcamera\+::\+Delayed\+Controls\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reset state machine. 
+
+Resets the state machine to a starting position based on control values retrieved from the device. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/internal/delayed\+\_\+controls.\+h\item 
+src/peripherals/camera/libcamera/src/libcamera/delayed\+\_\+controls.\+cpp\end{DoxyCompactItemize}

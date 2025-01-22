@@ -1,0 +1,83 @@
+\doxysection{ipa\+\_\+context.\+h}
+\hypertarget{simple_2ipa__context_8h_source}{}\label{simple_2ipa__context_8h_source}\index{src/peripherals/camera/libcamera/src/ipa/simple/ipa\_context.h@{src/peripherals/camera/libcamera/src/ipa/simple/ipa\_context.h}}
+\mbox{\hyperlink{simple_2ipa__context_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2024\ Red\ Hat,\ Inc.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Simple\ pipeline\ IPA\ Context}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{controls_8h}{libcamera/controls.h}}>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{fc__queue_8h}{libipa/fc\_queue.h}}>}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacelibcamera}{libcamera}}\ \{}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{namespace\ }ipa::soft\ \{}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structlibcamera_1_1ipa_1_1soft_1_1IPASessionConfiguration}{IPASessionConfiguration}}\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1soft_1_1IPASessionConfiguration_a0c462bad0365913be5be9139ecd26d1c}{gamma}};}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ int32\_t\ exposureMin,\ exposureMax;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ againMin,\ againMax,\ againMinStep;}
+\DoxyCodeLine{00027\ \ \ \ \ \}\ agc;}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ std::optional<uint8\_t>\ level;}
+\DoxyCodeLine{00030\ \ \ \ \ \}\ black;}
+\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structlibcamera_1_1ipa_1_1soft_1_1IPAActiveState}{IPAActiveState}}\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1soft_1_1IPAActiveState_a4bf369995866c1452b55533aa23cd908}{level}};}
+\DoxyCodeLine{00036\ \ \ \ \ \}\ blc;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1soft_1_1IPAActiveState_aa4bcd7de62be2f2eb9a709ce3253a567}{red}};}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1soft_1_1IPAActiveState_af3ce2a528f5d466447ce7b2b93356cc2}{green}};}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1soft_1_1IPAActiveState_aacd4236f5fbd3ea56e3f7f944d385639}{blue}};}
+\DoxyCodeLine{00042\ \ \ \ \ \}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1soft_1_1IPAActiveState_a23840bc6aa6af95eeb18fb42c5c1bc16}{gains}};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ kGammaLookupSize\ =\ 1024;}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ std::array<double,\ kGammaLookupSize>\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1soft_1_1IPAActiveState_a513adac4570c8bb67e81396eba032d5a}{gammaTable}};}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1soft_1_1IPAActiveState_a89206883c51b02a8592ffa99a36d7f3b}{blackLevel}};}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ contrast;}
+\DoxyCodeLine{00049\ \ \ \ \ \}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1soft_1_1IPAActiveState_a14d6e7a5d450234474d19b3f12cf3e95}{gamma}};}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 0..2\ range,\ 1.0\ =\ normal\ */}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ std::optional<double>\ contrast;}
+\DoxyCodeLine{00053\ \ \ \ \ \}\ knobs;}
+\DoxyCodeLine{00054\ \};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structlibcamera_1_1ipa_1_1soft_1_1IPAFrameContext}{IPAFrameContext}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1FrameContext}{FrameContext}}\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ int32\_t\ exposure;}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ gain;}
+\DoxyCodeLine{00060\ \ \ \ \ \}\ sensor;}
+\DoxyCodeLine{00061\ \};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structlibcamera_1_1ipa_1_1soft_1_1IPAContext}{IPAContext}}\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1soft_1_1IPAContext}{IPAContext}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ frameContextSize)}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1soft_1_1IPAContext_a5730fade1de22a59e128f300fde22c14}{frameContexts}}(frameContextSize)}
+\DoxyCodeLine{00066\ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1soft_1_1IPASessionConfiguration}{IPASessionConfiguration}}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1soft_1_1IPAContext_a6ad114d20d6d27860a8e14706593efa9}{configuration}};}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1soft_1_1IPAActiveState}{IPAActiveState}}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1soft_1_1IPAContext_a38acddb9bcaa40a868c05341633704e4}{activeState}};}
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1FCQueue}{FCQueue<IPAFrameContext>}}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1soft_1_1IPAContext_a5730fade1de22a59e128f300fde22c14}{frameContexts}};}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ControlInfoMap_a737e0a528fd58dd5d4f976633322b0fb}{ControlInfoMap::Map}}\ ctrlMap;}
+\DoxyCodeLine{00073\ \};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \}\ \textcolor{comment}{/*\ namespace\ ipa::soft\ */}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \}\ \textcolor{comment}{/*\ namespace\ libcamera\ */}}
+
+\end{DoxyCode}

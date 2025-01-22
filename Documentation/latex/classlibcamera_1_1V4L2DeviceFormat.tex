@@ -1,0 +1,114 @@
+\doxysection{libcamera\+::V4\+L2\+Device\+Format Class Reference}
+\hypertarget{classlibcamera_1_1V4L2DeviceFormat}{}\label{classlibcamera_1_1V4L2DeviceFormat}\index{libcamera::V4L2DeviceFormat@{libcamera::V4L2DeviceFormat}}
+
+
+The V4\+L2 video device image format and sizes.  
+
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structlibcamera_1_1V4L2DeviceFormat_1_1Plane}{Plane}}
+\begin{DoxyCompactList}\small\item\em Per-\/plane memory size information. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \mbox{\hyperlink{classlibcamera_1_1V4L2DeviceFormat_a2b6c40ca15c05fdbcf2f9555027e7b16}{to\+String}} () const
+\begin{DoxyCompactList}\small\item\em Assemble and return a string describing the format. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1V4L2PixelFormat}{V4\+L2\+Pixel\+Format}} \mbox{\hyperlink{classlibcamera_1_1V4L2DeviceFormat_a1d9f472f571be3791f70e4cf44daae82}{fourcc}}
+\begin{DoxyCompactList}\small\item\em The fourcc code describing the pixel encoding scheme. \end{DoxyCompactList}\item 
+\Hypertarget{classlibcamera_1_1V4L2DeviceFormat_aa092819d6b6ca9e8caa0e4a83390b72e}\label{classlibcamera_1_1V4L2DeviceFormat_aa092819d6b6ca9e8caa0e4a83390b72e} 
+\mbox{\hyperlink{classlibcamera_1_1Size}{Size}} {\bfseries size}
+\begin{DoxyCompactList}\small\item\em The image size in pixels. \end{DoxyCompactList}\item 
+std\+::optional$<$ \mbox{\hyperlink{classlibcamera_1_1ColorSpace}{Color\+Space}} $>$ \mbox{\hyperlink{classlibcamera_1_1V4L2DeviceFormat_ad587e1cdee8d6075e7c57294125c0219}{color\+Space}}
+\begin{DoxyCompactList}\small\item\em The color space of the pixels. \end{DoxyCompactList}\item 
+std\+::array$<$ \mbox{\hyperlink{structlibcamera_1_1V4L2DeviceFormat_1_1Plane}{Plane}}, 3 $>$ \mbox{\hyperlink{classlibcamera_1_1V4L2DeviceFormat_a8fbfab032fb2fdcc2112d3cbea4ef284}{planes}}
+\begin{DoxyCompactList}\small\item\em The per-\/plane memory size information. \end{DoxyCompactList}\item 
+\Hypertarget{classlibcamera_1_1V4L2DeviceFormat_ae6973964a92da4100ebe978de03a05c9}\label{classlibcamera_1_1V4L2DeviceFormat_ae6973964a92da4100ebe978de03a05c9} 
+unsigned int {\bfseries planes\+Count} = 0
+\begin{DoxyCompactList}\small\item\em The number of valid data planes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The V4\+L2 video device image format and sizes. 
+
+This class describes the image format and resolution to be programmed on a V4\+L2 video device. The image format is defined by a fourcc code (as specified by the V4\+L2 API with the V4\+L2\+\_\+\+PIX\+\_\+\+FMT\+\_\+\texorpdfstring{$\ast$}{*} macros), a resolution (width and height) and one to three planes with configurable line stride and a total per-\/plane size in bytes.
+
+\doxylink{classImage}{Image} formats, as defined by the V4\+L2 APIs, are categorised as packed, semi-\/planar and planar, and describe the layout of the image pixel components stored in memory.
+
+Packed image formats store pixel components one after the other, in a contiguous memory area. Examples of packed image formats are YUYV permutations, RGB with different pixel sub-\/sampling ratios such as RGB565 or RGB666 or Raw-\/\+Bayer formats such as SRGGB8 or SGRBG12.
+
+Semi-\/planar and planar image formats store the pixel components in separate and possibly non-\/contiguous memory areas, named planes, whose sizes depend on the pixel components sub-\/sampling ratios, which are defined by the format. Semi-\/planar formats use two planes to store pixel components and notable examples of such formats are the NV12 and NV16 formats, while planar formats use three planes to store pixel components and notable examples are YUV422 and YUV420.
+
+\doxylink{classImage}{Image} formats supported by the V4\+L2 API are defined and described in Section number 2 of the "{}\+Part I -\/ Video for Linux API"{} chapter of the "{}\+Linux Media \+Infrastructure userspace API"{}, part of the Linux kernel documentation.
+
+In the context of this document, packed image formats are referred to as "{}packed formats"{} and semi-\/planar and planar image formats are referred to as "{}planar formats"{}.
+
+V4\+L2 also defines two different sets of APIs to work with devices that store planes in contiguous or separate memory areas. They are named "{}\+Single-\/plane \+APIs"{} and "{}\+Multi-\/plane APIs"{} respectively and are documented in Section 2.\+1 and Section 2.\+2 of the above mentioned "{}\+Part I -\/ Video for Linux API"{} documentation.
+
+The single-\/plane API allows, among other parameters, the configuration of the image resolution, the pixel format and the stride length. In that case the stride applies to all planes (possibly sub-\/sampled). The multi-\/plane API allows configuring the resolution, the pixel format and a per-\/plane stride length and total size.
+
+Packed image formats, which occupy a single memory area, are easily described through the single-\/plane API. When used on a video device that implements the multi-\/plane API, only the size and stride information contained in the first plane are taken into account.
+
+Planar image formats, which occupy distinct memory areas, are easily described through the multi-\/plane APIs. When used on a video device that implements the single-\/plane API, all planes are stored one after the other in a contiguous memory area, and it is not possible to configure per-\/plane stride length and size, but only a global stride length which is applied to all planes.
+
+The \doxylink{classlibcamera_1_1V4L2DeviceFormat}{V4\+L2\+Device\+Format} class describes both packed and planar image formats, regardless of the API type (single or multi plane) implemented by the video device the format has to be applied to. The total size and bytes per line of images represented with packed formats are configured using the first entry of the \doxylink{classlibcamera_1_1V4L2DeviceFormat_a8fbfab032fb2fdcc2112d3cbea4ef284}{V4\+L2\+Device\+Format\+::planes} array, while the per-\/plane size and per-\/plane stride length of images represented with planar image formats are configured using the opportune number of entries of the \doxylink{classlibcamera_1_1V4L2DeviceFormat_a8fbfab032fb2fdcc2112d3cbea4ef284}{V4\+L2\+Device\+Format\+::planes} array, as prescribed by the image format definition (semi-\/planar formats use 2 entries, while planar formats use the whole 3 entries). The number of valid entries of the \doxylink{classlibcamera_1_1V4L2DeviceFormat_a8fbfab032fb2fdcc2112d3cbea4ef284}{V4\+L2\+Device\+Format\+::planes} array is defined by the \doxylink{classlibcamera_1_1V4L2DeviceFormat_ae6973964a92da4100ebe978de03a05c9}{V4\+L2\+Device\+Format\+::planes\+Count} value. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1V4L2DeviceFormat_a2b6c40ca15c05fdbcf2f9555027e7b16}\label{classlibcamera_1_1V4L2DeviceFormat_a2b6c40ca15c05fdbcf2f9555027e7b16} 
+\index{libcamera::V4L2DeviceFormat@{libcamera::V4L2DeviceFormat}!toString@{toString}}
+\index{toString@{toString}!libcamera::V4L2DeviceFormat@{libcamera::V4L2DeviceFormat}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily const std\+::string libcamera\+::\+V4\+L2\+Device\+Format\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Assemble and return a string describing the format. 
+
+\begin{DoxyReturn}{Returns}
+A string describing the \doxylink{classlibcamera_1_1V4L2DeviceFormat}{V4\+L2\+Device\+Format} 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classlibcamera_1_1V4L2DeviceFormat_ad587e1cdee8d6075e7c57294125c0219}\label{classlibcamera_1_1V4L2DeviceFormat_ad587e1cdee8d6075e7c57294125c0219} 
+\index{libcamera::V4L2DeviceFormat@{libcamera::V4L2DeviceFormat}!colorSpace@{colorSpace}}
+\index{colorSpace@{colorSpace}!libcamera::V4L2DeviceFormat@{libcamera::V4L2DeviceFormat}}
+\doxysubsubsection{\texorpdfstring{colorSpace}{colorSpace}}
+{\footnotesize\ttfamily libcamera\+::\+V4\+L2\+Device\+Format\+::color\+Space}
+
+
+
+The color space of the pixels. 
+
+The color space of the image. When setting the format this may be unset, in which case the driver gets to use its default color space. After being set, this value should contain the color space that was actually used. If this value is unset, then the color space chosen by the driver could not be represented by the \doxylink{classlibcamera_1_1ColorSpace}{Color\+Space} class (and should probably be added).
+
+It is up to the pipeline handler or application to check if the resulting color space is acceptable. \Hypertarget{classlibcamera_1_1V4L2DeviceFormat_a1d9f472f571be3791f70e4cf44daae82}\label{classlibcamera_1_1V4L2DeviceFormat_a1d9f472f571be3791f70e4cf44daae82} 
+\index{libcamera::V4L2DeviceFormat@{libcamera::V4L2DeviceFormat}!fourcc@{fourcc}}
+\index{fourcc@{fourcc}!libcamera::V4L2DeviceFormat@{libcamera::V4L2DeviceFormat}}
+\doxysubsubsection{\texorpdfstring{fourcc}{fourcc}}
+{\footnotesize\ttfamily libcamera\+::\+V4\+L2\+Device\+Format\+::fourcc}
+
+
+
+The fourcc code describing the pixel encoding scheme. 
+
+The fourcc code, as defined by the V4\+L2 API with the V4\+L2\+\_\+\+PIX\+\_\+\+FMT\+\_\+\texorpdfstring{$\ast$}{*} macros, that identifies the image format pixel encoding scheme. \Hypertarget{classlibcamera_1_1V4L2DeviceFormat_a8fbfab032fb2fdcc2112d3cbea4ef284}\label{classlibcamera_1_1V4L2DeviceFormat_a8fbfab032fb2fdcc2112d3cbea4ef284} 
+\index{libcamera::V4L2DeviceFormat@{libcamera::V4L2DeviceFormat}!planes@{planes}}
+\index{planes@{planes}!libcamera::V4L2DeviceFormat@{libcamera::V4L2DeviceFormat}}
+\doxysubsubsection{\texorpdfstring{planes}{planes}}
+{\footnotesize\ttfamily libcamera\+::\+V4\+L2\+Device\+Format\+::planes}
+
+
+
+The per-\/plane memory size information. 
+
+Images are stored in memory in one or more data planes. Each data plane has a specific line stride and memory size, which could differ from the image visible sizes to accommodate padding at the end of lines and end of planes. Only the first \doxylink{classlibcamera_1_1V4L2DeviceFormat_ae6973964a92da4100ebe978de03a05c9}{planes\+Count} entries are considered valid. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/internal/\mbox{\hyperlink{v4l2__videodevice_8h}{v4l2\+\_\+videodevice.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/v4l2\+\_\+videodevice.\+cpp\end{DoxyCompactItemize}

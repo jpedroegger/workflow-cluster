@@ -1,0 +1,706 @@
+\doxysection{libcamera\+::Pipeline\+Handler Class Reference}
+\hypertarget{classlibcamera_1_1PipelineHandler}{}\label{classlibcamera_1_1PipelineHandler}\index{libcamera::PipelineHandler@{libcamera::PipelineHandler}}
+
+
+Create and manage cameras based on a set of media devices.  
+
+
+Inheritance diagram for libcamera\+::Pipeline\+Handler\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=6.890380cm]{classlibcamera_1_1PipelineHandler}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1PipelineHandler_a3cea76fe8af047ed648bee391be7d268}{Pipeline\+Handler}} (\mbox{\hyperlink{classlibcamera_1_1CameraManager}{Camera\+Manager}} \texorpdfstring{$\ast$}{*}manager)
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{classlibcamera_1_1PipelineHandler}{Pipeline\+Handler} instance. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classlibcamera_1_1PipelineHandler_a7cd5b652a2414b543ec20ba9dabf61b6}{match}} (\mbox{\hyperlink{classlibcamera_1_1DeviceEnumerator}{Device\+Enumerator}} \texorpdfstring{$\ast$}{*}enumerator)=0
+\begin{DoxyCompactList}\small\item\em Match media devices and create camera instances. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1MediaDevice}{Media\+Device}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1PipelineHandler_a77e424fe704e7b26094164b9189e0f84}{acquire\+Media\+Device}} (\mbox{\hyperlink{classlibcamera_1_1DeviceEnumerator}{Device\+Enumerator}} \texorpdfstring{$\ast$}{*}enumerator, const \mbox{\hyperlink{classlibcamera_1_1DeviceMatch}{Device\+Match}} \&dm)
+\begin{DoxyCompactList}\small\item\em Search and acquire a \doxylink{classlibcamera_1_1MediaDevice}{Media\+Device} matching a device pattern. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlibcamera_1_1PipelineHandler_a57ddfa7d422aefd4f99a382d6d711ffa}{acquire}} (\mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}} \texorpdfstring{$\ast$}{*}camera)
+\begin{DoxyCompactList}\small\item\em Acquire exclusive access to the pipeline handler for the process. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1PipelineHandler_aead119b03920f468fa3bd091bfd65e5b}{release}} (\mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}} \texorpdfstring{$\ast$}{*}camera)
+\begin{DoxyCompactList}\small\item\em Release exclusive access to the pipeline handler. \end{DoxyCompactList}\item 
+virtual std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1CameraConfiguration}{Camera\+Configuration}} $>$ \mbox{\hyperlink{classlibcamera_1_1PipelineHandler_a83bbbe0826fb159253535ef077cb4343}{generate\+Configuration}} (\mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}} \texorpdfstring{$\ast$}{*}camera, \mbox{\hyperlink{classlibcamera_1_1Span}{Span}}$<$ const \mbox{\hyperlink{namespacelibcamera_a295d1f5e7828d95c0b0aabc0a8baac03}{Stream\+Role}} $>$ roles)=0
+\begin{DoxyCompactList}\small\item\em Generate a camera configuration for a specified camera. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classlibcamera_1_1PipelineHandler_a930f2a9cdfb51dfb4b9ca3824e84fc29}{configure}} (\mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}} \texorpdfstring{$\ast$}{*}camera, \mbox{\hyperlink{classlibcamera_1_1CameraConfiguration}{Camera\+Configuration}} \texorpdfstring{$\ast$}{*}config)=0
+\begin{DoxyCompactList}\small\item\em Configure a group of streams for capture. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classlibcamera_1_1PipelineHandler_a7d1ebc70382e672e5546cd5d6cdeca76}{export\+Frame\+Buffers}} (\mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}} \texorpdfstring{$\ast$}{*}camera, \mbox{\hyperlink{classlibcamera_1_1Stream}{Stream}} \texorpdfstring{$\ast$}{*}stream, std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} $>$ $>$ \texorpdfstring{$\ast$}{*}buffers)=0
+\begin{DoxyCompactList}\small\item\em Allocate and export buffers for {\itshape stream}. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classlibcamera_1_1PipelineHandler_a55e09cd47690f72b7c93483dc1372626}{start}} (\mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}} \texorpdfstring{$\ast$}{*}camera, const \mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} \texorpdfstring{$\ast$}{*}controls)=0
+\begin{DoxyCompactList}\small\item\em Start capturing from a group of streams. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1PipelineHandler_ab30b037abfb09bd548c53c9f9196a184}{stop}} (\mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}} \texorpdfstring{$\ast$}{*}camera)
+\begin{DoxyCompactList}\small\item\em Stop capturing from all running streams and cancel pending requests. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlibcamera_1_1PipelineHandler_aac41ce2a1957534be1d1dd77145218e6}{has\+Pending\+Requests}} (const \mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}} \texorpdfstring{$\ast$}{*}camera) const
+\begin{DoxyCompactList}\small\item\em Determine if the camera has any requests pending. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1PipelineHandler_a9ca1e760238bd7cce8b78092333e2c6a}{register\+Request}} (\mbox{\hyperlink{classlibcamera_1_1Request}{Request}} \texorpdfstring{$\ast$}{*}request)
+\begin{DoxyCompactList}\small\item\em Register a request for use by the pipeline handler. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1PipelineHandler_aa82dffe399ac974ecb375cbb2a2074dd}{queue\+Request}} (\mbox{\hyperlink{classlibcamera_1_1Request}{Request}} \texorpdfstring{$\ast$}{*}request)
+\begin{DoxyCompactList}\small\item\em Queue a request. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlibcamera_1_1PipelineHandler_ad388abbf81afa644f366326dc41d7b63}{complete\+Buffer}} (\mbox{\hyperlink{classlibcamera_1_1Request}{Request}} \texorpdfstring{$\ast$}{*}request, \mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} \texorpdfstring{$\ast$}{*}buffer)
+\begin{DoxyCompactList}\small\item\em Complete a buffer for a request. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1PipelineHandler_a4184b62419a6e658c6a86438023519b2}{complete\+Request}} (\mbox{\hyperlink{classlibcamera_1_1Request}{Request}} \texorpdfstring{$\ast$}{*}request)
+\begin{DoxyCompactList}\small\item\em \doxylink{classlibcamera_1_1Signal}{Signal} request completion. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1PipelineHandler_aa0b8456fa90a7395aab6452ce800a160}{cancel\+Request}} (\mbox{\hyperlink{classlibcamera_1_1Request}{Request}} \texorpdfstring{$\ast$}{*}request)
+\begin{DoxyCompactList}\small\item\em Cancel request and signal its completion. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classlibcamera_1_1PipelineHandler_a6d96ced1bc15f35c8c7065a312931e30}{configuration\+File}} (const std\+::string \&subdir, const std\+::string \&\mbox{\hyperlink{classlibcamera_1_1PipelineHandler_a48262f4e8cc73803f0aeea8229330ee4}{name}}) const
+\begin{DoxyCompactList}\small\item\em Retrieve the absolute path to a platform configuration file. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1PipelineHandler_a48262f4e8cc73803f0aeea8229330ee4}{name}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the pipeline handler name \textbackslash{}context This function shall be \textbackslash{}threadsafe. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1CameraManager}{Camera\+Manager}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1PipelineHandler_ac20b6e64ab88efefa436a06ffa1834c3}{camera\+Manager}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the \doxylink{classlibcamera_1_1CameraManager}{Camera\+Manager} that this pipeline handler belongs to \textbackslash{}context This function is \textbackslash{}threadsafe. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1Object}{libcamera\+::\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1Object_a0425e0a986630b5881558378fad91687}{Object}} (\mbox{\hyperlink{classlibcamera_1_1Object}{Object}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classlibcamera_1_1Object_a469143548519e7ac9525e5b2b45e983f}{parent}}=nullptr)
+\begin{DoxyCompactList}\small\item\em Construct an \doxylink{classlibcamera_1_1Object}{Object} instance. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classlibcamera_1_1Object_ad52c17ff4161b166ae71e766d0649b97}{\texorpdfstring{$\sim$}{\string~}\+Object}} ()
+\begin{DoxyCompactList}\small\item\em Destroy an \doxylink{classlibcamera_1_1Object}{Object} instance. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1Object_a7432a52a2e69a29cfe8144929686d1e6}{delete\+Later}} ()
+\begin{DoxyCompactList}\small\item\em Schedule deletion of the instance in the thread it belongs to. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1Object_af9ae92dfe5f3741c64ebdec61a2f5bef}{post\+Message}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1Message}{Message}} $>$ msg)
+\begin{DoxyCompactList}\small\item\em Post a message to the object\textquotesingle{}s thread. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename R , typename... Func\+Args, typename... Args, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+base\+\_\+of$<$ \mbox{\hyperlink{classlibcamera_1_1Object}{Object}}, T $>$\+::value $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ }\\R \mbox{\hyperlink{classlibcamera_1_1Object_a2a4ea2209e289e2aabb75c5718d5b4a7}{invoke\+Method}} (R(T\+::\texorpdfstring{$\ast$}{*}func)(Func\+Args...), \mbox{\hyperlink{namespacelibcamera_ae2c8412791b9597d590a7d0b2c9e2919}{Connection\+Type}} type, Args \&\&... args)
+\begin{DoxyCompactList}\small\item\em Invoke a method asynchronously on an \doxylink{classlibcamera_1_1Object}{Object} instance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1Thread}{Thread}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1Object_aca52b8790edc25af65d6fe937355577b}{thread}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the thread the object is bound to \textbackslash{}context This function is \textbackslash{}threadsafe. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1Object_a8045a16ae8a093722466ca7129db6fc2}{move\+To\+Thread}} (\mbox{\hyperlink{classlibcamera_1_1Thread}{Thread}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classlibcamera_1_1Object_aca52b8790edc25af65d6fe937355577b}{thread}})
+\begin{DoxyCompactList}\small\item\em Move the object and all its children to a different thread. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1Object}{Object}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1Object_a469143548519e7ac9525e5b2b45e983f}{parent}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the object\textquotesingle{}s parent. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classlibcamera_1_1PipelineHandler_a97bc7a1ac8e7128d4b3dff91eb03f2a4}{register\+Camera}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}} $>$ camera)
+\begin{DoxyCompactList}\small\item\em Register a camera to the camera manager and pipeline handler. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1PipelineHandler_a25b18b2f7a20e726485880cae509204d}{hotplug\+Media\+Device}} (\mbox{\hyperlink{classlibcamera_1_1MediaDevice}{Media\+Device}} \texorpdfstring{$\ast$}{*}media)
+\begin{DoxyCompactList}\small\item\em Enable hotplug handling for a media device. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classlibcamera_1_1PipelineHandler_a106914cca210640c9da9ee1f0419e83c}{queue\+Request\+Device}} (\mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}} \texorpdfstring{$\ast$}{*}camera, \mbox{\hyperlink{classlibcamera_1_1Request}{Request}} \texorpdfstring{$\ast$}{*}request)=0
+\begin{DoxyCompactList}\small\item\em Queue a request to the device. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classlibcamera_1_1PipelineHandler_a3080cc9159e9b31d4ea2376903b94efd}{stop\+Device}} (\mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}} \texorpdfstring{$\ast$}{*}camera)=0
+\begin{DoxyCompactList}\small\item\em Stop capturing from all running streams. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classlibcamera_1_1PipelineHandler_a6f7d619636c8988aeed3afd43ce8ed02}{acquire\+Device}} (\mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}} \texorpdfstring{$\ast$}{*}camera)
+\begin{DoxyCompactList}\small\item\em Acquire resources associated with this camera. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classlibcamera_1_1PipelineHandler_a53f4bee6b4c1f4b071b5e2f7584a93f8}{release\+Device}} (\mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}} \texorpdfstring{$\ast$}{*}camera)
+\begin{DoxyCompactList}\small\item\em Release resources associated with this camera. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1Object}{libcamera\+::\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classlibcamera_1_1Object_a5328cab1412743716aa2748eeded8e80}{message}} (\mbox{\hyperlink{classlibcamera_1_1Message}{Message}} \texorpdfstring{$\ast$}{*}msg)
+\begin{DoxyCompactList}\small\item\em \doxylink{classlibcamera_1_1Message}{Message} handler for the object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlibcamera_1_1Object_a6e81f2a2524dbe12daed49597cf66a57}{assert\+Thread\+Bound}} (const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classlibcamera_1_1Object_a5328cab1412743716aa2748eeded8e80}{message}})
+\begin{DoxyCompactList}\small\item\em Check if the caller complies with thread-\/bound constraints. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1CameraManager}{Camera\+Manager}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1PipelineHandler_ae78c43450c383e9bb8757cf01c70dc4e}{manager\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The \doxylink{classlibcamera_1_1Camera}{Camera} manager associated with the pipeline handler. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1PipelineHandler_af245a3786a3655857fb58eddd423dfdd}\label{classlibcamera_1_1PipelineHandler_af245a3786a3655857fb58eddd423dfdd} 
+class {\bfseries Pipeline\+Handler\+Factory\+Base}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Create and manage cameras based on a set of media devices. 
+
+The \doxylink{classlibcamera_1_1PipelineHandler}{Pipeline\+Handler} matches the media devices provided by a \doxylink{classlibcamera_1_1DeviceEnumerator}{Device\+Enumerator} with the pipelines it supports and creates corresponding \doxylink{classlibcamera_1_1Camera}{Camera} devices.
+
+Pipeline handler instances are reference-\/counted through std\+::shared\+\_\+ptr$<$$>$. They implement std\+::enable\+\_\+shared\+\_\+from\+\_\+this$<$$>$ in order to create new std\+::shared\+\_\+ptr$<$$>$ in code paths originating from member functions of the \doxylink{classlibcamera_1_1PipelineHandler}{Pipeline\+Handler} class where only the \textquotesingle{}this\textquotesingle{} pointer is available. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlibcamera_1_1PipelineHandler_a3cea76fe8af047ed648bee391be7d268}\label{classlibcamera_1_1PipelineHandler_a3cea76fe8af047ed648bee391be7d268} 
+\index{libcamera::PipelineHandler@{libcamera::PipelineHandler}!PipelineHandler@{PipelineHandler}}
+\index{PipelineHandler@{PipelineHandler}!libcamera::PipelineHandler@{libcamera::PipelineHandler}}
+\doxysubsubsection{\texorpdfstring{PipelineHandler()}{PipelineHandler()}}
+{\footnotesize\ttfamily libcamera\+::\+Pipeline\+Handler\+::\+Pipeline\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1CameraManager}{Camera\+Manager}} \texorpdfstring{$\ast$}{*}}]{manager }\end{DoxyParamCaption})}
+
+
+
+Construct a \doxylink{classlibcamera_1_1PipelineHandler}{Pipeline\+Handler} instance. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em manager} & The camera manager\\
+\hline
+\end{DoxyParams}
+In order to honour the std\+::enable\+\_\+shared\+\_\+from\+\_\+this$<$$>$ contract, \doxylink{classlibcamera_1_1PipelineHandler}{Pipeline\+Handler} instances shall never be constructed manually, but always through the \doxylink{classlibcamera_1_1PipelineHandlerFactoryBase_ada3bc5859a7dc78b30683da70ec707ca}{Pipeline\+Handler\+Factory\+Base\+::create()} function. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1PipelineHandler_a57ddfa7d422aefd4f99a382d6d711ffa}\label{classlibcamera_1_1PipelineHandler_a57ddfa7d422aefd4f99a382d6d711ffa} 
+\index{libcamera::PipelineHandler@{libcamera::PipelineHandler}!acquire@{acquire}}
+\index{acquire@{acquire}!libcamera::PipelineHandler@{libcamera::PipelineHandler}}
+\doxysubsubsection{\texorpdfstring{acquire()}{acquire()}}
+{\footnotesize\ttfamily bool libcamera\+::\+Pipeline\+Handler\+::acquire (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}} \texorpdfstring{$\ast$}{*}}]{camera }\end{DoxyParamCaption})}
+
+
+
+Acquire exclusive access to the pipeline handler for the process. 
+
+This function locks all the media devices used by the pipeline to ensure that no other process can access them concurrently.
+
+Access to a pipeline handler may be acquired recursively from within the same process. Every successful \doxylink{classlibcamera_1_1PipelineHandler_a57ddfa7d422aefd4f99a382d6d711ffa}{acquire()} call shall be matched with a \doxylink{classlibcamera_1_1PipelineHandler_aead119b03920f468fa3bd091bfd65e5b}{release()} call. This allows concurrent access to the same pipeline handler from different cameras within the same process.
+
+Pipeline handlers shall not call this function directly as the \doxylink{classlibcamera_1_1Camera}{Camera} class handles access internally.
+
+\textbackslash{}context This function is called from the \doxylink{classlibcamera_1_1CameraManager}{Camera\+Manager} thread.
+
+\begin{DoxyReturn}{Returns}
+True if the pipeline handler was acquired, false if another process has already acquired it 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classlibcamera_1_1PipelineHandler_aead119b03920f468fa3bd091bfd65e5b}{release()} 
+\end{DoxySeeAlso}
+\Hypertarget{classlibcamera_1_1PipelineHandler_a6f7d619636c8988aeed3afd43ce8ed02}\label{classlibcamera_1_1PipelineHandler_a6f7d619636c8988aeed3afd43ce8ed02} 
+\index{libcamera::PipelineHandler@{libcamera::PipelineHandler}!acquireDevice@{acquireDevice}}
+\index{acquireDevice@{acquireDevice}!libcamera::PipelineHandler@{libcamera::PipelineHandler}}
+\doxysubsubsection{\texorpdfstring{acquireDevice()}{acquireDevice()}}
+{\footnotesize\ttfamily bool libcamera\+::\+Pipeline\+Handler\+::acquire\+Device (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}} \texorpdfstring{$\ast$}{*}}]{camera }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Acquire resources associated with this camera. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em camera} & The camera for which to acquire resources\\
+\hline
+\end{DoxyParams}
+Pipeline handlers may override this in order to get resources such as opening devices and allocating buffers when a camera is acquired.
+
+This is used by the uvcvideo pipeline handler to delay opening /dev/video\# until the camera is acquired to avoid excess power consumption. The delayed opening of /dev/video\# is a special case because the kernel uvcvideo driver powers on the USB device as soon as /dev/video\# is opened. This behavior should {\itshape not} be copied by other pipeline handlers.
+
+\textbackslash{}context This function is called from the \doxylink{classlibcamera_1_1CameraManager}{Camera\+Manager} thread.
+
+\begin{DoxyReturn}{Returns}
+True on success, false on failure 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classlibcamera_1_1PipelineHandler_a53f4bee6b4c1f4b071b5e2f7584a93f8}{release\+Device()} 
+\end{DoxySeeAlso}
+\Hypertarget{classlibcamera_1_1PipelineHandler_a77e424fe704e7b26094164b9189e0f84}\label{classlibcamera_1_1PipelineHandler_a77e424fe704e7b26094164b9189e0f84} 
+\index{libcamera::PipelineHandler@{libcamera::PipelineHandler}!acquireMediaDevice@{acquireMediaDevice}}
+\index{acquireMediaDevice@{acquireMediaDevice}!libcamera::PipelineHandler@{libcamera::PipelineHandler}}
+\doxysubsubsection{\texorpdfstring{acquireMediaDevice()}{acquireMediaDevice()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1MediaDevice}{Media\+Device}} \texorpdfstring{$\ast$}{*} libcamera\+::\+Pipeline\+Handler\+::acquire\+Media\+Device (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1DeviceEnumerator}{Device\+Enumerator}} \texorpdfstring{$\ast$}{*}}]{enumerator,  }\item[{const \mbox{\hyperlink{classlibcamera_1_1DeviceMatch}{Device\+Match}} \&}]{dm }\end{DoxyParamCaption})}
+
+
+
+Search and acquire a \doxylink{classlibcamera_1_1MediaDevice}{Media\+Device} matching a device pattern. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em enumerator} & Enumerator containing all media devices in the system \\
+\hline
+\mbox{\texttt{ in}}  & {\em dm} & Device match pattern\\
+\hline
+\end{DoxyParams}
+Search the device {\itshape enumerator} for an available media device matching the device match pattern {\itshape dm}. Matching media device that have previously been acquired by \doxylink{classlibcamera_1_1MediaDevice_a02fd5f5a3d81330a87f1ee53511866ef}{Media\+Device\+::acquire()} are not considered. If a match is found, the media device is acquired and returned. The caller shall not release the device explicitly, it will be automatically released when the pipeline handler is destroyed.
+
+\textbackslash{}context This function shall be called from the \doxylink{classlibcamera_1_1CameraManager}{Camera\+Manager} thread.
+
+\begin{DoxyReturn}{Returns}
+A pointer to the matching \doxylink{classlibcamera_1_1MediaDevice}{Media\+Device}, or nullptr if no match is found 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1PipelineHandler_ac20b6e64ab88efefa436a06ffa1834c3}\label{classlibcamera_1_1PipelineHandler_ac20b6e64ab88efefa436a06ffa1834c3} 
+\index{libcamera::PipelineHandler@{libcamera::PipelineHandler}!cameraManager@{cameraManager}}
+\index{cameraManager@{cameraManager}!libcamera::PipelineHandler@{libcamera::PipelineHandler}}
+\doxysubsubsection{\texorpdfstring{cameraManager()}{cameraManager()}}
+{\footnotesize\ttfamily libcamera\+::\+Pipeline\+Handler\+::camera\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the \doxylink{classlibcamera_1_1CameraManager}{Camera\+Manager} that this pipeline handler belongs to \textbackslash{}context This function is \textbackslash{}threadsafe. 
+
+\begin{DoxyReturn}{Returns}
+The \doxylink{classlibcamera_1_1CameraManager}{Camera\+Manager} for this pipeline handler 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1PipelineHandler_aa0b8456fa90a7395aab6452ce800a160}\label{classlibcamera_1_1PipelineHandler_aa0b8456fa90a7395aab6452ce800a160} 
+\index{libcamera::PipelineHandler@{libcamera::PipelineHandler}!cancelRequest@{cancelRequest}}
+\index{cancelRequest@{cancelRequest}!libcamera::PipelineHandler@{libcamera::PipelineHandler}}
+\doxysubsubsection{\texorpdfstring{cancelRequest()}{cancelRequest()}}
+{\footnotesize\ttfamily void libcamera\+::\+Pipeline\+Handler\+::cancel\+Request (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1Request}{Request}} \texorpdfstring{$\ast$}{*}}]{request }\end{DoxyParamCaption})}
+
+
+
+Cancel request and signal its completion. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em request} & The request to cancel\\
+\hline
+\end{DoxyParams}
+This function cancels and completes the request. The same rules as for \doxylink{classlibcamera_1_1PipelineHandler_a4184b62419a6e658c6a86438023519b2}{complete\+Request()} apply. \Hypertarget{classlibcamera_1_1PipelineHandler_ad388abbf81afa644f366326dc41d7b63}\label{classlibcamera_1_1PipelineHandler_ad388abbf81afa644f366326dc41d7b63} 
+\index{libcamera::PipelineHandler@{libcamera::PipelineHandler}!completeBuffer@{completeBuffer}}
+\index{completeBuffer@{completeBuffer}!libcamera::PipelineHandler@{libcamera::PipelineHandler}}
+\doxysubsubsection{\texorpdfstring{completeBuffer()}{completeBuffer()}}
+{\footnotesize\ttfamily bool libcamera\+::\+Pipeline\+Handler\+::complete\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1Request}{Request}} \texorpdfstring{$\ast$}{*}}]{request,  }\item[{\mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} \texorpdfstring{$\ast$}{*}}]{buffer }\end{DoxyParamCaption})}
+
+
+
+Complete a buffer for a request. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em request} & The request the buffer belongs to \\
+\hline
+\mbox{\texttt{ in}}  & {\em buffer} & The buffer that has completed\\
+\hline
+\end{DoxyParams}
+This function shall be called by pipeline handlers to signal completion of the {\itshape buffer} part of the {\itshape request}. It notifies applications of buffer completion and updates the request\textquotesingle{}s internal buffer tracking. The request is not completed automatically when the last buffer completes to give pipeline handlers a chance to perform any operation that may still be needed. They shall complete requests explicitly with \doxylink{classlibcamera_1_1PipelineHandler_a4184b62419a6e658c6a86438023519b2}{complete\+Request()}.
+
+\textbackslash{}context This function shall be called from the \doxylink{classlibcamera_1_1CameraManager}{Camera\+Manager} thread.
+
+\begin{DoxyReturn}{Returns}
+True if all buffers contained in the request have completed, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1PipelineHandler_a4184b62419a6e658c6a86438023519b2}\label{classlibcamera_1_1PipelineHandler_a4184b62419a6e658c6a86438023519b2} 
+\index{libcamera::PipelineHandler@{libcamera::PipelineHandler}!completeRequest@{completeRequest}}
+\index{completeRequest@{completeRequest}!libcamera::PipelineHandler@{libcamera::PipelineHandler}}
+\doxysubsubsection{\texorpdfstring{completeRequest()}{completeRequest()}}
+{\footnotesize\ttfamily void libcamera\+::\+Pipeline\+Handler\+::complete\+Request (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1Request}{Request}} \texorpdfstring{$\ast$}{*}}]{request }\end{DoxyParamCaption})}
+
+
+
+\doxylink{classlibcamera_1_1Signal}{Signal} request completion. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em request} & The request that has completed\\
+\hline
+\end{DoxyParams}
+The pipeline handler shall call this function to notify the {\itshape camera} that the request has completed. The request is no longer managed by the pipeline handler and shall not be accessed once this function returns.
+
+This function ensures that requests will be returned to the application in submission order, the pipeline handler may call it on any complete request without any ordering constraint.
+
+\textbackslash{}context This function shall be called from the \doxylink{classlibcamera_1_1CameraManager}{Camera\+Manager} thread. \Hypertarget{classlibcamera_1_1PipelineHandler_a6d96ced1bc15f35c8c7065a312931e30}\label{classlibcamera_1_1PipelineHandler_a6d96ced1bc15f35c8c7065a312931e30} 
+\index{libcamera::PipelineHandler@{libcamera::PipelineHandler}!configurationFile@{configurationFile}}
+\index{configurationFile@{configurationFile}!libcamera::PipelineHandler@{libcamera::PipelineHandler}}
+\doxysubsubsection{\texorpdfstring{configurationFile()}{configurationFile()}}
+{\footnotesize\ttfamily std\+::string libcamera\+::\+Pipeline\+Handler\+::configuration\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{subdir,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption}) const}
+
+
+
+Retrieve the absolute path to a platform configuration file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em subdir} & The pipeline handler specific subdirectory name \\
+\hline
+\mbox{\texttt{ in}}  & {\em name} & The configuration file name\\
+\hline
+\end{DoxyParams}
+This function locates a named platform configuration file and returns its absolute path to the pipeline handler. It searches the following directories, in order\+:
+
+
+\begin{DoxyItemize}
+\item If libcamera is not installed, the src/libcamera/pipeline/\texorpdfstring{$<$}{<}subdir\texorpdfstring{$>$}{>}/data/ directory within the source tree ; otherwise
+\item The system data (share/libcamera/pipeline/\texorpdfstring{$<$}{<}subdir\texorpdfstring{$>$}{>}) directory.
+\end{DoxyItemize}
+
+The system directories are not searched if libcamera is not installed.
+
+\begin{DoxyReturn}{Returns}
+The full path to the pipeline handler configuration file, or an empty string if no configuration file can be found 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1PipelineHandler_a930f2a9cdfb51dfb4b9ca3824e84fc29}\label{classlibcamera_1_1PipelineHandler_a930f2a9cdfb51dfb4b9ca3824e84fc29} 
+\index{libcamera::PipelineHandler@{libcamera::PipelineHandler}!configure@{configure}}
+\index{configure@{configure}!libcamera::PipelineHandler@{libcamera::PipelineHandler}}
+\doxysubsubsection{\texorpdfstring{configure()}{configure()}}
+{\footnotesize\ttfamily libcamera\+::\+Pipeline\+Handler\+::configure (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}} \texorpdfstring{$\ast$}{*}}]{camera,  }\item[{\mbox{\hyperlink{classlibcamera_1_1CameraConfiguration}{Camera\+Configuration}} \texorpdfstring{$\ast$}{*}}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Configure a group of streams for capture. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em camera} & The camera to configure \\
+\hline
+\mbox{\texttt{ in}}  & {\em config} & The camera configurations to setup\\
+\hline
+\end{DoxyParams}
+Configure the specified group of streams for {\itshape camera} according to the configuration specified in {\itshape config}. The intended caller of this interface is the \doxylink{classlibcamera_1_1Camera}{Camera} class which will receive configuration to apply from the application.
+
+The configuration is guaranteed to have been validated with \doxylink{classlibcamera_1_1CameraConfiguration_a29f8f263384c6149775b6011c7397093}{Camera\+Configuration\+::validate()}. The pipeline handler implementation shall not perform further validation and may rely on any custom field stored in its custom \doxylink{classlibcamera_1_1CameraConfiguration}{Camera\+Configuration} derived class.
+
+When configuring the camera the pipeline handler shall associate a \doxylink{classlibcamera_1_1Stream}{Stream} instance to each \doxylink{structlibcamera_1_1StreamConfiguration}{Stream\+Configuration} entry in the \doxylink{classlibcamera_1_1CameraConfiguration}{Camera\+Configuration} using the \doxylink{structlibcamera_1_1StreamConfiguration_a74a0eb44dad1b00112c7c0443ae54a12}{Stream\+Configuration\+::set\+Stream()} function.
+
+\textbackslash{}context This function is called from the \doxylink{classlibcamera_1_1CameraManager}{Camera\+Manager} thread.
+
+\begin{DoxyReturn}{Returns}
+0 on success or a negative error code otherwise 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerISI_acfe38aafd8b5484cee6d18ae2b60dd07}{libcamera\+::\+Pipeline\+Handler\+ISI}}, \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerIPU3_ab11fd7a10d30011ab2a49d132e8d41cb}{libcamera\+::\+Pipeline\+Handler\+IPU3}}, \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerMaliC55_ae50609fcbc4aaa9cae847554afcac8d2}{libcamera\+::\+Pipeline\+Handler\+Mali\+C55}}, \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerRkISP1_a4f3701626ec6c1b1c6e548b858664515}{libcamera\+::\+Pipeline\+Handler\+Rk\+ISP1}}, \mbox{\hyperlink{classlibcamera_1_1RPi_1_1PipelineHandlerBase_ac903ceb185f754ff0a099f1718dc3895}{libcamera\+::\+RPi\+::\+Pipeline\+Handler\+Base}}, \mbox{\hyperlink{classlibcamera_1_1SimplePipelineHandler_ac056f28e2655cc5763f8d247792265c0}{libcamera\+::\+Simple\+Pipeline\+Handler}}, \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerUVC_a1b8f9a14eacd3d2298bef5fa0bd80553}{libcamera\+::\+Pipeline\+Handler\+UVC}}, \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerVimc_a450abd8fd2d421bbdc9f1dccfdfe8d83}{libcamera\+::\+Pipeline\+Handler\+Vimc}}, and \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerVirtual_a5e4ff8169f745a859f8438295f4a4f06}{libcamera\+::\+Pipeline\+Handler\+Virtual}}.
+
+\Hypertarget{classlibcamera_1_1PipelineHandler_a7d1ebc70382e672e5546cd5d6cdeca76}\label{classlibcamera_1_1PipelineHandler_a7d1ebc70382e672e5546cd5d6cdeca76} 
+\index{libcamera::PipelineHandler@{libcamera::PipelineHandler}!exportFrameBuffers@{exportFrameBuffers}}
+\index{exportFrameBuffers@{exportFrameBuffers}!libcamera::PipelineHandler@{libcamera::PipelineHandler}}
+\doxysubsubsection{\texorpdfstring{exportFrameBuffers()}{exportFrameBuffers()}}
+{\footnotesize\ttfamily libcamera\+::\+Pipeline\+Handler\+::export\+Frame\+Buffers (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}} \texorpdfstring{$\ast$}{*}}]{camera,  }\item[{\mbox{\hyperlink{classlibcamera_1_1Stream}{Stream}} \texorpdfstring{$\ast$}{*}}]{stream,  }\item[{std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} $>$ $>$ \texorpdfstring{$\ast$}{*}}]{buffers }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Allocate and export buffers for {\itshape stream}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em camera} & The camera \\
+\hline
+\mbox{\texttt{ in}}  & {\em stream} & The stream to allocate buffers for \\
+\hline
+\mbox{\texttt{ out}}  & {\em buffers} & Array of buffers successfully allocated\\
+\hline
+\end{DoxyParams}
+This function allocates buffers for the {\itshape stream} from the devices associated with the stream in the corresponding pipeline handler. Those buffers shall be suitable to be added to a \doxylink{classlibcamera_1_1Request}{Request} for the stream, and shall be mappable to the CPU through their associated dmabufs with mmap().
+
+The function may only be called after the \doxylink{classlibcamera_1_1Camera}{Camera} has been configured and before it gets started, or after it gets stopped. It shall be called only for streams that are part of the active camera configuration.
+
+The only intended caller is Camera\+::export\+Frame\+Buffers().
+
+\textbackslash{}context This function is called from the \doxylink{classlibcamera_1_1CameraManager}{Camera\+Manager} thread.
+
+\begin{DoxyReturn}{Returns}
+The number of allocated buffers on success or a negative error code otherwise 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classlibcamera_1_1RPi_1_1PipelineHandlerBase_a26030dea18d5d1e202d9d0c927842081}{libcamera\+::\+RPi\+::\+Pipeline\+Handler\+Base}}, \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerISI_a43b16245db275523a0294392b23cf4c9}{libcamera\+::\+Pipeline\+Handler\+ISI}}, \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerIPU3_a11908ea0f4f00ded85c8aa0234ba7e4f}{libcamera\+::\+Pipeline\+Handler\+IPU3}}, \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerMaliC55_a7df944f03d0939737e54e5620d6a7429}{libcamera\+::\+Pipeline\+Handler\+Mali\+C55}}, \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerRkISP1_a612b7c082d7638f3479fff3c933684c9}{libcamera\+::\+Pipeline\+Handler\+Rk\+ISP1}}, \mbox{\hyperlink{classlibcamera_1_1SimplePipelineHandler_ad18662e93e757f9decd9643f4d296f64}{libcamera\+::\+Simple\+Pipeline\+Handler}}, \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerUVC_a32928e50874e885e3d70b7e7a4b9b0e4}{libcamera\+::\+Pipeline\+Handler\+UVC}}, \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerVimc_aeb83ba689f8ab77eff957b71e6e9362a}{libcamera\+::\+Pipeline\+Handler\+Vimc}}, and \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerVirtual_a12cf91f9297b92d4ffa872fd27a8ef67}{libcamera\+::\+Pipeline\+Handler\+Virtual}}.
+
+\Hypertarget{classlibcamera_1_1PipelineHandler_a83bbbe0826fb159253535ef077cb4343}\label{classlibcamera_1_1PipelineHandler_a83bbbe0826fb159253535ef077cb4343} 
+\index{libcamera::PipelineHandler@{libcamera::PipelineHandler}!generateConfiguration@{generateConfiguration}}
+\index{generateConfiguration@{generateConfiguration}!libcamera::PipelineHandler@{libcamera::PipelineHandler}}
+\doxysubsubsection{\texorpdfstring{generateConfiguration()}{generateConfiguration()}}
+{\footnotesize\ttfamily libcamera\+::\+Pipeline\+Handler\+::generate\+Configuration (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}} \texorpdfstring{$\ast$}{*}}]{camera,  }\item[{\mbox{\hyperlink{classlibcamera_1_1Span}{Span}}$<$ const \mbox{\hyperlink{namespacelibcamera_a295d1f5e7828d95c0b0aabc0a8baac03}{Stream\+Role}} $>$}]{roles }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Generate a camera configuration for a specified camera. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em camera} & The camera to generate a default configuration for \\
+\hline
+\mbox{\texttt{ in}}  & {\em roles} & A list of stream roles\\
+\hline
+\end{DoxyParams}
+Generate a default configuration for the {\itshape camera} for a specified list of stream roles. The caller shall populate the {\itshape roles} with the use-\/cases it wishes to fetch the default configuration for. The returned configuration can then be examined by the caller to learn about the selected streams and their default parameters.
+
+The intended companion to this is {\itshape \doxylink{classlibcamera_1_1PipelineHandler_a930f2a9cdfb51dfb4b9ca3824e84fc29}{configure()}} which can be used to change the group of streams parameters.
+
+\textbackslash{}context This function may be called from any thread and shall be \textbackslash{}threadsafe. It shall not modify the state of the {\itshape camera} in the pipeline handler.
+
+\begin{DoxyReturn}{Returns}
+A valid \doxylink{classlibcamera_1_1CameraConfiguration}{Camera\+Configuration} if the requested roles can be satisfied, or a null pointer otherwise. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerISI_a070570cffd58e4e371813230a8d39395}{libcamera\+::\+Pipeline\+Handler\+ISI}}, \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerIPU3_a8185abf3c24e1055fe97f91a99780a84}{libcamera\+::\+Pipeline\+Handler\+IPU3}}, \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerMaliC55_a46eaefd6eeebdb83a507dcea1379612d}{libcamera\+::\+Pipeline\+Handler\+Mali\+C55}}, \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerRkISP1_ae7c3bc2e3909e909fdc1aa70da353196}{libcamera\+::\+Pipeline\+Handler\+Rk\+ISP1}}, \mbox{\hyperlink{classlibcamera_1_1RPi_1_1PipelineHandlerBase_a9d9b16b91a1ab72cae107753b54b666b}{libcamera\+::\+RPi\+::\+Pipeline\+Handler\+Base}}, \mbox{\hyperlink{classlibcamera_1_1SimplePipelineHandler_abe8401bb370182ebb17bbc66fae8a235}{libcamera\+::\+Simple\+Pipeline\+Handler}}, \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerUVC_ad935023772b2d4d8cef7a2a7c1bb9012}{libcamera\+::\+Pipeline\+Handler\+UVC}}, \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerVimc_a7166aff6ab15325de4def3901dcce473}{libcamera\+::\+Pipeline\+Handler\+Vimc}}, and \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerVirtual_ad437c1474920286945d68e715cddf3a9}{libcamera\+::\+Pipeline\+Handler\+Virtual}}.
+
+\Hypertarget{classlibcamera_1_1PipelineHandler_aac41ce2a1957534be1d1dd77145218e6}\label{classlibcamera_1_1PipelineHandler_aac41ce2a1957534be1d1dd77145218e6} 
+\index{libcamera::PipelineHandler@{libcamera::PipelineHandler}!hasPendingRequests@{hasPendingRequests}}
+\index{hasPendingRequests@{hasPendingRequests}!libcamera::PipelineHandler@{libcamera::PipelineHandler}}
+\doxysubsubsection{\texorpdfstring{hasPendingRequests()}{hasPendingRequests()}}
+{\footnotesize\ttfamily bool libcamera\+::\+Pipeline\+Handler\+::has\+Pending\+Requests (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}} \texorpdfstring{$\ast$}{*}}]{camera }\end{DoxyParamCaption}) const}
+
+
+
+Determine if the camera has any requests pending. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em camera} & The camera to check\\
+\hline
+\end{DoxyParams}
+This function determines if there are any requests queued to the pipeline awaiting processing.
+
+\begin{DoxyReturn}{Returns}
+True if there are pending requests, or false otherwise 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1PipelineHandler_a25b18b2f7a20e726485880cae509204d}\label{classlibcamera_1_1PipelineHandler_a25b18b2f7a20e726485880cae509204d} 
+\index{libcamera::PipelineHandler@{libcamera::PipelineHandler}!hotplugMediaDevice@{hotplugMediaDevice}}
+\index{hotplugMediaDevice@{hotplugMediaDevice}!libcamera::PipelineHandler@{libcamera::PipelineHandler}}
+\doxysubsubsection{\texorpdfstring{hotplugMediaDevice()}{hotplugMediaDevice()}}
+{\footnotesize\ttfamily void libcamera\+::\+Pipeline\+Handler\+::hotplug\+Media\+Device (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1MediaDevice}{Media\+Device}} \texorpdfstring{$\ast$}{*}}]{media }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Enable hotplug handling for a media device. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em media} & The media device\\
+\hline
+\end{DoxyParams}
+This function enables hotplug handling, and especially hot-\/unplug handling, of the {\itshape media} device. It shall be called by pipeline handlers for all the media devices that can be disconnected.
+
+When a media device passed to this function is later unplugged, the pipeline handler gets notified and automatically disconnects all the cameras it has registered without requiring any manual intervention. \Hypertarget{classlibcamera_1_1PipelineHandler_a7cd5b652a2414b543ec20ba9dabf61b6}\label{classlibcamera_1_1PipelineHandler_a7cd5b652a2414b543ec20ba9dabf61b6} 
+\index{libcamera::PipelineHandler@{libcamera::PipelineHandler}!match@{match}}
+\index{match@{match}!libcamera::PipelineHandler@{libcamera::PipelineHandler}}
+\doxysubsubsection{\texorpdfstring{match()}{match()}}
+{\footnotesize\ttfamily libcamera\+::\+Pipeline\+Handler\+::match (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1DeviceEnumerator}{Device\+Enumerator}} \texorpdfstring{$\ast$}{*}}]{enumerator }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Match media devices and create camera instances. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em enumerator} & The enumerator providing all media devices found in the system\\
+\hline
+\end{DoxyParams}
+This function is the main entry point of the pipeline handler. It is called by the camera manager with the {\itshape enumerator} passed as an argument. It shall acquire from the {\itshape enumerator} all the media devices it needs for a single pipeline, create one or multiple \doxylink{classlibcamera_1_1Camera}{Camera} instances and register them with the camera manager.
+
+If all media devices needed by the pipeline handler are found, they must all be acquired by a call to \doxylink{classlibcamera_1_1MediaDevice_a02fd5f5a3d81330a87f1ee53511866ef}{Media\+Device\+::acquire()}. This function shall then create the corresponding \doxylink{classlibcamera_1_1Camera}{Camera} instances, store them internally, and return true. Otherwise it shall not acquire any media device (or shall release all the media devices is has acquired by calling \doxylink{classlibcamera_1_1MediaDevice_a511ae507d3fffc097e938a7f55eb801c}{Media\+Device\+::release()}) and return false.
+
+If multiple instances of a pipeline are available in the system, the \doxylink{classlibcamera_1_1PipelineHandler}{Pipeline\+Handler} class will be instantiated once per instance, and its match() function called for every instance. Each call shall acquire media devices for one pipeline instance, until all compatible media devices are exhausted.
+
+If this function returns true, a new instance of the pipeline handler will be created and its match() function called.
+
+\textbackslash{}context This function is called from the \doxylink{classlibcamera_1_1CameraManager}{Camera\+Manager} thread.
+
+\begin{DoxyReturn}{Returns}
+true if media devices have been acquired and camera instances created, or false otherwise 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerISI_a7d15df803a352d48db1098ed4d71d426}{libcamera\+::\+Pipeline\+Handler\+ISI}}, \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerIPU3_a96b243bafde1296c6ca636ef3338ad4d}{libcamera\+::\+Pipeline\+Handler\+IPU3}}, \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerMaliC55_a3e71e3ac32c5793ba344bd37f9836137}{libcamera\+::\+Pipeline\+Handler\+Mali\+C55}}, \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerRkISP1_a98b6cc232dbe72195593326f3c009a66}{libcamera\+::\+Pipeline\+Handler\+Rk\+ISP1}}, \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerVc4_a29e5111921dbf022fdeb296b366e5844}{libcamera\+::\+Pipeline\+Handler\+Vc4}}, \mbox{\hyperlink{classlibcamera_1_1SimplePipelineHandler_a4db3b2ee338bcf21930b3f2a65d1c330}{libcamera\+::\+Simple\+Pipeline\+Handler}}, \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerUVC_a6e247142f4f9f8879718b75f1d4e24e6}{libcamera\+::\+Pipeline\+Handler\+UVC}}, \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerVimc_a9d042cf968726014a8db305cec4db2c8}{libcamera\+::\+Pipeline\+Handler\+Vimc}}, and \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerVirtual_a1a64eca66dc7f0c0d116f9dbae4f55a5}{libcamera\+::\+Pipeline\+Handler\+Virtual}}.
+
+\Hypertarget{classlibcamera_1_1PipelineHandler_a48262f4e8cc73803f0aeea8229330ee4}\label{classlibcamera_1_1PipelineHandler_a48262f4e8cc73803f0aeea8229330ee4} 
+\index{libcamera::PipelineHandler@{libcamera::PipelineHandler}!name@{name}}
+\index{name@{name}!libcamera::PipelineHandler@{libcamera::PipelineHandler}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily libcamera\+::\+Pipeline\+Handler\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the pipeline handler name \textbackslash{}context This function shall be \textbackslash{}threadsafe. 
+
+\begin{DoxyReturn}{Returns}
+The pipeline handler name 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1PipelineHandler_aa82dffe399ac974ecb375cbb2a2074dd}\label{classlibcamera_1_1PipelineHandler_aa82dffe399ac974ecb375cbb2a2074dd} 
+\index{libcamera::PipelineHandler@{libcamera::PipelineHandler}!queueRequest@{queueRequest}}
+\index{queueRequest@{queueRequest}!libcamera::PipelineHandler@{libcamera::PipelineHandler}}
+\doxysubsubsection{\texorpdfstring{queueRequest()}{queueRequest()}}
+{\footnotesize\ttfamily void libcamera\+::\+Pipeline\+Handler\+::queue\+Request (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1Request}{Request}} \texorpdfstring{$\ast$}{*}}]{request }\end{DoxyParamCaption})}
+
+
+
+Queue a request. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em request} & The request to queue\\
+\hline
+\end{DoxyParams}
+This function queues a capture request to the pipeline handler for processing. The request is first added to the internal list of waiting requests which have to be prepared to make sure they are ready for being queued to the pipeline handler.
+
+The queue of waiting requests is iterated and all prepared requests are passed to the pipeline handler in the same order they have been queued by calling this function.
+
+If a \doxylink{classlibcamera_1_1Request}{Request} fails during the preparation phase or if the pipeline handler fails in queuing the request to the hardware the request is cancelled.
+
+Keeping track of queued requests ensures automatic completion of all requests when the pipeline handler is stopped with \doxylink{classlibcamera_1_1PipelineHandler_ab30b037abfb09bd548c53c9f9196a184}{stop()}. \doxylink{classlibcamera_1_1Request}{Request} completion shall be signalled by the pipeline handler using the \doxylink{classlibcamera_1_1PipelineHandler_a4184b62419a6e658c6a86438023519b2}{complete\+Request()} function.
+
+\textbackslash{}context This function is called from the \doxylink{classlibcamera_1_1CameraManager}{Camera\+Manager} thread. \Hypertarget{classlibcamera_1_1PipelineHandler_a106914cca210640c9da9ee1f0419e83c}\label{classlibcamera_1_1PipelineHandler_a106914cca210640c9da9ee1f0419e83c} 
+\index{libcamera::PipelineHandler@{libcamera::PipelineHandler}!queueRequestDevice@{queueRequestDevice}}
+\index{queueRequestDevice@{queueRequestDevice}!libcamera::PipelineHandler@{libcamera::PipelineHandler}}
+\doxysubsubsection{\texorpdfstring{queueRequestDevice()}{queueRequestDevice()}}
+{\footnotesize\ttfamily libcamera\+::\+Pipeline\+Handler\+::queue\+Request\+Device (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}} \texorpdfstring{$\ast$}{*}}]{camera,  }\item[{\mbox{\hyperlink{classlibcamera_1_1Request}{Request}} \texorpdfstring{$\ast$}{*}}]{request }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Queue a request to the device. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em camera} & The camera to queue the request to \\
+\hline
+\mbox{\texttt{ in}}  & {\em request} & The request to queue\\
+\hline
+\end{DoxyParams}
+This function queues a capture request to the device for processing. The request contains a set of buffers associated with streams and a set of parameters. The pipeline handler shall program the device to ensure that the parameters will be applied to the frames captured in the buffers provided in the request.
+
+\textbackslash{}context This function is called from the \doxylink{classlibcamera_1_1CameraManager}{Camera\+Manager} thread.
+
+\begin{DoxyReturn}{Returns}
+0 on success or a negative error code otherwise 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerISI_afd6c8419985ee5c8b876b6731325be94}{libcamera\+::\+Pipeline\+Handler\+ISI}}, \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerIPU3_a0caba989f5d2cba0b1ff17b5fc4d04e7}{libcamera\+::\+Pipeline\+Handler\+IPU3}}, \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerMaliC55_a74b9957d4f8793c6e805320465d330dd}{libcamera\+::\+Pipeline\+Handler\+Mali\+C55}}, \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerRkISP1_ab33e25558c5bcf2ea8f8538098d4aab8}{libcamera\+::\+Pipeline\+Handler\+Rk\+ISP1}}, \mbox{\hyperlink{classlibcamera_1_1RPi_1_1PipelineHandlerBase_a5b47772fb3716da6d9c1f128990bf821}{libcamera\+::\+RPi\+::\+Pipeline\+Handler\+Base}}, \mbox{\hyperlink{classlibcamera_1_1SimplePipelineHandler_a519e6c1812a47c44c14cef6e8dc779e1}{libcamera\+::\+Simple\+Pipeline\+Handler}}, \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerUVC_a7ba3a0fd410ba2f47a726d9c4c048545}{libcamera\+::\+Pipeline\+Handler\+UVC}}, \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerVimc_a67119232e4d9556f313caf7c61657414}{libcamera\+::\+Pipeline\+Handler\+Vimc}}, and \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerVirtual_ab531a522086c3ddcc65df3cb5f983add}{libcamera\+::\+Pipeline\+Handler\+Virtual}}.
+
+\Hypertarget{classlibcamera_1_1PipelineHandler_a97bc7a1ac8e7128d4b3dff91eb03f2a4}\label{classlibcamera_1_1PipelineHandler_a97bc7a1ac8e7128d4b3dff91eb03f2a4} 
+\index{libcamera::PipelineHandler@{libcamera::PipelineHandler}!registerCamera@{registerCamera}}
+\index{registerCamera@{registerCamera}!libcamera::PipelineHandler@{libcamera::PipelineHandler}}
+\doxysubsubsection{\texorpdfstring{registerCamera()}{registerCamera()}}
+{\footnotesize\ttfamily void libcamera\+::\+Pipeline\+Handler\+::register\+Camera (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}} $>$}]{camera }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Register a camera to the camera manager and pipeline handler. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em camera} & The camera to be added\\
+\hline
+\end{DoxyParams}
+This function is called by pipeline handlers to register the cameras they handle with the camera manager.
+
+\textbackslash{}context This function shall be called from the \doxylink{classlibcamera_1_1CameraManager}{Camera\+Manager} thread. \Hypertarget{classlibcamera_1_1PipelineHandler_a9ca1e760238bd7cce8b78092333e2c6a}\label{classlibcamera_1_1PipelineHandler_a9ca1e760238bd7cce8b78092333e2c6a} 
+\index{libcamera::PipelineHandler@{libcamera::PipelineHandler}!registerRequest@{registerRequest}}
+\index{registerRequest@{registerRequest}!libcamera::PipelineHandler@{libcamera::PipelineHandler}}
+\doxysubsubsection{\texorpdfstring{registerRequest()}{registerRequest()}}
+{\footnotesize\ttfamily void libcamera\+::\+Pipeline\+Handler\+::register\+Request (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1Request}{Request}} \texorpdfstring{$\ast$}{*}}]{request }\end{DoxyParamCaption})}
+
+
+
+Register a request for use by the pipeline handler. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em request} & The request to register\\
+\hline
+\end{DoxyParams}
+This function is called when the request is created, and allows the pipeline handler to perform any one-\/time initialization it requries for the request. \Hypertarget{classlibcamera_1_1PipelineHandler_aead119b03920f468fa3bd091bfd65e5b}\label{classlibcamera_1_1PipelineHandler_aead119b03920f468fa3bd091bfd65e5b} 
+\index{libcamera::PipelineHandler@{libcamera::PipelineHandler}!release@{release}}
+\index{release@{release}!libcamera::PipelineHandler@{libcamera::PipelineHandler}}
+\doxysubsubsection{\texorpdfstring{release()}{release()}}
+{\footnotesize\ttfamily void libcamera\+::\+Pipeline\+Handler\+::release (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}} \texorpdfstring{$\ast$}{*}}]{camera }\end{DoxyParamCaption})}
+
+
+
+Release exclusive access to the pipeline handler. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em camera} & The camera for which to release data\\
+\hline
+\end{DoxyParams}
+This function releases access to the pipeline handler previously acquired by a call to \doxylink{classlibcamera_1_1PipelineHandler_a57ddfa7d422aefd4f99a382d6d711ffa}{acquire()}. Every \doxylink{classlibcamera_1_1PipelineHandler_aead119b03920f468fa3bd091bfd65e5b}{release()} call shall match a previous successful \doxylink{classlibcamera_1_1PipelineHandler_a57ddfa7d422aefd4f99a382d6d711ffa}{acquire()} call. Calling this function on a pipeline handler that hasn\textquotesingle{}t been acquired results in undefined behaviour.
+
+Pipeline handlers shall not call this function directly as the \doxylink{classlibcamera_1_1Camera}{Camera} class handles access internally.
+
+\textbackslash{}context This function is called from the \doxylink{classlibcamera_1_1CameraManager}{Camera\+Manager} thread.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classlibcamera_1_1PipelineHandler_a57ddfa7d422aefd4f99a382d6d711ffa}{acquire()} 
+\end{DoxySeeAlso}
+\Hypertarget{classlibcamera_1_1PipelineHandler_a53f4bee6b4c1f4b071b5e2f7584a93f8}\label{classlibcamera_1_1PipelineHandler_a53f4bee6b4c1f4b071b5e2f7584a93f8} 
+\index{libcamera::PipelineHandler@{libcamera::PipelineHandler}!releaseDevice@{releaseDevice}}
+\index{releaseDevice@{releaseDevice}!libcamera::PipelineHandler@{libcamera::PipelineHandler}}
+\doxysubsubsection{\texorpdfstring{releaseDevice()}{releaseDevice()}}
+{\footnotesize\ttfamily void libcamera\+::\+Pipeline\+Handler\+::release\+Device (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}} \texorpdfstring{$\ast$}{*}}]{camera }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Release resources associated with this camera. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em camera} & The camera for which to release resources\\
+\hline
+\end{DoxyParams}
+Pipeline handlers may override this in order to perform cleanup operations when a camera is released, such as freeing memory.
+
+This is called once for every camera that is released. If there are resources shared by multiple cameras then the pipeline handler must take care to not release them until \doxylink{classlibcamera_1_1PipelineHandler_a53f4bee6b4c1f4b071b5e2f7584a93f8}{release\+Device()} has been called for all previously acquired cameras.
+
+\textbackslash{}context This function is called from the \doxylink{classlibcamera_1_1CameraManager}{Camera\+Manager} thread.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classlibcamera_1_1PipelineHandler_a6f7d619636c8988aeed3afd43ce8ed02}{acquire\+Device()} 
+\end{DoxySeeAlso}
+
+
+Reimplemented in \mbox{\hyperlink{classlibcamera_1_1RPi_1_1PipelineHandlerBase_a8ff61d8e29004db5f9a69a0e12d5db7c}{libcamera\+::\+RPi\+::\+Pipeline\+Handler\+Base}}.
+
+\Hypertarget{classlibcamera_1_1PipelineHandler_a55e09cd47690f72b7c93483dc1372626}\label{classlibcamera_1_1PipelineHandler_a55e09cd47690f72b7c93483dc1372626} 
+\index{libcamera::PipelineHandler@{libcamera::PipelineHandler}!start@{start}}
+\index{start@{start}!libcamera::PipelineHandler@{libcamera::PipelineHandler}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily libcamera\+::\+Pipeline\+Handler\+::start (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}} \texorpdfstring{$\ast$}{*}}]{camera,  }\item[{const \mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} \texorpdfstring{$\ast$}{*}}]{controls }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Start capturing from a group of streams. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em camera} & The camera to start \\
+\hline
+\mbox{\texttt{ in}}  & {\em controls} & Controls to be applied before starting the \doxylink{classlibcamera_1_1Camera}{Camera}\\
+\hline
+\end{DoxyParams}
+Start the group of streams that have been configured for capture by {\itshape \doxylink{classlibcamera_1_1PipelineHandler_a930f2a9cdfb51dfb4b9ca3824e84fc29}{configure()}}. The intended caller of this function is the \doxylink{classlibcamera_1_1Camera}{Camera} class which will in turn be called from the application to indicate that it has configured the streams and is ready to capture.
+
+\textbackslash{}context This function is called from the \doxylink{classlibcamera_1_1CameraManager}{Camera\+Manager} thread.
+
+\begin{DoxyReturn}{Returns}
+0 on success or a negative error code otherwise 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerISI_a90f505a228972f9c7e7858c97e11f2bc}{libcamera\+::\+Pipeline\+Handler\+ISI}}, \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerIPU3_a62c00d70d2ecbdc9971ea108da4c9b4f}{libcamera\+::\+Pipeline\+Handler\+IPU3}}, \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerMaliC55_abea891b72b51b4e0660adc55c723732e}{libcamera\+::\+Pipeline\+Handler\+Mali\+C55}}, \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerRkISP1_a9983c4dd536fa208eff5e152858ba3c3}{libcamera\+::\+Pipeline\+Handler\+Rk\+ISP1}}, \mbox{\hyperlink{classlibcamera_1_1RPi_1_1PipelineHandlerBase_a2513a97083d6e6157083b8bcc621ca20}{libcamera\+::\+RPi\+::\+Pipeline\+Handler\+Base}}, \mbox{\hyperlink{classlibcamera_1_1SimplePipelineHandler_a38367b89eb92e92c69958a569cc8f314}{libcamera\+::\+Simple\+Pipeline\+Handler}}, \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerUVC_a52c863f5c857b04276b4220c81e122ab}{libcamera\+::\+Pipeline\+Handler\+UVC}}, \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerVimc_a8cf05f48922fb34e9b1cb9fc6b0d2870}{libcamera\+::\+Pipeline\+Handler\+Vimc}}, and \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerVirtual_a1a0e8b841cdc727b5e6d838d648012c3}{libcamera\+::\+Pipeline\+Handler\+Virtual}}.
+
+\Hypertarget{classlibcamera_1_1PipelineHandler_ab30b037abfb09bd548c53c9f9196a184}\label{classlibcamera_1_1PipelineHandler_ab30b037abfb09bd548c53c9f9196a184} 
+\index{libcamera::PipelineHandler@{libcamera::PipelineHandler}!stop@{stop}}
+\index{stop@{stop}!libcamera::PipelineHandler@{libcamera::PipelineHandler}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void libcamera\+::\+Pipeline\+Handler\+::stop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}} \texorpdfstring{$\ast$}{*}}]{camera }\end{DoxyParamCaption})}
+
+
+
+Stop capturing from all running streams and cancel pending requests. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em camera} & The camera to stop\\
+\hline
+\end{DoxyParams}
+This function stops capturing and processing requests immediately. All pending requests are cancelled and complete immediately in an error state.
+
+\textbackslash{}context This function is called from the \doxylink{classlibcamera_1_1CameraManager}{Camera\+Manager} thread. \Hypertarget{classlibcamera_1_1PipelineHandler_a3080cc9159e9b31d4ea2376903b94efd}\label{classlibcamera_1_1PipelineHandler_a3080cc9159e9b31d4ea2376903b94efd} 
+\index{libcamera::PipelineHandler@{libcamera::PipelineHandler}!stopDevice@{stopDevice}}
+\index{stopDevice@{stopDevice}!libcamera::PipelineHandler@{libcamera::PipelineHandler}}
+\doxysubsubsection{\texorpdfstring{stopDevice()}{stopDevice()}}
+{\footnotesize\ttfamily libcamera\+::\+Pipeline\+Handler\+::stop\+Device (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}} \texorpdfstring{$\ast$}{*}}]{camera }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Stop capturing from all running streams. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em camera} & The camera to stop\\
+\hline
+\end{DoxyParams}
+This function stops capturing and processing requests immediately. All pending requests are cancelled and complete immediately in an error state. 
+
+Implemented in \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerISI_a370301ab6b4e0c57b00717e923be14c8}{libcamera\+::\+Pipeline\+Handler\+ISI}}, \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerIPU3_ab771dead5e5fc71afef240eb3a650cdf}{libcamera\+::\+Pipeline\+Handler\+IPU3}}, \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerMaliC55_af721dc63801f8641aebcd66cc02c1464}{libcamera\+::\+Pipeline\+Handler\+Mali\+C55}}, \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerRkISP1_a7936b49427b77f55e0c4eabf57c4b0f1}{libcamera\+::\+Pipeline\+Handler\+Rk\+ISP1}}, \mbox{\hyperlink{classlibcamera_1_1RPi_1_1PipelineHandlerBase_afaed8bfaf977244e6599a8b0c6a3d847}{libcamera\+::\+RPi\+::\+Pipeline\+Handler\+Base}}, \mbox{\hyperlink{classlibcamera_1_1SimplePipelineHandler_ac4834498be993f837eb2be3592ec92a0}{libcamera\+::\+Simple\+Pipeline\+Handler}}, \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerUVC_a6ee00a473a619190819f36786f4c44e2}{libcamera\+::\+Pipeline\+Handler\+UVC}}, \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerVimc_a28a9e5710c1c0c08728244ae86abf132}{libcamera\+::\+Pipeline\+Handler\+Vimc}}, and \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerVirtual_a41685a4758f03e71c6214a221d29e2f6}{libcamera\+::\+Pipeline\+Handler\+Virtual}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classlibcamera_1_1PipelineHandler_ae78c43450c383e9bb8757cf01c70dc4e}\label{classlibcamera_1_1PipelineHandler_ae78c43450c383e9bb8757cf01c70dc4e} 
+\index{libcamera::PipelineHandler@{libcamera::PipelineHandler}!manager\_@{manager\_}}
+\index{manager\_@{manager\_}!libcamera::PipelineHandler@{libcamera::PipelineHandler}}
+\doxysubsubsection{\texorpdfstring{manager\_}{manager\_}}
+{\footnotesize\ttfamily libcamera\+::\+Pipeline\+Handler\+::manager\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The \doxylink{classlibcamera_1_1Camera}{Camera} manager associated with the pipeline handler. 
+
+The camera manager pointer is stored in the pipeline handler for the convenience of pipeline handler implementations. It remains valid and constant for the whole lifetime of the pipeline handler. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/internal/\mbox{\hyperlink{pipeline__handler_8h}{pipeline\+\_\+handler.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/pipeline\+\_\+handler.\+cpp\end{DoxyCompactItemize}

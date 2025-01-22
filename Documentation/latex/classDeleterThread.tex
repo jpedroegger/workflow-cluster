@@ -1,0 +1,82 @@
+\doxysection{Deleter\+Thread Class Reference}
+\hypertarget{classDeleterThread}{}\label{classDeleterThread}\index{DeleterThread@{DeleterThread}}
+Inheritance diagram for Deleter\+Thread\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classDeleterThread}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classDeleterThread_a7d688b9cfb8512aa01ef84df40edf0f3}\label{classDeleterThread_a7d688b9cfb8512aa01ef84df40edf0f3} 
+{\bfseries Deleter\+Thread} (\mbox{\hyperlink{classlibcamera_1_1Object}{Object}} \texorpdfstring{$\ast$}{*}obj)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1Thread}{libcamera\+::\+Thread}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Thread} ()
+\begin{DoxyCompactList}\small\item\em Create a thread. \end{DoxyCompactList}\item 
+void {\bfseries start} ()
+\begin{DoxyCompactList}\small\item\em Start the thread. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1Thread_a682e194cb85201f751679d405bddd390}{exit}} (int code=0)
+\begin{DoxyCompactList}\small\item\em Stop the thread\textquotesingle{}s event loop. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlibcamera_1_1Thread_aad8b4e36644bbb12dc4a3652875031c0}{wait}} (\mbox{\hyperlink{include_2libcamera_2base_2utils_8h_ad2a71f9eb2c27cd6213306d8d2ff7fd0}{utils\+::duration}} duration=utils\+::duration\+::max())
+\begin{DoxyCompactList}\small\item\em Wait for the thread to finish. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classlibcamera_1_1Thread_ac0aaa9e86d23aae87865d5b607263434}{set\+Thread\+Affinity}} (const \mbox{\hyperlink{classlibcamera_1_1Span}{Span}}$<$ const unsigned int $>$ \&cpus)
+\begin{DoxyCompactList}\small\item\em Set the CPU affinity mask of the thread. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlibcamera_1_1Thread_abc82f4273c701d2a3e10c616ae7be167}{is\+Running}} ()
+\begin{DoxyCompactList}\small\item\em Check if the thread is running. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1EventDispatcher}{Event\+Dispatcher}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1Thread_a473e4d310c13ca3e779781116b6df125}{event\+Dispatcher}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the event dispatcher. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1Thread_aa9e5281fd59e9644aab27c0a5fefe7ed}{dispatch\+Messages}} (\mbox{\hyperlink{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5}{Message\+::\+Type}} type=\mbox{\hyperlink{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5a2cf8f48814353e436d4f5fc4b9f8b713}{Message\+::\+Type\+::\+None}})
+\begin{DoxyCompactList}\small\item\em Dispatch posted messages for this thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classDeleterThread_a1d112d2fe445b4823f645a31a30c4ae3}{run}} ()
+\begin{DoxyCompactList}\small\item\em Main function of the thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1Thread}{libcamera\+::\+Thread}}}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classlibcamera_1_1Thread_a6422ed835177fd84f0e517efc798fa62}{exec}} ()
+\begin{DoxyCompactList}\small\item\em Enter the event loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1Thread}{libcamera\+::\+Thread}}}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classlibcamera_1_1Thread}{Thread}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1Thread_a3eef596f48cb7109462118890b6575cb}{current}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the \doxylink{classlibcamera_1_1Thread}{Thread} instance for the current thread \textbackslash{}context This function is \textbackslash{}threadsafe. \end{DoxyCompactList}\item 
+static pid\+\_\+t \mbox{\hyperlink{classlibcamera_1_1Thread_a41f93a5a8f2649c06859f88325dc60ac}{current\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the ID of the current thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classlibcamera_1_1Thread}{libcamera\+::\+Thread}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1Signal}{Signal}} {\bfseries finished}
+\begin{DoxyCompactList}\small\item\em \doxylink{classlibcamera_1_1Signal}{Signal} the end of thread execution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classDeleterThread_a1d112d2fe445b4823f645a31a30c4ae3}\label{classDeleterThread_a1d112d2fe445b4823f645a31a30c4ae3} 
+\index{DeleterThread@{DeleterThread}!run@{run}}
+\index{run@{run}!DeleterThread@{DeleterThread}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Deleter\+Thread\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Main function of the thread. 
+
+When the thread is started with \doxylink{classlibcamera_1_1Thread_a7a41ff49b92b165721070c0199de3df6}{start()}, it calls this function in the context of the new thread. The \doxylink{classDeleterThread_a1d112d2fe445b4823f645a31a30c4ae3}{run()} function can be overridden to perform custom work, either custom initialization and cleanup before and after calling the Thread\+::exec() function, or a custom thread loop altogether. When this function returns the thread execution is stopped, and the \doxylink{classlibcamera_1_1Thread_a7f3bdc2840090cfb00fa8442ce36c3df}{finished} signal is emitted.
+
+Note that if this function is overridden and doesn\textquotesingle{}t call Thread\+::exec(), no events will be dispatched to the objects living in the thread. These objects will not be able to use the Event\+Notifier, Timer or Message facilities. This includes functions that rely on message dispatching, such as Object\+::delete\+Later().
+
+The base implementation just calls \doxylink{classlibcamera_1_1Thread_a6422ed835177fd84f0e517efc798fa62}{exec()}. 
+
+Reimplemented from \mbox{\hyperlink{classlibcamera_1_1Thread_a7e7d63b01477fa9987f5505f82f32913}{libcamera\+::\+Thread}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/test/object-\/delete.\+cpp\end{DoxyCompactItemize}

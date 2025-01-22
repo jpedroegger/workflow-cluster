@@ -1,0 +1,205 @@
+\doxysection{rpi\+\_\+stream.\+h}
+\hypertarget{rpi__stream_8h_source}{}\label{rpi__stream_8h_source}\index{src/peripherals/camera/libcamera/src/libcamera/pipeline/rpi/common/rpi\_stream.h@{src/peripherals/camera/libcamera/src/libcamera/pipeline/rpi/common/rpi\_stream.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2020,\ Raspberry\ Pi\ Ltd}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Raspberry\ Pi\ device\ stream\ abstraction\ class.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{flags_8h}{libcamera/base/flags.h}}>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{include_2libcamera_2base_2utils_8h}{libcamera/base/utils.h}}>}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{stream_8h}{libcamera/stream.h}}>}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mapped__framebuffer_8h}{libcamera/internal/mapped\_framebuffer.h}}"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{v4l2__videodevice_8h}{libcamera/internal/v4l2\_videodevice.h}}"{}}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacelibcamera}{libcamera}}\ \{}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{namespace\ }RPi\ \{}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{enum}\ BufferMask\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ MaskID\ \ \ \ \ \ \ \ \ \ =\ 0x00ffff,}
+\DoxyCodeLine{00030\ \ \ \ \ MaskStats\ \ \ \ \ \ \ =\ 0x010000,}
+\DoxyCodeLine{00031\ \ \ \ \ MaskEmbeddedData\ \ \ \ =\ 0x020000,}
+\DoxyCodeLine{00032\ \ \ \ \ MaskBayerData\ \ \ \ \ \ \ =\ 0x040000,}
+\DoxyCodeLine{00033\ \};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structlibcamera_1_1RPi_1_1BufferObject}{BufferObject}}\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{structlibcamera_1_1RPi_1_1BufferObject}{BufferObject}}(\mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{FrameBuffer}}\ *b,\ \textcolor{keywordtype}{bool}\ requiresMmap)}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ :\ buffer(b),\ mapped(std::nullopt)}
+\DoxyCodeLine{00038\ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (requiresMmap)}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ mapped\ =\ std::make\_optional<MappedFrameBuffer>}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (b,\ \mbox{\hyperlink{classlibcamera_1_1MappedFrameBuffer_a1d9341a27d2d986c51faf79c68e312bfa70a2a84088d405a2e3f1e3accaa16723}{MappedFrameBuffer::MapFlag::ReadWrite}});}
+\DoxyCodeLine{00042\ \ \ \ \ \}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{FrameBuffer}}\ *buffer;}
+\DoxyCodeLine{00045\ \ \ \ \ std::optional<MappedFrameBuffer>\ mapped;}
+\DoxyCodeLine{00046\ \};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{using\ }BufferMap\ =\ std::unordered\_map<unsigned\ int,\ BufferObject>;}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00051\ \textcolor{comment}{\ *\ Device\ stream\ abstraction\ for\ either\ an\ internal\ or\ external\ stream.}}
+\DoxyCodeLine{00052\ \textcolor{comment}{\ *\ Used\ for\ both\ Unicam\ and\ the\ ISP.}}
+\DoxyCodeLine{00053\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00054\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1RPi_1_1Stream}{Stream}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classlibcamera_1_1Stream}{libcamera::Stream}}}
+\DoxyCodeLine{00055\ \{}
+\DoxyCodeLine{00056\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{enum\ class}\ StreamFlag\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ None\ \ \ \ \ \ \ \ =\ 0,}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00060\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ Indicates\ that\ this\ stream\ only\ imports\ buffers,\ e.g.\ the\ ISP}}
+\DoxyCodeLine{00061\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ input\ stream.}}
+\DoxyCodeLine{00062\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ ImportOnly\ \ =\ (1\ <<\ 0),}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00065\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ Indicates\ that\ this\ stream\ is\ active\ externally,\ i.e.\ the}}
+\DoxyCodeLine{00066\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ buffers\ might\ be\ provided\ by\ (and\ returned\ to)\ the\ application.}}
+\DoxyCodeLine{00067\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ External\ \ \ \ =\ (1\ <<\ 1),}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00070\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ Indicates\ that\ the\ stream\ buffers\ need\ to\ be\ mmaped\ and\ returned}}
+\DoxyCodeLine{00071\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ to\ the\ pipeline\ handler\ when\ requested.}}
+\DoxyCodeLine{00072\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ RequiresMmap\ \ \ \ =\ (1\ <<\ 2),}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00075\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ Indicates\ a\ stream\ that\ needs\ buffers\ recycled\ every\ frame\ internally}}
+\DoxyCodeLine{00076\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ in\ the\ pipeline\ handler,\ e.g.\ stitch,\ TDN,\ config.\ All\ buffer}}
+\DoxyCodeLine{00077\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ management\ will\ be\ handled\ by\ the\ pipeline\ handler.}}
+\DoxyCodeLine{00078\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ Recurrent\ \ \ =\ (1\ <<\ 3),}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00081\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ Indicates\ that\ the\ output\ stream\ needs\ a\ software\ format\ conversion}}
+\DoxyCodeLine{00082\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ to\ be\ applied\ after\ ISP\ processing.}}
+\DoxyCodeLine{00083\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ Needs32bitConv\ \ =\ (1\ <<\ 4),}
+\DoxyCodeLine{00085\ \ \ \ \ \};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classlibcamera_1_1Flags}{StreamFlags}}\ =\ \mbox{\hyperlink{classlibcamera_1_1Flags}{Flags<StreamFlag>}};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1RPi_1_1Stream}{Stream}}()}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ :\ flags\_(StreamFlag::None),\ id\_(0),\ swDownscale\_(0)}
+\DoxyCodeLine{00091\ \ \ \ \ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1RPi_1_1Stream}{Stream}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *name,\ \mbox{\hyperlink{classlibcamera_1_1MediaEntity}{MediaEntity}}\ *dev,\ \mbox{\hyperlink{classlibcamera_1_1Flags}{StreamFlags}}\ flags\ =\ StreamFlag::None)}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ :\ flags\_(flags),\ name\_(name),}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ dev\_(std::make\_unique<V4L2VideoDevice>(dev)),\ id\_(0),}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ swDownscale\_(0)}
+\DoxyCodeLine{00098\ \ \ \ \ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ setFlags(\mbox{\hyperlink{classlibcamera_1_1Flags}{StreamFlags}}\ flags);}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{void}\ clearFlags(\mbox{\hyperlink{classlibcamera_1_1Flags}{StreamFlags}}\ flags);}
+\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Flags}{StreamFlags}}\ getFlags()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1V4L2VideoDevice}{V4L2VideoDevice}}\ *dev()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&name()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ resetBuffers();}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ swDownscale()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{void}\ setSwDownscale(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ swDownscale);}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{void}\ setExportedBuffers(std::vector<std::unique\_ptr<FrameBuffer>>\ *buffers);}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keyword}{const}\ BufferMap\ \&getBuffers()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ getBufferId(\mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{FrameBuffer}}\ *buffer)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{void}\ setExportedBuffer(\mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{FrameBuffer}}\ *buffer);}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{int}\ prepareBuffers(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ count);}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{int}\ queueBuffer(\mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{FrameBuffer}}\ *buffer);}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{void}\ returnBuffer(\mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{FrameBuffer}}\ *buffer);}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structlibcamera_1_1RPi_1_1BufferObject}{BufferObject}}\ \&getBuffer(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structlibcamera_1_1RPi_1_1BufferObject}{BufferObject}}\ \&acquireBuffer();}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{int}\ queueAllBuffers();}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{void}\ releaseBuffers();}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{comment}{/*\ For\ error\ handling.\ */}}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structlibcamera_1_1RPi_1_1BufferObject}{BufferObject}}\ errorBufferObject;}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{void}\ bufferEmplace(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ \mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{FrameBuffer}}\ *buffer);}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{void}\ clearBuffers();}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{int}\ queueToDevice(\mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{FrameBuffer}}\ *buffer);}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Flags}{StreamFlags}}\ flags\_;}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{comment}{/*\ Stream\ name\ identifier.\ */}}
+\DoxyCodeLine{00139\ \ \ \ \ std::string\ name\_;}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{comment}{/*\ The\ actual\ device\ stream.\ */}}
+\DoxyCodeLine{00142\ \ \ \ \ std::unique\_ptr<V4L2VideoDevice>\ dev\_;}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{comment}{/*\ Tracks\ a\ unique\ id\ key\ for\ the\ bufferMap\_\ */}}
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ id\_;}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{comment}{/*\ Power\ of\ 2\ greater\ than\ one\ if\ software\ downscaling\ will\ be\ required.\ */}}
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ swDownscale\_;}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{comment}{/*\ All\ frame\ buffers\ associated\ with\ this\ device\ stream.\ */}}
+\DoxyCodeLine{00151\ \ \ \ \ BufferMap\ bufferMap\_;}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00154\ \textcolor{comment}{\ \ \ \ \ *\ List\ of\ frame\ buffers\ that\ we\ can\ use\ if\ none\ have\ been\ provided\ by}}
+\DoxyCodeLine{00155\ \textcolor{comment}{\ \ \ \ \ *\ the\ application\ for\ external\ streams.\ This\ is\ populated\ by\ the}}
+\DoxyCodeLine{00156\ \textcolor{comment}{\ \ \ \ \ *\ buffers\ exported\ internally.}}
+\DoxyCodeLine{00157\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00158\ \ \ \ \ std::queue<FrameBuffer\ *>\ availableBuffers\_;}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00161\ \textcolor{comment}{\ \ \ \ \ *\ List\ of\ frame\ buffers\ that\ are\ to\ be\ queued\ into\ the\ device\ from\ a\ Request.}}
+\DoxyCodeLine{00162\ \textcolor{comment}{\ \ \ \ \ *\ A\ nullptr\ indicates\ any\ internal\ buffer\ can\ be\ used\ (from\ availableBuffers\_),}}
+\DoxyCodeLine{00163\ \textcolor{comment}{\ \ \ \ \ *\ whereas\ a\ valid\ pointer\ indicates\ an\ external\ buffer\ to\ be\ queued.}}
+\DoxyCodeLine{00164\ \textcolor{comment}{\ \ \ \ \ *}}
+\DoxyCodeLine{00165\ \textcolor{comment}{\ \ \ \ \ *\ Ordering\ buffers\ to\ be\ queued\ is\ important\ here\ as\ it\ must\ match\ the}}
+\DoxyCodeLine{00166\ \textcolor{comment}{\ \ \ \ \ *\ requests\ coming\ from\ the\ application.}}
+\DoxyCodeLine{00167\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00168\ \ \ \ \ std::queue<FrameBuffer\ *>\ requestBuffers\_;}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00171\ \textcolor{comment}{\ \ \ \ \ *\ This\ is\ a\ list\ of\ buffers\ exported\ internally.\ Need\ to\ keep\ this\ around}}
+\DoxyCodeLine{00172\ \textcolor{comment}{\ \ \ \ \ *\ as\ the\ stream\ needs\ to\ maintain\ ownership\ of\ these\ buffers.}}
+\DoxyCodeLine{00173\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00174\ \ \ \ \ std::vector<std::unique\_ptr<FrameBuffer>>\ internalBuffers\_;}
+\DoxyCodeLine{00175\ \};}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00178\ \textcolor{comment}{\ *\ The\ following\ class\ is\ just\ a\ convenient\ (and\ typesafe)\ array\ of\ device}}
+\DoxyCodeLine{00179\ \textcolor{comment}{\ *\ streams\ indexed\ with\ an\ enum\ class.}}
+\DoxyCodeLine{00180\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00181\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ E,\ std::\textcolor{keywordtype}{size\_t}\ N>}
+\DoxyCodeLine{00182\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1RPi_1_1Device}{Device}}\ :\ \textcolor{keyword}{public}\ std::array<class\ Stream,\ N>}
+\DoxyCodeLine{00183\ \{}
+\DoxyCodeLine{00184\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00185\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1RPi_1_1Stream}{Stream}}\ \&operator[](E\ e)}
+\DoxyCodeLine{00186\ \ \ \ \ \{}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::array<class\ Stream,\ N>::operator[](utils::to\_underlying(e));}
+\DoxyCodeLine{00188\ \ \ \ \ \}}
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1RPi_1_1Stream}{Stream}}\ \&operator[](E\ e)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00190\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::array<class\ Stream,\ N>::operator[](utils::to\_underlying(e));}
+\DoxyCodeLine{00192\ \ \ \ \ \}}
+\DoxyCodeLine{00193\ \};}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \}\ \textcolor{comment}{/*\ namespace\ RPi\ */}}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ \mbox{\hyperlink{flags_8h_af343143bcb24209ae99e7bf7e28936a1}{LIBCAMERA\_FLAGS\_ENABLE\_OPERATORS}}(RPi::Stream::StreamFlag)}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \}\ \textcolor{comment}{/*\ namespace\ libcamera\ */}}
+
+\end{DoxyCode}

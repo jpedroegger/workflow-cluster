@@ -1,0 +1,41 @@
+\doxysection{af\+\_\+status.\+h}
+\hypertarget{af__status_8h_source}{}\label{af__status_8h_source}\index{src/peripherals/camera/libcamera/src/ipa/rpi/controller/af\_status.h@{src/peripherals/camera/libcamera/src/ipa/rpi/controller/af\_status.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ BSD-\/2-\/Clause\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2022,\ Raspberry\ Pi\ Ltd}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ AF\ control\ algorithm\ status}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ The\ AF\ algorithm\ should\ post\ the\ following\ structure\ into\ the\ image's}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ "{}af.status"{}\ metadata.\ lensSetting\ should\ control\ the\ lens.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{enum\ class}\ AfState\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ Idle\ =\ 0,}
+\DoxyCodeLine{00018\ \ \ \ \ Scanning,}
+\DoxyCodeLine{00019\ \ \ \ \ Focused,}
+\DoxyCodeLine{00020\ \ \ \ \ Failed}
+\DoxyCodeLine{00021\ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{enum\ class}\ AfPauseState\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ Running\ =\ 0,}
+\DoxyCodeLine{00025\ \ \ \ \ Pausing,}
+\DoxyCodeLine{00026\ \ \ \ \ Paused}
+\DoxyCodeLine{00027\ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structAfStatus}{AfStatus}}\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{/*\ state\ for\ reporting\ */}}
+\DoxyCodeLine{00031\ \ \ \ \ AfState\ state;}
+\DoxyCodeLine{00032\ \ \ \ \ AfPauseState\ pauseState;}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{/*\ lensSetting\ should\ be\ sent\ to\ the\ lens\ driver,\ when\ valid\ */}}
+\DoxyCodeLine{00034\ \ \ \ \ std::optional<int>\ lensSetting;}
+\DoxyCodeLine{00035\ \};}
+
+\end{DoxyCode}

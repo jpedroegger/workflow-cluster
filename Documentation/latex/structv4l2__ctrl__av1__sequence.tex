@@ -1,0 +1,42 @@
+\doxysection{v4l2\+\_\+ctrl\+\_\+av1\+\_\+sequence Struct Reference}
+\hypertarget{structv4l2__ctrl__av1__sequence}{}\label{structv4l2__ctrl__av1__sequence}\index{v4l2\_ctrl\_av1\_sequence@{v4l2\_ctrl\_av1\_sequence}}
+
+
+{\ttfamily \#include $<$v4l2-\/controls.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structv4l2__ctrl__av1__sequence_a287020320fc706db2d200548ae9474a3}\label{structv4l2__ctrl__av1__sequence_a287020320fc706db2d200548ae9474a3} 
+\+\_\+\+\_\+u32 {\bfseries flags}
+\item 
+\Hypertarget{structv4l2__ctrl__av1__sequence_af23bac4e7d467b5dc49ab832f1e185e9}\label{structv4l2__ctrl__av1__sequence_af23bac4e7d467b5dc49ab832f1e185e9} 
+\+\_\+\+\_\+u8 {\bfseries seq\+\_\+profile}
+\item 
+\Hypertarget{structv4l2__ctrl__av1__sequence_adb33d6111606a187ca4eee4273ad520e}\label{structv4l2__ctrl__av1__sequence_adb33d6111606a187ca4eee4273ad520e} 
+\+\_\+\+\_\+u8 {\bfseries order\+\_\+hint\+\_\+bits}
+\item 
+\Hypertarget{structv4l2__ctrl__av1__sequence_a77e973abceb9ce42adcd1d923998d406}\label{structv4l2__ctrl__av1__sequence_a77e973abceb9ce42adcd1d923998d406} 
+\+\_\+\+\_\+u8 {\bfseries bit\+\_\+depth}
+\item 
+\Hypertarget{structv4l2__ctrl__av1__sequence_a7d86d24e5d6819b802a94135203af4de}\label{structv4l2__ctrl__av1__sequence_a7d86d24e5d6819b802a94135203af4de} 
+\+\_\+\+\_\+u8 {\bfseries reserved}
+\item 
+\Hypertarget{structv4l2__ctrl__av1__sequence_a778dd3bdc8748f9f5157f0b4277476dd}\label{structv4l2__ctrl__av1__sequence_a778dd3bdc8748f9f5157f0b4277476dd} 
+\+\_\+\+\_\+u16 {\bfseries max\+\_\+frame\+\_\+width\+\_\+minus\+\_\+1}
+\item 
+\Hypertarget{structv4l2__ctrl__av1__sequence_a486fa33cd701c216413905ec1c76d212}\label{structv4l2__ctrl__av1__sequence_a486fa33cd701c216413905ec1c76d212} 
+\+\_\+\+\_\+u16 {\bfseries max\+\_\+frame\+\_\+height\+\_\+minus\+\_\+1}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structv4l2__ctrl__av1__sequence}{v4l2\+\_\+ctrl\+\_\+av1\+\_\+sequence} -\/ AV1 Sequence
+
+Represents an AV1 Sequence OBU. See section 5.\+5 "{}\+Sequence header OBU syntax"{} for more details.
+
+@flags\+: See V4\+L2\+\_\+\+AV1\+\_\+\+SEQUENCE\+\_\+\+FLAG\+\_\+\{\}. @seq\+\_\+profile\+: specifies the features that can be used in the coded video sequence. @order\+\_\+hint\+\_\+bits\+: specifies the number of bits used for the order\+\_\+hint field at each frame. @bit\+\_\+depth\+: the bitdepth to use for the sequence as described in section 5.\+5.\+2 "{}\+Color config syntax"{}. @reserved\+: padding field. Should be zeroed by applications. @max\+\_\+frame\+\_\+width\+\_\+minus\+\_\+1\+: specifies the maximum frame width minus 1 for the frames represented by this sequence header. @max\+\_\+frame\+\_\+height\+\_\+minus\+\_\+1\+: specifies the maximum frame height minus 1 for the frames represented by this sequence header. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/v4l2-\/controls.\+h\end{DoxyCompactItemize}

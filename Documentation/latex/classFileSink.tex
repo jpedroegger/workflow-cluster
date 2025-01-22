@@ -1,0 +1,89 @@
+\doxysection{File\+Sink Class Reference}
+\hypertarget{classFileSink}{}\label{classFileSink}\index{FileSink@{FileSink}}
+Inheritance diagram for File\+Sink\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classFileSink}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classFileSink_a4dab0c8a05dd3861cef7090585a5f012}\label{classFileSink_a4dab0c8a05dd3861cef7090585a5f012} 
+{\bfseries File\+Sink} (const \mbox{\hyperlink{classlibcamera_1_1Camera}{libcamera\+::\+Camera}} \texorpdfstring{$\ast$}{*}camera, const std\+::map$<$ const \mbox{\hyperlink{classlibcamera_1_1Stream}{libcamera\+::\+Stream}} \texorpdfstring{$\ast$}{*}, std\+::string $>$ \&stream\+Names)
+\item 
+\Hypertarget{classFileSink_aff1a923b8eebfcf348ab766bcbca47f2}\label{classFileSink_aff1a923b8eebfcf348ab766bcbca47f2} 
+int {\bfseries set\+File\+Pattern} (const std\+::string \&pattern)
+\item 
+int \mbox{\hyperlink{classFileSink_a9badd548014b11957ea684ada0936a3f}{configure}} (const \mbox{\hyperlink{classlibcamera_1_1CameraConfiguration}{libcamera\+::\+Camera\+Configuration}} \&config) override
+\item 
+void \mbox{\hyperlink{classFileSink_a0e61faf45b766fa6dba16cd64f79137f}{map\+Buffer}} (\mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{libcamera\+::\+Frame\+Buffer}} \texorpdfstring{$\ast$}{*}buffer) override
+\item 
+bool \mbox{\hyperlink{classFileSink_a594a79174bc5a275227f9c01510aab64}{process\+Request}} (\mbox{\hyperlink{classlibcamera_1_1Request}{libcamera\+::\+Request}} \texorpdfstring{$\ast$}{*}request) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classFrameSink}{Frame\+Sink}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual int {\bfseries start} ()
+\item 
+virtual int {\bfseries stop} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classFrameSink}{Frame\+Sink}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1Signal}{libcamera\+::\+Signal}}$<$ \mbox{\hyperlink{classlibcamera_1_1Request}{libcamera\+::\+Request}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries request\+Processed}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classFileSink_a9badd548014b11957ea684ada0936a3f}\label{classFileSink_a9badd548014b11957ea684ada0936a3f} 
+\index{FileSink@{FileSink}!configure@{configure}}
+\index{configure@{configure}!FileSink@{FileSink}}
+\doxysubsubsection{\texorpdfstring{configure()}{configure()}}
+{\footnotesize\ttfamily int File\+Sink\+::configure (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1CameraConfiguration}{libcamera\+::\+Camera\+Configuration}} \&}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classFrameSink}{Frame\+Sink}}.
+
+\Hypertarget{classFileSink_a0e61faf45b766fa6dba16cd64f79137f}\label{classFileSink_a0e61faf45b766fa6dba16cd64f79137f} 
+\index{FileSink@{FileSink}!mapBuffer@{mapBuffer}}
+\index{mapBuffer@{mapBuffer}!FileSink@{FileSink}}
+\doxysubsubsection{\texorpdfstring{mapBuffer()}{mapBuffer()}}
+{\footnotesize\ttfamily void File\+Sink\+::map\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{libcamera\+::\+Frame\+Buffer}} \texorpdfstring{$\ast$}{*}}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classFrameSink}{Frame\+Sink}}.
+
+\Hypertarget{classFileSink_a594a79174bc5a275227f9c01510aab64}\label{classFileSink_a594a79174bc5a275227f9c01510aab64} 
+\index{FileSink@{FileSink}!processRequest@{processRequest}}
+\index{processRequest@{processRequest}!FileSink@{FileSink}}
+\doxysubsubsection{\texorpdfstring{processRequest()}{processRequest()}}
+{\footnotesize\ttfamily bool File\+Sink\+::process\+Request (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1Request}{libcamera\+::\+Request}} \texorpdfstring{$\ast$}{*}}]{request }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em request} & The request\\
+\hline
+\end{DoxyParams}
+This function is called to instruct the sink to process a request. The sink may process the request synchronously or queue it for asynchronous processing.
+
+When the request is processed synchronously, this function shall return true. The {\itshape request} shall not be accessed by the \doxylink{classFrameSink}{Frame\+Sink} after the function returns.
+
+When the request is processed asynchronously, the \doxylink{classFrameSink}{Frame\+Sink} temporarily takes ownership of the {\itshape request}. The function shall return false, and the \doxylink{classFrameSink}{Frame\+Sink} shall emit the request\+Processed signal when the request processing completes. If the stop() function is called before the request processing completes, it shall release the request synchronously.
+
+\begin{DoxyReturn}{Returns}
+True if the request has been processed synchronously, false if processing has been queued 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFrameSink_a612e4d9d9716ed74984cc08ca0fd988e}{Frame\+Sink}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/apps/cam/file\+\_\+sink.\+h\item 
+src/peripherals/camera/libcamera/src/apps/cam/file\+\_\+sink.\+cpp\end{DoxyCompactItemize}

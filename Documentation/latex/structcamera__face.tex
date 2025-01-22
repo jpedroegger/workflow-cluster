@@ -1,0 +1,76 @@
+\doxysection{camera\+\_\+face Struct Reference}
+\hypertarget{structcamera__face}{}\label{structcamera__face}\index{camera\_face@{camera\_face}}
+
+
+{\ttfamily \#include $<$camera.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \mbox{\hyperlink{structcamera__face_a1ac7c42a7a73e04b4ca985fa77da448a}{rect}} \mbox{[}4\mbox{]}
+\item 
+int32\+\_\+t \mbox{\hyperlink{structcamera__face_aa5462b11ba73045295a789065af29a55}{score}}
+\item 
+int32\+\_\+t \mbox{\hyperlink{structcamera__face_aee897cf90e6785a226b24759041bb7ee}{id}}
+\item 
+int32\+\_\+t \mbox{\hyperlink{structcamera__face_ae8eef0cbe0619a05ff99e6fd3a75b711}{left\+\_\+eye}} \mbox{[}2\mbox{]}
+\item 
+int32\+\_\+t \mbox{\hyperlink{structcamera__face_abd98b692f571b49dd84d3165a8c14315}{right\+\_\+eye}} \mbox{[}2\mbox{]}
+\item 
+int32\+\_\+t \mbox{\hyperlink{structcamera__face_a1aa70fd3870c424edd8a4623bf946771}{mouth}} \mbox{[}2\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The information of a face from camera face detection. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structcamera__face_aee897cf90e6785a226b24759041bb7ee}\label{structcamera__face_aee897cf90e6785a226b24759041bb7ee} 
+\index{camera\_face@{camera\_face}!id@{id}}
+\index{id@{id}!camera\_face@{camera\_face}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily int32\+\_\+t camera\+\_\+face\+::id}
+
+An unique id per face while the face is visible to the tracker. If the face leaves the field-\/of-\/view and comes back, it will get a new id. If the value is 0, id is not supported. \Hypertarget{structcamera__face_ae8eef0cbe0619a05ff99e6fd3a75b711}\label{structcamera__face_ae8eef0cbe0619a05ff99e6fd3a75b711} 
+\index{camera\_face@{camera\_face}!left\_eye@{left\_eye}}
+\index{left\_eye@{left\_eye}!camera\_face@{camera\_face}}
+\doxysubsubsection{\texorpdfstring{left\_eye}{left\_eye}}
+{\footnotesize\ttfamily int32\+\_\+t camera\+\_\+face\+::left\+\_\+eye\mbox{[}2\mbox{]}}
+
+The coordinates of the center of the left eye. The range is -\/1000 to
+\begin{DoxyEnumerate}
+\item -\/2000, -\/2000 if this is not supported. 
+\end{DoxyEnumerate}\Hypertarget{structcamera__face_a1aa70fd3870c424edd8a4623bf946771}\label{structcamera__face_a1aa70fd3870c424edd8a4623bf946771} 
+\index{camera\_face@{camera\_face}!mouth@{mouth}}
+\index{mouth@{mouth}!camera\_face@{camera\_face}}
+\doxysubsubsection{\texorpdfstring{mouth}{mouth}}
+{\footnotesize\ttfamily int32\+\_\+t camera\+\_\+face\+::mouth\mbox{[}2\mbox{]}}
+
+The coordinates of the center of the mouth. The range is -\/1000 to 1000. -\/2000, -\/2000 if this is not supported. \Hypertarget{structcamera__face_a1ac7c42a7a73e04b4ca985fa77da448a}\label{structcamera__face_a1ac7c42a7a73e04b4ca985fa77da448a} 
+\index{camera\_face@{camera\_face}!rect@{rect}}
+\index{rect@{rect}!camera\_face@{camera\_face}}
+\doxysubsubsection{\texorpdfstring{rect}{rect}}
+{\footnotesize\ttfamily int32\+\_\+t camera\+\_\+face\+::rect\mbox{[}4\mbox{]}}
+
+Bounds of the face \mbox{[}left, top, right, bottom\mbox{]}. (-\/1000, -\/1000) represents the top-\/left of the camera field of view, and (1000, 1000) represents the bottom-\/right of the field of view. The width and height cannot be 0 or negative. This is supported by both hardware and software face detection.
+
+The direction is relative to the sensor orientation, that is, what the sensor sees. The direction is not affected by the rotation or mirroring of CAMERA\+\_\+\+CMD\+\_\+\+SET\+\_\+\+DISPLAY\+\_\+\+ORIENTATION. \Hypertarget{structcamera__face_abd98b692f571b49dd84d3165a8c14315}\label{structcamera__face_abd98b692f571b49dd84d3165a8c14315} 
+\index{camera\_face@{camera\_face}!right\_eye@{right\_eye}}
+\index{right\_eye@{right\_eye}!camera\_face@{camera\_face}}
+\doxysubsubsection{\texorpdfstring{right\_eye}{right\_eye}}
+{\footnotesize\ttfamily int32\+\_\+t camera\+\_\+face\+::right\+\_\+eye\mbox{[}2\mbox{]}}
+
+The coordinates of the center of the right eye. The range is -\/1000 to
+\begin{DoxyEnumerate}
+\item -\/2000, -\/2000 if this is not supported. 
+\end{DoxyEnumerate}\Hypertarget{structcamera__face_aa5462b11ba73045295a789065af29a55}\label{structcamera__face_aa5462b11ba73045295a789065af29a55} 
+\index{camera\_face@{camera\_face}!score@{score}}
+\index{score@{score}!camera\_face@{camera\_face}}
+\doxysubsubsection{\texorpdfstring{score}{score}}
+{\footnotesize\ttfamily int32\+\_\+t camera\+\_\+face\+::score}
+
+The confidence level of the face. The range is 1 to 100. 100 is the highest confidence. This is supported by both hardware and software face detection. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/android/system/core/include/system/camera.\+h\end{DoxyCompactItemize}

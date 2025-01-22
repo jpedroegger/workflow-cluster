@@ -1,0 +1,24 @@
+\doxysection{ipu3\+\_\+uapi\+\_\+gamma\+\_\+corr\+\_\+lut Struct Reference}
+\hypertarget{structipu3__uapi__gamma__corr__lut}{}\label{structipu3__uapi__gamma__corr__lut}\index{ipu3\_uapi\_gamma\_corr\_lut@{ipu3\_uapi\_gamma\_corr\_lut}}
+
+
+{\ttfamily \#include $<$intel-\/ipu3.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structipu3__uapi__gamma__corr__lut_a049f60f34a035bad116f3e8a4a395e65}\label{structipu3__uapi__gamma__corr__lut_a049f60f34a035bad116f3e8a4a395e65} 
+\+\_\+\+\_\+u16 {\bfseries lut} \mbox{[}IPU3\+\_\+\+UAPI\+\_\+\+GAMMA\+\_\+\+CORR\+\_\+\+LUT\+\_\+\+ENTRIES\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structipu3__uapi__gamma__corr__lut}{ipu3\+\_\+uapi\+\_\+gamma\+\_\+corr\+\_\+lut} -\/ Per-\/pixel tone mapping implemented as LUT.
+
+@lut\+: 256 tabulated values of the gamma function. LUT\mbox{[}1\mbox{]}.. LUT\mbox{[}256\mbox{]} format u13.\+0, range \mbox{[}0, 8191\mbox{]}.
+
+The tone mapping operation is done by a Piece wise linear graph that is implemented as a lookup table(\+LUT). The pixel component input intensity is the X-\/axis of the graph which is the table entry. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/intel-\/ipu3.\+h\end{DoxyCompactItemize}

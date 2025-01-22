@@ -1,0 +1,33 @@
+\doxysection{ipu3\+\_\+uapi\+\_\+unsharp\+\_\+coef0 Struct Reference}
+\hypertarget{structipu3__uapi__unsharp__coef0}{}\label{structipu3__uapi__unsharp__coef0}\index{ipu3\_uapi\_unsharp\_coef0@{ipu3\_uapi\_unsharp\_coef0}}
+
+
+{\ttfamily \#include $<$intel-\/ipu3.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structipu3__uapi__unsharp__coef0_afc5f8c4e017150873e47c39adfcc6ee1}\label{structipu3__uapi__unsharp__coef0_afc5f8c4e017150873e47c39adfcc6ee1} 
+\+\_\+\+\_\+u32 {\bfseries c00}\+:9
+\item 
+\Hypertarget{structipu3__uapi__unsharp__coef0_aeaa0825ae215c1a3f0a8e459331804d7}\label{structipu3__uapi__unsharp__coef0_aeaa0825ae215c1a3f0a8e459331804d7} 
+\+\_\+\+\_\+u32 {\bfseries c01}\+:9
+\item 
+\Hypertarget{structipu3__uapi__unsharp__coef0_ac4ab016e81aa064c7b4d3669094ea333}\label{structipu3__uapi__unsharp__coef0_ac4ab016e81aa064c7b4d3669094ea333} 
+\+\_\+\+\_\+u32 {\bfseries c02}\+:9
+\item 
+\Hypertarget{structipu3__uapi__unsharp__coef0_ade0551365e407208d3e0ee5fa91b4a56}\label{structipu3__uapi__unsharp__coef0_ade0551365e407208d3e0ee5fa91b4a56} 
+\+\_\+\+\_\+u32 {\bfseries reserved}\+:5
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structipu3__uapi__unsharp__coef0}{ipu3\+\_\+uapi\+\_\+unsharp\+\_\+coef0} -\/ Unsharp mask coefficients
+
+@c00\+: Coeff11, s0.\+8, range \mbox{[}-\/255, 255\mbox{]}, default 1. @c01\+: Coeff12, s0.\+8, range \mbox{[}-\/255, 255\mbox{]}, default 5. @c02\+: Coeff13, s0.\+8, range \mbox{[}-\/255, 255\mbox{]}, default 9. @reserved\+: reserved
+
+Configurable registers for common sharpening support. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/intel-\/ipu3.\+h\end{DoxyCompactItemize}

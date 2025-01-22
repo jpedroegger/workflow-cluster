@@ -1,0 +1,77 @@
+\doxysection{message.\+h}
+\hypertarget{message_8h_source}{}\label{message_8h_source}\index{src/peripherals/camera/libcamera/include/libcamera/base/message.h@{src/peripherals/camera/libcamera/include/libcamera/base/message.h}}
+\mbox{\hyperlink{message_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2019,\ Google\ Inc.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Message\ queue\ support}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <atomic>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <libcamera/base/private.h>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{bound__method_8h}{libcamera/base/bound\_method.h}}>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacelibcamera}{libcamera}}\ \{}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }BoundMethodBase;}
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }Object;}
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }Semaphore;}
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }Thread;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1Message}{Message}}}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5}{Type}}\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5a2cf8f48814353e436d4f5fc4b9f8b713}{None}}\ =\ 0,}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1InvokeMessage}{InvokeMessage}}\ =\ 1,}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5a5f1a6bad8554e6afcc20a1713f08cbee}{ThreadMoveMessage}}\ =\ 2,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5a000ca6c05658dd1d019315707eb449d7}{DeferredDelete}}\ =\ 3,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5ad7c9da4e25599a32fe48308e6da49cf1}{UserMessage}}\ =\ 1000,}
+\DoxyCodeLine{00032\ \ \ \ \ \};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Message}{Message}}(\mbox{\hyperlink{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5}{Type}}\ \mbox{\hyperlink{classlibcamera_1_1Message_a5e599ac6c441598d5a2c8f14e54e22c5}{type}});}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classlibcamera_1_1Message}{\string~Message}}();}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5}{Type}}\ \mbox{\hyperlink{classlibcamera_1_1Message_a5e599ac6c441598d5a2c8f14e54e22c5}{type}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ type\_;\ \}}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Object}{Object}}\ *\mbox{\hyperlink{classlibcamera_1_1Message_a033904a82d0de72889559b6aafeeaae8}{receiver}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ receiver\_;\ \}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5}{Type}}\ \mbox{\hyperlink{classlibcamera_1_1Message_ab05060113830c8501f0a0049084ad11b}{registerMessageType}}();}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1Thread}{Thread}};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5}{Type}}\ type\_;}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Object}{Object}}\ *receiver\_;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{static}\ std::atomic\_uint\ nextUserType\_;}
+\DoxyCodeLine{00049\ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1InvokeMessage}{InvokeMessage}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classlibcamera_1_1Message}{Message}}}
+\DoxyCodeLine{00052\ \{}
+\DoxyCodeLine{00053\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5a3f129f8240a0f00eca5f25c82032be2e}{InvokeMessage}}(\mbox{\hyperlink{classlibcamera_1_1BoundMethodBase}{BoundMethodBase}}\ *method,}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<BoundMethodPackBase>\ pack,}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Semaphore}{Semaphore}}\ *\mbox{\hyperlink{classlibcamera_1_1InvokeMessage_a6d68547e0d9c52a91519147736b6781a}{semaphore}}\ =\ \textcolor{keyword}{nullptr},}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ deleteMethod\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1InvokeMessage}{\string~InvokeMessage}}();}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Semaphore}{Semaphore}}\ *\mbox{\hyperlink{classlibcamera_1_1InvokeMessage_a6d68547e0d9c52a91519147736b6781a}{semaphore}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ semaphore\_;\ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1InvokeMessage_aa52078afe4e7ad33512aad586e99fcbe}{invoke}}();}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1BoundMethodBase}{BoundMethodBase}}\ *method\_;}
+\DoxyCodeLine{00066\ \ \ \ \ std::shared\_ptr<BoundMethodPackBase>\ pack\_;}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Semaphore}{Semaphore}}\ *semaphore\_;}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{bool}\ deleteMethod\_;}
+\DoxyCodeLine{00069\ \};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \}\ \textcolor{comment}{/*\ namespace\ libcamera\ */}}
+
+\end{DoxyCode}

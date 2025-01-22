@@ -1,0 +1,46 @@
+\doxysection{dma\+\_\+buf\+\_\+sync Struct Reference}
+\hypertarget{structdma__buf__sync}{}\label{structdma__buf__sync}\index{dma\_buf\_sync@{dma\_buf\_sync}}
+
+
+{\ttfamily \#include $<$dma-\/buf.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\+\_\+\+\_\+u64 \mbox{\hyperlink{structdma__buf__sync_a50414538a6470064e4e115cecdadba18}{flags}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structdma__buf__sync}{dma\+\_\+buf\+\_\+sync} -\/ Synchronize with CPU access.
+
+When a DMA buffer is accessed from the CPU via mmap, it is not always possible to guarantee coherency between the CPU-\/visible map and underlying memory. To manage coherency, DMA\+\_\+\+BUF\+\_\+\+IOCTL\+\_\+\+SYNC must be used to bracket any CPU access to give the kernel the chance to shuffle memory around if needed.
+
+Prior to accessing the map, the client must call DMA\+\_\+\+BUF\+\_\+\+IOCTL\+\_\+\+SYNC with DMA\+\_\+\+BUF\+\_\+\+SYNC\+\_\+\+START and the appropriate read/write flags. Once the access is complete, the client should call DMA\+\_\+\+BUF\+\_\+\+IOCTL\+\_\+\+SYNC with DMA\+\_\+\+BUF\+\_\+\+SYNC\+\_\+\+END and the same read/write flags.
+
+The synchronization provided via DMA\+\_\+\+BUF\+\_\+\+IOCTL\+\_\+\+SYNC only provides cache coherency. It does not prevent other processes or devices from accessing the memory at the same time. If synchronization with a GPU or other device driver is required, it is the client\textquotesingle{}s responsibility to wait for buffer to be ready for reading or writing before calling this ioctl with DMA\+\_\+\+BUF\+\_\+\+SYNC\+\_\+\+START. Likewise, the client must ensure that follow-\/up work is not submitted to GPU or other device driver until after this ioctl has been called with DMA\+\_\+\+BUF\+\_\+\+SYNC\+\_\+\+END?
+
+If the driver or API with which the client is interacting uses implicit synchronization, waiting for prior work to complete can be done via poll() on the DMA buffer file descriptor. If the driver or API requires explicit synchronization, the client may have to wait on a sync\+\_\+file or other synchronization primitive outside the scope of the DMA buffer API. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structdma__buf__sync_a50414538a6470064e4e115cecdadba18}\label{structdma__buf__sync_a50414538a6470064e4e115cecdadba18} 
+\index{dma\_buf\_sync@{dma\_buf\_sync}!flags@{flags}}
+\index{flags@{flags}!dma\_buf\_sync@{dma\_buf\_sync}}
+\doxysubsubsection{\texorpdfstring{flags}{flags}}
+{\footnotesize\ttfamily \+\_\+\+\_\+u64 dma\+\_\+buf\+\_\+sync\+::flags}
+
+@flags\+: Set of access flags
+
+DMA\+\_\+\+BUF\+\_\+\+SYNC\+\_\+\+START\+: Indicates the start of a map access session.
+
+DMA\+\_\+\+BUF\+\_\+\+SYNC\+\_\+\+END\+: Indicates the end of a map access session.
+
+DMA\+\_\+\+BUF\+\_\+\+SYNC\+\_\+\+READ\+: Indicates that the mapped DMA buffer will be read by the client via the CPU map.
+
+DMA\+\_\+\+BUF\+\_\+\+SYNC\+\_\+\+WRITE\+: Indicates that the mapped DMA buffer will be written by the client via the CPU map.
+
+DMA\+\_\+\+BUF\+\_\+\+SYNC\+\_\+\+RW\+: An alias for DMA\+\_\+\+BUF\+\_\+\+SYNC\+\_\+\+READ \texorpdfstring{$\vert$}{|} DMA\+\_\+\+BUF\+\_\+\+SYNC\+\_\+\+WRITE. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/dma-\/buf.\+h\end{DoxyCompactItemize}

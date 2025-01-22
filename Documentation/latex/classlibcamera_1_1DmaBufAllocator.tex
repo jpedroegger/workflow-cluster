@@ -1,0 +1,158 @@
+\doxysection{libcamera\+::Dma\+Buf\+Allocator Class Reference}
+\hypertarget{classlibcamera_1_1DmaBufAllocator}{}\label{classlibcamera_1_1DmaBufAllocator}\index{libcamera::DmaBufAllocator@{libcamera::DmaBufAllocator}}
+
+
+Helper class for dma-\/buf allocations.  
+
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{classlibcamera_1_1DmaBufAllocator_a9851564b25894680b3691d7fc9d92a21}{Dma\+Buf\+Allocator\+Flag}} \{ \mbox{\hyperlink{classlibcamera_1_1DmaBufAllocator_a9851564b25894680b3691d7fc9d92a21a3779954653a55f91b33ea1031566a944}{Cma\+Heap}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \mbox{\hyperlink{classlibcamera_1_1DmaBufAllocator_a9851564b25894680b3691d7fc9d92a21ab64c7aa121df3b9c86823aa5c3c3ccf8}{System\+Heap}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \mbox{\hyperlink{classlibcamera_1_1DmaBufAllocator_a9851564b25894680b3691d7fc9d92a21ad7a6c735cec78469e5fe17e2d4e3cd04}{UDma\+Buf}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+ \}
+\begin{DoxyCompactList}\small\item\em Type of the dma-\/buf provider. \end{DoxyCompactList}\item 
+\Hypertarget{classlibcamera_1_1DmaBufAllocator_a944f9d4c3add0ccaa8db6ece5f5f7fb8}\label{classlibcamera_1_1DmaBufAllocator_a944f9d4c3add0ccaa8db6ece5f5f7fb8} 
+using {\bfseries Dma\+Buf\+Allocator\+Flags} = \mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}}$<$ \mbox{\hyperlink{classlibcamera_1_1DmaBufAllocator_a9851564b25894680b3691d7fc9d92a21}{Dma\+Buf\+Allocator\+Flag}} $>$
+\begin{DoxyCompactList}\small\item\em A bitwise combination of \doxylink{classlibcamera_1_1DmaBufAllocator_a9851564b25894680b3691d7fc9d92a21}{Dma\+Buf\+Allocator\+::\+Dma\+Buf\+Allocator\+Flag} values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1DmaBufAllocator_a60c619b7038e57ff4ef24c5f4739f0af}{Dma\+Buf\+Allocator}} (\mbox{\hyperlink{classlibcamera_1_1DmaBufAllocator_a944f9d4c3add0ccaa8db6ece5f5f7fb8}{Dma\+Buf\+Allocator\+Flags}} flags=\mbox{\hyperlink{classlibcamera_1_1DmaBufAllocator_a9851564b25894680b3691d7fc9d92a21a3779954653a55f91b33ea1031566a944}{Dma\+Buf\+Allocator\+Flag\+::\+Cma\+Heap}})
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{classlibcamera_1_1DmaBufAllocator}{Dma\+Buf\+Allocator} of a given type. \end{DoxyCompactList}\item 
+\Hypertarget{classlibcamera_1_1DmaBufAllocator_aba2a6db954305ffe9b39cf3d53d3bd65}\label{classlibcamera_1_1DmaBufAllocator_aba2a6db954305ffe9b39cf3d53d3bd65} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Dma\+Buf\+Allocator} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \doxylink{classlibcamera_1_1DmaBufAllocator}{Dma\+Buf\+Allocator} instance. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlibcamera_1_1DmaBufAllocator_a3a909a52edae04f849b88c26f68ba647}{is\+Valid}} () const
+\begin{DoxyCompactList}\small\item\em Check if the \doxylink{classlibcamera_1_1DmaBufAllocator}{Dma\+Buf\+Allocator} instance is valid. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1UniqueFD}{Unique\+FD}} \mbox{\hyperlink{classlibcamera_1_1DmaBufAllocator_aced40e97819e7c3bf9bfad605599d321}{alloc}} (const char \texorpdfstring{$\ast$}{*}name, std\+::size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Allocate a dma-\/buf from the \doxylink{classlibcamera_1_1DmaBufAllocator}{Dma\+Buf\+Allocator}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classlibcamera_1_1DmaBufAllocator_a5e1a0a9ab8d3494e4a73fbabe5cbb07e}{export\+Buffers}} (unsigned int count, const std\+::vector$<$ unsigned int $>$ \&plane\+Sizes, std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} $>$ $>$ \texorpdfstring{$\ast$}{*}buffers)
+\begin{DoxyCompactList}\small\item\em Allocate and export buffers from the \doxylink{classlibcamera_1_1DmaBufAllocator}{Dma\+Buf\+Allocator}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Helper class for dma-\/buf allocations. 
+
+This class wraps a userspace dma-\/buf provider selected at construction time, and exposes functions to allocate dma-\/buffers from this provider.
+
+Different providers may provide dma-\/buffers with different properties for the underlying memory. Which providers are acceptable is specified through the type argument passed to the Dma\+Buf\+Allocator() constructor. 
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{classlibcamera_1_1DmaBufAllocator_a9851564b25894680b3691d7fc9d92a21}\label{classlibcamera_1_1DmaBufAllocator_a9851564b25894680b3691d7fc9d92a21} 
+\index{libcamera::DmaBufAllocator@{libcamera::DmaBufAllocator}!DmaBufAllocatorFlag@{DmaBufAllocatorFlag}}
+\index{DmaBufAllocatorFlag@{DmaBufAllocatorFlag}!libcamera::DmaBufAllocator@{libcamera::DmaBufAllocator}}
+\doxysubsubsection{\texorpdfstring{DmaBufAllocatorFlag}{DmaBufAllocatorFlag}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{classlibcamera_1_1DmaBufAllocator_a9851564b25894680b3691d7fc9d92a21}{libcamera\+::\+Dma\+Buf\+Allocator\+::\+Dma\+Buf\+Allocator\+Flag}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Type of the dma-\/buf provider. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CmaHeap@{CmaHeap}!libcamera::DmaBufAllocator@{libcamera::DmaBufAllocator}}\index{libcamera::DmaBufAllocator@{libcamera::DmaBufAllocator}!CmaHeap@{CmaHeap}}}\Hypertarget{classlibcamera_1_1DmaBufAllocator_a9851564b25894680b3691d7fc9d92a21a3779954653a55f91b33ea1031566a944}\label{classlibcamera_1_1DmaBufAllocator_a9851564b25894680b3691d7fc9d92a21a3779954653a55f91b33ea1031566a944} 
+Cma\+Heap&Allocate from a CMA dma-\/heap, providing physically-\/contiguous memory. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SystemHeap@{SystemHeap}!libcamera::DmaBufAllocator@{libcamera::DmaBufAllocator}}\index{libcamera::DmaBufAllocator@{libcamera::DmaBufAllocator}!SystemHeap@{SystemHeap}}}\Hypertarget{classlibcamera_1_1DmaBufAllocator_a9851564b25894680b3691d7fc9d92a21ab64c7aa121df3b9c86823aa5c3c3ccf8}\label{classlibcamera_1_1DmaBufAllocator_a9851564b25894680b3691d7fc9d92a21ab64c7aa121df3b9c86823aa5c3c3ccf8} 
+System\+Heap&Allocate from the system dma-\/heap, using the page allocator. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UDmaBuf@{UDmaBuf}!libcamera::DmaBufAllocator@{libcamera::DmaBufAllocator}}\index{libcamera::DmaBufAllocator@{libcamera::DmaBufAllocator}!UDmaBuf@{UDmaBuf}}}\Hypertarget{classlibcamera_1_1DmaBufAllocator_a9851564b25894680b3691d7fc9d92a21ad7a6c735cec78469e5fe17e2d4e3cd04}\label{classlibcamera_1_1DmaBufAllocator_a9851564b25894680b3691d7fc9d92a21ad7a6c735cec78469e5fe17e2d4e3cd04} 
+UDma\+Buf&Allocate using a memfd + /dev/udmabuf. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlibcamera_1_1DmaBufAllocator_a60c619b7038e57ff4ef24c5f4739f0af}\label{classlibcamera_1_1DmaBufAllocator_a60c619b7038e57ff4ef24c5f4739f0af} 
+\index{libcamera::DmaBufAllocator@{libcamera::DmaBufAllocator}!DmaBufAllocator@{DmaBufAllocator}}
+\index{DmaBufAllocator@{DmaBufAllocator}!libcamera::DmaBufAllocator@{libcamera::DmaBufAllocator}}
+\doxysubsubsection{\texorpdfstring{DmaBufAllocator()}{DmaBufAllocator()}}
+{\footnotesize\ttfamily libcamera\+::\+Dma\+Buf\+Allocator\+::\+Dma\+Buf\+Allocator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1DmaBufAllocator_a944f9d4c3add0ccaa8db6ece5f5f7fb8}{Dma\+Buf\+Allocator\+Flags}}}]{type = {\ttfamily \mbox{\hyperlink{classlibcamera_1_1DmaBufAllocator_a9851564b25894680b3691d7fc9d92a21a3779954653a55f91b33ea1031566a944}{Dma\+Buf\+Allocator\+Flag\+::\+Cma\+Heap}}} }\end{DoxyParamCaption})}
+
+
+
+Construct a \doxylink{classlibcamera_1_1DmaBufAllocator}{Dma\+Buf\+Allocator} of a given type. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em type} & The type(s) of the dma-\/buf providers to allocate from\\
+\hline
+\end{DoxyParams}
+The dma-\/buf provider type is selected with the {\itshape type} parameter, which defaults to the CMA heap. If no provider of the given type can be accessed, the constructed \doxylink{classlibcamera_1_1DmaBufAllocator}{Dma\+Buf\+Allocator} instance is invalid as indicated by the \doxylink{classlibcamera_1_1DmaBufAllocator_a3a909a52edae04f849b88c26f68ba647}{is\+Valid()} function.
+
+Multiple types can be selected by combining type flags, in which case the constructed \doxylink{classlibcamera_1_1DmaBufAllocator}{Dma\+Buf\+Allocator} will match one of the types. If multiple requested types can work on the system, which provider is used is undefined. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1DmaBufAllocator_aced40e97819e7c3bf9bfad605599d321}\label{classlibcamera_1_1DmaBufAllocator_aced40e97819e7c3bf9bfad605599d321} 
+\index{libcamera::DmaBufAllocator@{libcamera::DmaBufAllocator}!alloc@{alloc}}
+\index{alloc@{alloc}!libcamera::DmaBufAllocator@{libcamera::DmaBufAllocator}}
+\doxysubsubsection{\texorpdfstring{alloc()}{alloc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1UniqueFD}{Unique\+FD}} libcamera\+::\+Dma\+Buf\+Allocator\+::alloc (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{name,  }\item[{std\+::size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Allocate a dma-\/buf from the \doxylink{classlibcamera_1_1DmaBufAllocator}{Dma\+Buf\+Allocator}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em name} & The name to set for the allocated buffer \\
+\hline
+\mbox{\texttt{ in}}  & {\em size} & The size of the buffer to allocate\\
+\hline
+\end{DoxyParams}
+Allocates a dma-\/buf with read/write access.
+
+If the allocation fails, return an invalid \doxylink{classlibcamera_1_1UniqueFD}{Unique\+FD}.
+
+\begin{DoxyReturn}{Returns}
+The \doxylink{classlibcamera_1_1UniqueFD}{Unique\+FD} of the allocated buffer 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1DmaBufAllocator_a5e1a0a9ab8d3494e4a73fbabe5cbb07e}\label{classlibcamera_1_1DmaBufAllocator_a5e1a0a9ab8d3494e4a73fbabe5cbb07e} 
+\index{libcamera::DmaBufAllocator@{libcamera::DmaBufAllocator}!exportBuffers@{exportBuffers}}
+\index{exportBuffers@{exportBuffers}!libcamera::DmaBufAllocator@{libcamera::DmaBufAllocator}}
+\doxysubsubsection{\texorpdfstring{exportBuffers()}{exportBuffers()}}
+{\footnotesize\ttfamily int libcamera\+::\+Dma\+Buf\+Allocator\+::export\+Buffers (\begin{DoxyParamCaption}\item[{unsigned int}]{count,  }\item[{const std\+::vector$<$ unsigned int $>$ \&}]{plane\+Sizes,  }\item[{std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} $>$ $>$ \texorpdfstring{$\ast$}{*}}]{buffers }\end{DoxyParamCaption})}
+
+
+
+Allocate and export buffers from the \doxylink{classlibcamera_1_1DmaBufAllocator}{Dma\+Buf\+Allocator}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em count} & The number of requested Frame\+Buffers \\
+\hline
+\mbox{\texttt{ in}}  & {\em plane\+Sizes} & The sizes of planes in each \doxylink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer} \\
+\hline
+\mbox{\texttt{ out}}  & {\em buffers} & Array of buffers successfully allocated\\
+\hline
+\end{DoxyParams}
+Planes in a \doxylink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer} are allocated with a single dma buf. \begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000026}{Todo}}]Add the option to allocate each plane with a dma buf respectively.\end{DoxyRefDesc}
+
+
+\begin{DoxyReturn}{Returns}
+The number of allocated buffers on success or a negative error code otherwise 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1DmaBufAllocator_a3a909a52edae04f849b88c26f68ba647}\label{classlibcamera_1_1DmaBufAllocator_a3a909a52edae04f849b88c26f68ba647} 
+\index{libcamera::DmaBufAllocator@{libcamera::DmaBufAllocator}!isValid@{isValid}}
+\index{isValid@{isValid}!libcamera::DmaBufAllocator@{libcamera::DmaBufAllocator}}
+\doxysubsubsection{\texorpdfstring{isValid()}{isValid()}}
+{\footnotesize\ttfamily libcamera\+::\+Dma\+Buf\+Allocator\+::is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check if the \doxylink{classlibcamera_1_1DmaBufAllocator}{Dma\+Buf\+Allocator} instance is valid. 
+
+\begin{DoxyReturn}{Returns}
+True if the \doxylink{classlibcamera_1_1DmaBufAllocator}{Dma\+Buf\+Allocator} is valid, false otherwise 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/internal/dma\+\_\+buf\+\_\+allocator.\+h\item 
+src/peripherals/camera/libcamera/src/libcamera/\mbox{\hyperlink{dma__buf__allocator_8cpp}{dma\+\_\+buf\+\_\+allocator.\+cpp}}\end{DoxyCompactItemize}
