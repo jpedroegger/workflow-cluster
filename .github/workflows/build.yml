@@ -49,7 +49,14 @@ jobs:
 
     - name: Build ros packages
       run: |
+          source /opt/ros/jazzy/setup.bash
           cd $ROS_BUILD_DIR
+          # Initialize rosdep
+          sudo rosdep init || true
+          rosdep update
+          # Install dependencies
+          rosdep install --from-paths . --ignore-src -r -y
+          # Build
           colcon build --symlink-install
 
     - name: Build the project
