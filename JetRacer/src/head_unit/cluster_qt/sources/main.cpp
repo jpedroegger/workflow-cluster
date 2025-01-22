@@ -1,4 +1,5 @@
 #include "../includes/Cluster.h"
+#include <QMenu>
 
 int main(int argc, char* argv[])
 {
@@ -33,6 +34,8 @@ int main(int argc, char* argv[])
     FanSpeedWidget*         fanspeed2 = new FanSpeedWidget(mainWindow);
     CPUTempWidget*          cputemp2 = new CPUTempWidget(mainWindow);
 
+    SettingsWidget*         settings = new SettingsWidget(mainWindow);
+
     // Ros node
     //auto node = std::make_shared<RosNode>();
 
@@ -63,10 +66,14 @@ int main(int argc, char* argv[])
     mode1ContentLayout->addWidget(battery, 1);
     mode1ContentLayout->addWidget(rightB, 1);
 
+    mode1ContentLayout->addWidget(settings, 0, Qt::AlignBottom); // Button
+
     mode1Layout->addLayout(mode1ContentLayout, 1);
     mode1Layout->addWidget(fanspeed, 0, Qt::AlignBottom);
     mode1Layout->addWidget(cputemp, 0, Qt::AlignBottom);
     mode1Layout->addWidget(topBar, 0, Qt::AlignBottom);
+
+
     mode1Page->setLayout(mode1Layout);
 
     // Layout for Mode 2

@@ -1,4 +1,6 @@
 #include "../includes/StatsWidget.h"
+#include <iostream>
+
 
 StatsWidget::StatsWidget(QWidget *parent)
     : QWidget(parent)
@@ -89,6 +91,7 @@ void    StatsWidget::setObstacles(int obs)
 
 void    StatsWidget::changeUnits(void)
 {
+    qDebug() << "Called";
     if (unit == "Km"){
         unit = "Mi";
         distance_int *= 0.6214;

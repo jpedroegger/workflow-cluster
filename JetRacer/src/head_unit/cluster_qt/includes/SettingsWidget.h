@@ -30,10 +30,11 @@ private:
     QWidget *expandedWidget;
 
     QPushButton *mainIcon;
-    QPushButton *icon1;
-    QPushButton *icon2;
+    QPushButton *closeIcon;
+    QPushButton *themesIcon;
+    QPushButton *changeUnitIcon;
 
-
+    bool setButtonIcon(QPushButton *button, const QString &imagePath);
     void setExpanded(bool expand);
     bool isClickOutside(const QPoint &pos) const;
 };
