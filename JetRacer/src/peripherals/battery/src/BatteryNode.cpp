@@ -11,6 +11,12 @@ BatteryNode::BatteryNode() : Node("battery_node")
         5s, std::bind(&BatteryNode::publishBatteryLevel, this));
 }
 
+/**
+ * @brief Initializes the INA219 driver.
+ *
+ * @return EXIT_FAILURE if the driver fails to initialize, EXIT_SUCCESS
+ * otherwise.
+ */
 uint8_t BatteryNode::initINA219()
 {
     try
@@ -26,4 +32,7 @@ uint8_t BatteryNode::initINA219()
     return EXIT_SUCCESS;
 }
 
+/**
+ * @brief Publishes the battery level.
+ */
 void BatteryNode::publishBatteryLevel() { ina219_driver_->publishBusVoltage(); }

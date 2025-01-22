@@ -12,7 +12,8 @@
  * hardware communication or mock implementations for testing.
  *
  * The interface wraps the essential can operations (read, write ..) into
- * virtual methods that can be overridden by concrete implementations.
+ * virtual methods that can be overridden by concrete implementations. See
+ * RCanDriver for more information about its methods.
  */
 class ICanDriver
 {

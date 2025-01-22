@@ -7,6 +7,11 @@
 #include <rclcpp/rclcpp.hpp>
 #include <std_msgs/msg/string.hpp>
 
+/**
+ * @class SSD1306Driver
+ * @brief Driver to interact with the SSD1306 (Oled screen)
+ *
+ */
 class SSD1306Driver : public ADriver
 {
     public:

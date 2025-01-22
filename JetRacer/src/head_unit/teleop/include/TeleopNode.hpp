@@ -10,6 +10,14 @@
 #define TURN_RIGHT 3
 #define WARNINGS 4
 
+/**
+ * @class TeleopNode
+ * @brief Subscribes to the joystick topic, convert it and publishes it into
+ * cmd_vel topic.
+ *
+ * This class essentialy converts joy_msg into twist_msg. It also publishes the
+ * blinker state based on the joystick buttons state.
+ */
 class TeleopNode : public rclcpp::Node
 {
     public:

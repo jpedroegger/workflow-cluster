@@ -18,7 +18,7 @@ ADriver::~ADriver() {}
 /**
  * @brief handle the response from the i2c service
  *
- * @param response
+ * @param future the future object containing the response from the i2c service
  */
 void ADriver::handleI2cResponse(
     rclcpp::Client<custom_msgs::srv::I2cService>::SharedFuture future)
@@ -29,14 +29,14 @@ void ADriver::handleI2cResponse(
 }
 
 /**
- * @brief ping the device and wait for a response
+ * @brief ping the device and wait for a response. throw a driver exception if
+ * the device is not found on the bus. Nodes depending on drivers should call
+ * this function before spinning to make sure the actual hardware is present
  *
  * This method uses spin_until_future_complete() which will spin the node while
  * waiting for the response. Hence this function can not be called after the
  * node has been spinned by the main executor (a node can be handle by only one
  * executor at a time)
- *
- * @return
  */
 void ADriver::ping()
 {

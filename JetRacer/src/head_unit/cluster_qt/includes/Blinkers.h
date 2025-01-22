@@ -12,12 +12,10 @@ class Blinkers : public QWidget
 
 public:
     explicit Blinkers(QWidget* parent = nullptr, std::string dir = "left", std::string mode = "off");
-    ~Blinkers();
+    virtual ~Blinkers();
 
-    bool    turnOnBlinkers(int blinker_key);
-    bool    getBlinking(void);
-    QTimer* getToggleTimer(void);
-    bool    getIsImage1Visible(void);
+    void    turnOnBlinkers(bool  on_off);
+    bool    get_blinking(void);
 
 private slots:
     void toggleImage(); // Slot to toggle the image

@@ -16,6 +16,13 @@ DcMotorsNode::DcMotorsNode() : Node("dc_motors_node")
 
 DcMotorsNode::~DcMotorsNode() {}
 
+/**
+ * @brief Initialize the PCA9685 driver.
+ *
+ * @param mock_driver if not null, the driver will be mocked.
+ * @return EXIT_FAILURE if the driver fails to initialize, EXIT_SUCCESS
+ * otherwise.
+ */
 uint8_t DcMotorsNode::initPCA9685(std::shared_ptr<APCA9685Driver> mock_driver)
 {
     if (mock_driver)
@@ -39,13 +46,14 @@ uint8_t DcMotorsNode::initPCA9685(std::shared_ptr<APCA9685Driver> mock_driver)
 }
 
 /**
- * @brief map speed in percentage to the appropriate duty cycle.
+ * @brief Map the linear velocity to the PCA9685 pulse width and set the motor
+ * direction.
  *
  * freq = 1600;
  * 1 cycle = 1 /1600 = 625us
  * 625/4096 = 0.1526us per tick
  *
- * @param speed
+ * @param twist_msg- the message containing the linear velocity.
  */
 void DcMotorsNode::writeSpeed(
     const geometry_msgs::msg::Twist::SharedPtr twist_msg)

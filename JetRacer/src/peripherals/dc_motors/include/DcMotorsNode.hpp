@@ -11,8 +11,7 @@
 /**
  * @class DcMotorsNode
  * @brief Listens to twist message and translate them into PWM signal values
- * that the pca driver understands.
- *
+ * that the PCA9685 driver understands.
  */
 class DcMotorsNode : public rclcpp::Node
 {

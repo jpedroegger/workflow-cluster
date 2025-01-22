@@ -6,10 +6,9 @@ const uint8_t MAX_RETRY = 5;
 
 /**
  * @class I2cDriver
- * @brief Concrete implementation of the I2cDriver interface.
+ * @brief Concrete implementation of the II2cDriver interface.
  *
  * Handles low level interaction with the i2c device.
- *
  */
 class I2cDriver : public II2cDriver
 {
