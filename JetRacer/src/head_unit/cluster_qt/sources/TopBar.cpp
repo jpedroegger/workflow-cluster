@@ -10,49 +10,49 @@ TopBar::TopBar(QWidget* parent) : QWidget(parent)
 
     // Create default and alternate images
     defaultImagePaths_array[0] = {
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/wheel_p.png",
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/brake_p.png",
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/abs_p.png", // Replace with your actual paths
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/med_p.png",
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/max_p.png",
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/fog_p.png",
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/belt_p.png"
+        "assets/icons/wheel_p.png",
+        "assets/icons/brake_p.png",
+        "assets/icons/abs_p.png", // Replace with your actual paths
+        "assets/icons/med_p.png",
+        "assets/icons/max_p.png",
+        "assets/icons/fog_p.png",
+        "assets/icons/belt_p.png"
     };
     defaultImagePaths_array[1] = {
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/wheel_r.png",
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/brake_r.png",
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/abs_r.png", // Replace with your actual paths
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/med_r.png",
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/max_r.png",
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/fog_r.png",
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/belt_r.png"
+        "assets/icons/wheel_r.png",
+        "assets/icons/brake_r.png",
+        "assets/icons/abs_r.png", // Replace with your actual paths
+        "assets/icons/med_r.png",
+        "assets/icons/max_r.png",
+        "assets/icons/fog_r.png",
+        "assets/icons/belt_r.png"
     };
     defaultImagePaths_array[2] = {
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/wheel_i.png",
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/brake_i.png",
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/abs_i.png", // Replace with your actual paths
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/med_i.png",
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/max_i.png",
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/fog_i.png",
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/belt_i.png"
+        "assets/icons/wheel_i.png",
+        "assets/icons/brake_i.png",
+        "assets/icons/abs_i.png", // Replace with your actual paths
+        "assets/icons/med_i.png",
+        "assets/icons/max_i.png",
+        "assets/icons/fog_i.png",
+        "assets/icons/belt_i.png"
     };
     defaultImagePaths_array[3] = {
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/wheel_g.png",
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/brake_g.png",
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/abs_g.png", // Replace with your actual paths
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/med_g.png",
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/max_g.png",
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/fog_g.png",
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/belt_g.png"
+        "assets/icons/wheel_g.png",
+        "assets/icons/brake_g.png",
+        "assets/icons/abs_g.png", // Replace with your actual paths
+        "assets/icons/med_g.png",
+        "assets/icons/max_g.png",
+        "assets/icons/fog_g.png",
+        "assets/icons/belt_g.png"
     };
     altImagePaths = {
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/wheel_on.png",
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/brake_on.png",
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/abs_on.png", // Replace with your actual paths
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/med_on.png",
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/max_on.png",
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/fog_on.png",
-        "/home/jegger/Documents/qt/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/belt_on.png"
+        "assets/icons/wheel_on.png",
+        "assets/icons/brake_on.png",
+        "assets/icons/abs_on.png", // Replace with your actual paths
+        "assets/icons/med_on.png",
+        "assets/icons/max_on.png",
+        "assets/icons/fog_on.png",
+        "assets/icons/belt_on.png"
     };
 
     defaultImagePaths = defaultImagePaths_array[0];

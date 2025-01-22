@@ -13,20 +13,20 @@ Blinkers::Blinkers(QWidget* parent, std::string dir, std::string mode)
     
     if (dir == "left")
     {
-        image1_array[0].load("/home/jegger/Documents/qt/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/left_p.png");
-        image1_array[1].load("/home/jegger/Documents/qt/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/left_r.png");
-        image1_array[2].load("/home/jegger/Documents/qt/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/left_i.png");
-        image1_array[3].load("/home/jegger/Documents/qt/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/left_g.png");
-        image2.load("/home/jegger/Documents/qt/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/left_on.png");
+        image1_array[0].load("assets/icons/left_p.png");
+        image1_array[1].load("assets/icons/left_r.png");
+        image1_array[2].load("assets/icons/left_i.png");
+        image1_array[3].load("assets/icons/left_g.png");
+        image2.load("assets/icons/left_on.png");
         image1 = image1_array[0];
     }
     else
     {
-        image1_array[0].load("/home/jegger/Documents/qt/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/right_p2.png");
-        image1_array[1].load("/home/jegger/Documents/qt/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/right_r.png");
-        image1_array[2].load("/home/jegger/Documents/qt/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/right_i.png");
-        image1_array[3].load("/home/jegger/Documents/qt/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/right_g.png");
-        image2.load("/home/jegger/Documents/qt/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/right_on.png");
+        image1_array[0].load("assets/icons/right_p2.png");
+        image1_array[1].load("assets/icons/right_r.png");
+        image1_array[2].load("assets/icons/right_i.png");
+        image1_array[3].load("assets/icons/right_g.png");
+        image2.load("assets/icons/right_on.png");
         image1 = image1_array[0];
     }
 
@@ -40,6 +40,9 @@ Blinkers::Blinkers(QWidget* parent, std::string dir, std::string mode)
     layout->addWidget(imageLabel);
 
     setLayout(layout);
+    setMaximumWidth(105
+    );
+    setMinimumWidth(105);
 }
 
 Blinkers::~Blinkers()
