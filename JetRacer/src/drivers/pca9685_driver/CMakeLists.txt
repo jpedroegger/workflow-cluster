@@ -13,14 +13,6 @@ find_package(rclcpp REQUIRED)
 find_package(custom_msgs REQUIRED)
 find_package(abstract_driver REQUIRED)
 
-# Include directories using proper CMake variables
-include_directories(
-  include
-  ${abstract_driver_INCLUDE_DIRS}
-)
-
-# No need for link_directories when using proper CMake targets
-
 # Add source files
 set(srcs
   src/PCA9685Driver.cpp
@@ -35,13 +27,6 @@ target_include_directories(${lib_name} PUBLIC
   $<INSTALL_INTERFACE:include>
 )
 
-# Link against the required dependencies
-ament_target_dependencies(${lib_name} 
-  rclcpp 
-  custom_msgs 
-  abstract_driver
-)
-
 # Gtest
 if(BUILD_TESTING)
   find_package(ament_cmake_gmock REQUIRED)
@@ -50,21 +35,33 @@ if(BUILD_TESTING)
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:include>
     test/include
-  )
+)
   target_link_libraries(${PROJECT_NAME}_test ${lib_name})
 endif()
 
 # Install
 install(
   TARGETS ${lib_name}
+  EXPORT  ${lib_name}_targets
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION bin
+  INCLUDES DESTINATION include
 )
 
+# Link against the required dependencies
+ament_target_dependencies(${lib_name} 
+  rclcpp 
+  custom_msgs 
+  abstract_driver
+)
+
+install(TARGETS ${lib_name} DESTINATION lib)
 install(
   DIRECTORY include/
   DESTINATION include
 )
 
+ament_export_targets(${lib_name}_targets HAS_LIBRARY_TARGET)
+ament_export_dependencies(${dependencies})
 ament_package()

@@ -30,19 +30,25 @@ target_include_directories(${lib_name} PUBLIC
   $<INSTALL_INTERFACE:include>
 )
 
-# Link against the required dependencies
-ament_target_dependencies(${lib_name} rclcpp custom_msgs std_msgs fmt abstract_driver)
-
 # Install
 install(
   TARGETS ${lib_name}
+  EXPORT  ${lib_name}_targets
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION bin
+  INCLUDES DESTINATION include
 )
+
+# Link against the required dependencies
+ament_target_dependencies(${lib_name} rclcpp custom_msgs std_msgs fmt abstract_driver)
+
+install(TARGETS ${lib_name} DESTINATION lib)
 install(
   DIRECTORY include/
   DESTINATION include
 )
 
+ament_export_targets(${lib_name}_targets HAS_LIBRARY_TARGET)
+ament_export_dependencies(${dependencies})
 ament_package()
