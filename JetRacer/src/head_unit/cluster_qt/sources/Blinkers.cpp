@@ -40,6 +40,9 @@ Blinkers::Blinkers(QWidget* parent, std::string dir, std::string mode)
     layout->addWidget(imageLabel);
 
     setLayout(layout);
+    setMaximumWidth(105
+    );
+    setMinimumWidth(105);
 }
 
 Blinkers::~Blinkers()
