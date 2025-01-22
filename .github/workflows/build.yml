@@ -57,7 +57,7 @@ jobs:
           # Install dependencies
           rosdep install --from-paths . --ignore-src -r -y
           # Build
-          colcon build --symlink-install --packages-skip camera_ros 
+          colcon build --symlink-install --packages-skip camera_ros
 
     - name: Build the project
       run: |
