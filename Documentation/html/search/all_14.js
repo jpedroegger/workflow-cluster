@@ -10,7 +10,7 @@ var searchData=
   ['pca_5fservo_5faddress_7',['PCA_SERVO_ADDRESS',['../ServoNode_8hpp.html#aa8aa8b6467cc52f82b693c4cfc3f4ec1',1,'ServoNode.hpp']]],
   ['peripherals_20oled_5fdisplay_20servo_5fmotor_20dc_5fmotors_20etc_20strong_8',['3. &lt;strong&gt;Peripherals (oled_display, servo_motor, dc_motors, etc.)&lt;/strong&gt;',['../index.html#autotoc_md4',1,'']]],
   ['ping_9',['ping',['../classADriver.html#a7c8b6b179b64b604c29362e0dbdbffd9',1,'ADriver']]],
-  ['platform_5fid_10',['PLATFORM_ID',['../CMakeCXXCompilerId_8cpp.html#adbc5372f40838899018fadbc89bd588b',1,'CMakeCXXCompilerId.cpp']]],
+  ['platform_5fid_10',['platform_id',['../CMakeFiles_23_829_83_2CompilerIdCXX_2CMakeCXXCompilerId_8cpp.html#adbc5372f40838899018fadbc89bd588b',1,'PLATFORM_ID:&#160;CMakeCXXCompilerId.cpp'],['../build_2cluster_2CMakeFiles_23_828_83_2CompilerIdCXX_2CMakeCXXCompilerId_8cpp.html#adbc5372f40838899018fadbc89bd588b',1,'PLATFORM_ID:&#160;CMakeCXXCompilerId.cpp']]],
   ['poll_5ffreq_5fms_11',['POLL_FREQ_MS',['../classSpeedSensorNode.html#ab253cb351b9f6e009a2aa494b6ac9a38',1,'SpeedSensorNode']]],
   ['pollcanbus_12',['pollCanBus',['../classCanInterface.html#af4cc2bbdab6b48b3978467fe2fb6f893',1,'CanInterface']]],
   ['power_5fmultiplier_5fmw_5f_13',['power_multiplier_mW_',['../classINA219Driver.html#a96a028daa01ffb13ead8090fec2f2ad7',1,'INA219Driver']]],

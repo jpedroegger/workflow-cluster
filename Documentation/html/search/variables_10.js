@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['vel_5fpublisher_5f_0',['vel_publisher_',['../classTeleopNode.html#ab9962c30f0bab5cb57d3d28c489344cb',1,'TeleopNode']]],
-  ['videowidget_1',['videoWidget',['../classCameraWidget.html#af178211b17979e4edc041840ad1eeb93',1,'CameraWidget']]]
+  ['ui_0',['ui',['../classMainWindow.html#a35466a70ed47252a0191168126a352a5',1,'MainWindow']]],
+  ['updatetimer_1',['updateTimer',['../classEventManager.html#a4da7b796740b949f2554d772eb36818c',1,'EventManager']]]
 ];

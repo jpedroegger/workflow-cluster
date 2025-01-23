@@ -5,6 +5,7 @@ var searchData=
   ['readmessage_2',['readmessage',['../classICanDriver.html#a00c0e9b2c3b24393c0e470c9f1726723',1,'ICanDriver::readMessage()'],['../classRCanDriver.html#a2ce7f5833947c1ff1baf21c9b905bf17',1,'RCanDriver::readMessage()']]],
   ['readregister_3',['readRegister',['../classINA219Driver.html#ac113e89cc7c31810805756374aab6144',1,'INA219Driver']]],
   ['readspeed_4',['readSpeed',['../classSpeedSensorNode.html#a2a80b22767c767a37a5824a3afd731dc',1,'SpeedSensorNode']]],
-  ['rosnode_5',['RosNode',['../classRosNode.html#af54772b0689f19a12477bddf088dbdf1',1,'RosNode']]],
-  ['rotatedisplay_6',['rotateDisplay',['../classSSD1306Driver.html#a2f418224378443787689dec8f4732d6f',1,'SSD1306Driver']]]
+  ['retranslateui_5',['retranslateUi',['../classUi__MainWindow.html#a097dd160c3534a204904cb374412c618',1,'Ui_MainWindow']]],
+  ['rosnode_6',['RosNode',['../classRosNode.html#af54772b0689f19a12477bddf088dbdf1',1,'RosNode']]],
+  ['rotatedisplay_7',['rotateDisplay',['../classSSD1306Driver.html#a2f418224378443787689dec8f4732d6f',1,'SSD1306Driver']]]
 ];

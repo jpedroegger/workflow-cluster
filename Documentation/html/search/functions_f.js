@@ -16,7 +16,8 @@ var searchData=
   ['setpwmdutycycle_13',['setpwmdutycycle',['../classAPCA9685Driver.html#a4325ee598d55bcf60b529ef7f9dcf5dd',1,'APCA9685Driver::setPWMDutyCycle()'],['../classPCA9685Driver.html#adf0e52931778f32dfd8b53b5dbd19c43',1,'PCA9685Driver::setPWMDutyCycle()']]],
   ['setpwmfrequency_14',['setpwmfrequency',['../classAPCA9685Driver.html#ad05f99f5d2b6222fe1d5645ac176c17e',1,'APCA9685Driver::setPWMFrequency()'],['../classPCA9685Driver.html#ac23c5f0f34873210b41ef1a94b1ee86a',1,'PCA9685Driver::setPWMFrequency()']]],
   ['setregister_15',['setregister',['../classAPCA9685Driver.html#a96c6e30bd3cb259377a9898529d7714a',1,'APCA9685Driver::setRegister()'],['../classPCA9685Driver.html#a7f82753c915244305bf42596414f5421',1,'PCA9685Driver::setRegister()']]],
-  ['speedometerwidget_16',['SpeedometerWidget',['../classSpeedometerWidget.html#a10432b717df8a4340f9c44fc44fa4d17',1,'SpeedometerWidget']]],
-  ['speedsensornode_17',['SpeedSensorNode',['../classSpeedSensorNode.html#a425bc28f7413f6b9c447726865f7a7bf',1,'SpeedSensorNode']]],
-  ['ssd1306driver_18',['SSD1306Driver',['../classSSD1306Driver.html#a0fef81f3cd9c759427bfe95b9d02f4ed',1,'SSD1306Driver']]]
+  ['setupui_16',['setupUi',['../classUi__MainWindow.html#acf4a0872c4c77d8f43a2ec66ed849b58',1,'Ui_MainWindow']]],
+  ['speedometerwidget_17',['SpeedometerWidget',['../classSpeedometerWidget.html#a10432b717df8a4340f9c44fc44fa4d17',1,'SpeedometerWidget']]],
+  ['speedsensornode_18',['SpeedSensorNode',['../classSpeedSensorNode.html#a425bc28f7413f6b9c447726865f7a7bf',1,'SpeedSensorNode']]],
+  ['ssd1306driver_19',['SSD1306Driver',['../classSSD1306Driver.html#a0fef81f3cd9c759427bfe95b9d02f4ed',1,'SSD1306Driver']]]
 ];
