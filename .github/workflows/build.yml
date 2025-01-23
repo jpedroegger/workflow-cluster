@@ -61,6 +61,9 @@ jobs:
 
     - name: Testing the Cluster
       run: |
+        source /opt/ros/jazzy/setup.bash
+        cd $ROS_BUILD_DIR
+        source ./install/setup.bash
         colcon test --ctest-args tests --packages-skip camera_ros cluster --executor sequential
         colcon test-result --all --verbose
         # cd $QT_BUILD_DIR/cluster_tests
