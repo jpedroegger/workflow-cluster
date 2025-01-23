@@ -23,7 +23,6 @@ int main(int argc, char* argv[])
     FanSpeedWidget*         fanspeed = new FanSpeedWidget(mode1Page);
     CPUTempWidget*          cputemp = new CPUTempWidget(mode1Page);
     ArrowSymbolWidget*      arrowSymbol = new ArrowSymbolWidget(mode1Page, "zero");
-    SettingsWidget*         settings = new SettingsWidget(mode1Page);
 
     // Mode 2
     StatsWidget*            stats = new StatsWidget(mode2Page, 450, 200, 600, 400);
@@ -33,7 +32,8 @@ int main(int argc, char* argv[])
     BatteryAndSpeedWidget*  bas = new BatteryAndSpeedWidget(mode2Page);
     FanSpeedWidget*         fanspeed2 = new FanSpeedWidget(mode2Page);
     CPUTempWidget*          cputemp2 = new CPUTempWidget(mode2Page);
-    SettingsWidget*         settings2 = new SettingsWidget(mode2Page);
+    SettingsWidget*         settings2 = new SettingsWidget(mode2Page, stats);
+    SettingsWidget*         settings = new SettingsWidget(mode1Page, stats);
 
 
     // Ros node

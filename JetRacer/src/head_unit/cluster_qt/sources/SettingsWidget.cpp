@@ -1,7 +1,7 @@
 #include "../includes/SettingsWidget.h"
 #include "../includes/StatsWidget.h"
 
-SettingsWidget::SettingsWidget(QWidget *parent)
+SettingsWidget::SettingsWidget(QWidget *parent, StatsWidget* stats)
     : QWidget(parent), expanded(false)
 {
     // Initialize main icon with an image
@@ -57,12 +57,12 @@ SettingsWidget::SettingsWidget(QWidget *parent)
     changeUnitIcon->setIconSize(QSize(50, 50));
     changeUnitIcon->setText("Change Units");
 
-    StatsWidget *statsWidget = new StatsWidget(this);
+    // StatsWidget *statsWidget = new StatsWidget(this);
 
     collapsedWidget = new QWidget(this);
     QVBoxLayout *collapsedLayout = new QVBoxLayout(collapsedWidget);
     collapsedLayout->addWidget(mainIcon);
-    collapsedLayout->addWidget(statsWidget);
+    collapsedLayout->addWidget(stats);
 
     collapsedLayout->setContentsMargins(0, 0, 0, 0);
     collapsedLayout->setSpacing(0);
@@ -97,8 +97,7 @@ SettingsWidget::SettingsWidget(QWidget *parent)
     // Connect buttons
     connect(mainIcon, &QPushButton::clicked, this, &SettingsWidget::toggleExpand);
     connect(closeIcon, &QPushButton::clicked, this, &SettingsWidget::toggleExpand);
-    // connect(themesIcon, &QPushButton::clicked, &statsWidget, &StatsWidget::changeUnits);
-    connect(changeUnitIcon, &QPushButton::clicked, statsWidget, &StatsWidget::changeUnits);
+    connect(changeUnitIcon, &QPushButton::clicked, stats, &StatsWidget::changeUnits);
 }
 
 void SettingsWidget::toggleExpand()

@@ -7,14 +7,16 @@
 #include <QVBoxLayout>
 #include <QMouseEvent>
 #include <QStyle>
+#include "../includes/StatsWidget.h"
 
+class StatsWidget;
 
 class SettingsWidget : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit SettingsWidget(QWidget *parent = nullptr);
+    explicit SettingsWidget(QWidget *parent = nullptr, StatsWidget *stats = nullptr);
 
 protected:
     void mousePressEvent(QMouseEvent *event) override;
