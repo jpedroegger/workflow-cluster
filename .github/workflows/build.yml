@@ -61,7 +61,9 @@ jobs:
 
     - name: Testing the Cluster
       run: |
-        cd $QT_BUILD_DIR/cluster_tests
-        export QT_QPA_PLATFORM=offscreen
-        ctest --verbose
+        colcon test --ctest-args tests --packages-skip camera_ros cluster --executor sequential
+        colcon test-result --all --verbose
+        # cd $QT_BUILD_DIR/cluster_tests
+        # export QT_QPA_PLATFORM=offscreen
+        # ctest --verbose
   
