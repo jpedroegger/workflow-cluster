@@ -12,7 +12,7 @@ class StatsWidget : public QWidget
 {
 
     public:
-        StatsWidget(QWidget *parent = nullptr);
+        StatsWidget(QWidget *parent = nullptr, int x = 0, int y = 0, int width = 0, int height = 0);
         void    changeColor(int  array_index);
         void    changeUnits(void);
         void    setDistance(int dist);
@@ -24,6 +24,8 @@ class StatsWidget : public QWidget
         QColor alphabet_color;
 
     private:
+        int width;
+        int height;
         void paintEvent(QPaintEvent *event) override;
         QStringList names;
         QStringList values;

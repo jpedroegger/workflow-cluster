@@ -26,7 +26,7 @@ int main(int argc, char* argv[])
     SettingsWidget*         settings = new SettingsWidget(mode1Page);
 
     // Mode 2
-    StatsWidget*            stats = new StatsWidget(mode2Page);
+    StatsWidget*            stats = new StatsWidget(mode2Page, 450, 200, 600, 400);
     TopBar*                 topBar2 = new TopBar(mode2Page);
     Blinkers*               rightB2 = new Blinkers(mode2Page, "right", "off");
     Blinkers*               leftB2 = new Blinkers(mode2Page, "left", "off");
@@ -50,16 +50,16 @@ int main(int argc, char* argv[])
     rightB->setGeometry(1080, 300, 100, 100);
     fanspeed->setGeometry(0, 630, 150, 140);
     cputemp->setGeometry(100, 630, 150, 140);
-    topBar->setGeometry(350, 700, 250, 50);
+    topBar->setGeometry(340, 700, 250, 50);
     settings->setGeometry(1120, -10, 250, 250);
 
-    bas->setGeometry(110, 110, 200, 400);
-    stats->setGeometry(300, 0, 400, 400); 
+    bas->setGeometry(130, 125, 200, 400);
+    //stats->setGeometry(300, 0, 600, 400); 
     leftB2->setGeometry(-5, 300, 100, 100);
     rightB2->setGeometry(1080, 300, 100, 100);
     fanspeed2->setGeometry(0, 630, 150, 140);
     cputemp2->setGeometry(100, 630, 150, 140);
-    topBar2->setGeometry(350, 700, 250, 50);
+    topBar2->setGeometry(340, 700, 250, 50);
     settings2->setGeometry(1120, -10, 250, 250);
 
     // Toolbar for switching modes

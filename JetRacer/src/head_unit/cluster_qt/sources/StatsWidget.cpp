@@ -2,8 +2,8 @@
 #include <iostream>
 
 
-StatsWidget::StatsWidget(QWidget *parent)
-    : QWidget(parent)
+StatsWidget::StatsWidget(QWidget *parent, int x, int y, int width, int height)
+    : QWidget(parent), width(width), height(height)
 {
     setDistance(0);
     setAverage(0);
@@ -15,9 +15,10 @@ StatsWidget::StatsWidget(QWidget *parent)
     accent_color = color1.accent_color;
     alphabet_color = color1.alphabet_color;
     names << "Distance Traveled:" << "Average Speed:" << "Battery Consumed:" << "Obstacles Detected:";
-    setFixedSize(600, 600);
+    setGeometry(x, y, width, height);
 }
 
+#include <iostream>
 
 void    StatsWidget::paintEvent(QPaintEvent *event)
 {
@@ -26,19 +27,19 @@ void    StatsWidget::paintEvent(QPaintEvent *event)
     // Set up font for text
     painter.setFont(QFont("Arial", 20, QFont::Bold));
 
-    int rectWidth = 370;
-    int rectHeight = 170;
     int spacing = 20;
+    int rectWidth = width / 2 - spacing;
+    int rectHeight = height / 2 - spacing - 50;
 
     // Draw two rows, each with two rectangles
     values.clear();
     values << distance << average << consumed << obstacles;
-    for (int row = 0; row < 2; ++row)
+    for (int row = 0; row < 2; row++)
     {
-        for (int col = 0; col < 2; ++col)
+        for (int col = 0; col < 2; col++)
         {
-            int x = col * (rectWidth + spacing) + spacing;
-            int y = row * (rectHeight + spacing) + spacing + 200;
+            int x = 10 + col * (rectWidth + spacing);
+            int y = 10 + row * (rectHeight + spacing);
 
             // Draw rectangle
             painter.setPen(QPen(main_color, 8));
