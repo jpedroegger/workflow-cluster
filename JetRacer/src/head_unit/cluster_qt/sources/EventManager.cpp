@@ -63,7 +63,6 @@ void EventManager::processKeyStates()
     py_speed->update();
     py_battery->update();
     py_batspeed->update();
-    
 
     for (int key : pressedKeys)
     {

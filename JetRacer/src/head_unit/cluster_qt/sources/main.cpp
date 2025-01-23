@@ -18,7 +18,7 @@ int main(int argc, char* argv[])
     TopBar*                 topBar = new TopBar(mode1Page);
     Blinkers*               leftB = new Blinkers(mode1Page, "left", "off");
     Blinkers*               rightB = new Blinkers(mode1Page, "right", "off");
-    SpeedometerWidget*      speedometer = new SpeedometerWidget(mode1Page);
+    SpeedometerWidget*      speedometer = new SpeedometerWidget(mode1Page, 90, 170, 365, 365);
     BatteryWidget*          battery = new BatteryWidget(mode1Page);
     FanSpeedWidget*         fanspeed = new FanSpeedWidget(mode1Page);
     CPUTempWidget*          cputemp = new CPUTempWidget(mode1Page);
@@ -44,7 +44,7 @@ int main(int argc, char* argv[])
                               mainWindow);
     app.installEventFilter(&eventManager);
     arrowSymbol->setGeometry(454, 180, 270, 320); // x, y, width, height
-    speedometer->setGeometry(90, 170, 365, 365);
+    //speedometer->setGeometry(90, 170, 365, 365);
     battery->setGeometry(720, 170, 365, 365);
     leftB->setGeometry(-5, 300, 100, 100);
     rightB->setGeometry(1080, 300, 100, 100);
@@ -54,7 +54,6 @@ int main(int argc, char* argv[])
     settings->setGeometry(1120, -10, 250, 250);
 
     bas->setGeometry(130, 125, 200, 400);
-    //stats->setGeometry(300, 0, 600, 400); 
     leftB2->setGeometry(-5, 300, 100, 100);
     rightB2->setGeometry(1080, 300, 100, 100);
     fanspeed2->setGeometry(0, 630, 150, 140);
