@@ -15,7 +15,7 @@ StatsWidget::StatsWidget(QWidget *parent)
     accent_color = color1.accent_color;
     alphabet_color = color1.alphabet_color;
     names << "Distance Traveled:" << "Average Speed:" << "Battery Consumed:" << "Obstacles Detected:";
-    setFixedSize(800, 800);
+    setFixedSize(600, 600);
 }
 
 

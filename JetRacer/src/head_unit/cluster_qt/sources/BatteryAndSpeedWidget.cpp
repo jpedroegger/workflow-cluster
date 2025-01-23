@@ -19,19 +19,19 @@ BatteryAndSpeedWidget::BatteryAndSpeedWidget(QWidget* parent)
 void BatteryAndSpeedWidget::paintEvent(QPaintEvent* event)
 {
     QPainter painter(this);
-    image_array[0] = QPixmap("assets/icons/battery_p.png");
-    image_array[1] = QPixmap("assets/icons/battery_r.png");
-    image_array[2] = QPixmap("assets/icons/battery_i.png");
-    image_array[3] = QPixmap("assets/icons/battery_g.png");
+    image_array[0] = QPixmap("../assets/icons/battery_p.png");
+    image_array[1] = QPixmap("../assets/icons/battery_r.png");
+    image_array[2] = QPixmap("../assets/icons/battery_i.png");
+    image_array[3] = QPixmap("../assets/icons/battery_g.png");
     image = image_array[index];
     painter.setRenderHint(QPainter::Antialiasing);
-    int centerX = width() / 2;
+    int centerX = 40;
     int centerY = height() / 2;
-    int radius = std::min(width(), height()) / 2 - 20;
+    int radius = std::max(width(), height()) / 2 - 20;
 
     int imageWidth = 25;
     int imageHeight = 25;
-    int imageX = centerX - 30 - imageWidth / 2;
+    int imageX = centerX - 25 - imageWidth / 2;
     int imageY = centerY + imageWidth / 2;
 
     painter.drawPixmap(imageX, imageY, imageWidth, imageHeight, image);
@@ -51,12 +51,6 @@ void BatteryAndSpeedWidget::drawScale(QPainter& painter, int centerX,
     painter.setFont(font);
     drawBars(painter, centerX + 150, centerY + 30, radius * 1.2, startAngle,
              endAngle, 100);
-    painter.setPen(QPen(main_color, 15));
-
-    QRect rect(centerX, centerY - 80, radius, radius * 1.3);
-
-    int startAngle1 = 135 * 16;
-    int spanAngle1 = 90 * 16;
 }
 
 void BatteryAndSpeedWidget::drawBars(QPainter& painter, int centerX,

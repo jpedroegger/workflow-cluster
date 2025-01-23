@@ -23,6 +23,7 @@ int main(int argc, char* argv[])
     FanSpeedWidget*         fanspeed = new FanSpeedWidget(mode1Page);
     CPUTempWidget*          cputemp = new CPUTempWidget(mode1Page);
     ArrowSymbolWidget*      arrowSymbol = new ArrowSymbolWidget(mode1Page, "zero");
+    SettingsWidget*         settings = new SettingsWidget(mode1Page);
 
     // Mode 2
     StatsWidget*            stats = new StatsWidget(mode2Page);
@@ -32,8 +33,8 @@ int main(int argc, char* argv[])
     BatteryAndSpeedWidget*  bas = new BatteryAndSpeedWidget(mode2Page);
     FanSpeedWidget*         fanspeed2 = new FanSpeedWidget(mode2Page);
     CPUTempWidget*          cputemp2 = new CPUTempWidget(mode2Page);
+    SettingsWidget*         settings2 = new SettingsWidget(mode2Page);
 
-    SettingsWidget*         settings = new SettingsWidget(mainWindow);
 
     // Ros node
     //auto node = std::make_shared<RosNode>();
@@ -42,57 +43,25 @@ int main(int argc, char* argv[])
                               leftB2, rightB2, stats, topBar, topBar2, stackedWidget,
                               mainWindow);
     app.installEventFilter(&eventManager);
-
-    // bas->resize(900, 900);
-    // bas->setFixedSize(400, 400);
-
-    // mode1ContentLayout->addWidget(leftB, 1);
-    // mode1ContentLayout->addWidget(speedometer, 1);
-    // mode1ContentLayout->addWidget(arrowSymbol, 1);
-    // mode1ContentLayout->addWidget(battery, 1);
-    // mode1ContentLayout->addWidget(rightB, 1);
-
-    // mode1ContentLayout->addWidget(settings, 0, Qt::AlignBottom); // Button
-
-    // mode1Layout->addLayout(mode1ContentLayout, 1);
-    // mode1Layout->addWidget(fanspeed, 0, Qt::AlignBottom);
-    // mode1Layout->addWidget(cputemp, 0, Qt::AlignBottom);
-    // mode1Layout->addWidget(topBar, 0, Qt::AlignBottom);
-
-
-    // mode1Page->setLayout(mode1Layout);
-
-    // // Layout for Mode 2
-    // QVBoxLayout* mode2Layout = new QVBoxLayout();
-    // QHBoxLayout* mode2ContentLayout = new QHBoxLayout();
-
-    // mode2ContentLayout->addWidget(leftB2, 1);
-    // mode2ContentLayout->addWidget(bas, 2, Qt::AlignCenter);
-    // mode2ContentLayout->addWidget(stats, 2);
-    // mode2ContentLayout->addWidget(rightB2, 1);
-
-    // mode2Layout->addLayout(mode2ContentLayout, 1);
-    // mode2Layout->addWidget(fanspeed2, 0, Qt::AlignBottom);
-    // mode2Layout->addWidget(cputemp2, 0, Qt::AlignBottom);
-    // mode2Layout->addWidget(topBar2, 0, Qt::AlignBottom);
-    // mode2Page->setLayout(mode2Layout);
-
-    arrowSymbol->setGeometry(450, 170, 320, 360); // x, y, width, height
-    speedometer->setGeometry(90, 160, 380, 380);
-    battery->setGeometry(700, 160, 380, 380);
-    leftB->setGeometry(0, 300, 100, 100);
-    rightB->setGeometry(1070, 300, 100, 100);
-    fanspeed->setGeometry(50, 800, 200, 50);
-    cputemp->setGeometry(50, 900, 200, 50);
+    arrowSymbol->setGeometry(454, 180, 270, 320); // x, y, width, height
+    speedometer->setGeometry(90, 170, 365, 365);
+    battery->setGeometry(720, 170, 365, 365);
+    leftB->setGeometry(-5, 300, 100, 100);
+    rightB->setGeometry(1080, 300, 100, 100);
+    fanspeed->setGeometry(0, 630, 150, 140);
+    cputemp->setGeometry(100, 630, 150, 140);
     topBar->setGeometry(350, 700, 250, 50);
+    settings->setGeometry(1120, -10, 250, 250);
 
-    stats->setGeometry(1200, 200, 400, 400); 
-    topBar2->setGeometry(800, 50, 400, 50);
-    rightB2->setGeometry(1650, 300, 100, 100);
-    leftB2->setGeometry(50, 300, 100, 100);
-    bas->setGeometry(700, 200, 400, 400);
-    fanspeed2->setGeometry(800, 50, 400, 50);
-    cputemp2->setGeometry(800, 90, 400, 50); 
+    bas->setGeometry(110, 110, 200, 400);
+    stats->setGeometry(300, 0, 400, 400); 
+    leftB2->setGeometry(-5, 300, 100, 100);
+    rightB2->setGeometry(1080, 300, 100, 100);
+    fanspeed2->setGeometry(0, 630, 150, 140);
+    cputemp2->setGeometry(100, 630, 150, 140);
+    topBar2->setGeometry(350, 700, 250, 50);
+    settings2->setGeometry(1120, -10, 250, 250);
+
     // Toolbar for switching modes
     QToolBar* toolBar = new QToolBar;
     QAction* mode1Action = toolBar->addAction("Mode 1");

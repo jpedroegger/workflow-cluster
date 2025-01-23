@@ -8,7 +8,7 @@ SettingsWidget::SettingsWidget(QWidget *parent)
     mainIcon = new QPushButton(this);
     mainIcon->setFixedSize(50, 50);
     mainIcon->setStyleSheet("border: none; "
-                            "background-image: url('assets/icons/settings.png'); "
+                            "background-image: url('../assets/icons/settings.png'); "
                             "background-repeat: no-repeat; "
                             "background-position: center;"
                             );
@@ -17,7 +17,7 @@ SettingsWidget::SettingsWidget(QWidget *parent)
     closeIcon = new QPushButton(this);
     closeIcon->setFixedSize(50, 50);
     closeIcon->setStyleSheet("border: none; "
-                             "background-image: url('assets/icons/settings.png'); "
+                             "background-image: url('../assets/icons/settings.png'); "
                              "background-repeat: no-repeat; "
                              "background-position: center;");
 
@@ -35,7 +35,7 @@ SettingsWidget::SettingsWidget(QWidget *parent)
         "   text-align: center;"
         "}"
         );
-    themesIcon->setIcon(QIcon("assets/icons/brush.png"));
+    themesIcon->setIcon(QIcon("../assets/icons/brush.png"));
     themesIcon->setIconSize(QSize(50, 50));
     themesIcon->setText("Themes");
 
@@ -53,7 +53,7 @@ SettingsWidget::SettingsWidget(QWidget *parent)
         "   text-align: center;"
         "}"
         );
-    changeUnitIcon->setIcon(QIcon("assets/icons/convert.png"));
+    changeUnitIcon->setIcon(QIcon("../assets/icons/convert.png"));
     changeUnitIcon->setIconSize(QSize(50, 50));
     changeUnitIcon->setText("Change Units");
 

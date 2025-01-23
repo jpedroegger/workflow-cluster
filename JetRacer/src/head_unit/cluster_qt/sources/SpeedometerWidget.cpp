@@ -63,7 +63,7 @@ void SpeedometerWidget::drawScale(QPainter& painter, int centerX, int centerY,
         else if (speed / 10 % 2 != 0)
             painter.setPen(QPen(Qt::gray, 6));
         painter.drawLine(xOuter, yOuter, xInner, yInner);
-        painter.setPen(QPen(alphabet_color, 6));
+        painter.setPen(QPen(alphabet_color, 5));
         // Draw label
         int xLabel = centerX - std::cos(rad) * (radius - 55) - 8;
         int yLabel = centerY - std::sin(rad) * (radius - 55);
