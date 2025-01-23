@@ -21,15 +21,10 @@ jobs:
     - name: Checkout Code
       uses: actions/checkout@v4
 
-    - name: Install Clang
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y clang
-
     - name: Install dependencies
       run: |
-        sudo apt update
-        sudo apt install -y build-essential cmake
+        sudo apt-get update
+        sudo apt-get install -y clang build-essential cmake
 
     - name: Install Qt
       run: |
@@ -59,7 +54,7 @@ jobs:
           # Build
           colcon build --symlink-install --packages-skip camera_ros
 
-    - name: Testing the Cluster
+    - name: Run tests
       run: |
         source /opt/ros/jazzy/setup.bash
         cd $ROS_BUILD_DIR
