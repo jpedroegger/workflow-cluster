@@ -1,6 +1,6 @@
 #include "../includes/SpeedometerWidget.h"
 
-SpeedometerWidget::SpeedometerWidget(QWidget* parent)
+SpeedometerWidget::SpeedometerWidget(QWidget* parent, int x, int y, int width, int height)
     : QWidget(parent), currentSpeed(0)
 {
     color1 = Color();
@@ -9,6 +9,7 @@ SpeedometerWidget::SpeedometerWidget(QWidget* parent)
     main_color = color1.main_color;
     accent_color = color1.accent_color;
     alphabet_color = color1.alphabet_color;
+    setGeometry(x, y, width, height);
     setFocusPolicy(Qt::StrongFocus); // Ensure the widget can receive key events
 }
 
