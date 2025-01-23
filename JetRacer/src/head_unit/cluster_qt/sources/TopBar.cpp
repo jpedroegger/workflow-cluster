@@ -9,48 +9,48 @@ TopBar::TopBar(QWidget* parent) : QWidget(parent)
 
     // Create default and alternate images
     QStringList defaultImagePaths = {
-        "assets/icons/wheel.png",
-        "assets/icons/brake.png",
+        "assets/icons/wheel.png", "assets/icons/brake.png",
         "assets/icons/abs.png", // Replace with your actual paths
-        "assets/icons/med.png",
-        "assets/icons/max.png",
-        "assets/icons/fog.png",
-        "assets/icons/belt.png"
-    };
+        "assets/icons/med.png",   "assets/icons/max.png",
+        "assets/icons/fog.png",   "assets/icons/belt.png"};
 
     QStringList altImagePaths = {
-        "assets/icons/wheel_on.png",
-        "assets/icons/brake_on.png",
+        "assets/icons/wheel_on.png", "assets/icons/brake_on.png",
         "assets/icons/abs_on.png", // Replace with your actual paths
-        "assets/icons/med_on.png",
-        "assets/icons/max_on.png",
-        "assets/icons/fog_on.png",
-        "assets/icons/belt_on.png"
-    };
+        "assets/icons/med_on.png",   "assets/icons/max_on.png",
+        "assets/icons/fog_on.png",   "assets/icons/belt_on.png"};
 
     // Load images into QPixmaps
-    for (const QString& path : defaultImagePaths) {
+    for (const QString& path : defaultImagePaths)
+    {
         QPixmap pixmap(path);
-        if (pixmap.isNull()) {
+        if (pixmap.isNull())
+        {
             qWarning() << "Failed to load default image:" << path;
         }
         defaultImages.append(pixmap);
     }
 
-    for (const QString& path : altImagePaths) {
+    for (const QString& path : altImagePaths)
+    {
         QPixmap pixmap(path);
-        if (pixmap.isNull()) {
+        if (pixmap.isNull())
+        {
             qWarning() << "Failed to load alternate image:" << path;
         }
         altImages.append(pixmap);
     }
 
     // Create QLabel widgets for each image
-    for (int i = 0; i < 6; ++i) {
+    for (int i = 0; i < 6; ++i)
+    {
         QLabel* label = new QLabel(this);
-        label->setFixedSize(40, 40); // Optional: set a fixed size for the images
-        //label->setScaledContents(true); // Ensure the image scales to fit the QLabel
-        if (i < defaultImages.size()) {
+        label->setFixedSize(40,
+                            40); // Optional: set a fixed size for the images
+        // label->setScaledContents(true); // Ensure the image scales to fit the
+        // QLabel
+        if (i < defaultImages.size())
+        {
             label->setPixmap(defaultImages[i]); // Set default image
         }
         imageLabels.append(label);
@@ -64,18 +64,22 @@ TopBar::TopBar(QWidget* parent) : QWidget(parent)
 
 TopBar::~TopBar() {}
 
-bool    TopBar::setImageState(int index, bool state)
+bool TopBar::setImageState(int index, bool state)
 {
-    if (index < 0 || index >= imageLabels.size()) {
+    if (index < 0 || index >= imageLabels.size())
+    {
         qWarning() << "Invalid index:" << index;
         return false;
     }
 
     // Set the image based on the state
-    if (state) {
+    if (state)
+    {
         imageLabels[index]->setPixmap(altImages[index]);
         return true;
-    } else {
+    }
+    else
+    {
         imageLabels[index]->setPixmap(defaultImages[index]);
         return false;
     }
