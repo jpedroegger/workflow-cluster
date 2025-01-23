@@ -1,0 +1,48 @@
+\doxysection{RPi\+Controller\+::Hdr\+Algorithm Class Reference}
+\hypertarget{classRPiController_1_1HdrAlgorithm}{}\label{classRPiController_1_1HdrAlgorithm}\index{RPiController::HdrAlgorithm@{RPiController::HdrAlgorithm}}
+Inheritance diagram for RPi\+Controller\+::Hdr\+Algorithm\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classRPiController_1_1HdrAlgorithm}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classRPiController_1_1HdrAlgorithm_a1f5d5416b80bdf47e02fe70540222db3}\label{classRPiController_1_1HdrAlgorithm_a1f5d5416b80bdf47e02fe70540222db3} 
+{\bfseries Hdr\+Algorithm} (\mbox{\hyperlink{classRPiController_1_1Controller}{Controller}} \texorpdfstring{$\ast$}{*}controller)
+\item 
+\Hypertarget{classRPiController_1_1HdrAlgorithm_a5ed6dd561ec0bce66d1e2dd585f43fce}\label{classRPiController_1_1HdrAlgorithm_a5ed6dd561ec0bce66d1e2dd585f43fce} 
+virtual int {\bfseries set\+Mode} (std\+::string const \&mode\+Name)=0
+\item 
+\Hypertarget{classRPiController_1_1HdrAlgorithm_a92abaed941288b88e9d2b0931d934ffc}\label{classRPiController_1_1HdrAlgorithm_a92abaed941288b88e9d2b0931d934ffc} 
+virtual std\+::vector$<$ unsigned int $>$ {\bfseries get\+Channels} () const =0
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classRPiController_1_1Algorithm}{RPi\+Controller\+::\+Algorithm}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Algorithm} (\mbox{\hyperlink{classRPiController_1_1Controller}{Controller}} \texorpdfstring{$\ast$}{*}controller)
+\item 
+virtual char const \texorpdfstring{$\ast$}{*} {\bfseries name} () const =0
+\item 
+virtual int {\bfseries read} (const \mbox{\hyperlink{classlibcamera_1_1YamlObject}{libcamera\+::\+Yaml\+Object}} \&params)
+\item 
+virtual void {\bfseries initialise} ()
+\item 
+virtual void {\bfseries switch\+Mode} (\mbox{\hyperlink{structCameraMode}{Camera\+Mode}} const \&camera\+Mode, Metadata \texorpdfstring{$\ast$}{*}metadata)
+\item 
+virtual void {\bfseries prepare} (Metadata \texorpdfstring{$\ast$}{*}image\+Metadata)
+\item 
+virtual void {\bfseries process} (Statistics\+Ptr \&stats, Metadata \texorpdfstring{$\ast$}{*}image\+Metadata)
+\item 
+Metadata \& {\bfseries get\+Global\+Metadata} () const
+\item 
+const std\+::string \& {\bfseries get\+Target} () const
+\item 
+const \mbox{\hyperlink{structRPiController_1_1Controller_1_1HardwareConfig}{Controller\+::\+Hardware\+Config}} \& {\bfseries get\+Hardware\+Config} () const
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/ipa/rpi/controller/hdr\+\_\+algorithm.\+h\end{DoxyCompactItemize}

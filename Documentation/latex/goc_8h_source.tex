@@ -1,0 +1,48 @@
+\doxysection{goc.\+h}
+\hypertarget{goc_8h_source}{}\label{goc_8h_source}\index{src/peripherals/camera/libcamera/src/ipa/rkisp1/algorithms/goc.h@{src/peripherals/camera/libcamera/src/ipa/rkisp1/algorithms/goc.h}}
+\mbox{\hyperlink{goc_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2024,\ Ideas\ On\ Board}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ RkISP1\ Gamma\ out\ control}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}algorithm.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacelibcamera}{libcamera}}\ \{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }ipa::rkisp1::algorithms\ \{}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1ipa_1_1rkisp1_1_1algorithms_1_1GammaOutCorrection}{GammaOutCorrection}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1rkisp1_1_1Algorithm}{Algorithm}}}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1rkisp1_1_1algorithms_1_1GammaOutCorrection}{GammaOutCorrection}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1rkisp1_1_1algorithms_1_1GammaOutCorrection}{\string~GammaOutCorrection}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1rkisp1_1_1algorithms_1_1GammaOutCorrection_a43832a8e1db6c268804bf3acf146787e}{init}}(\mbox{\hyperlink{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAContext}{IPAContext}}\ \&context,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1YamlObject}{YamlObject}}\ \&tuningData)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1rkisp1_1_1algorithms_1_1GammaOutCorrection_a423c0446f9f980769202027298045cd4}{configure}}(\mbox{\hyperlink{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAContext}{IPAContext}}\ \&context,}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ IPACameraSensorInfo\ \&configInfo)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1rkisp1_1_1algorithms_1_1GammaOutCorrection_a127d854fd20c922af1cc35ea154247f0}{queueRequest}}(\mbox{\hyperlink{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAContext}{IPAContext}}\ \&context,}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint32\_t\ frame,}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAFrameContext}{IPAFrameContext}}\ \&frameContext,}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1ControlList}{ControlList}}\ \&controls)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1rkisp1_1_1algorithms_1_1GammaOutCorrection_ad00b1865da996ef7d4cf35095243ced1}{prepare}}(\mbox{\hyperlink{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAContext}{IPAContext}}\ \&context,\ \textcolor{keyword}{const}\ uint32\_t\ frame,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAFrameContext}{IPAFrameContext}}\ \&frameContext,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1rkisp1_1_1RkISP1Params}{RkISP1Params}}\ *params)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1rkisp1_1_1algorithms_1_1GammaOutCorrection_ad0b44fc835e1b9e73baf440015029631}{process}}(\mbox{\hyperlink{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAContext}{IPAContext}}\ \&context,\ \textcolor{keyword}{const}\ uint32\_t\ frame,}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAFrameContext}{IPAFrameContext}}\ \&frameContext,}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structrkisp1__stat__buffer}{rkisp1\_stat\_buffer}}\ *stats,}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ControlList}{ControlList}}\ \&metadata)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{float}\ defaultGamma\_;}
+\DoxyCodeLine{00039\ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \}\ \textcolor{comment}{/*\ namespace\ ipa::rkisp1::algorithms\ */}}
+\DoxyCodeLine{00042\ \}\ \textcolor{comment}{/*\ namespace\ libcamera\ */}}
+
+\end{DoxyCode}

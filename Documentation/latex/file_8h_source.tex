@@ -1,0 +1,93 @@
+\doxysection{file.\+h}
+\hypertarget{file_8h_source}{}\label{file_8h_source}\index{src/peripherals/camera/libcamera/include/libcamera/base/file.h@{src/peripherals/camera/libcamera/include/libcamera/base/file.h}}
+\mbox{\hyperlink{file_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2020,\ Google\ Inc.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ File\ I/O\ operations}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <sys/types.h>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <libcamera/base/private.h>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{class_8h}{libcamera/base/class.h}}>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{flags_8h}{libcamera/base/flags.h}}>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <libcamera/base/span.h>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{unique__fd_8h}{libcamera/base/unique\_fd.h}}>}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacelibcamera}{libcamera}}\ \{}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1File}{File}}}
+\DoxyCodeLine{00025\ \{}
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{classlibcamera_1_1File_a128efbbcacb7cdaa1986ffc943e89ae0}{MapFlag}}\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1File_a128efbbcacb7cdaa1986ffc943e89ae0a44f0e1a448f14b3cfcae67338bdc04bb}{NoOption}}\ =\ 0,}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1File_a128efbbcacb7cdaa1986ffc943e89ae0a47f9082fc380ca62d531096aa1d110f1}{Private}}\ =\ (1\ <<\ 0),}
+\DoxyCodeLine{00030\ \ \ \ \ \};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classlibcamera_1_1Flags}{MapFlags}}\ =\ \mbox{\hyperlink{classlibcamera_1_1Flags}{Flags<MapFlag>}};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{classlibcamera_1_1File_a6df7f0036263a0a04610e586e9e604cb}{OpenModeFlag}}\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1File_a6df7f0036263a0a04610e586e9e604cbabdd7de68889646349ad64c3f6404b635}{NotOpen}}\ =\ 0,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1File_a6df7f0036263a0a04610e586e9e604cba131fb182a881796e7606ed6da27f1197}{ReadOnly}}\ =\ (1\ <<\ 0),}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1File_a6df7f0036263a0a04610e586e9e604cba53dfe5089ae9e65887cb0215cb0098f5}{WriteOnly}}\ =\ (1\ <<\ 1),}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1File_a6df7f0036263a0a04610e586e9e604cba70a2a84088d405a2e3f1e3accaa16723}{ReadWrite}}\ =\ \mbox{\hyperlink{classlibcamera_1_1File_a6df7f0036263a0a04610e586e9e604cba131fb182a881796e7606ed6da27f1197}{ReadOnly}}\ |\ \mbox{\hyperlink{classlibcamera_1_1File_a6df7f0036263a0a04610e586e9e604cba53dfe5089ae9e65887cb0215cb0098f5}{WriteOnly}},}
+\DoxyCodeLine{00039\ \ \ \ \ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classlibcamera_1_1Flags}{OpenMode}}\ =\ \mbox{\hyperlink{classlibcamera_1_1Flags}{Flags<OpenModeFlag>}};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1File_aa47651dbd19d4a39ccd1aedebe661b7f}{File}}(\textcolor{keyword}{const}\ std::string\ \&name);}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1File_aa47651dbd19d4a39ccd1aedebe661b7f}{File}}();}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1File_a9c6a7c6572aed8367bf8632679ffbe33}{\string~File}}();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classlibcamera_1_1File_a387e2f92eb36a45aad031915ca90471a}{fileName}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ name\_;\ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1File_aebffdf869c9e1e4708fc77e630c1404e}{setFileName}}(\textcolor{keyword}{const}\ std::string\ \&name);}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classlibcamera_1_1File_a41891c0fb18b11268b9367df43f99532}{exists}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classlibcamera_1_1File_a51d5e31e1583c024674392b721fe81d7}{open}}(\mbox{\hyperlink{classlibcamera_1_1File_aa7d05f43db687fb4363b6c77413e0153}{OpenMode}}\ mode);}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classlibcamera_1_1File_a9994a0225c3dae36a0d77bda2f9120cb}{isOpen}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ fd\_.\mbox{\hyperlink{classlibcamera_1_1UniqueFD_a9f59956dd0184a2691c5cec6b1ce8283}{isValid}}();\ \}}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Flags}{OpenMode}}\ \mbox{\hyperlink{classlibcamera_1_1File_aa8fa7887b901b9bc4cc5bb4d647fc4dd}{openMode}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ mode\_;\ \}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1File_a62ad081ef9f239b476815bf855de08d7}{close}}();}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1File_a17a868b3e07508e37463acbbd525e881}{error}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ error\_;\ \}}
+\DoxyCodeLine{00057\ \ \ \ \ ssize\_t\ \mbox{\hyperlink{classlibcamera_1_1File_ae5a2310f55bb95ad77257a63483392eb}{size}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ off\_t\ \mbox{\hyperlink{classlibcamera_1_1File_ae941e89884152a9c7d8da39f580220ac}{pos}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00060\ \ \ \ \ off\_t\ \mbox{\hyperlink{classlibcamera_1_1File_ad724b3d6ab82d0b50cf9221fd55b60bd}{seek}}(off\_t\ \mbox{\hyperlink{classlibcamera_1_1File_ae941e89884152a9c7d8da39f580220ac}{pos}});}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ ssize\_t\ \mbox{\hyperlink{classlibcamera_1_1File_acfe64877b7c056697bdeea56d553b383}{read}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Span}{Span<uint8\_t>}}\ \&data);}
+\DoxyCodeLine{00063\ \ \ \ \ ssize\_t\ \mbox{\hyperlink{classlibcamera_1_1File_a596bea491fd1306082e462842559c929}{write}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Span}{Span<const\ uint8\_t>}}\ \&data);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Span}{Span<uint8\_t>}}\ \mbox{\hyperlink{classlibcamera_1_1File_ae21f90c1db0adaab5769b4aa40aacd44}{map}}(off\_t\ offset\ =\ 0,\ ssize\_t\ \mbox{\hyperlink{classlibcamera_1_1File_ae5a2310f55bb95ad77257a63483392eb}{size}}\ =\ -\/1,}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1File_ab408d863e2a0191023b7368cb52213ef}{MapFlags}}\ flags\ =\ \mbox{\hyperlink{classlibcamera_1_1File_a128efbbcacb7cdaa1986ffc943e89ae0a44f0e1a448f14b3cfcae67338bdc04bb}{MapFlag::NoOption}});}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classlibcamera_1_1File_ae2d7e600bc5bd4381741f9874c9a11ef}{unmap}}(uint8\_t\ *addr);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classlibcamera_1_1File_a41891c0fb18b11268b9367df43f99532}{exists}}(\textcolor{keyword}{const}\ std::string\ \&name);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{class_8h_ace000c18250df4aeac259f1ab739c655}{LIBCAMERA\_DISABLE\_COPY}}(\mbox{\hyperlink{classlibcamera_1_1File}{File}})}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ unmapAll();}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ std::string\ name\_;}
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1UniqueFD}{UniqueFD}}\ fd\_;}
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1File_aa7d05f43db687fb4363b6c77413e0153}{OpenMode}}\ mode\_;}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{int}\ error\_;}
+\DoxyCodeLine{00081\ \ \ \ \ std::map<void\ *,\ size\_t>\ maps\_;}
+\DoxyCodeLine{00082\ \};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \mbox{\hyperlink{flags_8h_af343143bcb24209ae99e7bf7e28936a1}{LIBCAMERA\_FLAGS\_ENABLE\_OPERATORS}}(\mbox{\hyperlink{classlibcamera_1_1File_a128efbbcacb7cdaa1986ffc943e89ae0}{File::MapFlag}})}
+\DoxyCodeLine{00085\ \mbox{\hyperlink{flags_8h_af343143bcb24209ae99e7bf7e28936a1}{LIBCAMERA\_FLAGS\_ENABLE\_OPERATORS}}(\mbox{\hyperlink{classlibcamera_1_1File_a6df7f0036263a0a04610e586e9e604cb}{File::OpenModeFlag}})}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \}\ \textcolor{comment}{/*\ namespace\ libcamera\ */}}
+
+\end{DoxyCode}

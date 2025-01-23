@@ -1,0 +1,94 @@
+\doxysection{Exif Class Reference}
+\hypertarget{classExif}{}\label{classExif}\index{Exif@{Exif}}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classExif_aba7d215f096e52c451c8c7cdf8d2096a}\label{classExif_aba7d215f096e52c451c8c7cdf8d2096a} 
+enum {\bfseries Compression} \{ {\bfseries None} = 1
+, {\bfseries JPEG} = 6
+ \}
+\item 
+\Hypertarget{classExif_a3b0411742a967af742148e6ef8400a43}\label{classExif_a3b0411742a967af742148e6ef8400a43} 
+enum {\bfseries Flash} \{ \newline
+{\bfseries Fired} = 0x01
+, {\bfseries Strobe\+Detected} = 0x04
+, {\bfseries Strobe\+Not\+Detected} = 0x06
+, {\bfseries Mode\+Compulsory\+Firing} = 0x08
+, \newline
+{\bfseries Mode\+Compulsory\+Suppression} = 0x10
+, {\bfseries Mode\+Auto} = 0x18
+, {\bfseries Flash\+Not\+Present} = 0x20
+, {\bfseries Red\+Eye} = 0x40
+ \}
+\item 
+\Hypertarget{classExif_a7fff57775dbc6522fd76f216c062cef7}\label{classExif_a7fff57775dbc6522fd76f216c062cef7} 
+enum {\bfseries White\+Balance} \{ {\bfseries Auto} = 0
+, {\bfseries Manual} = 1
+ \}
+\item 
+\Hypertarget{classExif_a5b15364af7fee5342717c6791eaa12ec}\label{classExif_a5b15364af7fee5342717c6791eaa12ec} 
+enum {\bfseries String\+Encoding} \{ {\bfseries No\+Encoding} = 0
+, {\bfseries ASCII} = 1
+, {\bfseries Unicode} = 2
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classExif_ae6db41348b7e9e60842ddd54c6535d1d}\label{classExif_ae6db41348b7e9e60842ddd54c6535d1d} 
+void {\bfseries set\+Make} (const std\+::string \&make)
+\item 
+\Hypertarget{classExif_a76059f7f8581106f5e04d1d70082de82}\label{classExif_a76059f7f8581106f5e04d1d70082de82} 
+void {\bfseries set\+Model} (const std\+::string \&model)
+\item 
+\Hypertarget{classExif_a639365ef2cf83ed4935b43bdbfed866b}\label{classExif_a639365ef2cf83ed4935b43bdbfed866b} 
+void {\bfseries set\+Orientation} (int orientation)
+\item 
+\Hypertarget{classExif_a9fbbea7ded072f7e5e3dba1f076cab4e}\label{classExif_a9fbbea7ded072f7e5e3dba1f076cab4e} 
+void {\bfseries set\+Size} (const \mbox{\hyperlink{classlibcamera_1_1Size}{libcamera\+::\+Size}} \&size)
+\item 
+\Hypertarget{classExif_a71bdb767d2f8f251b97fbd966f600a5e}\label{classExif_a71bdb767d2f8f251b97fbd966f600a5e} 
+void {\bfseries set\+Thumbnail} (std\+::vector$<$ unsigned char $>$ \&\&thumbnail, Compression compression)
+\item 
+\Hypertarget{classExif_a763075fa2d9507a88da64f15009440cc}\label{classExif_a763075fa2d9507a88da64f15009440cc} 
+void {\bfseries set\+Timestamp} (time\+\_\+t timestamp, std\+::chrono\+::milliseconds msec)
+\item 
+\Hypertarget{classExif_a0a3f3f19d5e48c920d4f96c68a471c24}\label{classExif_a0a3f3f19d5e48c920d4f96c68a471c24} 
+void {\bfseries set\+GPSDate\+Timestamp} (time\+\_\+t timestamp)
+\item 
+\Hypertarget{classExif_a311f0bb53fe7b89ea0ce69787fd59a07}\label{classExif_a311f0bb53fe7b89ea0ce69787fd59a07} 
+void {\bfseries set\+GPSLocation} (const double \texorpdfstring{$\ast$}{*}coords)
+\item 
+\Hypertarget{classExif_a58d413b91eee458538857aba87a6bab8}\label{classExif_a58d413b91eee458538857aba87a6bab8} 
+void {\bfseries set\+GPSMethod} (const std\+::string \&method)
+\item 
+\Hypertarget{classExif_ab0a324982f5c475c91c2495f2cd93b5a}\label{classExif_ab0a324982f5c475c91c2495f2cd93b5a} 
+void {\bfseries set\+Focal\+Length} (float length)
+\item 
+\Hypertarget{classExif_ac31d499e8639eab5c78a27c451d3082f}\label{classExif_ac31d499e8639eab5c78a27c451d3082f} 
+void {\bfseries set\+Exposure\+Time} (uint64\+\_\+t nsec)
+\item 
+\Hypertarget{classExif_ab0dcdcad384013447e6b5d51b229387f}\label{classExif_ab0dcdcad384013447e6b5d51b229387f} 
+void {\bfseries set\+Aperture} (float size)
+\item 
+\Hypertarget{classExif_a7880d4d709a2e7ac10e53d3408960442}\label{classExif_a7880d4d709a2e7ac10e53d3408960442} 
+void {\bfseries set\+ISO} (uint16\+\_\+t iso)
+\item 
+\Hypertarget{classExif_a540ddcf976e8f1a2341ba0cdd69bfb0b}\label{classExif_a540ddcf976e8f1a2341ba0cdd69bfb0b} 
+void {\bfseries set\+Flash} (Flash flash)
+\item 
+\Hypertarget{classExif_a1810a67534543a1515bcd790700cc0c6}\label{classExif_a1810a67534543a1515bcd790700cc0c6} 
+void {\bfseries set\+White\+Balance} (White\+Balance wb)
+\item 
+\Hypertarget{classExif_a83cf3c9cd174fc35e7ff399f687503df}\label{classExif_a83cf3c9cd174fc35e7ff399f687503df} 
+\mbox{\hyperlink{classlibcamera_1_1Span}{libcamera\+::\+Span}}$<$ const uint8\+\_\+t $>$ {\bfseries data} () const
+\item 
+\Hypertarget{classExif_a50546a8f4dc4fb44612c78a99e6d7b86}\label{classExif_a50546a8f4dc4fb44612c78a99e6d7b86} 
+int {\bfseries generate} ()
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/android/jpeg/exif.\+h\item 
+src/peripherals/camera/libcamera/src/android/jpeg/exif.\+cpp\end{DoxyCompactItemize}

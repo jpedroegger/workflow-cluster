@@ -1,0 +1,111 @@
+\doxysection{Tester\+Node Class Reference}
+\hypertarget{classTesterNode}{}\label{classTesterNode}\index{TesterNode@{TesterNode}}
+Inheritance diagram for Tester\+Node\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classTesterNode}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTesterNode_a58b1717dfecc99881222cff6327dc181}{Tester\+Node}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classTesterNode_a57202c43ec6c9bd93c2a91256cafda8f}{display\+Callback}} ()
+\item 
+void \mbox{\hyperlink{classTesterNode_a5b149b0ee0010e2280b988b3b98a1f8a}{twist\+Callback}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+rclcpp\+::\+Timer\+Base\+::\+Shared\+Ptr \mbox{\hyperlink{classTesterNode_aa97bb1d90b2805a5b6dc4272a5eab280}{timer\+\_\+display}}
+\item 
+rclcpp\+::\+Timer\+Base\+::\+Shared\+Ptr \mbox{\hyperlink{classTesterNode_a087cf6b670d095a7cdd14491a6a9ad59}{timer\+\_\+servo}}
+\item 
+rclcpp\+::\+Timer\+Base\+::\+Shared\+Ptr \mbox{\hyperlink{classTesterNode_aceaab3fc0d85e81923be49e5ae714779}{timer\+\_\+dc\+\_\+motors}}
+\item 
+float \mbox{\hyperlink{classTesterNode_a702ebfd4c50c21005caa3859a95cb1ab}{curr\+\_\+linear\+\_\+x}} = -\/1.\+0
+\item 
+float \mbox{\hyperlink{classTesterNode_a7e2fb7d031da1939bf77180ca2d130dd}{curr\+\_\+angular\+\_\+z}} = -\/1.\+0
+\item 
+rclcpp\+::\+Publisher$<$ geometry\+\_\+msgs\+::msg\+::\+Twist $>$\+::\+Shared\+Ptr \mbox{\hyperlink{classTesterNode_aeafc4cbd9d516ed70da492f05ce87a7d}{twist\+\_\+publisher\+\_\+}}
+\item 
+rclcpp\+::\+Publisher$<$ custom\+\_\+msgs\+::msg\+::\+Display $>$\+::\+Shared\+Ptr \mbox{\hyperlink{classTesterNode_a86c0bfe12bf95dddc245e715d96c680f}{display\+\_\+publisher\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classTesterNode_a58b1717dfecc99881222cff6327dc181}\label{classTesterNode_a58b1717dfecc99881222cff6327dc181} 
+\index{TesterNode@{TesterNode}!TesterNode@{TesterNode}}
+\index{TesterNode@{TesterNode}!TesterNode@{TesterNode}}
+\doxysubsubsection{\texorpdfstring{TesterNode()}{TesterNode()}}
+{\footnotesize\ttfamily Tester\+Node\+::\+Tester\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classTesterNode_a57202c43ec6c9bd93c2a91256cafda8f}\label{classTesterNode_a57202c43ec6c9bd93c2a91256cafda8f} 
+\index{TesterNode@{TesterNode}!displayCallback@{displayCallback}}
+\index{displayCallback@{displayCallback}!TesterNode@{TesterNode}}
+\doxysubsubsection{\texorpdfstring{displayCallback()}{displayCallback()}}
+{\footnotesize\ttfamily void Tester\+Node\+::display\+Callback (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{classTesterNode_a5b149b0ee0010e2280b988b3b98a1f8a}\label{classTesterNode_a5b149b0ee0010e2280b988b3b98a1f8a} 
+\index{TesterNode@{TesterNode}!twistCallback@{twistCallback}}
+\index{twistCallback@{twistCallback}!TesterNode@{TesterNode}}
+\doxysubsubsection{\texorpdfstring{twistCallback()}{twistCallback()}}
+{\footnotesize\ttfamily void Tester\+Node\+::twist\+Callback (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classTesterNode_a7e2fb7d031da1939bf77180ca2d130dd}\label{classTesterNode_a7e2fb7d031da1939bf77180ca2d130dd} 
+\index{TesterNode@{TesterNode}!curr\_angular\_z@{curr\_angular\_z}}
+\index{curr\_angular\_z@{curr\_angular\_z}!TesterNode@{TesterNode}}
+\doxysubsubsection{\texorpdfstring{curr\_angular\_z}{curr\_angular\_z}}
+{\footnotesize\ttfamily float Tester\+Node\+::curr\+\_\+angular\+\_\+z = -\/1.\+0\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classTesterNode_a702ebfd4c50c21005caa3859a95cb1ab}\label{classTesterNode_a702ebfd4c50c21005caa3859a95cb1ab} 
+\index{TesterNode@{TesterNode}!curr\_linear\_x@{curr\_linear\_x}}
+\index{curr\_linear\_x@{curr\_linear\_x}!TesterNode@{TesterNode}}
+\doxysubsubsection{\texorpdfstring{curr\_linear\_x}{curr\_linear\_x}}
+{\footnotesize\ttfamily float Tester\+Node\+::curr\+\_\+linear\+\_\+x = -\/1.\+0\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classTesterNode_a86c0bfe12bf95dddc245e715d96c680f}\label{classTesterNode_a86c0bfe12bf95dddc245e715d96c680f} 
+\index{TesterNode@{TesterNode}!display\_publisher\_@{display\_publisher\_}}
+\index{display\_publisher\_@{display\_publisher\_}!TesterNode@{TesterNode}}
+\doxysubsubsection{\texorpdfstring{display\_publisher\_}{display\_publisher\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Publisher$<$custom\+\_\+msgs\+::msg\+::\+Display$>$\+::\+Shared\+Ptr Tester\+Node\+::display\+\_\+publisher\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classTesterNode_aceaab3fc0d85e81923be49e5ae714779}\label{classTesterNode_aceaab3fc0d85e81923be49e5ae714779} 
+\index{TesterNode@{TesterNode}!timer\_dc\_motors@{timer\_dc\_motors}}
+\index{timer\_dc\_motors@{timer\_dc\_motors}!TesterNode@{TesterNode}}
+\doxysubsubsection{\texorpdfstring{timer\_dc\_motors}{timer\_dc\_motors}}
+{\footnotesize\ttfamily rclcpp\+::\+Timer\+Base\+::\+Shared\+Ptr Tester\+Node\+::timer\+\_\+dc\+\_\+motors\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classTesterNode_aa97bb1d90b2805a5b6dc4272a5eab280}\label{classTesterNode_aa97bb1d90b2805a5b6dc4272a5eab280} 
+\index{TesterNode@{TesterNode}!timer\_display@{timer\_display}}
+\index{timer\_display@{timer\_display}!TesterNode@{TesterNode}}
+\doxysubsubsection{\texorpdfstring{timer\_display}{timer\_display}}
+{\footnotesize\ttfamily rclcpp\+::\+Timer\+Base\+::\+Shared\+Ptr Tester\+Node\+::timer\+\_\+display\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classTesterNode_a087cf6b670d095a7cdd14491a6a9ad59}\label{classTesterNode_a087cf6b670d095a7cdd14491a6a9ad59} 
+\index{TesterNode@{TesterNode}!timer\_servo@{timer\_servo}}
+\index{timer\_servo@{timer\_servo}!TesterNode@{TesterNode}}
+\doxysubsubsection{\texorpdfstring{timer\_servo}{timer\_servo}}
+{\footnotesize\ttfamily rclcpp\+::\+Timer\+Base\+::\+Shared\+Ptr Tester\+Node\+::timer\+\_\+servo\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classTesterNode_aeafc4cbd9d516ed70da492f05ce87a7d}\label{classTesterNode_aeafc4cbd9d516ed70da492f05ce87a7d} 
+\index{TesterNode@{TesterNode}!twist\_publisher\_@{twist\_publisher\_}}
+\index{twist\_publisher\_@{twist\_publisher\_}!TesterNode@{TesterNode}}
+\doxysubsubsection{\texorpdfstring{twist\_publisher\_}{twist\_publisher\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Publisher$<$geometry\+\_\+msgs\+::msg\+::\+Twist$>$\+::\+Shared\+Ptr Tester\+Node\+::twist\+\_\+publisher\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/tests/i2c\+\_\+peripheral\+\_\+stress\+\_\+test/src/\mbox{\hyperlink{tests_2i2c__peripheral__stress__test_2src_2main_8cpp}{main.\+cpp}}\end{DoxyCompactItemize}

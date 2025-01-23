@@ -1,0 +1,38 @@
+\doxysection{libcamera\+::RPi\+::Delayed\+Controls\+::Control\+Params Struct Reference}
+\hypertarget{structlibcamera_1_1RPi_1_1DelayedControls_1_1ControlParams}{}\label{structlibcamera_1_1RPi_1_1DelayedControls_1_1ControlParams}\index{libcamera::RPi::DelayedControls::ControlParams@{libcamera::RPi::DelayedControls::ControlParams}}
+
+
+Parameters associated with controls handled by the {\itshape \doxylink{classlibcamera_1_1RPi_1_1DelayedControls}{Delayed\+Controls}} helper class.  
+
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structlibcamera_1_1RPi_1_1DelayedControls_1_1ControlParams_adf826bc9c7085eb02cdc9446c7412f0f}\label{structlibcamera_1_1RPi_1_1DelayedControls_1_1ControlParams_adf826bc9c7085eb02cdc9446c7412f0f} 
+unsigned int {\bfseries delay}
+\begin{DoxyCompactList}\small\item\em Frame delay from setting the control on a sensor device to when it is consumed during framing. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structlibcamera_1_1RPi_1_1DelayedControls_1_1ControlParams_a5a8ac37bb4e3fdda8d6d1f2f67e1de80}{priority\+Write}}
+\begin{DoxyCompactList}\small\item\em Flag to indicate that this control must be applied ahead of, and separately from the other controls. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Parameters associated with controls handled by the {\itshape \doxylink{classlibcamera_1_1RPi_1_1DelayedControls}{Delayed\+Controls}} helper class. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structlibcamera_1_1RPi_1_1DelayedControls_1_1ControlParams_a5a8ac37bb4e3fdda8d6d1f2f67e1de80}\label{structlibcamera_1_1RPi_1_1DelayedControls_1_1ControlParams_a5a8ac37bb4e3fdda8d6d1f2f67e1de80} 
+\index{libcamera::RPi::DelayedControls::ControlParams@{libcamera::RPi::DelayedControls::ControlParams}!priorityWrite@{priorityWrite}}
+\index{priorityWrite@{priorityWrite}!libcamera::RPi::DelayedControls::ControlParams@{libcamera::RPi::DelayedControls::ControlParams}}
+\doxysubsubsection{\texorpdfstring{priorityWrite}{priorityWrite}}
+{\footnotesize\ttfamily libcamera\+::\+RPi\+::\+Control\+Params\+::priority\+Write}
+
+
+
+Flag to indicate that this control must be applied ahead of, and separately from the other controls. 
+
+Typically set for the {\itshape V4\+L2\+\_\+\+CID\+\_\+\+VBLANK} control so that the device driver does not reject {\itshape V4\+L2\+\_\+\+CID\+\_\+\+EXPOSURE} control values that may be outside of the existing vertical blanking specified bounds, but are within the new blanking bounds. 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/libcamera/pipeline/rpi/common/\mbox{\hyperlink{src_2libcamera_2pipeline_2rpi_2common_2delayed__controls_8h}{delayed\+\_\+controls.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/delayed\+\_\+controls.\+cpp\item 
+src/peripherals/camera/libcamera/src/libcamera/pipeline/rpi/common/delayed\+\_\+controls.\+cpp\end{DoxyCompactItemize}

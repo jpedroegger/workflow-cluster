@@ -1,0 +1,46 @@
+\doxysection{ipu3\+\_\+uapi\+\_\+yuvp1\+\_\+y\+\_\+ee\+\_\+nr\+\_\+frng\+\_\+config Struct Reference}
+\hypertarget{structipu3__uapi__yuvp1__y__ee__nr__frng__config}{}\label{structipu3__uapi__yuvp1__y__ee__nr__frng__config}\index{ipu3\_uapi\_yuvp1\_y\_ee\_nr\_frng\_config@{ipu3\_uapi\_yuvp1\_y\_ee\_nr\_frng\_config}}
+
+
+{\ttfamily \#include $<$intel-\/ipu3.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__y__ee__nr__frng__config_af40c3c732d7fd6d56afdc629ef0870da}\label{structipu3__uapi__yuvp1__y__ee__nr__frng__config_af40c3c732d7fd6d56afdc629ef0870da} 
+\+\_\+\+\_\+u32 {\bfseries gain\+\_\+exp}\+:4
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__y__ee__nr__frng__config_ac5f32ea7ff9732b207f828011888a0b0}\label{structipu3__uapi__yuvp1__y__ee__nr__frng__config_ac5f32ea7ff9732b207f828011888a0b0} 
+\+\_\+\+\_\+u32 {\bfseries reserved0}\+:28
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__y__ee__nr__frng__config_ae8ce75b1d25242f62d9a0b4aaea38d90}\label{structipu3__uapi__yuvp1__y__ee__nr__frng__config_ae8ce75b1d25242f62d9a0b4aaea38d90} 
+\+\_\+\+\_\+u32 {\bfseries min\+\_\+edge}\+:13
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__y__ee__nr__frng__config_a904803dc7901ae64924fce83d991b4c9}\label{structipu3__uapi__yuvp1__y__ee__nr__frng__config_a904803dc7901ae64924fce83d991b4c9} 
+\+\_\+\+\_\+u32 {\bfseries reserved1}\+:3
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__y__ee__nr__frng__config_a4bf246996d5dcadbce6bd1208ed1cbe3}\label{structipu3__uapi__yuvp1__y__ee__nr__frng__config_a4bf246996d5dcadbce6bd1208ed1cbe3} 
+\+\_\+\+\_\+u32 {\bfseries lin\+\_\+seg\+\_\+param}\+:4
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__y__ee__nr__frng__config_a25de6d2a9acfab4f75eb2613d267719b}\label{structipu3__uapi__yuvp1__y__ee__nr__frng__config_a25de6d2a9acfab4f75eb2613d267719b} 
+\+\_\+\+\_\+u32 {\bfseries reserved2}\+:4
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__y__ee__nr__frng__config_aa7a2c63c1f7f0c306a6cb3f9980b11ff}\label{structipu3__uapi__yuvp1__y__ee__nr__frng__config_aa7a2c63c1f7f0c306a6cb3f9980b11ff} 
+\+\_\+\+\_\+u32 {\bfseries t1}\+:1
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__y__ee__nr__frng__config_a01f15da7243383dc1ddae06e51976b0e}\label{structipu3__uapi__yuvp1__y__ee__nr__frng__config_a01f15da7243383dc1ddae06e51976b0e} 
+\+\_\+\+\_\+u32 {\bfseries t2}\+:1
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__y__ee__nr__frng__config_ab6c4c534ab8f955d6c83f42bcaa7469d}\label{structipu3__uapi__yuvp1__y__ee__nr__frng__config_ab6c4c534ab8f955d6c83f42bcaa7469d} 
+\+\_\+\+\_\+u32 {\bfseries reserved3}\+:6
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structipu3__uapi__yuvp1__y__ee__nr__frng__config}{ipu3\+\_\+uapi\+\_\+yuvp1\+\_\+y\+\_\+ee\+\_\+nr\+\_\+frng\+\_\+config} -\/ Luma(\+Y) edge enhancement noise reduction fringe config
+
+@gain\+\_\+exp\+: Common exponent of gains, u4, \mbox{[}0, 8\mbox{]}, default 2. @reserved0\+: reserved @min\+\_\+edge\+: Threshold for edge and smooth stitching, u13. @reserved1\+: reserved @lin\+\_\+seg\+\_\+param\+: Power of Lin\+Seg, u4. @reserved2\+: reserved @t1\+: Parameter for enabling/disabling the edge enhancement, u1.\+0, \mbox{[}0, 1\mbox{]}, default 1. @t2\+: Parameter for enabling/disabling the smoothing, u1.\+0, \mbox{[}0, 1\mbox{]}, default 1. @reserved3\+: reserved 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/intel-\/ipu3.\+h\end{DoxyCompactItemize}

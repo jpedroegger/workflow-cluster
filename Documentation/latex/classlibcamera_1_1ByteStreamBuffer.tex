@@ -1,0 +1,351 @@
+\doxysection{libcamera\+::Byte\+Stream\+Buffer Class Reference}
+\hypertarget{classlibcamera_1_1ByteStreamBuffer}{}\label{classlibcamera_1_1ByteStreamBuffer}\index{libcamera::ByteStreamBuffer@{libcamera::ByteStreamBuffer}}
+
+
+Wrap a memory buffer and provide sequential data read and write.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_aab08c12dd64a532b30e6606688a96d70}{Byte\+Stream\+Buffer}} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_a61bfdddc677f7c3bc589f956f269018c}{base}}, size\+\_\+t \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_ab6b3af2aaaec289b4502e7cee4a64183}{size}})
+\begin{DoxyCompactList}\small\item\em Construct a read \doxylink{classlibcamera_1_1ByteStreamBuffer}{Byte\+Stream\+Buffer} from the memory area {\itshape base} of {\itshape size}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_abfa1e97f387a892b20ab201b74fe82c0}{Byte\+Stream\+Buffer}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_a61bfdddc677f7c3bc589f956f269018c}{base}}, size\+\_\+t \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_ab6b3af2aaaec289b4502e7cee4a64183}{size}})
+\begin{DoxyCompactList}\small\item\em Construct a write \doxylink{classlibcamera_1_1ByteStreamBuffer}{Byte\+Stream\+Buffer} from the memory area {\itshape base} of {\itshape size}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_a15b0355a9b76b2cc9641ca228839000c}{Byte\+Stream\+Buffer}} (\mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer}{Byte\+Stream\+Buffer}} \&\&other)
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{classlibcamera_1_1ByteStreamBuffer}{Byte\+Stream\+Buffer} from the contents of {\itshape other} using move semantics. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer}{Byte\+Stream\+Buffer}} \& \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_a311fc7a5d897e86b50f15751c31bf006}{operator=}} (\mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer}{Byte\+Stream\+Buffer}} \&\&other)
+\begin{DoxyCompactList}\small\item\em Replace the contents of the buffer with those of {\itshape other} using move semantics. \end{DoxyCompactList}\item 
+const uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_a61bfdddc677f7c3bc589f956f269018c}{base}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve a pointer to the start location of the managed memory buffer. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_a84dd3793fe90e5d525087275c83efe30}{offset}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the offset of the current access location from the base. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_ab6b3af2aaaec289b4502e7cee4a64183}{size}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the size of the managed memory buffer. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_acb29445e9ea98ad3df00ac60e3f58786}{overflow}} () const
+\begin{DoxyCompactList}\small\item\em Check if the buffer has overflown. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer}{Byte\+Stream\+Buffer}} \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_a1be0172bbc8c87b267f4ff162166743d}{carve\+Out}} (size\+\_\+t \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_ab6b3af2aaaec289b4502e7cee4a64183}{size}})
+\begin{DoxyCompactList}\small\item\em Carve out an area of {\itshape size} bytes into a new \doxylink{classlibcamera_1_1ByteStreamBuffer}{Byte\+Stream\+Buffer}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_a8a8a084b45dfd4f29092aab83d4961cd}{skip}} (size\+\_\+t \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_ab6b3af2aaaec289b4502e7cee4a64183}{size}})
+\begin{DoxyCompactList}\small\item\em Skip {\itshape size} bytes from the buffer. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\int \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_ad904b7ed94da3c8d266863a1ed2cf995}{read}} (T \texorpdfstring{$\ast$}{*}t)
+\begin{DoxyCompactList}\small\item\em Read data from the managed memory buffer into {\itshape t}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\int \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_a8a614c18384f105e295724f9aef2a1ec}{read}} (const \mbox{\hyperlink{classlibcamera_1_1Span}{Span}}$<$ T $>$ \&data)
+\begin{DoxyCompactList}\small\item\em Read data from the managed memory buffer into \doxylink{classlibcamera_1_1Span}{Span} {\itshape data}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\const std\+::remove\+\_\+reference\+\_\+t$<$ T $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_a5128ab4e3c75aa968dee6dd5ed0f2d94}{read}} (size\+\_\+t count=1)
+\begin{DoxyCompactList}\small\item\em Read data from the managed memory buffer without performing a copy. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\int \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_acc0b98c87ec6feb3785eb576f684e40c}{write}} (const T \texorpdfstring{$\ast$}{*}t)
+\begin{DoxyCompactList}\small\item\em Write {\itshape t} to the managed memory buffer. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\int \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_ab79ce758fb1ebca947457e38c450dc20}{write}} (const \mbox{\hyperlink{classlibcamera_1_1Span}{Span}}$<$ T $>$ \&data)
+\begin{DoxyCompactList}\small\item\em Write {\itshape data} to the managed memory buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Wrap a memory buffer and provide sequential data read and write. 
+
+The \doxylink{classlibcamera_1_1ByteStreamBuffer}{Byte\+Stream\+Buffer} class wraps a memory buffer and exposes sequential read and write operation with integrated boundary checks. Access beyond the end of the buffer are blocked and logged, allowing error checks to take place at the of of access operations instead of at each access. This simplifies serialization and deserialization of data.
+
+A byte stream buffer is created with a base memory pointer and a size. If the memory pointer is const, the buffer operates in read-\/only mode, and write operations are denied. Otherwise the buffer operates in write-\/only mode, and read operations are denied.
+
+Once a buffer is created, data is read or written with \doxylink{classlibcamera_1_1ByteStreamBuffer_ad904b7ed94da3c8d266863a1ed2cf995}{read()} and \doxylink{classlibcamera_1_1ByteStreamBuffer_acc0b98c87ec6feb3785eb576f684e40c}{write()} respectively. Access is strictly sequential, the buffer keeps track of the current access location and advances it automatically. Reading or writing the same location multiple times is thus not possible. Bytes may also be skipped with the \doxylink{classlibcamera_1_1ByteStreamBuffer_a8a8a084b45dfd4f29092aab83d4961cd}{skip()} function.
+
+The \doxylink{classlibcamera_1_1ByteStreamBuffer}{Byte\+Stream\+Buffer} also supports carving out pieces of memory into other \doxylink{classlibcamera_1_1ByteStreamBuffer}{Byte\+Stream\+Buffer} instances. Like a read or write operation, a \doxylink{classlibcamera_1_1ByteStreamBuffer_a1be0172bbc8c87b267f4ff162166743d}{carve\+Out()} advances the internal access location, but allows the carved out memory to be accessed at a later time.
+
+All accesses beyond the end of the buffer (read, write, skip or carve out) are blocked. The first of such accesses causes a message to be logged, and the buffer being marked as having overflown. If the buffer has been carved out from a parent buffer, the parent buffer is also marked as having overflown. Any later access on an overflown buffer is blocked. The buffer overflow status can be checked with the \doxylink{classlibcamera_1_1ByteStreamBuffer_acb29445e9ea98ad3df00ac60e3f58786}{overflow()} function. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlibcamera_1_1ByteStreamBuffer_aab08c12dd64a532b30e6606688a96d70}\label{classlibcamera_1_1ByteStreamBuffer_aab08c12dd64a532b30e6606688a96d70} 
+\index{libcamera::ByteStreamBuffer@{libcamera::ByteStreamBuffer}!ByteStreamBuffer@{ByteStreamBuffer}}
+\index{ByteStreamBuffer@{ByteStreamBuffer}!libcamera::ByteStreamBuffer@{libcamera::ByteStreamBuffer}}
+\doxysubsubsection{\texorpdfstring{ByteStreamBuffer()}{ByteStreamBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily libcamera\+::\+Byte\+Stream\+Buffer\+::\+Byte\+Stream\+Buffer (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{base,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Construct a read \doxylink{classlibcamera_1_1ByteStreamBuffer}{Byte\+Stream\+Buffer} from the memory area {\itshape base} of {\itshape size}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em base} & The address of the memory area to wrap \\
+\hline
+\mbox{\texttt{ in}}  & {\em size} & The size of the memory area to wrap \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classlibcamera_1_1ByteStreamBuffer_abfa1e97f387a892b20ab201b74fe82c0}\label{classlibcamera_1_1ByteStreamBuffer_abfa1e97f387a892b20ab201b74fe82c0} 
+\index{libcamera::ByteStreamBuffer@{libcamera::ByteStreamBuffer}!ByteStreamBuffer@{ByteStreamBuffer}}
+\index{ByteStreamBuffer@{ByteStreamBuffer}!libcamera::ByteStreamBuffer@{libcamera::ByteStreamBuffer}}
+\doxysubsubsection{\texorpdfstring{ByteStreamBuffer()}{ByteStreamBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily libcamera\+::\+Byte\+Stream\+Buffer\+::\+Byte\+Stream\+Buffer (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{base,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Construct a write \doxylink{classlibcamera_1_1ByteStreamBuffer}{Byte\+Stream\+Buffer} from the memory area {\itshape base} of {\itshape size}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em base} & The address of the memory area to wrap \\
+\hline
+\mbox{\texttt{ in}}  & {\em size} & The size of the memory area to wrap \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classlibcamera_1_1ByteStreamBuffer_a15b0355a9b76b2cc9641ca228839000c}\label{classlibcamera_1_1ByteStreamBuffer_a15b0355a9b76b2cc9641ca228839000c} 
+\index{libcamera::ByteStreamBuffer@{libcamera::ByteStreamBuffer}!ByteStreamBuffer@{ByteStreamBuffer}}
+\index{ByteStreamBuffer@{ByteStreamBuffer}!libcamera::ByteStreamBuffer@{libcamera::ByteStreamBuffer}}
+\doxysubsubsection{\texorpdfstring{ByteStreamBuffer()}{ByteStreamBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily libcamera\+::\+Byte\+Stream\+Buffer\+::\+Byte\+Stream\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer}{Byte\+Stream\+Buffer}} \&\&}]{other }\end{DoxyParamCaption})}
+
+
+
+Construct a \doxylink{classlibcamera_1_1ByteStreamBuffer}{Byte\+Stream\+Buffer} from the contents of {\itshape other} using move semantics. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & The other buffer\\
+\hline
+\end{DoxyParams}
+After the move construction the {\itshape other} buffer is invalidated. Any attempt to access its contents will be considered as an overflow. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1ByteStreamBuffer_a61bfdddc677f7c3bc589f956f269018c}\label{classlibcamera_1_1ByteStreamBuffer_a61bfdddc677f7c3bc589f956f269018c} 
+\index{libcamera::ByteStreamBuffer@{libcamera::ByteStreamBuffer}!base@{base}}
+\index{base@{base}!libcamera::ByteStreamBuffer@{libcamera::ByteStreamBuffer}}
+\doxysubsubsection{\texorpdfstring{base()}{base()}}
+{\footnotesize\ttfamily libcamera\+::\+Byte\+Stream\+Buffer\+::base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve a pointer to the start location of the managed memory buffer. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the managed memory buffer 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ByteStreamBuffer_a1be0172bbc8c87b267f4ff162166743d}\label{classlibcamera_1_1ByteStreamBuffer_a1be0172bbc8c87b267f4ff162166743d} 
+\index{libcamera::ByteStreamBuffer@{libcamera::ByteStreamBuffer}!carveOut@{carveOut}}
+\index{carveOut@{carveOut}!libcamera::ByteStreamBuffer@{libcamera::ByteStreamBuffer}}
+\doxysubsubsection{\texorpdfstring{carveOut()}{carveOut()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer}{Byte\+Stream\+Buffer}} libcamera\+::\+Byte\+Stream\+Buffer\+::carve\+Out (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Carve out an area of {\itshape size} bytes into a new \doxylink{classlibcamera_1_1ByteStreamBuffer}{Byte\+Stream\+Buffer}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em size} & The size of the newly created memory buffer\\
+\hline
+\end{DoxyParams}
+This function carves out an area of {\itshape size} bytes from the buffer into a new \doxylink{classlibcamera_1_1ByteStreamBuffer}{Byte\+Stream\+Buffer}, and returns the new buffer. It operates identically to a read or write access from the point of view of the current buffer, but allows the new buffer to be read or written at a later time after other read or write accesses on the current buffer.
+
+\begin{DoxyReturn}{Returns}
+A newly created \doxylink{classlibcamera_1_1ByteStreamBuffer}{Byte\+Stream\+Buffer} of {\itshape size} 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ByteStreamBuffer_a84dd3793fe90e5d525087275c83efe30}\label{classlibcamera_1_1ByteStreamBuffer_a84dd3793fe90e5d525087275c83efe30} 
+\index{libcamera::ByteStreamBuffer@{libcamera::ByteStreamBuffer}!offset@{offset}}
+\index{offset@{offset}!libcamera::ByteStreamBuffer@{libcamera::ByteStreamBuffer}}
+\doxysubsubsection{\texorpdfstring{offset()}{offset()}}
+{\footnotesize\ttfamily libcamera\+::\+Byte\+Stream\+Buffer\+::offset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the offset of the current access location from the base. 
+
+\begin{DoxyReturn}{Returns}
+The offset in bytes 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ByteStreamBuffer_a311fc7a5d897e86b50f15751c31bf006}\label{classlibcamera_1_1ByteStreamBuffer_a311fc7a5d897e86b50f15751c31bf006} 
+\index{libcamera::ByteStreamBuffer@{libcamera::ByteStreamBuffer}!operator=@{operator=}}
+\index{operator=@{operator=}!libcamera::ByteStreamBuffer@{libcamera::ByteStreamBuffer}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer}{Byte\+Stream\+Buffer}} \& libcamera\+::\+Byte\+Stream\+Buffer\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer}{Byte\+Stream\+Buffer}} \&\&}]{other }\end{DoxyParamCaption})}
+
+
+
+Replace the contents of the buffer with those of {\itshape other} using move semantics. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & The other buffer\\
+\hline
+\end{DoxyParams}
+After the assignment the {\itshape other} buffer is invalidated. Any attempt to access its contents will be considered as an overflow. \Hypertarget{classlibcamera_1_1ByteStreamBuffer_acb29445e9ea98ad3df00ac60e3f58786}\label{classlibcamera_1_1ByteStreamBuffer_acb29445e9ea98ad3df00ac60e3f58786} 
+\index{libcamera::ByteStreamBuffer@{libcamera::ByteStreamBuffer}!overflow@{overflow}}
+\index{overflow@{overflow}!libcamera::ByteStreamBuffer@{libcamera::ByteStreamBuffer}}
+\doxysubsubsection{\texorpdfstring{overflow()}{overflow()}}
+{\footnotesize\ttfamily libcamera\+::\+Byte\+Stream\+Buffer\+::overflow (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check if the buffer has overflown. 
+
+\begin{DoxyReturn}{Returns}
+True if the buffer has overflow, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ByteStreamBuffer_a8a614c18384f105e295724f9aef2a1ec}\label{classlibcamera_1_1ByteStreamBuffer_a8a614c18384f105e295724f9aef2a1ec} 
+\index{libcamera::ByteStreamBuffer@{libcamera::ByteStreamBuffer}!read@{read}}
+\index{read@{read}!libcamera::ByteStreamBuffer@{libcamera::ByteStreamBuffer}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+template$<$ typename T $>$ int libcamera\+::\+Byte\+Stream\+Buffer\+::read (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1Span}{Span}}$<$ T $>$ \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Read data from the managed memory buffer into \doxylink{classlibcamera_1_1Span}{Span} {\itshape data}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em data} & \doxylink{classlibcamera_1_1Span}{Span} representing the destination memory \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, a negative error code otherwise 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em -\/\+EACCES} & attempting to read from a write buffer \\
+\hline
+{\em -\/\+ENOSPC} & no more space is available in the managed memory buffer \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{classlibcamera_1_1ByteStreamBuffer_a5128ab4e3c75aa968dee6dd5ed0f2d94}\label{classlibcamera_1_1ByteStreamBuffer_a5128ab4e3c75aa968dee6dd5ed0f2d94} 
+\index{libcamera::ByteStreamBuffer@{libcamera::ByteStreamBuffer}!read@{read}}
+\index{read@{read}!libcamera::ByteStreamBuffer@{libcamera::ByteStreamBuffer}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+template$<$ typename T $>$ const T \texorpdfstring{$\ast$}{*} libcamera\+::\+Byte\+Stream\+Buffer\+::read (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{count = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Read data from the managed memory buffer without performing a copy. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em count} & Number of data items to read\\
+\hline
+\end{DoxyParams}
+This function reads {\itshape count} elements of type {\itshape T} from the buffer. Unlike the other read variants, it doesn\textquotesingle{}t copy the data but returns a pointer to the first element. If data can\textquotesingle{}t be read for any reason (usually due to reading more data than available), the function returns nullptr.
+
+\begin{DoxyReturn}{Returns}
+A pointer to the data on success, or nullptr otherwise 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ByteStreamBuffer_ad904b7ed94da3c8d266863a1ed2cf995}\label{classlibcamera_1_1ByteStreamBuffer_ad904b7ed94da3c8d266863a1ed2cf995} 
+\index{libcamera::ByteStreamBuffer@{libcamera::ByteStreamBuffer}!read@{read}}
+\index{read@{read}!libcamera::ByteStreamBuffer@{libcamera::ByteStreamBuffer}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+template$<$ typename T $>$ int libcamera\+::\+Byte\+Stream\+Buffer\+::read (\begin{DoxyParamCaption}\item[{T \texorpdfstring{$\ast$}{*}}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Read data from the managed memory buffer into {\itshape t}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em t} & Pointer to the memory containing the read data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, a negative error code otherwise 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em -\/\+EACCES} & attempting to read from a write buffer \\
+\hline
+{\em -\/\+ENOSPC} & no more space is available in the managed memory buffer \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{classlibcamera_1_1ByteStreamBuffer_ab6b3af2aaaec289b4502e7cee4a64183}\label{classlibcamera_1_1ByteStreamBuffer_ab6b3af2aaaec289b4502e7cee4a64183} 
+\index{libcamera::ByteStreamBuffer@{libcamera::ByteStreamBuffer}!size@{size}}
+\index{size@{size}!libcamera::ByteStreamBuffer@{libcamera::ByteStreamBuffer}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily libcamera\+::\+Byte\+Stream\+Buffer\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the size of the managed memory buffer. 
+
+\begin{DoxyReturn}{Returns}
+The size of managed memory buffer 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ByteStreamBuffer_a8a8a084b45dfd4f29092aab83d4961cd}\label{classlibcamera_1_1ByteStreamBuffer_a8a8a084b45dfd4f29092aab83d4961cd} 
+\index{libcamera::ByteStreamBuffer@{libcamera::ByteStreamBuffer}!skip@{skip}}
+\index{skip@{skip}!libcamera::ByteStreamBuffer@{libcamera::ByteStreamBuffer}}
+\doxysubsubsection{\texorpdfstring{skip()}{skip()}}
+{\footnotesize\ttfamily int libcamera\+::\+Byte\+Stream\+Buffer\+::skip (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Skip {\itshape size} bytes from the buffer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em size} & The number of bytes to skip\\
+\hline
+\end{DoxyParams}
+This function skips the next {\itshape size} bytes from the buffer.
+
+\begin{DoxyReturn}{Returns}
+0 on success, a negative error code otherwise 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em -\/\+ENOSPC} & no more space is available in the managed memory buffer \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{classlibcamera_1_1ByteStreamBuffer_ab79ce758fb1ebca947457e38c450dc20}\label{classlibcamera_1_1ByteStreamBuffer_ab79ce758fb1ebca947457e38c450dc20} 
+\index{libcamera::ByteStreamBuffer@{libcamera::ByteStreamBuffer}!write@{write}}
+\index{write@{write}!libcamera::ByteStreamBuffer@{libcamera::ByteStreamBuffer}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+template$<$ typename T $>$ int libcamera\+::\+Byte\+Stream\+Buffer\+::write (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1Span}{Span}}$<$ T $>$ \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Write {\itshape data} to the managed memory buffer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em data} & The data to write to memory \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, a negative error code otherwise 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em -\/\+EACCES} & attempting to write to a read buffer \\
+\hline
+{\em -\/\+ENOSPC} & no more space is available in the managed memory buffer \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{classlibcamera_1_1ByteStreamBuffer_acc0b98c87ec6feb3785eb576f684e40c}\label{classlibcamera_1_1ByteStreamBuffer_acc0b98c87ec6feb3785eb576f684e40c} 
+\index{libcamera::ByteStreamBuffer@{libcamera::ByteStreamBuffer}!write@{write}}
+\index{write@{write}!libcamera::ByteStreamBuffer@{libcamera::ByteStreamBuffer}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+template$<$ typename T $>$ int libcamera\+::\+Byte\+Stream\+Buffer\+::write (\begin{DoxyParamCaption}\item[{const T \texorpdfstring{$\ast$}{*}}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Write {\itshape t} to the managed memory buffer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em t} & The data to write to memory \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, a negative error code otherwise 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em -\/\+EACCES} & attempting to write to a read buffer \\
+\hline
+{\em -\/\+ENOSPC} & no more space is available in the managed memory buffer \\
+\hline
+\end{DoxyRetVals}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/internal/\mbox{\hyperlink{byte__stream__buffer_8h}{byte\+\_\+stream\+\_\+buffer.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/byte\+\_\+stream\+\_\+buffer.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,45 @@
+\doxysection{ipu3\+\_\+uapi\+\_\+yuvp1\+\_\+y\+\_\+ee\+\_\+nr\+\_\+fc\+\_\+coring\+\_\+config Struct Reference}
+\hypertarget{structipu3__uapi__yuvp1__y__ee__nr__fc__coring__config}{}\label{structipu3__uapi__yuvp1__y__ee__nr__fc__coring__config}\index{ipu3\_uapi\_yuvp1\_y\_ee\_nr\_fc\_coring\_config@{ipu3\_uapi\_yuvp1\_y\_ee\_nr\_fc\_coring\_config}}
+
+
+{\ttfamily \#include $<$intel-\/ipu3.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__y__ee__nr__fc__coring__config_aa05d556b920b2915f96b032134824957}\label{structipu3__uapi__yuvp1__y__ee__nr__fc__coring__config_aa05d556b920b2915f96b032134824957} 
+\+\_\+\+\_\+u32 {\bfseries pos\+\_\+0}\+:13
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__y__ee__nr__fc__coring__config_ad79a0c89c0c1ac440588864573f88c70}\label{structipu3__uapi__yuvp1__y__ee__nr__fc__coring__config_ad79a0c89c0c1ac440588864573f88c70} 
+\+\_\+\+\_\+u32 {\bfseries reserved0}\+:3
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__y__ee__nr__fc__coring__config_add227d9cc6731693e16de872478896e2}\label{structipu3__uapi__yuvp1__y__ee__nr__fc__coring__config_add227d9cc6731693e16de872478896e2} 
+\+\_\+\+\_\+u32 {\bfseries pos\+\_\+delta}\+:13
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__y__ee__nr__fc__coring__config_ad566f4acd8409142dc745f38038ef6f7}\label{structipu3__uapi__yuvp1__y__ee__nr__fc__coring__config_ad566f4acd8409142dc745f38038ef6f7} 
+\+\_\+\+\_\+u32 {\bfseries reserved1}\+:3
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__y__ee__nr__fc__coring__config_a3c737e1627d0699f4c90f864ff612486}\label{structipu3__uapi__yuvp1__y__ee__nr__fc__coring__config_a3c737e1627d0699f4c90f864ff612486} 
+\+\_\+\+\_\+u32 {\bfseries neg\+\_\+0}\+:13
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__y__ee__nr__fc__coring__config_aa3cb4402d2e9f8d5c19ea4b58529a54e}\label{structipu3__uapi__yuvp1__y__ee__nr__fc__coring__config_aa3cb4402d2e9f8d5c19ea4b58529a54e} 
+\+\_\+\+\_\+u32 {\bfseries reserved2}\+:3
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__y__ee__nr__fc__coring__config_a3c68ac39d1270c0f2759d6c688e8c7b1}\label{structipu3__uapi__yuvp1__y__ee__nr__fc__coring__config_a3c68ac39d1270c0f2759d6c688e8c7b1} 
+\+\_\+\+\_\+u32 {\bfseries neg\+\_\+delta}\+:13
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__y__ee__nr__fc__coring__config_a7d66329c2e8c15d6c436fe90c72cb36f}\label{structipu3__uapi__yuvp1__y__ee__nr__fc__coring__config_a7d66329c2e8c15d6c436fe90c72cb36f} 
+\+\_\+\+\_\+u32 {\bfseries reserved3}\+:3
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structipu3__uapi__yuvp1__y__ee__nr__fc__coring__config}{ipu3\+\_\+uapi\+\_\+yuvp1\+\_\+y\+\_\+ee\+\_\+nr\+\_\+fc\+\_\+coring\+\_\+config} -\/ Luma(\+Y) edge enhancement noise reduction false color correction (FCC) coring config
+
+@pos\+\_\+0\+: Gain for positive edge in dark, u13.\+0, \mbox{[}0, 16\mbox{]}, default 0. @reserved0\+: reserved @pos\+\_\+delta\+: Gain for positive edge in bright, value\+: pos\+\_\+0 + pos\+\_\+delta \texorpdfstring{$<$}{<}=16 u13.\+0, default 0. @reserved1\+: reserved @neg\+\_\+0\+: Gain for negative edge in dark area, u13.\+0, range \mbox{[}0, 16\mbox{]}, default 0. @reserved2\+: reserved @neg\+\_\+delta\+: Gain for negative edge in bright area. neg\+\_\+0 + neg\+\_\+delta \texorpdfstring{$<$}{<}=16 u13.\+0, default 0. @reserved3\+: reserved
+
+Coring is a simple soft thresholding technique. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/intel-\/ipu3.\+h\end{DoxyCompactItemize}

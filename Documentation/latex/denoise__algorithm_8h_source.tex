@@ -1,0 +1,33 @@
+\doxysection{denoise\+\_\+algorithm.\+h}
+\hypertarget{denoise__algorithm_8h_source}{}\label{denoise__algorithm_8h_source}\index{src/peripherals/camera/libcamera/src/ipa/rpi/controller/denoise\_algorithm.h@{src/peripherals/camera/libcamera/src/ipa/rpi/controller/denoise\_algorithm.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ BSD-\/2-\/Clause\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2021,\ Raspberry\ Pi\ Ltd}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Denoise\ control\ algorithm\ interface}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}algorithm.h"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }RPiController\ \{}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{enum\ class}\ DenoiseMode\ \{\ Off,\ ColourOff,\ ColourFast,\ ColourHighQuality\ \};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRPiController_1_1DenoiseAlgorithm}{DenoiseAlgorithm}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classRPiController_1_1Algorithm}{Algorithm}}}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{classRPiController_1_1DenoiseAlgorithm}{DenoiseAlgorithm}}(\mbox{\hyperlink{classRPiController_1_1Controller}{Controller}}\ *controller)\ :\ \mbox{\hyperlink{classRPiController_1_1Algorithm}{Algorithm}}(controller)\ \{\}}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{/*\ A\ Denoise\ algorithm\ must\ provide\ the\ following:\ */}}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ setMode(DenoiseMode\ mode)\ =\ 0;}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{/*\ Some\ platforms\ may\ not\ be\ able\ to\ define\ this,\ so\ supply\ a\ default.\ */}}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ setConfig([[maybe\_unused]]\ std::string\ \textcolor{keyword}{const}\ \&name)\ \{\}}
+\DoxyCodeLine{00025\ \};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \}\ \textcolor{comment}{/*\ namespace\ RPiController\ */}}
+
+\end{DoxyCode}

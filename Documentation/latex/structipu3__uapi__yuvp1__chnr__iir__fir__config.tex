@@ -1,0 +1,40 @@
+\doxysection{ipu3\+\_\+uapi\+\_\+yuvp1\+\_\+chnr\+\_\+iir\+\_\+fir\+\_\+config Struct Reference}
+\hypertarget{structipu3__uapi__yuvp1__chnr__iir__fir__config}{}\label{structipu3__uapi__yuvp1__chnr__iir__fir__config}\index{ipu3\_uapi\_yuvp1\_chnr\_iir\_fir\_config@{ipu3\_uapi\_yuvp1\_chnr\_iir\_fir\_config}}
+
+
+{\ttfamily \#include $<$intel-\/ipu3.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__chnr__iir__fir__config_adf391a3a2cb75176c3763b7b02c3dac2}\label{structipu3__uapi__yuvp1__chnr__iir__fir__config_adf391a3a2cb75176c3763b7b02c3dac2} 
+\+\_\+\+\_\+u32 {\bfseries fir\+\_\+0h}\+:6
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__chnr__iir__fir__config_a70e43bfc02a06169f9b09241404b85e9}\label{structipu3__uapi__yuvp1__chnr__iir__fir__config_a70e43bfc02a06169f9b09241404b85e9} 
+\+\_\+\+\_\+u32 {\bfseries reserved0}\+:2
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__chnr__iir__fir__config_a2df05b53dab841c1e48c72d7ff61b5c0}\label{structipu3__uapi__yuvp1__chnr__iir__fir__config_a2df05b53dab841c1e48c72d7ff61b5c0} 
+\+\_\+\+\_\+u32 {\bfseries fir\+\_\+1h}\+:6
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__chnr__iir__fir__config_a01a0005772885571a8964e2309cd8475}\label{structipu3__uapi__yuvp1__chnr__iir__fir__config_a01a0005772885571a8964e2309cd8475} 
+\+\_\+\+\_\+u32 {\bfseries reserved1}\+:2
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__chnr__iir__fir__config_a0be345e561be723547786185f8193356}\label{structipu3__uapi__yuvp1__chnr__iir__fir__config_a0be345e561be723547786185f8193356} 
+\+\_\+\+\_\+u32 {\bfseries fir\+\_\+2h}\+:6
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__chnr__iir__fir__config_ac3d2898e5f76637978d97e10ab17e103}\label{structipu3__uapi__yuvp1__chnr__iir__fir__config_ac3d2898e5f76637978d97e10ab17e103} 
+\+\_\+\+\_\+u32 {\bfseries dalpha\+\_\+clip\+\_\+val}\+:9
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__chnr__iir__fir__config_a0109ce888a2fc449c5fa3db9225065c1}\label{structipu3__uapi__yuvp1__chnr__iir__fir__config_a0109ce888a2fc449c5fa3db9225065c1} 
+\+\_\+\+\_\+u32 {\bfseries reserved2}\+:1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structipu3__uapi__yuvp1__chnr__iir__fir__config}{ipu3\+\_\+uapi\+\_\+yuvp1\+\_\+chnr\+\_\+iir\+\_\+fir\+\_\+config} -\/ Chroma IIR/\+FIR filter config
+
+@fir\+\_\+0h\+: Value of center tap in horizontal FIR, range \mbox{[}0, 32\mbox{]}, default 8. @reserved0\+: reserved @fir\+\_\+1h\+: Value of distance 1 in horizontal FIR, range \mbox{[}0, 32\mbox{]}, default 12. @reserved1\+: reserved @fir\+\_\+2h\+: Value of distance 2 tap in horizontal FIR, range \mbox{[}0, 32\mbox{]}, default 0. @dalpha\+\_\+clip\+\_\+val\+: weight for previous row in IIR, range \mbox{[}1, 256\mbox{]}, default 0. @reserved2\+: reserved 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/intel-\/ipu3.\+h\end{DoxyCompactItemize}

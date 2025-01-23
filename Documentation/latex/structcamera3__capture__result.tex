@@ -1,0 +1,164 @@
+\doxysection{camera3\+\_\+capture\+\_\+result Struct Reference}
+\hypertarget{structcamera3__capture__result}{}\label{structcamera3__capture__result}\index{camera3\_capture\_result@{camera3\_capture\_result}}
+
+
+{\ttfamily \#include $<$camera3.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structcamera3__capture__result_a3450729a7f6e5765b47d3e16e21b784d}{frame\+\_\+number}}
+\item 
+const camera\+\_\+metadata\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structcamera3__capture__result_a5c085e2e0fce9e67bf54f01e181ed7c8}{result}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structcamera3__capture__result_a2f817ec4169e595bbe326b09f5e95872}{num\+\_\+output\+\_\+buffers}}
+\item 
+const \mbox{\hyperlink{structcamera3__stream__buffer}{camera3\+\_\+stream\+\_\+buffer\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structcamera3__capture__result_afd61f06acc6d54bc7bb735b0d148b8f5}{output\+\_\+buffers}}
+\item 
+const \mbox{\hyperlink{structcamera3__stream__buffer}{camera3\+\_\+stream\+\_\+buffer\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structcamera3__capture__result_afc7db6c9a6af8b46eaa0f9a8f0bb9279}{input\+\_\+buffer}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structcamera3__capture__result_a5d69f9c3d47fd03c946a6051bd408fbd}{partial\+\_\+result}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structcamera3__capture__result_a2f6f301acdb3a0a805263ced4aa38c16}{num\+\_\+physcam\+\_\+metadata}}
+\item 
+const char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structcamera3__capture__result_a22a8530382dd6168216f9b8b1a5c9f7b}{physcam\+\_\+ids}}
+\item 
+const camera\+\_\+metadata\+\_\+t \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structcamera3__capture__result_a3fa3df5a49a2bb16a08292694b26c524}{physcam\+\_\+metadata}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+camera3\+\_\+capture\+\_\+result\+\_\+t\+:
+
+The result of a single capture/reprocess by the camera HAL device. This is sent to the framework asynchronously with process\+\_\+capture\+\_\+result(), in response to a single capture request sent to the HAL with process\+\_\+capture\+\_\+request(). Multiple process\+\_\+capture\+\_\+result() calls may be performed by the HAL for each request.
+
+Each call, all with the same frame number, may contain some subset of the output buffers, and/or the result metadata. The metadata may only be provided once for a given frame number; all other calls must set the result metadata to NULL.
+
+The result structure contains the output metadata from this capture, and the set of output buffers that have been/will be filled for this capture. Each output buffer may come with a release sync fence that the framework will wait on before reading, in case the buffer has not yet been filled by the HAL.
+
+\texorpdfstring{$>$}{>}= CAMERA\+\_\+\+DEVICE\+\_\+\+API\+\_\+\+VERSION\+\_\+3\+\_\+2\+:
+
+The metadata may be provided multiple times for a single frame number. The framework will accumulate together the final result set by combining each partial result together into the total result set.
+
+If an input buffer is given in a request, the HAL must return it in one of the process\+\_\+capture\+\_\+result calls, and the call may be to just return the input buffer, without metadata and output buffers; the sync fences must be handled the same way they are done for output buffers.
+
+Performance considerations\+:
+
+Applications will also receive these partial results immediately, so sending partial results is a highly recommended performance optimization to avoid the total pipeline latency before sending the results for what is known very early on in the pipeline.
+
+A typical use case might be calculating the AF state halfway through the pipeline; by sending the state back to the framework immediately, we get a 50\% performance increase and perceived responsiveness of the auto-\/focus. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structcamera3__capture__result_a3450729a7f6e5765b47d3e16e21b784d}\label{structcamera3__capture__result_a3450729a7f6e5765b47d3e16e21b784d} 
+\index{camera3\_capture\_result@{camera3\_capture\_result}!frame\_number@{frame\_number}}
+\index{frame\_number@{frame\_number}!camera3\_capture\_result@{camera3\_capture\_result}}
+\doxysubsubsection{\texorpdfstring{frame\_number}{frame\_number}}
+{\footnotesize\ttfamily uint32\+\_\+t camera3\+\_\+capture\+\_\+result\+::frame\+\_\+number}
+
+The frame number is an incrementing integer set by the framework in the submitted request to uniquely identify this capture. It is also used to identify the request in asynchronous notifications sent to \doxylink{structcamera3__callback__ops_a6b866f7b468e677ce586580fab546768}{camera3\+\_\+callback\+\_\+ops\+\_\+t.\+notify()}. \Hypertarget{structcamera3__capture__result_afc7db6c9a6af8b46eaa0f9a8f0bb9279}\label{structcamera3__capture__result_afc7db6c9a6af8b46eaa0f9a8f0bb9279} 
+\index{camera3\_capture\_result@{camera3\_capture\_result}!input\_buffer@{input\_buffer}}
+\index{input\_buffer@{input\_buffer}!camera3\_capture\_result@{camera3\_capture\_result}}
+\doxysubsubsection{\texorpdfstring{input\_buffer}{input\_buffer}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structcamera3__stream__buffer}{camera3\+\_\+stream\+\_\+buffer\+\_\+t}}\texorpdfstring{$\ast$}{*} camera3\+\_\+capture\+\_\+result\+::input\+\_\+buffer}
+
+\texorpdfstring{$>$}{>}= CAMERA\+\_\+\+DEVICE\+\_\+\+API\+\_\+\+VERSION\+\_\+3\+\_\+2\+:
+
+The handle for the input stream buffer for this capture. It may not yet be consumed at the time the HAL calls process\+\_\+capture\+\_\+result(); the framework will wait on the release sync fences provided by the HAL before reusing the buffer.
+
+The HAL should handle the sync fences the same way they are done for output\+\_\+buffers.
+
+Only one input buffer is allowed to be sent per request. Similarly to output buffers, the ordering of returned input buffers must be maintained by the HAL.
+
+Performance considerations\+:
+
+The input buffer should be returned as early as possible. If the HAL supports sync fences, it can call process\+\_\+capture\+\_\+result to hand it back with sync fences being set appropriately. If the sync fences are not supported, the buffer can only be returned when it is consumed, which may take long time; the HAL may choose to copy this input buffer to make the buffer return sooner. \Hypertarget{structcamera3__capture__result_a2f817ec4169e595bbe326b09f5e95872}\label{structcamera3__capture__result_a2f817ec4169e595bbe326b09f5e95872} 
+\index{camera3\_capture\_result@{camera3\_capture\_result}!num\_output\_buffers@{num\_output\_buffers}}
+\index{num\_output\_buffers@{num\_output\_buffers}!camera3\_capture\_result@{camera3\_capture\_result}}
+\doxysubsubsection{\texorpdfstring{num\_output\_buffers}{num\_output\_buffers}}
+{\footnotesize\ttfamily uint32\+\_\+t camera3\+\_\+capture\+\_\+result\+::num\+\_\+output\+\_\+buffers}
+
+The number of output buffers returned in this result structure. Must be less than or equal to the matching capture request\textquotesingle{}s count. If this is less than the buffer count in the capture request, at least one more call to process\+\_\+capture\+\_\+result with the same frame\+\_\+number must be made, to return the remaining output buffers to the framework. This may only be zero if the structure includes valid result metadata or an input buffer is returned in this result. \Hypertarget{structcamera3__capture__result_a2f6f301acdb3a0a805263ced4aa38c16}\label{structcamera3__capture__result_a2f6f301acdb3a0a805263ced4aa38c16} 
+\index{camera3\_capture\_result@{camera3\_capture\_result}!num\_physcam\_metadata@{num\_physcam\_metadata}}
+\index{num\_physcam\_metadata@{num\_physcam\_metadata}!camera3\_capture\_result@{camera3\_capture\_result}}
+\doxysubsubsection{\texorpdfstring{num\_physcam\_metadata}{num\_physcam\_metadata}}
+{\footnotesize\ttfamily uint32\+\_\+t camera3\+\_\+capture\+\_\+result\+::num\+\_\+physcam\+\_\+metadata}
+
+\texorpdfstring{$>$}{>}= CAMERA\+\_\+\+DEVICE\+\_\+\+API\+\_\+\+VERSION\+\_\+3\+\_\+5\+:
+
+Specifies the number of physical camera metadata this capture result contains. It must be equal to the number of physical cameras being requested from.
+
+If the current camera device is not a logical multi-\/camera, or the corresponding capture\+\_\+request doesn\textquotesingle{}t request on any physical camera, this field must be 0. \Hypertarget{structcamera3__capture__result_afd61f06acc6d54bc7bb735b0d148b8f5}\label{structcamera3__capture__result_afd61f06acc6d54bc7bb735b0d148b8f5} 
+\index{camera3\_capture\_result@{camera3\_capture\_result}!output\_buffers@{output\_buffers}}
+\index{output\_buffers@{output\_buffers}!camera3\_capture\_result@{camera3\_capture\_result}}
+\doxysubsubsection{\texorpdfstring{output\_buffers}{output\_buffers}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structcamera3__stream__buffer}{camera3\+\_\+stream\+\_\+buffer\+\_\+t}}\texorpdfstring{$\ast$}{*} camera3\+\_\+capture\+\_\+result\+::output\+\_\+buffers}
+
+The handles for the output stream buffers for this capture. They may not yet be filled at the time the HAL calls process\+\_\+capture\+\_\+result(); the framework will wait on the release sync fences provided by the HAL before reading the buffers.
+
+The HAL must set the stream buffer\textquotesingle{}s release sync fence to a valid sync fd, or to -\/1 if the buffer has already been filled.
+
+If the HAL encounters an error while processing the buffer, and the buffer is not filled, the buffer\textquotesingle{}s status field must be set to CAMERA3\+\_\+\+BUFFER\+\_\+\+STATUS\+\_\+\+ERROR. If the HAL did not wait on the acquire fence before encountering the error, the acquire fence should be copied into the release fence, to allow the framework to wait on the fence before reusing the buffer.
+
+The acquire fence must be set to -\/1 for all output buffers. If num\+\_\+output\+\_\+buffers is zero, this may be NULL. In that case, at least one more process\+\_\+capture\+\_\+result call must be made by the HAL to provide the output buffers.
+
+When process\+\_\+capture\+\_\+result is called with a new buffer for a frame, all previous frames\textquotesingle{} buffers for that corresponding stream must have been already delivered (the fences need not have yet been signaled).
+
+\texorpdfstring{$>$}{>}= CAMERA\+\_\+\+DEVICE\+\_\+\+API\+\_\+\+VERSION\+\_\+3\+\_\+2\+:
+
+Gralloc buffers for a frame may be sent to framework before the corresponding SHUTTER-\/notify.
+
+Performance considerations\+:
+
+Buffers delivered to the framework will not be dispatched to the application layer until a start of exposure timestamp has been received via a SHUTTER notify() call. It is highly recommended to dispatch that call as early as possible. \Hypertarget{structcamera3__capture__result_a5d69f9c3d47fd03c946a6051bd408fbd}\label{structcamera3__capture__result_a5d69f9c3d47fd03c946a6051bd408fbd} 
+\index{camera3\_capture\_result@{camera3\_capture\_result}!partial\_result@{partial\_result}}
+\index{partial\_result@{partial\_result}!camera3\_capture\_result@{camera3\_capture\_result}}
+\doxysubsubsection{\texorpdfstring{partial\_result}{partial\_result}}
+{\footnotesize\ttfamily uint32\+\_\+t camera3\+\_\+capture\+\_\+result\+::partial\+\_\+result}
+
+\texorpdfstring{$>$}{>}= CAMERA\+\_\+\+DEVICE\+\_\+\+API\+\_\+\+VERSION\+\_\+3\+\_\+2\+:
+
+In order to take advantage of partial results, the HAL must set the static metadata android.\+request.\+partial\+Result\+Count to the number of partial results it will send for each frame.
+
+Each new capture result with a partial result must set this field (partial\+\_\+result) to a distinct inclusive value between 1 and android.\+request.\+partial\+Result\+Count.
+
+HALs not wishing to take advantage of this feature must not set an android.\+request.\+partial\+Result\+Count or partial\+\_\+result to a value other than 1.
+
+This value must be set to 0 when a capture result contains buffers only and no metadata. \Hypertarget{structcamera3__capture__result_a22a8530382dd6168216f9b8b1a5c9f7b}\label{structcamera3__capture__result_a22a8530382dd6168216f9b8b1a5c9f7b} 
+\index{camera3\_capture\_result@{camera3\_capture\_result}!physcam\_ids@{physcam\_ids}}
+\index{physcam\_ids@{physcam\_ids}!camera3\_capture\_result@{camera3\_capture\_result}}
+\doxysubsubsection{\texorpdfstring{physcam\_ids}{physcam\_ids}}
+{\footnotesize\ttfamily const char\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} camera3\+\_\+capture\+\_\+result\+::physcam\+\_\+ids}
+
+\texorpdfstring{$>$}{>}= CAMERA\+\_\+\+DEVICE\+\_\+\+API\+\_\+\+VERSION\+\_\+3\+\_\+5\+:
+
+An array of strings containing the physical camera ids for the returned physical camera metadata. The length of the array is num\+\_\+physcam\+\_\+metadata. \Hypertarget{structcamera3__capture__result_a3fa3df5a49a2bb16a08292694b26c524}\label{structcamera3__capture__result_a3fa3df5a49a2bb16a08292694b26c524} 
+\index{camera3\_capture\_result@{camera3\_capture\_result}!physcam\_metadata@{physcam\_metadata}}
+\index{physcam\_metadata@{physcam\_metadata}!camera3\_capture\_result@{camera3\_capture\_result}}
+\doxysubsubsection{\texorpdfstring{physcam\_metadata}{physcam\_metadata}}
+{\footnotesize\ttfamily const camera\+\_\+metadata\+\_\+t\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} camera3\+\_\+capture\+\_\+result\+::physcam\+\_\+metadata}
+
+\texorpdfstring{$>$}{>}= CAMERA\+\_\+\+DEVICE\+\_\+\+API\+\_\+\+VERSION\+\_\+3\+\_\+5\+:
+
+The array of physical camera metadata for the physical cameras being requested upon. This array should have a 1-\/to-\/1 mapping with the physcam\+\_\+ids. The length of the array is num\+\_\+physcam\+\_\+metadata. \Hypertarget{structcamera3__capture__result_a5c085e2e0fce9e67bf54f01e181ed7c8}\label{structcamera3__capture__result_a5c085e2e0fce9e67bf54f01e181ed7c8} 
+\index{camera3\_capture\_result@{camera3\_capture\_result}!result@{result}}
+\index{result@{result}!camera3\_capture\_result@{camera3\_capture\_result}}
+\doxysubsubsection{\texorpdfstring{result}{result}}
+{\footnotesize\ttfamily const camera\+\_\+metadata\+\_\+t\texorpdfstring{$\ast$}{*} camera3\+\_\+capture\+\_\+result\+::result}
+
+The result metadata for this capture. This contains information about the final capture parameters, the state of the capture and post-\/processing hardware, the state of the 3A algorithms, if enabled, and the output of any enabled statistics units.
+
+Only one call to process\+\_\+capture\+\_\+result() with a given frame\+\_\+number may include the result metadata. All other calls for the same frame\+\_\+number must set this to NULL.
+
+If there was an error producing the result metadata, result must be an empty metadata buffer, and notify() must be called with ERROR\+\_\+\+RESULT.
+
+\texorpdfstring{$>$}{>}= CAMERA\+\_\+\+DEVICE\+\_\+\+API\+\_\+\+VERSION\+\_\+3\+\_\+2\+:
+
+Multiple calls to process\+\_\+capture\+\_\+result() with a given frame\+\_\+number may include the result metadata.
+
+Partial metadata submitted should not include any metadata key returned in a previous partial result for a given frame. Each new partial result for that frame must also set a distinct partial\+\_\+result value.
+
+If notify has been called with ERROR\+\_\+\+RESULT, all further partial results for that frame are ignored by the framework. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/android/hardware/libhardware/include/hardware/camera3.\+h\end{DoxyCompactItemize}

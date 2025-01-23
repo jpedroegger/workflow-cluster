@@ -1,0 +1,54 @@
+\doxysection{sdl\+\_\+sink.\+h}
+\hypertarget{sdl__sink_8h_source}{}\label{sdl__sink_8h_source}\index{src/peripherals/camera/libcamera/src/apps/cam/sdl\_sink.h@{src/peripherals/camera/libcamera/src/apps/cam/sdl\_sink.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ GPL-\/2.0-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2022,\ Ideas\ on\ Board\ Oy}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ SDL\ Sink}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{stream_8h}{libcamera/stream.h}}>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <SDL2/SDL.h>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}frame\_sink.h"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classImage}{Image}};}
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSDLTexture}{SDLTexture}};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSDLSink}{SDLSink}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classFrameSink}{FrameSink}}}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{classSDLSink}{SDLSink}}();}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{classSDLSink}{\string~SDLSink}}();}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{int}\ configure(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1CameraConfiguration}{libcamera::CameraConfiguration}}\ \&config)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{int}\ start()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{int}\ stop()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ mapBuffer(\mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{libcamera::FrameBuffer}}\ *buffer)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classSDLSink_a3bee0b343c4a9c1fe50a74f97825010e}{processRequest}}(\mbox{\hyperlink{classlibcamera_1_1Request}{libcamera::Request}}\ *request)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ renderBuffer(\mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{libcamera::FrameBuffer}}\ *buffer);}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ processSDLEvents();}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ std::map<libcamera::FrameBuffer\ *,\ std::unique\_ptr<Image>>}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ mappedBuffers\_;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ std::unique\_ptr<SDLTexture>\ texture\_;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ SDL\_Window\ *window\_;}
+\DoxyCodeLine{00045\ \ \ \ \ SDL\_Renderer\ *renderer\_;}
+\DoxyCodeLine{00046\ \ \ \ \ SDL\_Rect\ rect\_;}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{bool}\ init\_;}
+\DoxyCodeLine{00048\ \};}
+
+\end{DoxyCode}

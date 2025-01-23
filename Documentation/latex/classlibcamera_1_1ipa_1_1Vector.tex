@@ -1,0 +1,834 @@
+\doxysection{libcamera\+::ipa\+::Vector\texorpdfstring{$<$}{<} T, Rows, \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classlibcamera_1_1ipa_1_1Vector}{}\label{classlibcamera_1_1ipa_1_1Vector}\index{libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}}
+
+
+\doxylink{classlibcamera_1_1ipa_1_1Vector}{Vector} class.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1ipa_1_1Vector_a90d9965549760741766606054ad18193}\label{classlibcamera_1_1ipa_1_1Vector_a90d9965549760741766606054ad18193} 
+constexpr {\bfseries Vector} ()=default
+\begin{DoxyCompactList}\small\item\em Construct an uninitialized vector. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector_a85f599ce1618faf921b0ab738351cf38}{Vector}} (T scalar)
+\begin{DoxyCompactList}\small\item\em Construct a vector filled with a {\itshape scalar} value. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector_a8bb793c9bfe30e3322f3f509036596eb}{Vector}} (const std\+::array$<$ T, Rows $>$ \&data)
+\begin{DoxyCompactList}\small\item\em Construct vector from supplied data. \end{DoxyCompactList}\item 
+const T \& \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector_a7231eec09a953891042cc6fa387c9a19}{operator\mbox{[}$\,$\mbox{]}}} (size\+\_\+t i) const
+\begin{DoxyCompactList}\small\item\em Index to an element in the vector. \end{DoxyCompactList}\item 
+T \& \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector_a9facb88cc6db2dda03a0632306e2f7ec}{operator\mbox{[}$\,$\mbox{]}}} (size\+\_\+t i)
+\begin{DoxyCompactList}\small\item\em Index to an element in the vector.   \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{Vector}}$<$ T, Rows $>$ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector_a895d544d626f6e6843a071fd820075ab}{operator-\/}} () const
+\begin{DoxyCompactList}\small\item\em Negate a \doxylink{classlibcamera_1_1ipa_1_1Vector}{Vector} by negating both all of its coordinates. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{Vector}} \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector_ab2d88024c91d56bafb55c90b69647307}{operator+}} (const \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{Vector}} \&other) const
+\begin{DoxyCompactList}\small\item\em Calculate the sum of this vector and {\itshape other} element-\/wise. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{Vector}} \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector_abc4540469bbc7c6620fd4e3be8737f32}{operator+}} (T scalar) const
+\begin{DoxyCompactList}\small\item\em Calculate the sum of this vector and {\itshape scalar} element-\/wise. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{Vector}} \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector_af0d6c00f2b26a18e8cef95008dd5b278}{operator-\/}} (const \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{Vector}} \&other) const
+\begin{DoxyCompactList}\small\item\em Calculate the difference of this vector and {\itshape other} element-\/wise. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{Vector}} \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector_ac3c08f214ef8484556af4a14a4da13b5}{operator-\/}} (T scalar) const
+\begin{DoxyCompactList}\small\item\em Calculate the difference of this vector and {\itshape scalar} element-\/wise. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{Vector}} \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector_ac375fe3a9aacf6cf836e4b4293c174b3}{operator\texorpdfstring{$\ast$}{*}}} (const \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{Vector}} \&other) const
+\begin{DoxyCompactList}\small\item\em Calculate the product of this vector and {\itshape other} element-\/wise. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{Vector}} \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector_a109cf6dd125cd1f87284454350d42a1b}{operator\texorpdfstring{$\ast$}{*}}} (T scalar) const
+\begin{DoxyCompactList}\small\item\em Calculate the product of this vector and {\itshape scalar} element-\/wise. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{Vector}} \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector_a7c4eeccb5664575bd537141d2cab7adf}{operator/}} (const \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{Vector}} \&other) const
+\begin{DoxyCompactList}\small\item\em Calculate the quotient of this vector and {\itshape other} element-\/wise. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{Vector}} \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector_ac9949ca593df811bcfdf58e17420b1a3}{operator/}} (T scalar) const
+\begin{DoxyCompactList}\small\item\em Calculate the quotient of this vector and {\itshape scalar} element-\/wise. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{Vector}} \& \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector_ac55234e88bd502fdbd07e6ee4ce886c8}{operator+=}} (const \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{Vector}} \&other)
+\begin{DoxyCompactList}\small\item\em Add {\itshape other} element-\/wise to this vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{Vector}} \& \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector_a7b62caf508948d60c9b0e0a2960b8437}{operator+=}} (T scalar)
+\begin{DoxyCompactList}\small\item\em Add {\itshape scalar} element-\/wise to this vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{Vector}} \& \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector_adf4a22a315f755508ef4591fa81a4e3e}{operator-\/=}} (const \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{Vector}} \&other)
+\begin{DoxyCompactList}\small\item\em Subtract {\itshape other} element-\/wise from this vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{Vector}} \& \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector_a34437ec055a86f73fabc2e2df5eea8f6}{operator-\/=}} (T scalar)
+\begin{DoxyCompactList}\small\item\em Subtract {\itshape scalar} element-\/wise from this vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{Vector}} \& \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector_a7d8b8a549d46b3023e1fd8113795b75d}{operator\texorpdfstring{$\ast$}{*}=}} (const \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{Vector}} \&other)
+\begin{DoxyCompactList}\small\item\em Multiply this vector by {\itshape other} element-\/wise. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{Vector}} \& \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector_ad87296cb1837ce83927358839beb6f86}{operator\texorpdfstring{$\ast$}{*}=}} (T scalar)
+\begin{DoxyCompactList}\small\item\em Multiply this vector by {\itshape scalar} element-\/wise. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{Vector}} \& \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector_ad31b36399cefbe605284eab62cbe43f5}{operator/=}} (const \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{Vector}} \&other)
+\begin{DoxyCompactList}\small\item\em Divide this vector by {\itshape other} element-\/wise. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{Vector}} \& \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector_a11a31d613f3a7184b17aea8339211e8c}{operator/=}} (T scalar)
+\begin{DoxyCompactList}\small\item\em Divide this vector by {\itshape scalar} element-\/wise. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{Vector}} \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector_a86b3973974702ffc6521185dacb1bcde}{min}} (const \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{Vector}} \&other) const
+\begin{DoxyCompactList}\small\item\em Calculate the minimum of this vector and {\itshape other} element-\/wise. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{Vector}} \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector_a4cf29a309fa566af523cd28deadd266d}{min}} (T scalar) const
+\begin{DoxyCompactList}\small\item\em Calculate the minimum of this vector and {\itshape scalar} element-\/wise. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{Vector}} \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector_a18d2bbab3dce02576bd2326aa43eefc5}{max}} (const \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{Vector}} \&other) const
+\begin{DoxyCompactList}\small\item\em Calculate the maximum of this vector and {\itshape other} element-\/wise. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{Vector}} \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector_a30e2a8e93b2365b43515c60f47a716ad}{max}} (T scalar) const
+\begin{DoxyCompactList}\small\item\em Calculate the maximum of this vector and {\itshape scalar} element-\/wise. \end{DoxyCompactList}\item 
+constexpr T \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector_ab0ae2d218d6dba83b65725a31adbbf1a}{dot}} (const \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{Vector}}$<$ T, Rows $>$ \&other) const
+\begin{DoxyCompactList}\small\item\em Compute the dot product. \end{DoxyCompactList}\item 
+{\footnotesize template$<$bool Dependent = false, typename  = std\+::enable\+\_\+if\+\_\+t$<$\+Dependent \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Rows $>$= 1$>$ }\\constexpr const T \& \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector_a28e1e51a37ed1f3cddfb951953a1ec0a}{x}} () const
+\begin{DoxyCompactList}\small\item\em Convenience function to access the first element of the vector.   \end{DoxyCompactList}\item 
+{\footnotesize template$<$bool Dependent = false, typename  = std\+::enable\+\_\+if\+\_\+t$<$\+Dependent \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Rows $>$= 2$>$ }\\constexpr const T \& \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector_a62cd8776521c78114bda2876c9252733}{y}} () const
+\begin{DoxyCompactList}\small\item\em Convenience function to access the second element of the vector.   \end{DoxyCompactList}\item 
+{\footnotesize template$<$bool Dependent = false, typename  = std\+::enable\+\_\+if\+\_\+t$<$\+Dependent \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Rows $>$= 3$>$ }\\constexpr const T \& \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector_a643e13c78b217d782c209f00c04b1276}{z}} () const
+\begin{DoxyCompactList}\small\item\em Convenience function to access the third element of the vector.   \end{DoxyCompactList}\item 
+{\footnotesize template$<$bool Dependent = false, typename  = std\+::enable\+\_\+if\+\_\+t$<$\+Dependent \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Rows $>$= 1$>$ }\\constexpr T \& \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector_abe5f0f8bd003c9487b4e279b4f1d355c}{x}} ()
+\begin{DoxyCompactList}\small\item\em Convenience function to access the first element of the vector. \end{DoxyCompactList}\item 
+{\footnotesize template$<$bool Dependent = false, typename  = std\+::enable\+\_\+if\+\_\+t$<$\+Dependent \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Rows $>$= 2$>$ }\\constexpr T \& \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector_a717c5f0e095f30122ddba8003ef1202f}{y}} ()
+\begin{DoxyCompactList}\small\item\em Convenience function to access the second element of the vector. \end{DoxyCompactList}\item 
+{\footnotesize template$<$bool Dependent = false, typename  = std\+::enable\+\_\+if\+\_\+t$<$\+Dependent \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Rows $>$= 3$>$ }\\constexpr T \& \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector_a46850d4e4e00d35bc0c1c18b6127d2e5}{z}} ()
+\begin{DoxyCompactList}\small\item\em Convenience function to access the third element of the vector. \end{DoxyCompactList}\item 
+{\footnotesize template$<$bool Dependent = false, typename  = std\+::enable\+\_\+if\+\_\+t$<$\+Dependent \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Rows $>$= 1$>$ }\\constexpr const T \& \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector_a1d7468efdb4444b8d97b57791ee00e97}{r}} () const
+\begin{DoxyCompactList}\small\item\em Convenience function to access the first element of the vector.   \end{DoxyCompactList}\item 
+{\footnotesize template$<$bool Dependent = false, typename  = std\+::enable\+\_\+if\+\_\+t$<$\+Dependent \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Rows $>$= 2$>$ }\\constexpr const T \& \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector_a7a60e3e723b741e8e230465bf666f791}{g}} () const
+\begin{DoxyCompactList}\small\item\em Convenience function to access the second element of the vector.   \end{DoxyCompactList}\item 
+{\footnotesize template$<$bool Dependent = false, typename  = std\+::enable\+\_\+if\+\_\+t$<$\+Dependent \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Rows $>$= 3$>$ }\\constexpr const T \& \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector_a0dc58e9744851fc057758e5e029c97c3}{b}} () const
+\begin{DoxyCompactList}\small\item\em Convenience function to access the third element of the vector.   \end{DoxyCompactList}\item 
+{\footnotesize template$<$bool Dependent = false, typename  = std\+::enable\+\_\+if\+\_\+t$<$\+Dependent \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Rows $>$= 1$>$ }\\constexpr T \& \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector_adb97c2b76ed44d80f4bcaf2a65d5e134}{r}} ()
+\begin{DoxyCompactList}\small\item\em Convenience function to access the first element of the vector. \end{DoxyCompactList}\item 
+{\footnotesize template$<$bool Dependent = false, typename  = std\+::enable\+\_\+if\+\_\+t$<$\+Dependent \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Rows $>$= 2$>$ }\\constexpr T \& \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector_a6490280bb28434249d2c16b9748e4c51}{g}} ()
+\begin{DoxyCompactList}\small\item\em Convenience function to access the second element of the vector. \end{DoxyCompactList}\item 
+{\footnotesize template$<$bool Dependent = false, typename  = std\+::enable\+\_\+if\+\_\+t$<$\+Dependent \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Rows $>$= 3$>$ }\\constexpr T \& \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector_a6c688fc07d9484268db38f30b1601506}{b}} ()
+\begin{DoxyCompactList}\small\item\em Convenience function to access the third element of the vector. \end{DoxyCompactList}\item 
+constexpr double \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector_acaa7f71dd6963d3995789d723a85ec4d}{length2}} () const
+\begin{DoxyCompactList}\small\item\em Get the squared length of the vector. \end{DoxyCompactList}\item 
+constexpr double \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector_a2e892128d25cf7b20c6fc22e489a2c72}{length}} () const
+\begin{DoxyCompactList}\small\item\em Get the length of the vector. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename R  = T$>$ }\\constexpr R \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector_a96765ccb9764b442b6213dd2516f39fe}{sum}} () const
+\begin{DoxyCompactList}\small\item\em Calculate the sum of all the vector elements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T, unsigned int Rows, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic\+\_\+v$<$ T $>$ $>$ \texorpdfstring{$\ast$}{*} = nullptr$>$\newline
+class libcamera\+::ipa\+::\+Vector$<$ T, Rows, $>$}
+\doxylink{classlibcamera_1_1ipa_1_1Vector}{Vector} class. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of numerical values to be stored in the vector \\
+\hline
+{\em Rows} & Number of dimension of the vector (= number of elements) \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlibcamera_1_1ipa_1_1Vector_a85f599ce1618faf921b0ab738351cf38}\label{classlibcamera_1_1ipa_1_1Vector_a85f599ce1618faf921b0ab738351cf38} 
+\index{libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}!Vector@{Vector}}
+\index{Vector@{Vector}!libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}}
+\doxysubsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int Rows, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic\+\_\+v$<$ T $>$ $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{libcamera\+::ipa\+::\+Vector}}$<$ T, Rows, $>$\+::\+Vector (\begin{DoxyParamCaption}\item[{T}]{scalar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [constexpr]}}
+
+
+
+Construct a vector filled with a {\itshape scalar} value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em scalar} & The scalar value \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classlibcamera_1_1ipa_1_1Vector_a8bb793c9bfe30e3322f3f509036596eb}\label{classlibcamera_1_1ipa_1_1Vector_a8bb793c9bfe30e3322f3f509036596eb} 
+\index{libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}!Vector@{Vector}}
+\index{Vector@{Vector}!libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}}
+\doxysubsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int Rows, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic\+\_\+v$<$ T $>$ $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{libcamera\+::ipa\+::\+Vector}}$<$ T, Rows, $>$\+::\+Vector (\begin{DoxyParamCaption}\item[{const std\+::array$<$ T, Rows $>$ \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Construct vector from supplied data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Data from which to construct a vector\\
+\hline
+\end{DoxyParams}
+The size of {\itshape data} must be equal to the dimension size Rows of the vector. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1ipa_1_1Vector_a6c688fc07d9484268db38f30b1601506}\label{classlibcamera_1_1ipa_1_1Vector_a6c688fc07d9484268db38f30b1601506} 
+\index{libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}!b@{b}}
+\index{b@{b}!libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}}
+\doxysubsubsection{\texorpdfstring{b()}{b()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int Rows, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic\+\_\+v$<$ T $>$ $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+template$<$bool Dependent = false, typename  = std\+::enable\+\_\+if\+\_\+t$<$\+Dependent \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Rows $>$= 3$>$ \\
+constexpr T \& \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{libcamera\+::ipa\+::\+Vector}}$<$ T, Rows, $>$\+::b (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Convenience function to access the third element of the vector. 
+
+\begin{DoxyReturn}{Returns}
+The third element of the vector 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1Vector_a0dc58e9744851fc057758e5e029c97c3}\label{classlibcamera_1_1ipa_1_1Vector_a0dc58e9744851fc057758e5e029c97c3} 
+\index{libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}!b@{b}}
+\index{b@{b}!libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}}
+\doxysubsubsection{\texorpdfstring{b()}{b()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int Rows, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic\+\_\+v$<$ T $>$ $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+template$<$bool Dependent = false, typename  = std\+::enable\+\_\+if\+\_\+t$<$\+Dependent \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Rows $>$= 3$>$ \\
+constexpr const T \& \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{libcamera\+::ipa\+::\+Vector}}$<$ T, Rows, $>$\+::b (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Convenience function to access the third element of the vector.   
+
+\begin{DoxyReturn}{Returns}
+The third element of the vector   
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1Vector_ab0ae2d218d6dba83b65725a31adbbf1a}\label{classlibcamera_1_1ipa_1_1Vector_ab0ae2d218d6dba83b65725a31adbbf1a} 
+\index{libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}!dot@{dot}}
+\index{dot@{dot}!libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}}
+\doxysubsubsection{\texorpdfstring{dot()}{dot()}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int Rows, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic\+\_\+v$<$ T $>$ $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{libcamera\+::ipa\+::\+Vector}}$<$ T, Rows, $>$\+::dot (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{Vector}}$<$ T, Rows $>$ \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Compute the dot product. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & The other vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The dot product of the two vectors 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1Vector_a6490280bb28434249d2c16b9748e4c51}\label{classlibcamera_1_1ipa_1_1Vector_a6490280bb28434249d2c16b9748e4c51} 
+\index{libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}!g@{g}}
+\index{g@{g}!libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}}
+\doxysubsubsection{\texorpdfstring{g()}{g()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int Rows, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic\+\_\+v$<$ T $>$ $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+template$<$bool Dependent = false, typename  = std\+::enable\+\_\+if\+\_\+t$<$\+Dependent \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Rows $>$= 2$>$ \\
+constexpr T \& \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{libcamera\+::ipa\+::\+Vector}}$<$ T, Rows, $>$\+::g (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Convenience function to access the second element of the vector. 
+
+\begin{DoxyReturn}{Returns}
+The second element of the vector 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1Vector_a7a60e3e723b741e8e230465bf666f791}\label{classlibcamera_1_1ipa_1_1Vector_a7a60e3e723b741e8e230465bf666f791} 
+\index{libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}!g@{g}}
+\index{g@{g}!libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}}
+\doxysubsubsection{\texorpdfstring{g()}{g()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int Rows, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic\+\_\+v$<$ T $>$ $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+template$<$bool Dependent = false, typename  = std\+::enable\+\_\+if\+\_\+t$<$\+Dependent \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Rows $>$= 2$>$ \\
+constexpr const T \& \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{libcamera\+::ipa\+::\+Vector}}$<$ T, Rows, $>$\+::g (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Convenience function to access the second element of the vector.   
+
+\begin{DoxyReturn}{Returns}
+The second element of the vector   
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1Vector_a2e892128d25cf7b20c6fc22e489a2c72}\label{classlibcamera_1_1ipa_1_1Vector_a2e892128d25cf7b20c6fc22e489a2c72} 
+\index{libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}!length@{length}}
+\index{length@{length}!libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}}
+\doxysubsubsection{\texorpdfstring{length()}{length()}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int Rows, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic\+\_\+v$<$ T $>$ $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{libcamera\+::ipa\+::\+Vector}}$<$ T, Rows, $>$\+::length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Get the length of the vector. 
+
+\begin{DoxyReturn}{Returns}
+The length of the vector 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1Vector_acaa7f71dd6963d3995789d723a85ec4d}\label{classlibcamera_1_1ipa_1_1Vector_acaa7f71dd6963d3995789d723a85ec4d} 
+\index{libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}!length2@{length2}}
+\index{length2@{length2}!libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}}
+\doxysubsubsection{\texorpdfstring{length2()}{length2()}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int Rows, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic\+\_\+v$<$ T $>$ $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{libcamera\+::ipa\+::\+Vector}}$<$ T, Rows, $>$\+::length2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Get the squared length of the vector. 
+
+\begin{DoxyReturn}{Returns}
+The squared length of the vector 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1Vector_a18d2bbab3dce02576bd2326aa43eefc5}\label{classlibcamera_1_1ipa_1_1Vector_a18d2bbab3dce02576bd2326aa43eefc5} 
+\index{libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}!max@{max}}
+\index{max@{max}!libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}}
+\doxysubsubsection{\texorpdfstring{max()}{max()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int Rows, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic\+\_\+v$<$ T $>$ $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{libcamera\+::ipa\+::\+Vector}}$<$ T, Rows, $>$\+::max (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{Vector}}$<$ T, Rows, $>$ \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Calculate the maximum of this vector and {\itshape other} element-\/wise. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & The other vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The element-\/wise maximum of this vector and {\itshape other} 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1Vector_a30e2a8e93b2365b43515c60f47a716ad}\label{classlibcamera_1_1ipa_1_1Vector_a30e2a8e93b2365b43515c60f47a716ad} 
+\index{libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}!max@{max}}
+\index{max@{max}!libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}}
+\doxysubsubsection{\texorpdfstring{max()}{max()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int Rows, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic\+\_\+v$<$ T $>$ $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{libcamera\+::ipa\+::\+Vector}}$<$ T, Rows, $>$\+::max (\begin{DoxyParamCaption}\item[{T}]{scalar }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Calculate the maximum of this vector and {\itshape scalar} element-\/wise. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em scalar} & The scalar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The element-\/wise maximum of this vector and {\itshape scalar} 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1Vector_a86b3973974702ffc6521185dacb1bcde}\label{classlibcamera_1_1ipa_1_1Vector_a86b3973974702ffc6521185dacb1bcde} 
+\index{libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}!min@{min}}
+\index{min@{min}!libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}}
+\doxysubsubsection{\texorpdfstring{min()}{min()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int Rows, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic\+\_\+v$<$ T $>$ $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{libcamera\+::ipa\+::\+Vector}}$<$ T, Rows, $>$\+::min (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{Vector}}$<$ T, Rows, $>$ \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Calculate the minimum of this vector and {\itshape other} element-\/wise. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & The other vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The element-\/wise minimum of this vector and {\itshape other} 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1Vector_a4cf29a309fa566af523cd28deadd266d}\label{classlibcamera_1_1ipa_1_1Vector_a4cf29a309fa566af523cd28deadd266d} 
+\index{libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}!min@{min}}
+\index{min@{min}!libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}}
+\doxysubsubsection{\texorpdfstring{min()}{min()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int Rows, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic\+\_\+v$<$ T $>$ $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{libcamera\+::ipa\+::\+Vector}}$<$ T, Rows, $>$\+::min (\begin{DoxyParamCaption}\item[{T}]{scalar }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Calculate the minimum of this vector and {\itshape scalar} element-\/wise. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em scalar} & The scalar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The element-\/wise minimum of this vector and {\itshape scalar} 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1Vector_ac375fe3a9aacf6cf836e4b4293c174b3}\label{classlibcamera_1_1ipa_1_1Vector_ac375fe3a9aacf6cf836e4b4293c174b3} 
+\index{libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int Rows, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic\+\_\+v$<$ T $>$ $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{libcamera\+::ipa\+::\+Vector}}$<$ T, Rows, $>$\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{Vector}}$<$ T, Rows, $>$ \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Calculate the product of this vector and {\itshape other} element-\/wise. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & The other vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The element-\/wise product of this vector and {\itshape other} 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1Vector_a109cf6dd125cd1f87284454350d42a1b}\label{classlibcamera_1_1ipa_1_1Vector_a109cf6dd125cd1f87284454350d42a1b} 
+\index{libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int Rows, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic\+\_\+v$<$ T $>$ $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{libcamera\+::ipa\+::\+Vector}}$<$ T, Rows, $>$\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{T}]{scalar }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Calculate the product of this vector and {\itshape scalar} element-\/wise. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em scalar} & The scalar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The element-\/wise product of this vector and {\itshape scalar} 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1Vector_a7d8b8a549d46b3023e1fd8113795b75d}\label{classlibcamera_1_1ipa_1_1Vector_a7d8b8a549d46b3023e1fd8113795b75d} 
+\index{libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}!operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}}
+\index{operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}!libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int Rows, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic\+\_\+v$<$ T $>$ $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{libcamera\+::ipa\+::\+Vector}}$<$ T, Rows, $>$\+::operator\texorpdfstring{$\ast$}{*}= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{Vector}}$<$ T, Rows, $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Multiply this vector by {\itshape other} element-\/wise. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & The other vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This vector 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1Vector_ad87296cb1837ce83927358839beb6f86}\label{classlibcamera_1_1ipa_1_1Vector_ad87296cb1837ce83927358839beb6f86} 
+\index{libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}!operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}}
+\index{operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}!libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int Rows, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic\+\_\+v$<$ T $>$ $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{libcamera\+::ipa\+::\+Vector}}$<$ T, Rows, $>$\+::operator\texorpdfstring{$\ast$}{*}= (\begin{DoxyParamCaption}\item[{T}]{scalar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Multiply this vector by {\itshape scalar} element-\/wise. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em scalar} & The scalar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This vector 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1Vector_ab2d88024c91d56bafb55c90b69647307}\label{classlibcamera_1_1ipa_1_1Vector_ab2d88024c91d56bafb55c90b69647307} 
+\index{libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int Rows, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic\+\_\+v$<$ T $>$ $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{libcamera\+::ipa\+::\+Vector}}$<$ T, Rows, $>$\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{Vector}}$<$ T, Rows, $>$ \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Calculate the sum of this vector and {\itshape other} element-\/wise. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & The other vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The element-\/wise sum of this vector and {\itshape other} 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1Vector_abc4540469bbc7c6620fd4e3be8737f32}\label{classlibcamera_1_1ipa_1_1Vector_abc4540469bbc7c6620fd4e3be8737f32} 
+\index{libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int Rows, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic\+\_\+v$<$ T $>$ $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{libcamera\+::ipa\+::\+Vector}}$<$ T, Rows, $>$\+::operator+ (\begin{DoxyParamCaption}\item[{T}]{scalar }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Calculate the sum of this vector and {\itshape scalar} element-\/wise. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em scalar} & The scalar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The element-\/wise sum of this vector and {\itshape other} 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1Vector_ac55234e88bd502fdbd07e6ee4ce886c8}\label{classlibcamera_1_1ipa_1_1Vector_ac55234e88bd502fdbd07e6ee4ce886c8} 
+\index{libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int Rows, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic\+\_\+v$<$ T $>$ $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{libcamera\+::ipa\+::\+Vector}}$<$ T, Rows, $>$\+::operator+= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{Vector}}$<$ T, Rows, $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add {\itshape other} element-\/wise to this vector. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & The other vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This vector 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1Vector_a7b62caf508948d60c9b0e0a2960b8437}\label{classlibcamera_1_1ipa_1_1Vector_a7b62caf508948d60c9b0e0a2960b8437} 
+\index{libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int Rows, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic\+\_\+v$<$ T $>$ $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{libcamera\+::ipa\+::\+Vector}}$<$ T, Rows, $>$\+::operator+= (\begin{DoxyParamCaption}\item[{T}]{scalar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add {\itshape scalar} element-\/wise to this vector. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em scalar} & The scalar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This vector 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1Vector_a895d544d626f6e6843a071fd820075ab}\label{classlibcamera_1_1ipa_1_1Vector_a895d544d626f6e6843a071fd820075ab} 
+\index{libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int Rows, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic\+\_\+v$<$ T $>$ $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{libcamera\+::ipa\+::\+Vector}}$<$ T, Rows, $>$\+::operator-\/ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Negate a \doxylink{classlibcamera_1_1ipa_1_1Vector}{Vector} by negating both all of its coordinates. 
+
+\begin{DoxyReturn}{Returns}
+The negated vector 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1Vector_af0d6c00f2b26a18e8cef95008dd5b278}\label{classlibcamera_1_1ipa_1_1Vector_af0d6c00f2b26a18e8cef95008dd5b278} 
+\index{libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int Rows, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic\+\_\+v$<$ T $>$ $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{libcamera\+::ipa\+::\+Vector}}$<$ T, Rows, $>$\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{Vector}}$<$ T, Rows, $>$ \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Calculate the difference of this vector and {\itshape other} element-\/wise. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & The other vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The element-\/wise subtraction of {\itshape other} from this vector 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1Vector_ac3c08f214ef8484556af4a14a4da13b5}\label{classlibcamera_1_1ipa_1_1Vector_ac3c08f214ef8484556af4a14a4da13b5} 
+\index{libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int Rows, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic\+\_\+v$<$ T $>$ $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{libcamera\+::ipa\+::\+Vector}}$<$ T, Rows, $>$\+::operator-\/ (\begin{DoxyParamCaption}\item[{T}]{scalar }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Calculate the difference of this vector and {\itshape scalar} element-\/wise. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em scalar} & The scalar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The element-\/wise subtraction of {\itshape scalar} from this vector 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1Vector_adf4a22a315f755508ef4591fa81a4e3e}\label{classlibcamera_1_1ipa_1_1Vector_adf4a22a315f755508ef4591fa81a4e3e} 
+\index{libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/=()}{operator-=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int Rows, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic\+\_\+v$<$ T $>$ $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{libcamera\+::ipa\+::\+Vector}}$<$ T, Rows, $>$\+::operator-\/= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{Vector}}$<$ T, Rows, $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Subtract {\itshape other} element-\/wise from this vector. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & The other vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This vector 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1Vector_a34437ec055a86f73fabc2e2df5eea8f6}\label{classlibcamera_1_1ipa_1_1Vector_a34437ec055a86f73fabc2e2df5eea8f6} 
+\index{libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/=()}{operator-=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int Rows, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic\+\_\+v$<$ T $>$ $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{libcamera\+::ipa\+::\+Vector}}$<$ T, Rows, $>$\+::operator-\/= (\begin{DoxyParamCaption}\item[{T}]{scalar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Subtract {\itshape scalar} element-\/wise from this vector. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em scalar} & The scalar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This vector 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1Vector_a7c4eeccb5664575bd537141d2cab7adf}\label{classlibcamera_1_1ipa_1_1Vector_a7c4eeccb5664575bd537141d2cab7adf} 
+\index{libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}!operator/@{operator/}}
+\index{operator/@{operator/}!libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}}
+\doxysubsubsection{\texorpdfstring{operator/()}{operator/()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int Rows, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic\+\_\+v$<$ T $>$ $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{libcamera\+::ipa\+::\+Vector}}$<$ T, Rows, $>$\+::operator/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{Vector}}$<$ T, Rows, $>$ \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Calculate the quotient of this vector and {\itshape other} element-\/wise. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & The other vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The element-\/wise division of this vector by {\itshape other} 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1Vector_ac9949ca593df811bcfdf58e17420b1a3}\label{classlibcamera_1_1ipa_1_1Vector_ac9949ca593df811bcfdf58e17420b1a3} 
+\index{libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}!operator/@{operator/}}
+\index{operator/@{operator/}!libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}}
+\doxysubsubsection{\texorpdfstring{operator/()}{operator/()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int Rows, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic\+\_\+v$<$ T $>$ $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{libcamera\+::ipa\+::\+Vector}}$<$ T, Rows, $>$\+::operator/ (\begin{DoxyParamCaption}\item[{T}]{scalar }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Calculate the quotient of this vector and {\itshape scalar} element-\/wise. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em scalar} & The scalar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The element-\/wise division of this vector by {\itshape scalar} 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1Vector_ad31b36399cefbe605284eab62cbe43f5}\label{classlibcamera_1_1ipa_1_1Vector_ad31b36399cefbe605284eab62cbe43f5} 
+\index{libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}}
+\doxysubsubsection{\texorpdfstring{operator/=()}{operator/=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int Rows, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic\+\_\+v$<$ T $>$ $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{libcamera\+::ipa\+::\+Vector}}$<$ T, Rows, $>$\+::operator/= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{Vector}}$<$ T, Rows, $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Divide this vector by {\itshape other} element-\/wise. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & The other vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This vector 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1Vector_a11a31d613f3a7184b17aea8339211e8c}\label{classlibcamera_1_1ipa_1_1Vector_a11a31d613f3a7184b17aea8339211e8c} 
+\index{libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}}
+\doxysubsubsection{\texorpdfstring{operator/=()}{operator/=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int Rows, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic\+\_\+v$<$ T $>$ $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{libcamera\+::ipa\+::\+Vector}}$<$ T, Rows, $>$\+::operator/= (\begin{DoxyParamCaption}\item[{T}]{scalar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Divide this vector by {\itshape scalar} element-\/wise. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em scalar} & The scalar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This vector 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1Vector_a9facb88cc6db2dda03a0632306e2f7ec}\label{classlibcamera_1_1ipa_1_1Vector_a9facb88cc6db2dda03a0632306e2f7ec} 
+\index{libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int Rows, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic\+\_\+v$<$ T $>$ $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+T \& \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{libcamera\+::ipa\+::\+Vector}}$<$ T, Rows, $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Index to an element in the vector.   
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Index of element to retrieve \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Element at index {\itshape i} from the vector   
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1Vector_a7231eec09a953891042cc6fa387c9a19}\label{classlibcamera_1_1ipa_1_1Vector_a7231eec09a953891042cc6fa387c9a19} 
+\index{libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int Rows, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic\+\_\+v$<$ T $>$ $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+T \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{libcamera\+::ipa\+::\+Vector}}$<$ T, Rows, $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Index to an element in the vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Index of element to retrieve \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Element at index {\itshape i} from the vector 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1Vector_adb97c2b76ed44d80f4bcaf2a65d5e134}\label{classlibcamera_1_1ipa_1_1Vector_adb97c2b76ed44d80f4bcaf2a65d5e134} 
+\index{libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}!r@{r}}
+\index{r@{r}!libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}}
+\doxysubsubsection{\texorpdfstring{r()}{r()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int Rows, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic\+\_\+v$<$ T $>$ $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+template$<$bool Dependent = false, typename  = std\+::enable\+\_\+if\+\_\+t$<$\+Dependent \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Rows $>$= 1$>$ \\
+constexpr T \& \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{libcamera\+::ipa\+::\+Vector}}$<$ T, Rows, $>$\+::r (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Convenience function to access the first element of the vector. 
+
+\begin{DoxyReturn}{Returns}
+The first element of the vector 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1Vector_a1d7468efdb4444b8d97b57791ee00e97}\label{classlibcamera_1_1ipa_1_1Vector_a1d7468efdb4444b8d97b57791ee00e97} 
+\index{libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}!r@{r}}
+\index{r@{r}!libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}}
+\doxysubsubsection{\texorpdfstring{r()}{r()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int Rows, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic\+\_\+v$<$ T $>$ $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+template$<$bool Dependent = false, typename  = std\+::enable\+\_\+if\+\_\+t$<$\+Dependent \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Rows $>$= 1$>$ \\
+constexpr const T \& \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{libcamera\+::ipa\+::\+Vector}}$<$ T, Rows, $>$\+::r (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Convenience function to access the first element of the vector.   
+
+\begin{DoxyReturn}{Returns}
+The first element of the vector   
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1Vector_a96765ccb9764b442b6213dd2516f39fe}\label{classlibcamera_1_1ipa_1_1Vector_a96765ccb9764b442b6213dd2516f39fe} 
+\index{libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}!sum@{sum}}
+\index{sum@{sum}!libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}}
+\doxysubsubsection{\texorpdfstring{sum()}{sum()}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int Rows, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic\+\_\+v$<$ T $>$ $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+template$<$typename R  = T$>$ \\
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{libcamera\+::ipa\+::\+Vector}}$<$ T, Rows, $>$\+::sum (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Calculate the sum of all the vector elements. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em R} & The type of the sum\\
+\hline
+\end{DoxyTemplParams}
+The type R of the sum defaults to the type T of the elements, but can be set explicitly to use a different type in case the type T would risk overflowing.
+
+\begin{DoxyReturn}{Returns}
+The sum of all the vector elements 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1Vector_abe5f0f8bd003c9487b4e279b4f1d355c}\label{classlibcamera_1_1ipa_1_1Vector_abe5f0f8bd003c9487b4e279b4f1d355c} 
+\index{libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}!x@{x}}
+\index{x@{x}!libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}}
+\doxysubsubsection{\texorpdfstring{x()}{x()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int Rows, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic\+\_\+v$<$ T $>$ $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+template$<$bool Dependent = false, typename  = std\+::enable\+\_\+if\+\_\+t$<$\+Dependent \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Rows $>$= 1$>$ \\
+constexpr T \& \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{libcamera\+::ipa\+::\+Vector}}$<$ T, Rows, $>$\+::x (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Convenience function to access the first element of the vector. 
+
+\begin{DoxyReturn}{Returns}
+The first element of the vector 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1Vector_a28e1e51a37ed1f3cddfb951953a1ec0a}\label{classlibcamera_1_1ipa_1_1Vector_a28e1e51a37ed1f3cddfb951953a1ec0a} 
+\index{libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}!x@{x}}
+\index{x@{x}!libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}}
+\doxysubsubsection{\texorpdfstring{x()}{x()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int Rows, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic\+\_\+v$<$ T $>$ $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+template$<$bool Dependent = false, typename  = std\+::enable\+\_\+if\+\_\+t$<$\+Dependent \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Rows $>$= 1$>$ \\
+constexpr const T \& \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{libcamera\+::ipa\+::\+Vector}}$<$ T, Rows, $>$\+::x (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Convenience function to access the first element of the vector.   
+
+\begin{DoxyReturn}{Returns}
+The first element of the vector   
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1Vector_a717c5f0e095f30122ddba8003ef1202f}\label{classlibcamera_1_1ipa_1_1Vector_a717c5f0e095f30122ddba8003ef1202f} 
+\index{libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}!y@{y}}
+\index{y@{y}!libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}}
+\doxysubsubsection{\texorpdfstring{y()}{y()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int Rows, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic\+\_\+v$<$ T $>$ $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+template$<$bool Dependent = false, typename  = std\+::enable\+\_\+if\+\_\+t$<$\+Dependent \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Rows $>$= 2$>$ \\
+constexpr T \& \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{libcamera\+::ipa\+::\+Vector}}$<$ T, Rows, $>$\+::y (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Convenience function to access the second element of the vector. 
+
+\begin{DoxyReturn}{Returns}
+The second element of the vector 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1Vector_a62cd8776521c78114bda2876c9252733}\label{classlibcamera_1_1ipa_1_1Vector_a62cd8776521c78114bda2876c9252733} 
+\index{libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}!y@{y}}
+\index{y@{y}!libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}}
+\doxysubsubsection{\texorpdfstring{y()}{y()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int Rows, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic\+\_\+v$<$ T $>$ $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+template$<$bool Dependent = false, typename  = std\+::enable\+\_\+if\+\_\+t$<$\+Dependent \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Rows $>$= 2$>$ \\
+constexpr const T \& \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{libcamera\+::ipa\+::\+Vector}}$<$ T, Rows, $>$\+::y (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Convenience function to access the second element of the vector.   
+
+\begin{DoxyReturn}{Returns}
+The second element of the vector   
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1Vector_a46850d4e4e00d35bc0c1c18b6127d2e5}\label{classlibcamera_1_1ipa_1_1Vector_a46850d4e4e00d35bc0c1c18b6127d2e5} 
+\index{libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}!z@{z}}
+\index{z@{z}!libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}}
+\doxysubsubsection{\texorpdfstring{z()}{z()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int Rows, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic\+\_\+v$<$ T $>$ $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+template$<$bool Dependent = false, typename  = std\+::enable\+\_\+if\+\_\+t$<$\+Dependent \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Rows $>$= 3$>$ \\
+constexpr T \& \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{libcamera\+::ipa\+::\+Vector}}$<$ T, Rows, $>$\+::z (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Convenience function to access the third element of the vector. 
+
+\begin{DoxyReturn}{Returns}
+The third element of the vector 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1Vector_a643e13c78b217d782c209f00c04b1276}\label{classlibcamera_1_1ipa_1_1Vector_a643e13c78b217d782c209f00c04b1276} 
+\index{libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}!z@{z}}
+\index{z@{z}!libcamera::ipa::Vector$<$ T, Rows, $>$@{libcamera::ipa::Vector$<$ T, Rows, $>$}}
+\doxysubsubsection{\texorpdfstring{z()}{z()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int Rows, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+arithmetic\+\_\+v$<$ T $>$ $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+template$<$bool Dependent = false, typename  = std\+::enable\+\_\+if\+\_\+t$<$\+Dependent \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Rows $>$= 3$>$ \\
+constexpr const T \& \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{libcamera\+::ipa\+::\+Vector}}$<$ T, Rows, $>$\+::z (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Convenience function to access the third element of the vector.   
+
+\begin{DoxyReturn}{Returns}
+The third element of the vector   
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/ipa/libipa/\mbox{\hyperlink{vector_8h}{vector.\+h}}\item 
+src/peripherals/camera/libcamera/src/ipa/libipa/vector.\+cpp\end{DoxyCompactItemize}

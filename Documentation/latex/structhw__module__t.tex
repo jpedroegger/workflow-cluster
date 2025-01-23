@@ -1,0 +1,102 @@
+\doxysection{hw\+\_\+module\+\_\+t Struct Reference}
+\hypertarget{structhw__module__t}{}\label{structhw__module__t}\index{hw\_module\_t@{hw\_module\_t}}
+
+
+{\ttfamily \#include $<$hardware.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structhw__module__t_adebb87347c7f2149aab6c0799582c7e1}{tag}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structhw__module__t_a8976073c07b4387cddd34b1dc733739b}{module\+\_\+api\+\_\+version}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structhw__module__t_ac9f3cbae5310283301a64964083fc7c9}{hal\+\_\+api\+\_\+version}}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structhw__module__t_abba6d7d4b8fbb22f7067ed12172e1145}{id}}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structhw__module__t_a581b9b7c9496de833e049f51e9a01829}{name}}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structhw__module__t_acf7f5d4484c35bfe8b56ef9e7b9d1cb6}{author}}
+\item 
+struct \mbox{\hyperlink{structhw__module__methods__t}{hw\+\_\+module\+\_\+methods\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structhw__module__t_ad9770c8d70a96f17fd3b3606e26fe7b0}{methods}}
+\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structhw__module__t_a2f943bc67eaf6b7eaf14b28077d90f93}{dso}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structhw__module__t_a60091c01ca0f36c3448dcbbad236be16}{reserved}} \mbox{[}32-\/7\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Every hardware module must have a data structure named HAL\+\_\+\+MODULE\+\_\+\+INFO\+\_\+\+SYM and the fields of this data structure must begin with \doxylink{structhw__module__t}{hw\+\_\+module\+\_\+t} followed by module specific information. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structhw__module__t_acf7f5d4484c35bfe8b56ef9e7b9d1cb6}\label{structhw__module__t_acf7f5d4484c35bfe8b56ef9e7b9d1cb6} 
+\index{hw\_module\_t@{hw\_module\_t}!author@{author}}
+\index{author@{author}!hw\_module\_t@{hw\_module\_t}}
+\doxysubsubsection{\texorpdfstring{author}{author}}
+{\footnotesize\ttfamily const char\texorpdfstring{$\ast$}{*} hw\+\_\+module\+\_\+t\+::author}
+
+Author/owner/implementor of the module \Hypertarget{structhw__module__t_a2f943bc67eaf6b7eaf14b28077d90f93}\label{structhw__module__t_a2f943bc67eaf6b7eaf14b28077d90f93} 
+\index{hw\_module\_t@{hw\_module\_t}!dso@{dso}}
+\index{dso@{dso}!hw\_module\_t@{hw\_module\_t}}
+\doxysubsubsection{\texorpdfstring{dso}{dso}}
+{\footnotesize\ttfamily void\texorpdfstring{$\ast$}{*} hw\+\_\+module\+\_\+t\+::dso}
+
+module\textquotesingle{}s dso \Hypertarget{structhw__module__t_ac9f3cbae5310283301a64964083fc7c9}\label{structhw__module__t_ac9f3cbae5310283301a64964083fc7c9} 
+\index{hw\_module\_t@{hw\_module\_t}!hal\_api\_version@{hal\_api\_version}}
+\index{hal\_api\_version@{hal\_api\_version}!hw\_module\_t@{hw\_module\_t}}
+\doxysubsubsection{\texorpdfstring{hal\_api\_version}{hal\_api\_version}}
+{\footnotesize\ttfamily uint16\+\_\+t hw\+\_\+module\+\_\+t\+::hal\+\_\+api\+\_\+version}
+
+version\+\_\+major/version\+\_\+minor defines are supplied here for temporary source code compatibility. They will be removed in the next version. ALL clients must convert to the new version format. The API version of the HAL module interface. This is meant to version the \doxylink{structhw__module__t}{hw\+\_\+module\+\_\+t}, \doxylink{structhw__module__methods__t}{hw\+\_\+module\+\_\+methods\+\_\+t}, and \doxylink{structhw__device__t}{hw\+\_\+device\+\_\+t} structures and definitions.
+
+The HAL interface owns this field. Module users/implementations must NOT rely on this value for version information.
+
+Presently, 0 is the only valid value. \Hypertarget{structhw__module__t_abba6d7d4b8fbb22f7067ed12172e1145}\label{structhw__module__t_abba6d7d4b8fbb22f7067ed12172e1145} 
+\index{hw\_module\_t@{hw\_module\_t}!id@{id}}
+\index{id@{id}!hw\_module\_t@{hw\_module\_t}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily const char\texorpdfstring{$\ast$}{*} hw\+\_\+module\+\_\+t\+::id}
+
+Identifier of module \Hypertarget{structhw__module__t_ad9770c8d70a96f17fd3b3606e26fe7b0}\label{structhw__module__t_ad9770c8d70a96f17fd3b3606e26fe7b0} 
+\index{hw\_module\_t@{hw\_module\_t}!methods@{methods}}
+\index{methods@{methods}!hw\_module\_t@{hw\_module\_t}}
+\doxysubsubsection{\texorpdfstring{methods}{methods}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structhw__module__methods__t}{hw\+\_\+module\+\_\+methods\+\_\+t}}\texorpdfstring{$\ast$}{*} hw\+\_\+module\+\_\+t\+::methods}
+
+Modules methods \Hypertarget{structhw__module__t_a8976073c07b4387cddd34b1dc733739b}\label{structhw__module__t_a8976073c07b4387cddd34b1dc733739b} 
+\index{hw\_module\_t@{hw\_module\_t}!module\_api\_version@{module\_api\_version}}
+\index{module\_api\_version@{module\_api\_version}!hw\_module\_t@{hw\_module\_t}}
+\doxysubsubsection{\texorpdfstring{module\_api\_version}{module\_api\_version}}
+{\footnotesize\ttfamily uint16\+\_\+t hw\+\_\+module\+\_\+t\+::module\+\_\+api\+\_\+version}
+
+The API version of the implemented module. The module owner is responsible for updating the version when a module interface has changed.
+
+The derived modules such as gralloc and audio own and manage this field. The module user must interpret the version field to decide whether or not to inter-\/operate with the supplied module implementation. For example, Surface\+Flinger is responsible for making sure that it knows how to manage different versions of the gralloc-\/module API, and Audio\+Flinger must know how to do the same for audio-\/module API.
+
+The module API version should include a major and a minor component. For example, version 1.\+0 could be represented as 0x0100. This format implies that versions 0x0100-\/0x01ff are all API-\/compatible.
+
+In the future, libhardware will expose a hw\+\_\+get\+\_\+module\+\_\+version() (or equivalent) function that will take minimum/maximum supported versions as arguments and would be able to reject modules with versions outside of the supplied range. \Hypertarget{structhw__module__t_a581b9b7c9496de833e049f51e9a01829}\label{structhw__module__t_a581b9b7c9496de833e049f51e9a01829} 
+\index{hw\_module\_t@{hw\_module\_t}!name@{name}}
+\index{name@{name}!hw\_module\_t@{hw\_module\_t}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily const char\texorpdfstring{$\ast$}{*} hw\+\_\+module\+\_\+t\+::name}
+
+Name of this module \Hypertarget{structhw__module__t_a60091c01ca0f36c3448dcbbad236be16}\label{structhw__module__t_a60091c01ca0f36c3448dcbbad236be16} 
+\index{hw\_module\_t@{hw\_module\_t}!reserved@{reserved}}
+\index{reserved@{reserved}!hw\_module\_t@{hw\_module\_t}}
+\doxysubsubsection{\texorpdfstring{reserved}{reserved}}
+{\footnotesize\ttfamily uint32\+\_\+t hw\+\_\+module\+\_\+t\+::reserved\mbox{[}32-\/7\mbox{]}}
+
+padding to 128 bytes, reserved for future use \Hypertarget{structhw__module__t_adebb87347c7f2149aab6c0799582c7e1}\label{structhw__module__t_adebb87347c7f2149aab6c0799582c7e1} 
+\index{hw\_module\_t@{hw\_module\_t}!tag@{tag}}
+\index{tag@{tag}!hw\_module\_t@{hw\_module\_t}}
+\doxysubsubsection{\texorpdfstring{tag}{tag}}
+{\footnotesize\ttfamily uint32\+\_\+t hw\+\_\+module\+\_\+t\+::tag}
+
+tag must be initialized to HARDWARE\+\_\+\+MODULE\+\_\+\+TAG 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/android/hardware/libhardware/include/hardware/hardware.\+h\end{DoxyCompactItemize}

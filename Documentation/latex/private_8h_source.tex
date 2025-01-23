@@ -1,0 +1,28 @@
+\doxysection{private.\+h}
+\hypertarget{private_8h_source}{}\label{private_8h_source}\index{src/peripherals/camera/libcamera/include/libcamera/base/private.h@{src/peripherals/camera/libcamera/include/libcamera/base/private.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2021,\ Google\ Inc.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Private\ Header\ Validation}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ A\ selection\ of\ internal\ libcamera\ headers\ are\ installed\ as\ part}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ of\ the\ libcamera\ package\ to\ allow\ sharing\ of\ a\ select\ subset\ of}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ internal\ functionality\ with\ IPA\ module\ only.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ This\ functionality\ is\ not\ considered\ part\ of\ the\ public\ libcamera}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ API,\ and\ can\ therefore\ potentially\ face\ ABI\ instabilities\ which}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ should\ not\ be\ exposed\ to\ applications.\ IPA\ modules\ however\ should\ be}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ versioned\ and\ more\ closely\ matched\ to\ the\ libcamera\ installation.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ Components\ which\ include\ this\ file\ can\ not\ be\ included\ in\ any\ file}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ which\ forms\ part\ of\ the\ libcamera\ API.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifndef\ LIBCAMERA\_BASE\_PRIVATE}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#error\ "{}Private\ headers\ must\ not\ be\ included\ in\ the\ libcamera\ API"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

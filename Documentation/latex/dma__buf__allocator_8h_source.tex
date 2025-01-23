@@ -1,0 +1,80 @@
+\doxysection{dma\+\_\+buf\+\_\+allocator.\+h}
+\hypertarget{dma__buf__allocator_8h_source}{}\label{dma__buf__allocator_8h_source}\index{src/peripherals/camera/libcamera/include/libcamera/internal/dma\_buf\_allocator.h@{src/peripherals/camera/libcamera/include/libcamera/internal/dma\_buf\_allocator.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2020,\ Raspberry\ Pi\ Ltd}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Helper\ class\ for\ dma-\/buf\ allocations.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{flags_8h}{libcamera/base/flags.h}}>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{shared__fd_8h}{libcamera/base/shared\_fd.h}}>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{unique__fd_8h}{libcamera/base/unique\_fd.h}}>}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacelibcamera}{libcamera}}\ \{}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }FrameBuffer;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1DmaBufAllocator}{DmaBufAllocator}}}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{classlibcamera_1_1DmaBufAllocator_a9851564b25894680b3691d7fc9d92a21}{DmaBufAllocatorFlag}}\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1DmaBufAllocator_a9851564b25894680b3691d7fc9d92a21a3779954653a55f91b33ea1031566a944}{CmaHeap}}\ =\ 1\ <<\ 0,}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1DmaBufAllocator_a9851564b25894680b3691d7fc9d92a21ab64c7aa121df3b9c86823aa5c3c3ccf8}{SystemHeap}}\ =\ 1\ <<\ 1,}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1DmaBufAllocator_a9851564b25894680b3691d7fc9d92a21ad7a6c735cec78469e5fe17e2d4e3cd04}{UDmaBuf}}\ =\ 1\ <<\ 2,}
+\DoxyCodeLine{00029\ \ \ \ \ \};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classlibcamera_1_1Flags}{DmaBufAllocatorFlags}}\ =\ \mbox{\hyperlink{classlibcamera_1_1Flags}{Flags<DmaBufAllocatorFlag>}};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1DmaBufAllocator}{DmaBufAllocator}}(\mbox{\hyperlink{classlibcamera_1_1Flags}{DmaBufAllocatorFlags}}\ flags\ =\ \mbox{\hyperlink{classlibcamera_1_1DmaBufAllocator_a9851564b25894680b3691d7fc9d92a21a3779954653a55f91b33ea1031566a944}{DmaBufAllocatorFlag::CmaHeap}});}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1DmaBufAllocator_aba2a6db954305ffe9b39cf3d53d3bd65}{\string~DmaBufAllocator}}();}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classlibcamera_1_1DmaBufAllocator_a3a909a52edae04f849b88c26f68ba647}{isValid}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ providerHandle\_.\mbox{\hyperlink{classlibcamera_1_1UniqueFD_a9f59956dd0184a2691c5cec6b1ce8283}{isValid}}();\ \}}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1UniqueFD}{UniqueFD}}\ \mbox{\hyperlink{classlibcamera_1_1DmaBufAllocator_aced40e97819e7c3bf9bfad605599d321}{alloc}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *name,\ std::size\_t\ size);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1DmaBufAllocator_a5e1a0a9ab8d3494e4a73fbabe5cbb07e}{exportBuffers}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ count,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<unsigned\ int>\ \&planeSizes,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::unique\_ptr<FrameBuffer>>\ *buffers);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00043\ \ \ \ \ std::unique\_ptr<FrameBuffer>\ createBuffer(}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ std::string\ name,\ \textcolor{keyword}{const}\ std::vector<unsigned\ int>\ \&planeSizes);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1UniqueFD}{UniqueFD}}\ allocFromHeap(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *name,\ std::size\_t\ size);}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1UniqueFD}{UniqueFD}}\ allocFromUDmaBuf(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *name,\ std::size\_t\ size);}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1UniqueFD}{UniqueFD}}\ providerHandle\_;}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1DmaBufAllocator_a9851564b25894680b3691d7fc9d92a21}{DmaBufAllocatorFlag}}\ type\_;}
+\DoxyCodeLine{00050\ \};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1DmaSyncer}{DmaSyncer}}\ final}
+\DoxyCodeLine{00053\ \{}
+\DoxyCodeLine{00054\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{classlibcamera_1_1DmaSyncer_a044f26d4cf31fa3942e70b3016c6a5a9}{SyncType}}\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1DmaSyncer_a044f26d4cf31fa3942e70b3016c6a5a9a7a1a5f3e79fdc91edf2f5ead9d66abb4}{Read}}\ =\ 0,}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1DmaSyncer_a044f26d4cf31fa3942e70b3016c6a5a9a1129c0e4d43f2d121652a7302712cff6}{Write}},}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1DmaSyncer_a044f26d4cf31fa3942e70b3016c6a5a9a70a2a84088d405a2e3f1e3accaa16723}{ReadWrite}},}
+\DoxyCodeLine{00059\ \ \ \ \ \};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classlibcamera_1_1DmaSyncer}{DmaSyncer}}(\mbox{\hyperlink{classlibcamera_1_1SharedFD}{SharedFD}}\ fd,\ \mbox{\hyperlink{classlibcamera_1_1DmaSyncer_a044f26d4cf31fa3942e70b3016c6a5a9}{SyncType}}\ type\ =\ \mbox{\hyperlink{classlibcamera_1_1DmaSyncer_a044f26d4cf31fa3942e70b3016c6a5a9a70a2a84088d405a2e3f1e3accaa16723}{SyncType::ReadWrite}});}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1DmaSyncer}{\string~DmaSyncer}}();}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ sync(uint64\_t\ step);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1SharedFD}{SharedFD}}\ fd\_;}
+\DoxyCodeLine{00069\ \ \ \ \ uint64\_t\ flags\_\ =\ 0;}
+\DoxyCodeLine{00070\ \};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \mbox{\hyperlink{flags_8h_af343143bcb24209ae99e7bf7e28936a1}{LIBCAMERA\_FLAGS\_ENABLE\_OPERATORS}}(\mbox{\hyperlink{classlibcamera_1_1DmaBufAllocator_a9851564b25894680b3691d7fc9d92a21}{DmaBufAllocator::DmaBufAllocatorFlag}})}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \}\ \textcolor{comment}{/*\ namespace\ libcamera\ */}}
+
+\end{DoxyCode}

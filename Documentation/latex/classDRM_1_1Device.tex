@@ -1,0 +1,44 @@
+\doxysection{DRM\+::Device Class Reference}
+\hypertarget{classDRM_1_1Device}{}\label{classDRM_1_1Device}\index{DRM::Device@{DRM::Device}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classDRM_1_1Device_aabb9de4dcd4957381c8991cfff6304ad}\label{classDRM_1_1Device_aabb9de4dcd4957381c8991cfff6304ad} 
+int {\bfseries init} ()
+\item 
+\Hypertarget{classDRM_1_1Device_ab1388e0546539d78f54db34bb4c3df80}\label{classDRM_1_1Device_ab1388e0546539d78f54db34bb4c3df80} 
+int {\bfseries fd} () const
+\item 
+\Hypertarget{classDRM_1_1Device_a9f39aeee99301f8cb487be72ba9e1ba3}\label{classDRM_1_1Device_a9f39aeee99301f8cb487be72ba9e1ba3} 
+const std\+::list$<$ \mbox{\hyperlink{classDRM_1_1Crtc}{Crtc}} $>$ \& {\bfseries crtcs} () const
+\item 
+\Hypertarget{classDRM_1_1Device_a89943a53d9601bb1967d798957f24ab6}\label{classDRM_1_1Device_a89943a53d9601bb1967d798957f24ab6} 
+const std\+::list$<$ \mbox{\hyperlink{classDRM_1_1Encoder}{Encoder}} $>$ \& {\bfseries encoders} () const
+\item 
+\Hypertarget{classDRM_1_1Device_a9105498f3134f5bf883168971a72c3c7}\label{classDRM_1_1Device_a9105498f3134f5bf883168971a72c3c7} 
+const std\+::list$<$ \mbox{\hyperlink{classDRM_1_1Connector}{Connector}} $>$ \& {\bfseries connectors} () const
+\item 
+\Hypertarget{classDRM_1_1Device_ab56cded4b4b0d8ec5a7b9b3ce32b496d}\label{classDRM_1_1Device_ab56cded4b4b0d8ec5a7b9b3ce32b496d} 
+const std\+::list$<$ \mbox{\hyperlink{classDRM_1_1Plane}{Plane}} $>$ \& {\bfseries planes} () const
+\item 
+\Hypertarget{classDRM_1_1Device_a2dbc746eb0414040b43c24eb0b55b882}\label{classDRM_1_1Device_a2dbc746eb0414040b43c24eb0b55b882} 
+const std\+::list$<$ \mbox{\hyperlink{classDRM_1_1Property}{Property}} $>$ \& {\bfseries properties} () const
+\item 
+\Hypertarget{classDRM_1_1Device_a0b99ef97de62742cfb9e6faf98797d31}\label{classDRM_1_1Device_a0b99ef97de62742cfb9e6faf98797d31} 
+const \mbox{\hyperlink{classDRM_1_1Object}{Object}} \texorpdfstring{$\ast$}{*} {\bfseries object} (uint32\+\_\+t id)
+\item 
+\Hypertarget{classDRM_1_1Device_adf81bfa8facf09f9de44b1483bacfb6a}\label{classDRM_1_1Device_adf81bfa8facf09f9de44b1483bacfb6a} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classDRM_1_1FrameBuffer}{Frame\+Buffer}} $>$ {\bfseries create\+Frame\+Buffer} (const \mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{libcamera\+::\+Frame\+Buffer}} \&buffer, const \mbox{\hyperlink{classlibcamera_1_1PixelFormat}{libcamera\+::\+Pixel\+Format}} \&format, const \mbox{\hyperlink{classlibcamera_1_1Size}{libcamera\+::\+Size}} \&size, const std\+::array$<$ uint32\+\_\+t, 4 $>$ \&strides)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classDRM_1_1Device_aa62caef82b56fe5c603acd4c57018bc9}\label{classDRM_1_1Device_aa62caef82b56fe5c603acd4c57018bc9} 
+\mbox{\hyperlink{classlibcamera_1_1Signal}{libcamera\+::\+Signal}}$<$ \mbox{\hyperlink{classDRM_1_1AtomicRequest}{Atomic\+Request}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries request\+Complete}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/apps/cam/drm.\+h\item 
+src/peripherals/camera/libcamera/src/apps/cam/drm.\+cpp\end{DoxyCompactItemize}

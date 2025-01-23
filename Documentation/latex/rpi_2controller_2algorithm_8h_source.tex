@@ -1,0 +1,74 @@
+\doxysection{algorithm.\+h}
+\hypertarget{rpi_2controller_2algorithm_8h_source}{}\label{rpi_2controller_2algorithm_8h_source}\index{src/peripherals/camera/libcamera/src/ipa/rpi/controller/algorithm.h@{src/peripherals/camera/libcamera/src/ipa/rpi/controller/algorithm.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ BSD-\/2-\/Clause\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2019,\ Raspberry\ Pi\ Ltd}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ ISP\ control\ algorithm\ interface}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ All\ algorithms\ should\ be\ derived\ from\ this\ class\ and\ made\ available\ to\ the}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Controller.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{yaml__parser_8h}{libcamera/internal/yaml\_parser.h}}"{}}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}controller.h"{}}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{namespace\ }RPiController\ \{}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{comment}{/*\ This\ defines\ the\ basic\ interface\ for\ all\ control\ algorithms.\ */}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRPiController_1_1Algorithm}{Algorithm}}}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00028\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{classRPiController_1_1Algorithm}{Algorithm}}(\mbox{\hyperlink{classRPiController_1_1Controller}{Controller}}\ *controller)}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ :\ controller\_(controller)}
+\DoxyCodeLine{00031\ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classRPiController_1_1Algorithm}{\string~Algorithm}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{char}\ \textcolor{keyword}{const}\ *name()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ read(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1YamlObject}{libcamera::YamlObject}}\ \&params);}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ initialise();}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ switchMode(\mbox{\hyperlink{structCameraMode}{CameraMode}}\ \textcolor{keyword}{const}\ \&cameraMode,\ Metadata\ *metadata);}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ prepare(Metadata\ *imageMetadata);}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ process(StatisticsPtr\ \&stats,\ Metadata\ *imageMetadata);}
+\DoxyCodeLine{00040\ \ \ \ \ Metadata\ \&getGlobalMetadata()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00041\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ controller\_-\/>getGlobalMetadata();}
+\DoxyCodeLine{00043\ \ \ \ \ \}}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&getTarget()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00045\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ controller\_-\/>getTarget();}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structRPiController_1_1Controller_1_1HardwareConfig}{Controller::HardwareConfig}}\ \&getHardwareConfig()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00049\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ controller\_-\/>getHardwareConfig();}
+\DoxyCodeLine{00051\ \ \ \ \ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{classRPiController_1_1Controller}{Controller}}\ *controller\_;}
+\DoxyCodeLine{00055\ \};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00058\ \textcolor{comment}{\ *\ This\ code\ is\ for\ automatic\ registration\ of\ Front\ End\ algorithms\ with\ the}}
+\DoxyCodeLine{00059\ \textcolor{comment}{\ *\ system.}}
+\DoxyCodeLine{00060\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{classRPiController_1_1Algorithm}{Algorithm}}\ *(*AlgoCreateFunc)(\mbox{\hyperlink{classRPiController_1_1Controller}{Controller}}\ *controller);}
+\DoxyCodeLine{00063\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structRPiController_1_1RegisterAlgorithm}{RegisterAlgorithm}}\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{structRPiController_1_1RegisterAlgorithm}{RegisterAlgorithm}}(\textcolor{keywordtype}{char}\ \textcolor{keyword}{const}\ *name,\ AlgoCreateFunc\ createFunc);}
+\DoxyCodeLine{00065\ \};}
+\DoxyCodeLine{00066\ std::map<std::string,\ AlgoCreateFunc>\ \textcolor{keyword}{const}\ \&getAlgorithms();}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \}\ \textcolor{comment}{/*\ namespace\ RPiController\ */}}
+
+\end{DoxyCode}

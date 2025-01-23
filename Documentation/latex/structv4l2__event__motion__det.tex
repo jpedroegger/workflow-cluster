@@ -1,0 +1,26 @@
+\doxysection{v4l2\+\_\+event\+\_\+motion\+\_\+det Struct Reference}
+\hypertarget{structv4l2__event__motion__det}{}\label{structv4l2__event__motion__det}\index{v4l2\_event\_motion\_det@{v4l2\_event\_motion\_det}}
+
+
+{\ttfamily \#include $<$videodev2.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structv4l2__event__motion__det_a26f975b76b14bf3dfb067facc11b2ef1}\label{structv4l2__event__motion__det_a26f975b76b14bf3dfb067facc11b2ef1} 
+\+\_\+\+\_\+u32 {\bfseries flags}
+\item 
+\Hypertarget{structv4l2__event__motion__det_a923d8fbefbb4ab6a632c78fd5cefeb07}\label{structv4l2__event__motion__det_a923d8fbefbb4ab6a632c78fd5cefeb07} 
+\+\_\+\+\_\+u32 {\bfseries frame\+\_\+sequence}
+\item 
+\Hypertarget{structv4l2__event__motion__det_aecd17a88923bdc474fc30741031305ea}\label{structv4l2__event__motion__det_aecd17a88923bdc474fc30741031305ea} 
+\+\_\+\+\_\+u32 {\bfseries region\+\_\+mask}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structv4l2__event__motion__det}{v4l2\+\_\+event\+\_\+motion\+\_\+det} -\/ motion detection event @flags\+: if V4\+L2\+\_\+\+EVENT\+\_\+\+MD\+\_\+\+FL\+\_\+\+HAVE\+\_\+\+FRAME\+\_\+\+SEQ is set, then the frame\+\_\+sequence field is valid. @frame\+\_\+sequence\+: the frame sequence number associated with this event. @region\+\_\+mask\+: which regions detected motion. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/videodev2.\+h\end{DoxyCompactItemize}

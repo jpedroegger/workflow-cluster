@@ -1,0 +1,58 @@
+\doxysection{Post\+Processor\+Yuv Class Reference}
+\hypertarget{classPostProcessorYuv}{}\label{classPostProcessorYuv}\index{PostProcessorYuv@{PostProcessorYuv}}
+Inheritance diagram for Post\+Processor\+Yuv\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPostProcessorYuv}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classPostProcessorYuv_ae91c81c63b0ce8ce495d827009d314e8}{configure}} (const \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration}{libcamera\+::\+Stream\+Configuration}} \&incfg, const \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration}{libcamera\+::\+Stream\+Configuration}} \&outcfg) override
+\item 
+void \mbox{\hyperlink{classPostProcessorYuv_ae7a4a8e46b7022bb1be0a5d863ea49f2}{process}} (\mbox{\hyperlink{structCamera3RequestDescriptor_1_1StreamBuffer}{Camera3\+Request\+Descriptor\+::\+Stream\+Buffer}} \texorpdfstring{$\ast$}{*}stream\+Buffer) override
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{classPostProcessor}{Post\+Processor}}}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classPostProcessor_aada6f4748174866925b2fd29b52399ce}\label{classPostProcessor_aada6f4748174866925b2fd29b52399ce} 
+enum class {\bfseries Status} \{ {\bfseries Error}
+, {\bfseries Success}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classPostProcessor}{Post\+Processor}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1Signal}{libcamera\+::\+Signal}}$<$ \mbox{\hyperlink{structCamera3RequestDescriptor_1_1StreamBuffer}{Camera3\+Request\+Descriptor\+::\+Stream\+Buffer}} \texorpdfstring{$\ast$}{*}, Status $>$ {\bfseries process\+Complete}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPostProcessorYuv_ae91c81c63b0ce8ce495d827009d314e8}\label{classPostProcessorYuv_ae91c81c63b0ce8ce495d827009d314e8} 
+\index{PostProcessorYuv@{PostProcessorYuv}!configure@{configure}}
+\index{configure@{configure}!PostProcessorYuv@{PostProcessorYuv}}
+\doxysubsubsection{\texorpdfstring{configure()}{configure()}}
+{\footnotesize\ttfamily int Post\+Processor\+Yuv\+::configure (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration}{libcamera\+::\+Stream\+Configuration}} \&}]{incfg,  }\item[{const \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration}{libcamera\+::\+Stream\+Configuration}} \&}]{outcfg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classPostProcessor}{Post\+Processor}}.
+
+\Hypertarget{classPostProcessorYuv_ae7a4a8e46b7022bb1be0a5d863ea49f2}\label{classPostProcessorYuv_ae7a4a8e46b7022bb1be0a5d863ea49f2} 
+\index{PostProcessorYuv@{PostProcessorYuv}!process@{process}}
+\index{process@{process}!PostProcessorYuv@{PostProcessorYuv}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily void Post\+Processor\+Yuv\+::process (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCamera3RequestDescriptor_1_1StreamBuffer}{Camera3\+Request\+Descriptor\+::\+Stream\+Buffer}} \texorpdfstring{$\ast$}{*}}]{stream\+Buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classPostProcessor}{Post\+Processor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/android/yuv/post\+\_\+processor\+\_\+yuv.\+h\item 
+src/peripherals/camera/libcamera/src/android/yuv/post\+\_\+processor\+\_\+yuv.\+cpp\end{DoxyCompactItemize}

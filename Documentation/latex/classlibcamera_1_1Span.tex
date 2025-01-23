@@ -1,0 +1,148 @@
+\doxysection{libcamera\+::Span\texorpdfstring{$<$}{<} T, Extent \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classlibcamera_1_1Span}{}\label{classlibcamera_1_1Span}\index{libcamera::Span$<$ T, Extent $>$@{libcamera::Span$<$ T, Extent $>$}}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1Span_ae95fc046dcc69f43c99755d0cad64ecf}\label{classlibcamera_1_1Span_ae95fc046dcc69f43c99755d0cad64ecf} 
+using {\bfseries element\+\_\+type} = T
+\item 
+\Hypertarget{classlibcamera_1_1Span_a280b2af94248f012eafabc96c44d1eba}\label{classlibcamera_1_1Span_a280b2af94248f012eafabc96c44d1eba} 
+using {\bfseries value\+\_\+type} = typename std\+::remove\+\_\+cv\+\_\+t$<$ T $>$
+\item 
+\Hypertarget{classlibcamera_1_1Span_a8fe5333d50fb886d66c8a2e2acf3b539}\label{classlibcamera_1_1Span_a8fe5333d50fb886d66c8a2e2acf3b539} 
+using {\bfseries size\+\_\+type} = std\+::size\+\_\+t
+\item 
+\Hypertarget{classlibcamera_1_1Span_a9bfac23a06aaab1a658d867dc2ec00af}\label{classlibcamera_1_1Span_a9bfac23a06aaab1a658d867dc2ec00af} 
+using {\bfseries difference\+\_\+type} = std\+::ptrdiff\+\_\+t
+\item 
+\Hypertarget{classlibcamera_1_1Span_a9a9007dd15ea61ed950c276dd822bbe1}\label{classlibcamera_1_1Span_a9a9007dd15ea61ed950c276dd822bbe1} 
+using {\bfseries pointer} = T \texorpdfstring{$\ast$}{*}
+\item 
+\Hypertarget{classlibcamera_1_1Span_afc4b312c188a7df0c336f170485fe062}\label{classlibcamera_1_1Span_afc4b312c188a7df0c336f170485fe062} 
+using {\bfseries const\+\_\+pointer} = const T \texorpdfstring{$\ast$}{*}
+\item 
+\Hypertarget{classlibcamera_1_1Span_a4485b967a9540541699c6d70ca471205}\label{classlibcamera_1_1Span_a4485b967a9540541699c6d70ca471205} 
+using {\bfseries reference} = T \&
+\item 
+\Hypertarget{classlibcamera_1_1Span_a4ea0190b953eb1331fad34b00ca96190}\label{classlibcamera_1_1Span_a4ea0190b953eb1331fad34b00ca96190} 
+using {\bfseries const\+\_\+reference} = const T \&
+\item 
+\Hypertarget{classlibcamera_1_1Span_a24f5ec92dad3f4ba1b9ad4f8774da78c}\label{classlibcamera_1_1Span_a24f5ec92dad3f4ba1b9ad4f8774da78c} 
+using {\bfseries iterator} = pointer
+\item 
+\Hypertarget{classlibcamera_1_1Span_afca82b590a81d5a10802aa17dda848a6}\label{classlibcamera_1_1Span_afca82b590a81d5a10802aa17dda848a6} 
+using {\bfseries const\+\_\+iterator} = const\+\_\+pointer
+\item 
+\Hypertarget{classlibcamera_1_1Span_a350e2f63fafc4bd54b049df06273e77c}\label{classlibcamera_1_1Span_a350e2f63fafc4bd54b049df06273e77c} 
+using {\bfseries reverse\+\_\+iterator} = std\+::reverse\+\_\+iterator$<$ iterator $>$
+\item 
+\Hypertarget{classlibcamera_1_1Span_a8f6bccd99c38c70735c854e3a3ba1828}\label{classlibcamera_1_1Span_a8f6bccd99c38c70735c854e3a3ba1828} 
+using {\bfseries const\+\_\+reverse\+\_\+iterator} = std\+::reverse\+\_\+iterator$<$ const\+\_\+iterator $>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1Span_a0b67acd11bcabbfff96c119009a92228}\label{classlibcamera_1_1Span_a0b67acd11bcabbfff96c119009a92228} 
+constexpr {\bfseries Span} (pointer ptr, size\+\_\+type count)
+\item 
+\Hypertarget{classlibcamera_1_1Span_ad16edf72748c525678a476f3e121df6d}\label{classlibcamera_1_1Span_ad16edf72748c525678a476f3e121df6d} 
+constexpr {\bfseries Span} (pointer first, pointer last)
+\item 
+\Hypertarget{classlibcamera_1_1Span_a6276c7bc2cbdcaf5c9c3e0b596a2ffed}\label{classlibcamera_1_1Span_a6276c7bc2cbdcaf5c9c3e0b596a2ffed} 
+{\footnotesize template$<$std\+::size\+\_\+t N$>$ }\\constexpr {\bfseries Span} (element\+\_\+type(\&arr)\mbox{[}N\mbox{]}, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+convertible$<$ std\+::remove\+\_\+pointer\+\_\+t$<$ decltype(utils\+::data(arr))$>$(\texorpdfstring{$\ast$}{*})\mbox{[}$\,$\mbox{]}, element\+\_\+type(\texorpdfstring{$\ast$}{*})\mbox{[}$\,$\mbox{]}$>$\+::value \&\&N==Extent, std\+::nullptr\+\_\+t $>$=nullptr) noexcept
+\item 
+\Hypertarget{classlibcamera_1_1Span_a06d886a55a873465b50c521d1b07253c}\label{classlibcamera_1_1Span_a06d886a55a873465b50c521d1b07253c} 
+{\footnotesize template$<$std\+::size\+\_\+t N$>$ }\\constexpr {\bfseries Span} (std\+::array$<$ value\+\_\+type, N $>$ \&arr, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+convertible$<$ std\+::remove\+\_\+pointer\+\_\+t$<$ decltype(utils\+::data(arr))$>$(\texorpdfstring{$\ast$}{*})\mbox{[}$\,$\mbox{]}, element\+\_\+type(\texorpdfstring{$\ast$}{*})\mbox{[}$\,$\mbox{]}$>$\+::value \&\&N==Extent, std\+::nullptr\+\_\+t $>$=nullptr) noexcept
+\item 
+\Hypertarget{classlibcamera_1_1Span_a3750c4f26ff0feff4f3ee1ee7780beda}\label{classlibcamera_1_1Span_a3750c4f26ff0feff4f3ee1ee7780beda} 
+{\footnotesize template$<$std\+::size\+\_\+t N$>$ }\\constexpr {\bfseries Span} (const std\+::array$<$ value\+\_\+type, N $>$ \&arr, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+convertible$<$ std\+::remove\+\_\+pointer\+\_\+t$<$ decltype(utils\+::data(arr))$>$(\texorpdfstring{$\ast$}{*})\mbox{[}$\,$\mbox{]}, element\+\_\+type(\texorpdfstring{$\ast$}{*})\mbox{[}$\,$\mbox{]}$>$\+::value \&\&N==Extent, std\+::nullptr\+\_\+t $>$=nullptr) noexcept
+\item 
+\Hypertarget{classlibcamera_1_1Span_a53d892fa914bb81e1bfa88f2f84efa1c}\label{classlibcamera_1_1Span_a53d892fa914bb81e1bfa88f2f84efa1c} 
+{\footnotesize template$<$class Container $>$ }\\constexpr {\bfseries Span} (Container \&cont, std\+::enable\+\_\+if\+\_\+t$<$!\mbox{\hyperlink{structlibcamera_1_1details_1_1is__span}{details\+::is\+\_\+span}}$<$ Container $>$\+::value \&\&!\mbox{\hyperlink{structlibcamera_1_1details_1_1is__array}{details\+::is\+\_\+array}}$<$ Container $>$\+::value \&\&!std\+::is\+\_\+array$<$ Container $>$\+::value \&\&std\+::is\+\_\+convertible$<$ std\+::remove\+\_\+pointer\+\_\+t$<$ decltype(utils\+::data(cont))$>$(\texorpdfstring{$\ast$}{*})\mbox{[}$\,$\mbox{]}, element\+\_\+type(\texorpdfstring{$\ast$}{*})\mbox{[}$\,$\mbox{]}$>$\+::value, std\+::nullptr\+\_\+t $>$=nullptr)
+\item 
+\Hypertarget{classlibcamera_1_1Span_ad63ed5b1df2f52d07248921799bfbc28}\label{classlibcamera_1_1Span_ad63ed5b1df2f52d07248921799bfbc28} 
+{\footnotesize template$<$class Container $>$ }\\constexpr {\bfseries Span} (const Container \&cont, std\+::enable\+\_\+if\+\_\+t$<$!\mbox{\hyperlink{structlibcamera_1_1details_1_1is__span}{details\+::is\+\_\+span}}$<$ Container $>$\+::value \&\&!\mbox{\hyperlink{structlibcamera_1_1details_1_1is__array}{details\+::is\+\_\+array}}$<$ Container $>$\+::value \&\&!std\+::is\+\_\+array$<$ Container $>$\+::value \&\&std\+::is\+\_\+convertible$<$ std\+::remove\+\_\+pointer\+\_\+t$<$ decltype(utils\+::data(cont))$>$(\texorpdfstring{$\ast$}{*})\mbox{[}$\,$\mbox{]}, element\+\_\+type(\texorpdfstring{$\ast$}{*})\mbox{[}$\,$\mbox{]}$>$\+::value, std\+::nullptr\+\_\+t $>$=nullptr)
+\item 
+\Hypertarget{classlibcamera_1_1Span_a2288b70f598f11ea4f9107cc930e9f72}\label{classlibcamera_1_1Span_a2288b70f598f11ea4f9107cc930e9f72} 
+{\footnotesize template$<$class U , std\+::size\+\_\+t N$>$ }\\constexpr {\bfseries Span} (const \mbox{\hyperlink{classlibcamera_1_1Span}{Span}}$<$ U, N $>$ \&s, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+convertible$<$ U(\texorpdfstring{$\ast$}{*})\mbox{[}$\,$\mbox{]}, element\+\_\+type(\texorpdfstring{$\ast$}{*})\mbox{[}$\,$\mbox{]}$>$\+::value \&\&N==Extent, std\+::nullptr\+\_\+t $>$=nullptr) noexcept
+\item 
+\Hypertarget{classlibcamera_1_1Span_a12295512de6ba908f982aa50f7a29eb4}\label{classlibcamera_1_1Span_a12295512de6ba908f982aa50f7a29eb4} 
+constexpr {\bfseries Span} (const \mbox{\hyperlink{classlibcamera_1_1Span}{Span}} \&other) noexcept=default
+\item 
+\Hypertarget{classlibcamera_1_1Span_a6c5ead4061beaa5db07b347b1d165055}\label{classlibcamera_1_1Span_a6c5ead4061beaa5db07b347b1d165055} 
+constexpr \mbox{\hyperlink{classlibcamera_1_1Span}{Span}} \& {\bfseries operator=} (const \mbox{\hyperlink{classlibcamera_1_1Span}{Span}} \&other) noexcept=default
+\item 
+\Hypertarget{classlibcamera_1_1Span_adda156180106d4372097b387de8e6d40}\label{classlibcamera_1_1Span_adda156180106d4372097b387de8e6d40} 
+constexpr iterator {\bfseries begin} () const
+\item 
+\Hypertarget{classlibcamera_1_1Span_acfd2c3629e908e169cd86c2737f2c3b6}\label{classlibcamera_1_1Span_acfd2c3629e908e169cd86c2737f2c3b6} 
+constexpr const\+\_\+iterator {\bfseries cbegin} () const
+\item 
+\Hypertarget{classlibcamera_1_1Span_af254d80669d9769d872079393a2f5974}\label{classlibcamera_1_1Span_af254d80669d9769d872079393a2f5974} 
+constexpr iterator {\bfseries end} () const
+\item 
+\Hypertarget{classlibcamera_1_1Span_a43af86bd4f66ac71e6362baec6376144}\label{classlibcamera_1_1Span_a43af86bd4f66ac71e6362baec6376144} 
+constexpr const\+\_\+iterator {\bfseries cend} () const
+\item 
+\Hypertarget{classlibcamera_1_1Span_a17afe8ee61a8f3cb1f14d816bf7c43d2}\label{classlibcamera_1_1Span_a17afe8ee61a8f3cb1f14d816bf7c43d2} 
+constexpr reverse\+\_\+iterator {\bfseries rbegin} () const
+\item 
+\Hypertarget{classlibcamera_1_1Span_a882f748993355e714e9b887e898b2d45}\label{classlibcamera_1_1Span_a882f748993355e714e9b887e898b2d45} 
+constexpr const\+\_\+reverse\+\_\+iterator {\bfseries crbegin} () const
+\item 
+\Hypertarget{classlibcamera_1_1Span_a8cb26a0bad0de505b87430915f1147f4}\label{classlibcamera_1_1Span_a8cb26a0bad0de505b87430915f1147f4} 
+constexpr reverse\+\_\+iterator {\bfseries rend} () const
+\item 
+\Hypertarget{classlibcamera_1_1Span_a70aa86a6ccb2b6a71e76d908afe1edba}\label{classlibcamera_1_1Span_a70aa86a6ccb2b6a71e76d908afe1edba} 
+constexpr const\+\_\+reverse\+\_\+iterator {\bfseries crend} () const
+\item 
+\Hypertarget{classlibcamera_1_1Span_a0b0817b3f4ac06e21b594a4af6b97eb8}\label{classlibcamera_1_1Span_a0b0817b3f4ac06e21b594a4af6b97eb8} 
+constexpr reference {\bfseries front} () const
+\item 
+\Hypertarget{classlibcamera_1_1Span_a3d23cf580c6e80c2e0bbf729bbb52266}\label{classlibcamera_1_1Span_a3d23cf580c6e80c2e0bbf729bbb52266} 
+constexpr reference {\bfseries back} () const
+\item 
+\Hypertarget{classlibcamera_1_1Span_a7d53b45767d9d0e8471316795b238252}\label{classlibcamera_1_1Span_a7d53b45767d9d0e8471316795b238252} 
+constexpr reference {\bfseries operator\mbox{[}$\,$\mbox{]}} (size\+\_\+type idx) const
+\item 
+\Hypertarget{classlibcamera_1_1Span_a0e4d1ce800763db31be19c07833187e0}\label{classlibcamera_1_1Span_a0e4d1ce800763db31be19c07833187e0} 
+constexpr pointer {\bfseries data} () const noexcept
+\item 
+\Hypertarget{classlibcamera_1_1Span_a205c9f025bef79fe88326ad050fd57dc}\label{classlibcamera_1_1Span_a205c9f025bef79fe88326ad050fd57dc} 
+constexpr size\+\_\+type {\bfseries size} () const noexcept
+\item 
+\Hypertarget{classlibcamera_1_1Span_a3e28c37cab60fb80bedc364f11eef908}\label{classlibcamera_1_1Span_a3e28c37cab60fb80bedc364f11eef908} 
+constexpr size\+\_\+type {\bfseries size\+\_\+bytes} () const noexcept
+\item 
+\Hypertarget{classlibcamera_1_1Span_a867456039d068d2b7f2b6bf77eb024d7}\label{classlibcamera_1_1Span_a867456039d068d2b7f2b6bf77eb024d7} 
+constexpr bool {\bfseries empty} () const noexcept
+\item 
+\Hypertarget{classlibcamera_1_1Span_a172a7fb5ed6c85652d8f62275d6fa2b2}\label{classlibcamera_1_1Span_a172a7fb5ed6c85652d8f62275d6fa2b2} 
+{\footnotesize template$<$std\+::size\+\_\+t Count$>$ }\\constexpr \mbox{\hyperlink{classlibcamera_1_1Span}{Span}}$<$ element\+\_\+type, Count $>$ {\bfseries first} () const
+\item 
+\Hypertarget{classlibcamera_1_1Span_ad6a7c08ce3b115e6285cb8dd121c8be7}\label{classlibcamera_1_1Span_ad6a7c08ce3b115e6285cb8dd121c8be7} 
+constexpr \mbox{\hyperlink{classlibcamera_1_1Span}{Span}}$<$ element\+\_\+type, dynamic\+\_\+extent $>$ {\bfseries first} (std\+::size\+\_\+t Count) const
+\item 
+\Hypertarget{classlibcamera_1_1Span_abd08a527aebc51867236197f50bc9cf1}\label{classlibcamera_1_1Span_abd08a527aebc51867236197f50bc9cf1} 
+{\footnotesize template$<$std\+::size\+\_\+t Count$>$ }\\constexpr \mbox{\hyperlink{classlibcamera_1_1Span}{Span}}$<$ element\+\_\+type, Count $>$ {\bfseries last} () const
+\item 
+\Hypertarget{classlibcamera_1_1Span_aa3c449fe610fe4213d67fbe7b3e1d83b}\label{classlibcamera_1_1Span_aa3c449fe610fe4213d67fbe7b3e1d83b} 
+constexpr \mbox{\hyperlink{classlibcamera_1_1Span}{Span}}$<$ element\+\_\+type, dynamic\+\_\+extent $>$ {\bfseries last} (std\+::size\+\_\+t Count) const
+\item 
+\Hypertarget{classlibcamera_1_1Span_aae673c1dfd97c1243fe91e11ef94dfd4}\label{classlibcamera_1_1Span_aae673c1dfd97c1243fe91e11ef94dfd4} 
+{\footnotesize template$<$std\+::size\+\_\+t Offset, std\+::size\+\_\+t Count = dynamic\+\_\+extent$>$ }\\constexpr \mbox{\hyperlink{classlibcamera_1_1Span}{Span}}$<$ element\+\_\+type, Count !=dynamic\+\_\+extent ? Count \+:Extent -\/ Offset $>$ {\bfseries subspan} () const
+\item 
+\Hypertarget{classlibcamera_1_1Span_a27678bf74cbe21a9fb132a3ba0eaa34a}\label{classlibcamera_1_1Span_a27678bf74cbe21a9fb132a3ba0eaa34a} 
+constexpr \mbox{\hyperlink{classlibcamera_1_1Span}{Span}}$<$ element\+\_\+type, dynamic\+\_\+extent $>$ {\bfseries subspan} (std\+::size\+\_\+t Offset, std\+::size\+\_\+t Count=dynamic\+\_\+extent) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1Span_a40f4789feedb974ed5c6323af58a6caa}\label{classlibcamera_1_1Span_a40f4789feedb974ed5c6323af58a6caa} 
+static constexpr std\+::size\+\_\+t {\bfseries extent} = Extent
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/base/span.\+h\end{DoxyCompactItemize}

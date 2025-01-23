@@ -1,0 +1,304 @@
+\doxysection{libcamera\+::Media\+Entity Class Reference}
+\hypertarget{classlibcamera_1_1MediaEntity}{}\label{classlibcamera_1_1MediaEntity}\index{libcamera::MediaEntity@{libcamera::MediaEntity}}
+
+
+The \doxylink{classlibcamera_1_1MediaEntity}{Media\+Entity} represents an entity in the media graph.  
+
+
+Inheritance diagram for libcamera\+::Media\+Entity\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlibcamera_1_1MediaEntity}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{classlibcamera_1_1MediaEntity_ab75d46f7f7ee3270b3cffbb0e821c7b0}{Type}} \{ \mbox{\hyperlink{classlibcamera_1_1MediaEntity_ab75d46f7f7ee3270b3cffbb0e821c7b0a4bbb8f967da6d1a610596d7257179c2b}{Invalid}}
+, \mbox{\hyperlink{classlibcamera_1_1MediaEntity_ab75d46f7f7ee3270b3cffbb0e821c7b0a150bda353722eb36a72b7548e051406f}{Media\+Entity}}
+, \mbox{\hyperlink{classlibcamera_1_1MediaEntity_ab75d46f7f7ee3270b3cffbb0e821c7b0a6225cd504cb3e7475e63ab83fed66a8d}{V4\+L2\+Subdevice}}
+, \mbox{\hyperlink{classlibcamera_1_1MediaEntity_ab75d46f7f7ee3270b3cffbb0e821c7b0ae388b4d0db571ad8179ff34593372dea}{V4\+L2\+Video\+Device}}
+ \}
+\begin{DoxyCompactList}\small\item\em The type of the interface exposed by the entity to userspace. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \& \mbox{\hyperlink{classlibcamera_1_1MediaEntity_aa4cacb9e12787179a2c4a56590d7b2b5}{name}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the entity name. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classlibcamera_1_1MediaEntity_a6078dab1b3beaf6b0917babdab001fbd}{function}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the entity\textquotesingle{}s main function. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classlibcamera_1_1MediaEntity_a48322351941cc87e2ac72b3175cbc561}{flags}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the entity\textquotesingle{}s flags. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1MediaEntity_ab75d46f7f7ee3270b3cffbb0e821c7b0}{Type}} \mbox{\hyperlink{classlibcamera_1_1MediaEntity_a068c6c9e481b7adfb2f4aec1d8b81649}{type}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the entity\textquotesingle{}s type. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{classlibcamera_1_1MediaEntity_a7d5f090d44cd2362d3d0f5f56a651f0c}{device\+Node}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the entity\textquotesingle{}s device node path, if any. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classlibcamera_1_1MediaEntity_a9a3c9a5656e9f59251783f8a3ce2db1b}{device\+Major}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the major number of the interface associated with the entity. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classlibcamera_1_1MediaEntity_a7bf8be19d4a38757d683481b24eed7ff}{device\+Minor}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the minor number of the interface associated with the entity. \end{DoxyCompactList}\item 
+const std\+::vector$<$ \mbox{\hyperlink{classlibcamera_1_1MediaPad}{Media\+Pad}} \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{classlibcamera_1_1MediaEntity_adb91c47fdbd1b581da492d6257bb648e}{pads}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve all pads of the entity. \end{DoxyCompactList}\item 
+const std\+::vector$<$ \mbox{\hyperlink{classlibcamera_1_1MediaEntity}{Media\+Entity}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classlibcamera_1_1MediaEntity_a801eb7c5ad38c31e540925766d8b1c44}{ancillary\+Entities}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve all ancillary entities of the entity. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classlibcamera_1_1MediaPad}{Media\+Pad}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1MediaEntity_ac92364db18c91cb2295b943c12601767}{get\+Pad\+By\+Index}} (unsigned int index) const
+\begin{DoxyCompactList}\small\item\em Get a pad in this entity by its index. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classlibcamera_1_1MediaPad}{Media\+Pad}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1MediaEntity_aa8f15a6ae32ba6e11b8f30740bd01f0b}{get\+Pad\+By\+Id}} (unsigned int \mbox{\hyperlink{classlibcamera_1_1MediaObject_a71b2dbbfed6a5719df31d9399fb2f8f9}{id}}) const
+\begin{DoxyCompactList}\small\item\em Get a pad in this entity by its object id. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classlibcamera_1_1MediaEntity_afc48af8e052b6436492eb9196abced71}{set\+Device\+Node}} (const std\+::string \&\mbox{\hyperlink{classlibcamera_1_1MediaEntity_a7d5f090d44cd2362d3d0f5f56a651f0c}{device\+Node}})
+\begin{DoxyCompactList}\small\item\em Set the path to the device node for the associated interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1MediaObject}{libcamera\+::\+Media\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1MediaDevice}{Media\+Device}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1MediaObject_afd1daa8170461ab5b15ce0cb25b2acb7}{device}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the media device the media object belongs to.   \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classlibcamera_1_1MediaDevice}{Media\+Device}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1MediaObject_a324e73934f2b209ff6b5ea031a2640aa}{device}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the media device the media object belongs to. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classlibcamera_1_1MediaObject_a71b2dbbfed6a5719df31d9399fb2f8f9}{id}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the media object id. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1MediaEntity_adabcabf45c8d5d0795428f0f52ab237d}\label{classlibcamera_1_1MediaEntity_adabcabf45c8d5d0795428f0f52ab237d} 
+class {\bfseries Media\+Device}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1MediaObject}{libcamera\+::\+Media\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1MediaObject_a040304e6607c1742fa50a1cfbe1064a5}{Media\+Object}} (\mbox{\hyperlink{classlibcamera_1_1MediaDevice}{Media\+Device}} \texorpdfstring{$\ast$}{*}dev, unsigned int \mbox{\hyperlink{classlibcamera_1_1MediaObject_a71b2dbbfed6a5719df31d9399fb2f8f9}{id}})
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{classlibcamera_1_1MediaObject}{Media\+Object} part of the \doxylink{classlibcamera_1_1MediaDevice}{Media\+Device} {\itshape dev}, identified by the {\itshape id} unique within the device. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classlibcamera_1_1MediaObject}{libcamera\+::\+Media\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1MediaDevice}{Media\+Device}} \texorpdfstring{$\ast$}{*} {\bfseries dev\+\_\+}
+\begin{DoxyCompactList}\small\item\em The media device the media object belongs to. \end{DoxyCompactList}\item 
+unsigned int {\bfseries id\+\_\+}
+\begin{DoxyCompactList}\small\item\em The media object id. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{classlibcamera_1_1MediaEntity}{Media\+Entity} represents an entity in the media graph. 
+
+Entities are created from the information provided by the Media Controller API in the \doxylink{structmedia__v2__entity}{media\+\_\+v2\+\_\+entity} structure. They reference the \doxylink{classlibcamera_1_1MediaEntity_adb91c47fdbd1b581da492d6257bb648e}{pads()} they contain.
+
+In addition to their graph id, media graph entities are identified by a name() unique in the media device context. They implement a function() and may expose a \doxylink{classlibcamera_1_1MediaEntity_a7d5f090d44cd2362d3d0f5f56a651f0c}{device\+Node()}. 
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{classlibcamera_1_1MediaEntity_ab75d46f7f7ee3270b3cffbb0e821c7b0}\label{classlibcamera_1_1MediaEntity_ab75d46f7f7ee3270b3cffbb0e821c7b0} 
+\index{libcamera::MediaEntity@{libcamera::MediaEntity}!Type@{Type}}
+\index{Type@{Type}!libcamera::MediaEntity@{libcamera::MediaEntity}}
+\doxysubsubsection{\texorpdfstring{Type}{Type}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{classlibcamera_1_1MediaEntity_ab75d46f7f7ee3270b3cffbb0e821c7b0}{libcamera\+::\+Media\+Entity\+::\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+The type of the interface exposed by the entity to userspace. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Invalid@{Invalid}!libcamera::MediaEntity@{libcamera::MediaEntity}}\index{libcamera::MediaEntity@{libcamera::MediaEntity}!Invalid@{Invalid}}}\Hypertarget{classlibcamera_1_1MediaEntity_ab75d46f7f7ee3270b3cffbb0e821c7b0a4bbb8f967da6d1a610596d7257179c2b}\label{classlibcamera_1_1MediaEntity_ab75d46f7f7ee3270b3cffbb0e821c7b0a4bbb8f967da6d1a610596d7257179c2b} 
+Invalid&Invalid or unsupported entity type. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MediaEntity@{MediaEntity}!libcamera::MediaEntity@{libcamera::MediaEntity}}\index{libcamera::MediaEntity@{libcamera::MediaEntity}!MediaEntity@{MediaEntity}}}\Hypertarget{classlibcamera_1_1MediaEntity_ab75d46f7f7ee3270b3cffbb0e821c7b0a150bda353722eb36a72b7548e051406f}\label{classlibcamera_1_1MediaEntity_ab75d46f7f7ee3270b3cffbb0e821c7b0a150bda353722eb36a72b7548e051406f} 
+Media\+Entity&Plain media entity with no userspace interface. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{V4L2Subdevice@{V4L2Subdevice}!libcamera::MediaEntity@{libcamera::MediaEntity}}\index{libcamera::MediaEntity@{libcamera::MediaEntity}!V4L2Subdevice@{V4L2Subdevice}}}\Hypertarget{classlibcamera_1_1MediaEntity_ab75d46f7f7ee3270b3cffbb0e821c7b0a6225cd504cb3e7475e63ab83fed66a8d}\label{classlibcamera_1_1MediaEntity_ab75d46f7f7ee3270b3cffbb0e821c7b0a6225cd504cb3e7475e63ab83fed66a8d} 
+V4\+L2\+Subdevice&V4\+L2 subdevice with a V4\+L2 subdev device node. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{V4L2VideoDevice@{V4L2VideoDevice}!libcamera::MediaEntity@{libcamera::MediaEntity}}\index{libcamera::MediaEntity@{libcamera::MediaEntity}!V4L2VideoDevice@{V4L2VideoDevice}}}\Hypertarget{classlibcamera_1_1MediaEntity_ab75d46f7f7ee3270b3cffbb0e821c7b0ae388b4d0db571ad8179ff34593372dea}\label{classlibcamera_1_1MediaEntity_ab75d46f7f7ee3270b3cffbb0e821c7b0ae388b4d0db571ad8179ff34593372dea} 
+V4\+L2\+Video\+Device&V4\+L2 video device with a V4\+L2 video device node. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1MediaEntity_a801eb7c5ad38c31e540925766d8b1c44}\label{classlibcamera_1_1MediaEntity_a801eb7c5ad38c31e540925766d8b1c44} 
+\index{libcamera::MediaEntity@{libcamera::MediaEntity}!ancillaryEntities@{ancillaryEntities}}
+\index{ancillaryEntities@{ancillaryEntities}!libcamera::MediaEntity@{libcamera::MediaEntity}}
+\doxysubsubsection{\texorpdfstring{ancillaryEntities()}{ancillaryEntities()}}
+{\footnotesize\ttfamily libcamera\+::\+Media\+Entity\+::ancillary\+Entities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve all ancillary entities of the entity. 
+
+\begin{DoxyReturn}{Returns}
+The list of the entity\textquotesingle{}s ancillary entities 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1MediaEntity_a9a3c9a5656e9f59251783f8a3ce2db1b}\label{classlibcamera_1_1MediaEntity_a9a3c9a5656e9f59251783f8a3ce2db1b} 
+\index{libcamera::MediaEntity@{libcamera::MediaEntity}!deviceMajor@{deviceMajor}}
+\index{deviceMajor@{deviceMajor}!libcamera::MediaEntity@{libcamera::MediaEntity}}
+\doxysubsubsection{\texorpdfstring{deviceMajor()}{deviceMajor()}}
+{\footnotesize\ttfamily libcamera\+::\+Media\+Entity\+::device\+Major (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the major number of the interface associated with the entity. 
+
+\begin{DoxyReturn}{Returns}
+The interface major number, or 0 if the entity isn\textquotesingle{}t associated with an interface 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1MediaEntity_a7bf8be19d4a38757d683481b24eed7ff}\label{classlibcamera_1_1MediaEntity_a7bf8be19d4a38757d683481b24eed7ff} 
+\index{libcamera::MediaEntity@{libcamera::MediaEntity}!deviceMinor@{deviceMinor}}
+\index{deviceMinor@{deviceMinor}!libcamera::MediaEntity@{libcamera::MediaEntity}}
+\doxysubsubsection{\texorpdfstring{deviceMinor()}{deviceMinor()}}
+{\footnotesize\ttfamily libcamera\+::\+Media\+Entity\+::device\+Minor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the minor number of the interface associated with the entity. 
+
+\begin{DoxyReturn}{Returns}
+The interface minor number, or 0 if the entity isn\textquotesingle{}t associated with an interface 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1MediaEntity_a7d5f090d44cd2362d3d0f5f56a651f0c}\label{classlibcamera_1_1MediaEntity_a7d5f090d44cd2362d3d0f5f56a651f0c} 
+\index{libcamera::MediaEntity@{libcamera::MediaEntity}!deviceNode@{deviceNode}}
+\index{deviceNode@{deviceNode}!libcamera::MediaEntity@{libcamera::MediaEntity}}
+\doxysubsubsection{\texorpdfstring{deviceNode()}{deviceNode()}}
+{\footnotesize\ttfamily libcamera\+::\+Media\+Entity\+::device\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the entity\textquotesingle{}s device node path, if any. 
+
+\begin{DoxyReturn}{Returns}
+The entity\textquotesingle{}s device node path, or an empty string if it is not set 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+int \doxylink{classlibcamera_1_1MediaEntity_afc48af8e052b6436492eb9196abced71}{set\+Device\+Node()} 
+\end{DoxySeeAlso}
+\Hypertarget{classlibcamera_1_1MediaEntity_a48322351941cc87e2ac72b3175cbc561}\label{classlibcamera_1_1MediaEntity_a48322351941cc87e2ac72b3175cbc561} 
+\index{libcamera::MediaEntity@{libcamera::MediaEntity}!flags@{flags}}
+\index{flags@{flags}!libcamera::MediaEntity@{libcamera::MediaEntity}}
+\doxysubsubsection{\texorpdfstring{flags()}{flags()}}
+{\footnotesize\ttfamily libcamera\+::\+Media\+Entity\+::flags (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the entity\textquotesingle{}s flags. 
+
+Media entity flags are expressed using the MEDIA\+\_\+\+ENT\+\_\+\+FL\+\_\+\texorpdfstring{$\ast$}{*} macros defined by the Media Controller API.
+
+\begin{DoxyReturn}{Returns}
+The entity\textquotesingle{}s flags 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1MediaEntity_a6078dab1b3beaf6b0917babdab001fbd}\label{classlibcamera_1_1MediaEntity_a6078dab1b3beaf6b0917babdab001fbd} 
+\index{libcamera::MediaEntity@{libcamera::MediaEntity}!function@{function}}
+\index{function@{function}!libcamera::MediaEntity@{libcamera::MediaEntity}}
+\doxysubsubsection{\texorpdfstring{function()}{function()}}
+{\footnotesize\ttfamily libcamera\+::\+Media\+Entity\+::function (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the entity\textquotesingle{}s main function. 
+
+Media entity functions are expressed using the MEDIA\+\_\+\+ENT\+\_\+\+F\+\_\+\texorpdfstring{$\ast$}{*} macros defined by the Media Controller API.
+
+\begin{DoxyReturn}{Returns}
+The entity\textquotesingle{}s function 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1MediaEntity_aa8f15a6ae32ba6e11b8f30740bd01f0b}\label{classlibcamera_1_1MediaEntity_aa8f15a6ae32ba6e11b8f30740bd01f0b} 
+\index{libcamera::MediaEntity@{libcamera::MediaEntity}!getPadById@{getPadById}}
+\index{getPadById@{getPadById}!libcamera::MediaEntity@{libcamera::MediaEntity}}
+\doxysubsubsection{\texorpdfstring{getPadById()}{getPadById()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classlibcamera_1_1MediaPad}{Media\+Pad}} \texorpdfstring{$\ast$}{*} libcamera\+::\+Media\+Entity\+::get\+Pad\+By\+Id (\begin{DoxyParamCaption}\item[{unsigned int}]{id }\end{DoxyParamCaption}) const}
+
+
+
+Get a pad in this entity by its object id. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em id} & The pad id \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The pad identified by {\itshape id}, or nullptr if no such pad exist 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1MediaEntity_ac92364db18c91cb2295b943c12601767}\label{classlibcamera_1_1MediaEntity_ac92364db18c91cb2295b943c12601767} 
+\index{libcamera::MediaEntity@{libcamera::MediaEntity}!getPadByIndex@{getPadByIndex}}
+\index{getPadByIndex@{getPadByIndex}!libcamera::MediaEntity@{libcamera::MediaEntity}}
+\doxysubsubsection{\texorpdfstring{getPadByIndex()}{getPadByIndex()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classlibcamera_1_1MediaPad}{Media\+Pad}} \texorpdfstring{$\ast$}{*} libcamera\+::\+Media\+Entity\+::get\+Pad\+By\+Index (\begin{DoxyParamCaption}\item[{unsigned int}]{index }\end{DoxyParamCaption}) const}
+
+
+
+Get a pad in this entity by its index. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em index} & The 0-\/based pad index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The pad identified by {\itshape index}, or nullptr if no such pad exist 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1MediaEntity_aa4cacb9e12787179a2c4a56590d7b2b5}\label{classlibcamera_1_1MediaEntity_aa4cacb9e12787179a2c4a56590d7b2b5} 
+\index{libcamera::MediaEntity@{libcamera::MediaEntity}!name@{name}}
+\index{name@{name}!libcamera::MediaEntity@{libcamera::MediaEntity}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily libcamera\+::\+Media\+Entity\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the entity name. 
+
+\begin{DoxyReturn}{Returns}
+The entity name 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1MediaEntity_adb91c47fdbd1b581da492d6257bb648e}\label{classlibcamera_1_1MediaEntity_adb91c47fdbd1b581da492d6257bb648e} 
+\index{libcamera::MediaEntity@{libcamera::MediaEntity}!pads@{pads}}
+\index{pads@{pads}!libcamera::MediaEntity@{libcamera::MediaEntity}}
+\doxysubsubsection{\texorpdfstring{pads()}{pads()}}
+{\footnotesize\ttfamily libcamera\+::\+Media\+Entity\+::pads (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve all pads of the entity. 
+
+\begin{DoxyReturn}{Returns}
+The list of the entity\textquotesingle{}s pads 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1MediaEntity_afc48af8e052b6436492eb9196abced71}\label{classlibcamera_1_1MediaEntity_afc48af8e052b6436492eb9196abced71} 
+\index{libcamera::MediaEntity@{libcamera::MediaEntity}!setDeviceNode@{setDeviceNode}}
+\index{setDeviceNode@{setDeviceNode}!libcamera::MediaEntity@{libcamera::MediaEntity}}
+\doxysubsubsection{\texorpdfstring{setDeviceNode()}{setDeviceNode()}}
+{\footnotesize\ttfamily int libcamera\+::\+Media\+Entity\+::set\+Device\+Node (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{device\+Node }\end{DoxyParamCaption})}
+
+
+
+Set the path to the device node for the associated interface. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em device\+Node} & The interface device node path associated with this entity \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success or a negative error code otherwise 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1MediaEntity_a068c6c9e481b7adfb2f4aec1d8b81649}\label{classlibcamera_1_1MediaEntity_a068c6c9e481b7adfb2f4aec1d8b81649} 
+\index{libcamera::MediaEntity@{libcamera::MediaEntity}!type@{type}}
+\index{type@{type}!libcamera::MediaEntity@{libcamera::MediaEntity}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily libcamera\+::\+Media\+Entity\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the entity\textquotesingle{}s type. 
+
+The entity type identifies the type of interface exposed to userspace.
+
+\begin{DoxyReturn}{Returns}
+The entity\textquotesingle{}s type 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/internal/\mbox{\hyperlink{media__object_8h}{media\+\_\+object.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/media\+\_\+object.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,88 @@
+\doxysection{libcamera\+::Point Class Reference}
+\hypertarget{classlibcamera_1_1Point}{}\label{classlibcamera_1_1Point}\index{libcamera::Point@{libcamera::Point}}
+
+
+Describe a point in two-\/dimensional space.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1Point_a5509aa185caea93bcf6e0a68d10acb18}\label{classlibcamera_1_1Point_a5509aa185caea93bcf6e0a68d10acb18} 
+constexpr {\bfseries Point} ()
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{classlibcamera_1_1Point}{Point} with x and y set to 0. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{classlibcamera_1_1Point_aa45e2057e0b3f66db6de02b63dd26556}{Point}} (int xpos, int ypos)
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{classlibcamera_1_1Point}{Point} at given {\itshape xpos} and {\itshape ypos} values. \end{DoxyCompactList}\item 
+const std\+::string \mbox{\hyperlink{classlibcamera_1_1Point_ae2b0da400a78708dd1a4667bb8b080d2}{to\+String}} () const
+\begin{DoxyCompactList}\small\item\em Assemble and return a string describing the point. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{classlibcamera_1_1Point}{Point}} \mbox{\hyperlink{classlibcamera_1_1Point_a6ed2f3834fba6398f1cf7a296ceae5fa}{operator-\/}} () const
+\begin{DoxyCompactList}\small\item\em Negate a \doxylink{classlibcamera_1_1Point}{Point} by negating both its x and y coordinates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1Point_a99ec1d160240a8c6903a0beb6f1d9c33}\label{classlibcamera_1_1Point_a99ec1d160240a8c6903a0beb6f1d9c33} 
+int {\bfseries x}
+\begin{DoxyCompactList}\small\item\em The x-\/coordinate of the \doxylink{classlibcamera_1_1Point}{Point}. \end{DoxyCompactList}\item 
+\Hypertarget{classlibcamera_1_1Point_a0cbb3cbc820b3d4f8eed71be655f909e}\label{classlibcamera_1_1Point_a0cbb3cbc820b3d4f8eed71be655f909e} 
+int {\bfseries y}
+\begin{DoxyCompactList}\small\item\em The y-\/coordinate of the \doxylink{classlibcamera_1_1Point}{Point}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Describe a point in two-\/dimensional space. 
+
+The \doxylink{classlibcamera_1_1Point}{Point} structure defines a point in two-\/dimensional space with integer precision. The coordinates of a \doxylink{classlibcamera_1_1Point}{Point} may be negative as well as positive. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlibcamera_1_1Point_aa45e2057e0b3f66db6de02b63dd26556}\label{classlibcamera_1_1Point_aa45e2057e0b3f66db6de02b63dd26556} 
+\index{libcamera::Point@{libcamera::Point}!Point@{Point}}
+\index{Point@{Point}!libcamera::Point@{libcamera::Point}}
+\doxysubsubsection{\texorpdfstring{Point()}{Point()}}
+{\footnotesize\ttfamily libcamera\+::\+Point\+::\+Point (\begin{DoxyParamCaption}\item[{int}]{xpos,  }\item[{int}]{ypos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Construct a \doxylink{classlibcamera_1_1Point}{Point} at given {\itshape xpos} and {\itshape ypos} values. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em xpos} & The x-\/coordinate \\
+\hline
+\mbox{\texttt{ in}}  & {\em ypos} & The y-\/coordinate \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1Point_a6ed2f3834fba6398f1cf7a296ceae5fa}\label{classlibcamera_1_1Point_a6ed2f3834fba6398f1cf7a296ceae5fa} 
+\index{libcamera::Point@{libcamera::Point}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!libcamera::Point@{libcamera::Point}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1Point}{Point}} libcamera\+::\+Point\+::operator-\/ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Negate a \doxylink{classlibcamera_1_1Point}{Point} by negating both its x and y coordinates. 
+
+\begin{DoxyReturn}{Returns}
+The negated point 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Point_ae2b0da400a78708dd1a4667bb8b080d2}\label{classlibcamera_1_1Point_ae2b0da400a78708dd1a4667bb8b080d2} 
+\index{libcamera::Point@{libcamera::Point}!toString@{toString}}
+\index{toString@{toString}!libcamera::Point@{libcamera::Point}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily const std\+::string libcamera\+::\+Point\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Assemble and return a string describing the point. 
+
+\begin{DoxyReturn}{Returns}
+A string describing the point 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/\mbox{\hyperlink{geometry_8h}{geometry.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/geometry.\+cpp\end{DoxyCompactItemize}

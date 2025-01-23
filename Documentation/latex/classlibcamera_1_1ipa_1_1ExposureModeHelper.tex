@@ -1,0 +1,165 @@
+\doxysection{libcamera\+::ipa\+::Exposure\+Mode\+Helper Class Reference}
+\hypertarget{classlibcamera_1_1ipa_1_1ExposureModeHelper}{}\label{classlibcamera_1_1ipa_1_1ExposureModeHelper}\index{libcamera::ipa::ExposureModeHelper@{libcamera::ipa::ExposureModeHelper}}
+
+
+Class for splitting exposure into exposure time and total gain.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1ExposureModeHelper_a9c35c00615d3ea96cbeae1af36149a78}{Exposure\+Mode\+Helper}} (const \mbox{\hyperlink{classlibcamera_1_1Span}{Span}}$<$ std\+::pair$<$ \mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{utils\+::\+Duration}}, double $>$ $>$ stages)
+\begin{DoxyCompactList}\small\item\em Construct an \doxylink{classlibcamera_1_1ipa_1_1ExposureModeHelper}{Exposure\+Mode\+Helper} instance. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1ipa_1_1ExposureModeHelper_a65fb41ca9eac111b7134c03a25cf331f}{set\+Limits}} (\mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{utils\+::\+Duration}} \mbox{\hyperlink{classlibcamera_1_1ipa_1_1ExposureModeHelper_a0e9b21ab8a26c0a7c0448204d482d640}{min\+Exposure\+Time}}, \mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{utils\+::\+Duration}} \mbox{\hyperlink{classlibcamera_1_1ipa_1_1ExposureModeHelper_a3407fa04632f178ab7401f4fc005062a}{max\+Exposure\+Time}}, double \mbox{\hyperlink{classlibcamera_1_1ipa_1_1ExposureModeHelper_aa4834455245f11980ed6b887d3dc95ab}{min\+Gain}}, double \mbox{\hyperlink{classlibcamera_1_1ipa_1_1ExposureModeHelper_a996352f205f85833243a5cf709dff71f}{max\+Gain}})
+\begin{DoxyCompactList}\small\item\em Set the exposure time and gain limits. \end{DoxyCompactList}\item 
+std\+::tuple$<$ \mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{utils\+::\+Duration}}, double, double $>$ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1ExposureModeHelper_a31ca71c05f578afb5312774dae30d1fa}{split\+Exposure}} (\mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{utils\+::\+Duration}} exposure) const
+\begin{DoxyCompactList}\small\item\em Split exposure into exposure time and gain. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{utils\+::\+Duration}} \mbox{\hyperlink{classlibcamera_1_1ipa_1_1ExposureModeHelper_a0e9b21ab8a26c0a7c0448204d482d640}{min\+Exposure\+Time}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the configured minimum exposure time limit set through \doxylink{classlibcamera_1_1ipa_1_1ExposureModeHelper_a65fb41ca9eac111b7134c03a25cf331f}{set\+Limits()} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{utils\+::\+Duration}} \mbox{\hyperlink{classlibcamera_1_1ipa_1_1ExposureModeHelper_a3407fa04632f178ab7401f4fc005062a}{max\+Exposure\+Time}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the configured maximum exposure time set through \doxylink{classlibcamera_1_1ipa_1_1ExposureModeHelper_a65fb41ca9eac111b7134c03a25cf331f}{set\+Limits()} \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classlibcamera_1_1ipa_1_1ExposureModeHelper_aa4834455245f11980ed6b887d3dc95ab}{min\+Gain}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the configured minimum gain set through \doxylink{classlibcamera_1_1ipa_1_1ExposureModeHelper_a65fb41ca9eac111b7134c03a25cf331f}{set\+Limits()} \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classlibcamera_1_1ipa_1_1ExposureModeHelper_a996352f205f85833243a5cf709dff71f}{max\+Gain}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the configured maximum gain set through \doxylink{classlibcamera_1_1ipa_1_1ExposureModeHelper_a65fb41ca9eac111b7134c03a25cf331f}{set\+Limits()} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for splitting exposure into exposure time and total gain. 
+
+The \doxylink{classlibcamera_1_1ipa_1_1ExposureModeHelper}{Exposure\+Mode\+Helper} class provides a standard interface through which an AEGC algorithm can divide exposure between exposure time and gain. It is configured with a set of exposure time and gain pairs and works by initially fixing gain at 1.\+0 and increasing exposure time up to the exposure time value from the first pair in the set in an attempt to meet the required exposure value.
+
+If the required exposure is not achievable by the first exposure time value alone it ramps gain up to the value from the first pair in the set. If the required exposure is still not met it then allows exposure time to ramp up to the exposure time value from the second pair in the set, and continues in this vein until either the required exposure time is met, or else the hardware\textquotesingle{}s exposure time or gain limits are reached.
+
+This method allows users to strike a balance between a well-\/exposed image and an acceptable frame-\/rate, as opposed to simply maximising exposure time followed by gain. The same helpers can be used to perform the latter operation if needed by passing an empty set of pairs to the initialisation function.
+
+The gain values may exceed a camera sensor\textquotesingle{}s analogue gain limits if either it or the IPA is also capable of digital gain. The configure() function must be called with the hardware\textquotesingle{}s limits to inform the helper of those constraints. Any gain that is needed will be applied as analogue gain first until the hardware\textquotesingle{}s limit is reached, following which digital gain will be used. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlibcamera_1_1ipa_1_1ExposureModeHelper_a9c35c00615d3ea96cbeae1af36149a78}\label{classlibcamera_1_1ipa_1_1ExposureModeHelper_a9c35c00615d3ea96cbeae1af36149a78} 
+\index{libcamera::ipa::ExposureModeHelper@{libcamera::ipa::ExposureModeHelper}!ExposureModeHelper@{ExposureModeHelper}}
+\index{ExposureModeHelper@{ExposureModeHelper}!libcamera::ipa::ExposureModeHelper@{libcamera::ipa::ExposureModeHelper}}
+\doxysubsubsection{\texorpdfstring{ExposureModeHelper()}{ExposureModeHelper()}}
+{\footnotesize\ttfamily libcamera\+::ipa\+::\+Exposure\+Mode\+Helper\+::\+Exposure\+Mode\+Helper (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1Span}{Span}}$<$ std\+::pair$<$ \mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{utils\+::\+Duration}}, double $>$ $>$}]{stages }\end{DoxyParamCaption})}
+
+
+
+Construct an \doxylink{classlibcamera_1_1ipa_1_1ExposureModeHelper}{Exposure\+Mode\+Helper} instance. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em stages} & The vector of paired exposure time and gain limits\\
+\hline
+\end{DoxyParams}
+The input stages are exposure time and {\itshape total} gain pairs; the gain encompasses both analogue and digital gain.
+
+The vector of stages may be empty. In that case, the helper will simply use the runtime limits set through \doxylink{classlibcamera_1_1ipa_1_1ExposureModeHelper_a65fb41ca9eac111b7134c03a25cf331f}{set\+Limits()} instead. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1ipa_1_1ExposureModeHelper_a3407fa04632f178ab7401f4fc005062a}\label{classlibcamera_1_1ipa_1_1ExposureModeHelper_a3407fa04632f178ab7401f4fc005062a} 
+\index{libcamera::ipa::ExposureModeHelper@{libcamera::ipa::ExposureModeHelper}!maxExposureTime@{maxExposureTime}}
+\index{maxExposureTime@{maxExposureTime}!libcamera::ipa::ExposureModeHelper@{libcamera::ipa::ExposureModeHelper}}
+\doxysubsubsection{\texorpdfstring{maxExposureTime()}{maxExposureTime()}}
+{\footnotesize\ttfamily libcamera\+::ipa\+::\+Exposure\+Mode\+Helper\+::max\+Exposure\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the configured maximum exposure time set through \doxylink{classlibcamera_1_1ipa_1_1ExposureModeHelper_a65fb41ca9eac111b7134c03a25cf331f}{set\+Limits()} 
+
+\begin{DoxyReturn}{Returns}
+The max\+Exposure\+Time\+\_\+ value 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1ExposureModeHelper_a996352f205f85833243a5cf709dff71f}\label{classlibcamera_1_1ipa_1_1ExposureModeHelper_a996352f205f85833243a5cf709dff71f} 
+\index{libcamera::ipa::ExposureModeHelper@{libcamera::ipa::ExposureModeHelper}!maxGain@{maxGain}}
+\index{maxGain@{maxGain}!libcamera::ipa::ExposureModeHelper@{libcamera::ipa::ExposureModeHelper}}
+\doxysubsubsection{\texorpdfstring{maxGain()}{maxGain()}}
+{\footnotesize\ttfamily libcamera\+::ipa\+::\+Exposure\+Mode\+Helper\+::max\+Gain (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the configured maximum gain set through \doxylink{classlibcamera_1_1ipa_1_1ExposureModeHelper_a65fb41ca9eac111b7134c03a25cf331f}{set\+Limits()} 
+
+\begin{DoxyReturn}{Returns}
+The max\+Gain\+\_\+ value 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1ExposureModeHelper_a0e9b21ab8a26c0a7c0448204d482d640}\label{classlibcamera_1_1ipa_1_1ExposureModeHelper_a0e9b21ab8a26c0a7c0448204d482d640} 
+\index{libcamera::ipa::ExposureModeHelper@{libcamera::ipa::ExposureModeHelper}!minExposureTime@{minExposureTime}}
+\index{minExposureTime@{minExposureTime}!libcamera::ipa::ExposureModeHelper@{libcamera::ipa::ExposureModeHelper}}
+\doxysubsubsection{\texorpdfstring{minExposureTime()}{minExposureTime()}}
+{\footnotesize\ttfamily libcamera\+::ipa\+::\+Exposure\+Mode\+Helper\+::min\+Exposure\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the configured minimum exposure time limit set through \doxylink{classlibcamera_1_1ipa_1_1ExposureModeHelper_a65fb41ca9eac111b7134c03a25cf331f}{set\+Limits()} 
+
+\begin{DoxyReturn}{Returns}
+The min\+Exposure\+Time\+\_\+ value 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1ExposureModeHelper_aa4834455245f11980ed6b887d3dc95ab}\label{classlibcamera_1_1ipa_1_1ExposureModeHelper_aa4834455245f11980ed6b887d3dc95ab} 
+\index{libcamera::ipa::ExposureModeHelper@{libcamera::ipa::ExposureModeHelper}!minGain@{minGain}}
+\index{minGain@{minGain}!libcamera::ipa::ExposureModeHelper@{libcamera::ipa::ExposureModeHelper}}
+\doxysubsubsection{\texorpdfstring{minGain()}{minGain()}}
+{\footnotesize\ttfamily libcamera\+::ipa\+::\+Exposure\+Mode\+Helper\+::min\+Gain (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the configured minimum gain set through \doxylink{classlibcamera_1_1ipa_1_1ExposureModeHelper_a65fb41ca9eac111b7134c03a25cf331f}{set\+Limits()} 
+
+\begin{DoxyReturn}{Returns}
+The min\+Gain\+\_\+ value 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1ExposureModeHelper_a65fb41ca9eac111b7134c03a25cf331f}\label{classlibcamera_1_1ipa_1_1ExposureModeHelper_a65fb41ca9eac111b7134c03a25cf331f} 
+\index{libcamera::ipa::ExposureModeHelper@{libcamera::ipa::ExposureModeHelper}!setLimits@{setLimits}}
+\index{setLimits@{setLimits}!libcamera::ipa::ExposureModeHelper@{libcamera::ipa::ExposureModeHelper}}
+\doxysubsubsection{\texorpdfstring{setLimits()}{setLimits()}}
+{\footnotesize\ttfamily void libcamera\+::ipa\+::\+Exposure\+Mode\+Helper\+::set\+Limits (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{utils\+::\+Duration}}}]{min\+Exposure\+Time,  }\item[{\mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{utils\+::\+Duration}}}]{max\+Exposure\+Time,  }\item[{double}]{min\+Gain,  }\item[{double}]{max\+Gain }\end{DoxyParamCaption})}
+
+
+
+Set the exposure time and gain limits. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em min\+Exposure\+Time} & The minimum exposure time supported \\
+\hline
+\mbox{\texttt{ in}}  & {\em max\+Exposure\+Time} & The maximum exposure time supported \\
+\hline
+\mbox{\texttt{ in}}  & {\em min\+Gain} & The minimum analogue gain supported \\
+\hline
+\mbox{\texttt{ in}}  & {\em max\+Gain} & The maximum analogue gain supported\\
+\hline
+\end{DoxyParams}
+This function configures the exposure time and analogue gain limits that need to be adhered to as the helper divides up exposure. Note that this function {\itshape must} be called whenever those limits change and before \doxylink{classlibcamera_1_1ipa_1_1ExposureModeHelper_a31ca71c05f578afb5312774dae30d1fa}{split\+Exposure()} is used.
+
+If the algorithm using the helpers needs to indicate that either exposure time or analogue gain or both should be fixed it can do so by setting both the minima and maxima to the same value. \Hypertarget{classlibcamera_1_1ipa_1_1ExposureModeHelper_a31ca71c05f578afb5312774dae30d1fa}\label{classlibcamera_1_1ipa_1_1ExposureModeHelper_a31ca71c05f578afb5312774dae30d1fa} 
+\index{libcamera::ipa::ExposureModeHelper@{libcamera::ipa::ExposureModeHelper}!splitExposure@{splitExposure}}
+\index{splitExposure@{splitExposure}!libcamera::ipa::ExposureModeHelper@{libcamera::ipa::ExposureModeHelper}}
+\doxysubsubsection{\texorpdfstring{splitExposure()}{splitExposure()}}
+{\footnotesize\ttfamily std\+::tuple$<$ \mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{utils\+::\+Duration}}, double, double $>$ libcamera\+::ipa\+::\+Exposure\+Mode\+Helper\+::split\+Exposure (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{utils\+::\+Duration}}}]{exposure }\end{DoxyParamCaption}) const}
+
+
+
+Split exposure into exposure time and gain. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em exposure} & Exposure value\\
+\hline
+\end{DoxyParams}
+This function divides a given exposure into exposure time, analogue and digital gain by iterating through stages of exposure time and gain limits. At each stage the current stage\textquotesingle{}s exposure time limit is multiplied by the previous stage\textquotesingle{}s gain limit (or 1.\+0 initially) to see if the combination of the two can meet the required exposure. If they cannot then the current stage\textquotesingle{}s exposure time limit is multiplied by the same stage\textquotesingle{}s gain limit to see if that combination can meet the required exposure time. If they cannot then the function moves to consider the next stage.
+
+When a combination of exposure time and gain {\itshape stage} limits are found that are sufficient to meet the required exposure, the function attempts to reduce exposure time as much as possible whilst fixing gain and still meeting the exposure. If a {\itshape runtime} limit prevents exposure time from being lowered enough to meet the exposure with gain fixed at the stage limit, gain is also lowered to compensate.
+
+Once the exposure time and gain values are ascertained, gain is assigned as analogue gain as much as possible, with digital gain only in use if the maximum analogue gain runtime limit is unable to accommodate the exposure value.
+
+If no combination of exposure time and gain limits is found that meets the required exposure, the helper falls-\/back to simply maximising the exposure time first, followed by analogue gain, followed by digital gain.
+
+\begin{DoxyReturn}{Returns}
+Tuple of exposure time, analogue gain, and digital gain 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/ipa/libipa/\mbox{\hyperlink{exposure__mode__helper_8h}{exposure\+\_\+mode\+\_\+helper.\+h}}\item 
+src/peripherals/camera/libcamera/src/ipa/libipa/exposure\+\_\+mode\+\_\+helper.\+cpp\end{DoxyCompactItemize}

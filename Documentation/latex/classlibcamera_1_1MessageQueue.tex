@@ -1,0 +1,27 @@
+\doxysection{libcamera\+::Message\+Queue Class Reference}
+\hypertarget{classlibcamera_1_1MessageQueue}{}\label{classlibcamera_1_1MessageQueue}\index{libcamera::MessageQueue@{libcamera::MessageQueue}}
+
+
+A queue of posted messages.  
+
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1MessageQueue_aa9a196c9f7fb87e4262700f3523e8ea2}\label{classlibcamera_1_1MessageQueue_aa9a196c9f7fb87e4262700f3523e8ea2} 
+std\+::list$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1Message}{Message}} $>$ $>$ {\bfseries list\+\_\+}
+\begin{DoxyCompactList}\small\item\em List of queued \doxylink{classlibcamera_1_1Message}{Message} instances. \end{DoxyCompactList}\item 
+\Hypertarget{classlibcamera_1_1MessageQueue_aa5ca030eef0e962a0a519bfeea047a26}\label{classlibcamera_1_1MessageQueue_aa5ca030eef0e962a0a519bfeea047a26} 
+\mbox{\hyperlink{classMutex}{Mutex}} {\bfseries mutex\+\_\+}
+\begin{DoxyCompactList}\small\item\em Protects the \doxylink{classlibcamera_1_1MessageQueue_aa9a196c9f7fb87e4262700f3523e8ea2}{list\+\_\+}. \end{DoxyCompactList}\item 
+\Hypertarget{classlibcamera_1_1MessageQueue_a424f9ef240bc88208c27783b7228d5b9}\label{classlibcamera_1_1MessageQueue_a424f9ef240bc88208c27783b7228d5b9} 
+unsigned int {\bfseries recursion\+\_\+} = 0
+\begin{DoxyCompactList}\small\item\em The recursion level for recursive \doxylink{classlibcamera_1_1Thread_aa9e5281fd59e9644aab27c0a5fefe7ed}{Thread\+::dispatch\+Messages()} calls. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A queue of posted messages. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/libcamera/base/thread.\+cpp\end{DoxyCompactItemize}

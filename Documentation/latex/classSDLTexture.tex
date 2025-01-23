@@ -1,0 +1,44 @@
+\doxysection{SDLTexture Class Reference}
+\hypertarget{classSDLTexture}{}\label{classSDLTexture}\index{SDLTexture@{SDLTexture}}
+Inheritance diagram for SDLTexture\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classSDLTexture}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classSDLTexture_afd62319eef799d76f9595d78f864e516}\label{classSDLTexture_afd62319eef799d76f9595d78f864e516} 
+{\bfseries SDLTexture} (const SDL\+\_\+\+Rect \&rect, uint32\+\_\+t pixel\+Format, const int stride)
+\item 
+\Hypertarget{classSDLTexture_a4d6cad1b7f1894c784bad6e829489dfa}\label{classSDLTexture_a4d6cad1b7f1894c784bad6e829489dfa} 
+int {\bfseries create} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer)
+\item 
+\Hypertarget{classSDLTexture_a5a055da2aac2e7ed84701df12bdda54d}\label{classSDLTexture_a5a055da2aac2e7ed84701df12bdda54d} 
+virtual void {\bfseries update} (const std\+::vector$<$ \mbox{\hyperlink{classlibcamera_1_1Span}{libcamera\+::\+Span}}$<$ const uint8\+\_\+t $>$ $>$ \&data)=0
+\item 
+\Hypertarget{classSDLTexture_a5c8f9f6ba2716d586277d290ecaebfee}\label{classSDLTexture_a5c8f9f6ba2716d586277d290ecaebfee} 
+SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*} {\bfseries get} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classSDLTexture_ad2bedb16b79defc9f8011d39299137cd}\label{classSDLTexture_ad2bedb16b79defc9f8011d39299137cd} 
+SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*} {\bfseries ptr\+\_\+}
+\item 
+\Hypertarget{classSDLTexture_a2206839164c2c9afdedd5aa067603be2}\label{classSDLTexture_a2206839164c2c9afdedd5aa067603be2} 
+const SDL\+\_\+\+Rect {\bfseries rect\+\_\+}
+\item 
+\Hypertarget{classSDLTexture_af2391762da6811eb0535b910cd535026}\label{classSDLTexture_af2391762da6811eb0535b910cd535026} 
+const uint32\+\_\+t {\bfseries pixel\+Format\+\_\+}
+\item 
+\Hypertarget{classSDLTexture_a3d931fcf37ee36250b0640b54457c029}\label{classSDLTexture_a3d931fcf37ee36250b0640b54457c029} 
+const int {\bfseries stride\+\_\+}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/apps/cam/sdl\+\_\+texture.\+h\item 
+src/peripherals/camera/libcamera/src/apps/cam/sdl\+\_\+texture.\+cpp\end{DoxyCompactItemize}

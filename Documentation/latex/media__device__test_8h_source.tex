@@ -1,0 +1,36 @@
+\doxysection{media\+\_\+device\+\_\+test.\+h}
+\hypertarget{media__device__test_8h_source}{}\label{media__device__test_8h_source}\index{src/peripherals/camera/libcamera/test/media\_device/media\_device\_test.h@{src/peripherals/camera/libcamera/test/media\_device/media\_device\_test.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ GPL-\/2.0-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2019,\ Google\ Inc.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ libcamera\ media\ device\ test\ base\ class}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{device__enumerator_8h}{libcamera/internal/device\_enumerator.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{media__device_8h}{libcamera/internal/media\_device.h}}"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}test.h"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMediaDeviceTest}{MediaDeviceTest}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classTest}{Test}}}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{classMediaDeviceTest}{MediaDeviceTest}}()}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ :\ media\_(\textcolor{keyword}{nullptr}),\ enumerator\_(\textcolor{keyword}{nullptr})\ \{\}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{int}\ init();}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ std::shared\_ptr<libcamera::MediaDevice>\ media\_;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00029\ \ \ \ \ std::unique\_ptr<libcamera::DeviceEnumerator>\ enumerator\_;}
+\DoxyCodeLine{00030\ \};}
+
+\end{DoxyCode}

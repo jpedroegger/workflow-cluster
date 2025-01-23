@@ -1,0 +1,138 @@
+\doxysection{v4l2-\/mediabus.h}
+\hypertarget{v4l2-mediabus_8h_source}{}\label{v4l2-mediabus_8h_source}\index{src/peripherals/camera/libcamera/include/linux/v4l2-\/mediabus.h@{src/peripherals/camera/libcamera/include/linux/v4l2-\/mediabus.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ GPL-\/2.0\ WITH\ Linux-\/syscall-\/note\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Media\ Bus\ API\ header}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2009,\ Guennadi\ Liakhovetski\ <g.liakhovetski@gmx.de>}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ \_\_LINUX\_V4L2\_MEDIABUS\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ \_\_LINUX\_V4L2\_MEDIABUS\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <linux/media-\/bus-\/format.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <linux/types.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <linux/videodev2.h>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ V4L2\_MBUS\_FRAMEFMT\_SET\_CSC\ \ 0x0001}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{struct\ }v4l2\_mbus\_framefmt\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \_\_u32\ \ \ \ \ \ \ \ \ \ \ width;}
+\DoxyCodeLine{00039\ \ \ \ \ \_\_u32\ \ \ \ \ \ \ \ \ \ \ height;}
+\DoxyCodeLine{00040\ \ \ \ \ \_\_u32\ \ \ \ \ \ \ \ \ \ \ code;}
+\DoxyCodeLine{00041\ \ \ \ \ \_\_u32\ \ \ \ \ \ \ \ \ \ \ field;}
+\DoxyCodeLine{00042\ \ \ \ \ \_\_u32\ \ \ \ \ \ \ \ \ \ \ colorspace;}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ enum\ v4l2\_ycbcr\_encoding\ */}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \_\_u16\ \ \ \ \ \ \ \ \ \ \ ycbcr\_enc;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ enum\ v4l2\_hsv\_encoding\ */}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \_\_u16\ \ \ \ \ \ \ \ \ \ \ hsv\_enc;}
+\DoxyCodeLine{00048\ \ \ \ \ \};}
+\DoxyCodeLine{00049\ \ \ \ \ \_\_u16\ \ \ \ \ \ \ \ \ \ \ quantization;}
+\DoxyCodeLine{00050\ \ \ \ \ \_\_u16\ \ \ \ \ \ \ \ \ \ \ xfer\_func;}
+\DoxyCodeLine{00051\ \ \ \ \ \_\_u16\ \ \ \ \ \ \ \ \ \ \ flags;}
+\DoxyCodeLine{00052\ \ \ \ \ \_\_u16\ \ \ \ \ \ \ \ \ \ \ reserved[10];}
+\DoxyCodeLine{00053\ \};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00056\ \textcolor{comment}{\ *\ enum\ v4l2\_mbus\_pixelcode\ and\ its\ definitions\ are\ now\ deprecated,\ and}}
+\DoxyCodeLine{00057\ \textcolor{comment}{\ *\ MEDIA\_BUS\_FMT\_\ definitions\ (defined\ in\ media-\/bus-\/format.h)\ should\ be}}
+\DoxyCodeLine{00058\ \textcolor{comment}{\ *\ used\ instead.}}
+\DoxyCodeLine{00059\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00060\ \textcolor{comment}{\ *\ New\ defines\ should\ only\ be\ added\ to\ media-\/bus-\/format.h.\ The}}
+\DoxyCodeLine{00061\ \textcolor{comment}{\ *\ v4l2\_mbus\_pixelcode\ enum\ is\ frozen.}}
+\DoxyCodeLine{00062\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(name)\ \ \(\backslash\)}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\ \ \ \ V4L2\_MBUS\_FMT\_\ \#\#\ name\ =\ MEDIA\_BUS\_FMT\_\ \#\#\ name}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{enum}\ v4l2\_mbus\_pixelcode\ \{}
+\DoxyCodeLine{00068\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(FIXED),}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(RGB444\_2X8\_PADHI\_BE),}
+\DoxyCodeLine{00071\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(RGB444\_2X8\_PADHI\_LE),}
+\DoxyCodeLine{00072\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(RGB555\_2X8\_PADHI\_BE),}
+\DoxyCodeLine{00073\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(RGB555\_2X8\_PADHI\_LE),}
+\DoxyCodeLine{00074\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(BGR565\_2X8\_BE),}
+\DoxyCodeLine{00075\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(BGR565\_2X8\_LE),}
+\DoxyCodeLine{00076\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(RGB565\_2X8\_BE),}
+\DoxyCodeLine{00077\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(RGB565\_2X8\_LE),}
+\DoxyCodeLine{00078\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(RGB666\_1X18),}
+\DoxyCodeLine{00079\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(RGB888\_1X24),}
+\DoxyCodeLine{00080\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(RGB888\_2X12\_BE),}
+\DoxyCodeLine{00081\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(RGB888\_2X12\_LE),}
+\DoxyCodeLine{00082\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(ARGB8888\_1X32),}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(Y8\_1X8),}
+\DoxyCodeLine{00085\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(UV8\_1X8),}
+\DoxyCodeLine{00086\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(UYVY8\_1\_5X8),}
+\DoxyCodeLine{00087\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(VYUY8\_1\_5X8),}
+\DoxyCodeLine{00088\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(YUYV8\_1\_5X8),}
+\DoxyCodeLine{00089\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(YVYU8\_1\_5X8),}
+\DoxyCodeLine{00090\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(UYVY8\_2X8),}
+\DoxyCodeLine{00091\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(VYUY8\_2X8),}
+\DoxyCodeLine{00092\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(YUYV8\_2X8),}
+\DoxyCodeLine{00093\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(YVYU8\_2X8),}
+\DoxyCodeLine{00094\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(Y10\_1X10),}
+\DoxyCodeLine{00095\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(UYVY10\_2X10),}
+\DoxyCodeLine{00096\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(VYUY10\_2X10),}
+\DoxyCodeLine{00097\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(YUYV10\_2X10),}
+\DoxyCodeLine{00098\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(YVYU10\_2X10),}
+\DoxyCodeLine{00099\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(Y12\_1X12),}
+\DoxyCodeLine{00100\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(UYVY8\_1X16),}
+\DoxyCodeLine{00101\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(VYUY8\_1X16),}
+\DoxyCodeLine{00102\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(YUYV8\_1X16),}
+\DoxyCodeLine{00103\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(YVYU8\_1X16),}
+\DoxyCodeLine{00104\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(YDYUYDYV8\_1X16),}
+\DoxyCodeLine{00105\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(UYVY10\_1X20),}
+\DoxyCodeLine{00106\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(VYUY10\_1X20),}
+\DoxyCodeLine{00107\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(YUYV10\_1X20),}
+\DoxyCodeLine{00108\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(YVYU10\_1X20),}
+\DoxyCodeLine{00109\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(YUV10\_1X30),}
+\DoxyCodeLine{00110\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(AYUV8\_1X32),}
+\DoxyCodeLine{00111\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(UYVY12\_2X12),}
+\DoxyCodeLine{00112\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(VYUY12\_2X12),}
+\DoxyCodeLine{00113\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(YUYV12\_2X12),}
+\DoxyCodeLine{00114\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(YVYU12\_2X12),}
+\DoxyCodeLine{00115\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(UYVY12\_1X24),}
+\DoxyCodeLine{00116\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(VYUY12\_1X24),}
+\DoxyCodeLine{00117\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(YUYV12\_1X24),}
+\DoxyCodeLine{00118\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(YVYU12\_1X24),}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(SBGGR8\_1X8),}
+\DoxyCodeLine{00121\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(SGBRG8\_1X8),}
+\DoxyCodeLine{00122\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(SGRBG8\_1X8),}
+\DoxyCodeLine{00123\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(SRGGB8\_1X8),}
+\DoxyCodeLine{00124\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(SBGGR10\_ALAW8\_1X8),}
+\DoxyCodeLine{00125\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(SGBRG10\_ALAW8\_1X8),}
+\DoxyCodeLine{00126\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(SGRBG10\_ALAW8\_1X8),}
+\DoxyCodeLine{00127\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(SRGGB10\_ALAW8\_1X8),}
+\DoxyCodeLine{00128\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(SBGGR10\_DPCM8\_1X8),}
+\DoxyCodeLine{00129\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(SGBRG10\_DPCM8\_1X8),}
+\DoxyCodeLine{00130\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(SGRBG10\_DPCM8\_1X8),}
+\DoxyCodeLine{00131\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(SRGGB10\_DPCM8\_1X8),}
+\DoxyCodeLine{00132\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(SBGGR10\_2X8\_PADHI\_BE),}
+\DoxyCodeLine{00133\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(SBGGR10\_2X8\_PADHI\_LE),}
+\DoxyCodeLine{00134\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(SBGGR10\_2X8\_PADLO\_BE),}
+\DoxyCodeLine{00135\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(SBGGR10\_2X8\_PADLO\_LE),}
+\DoxyCodeLine{00136\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(SBGGR10\_1X10),}
+\DoxyCodeLine{00137\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(SGBRG10\_1X10),}
+\DoxyCodeLine{00138\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(SGRBG10\_1X10),}
+\DoxyCodeLine{00139\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(SRGGB10\_1X10),}
+\DoxyCodeLine{00140\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(SBGGR12\_1X12),}
+\DoxyCodeLine{00141\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(SGBRG12\_1X12),}
+\DoxyCodeLine{00142\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(SGRBG12\_1X12),}
+\DoxyCodeLine{00143\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(SRGGB12\_1X12),}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(JPEG\_1X8),}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(S5C\_UYVY\_JPEG\_1X8),}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ V4L2\_MBUS\_FROM\_MEDIA\_BUS\_FMT(AHSV8888\_1X32),}
+\DoxyCodeLine{00150\ \};}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

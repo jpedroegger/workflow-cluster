@@ -1,0 +1,184 @@
+\doxysection{libcamera\+::Frame\+Buffer\+::Private Class Reference}
+\hypertarget{classlibcamera_1_1FrameBuffer_1_1Private}{}\label{classlibcamera_1_1FrameBuffer_1_1Private}\index{libcamera::FrameBuffer::Private@{libcamera::FrameBuffer::Private}}
+
+
+Base class for \doxylink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer} private data.  
+
+
+Inheritance diagram for libcamera\+::Frame\+Buffer\+::Private\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlibcamera_1_1FrameBuffer_1_1Private}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1FrameBuffer_1_1Private_a9ea38d3356e65c53088717cfeaa11dbf}{Private}} (const std\+::vector$<$ \mbox{\hyperlink{structlibcamera_1_1FrameBuffer_1_1Plane}{Plane}} $>$ \&\mbox{\hyperlink{classlibcamera_1_1FrameBuffer_ae498b3d8bb272526c4a8798f3e04b566}{planes}}, uint64\+\_\+t \mbox{\hyperlink{classlibcamera_1_1FrameBuffer_af6a635f124b735fc5fd7b3b145d970da}{cookie}}=0)
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{classlibcamera_1_1FrameBuffer_1_1Private}{Frame\+Buffer\+::\+Private} instance. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classlibcamera_1_1FrameBuffer_1_1Private_a30efe76aa77087961accb7d050c898ba}{\texorpdfstring{$\sim$}{\string~}\+Private}} ()
+\begin{DoxyCompactList}\small\item\em \doxylink{classlibcamera_1_1FrameBuffer_1_1Private}{Frame\+Buffer\+::\+Private} destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1FrameBuffer_1_1Private_a47b9b32dbdc662479b6d04a597bd3d0b}{set\+Request}} (\mbox{\hyperlink{classlibcamera_1_1Request}{Request}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classlibcamera_1_1FrameBuffer_a4cd8c7f94d994ec9015a0e21720593c4}{request}})
+\begin{DoxyCompactList}\small\item\em Set the request this buffer belongs to. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlibcamera_1_1FrameBuffer_1_1Private_a8fe7cb0c5b9ef64ff2229434bfdfc781}{is\+Contiguous}} () const
+\begin{DoxyCompactList}\small\item\em Check if the frame buffer stores planes contiguously in memory. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1Fence}{Fence}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1FrameBuffer_1_1Private_a673e4cda5a85fdbdf88b980e5e12226b}{fence}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve a const pointer to the \doxylink{classlibcamera_1_1Fence}{Fence}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1FrameBuffer_1_1Private_ac1c635a072677c92e8f9c917581746ec}{set\+Fence}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1Fence}{Fence}} $>$ \mbox{\hyperlink{classlibcamera_1_1FrameBuffer_1_1Private_a673e4cda5a85fdbdf88b980e5e12226b}{fence}})
+\begin{DoxyCompactList}\small\item\em Move a {\itshape fence} in this buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1FrameBuffer_1_1Private_afda02a50091768e9363c4e3433a5ef32}{cancel}} ()
+\begin{DoxyCompactList}\small\item\em Marks the buffer as cancelled. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structlibcamera_1_1FrameMetadata}{Frame\+Metadata}} \& \mbox{\hyperlink{classlibcamera_1_1FrameBuffer_1_1Private_acc3a4ea50af29b5246a92aae79023783}{metadata}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the dynamic metadata. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1Extensible_1_1Private}{libcamera\+::\+Extensible\+::\+Private}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Private} ()
+\begin{DoxyCompactList}\small\item\em Construct an instance of an \doxylink{classlibcamera_1_1Extensible}{Extensible} class private data. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\const T \texorpdfstring{$\ast$}{*} {\bfseries \+\_\+o} () const
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \texorpdfstring{$\ast$}{*} {\bfseries \+\_\+o} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for \doxylink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer} private data. 
+
+The \doxylink{classlibcamera_1_1FrameBuffer_1_1Private}{Frame\+Buffer\+::\+Private} class stores all private data associated with a framebuffer. It implements the d-\/pointer design pattern to hide core \doxylink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer} data from the public API, and exposes utility functions to pipeline handlers. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlibcamera_1_1FrameBuffer_1_1Private_a9ea38d3356e65c53088717cfeaa11dbf}\label{classlibcamera_1_1FrameBuffer_1_1Private_a9ea38d3356e65c53088717cfeaa11dbf} 
+\index{libcamera::FrameBuffer::Private@{libcamera::FrameBuffer::Private}!Private@{Private}}
+\index{Private@{Private}!libcamera::FrameBuffer::Private@{libcamera::FrameBuffer::Private}}
+\doxysubsubsection{\texorpdfstring{Private()}{Private()}}
+{\footnotesize\ttfamily libcamera\+::\+Frame\+Buffer\+::\+Private\+::\+Private (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structlibcamera_1_1FrameBuffer_1_1Plane}{Plane}} $>$ \&}]{planes,  }\item[{uint64\+\_\+t}]{cookie = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Construct a \doxylink{classlibcamera_1_1FrameBuffer_1_1Private}{Frame\+Buffer\+::\+Private} instance. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em planes} & The frame memory planes \\
+\hline
+\mbox{\texttt{ in}}  & {\em cookie} & Cookie \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classlibcamera_1_1FrameBuffer_1_1Private_a30efe76aa77087961accb7d050c898ba}\label{classlibcamera_1_1FrameBuffer_1_1Private_a30efe76aa77087961accb7d050c898ba} 
+\index{libcamera::FrameBuffer::Private@{libcamera::FrameBuffer::Private}!````~Private@{\texorpdfstring{$\sim$}{\string~}Private}}
+\index{````~Private@{\texorpdfstring{$\sim$}{\string~}Private}!libcamera::FrameBuffer::Private@{libcamera::FrameBuffer::Private}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Private()}{\string~Private()}}
+{\footnotesize\ttfamily libcamera\+::\+Frame\+Buffer\+::\+Private\+::\texorpdfstring{$\sim$}{\string~}\+Private (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxylink{classlibcamera_1_1FrameBuffer_1_1Private}{Frame\+Buffer\+::\+Private} destructor. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classlibcamera_1_1Extensible_1_1Private}{libcamera\+::\+Extensible\+::\+Private}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1FrameBuffer_1_1Private_afda02a50091768e9363c4e3433a5ef32}\label{classlibcamera_1_1FrameBuffer_1_1Private_afda02a50091768e9363c4e3433a5ef32} 
+\index{libcamera::FrameBuffer::Private@{libcamera::FrameBuffer::Private}!cancel@{cancel}}
+\index{cancel@{cancel}!libcamera::FrameBuffer::Private@{libcamera::FrameBuffer::Private}}
+\doxysubsubsection{\texorpdfstring{cancel()}{cancel()}}
+{\footnotesize\ttfamily libcamera\+::\+Frame\+Buffer\+::\+Private\+::cancel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Marks the buffer as cancelled. 
+
+If a buffer is not used by a request, it shall be marked as cancelled to indicate that the metadata is invalid. \Hypertarget{classlibcamera_1_1FrameBuffer_1_1Private_a673e4cda5a85fdbdf88b980e5e12226b}\label{classlibcamera_1_1FrameBuffer_1_1Private_a673e4cda5a85fdbdf88b980e5e12226b} 
+\index{libcamera::FrameBuffer::Private@{libcamera::FrameBuffer::Private}!fence@{fence}}
+\index{fence@{fence}!libcamera::FrameBuffer::Private@{libcamera::FrameBuffer::Private}}
+\doxysubsubsection{\texorpdfstring{fence()}{fence()}}
+{\footnotesize\ttfamily libcamera\+::\+Frame\+Buffer\+::\+Private\+::fence (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve a const pointer to the \doxylink{classlibcamera_1_1Fence}{Fence}. 
+
+This function does only return a reference to the the fence and does not change its ownership. The fence is stored in the \doxylink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer} and can only be reset with \doxylink{classlibcamera_1_1FrameBuffer_a6312ef39ae7cf1d4f5c7b22d56e0e227}{Frame\+Buffer\+::release\+Fence()} in case the buffer has completed with error due to a \doxylink{classlibcamera_1_1Fence}{Fence} wait failure.
+
+If buffer with a \doxylink{classlibcamera_1_1Fence}{Fence} completes with errors due to a failure in handling the fence, applications are responsible for releasing the \doxylink{classlibcamera_1_1Fence}{Fence} before calling \doxylink{classlibcamera_1_1Request_a470cae8064c46e66367ea236dc13287d}{Request\+::add\+Buffer()} again.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classlibcamera_1_1Request_a470cae8064c46e66367ea236dc13287d}{Request\+::add\+Buffer()}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+A const pointer to the \doxylink{classlibcamera_1_1Fence}{Fence} if any, nullptr otherwise 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1FrameBuffer_1_1Private_a8fe7cb0c5b9ef64ff2229434bfdfc781}\label{classlibcamera_1_1FrameBuffer_1_1Private_a8fe7cb0c5b9ef64ff2229434bfdfc781} 
+\index{libcamera::FrameBuffer::Private@{libcamera::FrameBuffer::Private}!isContiguous@{isContiguous}}
+\index{isContiguous@{isContiguous}!libcamera::FrameBuffer::Private@{libcamera::FrameBuffer::Private}}
+\doxysubsubsection{\texorpdfstring{isContiguous()}{isContiguous()}}
+{\footnotesize\ttfamily libcamera\+::\+Frame\+Buffer\+::\+Private\+::is\+Contiguous (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check if the frame buffer stores planes contiguously in memory. 
+
+Multi-\/planar frame buffers can store their planes contiguously in memory, or split them into discontiguous memory areas. This function checks in which of these two categories the frame buffer belongs.
+
+\begin{DoxyReturn}{Returns}
+True if the planes are stored contiguously in memory, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1FrameBuffer_1_1Private_acc3a4ea50af29b5246a92aae79023783}\label{classlibcamera_1_1FrameBuffer_1_1Private_acc3a4ea50af29b5246a92aae79023783} 
+\index{libcamera::FrameBuffer::Private@{libcamera::FrameBuffer::Private}!metadata@{metadata}}
+\index{metadata@{metadata}!libcamera::FrameBuffer::Private@{libcamera::FrameBuffer::Private}}
+\doxysubsubsection{\texorpdfstring{metadata()}{metadata()}}
+{\footnotesize\ttfamily libcamera\+::\+Frame\+Buffer\+::\+Private\+::metadata (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the dynamic metadata. 
+
+\begin{DoxyReturn}{Returns}
+Dynamic metadata for the frame contained in the buffer 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1FrameBuffer_1_1Private_ac1c635a072677c92e8f9c917581746ec}\label{classlibcamera_1_1FrameBuffer_1_1Private_ac1c635a072677c92e8f9c917581746ec} 
+\index{libcamera::FrameBuffer::Private@{libcamera::FrameBuffer::Private}!setFence@{setFence}}
+\index{setFence@{setFence}!libcamera::FrameBuffer::Private@{libcamera::FrameBuffer::Private}}
+\doxysubsubsection{\texorpdfstring{setFence()}{setFence()}}
+{\footnotesize\ttfamily libcamera\+::\+Frame\+Buffer\+::\+Private\+::set\+Fence (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1Fence}{Fence}} $>$}]{fence }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Move a {\itshape fence} in this buffer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em fence} & The \doxylink{classlibcamera_1_1Fence}{Fence}\\
+\hline
+\end{DoxyParams}
+This function associates a \doxylink{classlibcamera_1_1Fence}{Fence} with this Framebuffer. The intended caller is the \doxylink{classlibcamera_1_1Request_a470cae8064c46e66367ea236dc13287d}{Request\+::add\+Buffer()} function.
+
+Once a \doxylink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer} is associated with a \doxylink{classlibcamera_1_1Fence}{Fence}, the \doxylink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer} will only be made available to the hardware device once the \doxylink{classlibcamera_1_1Fence}{Fence} has been correctly signalled.
+
+\begin{DoxySeeAlso}{See also}
+Request\+::prepare()
+\end{DoxySeeAlso}
+If the \doxylink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer} completes successfully the core releases the \doxylink{classlibcamera_1_1Fence}{Fence} and the Buffer can be reused immediately. If handling of the \doxylink{classlibcamera_1_1Fence}{Fence} fails during the request preparation, the \doxylink{classlibcamera_1_1Fence}{Fence} is not released and is left in the \doxylink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}. It is applications responsibility to correctly release the fence and handle it opportunely before using the buffer again. \Hypertarget{classlibcamera_1_1FrameBuffer_1_1Private_a47b9b32dbdc662479b6d04a597bd3d0b}\label{classlibcamera_1_1FrameBuffer_1_1Private_a47b9b32dbdc662479b6d04a597bd3d0b} 
+\index{libcamera::FrameBuffer::Private@{libcamera::FrameBuffer::Private}!setRequest@{setRequest}}
+\index{setRequest@{setRequest}!libcamera::FrameBuffer::Private@{libcamera::FrameBuffer::Private}}
+\doxysubsubsection{\texorpdfstring{setRequest()}{setRequest()}}
+{\footnotesize\ttfamily libcamera\+::\+Frame\+Buffer\+::\+Private\+::set\+Request (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1Request}{Request}} \texorpdfstring{$\ast$}{*}}]{request }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the request this buffer belongs to. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em request} & \doxylink{classlibcamera_1_1Request}{Request} to set\\
+\hline
+\end{DoxyParams}
+For buffers added to requests by applications, this function is called by \doxylink{classlibcamera_1_1Request_a470cae8064c46e66367ea236dc13287d}{Request\+::add\+Buffer()} or \doxylink{classlibcamera_1_1Request_aeb951e740b488f282292519625025491}{Request\+::reuse()}. For buffers internal to pipeline handlers, it is called by the pipeline handlers themselves. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/internal/framebuffer.\+h\item 
+src/peripherals/camera/libcamera/src/libcamera/framebuffer.\+cpp\end{DoxyCompactItemize}

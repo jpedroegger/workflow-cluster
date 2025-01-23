@@ -1,0 +1,112 @@
+\doxysection{native\+\_\+handle.\+h}
+\hypertarget{native__handle_8h_source}{}\label{native__handle_8h_source}\index{src/peripherals/camera/libcamera/include/android/system/core/include/cutils/native\_handle.h@{src/peripherals/camera/libcamera/include/android/system/core/include/cutils/native\_handle.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ Apache-\/2.0\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2009\ The\ Android\ Open\ Source\ Project}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ NATIVE\_HANDLE\_H\_}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ NATIVE\_HANDLE\_H\_}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <stdalign.h>}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00024\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ NATIVE\_HANDLE\_MAX\_FDS\ 1024}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ NATIVE\_HANDLE\_MAX\_INTS\ 1024}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{comment}{/*\ Declare\ a\ char\ array\ for\ use\ with\ native\_handle\_init\ */}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ NATIVE\_HANDLE\_DECLARE\_STORAGE(name,\ maxFds,\ maxInts)\ \(\backslash\)}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\ \ \ \ alignas(native\_handle\_t)\ char\ (name)[\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\ \ \ \ \ \ sizeof(native\_handle\_t)\ +\ sizeof(int)\ *\ ((maxFds)\ +\ (maxInts))]}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structnative__handle}{native\_handle}}}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{int}\ version;\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ sizeof(native\_handle\_t)\ */}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ numFds;\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ number\ of\ file-\/descriptors\ at\ \&data[0]\ */}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{int}\ numInts;\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ number\ of\ ints\ at\ \&data[numFds]\ */}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#if\ defined(\_\_clang\_\_)}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#pragma\ clang\ diagnostic\ push}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#pragma\ clang\ diagnostic\ ignored\ "{}-\/Wzero-\/length-\/array"{}}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{int}\ data[0];\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ numFds\ +\ numInts\ ints\ */}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#if\ defined(\_\_clang\_\_)}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#pragma\ clang\ diagnostic\ pop}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00048\ \}\ \mbox{\hyperlink{structnative__handle}{native\_handle\_t}};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structnative__handle}{native\_handle\_t}}*\ \mbox{\hyperlink{structnative__handle}{buffer\_handle\_t}};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00053\ \textcolor{comment}{\ *\ native\_handle\_close}}
+\DoxyCodeLine{00054\ \textcolor{comment}{\ *\ }}
+\DoxyCodeLine{00055\ \textcolor{comment}{\ *\ closes\ the\ file\ descriptors\ contained\ in\ this\ native\_handle\_t}}
+\DoxyCodeLine{00056\ \textcolor{comment}{\ *\ }}
+\DoxyCodeLine{00057\ \textcolor{comment}{\ *\ return\ 0\ on\ success,\ or\ a\ negative\ error\ code\ on\ failure}}
+\DoxyCodeLine{00058\ \textcolor{comment}{\ *\ }}
+\DoxyCodeLine{00059\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00060\ \textcolor{keywordtype}{int}\ native\_handle\_close(\textcolor{keyword}{const}\ \mbox{\hyperlink{structnative__handle}{native\_handle\_t}}*\ h);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00063\ \textcolor{comment}{\ *\ native\_handle\_init}}
+\DoxyCodeLine{00064\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00065\ \textcolor{comment}{\ *\ Initializes\ a\ native\_handle\_t\ from\ storage.\ \ storage\ must\ be\ declared\ with}}
+\DoxyCodeLine{00066\ \textcolor{comment}{\ *\ NATIVE\_HANDLE\_DECLARE\_STORAGE.\ \ numFds\ and\ numInts\ must\ not\ respectively}}
+\DoxyCodeLine{00067\ \textcolor{comment}{\ *\ exceed\ maxFds\ and\ maxInts\ used\ to\ declare\ the\ storage.}}
+\DoxyCodeLine{00068\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00069\ \mbox{\hyperlink{structnative__handle}{native\_handle\_t}}*\ native\_handle\_init(\textcolor{keywordtype}{char}*\ storage,\ \textcolor{keywordtype}{int}\ numFds,\ \textcolor{keywordtype}{int}\ numInts);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00072\ \textcolor{comment}{\ *\ native\_handle\_create}}
+\DoxyCodeLine{00073\ \textcolor{comment}{\ *\ }}
+\DoxyCodeLine{00074\ \textcolor{comment}{\ *\ creates\ a\ native\_handle\_t\ and\ initializes\ it.\ must\ be\ destroyed\ with}}
+\DoxyCodeLine{00075\ \textcolor{comment}{\ *\ native\_handle\_delete().}}
+\DoxyCodeLine{00076\ \textcolor{comment}{\ *\ }}
+\DoxyCodeLine{00077\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00078\ \mbox{\hyperlink{structnative__handle}{native\_handle\_t}}*\ native\_handle\_create(\textcolor{keywordtype}{int}\ numFds,\ \textcolor{keywordtype}{int}\ numInts);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00081\ \textcolor{comment}{\ *\ native\_handle\_clone}}
+\DoxyCodeLine{00082\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00083\ \textcolor{comment}{\ *\ creates\ a\ native\_handle\_t\ and\ initializes\ it\ from\ another\ native\_handle\_t.}}
+\DoxyCodeLine{00084\ \textcolor{comment}{\ *\ Must\ be\ destroyed\ with\ native\_handle\_delete().}}
+\DoxyCodeLine{00085\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00086\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00087\ \mbox{\hyperlink{structnative__handle}{native\_handle\_t}}*\ native\_handle\_clone(\textcolor{keyword}{const}\ \mbox{\hyperlink{structnative__handle}{native\_handle\_t}}*\ handle);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00090\ \textcolor{comment}{\ *\ native\_handle\_delete}}
+\DoxyCodeLine{00091\ \textcolor{comment}{\ *\ }}
+\DoxyCodeLine{00092\ \textcolor{comment}{\ *\ frees\ a\ native\_handle\_t\ allocated\ with\ native\_handle\_create().}}
+\DoxyCodeLine{00093\ \textcolor{comment}{\ *\ This\ ONLY\ frees\ the\ memory\ allocated\ for\ the\ native\_handle\_t,\ but\ doesn't}}
+\DoxyCodeLine{00094\ \textcolor{comment}{\ *\ close\ the\ file\ descriptors;\ which\ can\ be\ achieved\ with\ native\_handle\_close().}}
+\DoxyCodeLine{00095\ \textcolor{comment}{\ *\ }}
+\DoxyCodeLine{00096\ \textcolor{comment}{\ *\ return\ 0\ on\ success,\ or\ a\ negative\ error\ code\ on\ failure}}
+\DoxyCodeLine{00097\ \textcolor{comment}{\ *\ }}
+\DoxyCodeLine{00098\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00099\ \textcolor{keywordtype}{int}\ native\_handle\_delete(\mbox{\hyperlink{structnative__handle}{native\_handle\_t}}*\ h);}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00103\ \}}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ NATIVE\_HANDLE\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

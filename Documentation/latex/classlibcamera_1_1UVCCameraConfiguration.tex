@@ -1,0 +1,126 @@
+\doxysection{libcamera\+::UVCCamera\+Configuration Class Reference}
+\hypertarget{classlibcamera_1_1UVCCameraConfiguration}{}\label{classlibcamera_1_1UVCCameraConfiguration}\index{libcamera::UVCCameraConfiguration@{libcamera::UVCCameraConfiguration}}
+Inheritance diagram for libcamera\+::UVCCamera\+Configuration\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlibcamera_1_1UVCCameraConfiguration}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1UVCCameraConfiguration_ae06f490d5db71780195b81438bea9d7e}\label{classlibcamera_1_1UVCCameraConfiguration_ae06f490d5db71780195b81438bea9d7e} 
+{\bfseries UVCCamera\+Configuration} (\mbox{\hyperlink{classlibcamera_1_1UVCCameraData}{UVCCamera\+Data}} \texorpdfstring{$\ast$}{*}data)
+\item 
+\mbox{\hyperlink{classlibcamera_1_1CameraConfiguration_a64163f21db2fe1ce0a6af5a6f6847744}{Status}} \mbox{\hyperlink{classlibcamera_1_1UVCCameraConfiguration_a4a202eebc63f48a0304ebe7c39ff867b}{validate}} () override
+\begin{DoxyCompactList}\small\item\em Validate and possibly adjust the camera configuration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1CameraConfiguration}{libcamera\+::\+Camera\+Configuration}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classlibcamera_1_1CameraConfiguration_aa06a84e7e133269f226a9b2016f08401}{add\+Configuration}} (const \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration}{Stream\+Configuration}} \&cfg)
+\begin{DoxyCompactList}\small\item\em Add a stream configuration to the camera configuration. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structlibcamera_1_1StreamConfiguration}{Stream\+Configuration}} \& \mbox{\hyperlink{classlibcamera_1_1CameraConfiguration_a41dfacc5c5d6550299fa2759792734e5}{at}} (unsigned int index)
+\begin{DoxyCompactList}\small\item\em Retrieve a reference to a stream configuration. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration}{Stream\+Configuration}} \& \mbox{\hyperlink{classlibcamera_1_1CameraConfiguration_a9264605146b5d955f987546b18133e60}{at}} (unsigned int index) const
+\begin{DoxyCompactList}\small\item\em Retrieve a const reference to a stream configuration. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structlibcamera_1_1StreamConfiguration}{Stream\+Configuration}} \& \mbox{\hyperlink{classlibcamera_1_1CameraConfiguration_abb751adf22e871d42d6ab7b1c6d0b49f}{operator\mbox{[}$\,$\mbox{]}}} (unsigned int index)
+\begin{DoxyCompactList}\small\item\em Retrieve a reference to a stream configuration. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration}{Stream\+Configuration}} \& \mbox{\hyperlink{classlibcamera_1_1CameraConfiguration_a6c6da3761f04c6afec58cf82085ba82e}{operator\mbox{[}$\,$\mbox{]}}} (unsigned int index) const
+\begin{DoxyCompactList}\small\item\em Retrieve a const reference to a stream configuration. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1CameraConfiguration_a074cc3b34e7893b115fdcb267254b043}{iterator}} \mbox{\hyperlink{classlibcamera_1_1CameraConfiguration_aa2ddb8bb3793882bc933df408d36d726}{begin}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve an iterator to the first stream configuration in the sequence. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1CameraConfiguration_aa882a883694164557c7fb0e4b574c3a3}{const\+\_\+iterator}} \mbox{\hyperlink{classlibcamera_1_1CameraConfiguration_a6450b3c3e63919bdab08e0ee23b37370}{begin}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve a const iterator to the first element of the stream configurations. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1CameraConfiguration_a074cc3b34e7893b115fdcb267254b043}{iterator}} \mbox{\hyperlink{classlibcamera_1_1CameraConfiguration_aa475d7e2009a9d2e635508489d647a48}{end}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve an iterator pointing to the past-\/the-\/end stream configuration in the sequence. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1CameraConfiguration_aa882a883694164557c7fb0e4b574c3a3}{const\+\_\+iterator}} \mbox{\hyperlink{classlibcamera_1_1CameraConfiguration_a3299d73bddf7c1314b4fccccec497d8d}{end}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve a const iterator pointing to the past-\/the-\/end stream configuration in the sequence. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlibcamera_1_1CameraConfiguration_a7143f310d07f29f0f1fe72cbd1f373d7}{empty}} () const
+\begin{DoxyCompactList}\small\item\em Check if the camera configuration is empty. \end{DoxyCompactList}\item 
+std\+::size\+\_\+t \mbox{\hyperlink{classlibcamera_1_1CameraConfiguration_a8adb176f4055bc7ec55393650fb541a2}{size}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the number of stream configurations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{classlibcamera_1_1CameraConfiguration}{libcamera\+::\+Camera\+Configuration}}}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classlibcamera_1_1CameraConfiguration_a64163f21db2fe1ce0a6af5a6f6847744}{Status}} \{ \mbox{\hyperlink{classlibcamera_1_1CameraConfiguration_a64163f21db2fe1ce0a6af5a6f6847744a20c0cf44a388a9c75ea71d49b8c968b3}{Valid}}
+, \mbox{\hyperlink{classlibcamera_1_1CameraConfiguration_a64163f21db2fe1ce0a6af5a6f6847744a7ee8a6b23f5addb70b9e0197c32dec89}{Adjusted}}
+, \mbox{\hyperlink{classlibcamera_1_1CameraConfiguration_a64163f21db2fe1ce0a6af5a6f6847744abb3f4b9430dffdc7a148758fe6d70d57}{Invalid}}
+ \}
+\begin{DoxyCompactList}\small\item\em Validity of a camera configuration. \end{DoxyCompactList}\item 
+using {\bfseries iterator} = std\+::vector$<$ \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration}{Stream\+Configuration}} $>$\+::iterator
+\begin{DoxyCompactList}\small\item\em Iterator for the stream configurations in the camera configuration. \end{DoxyCompactList}\item 
+using {\bfseries const\+\_\+iterator} = std\+::vector$<$ \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration}{Stream\+Configuration}} $>$\+::const\+\_\+iterator
+\begin{DoxyCompactList}\small\item\em Const iterator for the stream configuration in the camera configuration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classlibcamera_1_1CameraConfiguration}{libcamera\+::\+Camera\+Configuration}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::optional$<$ \mbox{\hyperlink{classlibcamera_1_1SensorConfiguration}{Sensor\+Configuration}} $>$ \mbox{\hyperlink{classlibcamera_1_1CameraConfiguration_a2976d0bb17d7bb416e2bfc984d096c7d}{sensor\+Config}}
+\begin{DoxyCompactList}\small\item\em The camera sensor configuration. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacelibcamera_a80ea01625b93ecfe879249ac60c79384}{Orientation}} \mbox{\hyperlink{classlibcamera_1_1CameraConfiguration_a44acd9a3af5ce3a937c008e0843268b4}{orientation}}
+\begin{DoxyCompactList}\small\item\em The desired orientation of the images produced by the camera. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Types inherited from \mbox{\hyperlink{classlibcamera_1_1CameraConfiguration}{libcamera\+::\+Camera\+Configuration}}}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{classlibcamera_1_1CameraConfiguration_a31c0735858af75d5506ab5d433c1cbb9}{Color\+Space\+Flag}} \{ \mbox{\hyperlink{classlibcamera_1_1CameraConfiguration_a31c0735858af75d5506ab5d433c1cbb9a6adf97f83acf6453d4a6a4b1070f3754}{None}}
+, \mbox{\hyperlink{classlibcamera_1_1CameraConfiguration_a31c0735858af75d5506ab5d433c1cbb9a79af102f95aae8e7d6ef4766f31d3cc2}{Streams\+Share\+Color\+Space}}
+ \}
+\begin{DoxyCompactList}\small\item\em Specify the behaviour of validate\+Color\+Spaces. \end{DoxyCompactList}\item 
+using {\bfseries Color\+Space\+Flags} = \mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}}$<$ \mbox{\hyperlink{classlibcamera_1_1CameraConfiguration_a31c0735858af75d5506ab5d433c1cbb9}{Color\+Space\+Flag}} $>$
+\begin{DoxyCompactList}\small\item\em A bitwise combination of Color\+Space\+Flag values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1CameraConfiguration}{libcamera\+::\+Camera\+Configuration}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Camera\+Configuration} ()
+\begin{DoxyCompactList}\small\item\em Create an empty camera configuration. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1CameraConfiguration_a64163f21db2fe1ce0a6af5a6f6847744}{Status}} \mbox{\hyperlink{classlibcamera_1_1CameraConfiguration_a197791527afd705483a0b6236e32c6b7}{validate\+Color\+Spaces}} (\mbox{\hyperlink{classlibcamera_1_1CameraConfiguration_a1bddf4db401362a90856f4020ec7103f}{Color\+Space\+Flags}} flags=\mbox{\hyperlink{classlibcamera_1_1CameraConfiguration_a31c0735858af75d5506ab5d433c1cbb9a6adf97f83acf6453d4a6a4b1070f3754}{Color\+Space\+Flag\+::\+None}})
+\begin{DoxyCompactList}\small\item\em Check the color spaces requested for each stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classlibcamera_1_1CameraConfiguration}{libcamera\+::\+Camera\+Configuration}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration}{Stream\+Configuration}} $>$ {\bfseries config\+\_\+}
+\begin{DoxyCompactList}\small\item\em The vector of stream configurations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1UVCCameraConfiguration_a4a202eebc63f48a0304ebe7c39ff867b}\label{classlibcamera_1_1UVCCameraConfiguration_a4a202eebc63f48a0304ebe7c39ff867b} 
+\index{libcamera::UVCCameraConfiguration@{libcamera::UVCCameraConfiguration}!validate@{validate}}
+\index{validate@{validate}!libcamera::UVCCameraConfiguration@{libcamera::UVCCameraConfiguration}}
+\doxysubsubsection{\texorpdfstring{validate()}{validate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1CameraConfiguration_a64163f21db2fe1ce0a6af5a6f6847744}{Camera\+Configuration\+::\+Status}} libcamera\+::\+UVCCamera\+Configuration\+::validate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Validate and possibly adjust the camera configuration. 
+
+This function adjusts the camera configuration to the closest valid configuration and returns the validation status.
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000016}{Todo}}]Define exactly when to return each status code. Should stream parameters set to 0 by the caller be adjusted without returning Adjusted ? This would potentially be useful for applications but would get in the way in \doxylink{classlibcamera_1_1Camera_a4c190f4c369628e5cd96770790559a26}{Camera\+::configure()}. Do we need an extra status code to signal this ?\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000017}{Todo}}]Handle validation of buffers count when refactoring the buffers API.\end{DoxyRefDesc}
+
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classlibcamera_1_1CameraConfiguration_a64163f21db2fe1ce0a6af5a6f6847744}{Camera\+Configuration\+::\+Status} value that describes the validation status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em \doxylink{classlibcamera_1_1CameraConfiguration_a64163f21db2fe1ce0a6af5a6f6847744abb3f4b9430dffdc7a148758fe6d70d57}{Camera\+Configuration\+::\+Invalid}} & The configuration is invalid and can\textquotesingle{}t be adjusted. This may only occur in extreme cases such as when the configuration is empty. \\
+\hline
+{\em \doxylink{classlibcamera_1_1CameraConfiguration_a64163f21db2fe1ce0a6af5a6f6847744a7ee8a6b23f5addb70b9e0197c32dec89}{Camera\+Configuration\+::\+Adjusted}} & The configuration has been adjusted and is now valid. Parameters may have changed for any stream, and stream configurations may have been removed. The caller shall check the configuration carefully. \\
+\hline
+{\em \doxylink{classlibcamera_1_1CameraConfiguration_a64163f21db2fe1ce0a6af5a6f6847744a20c0cf44a388a9c75ea71d49b8c968b3}{Camera\+Configuration\+::\+Valid}} & The configuration was already valid and hasn\textquotesingle{}t been adjusted. \\
+\hline
+\end{DoxyRetVals}
+
+
+Implements \mbox{\hyperlink{classlibcamera_1_1CameraConfiguration_a29f8f263384c6149775b6011c7397093}{libcamera\+::\+Camera\+Configuration}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/libcamera/pipeline/uvcvideo/uvcvideo.\+cpp\end{DoxyCompactItemize}

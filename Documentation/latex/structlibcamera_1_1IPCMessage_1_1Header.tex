@@ -1,0 +1,48 @@
+\doxysection{libcamera\+::IPCMessage\+::Header Struct Reference}
+\hypertarget{structlibcamera_1_1IPCMessage_1_1Header}{}\label{structlibcamera_1_1IPCMessage_1_1Header}\index{libcamera::IPCMessage::Header@{libcamera::IPCMessage::Header}}
+
+
+Container for an \doxylink{classlibcamera_1_1IPCMessage}{IPCMessage} header.  
+
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structlibcamera_1_1IPCMessage_1_1Header_abfcfb21b9e61c03af82aea84a8723384}{cmd}}
+\begin{DoxyCompactList}\small\item\em Type of \doxylink{classlibcamera_1_1IPCMessage}{IPCMessage}. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{structlibcamera_1_1IPCMessage_1_1Header_af889b0b96f974cd4d94d80c54a0a5d68}{cookie}}
+\begin{DoxyCompactList}\small\item\em Cookie to identify the message and a corresponding reply. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Container for an \doxylink{classlibcamera_1_1IPCMessage}{IPCMessage} header. 
+
+Holds a cmd code for the IPC message, and a cookie. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structlibcamera_1_1IPCMessage_1_1Header_abfcfb21b9e61c03af82aea84a8723384}\label{structlibcamera_1_1IPCMessage_1_1Header_abfcfb21b9e61c03af82aea84a8723384} 
+\index{libcamera::IPCMessage::Header@{libcamera::IPCMessage::Header}!cmd@{cmd}}
+\index{cmd@{cmd}!libcamera::IPCMessage::Header@{libcamera::IPCMessage::Header}}
+\doxysubsubsection{\texorpdfstring{cmd}{cmd}}
+{\footnotesize\ttfamily libcamera\+::\+IPCMessage\+::\+Header\+::cmd}
+
+
+
+Type of \doxylink{classlibcamera_1_1IPCMessage}{IPCMessage}. 
+
+Typically used to carry a command code for an RPC. \Hypertarget{structlibcamera_1_1IPCMessage_1_1Header_af889b0b96f974cd4d94d80c54a0a5d68}\label{structlibcamera_1_1IPCMessage_1_1Header_af889b0b96f974cd4d94d80c54a0a5d68} 
+\index{libcamera::IPCMessage::Header@{libcamera::IPCMessage::Header}!cookie@{cookie}}
+\index{cookie@{cookie}!libcamera::IPCMessage::Header@{libcamera::IPCMessage::Header}}
+\doxysubsubsection{\texorpdfstring{cookie}{cookie}}
+{\footnotesize\ttfamily libcamera\+::\+IPCMessage\+::\+Header\+::cookie}
+
+
+
+Cookie to identify the message and a corresponding reply. 
+
+Populated and used by \doxylink{classlibcamera_1_1IPCPipe}{IPCPipe} implementations for matching calls with replies. 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/internal/\mbox{\hyperlink{ipc__pipe_8h}{ipc\+\_\+pipe.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/ipc\+\_\+pipe.\+cpp\end{DoxyCompactItemize}

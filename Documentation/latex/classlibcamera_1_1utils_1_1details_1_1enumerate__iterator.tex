@@ -1,0 +1,40 @@
+\doxysection{libcamera\+::utils\+::details\+::enumerate\+\_\+iterator\texorpdfstring{$<$}{<} Base \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classlibcamera_1_1utils_1_1details_1_1enumerate__iterator}{}\label{classlibcamera_1_1utils_1_1details_1_1enumerate__iterator}\index{libcamera::utils::details::enumerate\_iterator$<$ Base $>$@{libcamera::utils::details::enumerate\_iterator$<$ Base $>$}}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1utils_1_1details_1_1enumerate__iterator_a51e7dade2efa769da10392f3702c872a}\label{classlibcamera_1_1utils_1_1details_1_1enumerate__iterator_a51e7dade2efa769da10392f3702c872a} 
+using {\bfseries difference\+\_\+type} = typename std\+::iterator\+\_\+traits$<$ Base $>$\+::difference\+\_\+type
+\item 
+\Hypertarget{classlibcamera_1_1utils_1_1details_1_1enumerate__iterator_ab14da85fb30b5938cf685d4b6a1f4ca6}\label{classlibcamera_1_1utils_1_1details_1_1enumerate__iterator_ab14da85fb30b5938cf685d4b6a1f4ca6} 
+using {\bfseries value\+\_\+type} = std\+::pair$<$ const std\+::size\+\_\+t, base\+\_\+reference $>$
+\item 
+\Hypertarget{classlibcamera_1_1utils_1_1details_1_1enumerate__iterator_a2599a9917e9e13de6a9bcec39c522298}\label{classlibcamera_1_1utils_1_1details_1_1enumerate__iterator_a2599a9917e9e13de6a9bcec39c522298} 
+using {\bfseries pointer} = value\+\_\+type \texorpdfstring{$\ast$}{*}
+\item 
+\Hypertarget{classlibcamera_1_1utils_1_1details_1_1enumerate__iterator_a1e2f1941a4d65e19a47d21701678e86a}\label{classlibcamera_1_1utils_1_1details_1_1enumerate__iterator_a1e2f1941a4d65e19a47d21701678e86a} 
+using {\bfseries reference} = value\+\_\+type \&
+\item 
+\Hypertarget{classlibcamera_1_1utils_1_1details_1_1enumerate__iterator_ad957272c960fc8abc86c9ab4efdd4c0a}\label{classlibcamera_1_1utils_1_1details_1_1enumerate__iterator_ad957272c960fc8abc86c9ab4efdd4c0a} 
+using {\bfseries iterator\+\_\+category} = std\+::input\+\_\+iterator\+\_\+tag
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1utils_1_1details_1_1enumerate__iterator_ae32e2b1a58da992993e4a7bbbb403dc1}\label{classlibcamera_1_1utils_1_1details_1_1enumerate__iterator_ae32e2b1a58da992993e4a7bbbb403dc1} 
+{\bfseries enumerate\+\_\+iterator} (Base iter)
+\item 
+\Hypertarget{classlibcamera_1_1utils_1_1details_1_1enumerate__iterator_a5429e5acd8e9d1d2295a2073dfe4e57a}\label{classlibcamera_1_1utils_1_1details_1_1enumerate__iterator_a5429e5acd8e9d1d2295a2073dfe4e57a} 
+\mbox{\hyperlink{classlibcamera_1_1utils_1_1details_1_1enumerate__iterator}{enumerate\+\_\+iterator}} \& {\bfseries operator++} ()
+\item 
+\Hypertarget{classlibcamera_1_1utils_1_1details_1_1enumerate__iterator_acb451445d749ec9ecc90468bb88f4a84}\label{classlibcamera_1_1utils_1_1details_1_1enumerate__iterator_acb451445d749ec9ecc90468bb88f4a84} 
+bool {\bfseries operator!=} (const \mbox{\hyperlink{classlibcamera_1_1utils_1_1details_1_1enumerate__iterator}{enumerate\+\_\+iterator}} \&other) const
+\item 
+\Hypertarget{classlibcamera_1_1utils_1_1details_1_1enumerate__iterator_a32be289737f0cd0805ea19baf1056f33}\label{classlibcamera_1_1utils_1_1details_1_1enumerate__iterator_a32be289737f0cd0805ea19baf1056f33} 
+value\+\_\+type {\bfseries operator\texorpdfstring{$\ast$}{*}} () const
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/base/\mbox{\hyperlink{include_2libcamera_2base_2utils_8h}{utils.\+h}}\end{DoxyCompactItemize}

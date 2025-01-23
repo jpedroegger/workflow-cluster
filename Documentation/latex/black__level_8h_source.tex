@@ -1,0 +1,38 @@
+\doxysection{black\+\_\+level.\+h}
+\hypertarget{black__level_8h_source}{}\label{black__level_8h_source}\index{src/peripherals/camera/libcamera/src/ipa/rpi/controller/rpi/black\_level.h@{src/peripherals/camera/libcamera/src/ipa/rpi/controller/rpi/black\_level.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ BSD-\/2-\/Clause\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2019,\ Raspberry\ Pi\ Ltd}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ black\ level\ control\ algorithm}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}../black\_level\_algorithm.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../black\_level\_status.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{comment}{/*\ This\ is\ our\ implementation\ of\ the\ "{}black\ level\ algorithm"{}.\ */}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }RPiController\ \{}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRPiController_1_1BlackLevel}{BlackLevel}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classRPiController_1_1BlackLevelAlgorithm}{BlackLevelAlgorithm}}}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{classRPiController_1_1BlackLevel}{BlackLevel}}(\mbox{\hyperlink{classRPiController_1_1Controller}{Controller}}\ *controller);}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{char}\ \textcolor{keyword}{const}\ *name()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ read(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1YamlObject}{libcamera::YamlObject}}\ \&params)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ initialValues(uint16\_t\ \&blackLevelR,\ uint16\_t\ \&blackLevelG,}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ \&blackLevelB)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ prepare(Metadata\ *imageMetadata)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{double}\ blackLevelR\_;}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{double}\ blackLevelG\_;}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{double}\ blackLevelB\_;}
+\DoxyCodeLine{00030\ \};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \}\ \textcolor{comment}{/*\ namespace\ RPiController\ */}}
+
+\end{DoxyCode}

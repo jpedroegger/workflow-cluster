@@ -1,0 +1,140 @@
+\doxysection{mutex.\+h}
+\hypertarget{mutex_8h_source}{}\label{mutex_8h_source}\index{src/peripherals/camera/libcamera/include/libcamera/base/mutex.h@{src/peripherals/camera/libcamera/include/libcamera/base/mutex.h}}
+\mbox{\hyperlink{mutex_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2021,\ Google\ Inc.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Mutex\ classes\ with\ clang\ thread\ safety\ annotation}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <condition\_variable>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <libcamera/base/private.h>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <libcamera/base/thread\_annotations.h>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacelibcamera}{libcamera}}\ \{}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{comment}{/*\ \(\backslash\)todo\ using\ Mutex\ =\ std::mutex\ if\ libc++\ is\ used.\ */}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#ifndef\ \_\_DOXYGEN\_\_}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }LIBCAMERA\_TSA\_CAPABILITY(\textcolor{stringliteral}{"{}mutex"{}})\ \mbox{\hyperlink{classMutex}{Mutex}}\ final}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{classMutex}{Mutex}}()}
+\DoxyCodeLine{00027\ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ lock()\ LIBCAMERA\_TSA\_ACQUIRE()}
+\DoxyCodeLine{00031\ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ mutex\_.lock();}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ unlock()\ LIBCAMERA\_TSA\_RELEASE()}
+\DoxyCodeLine{00036\ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ mutex\_.unlock();}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }MutexLocker;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ std::mutex\ mutex\_;}
+\DoxyCodeLine{00044\ \};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{class\ }LIBCAMERA\_TSA\_SCOPED\_CAPABILITY\ \mbox{\hyperlink{classlibcamera_1_1MutexLocker}{MutexLocker}}\ final}
+\DoxyCodeLine{00047\ \{}
+\DoxyCodeLine{00048\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classlibcamera_1_1MutexLocker}{MutexLocker}}(\mbox{\hyperlink{classMutex}{Mutex}}\ \&mutex)\ LIBCAMERA\_TSA\_ACQUIRE(mutex)}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ :\ lock\_(mutex.mutex\_)}
+\DoxyCodeLine{00051\ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1MutexLocker}{MutexLocker}}(\mbox{\hyperlink{classMutex}{Mutex}}\ \&mutex,\ std::defer\_lock\_t\ t)\ \textcolor{keyword}{noexcept}\ LIBCAMERA\_TSA\_EXCLUDES(mutex)}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ :\ lock\_(mutex.mutex\_,\ t)}
+\DoxyCodeLine{00056\ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1MutexLocker}{\string~MutexLocker}}()\ LIBCAMERA\_TSA\_RELEASE()}
+\DoxyCodeLine{00060\ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ lock()\ LIBCAMERA\_TSA\_ACQUIRE()}
+\DoxyCodeLine{00064\ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ lock\_.lock();}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{bool}\ try\_lock()\ LIBCAMERA\_TSA\_TRY\_ACQUIRE(\textcolor{keyword}{true})}
+\DoxyCodeLine{00069\ \ \ \ \ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ lock\_.try\_lock();}
+\DoxyCodeLine{00071\ \ \ \ \ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ unlock()\ LIBCAMERA\_TSA\_RELEASE()}
+\DoxyCodeLine{00074\ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ lock\_.unlock();}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1ConditionVariable}{ConditionVariable}};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ std::unique\_lock<std::mutex>\ lock\_;}
+\DoxyCodeLine{00082\ \};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1ConditionVariable}{ConditionVariable}}\ final}
+\DoxyCodeLine{00085\ \{}
+\DoxyCodeLine{00086\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ConditionVariable}{ConditionVariable}}()}
+\DoxyCodeLine{00088\ \ \ \ \ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ notify\_one()\ \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{00092\ \ \ \ \ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ cv\_.notify\_one();}
+\DoxyCodeLine{00094\ \ \ \ \ \}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ notify\_all()\ \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{00097\ \ \ \ \ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ cv\_.notify\_all();}
+\DoxyCodeLine{00099\ \ \ \ \ \}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Predicate>}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{void}\ wait(\mbox{\hyperlink{classlibcamera_1_1MutexLocker}{MutexLocker}}\ \&locker,\ Predicate\ stopWaiting)}
+\DoxyCodeLine{00103\ \ \ \ \ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ cv\_.wait(locker.lock\_,\ stopWaiting);}
+\DoxyCodeLine{00105\ \ \ \ \ \}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ Rep,\ \textcolor{keyword}{class}\ Period,\ \textcolor{keyword}{class}\ Predicate>}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{bool}\ wait\_for(\mbox{\hyperlink{classlibcamera_1_1MutexLocker}{MutexLocker}}\ \&locker,}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::chrono::duration<Rep,\ Period>\ \&relTime,}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Predicate\ stopWaiting)}
+\DoxyCodeLine{00111\ \ \ \ \ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ cv\_.wait\_for(locker.lock\_,\ relTime,\ stopWaiting);}
+\DoxyCodeLine{00113\ \ \ \ \ \}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00116\ \ \ \ \ std::condition\_variable\ cv\_;}
+\DoxyCodeLine{00117\ \};}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#else\ }\textcolor{comment}{/*\ \_\_DOXYGEN\_\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMutex}{Mutex}}\ final}
+\DoxyCodeLine{00122\ \{}
+\DoxyCodeLine{00123\ \};}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \textcolor{keyword}{class\ }MutexLocker\ final}
+\DoxyCodeLine{00126\ \{}
+\DoxyCodeLine{00127\ \};}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \textcolor{keyword}{class\ }ConditionVariable\ final}
+\DoxyCodeLine{00130\ \{}
+\DoxyCodeLine{00131\ \};}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_DOXYGEN\_\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00134\ \}\ \textcolor{comment}{/*\ namespace\ libcamera\ */}}
+
+\end{DoxyCode}

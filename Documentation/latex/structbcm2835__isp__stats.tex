@@ -1,0 +1,43 @@
+\doxysection{bcm2835\+\_\+isp\+\_\+stats Struct Reference}
+\hypertarget{structbcm2835__isp__stats}{}\label{structbcm2835__isp__stats}\index{bcm2835\_isp\_stats@{bcm2835\_isp\_stats}}
+
+
+{\ttfamily \#include $<$bcm2835-\/isp.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structbcm2835__isp__stats_a423ada3e84cdcb43873042858da23f3f}\label{structbcm2835__isp__stats_a423ada3e84cdcb43873042858da23f3f} 
+\+\_\+\+\_\+u32 {\bfseries version}
+\item 
+\Hypertarget{structbcm2835__isp__stats_abe1a2eb90ab5bf628d6bb82bff4632fd}\label{structbcm2835__isp__stats_abe1a2eb90ab5bf628d6bb82bff4632fd} 
+\+\_\+\+\_\+u32 {\bfseries size}
+\item 
+\Hypertarget{structbcm2835__isp__stats_a71500cb7dec4988b3fa0756866421964}\label{structbcm2835__isp__stats_a71500cb7dec4988b3fa0756866421964} 
+struct \mbox{\hyperlink{structbcm2835__isp__stats__hist}{bcm2835\+\_\+isp\+\_\+stats\+\_\+hist}} {\bfseries hist} \mbox{[}NUM\+\_\+\+HISTOGRAMS\mbox{]}
+\item 
+\Hypertarget{structbcm2835__isp__stats_a4ba1b60501e215c985956773e0ccd999}\label{structbcm2835__isp__stats_a4ba1b60501e215c985956773e0ccd999} 
+struct \mbox{\hyperlink{structbcm2835__isp__stats__region}{bcm2835\+\_\+isp\+\_\+stats\+\_\+region}} {\bfseries awb\+\_\+stats} \mbox{[}AWB\+\_\+\+REGIONS\mbox{]}
+\item 
+\Hypertarget{structbcm2835__isp__stats_a76b741fb6a98c81c91604b53b005938f}\label{structbcm2835__isp__stats_a76b741fb6a98c81c91604b53b005938f} 
+struct \mbox{\hyperlink{structbcm2835__isp__stats__region}{bcm2835\+\_\+isp\+\_\+stats\+\_\+region}} {\bfseries floating\+\_\+stats} \mbox{[}FLOATING\+\_\+\+REGIONS\mbox{]}
+\item 
+\Hypertarget{structbcm2835__isp__stats_ac23bb75fdac08bfc766fad7813060077}\label{structbcm2835__isp__stats_ac23bb75fdac08bfc766fad7813060077} 
+struct \mbox{\hyperlink{structbcm2835__isp__stats__region}{bcm2835\+\_\+isp\+\_\+stats\+\_\+region}} {\bfseries agc\+\_\+stats} \mbox{[}AGC\+\_\+\+REGIONS\mbox{]}
+\item 
+\Hypertarget{structbcm2835__isp__stats_ac601ac4212a88c0e15cb7a7e3f9d27c0}\label{structbcm2835__isp__stats_ac601ac4212a88c0e15cb7a7e3f9d27c0} 
+struct \mbox{\hyperlink{structbcm2835__isp__stats__focus}{bcm2835\+\_\+isp\+\_\+stats\+\_\+focus}} {\bfseries focus\+\_\+stats} \mbox{[}FOCUS\+\_\+\+REGIONS\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structbcm2835__isp__stats}{bcm2835\+\_\+isp\+\_\+stats} -\/ ISP statistics.
+
+\begin{DoxyVersion}{Version}
+\+: Version of the \doxylink{structbcm2835__isp__stats}{bcm2835\+\_\+isp\+\_\+stats} structure. @size\+: Size of the \doxylink{structbcm2835__isp__stats}{bcm2835\+\_\+isp\+\_\+stats} structure. @hist\+: Histogram statistics for the entire image. @awb\+\_\+stats\+: Statistics for the regions defined for AWB calculations. @floating\+\_\+stats\+: Statistics for arbitrarily placed (floating) regions. @agc\+\_\+stats\+: Statistics for the regions defined for AGC calculations. @focus\+\_\+stats\+: Focus filter statistics for the focus regions. 
+\end{DoxyVersion}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/bcm2835-\/isp.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,31 @@
+\doxysection{ipu3\+\_\+uapi\+\_\+unsharp\+\_\+cfg Struct Reference}
+\hypertarget{structipu3__uapi__unsharp__cfg}{}\label{structipu3__uapi__unsharp__cfg}\index{ipu3\_uapi\_unsharp\_cfg@{ipu3\_uapi\_unsharp\_cfg}}
+
+
+{\ttfamily \#include $<$intel-\/ipu3.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structipu3__uapi__unsharp__cfg_a0773212e213a9fdae71333656d5b065e}\label{structipu3__uapi__unsharp__cfg_a0773212e213a9fdae71333656d5b065e} 
+\+\_\+\+\_\+u32 {\bfseries unsharp\+\_\+weight}\+:7
+\item 
+\Hypertarget{structipu3__uapi__unsharp__cfg_ac5339e0e332a1150e639ad17a4c17846}\label{structipu3__uapi__unsharp__cfg_ac5339e0e332a1150e639ad17a4c17846} 
+\+\_\+\+\_\+u32 {\bfseries reserved0}\+:1
+\item 
+\Hypertarget{structipu3__uapi__unsharp__cfg_af5e5513f61f8d09f2bef186c95b15dc9}\label{structipu3__uapi__unsharp__cfg_af5e5513f61f8d09f2bef186c95b15dc9} 
+\+\_\+\+\_\+u32 {\bfseries unsharp\+\_\+amount}\+:9
+\item 
+\Hypertarget{structipu3__uapi__unsharp__cfg_a4f2af16f26bf2131e2f0354f882dc9c7}\label{structipu3__uapi__unsharp__cfg_a4f2af16f26bf2131e2f0354f882dc9c7} 
+\+\_\+\+\_\+u32 {\bfseries reserved1}\+:15
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structipu3__uapi__unsharp__cfg}{ipu3\+\_\+uapi\+\_\+unsharp\+\_\+cfg} -\/ Unsharp config
+
+@unsharp\+\_\+weight\+: Unsharp mask blending weight. u1.\+6, range \mbox{[}0, 64\mbox{]}, default 16. 0 -\/ disabled, 64 -\/ use only unsharp. @reserved0\+: reserved @unsharp\+\_\+amount\+: Unsharp mask amount, u4.\+5, range \mbox{[}0, 511\mbox{]}, default 0. @reserved1\+: reserved 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/intel-\/ipu3.\+h\end{DoxyCompactItemize}

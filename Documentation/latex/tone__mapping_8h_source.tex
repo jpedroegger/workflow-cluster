@@ -1,0 +1,41 @@
+\doxysection{tone\+\_\+mapping.\+h}
+\hypertarget{tone__mapping_8h_source}{}\label{tone__mapping_8h_source}\index{src/peripherals/camera/libcamera/src/ipa/ipu3/algorithms/tone\_mapping.h@{src/peripherals/camera/libcamera/src/ipa/ipu3/algorithms/tone\_mapping.h}}
+\mbox{\hyperlink{tone__mapping_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2021,\ Google\ inc.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ IPU3\ ToneMapping\ and\ Gamma\ control}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}algorithm.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacelibcamera}{libcamera}}\ \{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }ipa::ipu3::algorithms\ \{}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1ipa_1_1ipu3_1_1algorithms_1_1ToneMapping}{ToneMapping}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Algorithm}{Algorithm}}}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1ipu3_1_1algorithms_1_1ToneMapping}{ToneMapping}}();}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1ipu3_1_1algorithms_1_1ToneMapping_af216cddc8285765d9cc239915dece1c2}{configure}}(\mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAContext}{IPAContext}}\ \&context,\ \textcolor{keyword}{const}\ IPAConfigInfo\ \&configInfo)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1ipu3_1_1algorithms_1_1ToneMapping_a9ee116ad1dd98f80634335229a5ef6d3}{prepare}}(\mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAContext}{IPAContext}}\ \&context,\ \textcolor{keyword}{const}\ uint32\_t\ frame,}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAFrameContext}{IPAFrameContext}}\ \&frameContext,\ \mbox{\hyperlink{structipu3__uapi__params}{ipu3\_uapi\_params}}\ *params)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1ipu3_1_1algorithms_1_1ToneMapping_a7ec1e1264e29c61864ce4e1c85b8b4d4}{process}}(\mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAContext}{IPAContext}}\ \&context,\ \textcolor{keyword}{const}\ uint32\_t\ frame,}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAFrameContext}{IPAFrameContext}}\ \&frameContext,}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structipu3__uapi__stats__3a}{ipu3\_uapi\_stats\_3a}}\ *stats,}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ControlList}{ControlList}}\ \&metadata)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{double}\ gamma\_;}
+\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \}\ \textcolor{comment}{/*\ namespace\ ipa::ipu3::algorithms\ */}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \}\ \textcolor{comment}{/*\ namespace\ libcamera\ */}}
+
+\end{DoxyCode}

@@ -1,0 +1,257 @@
+\doxysection{RPi\+Controller\+::Agc Class Reference}
+\hypertarget{classRPiController_1_1Agc}{}\label{classRPiController_1_1Agc}\index{RPiController::Agc@{RPiController::Agc}}
+Inheritance diagram for RPi\+Controller\+::Agc\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classRPiController_1_1Agc}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classRPiController_1_1Agc_a015634c940c5b62c72ce90818f2b9c5e}\label{classRPiController_1_1Agc_a015634c940c5b62c72ce90818f2b9c5e} 
+{\bfseries Agc} (\mbox{\hyperlink{classRPiController_1_1Controller}{Controller}} \texorpdfstring{$\ast$}{*}controller)
+\item 
+char const \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classRPiController_1_1Agc_a0403203766f2b7d8de1b9d5f77cf02c7}{name}} () const override
+\item 
+int \mbox{\hyperlink{classRPiController_1_1Agc_a7125bc7b52e153ab92942518fe4b1dc3}{read}} (const \mbox{\hyperlink{classlibcamera_1_1YamlObject}{libcamera\+::\+Yaml\+Object}} \&params) override
+\item 
+unsigned int \mbox{\hyperlink{classRPiController_1_1Agc_a0335ec4b9eed8976453f65dcb1ae7ccb}{get\+Convergence\+Frames}} () const override
+\item 
+std\+::vector$<$ double $>$ const \& \mbox{\hyperlink{classRPiController_1_1Agc_ad78a7b19a04e3a26fa6e38f75faa1d3e}{get\+Weights}} () const override
+\item 
+void \mbox{\hyperlink{classRPiController_1_1Agc_a8315051e33e1995c6996d7fb5e195a34}{set\+Ev}} (unsigned int channel, double ev) override
+\item 
+void \mbox{\hyperlink{classRPiController_1_1Agc_afe0e86dafd976feb3eb9781abc700143}{set\+Flicker\+Period}} (\mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{libcamera\+::utils\+::\+Duration}} flicker\+Period) override
+\item 
+void \mbox{\hyperlink{classRPiController_1_1Agc_a962c9614b1de463bc00efa33bf220868}{set\+Max\+Exposure\+Time}} (\mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{libcamera\+::utils\+::\+Duration}} max\+Exposure\+Time) override
+\item 
+void \mbox{\hyperlink{classRPiController_1_1Agc_a771771ab85fb47dbb323c1b553831726}{set\+Fixed\+Exposure\+Time}} (unsigned int channel\+Index, \mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{libcamera\+::utils\+::\+Duration}} fixed\+Exposure\+Time) override
+\item 
+void \mbox{\hyperlink{classRPiController_1_1Agc_ac17bf42ebfeb5b1eda892007a0f7a3e7}{set\+Fixed\+Analogue\+Gain}} (unsigned int channel\+Index, double fixed\+Analogue\+Gain) override
+\item 
+void \mbox{\hyperlink{classRPiController_1_1Agc_a4f3a1dc3083b71af2afcba8a7237bae5}{set\+Metering\+Mode}} (std\+::string const \&metering\+Mode\+Name) override
+\item 
+void \mbox{\hyperlink{classRPiController_1_1Agc_aa60a43516792622a5b012fc3caf1c706}{set\+Exposure\+Mode}} (std\+::string const \&exposure\+Mode\+Name) override
+\item 
+void \mbox{\hyperlink{classRPiController_1_1Agc_a10d79d735574369746622ed8be1424cc}{set\+Constraint\+Mode}} (std\+::string const \&contraint\+Mode\+Name) override
+\item 
+void \mbox{\hyperlink{classRPiController_1_1Agc_a0f1c942ced9bb6d73d92bfe1e5c2df7b}{enable\+Auto}} () override
+\item 
+void \mbox{\hyperlink{classRPiController_1_1Agc_a59602bcc73c7e0bf221d9d8030cd8d50}{disable\+Auto}} () override
+\item 
+void \mbox{\hyperlink{classRPiController_1_1Agc_a7db2e9c4f7b7c587f95ee2c00a74c82a}{switch\+Mode}} (\mbox{\hyperlink{structCameraMode}{Camera\+Mode}} const \&camera\+Mode, Metadata \texorpdfstring{$\ast$}{*}metadata) override
+\item 
+void \mbox{\hyperlink{classRPiController_1_1Agc_a8058550c4f2ae894cc15e72ea2169b35}{prepare}} (Metadata \texorpdfstring{$\ast$}{*}image\+Metadata) override
+\item 
+void \mbox{\hyperlink{classRPiController_1_1Agc_a0de3a243d51b920db55277fb350d995c}{process}} (Statistics\+Ptr \&stats, Metadata \texorpdfstring{$\ast$}{*}image\+Metadata) override
+\item 
+void \mbox{\hyperlink{classRPiController_1_1Agc_aabb3d8099d909b710e58ee8525d34adc}{set\+Active\+Channels}} (const std\+::vector$<$ unsigned int $>$ \&active\+Channels) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classRPiController_1_1AgcAlgorithm}{RPi\+Controller\+::\+Agc\+Algorithm}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Agc\+Algorithm} (\mbox{\hyperlink{classRPiController_1_1Controller}{Controller}} \texorpdfstring{$\ast$}{*}controller)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classRPiController_1_1Algorithm}{RPi\+Controller\+::\+Algorithm}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Algorithm} (\mbox{\hyperlink{classRPiController_1_1Controller}{Controller}} \texorpdfstring{$\ast$}{*}controller)
+\item 
+virtual void {\bfseries initialise} ()
+\item 
+Metadata \& {\bfseries get\+Global\+Metadata} () const
+\item 
+const std\+::string \& {\bfseries get\+Target} () const
+\item 
+const \mbox{\hyperlink{structRPiController_1_1Controller_1_1HardwareConfig}{Controller\+::\+Hardware\+Config}} \& {\bfseries get\+Hardware\+Config} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classRPiController_1_1Agc_a59602bcc73c7e0bf221d9d8030cd8d50}\label{classRPiController_1_1Agc_a59602bcc73c7e0bf221d9d8030cd8d50} 
+\index{RPiController::Agc@{RPiController::Agc}!disableAuto@{disableAuto}}
+\index{disableAuto@{disableAuto}!RPiController::Agc@{RPiController::Agc}}
+\doxysubsubsection{\texorpdfstring{disableAuto()}{disableAuto()}}
+{\footnotesize\ttfamily void Agc\+::disable\+Auto (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classRPiController_1_1AgcAlgorithm}{RPi\+Controller\+::\+Agc\+Algorithm}}.
+
+\Hypertarget{classRPiController_1_1Agc_a0f1c942ced9bb6d73d92bfe1e5c2df7b}\label{classRPiController_1_1Agc_a0f1c942ced9bb6d73d92bfe1e5c2df7b} 
+\index{RPiController::Agc@{RPiController::Agc}!enableAuto@{enableAuto}}
+\index{enableAuto@{enableAuto}!RPiController::Agc@{RPiController::Agc}}
+\doxysubsubsection{\texorpdfstring{enableAuto()}{enableAuto()}}
+{\footnotesize\ttfamily void Agc\+::enable\+Auto (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classRPiController_1_1AgcAlgorithm}{RPi\+Controller\+::\+Agc\+Algorithm}}.
+
+\Hypertarget{classRPiController_1_1Agc_a0335ec4b9eed8976453f65dcb1ae7ccb}\label{classRPiController_1_1Agc_a0335ec4b9eed8976453f65dcb1ae7ccb} 
+\index{RPiController::Agc@{RPiController::Agc}!getConvergenceFrames@{getConvergenceFrames}}
+\index{getConvergenceFrames@{getConvergenceFrames}!RPiController::Agc@{RPiController::Agc}}
+\doxysubsubsection{\texorpdfstring{getConvergenceFrames()}{getConvergenceFrames()}}
+{\footnotesize\ttfamily unsigned int Agc\+::get\+Convergence\+Frames (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classRPiController_1_1AgcAlgorithm}{RPi\+Controller\+::\+Agc\+Algorithm}}.
+
+\Hypertarget{classRPiController_1_1Agc_ad78a7b19a04e3a26fa6e38f75faa1d3e}\label{classRPiController_1_1Agc_ad78a7b19a04e3a26fa6e38f75faa1d3e} 
+\index{RPiController::Agc@{RPiController::Agc}!getWeights@{getWeights}}
+\index{getWeights@{getWeights}!RPiController::Agc@{RPiController::Agc}}
+\doxysubsubsection{\texorpdfstring{getWeights()}{getWeights()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ const  \& Agc\+::get\+Weights (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classRPiController_1_1AgcAlgorithm}{RPi\+Controller\+::\+Agc\+Algorithm}}.
+
+\Hypertarget{classRPiController_1_1Agc_a0403203766f2b7d8de1b9d5f77cf02c7}\label{classRPiController_1_1Agc_a0403203766f2b7d8de1b9d5f77cf02c7} 
+\index{RPiController::Agc@{RPiController::Agc}!name@{name}}
+\index{name@{name}!RPiController::Agc@{RPiController::Agc}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily char const  \texorpdfstring{$\ast$}{*} Agc\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classRPiController_1_1Algorithm}{RPi\+Controller\+::\+Algorithm}}.
+
+\Hypertarget{classRPiController_1_1Agc_a8058550c4f2ae894cc15e72ea2169b35}\label{classRPiController_1_1Agc_a8058550c4f2ae894cc15e72ea2169b35} 
+\index{RPiController::Agc@{RPiController::Agc}!prepare@{prepare}}
+\index{prepare@{prepare}!RPiController::Agc@{RPiController::Agc}}
+\doxysubsubsection{\texorpdfstring{prepare()}{prepare()}}
+{\footnotesize\ttfamily void Agc\+::prepare (\begin{DoxyParamCaption}\item[{Metadata \texorpdfstring{$\ast$}{*}}]{image\+Metadata }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classRPiController_1_1Algorithm}{RPi\+Controller\+::\+Algorithm}}.
+
+\Hypertarget{classRPiController_1_1Agc_a0de3a243d51b920db55277fb350d995c}\label{classRPiController_1_1Agc_a0de3a243d51b920db55277fb350d995c} 
+\index{RPiController::Agc@{RPiController::Agc}!process@{process}}
+\index{process@{process}!RPiController::Agc@{RPiController::Agc}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily void Agc\+::process (\begin{DoxyParamCaption}\item[{Statistics\+Ptr \&}]{stats,  }\item[{Metadata \texorpdfstring{$\ast$}{*}}]{image\+Metadata }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classRPiController_1_1Algorithm}{RPi\+Controller\+::\+Algorithm}}.
+
+\Hypertarget{classRPiController_1_1Agc_a7125bc7b52e153ab92942518fe4b1dc3}\label{classRPiController_1_1Agc_a7125bc7b52e153ab92942518fe4b1dc3} 
+\index{RPiController::Agc@{RPiController::Agc}!read@{read}}
+\index{read@{read}!RPiController::Agc@{RPiController::Agc}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily int Agc\+::read (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1YamlObject}{libcamera\+::\+Yaml\+Object}} \&}]{params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classRPiController_1_1Algorithm}{RPi\+Controller\+::\+Algorithm}}.
+
+\Hypertarget{classRPiController_1_1Agc_aabb3d8099d909b710e58ee8525d34adc}\label{classRPiController_1_1Agc_aabb3d8099d909b710e58ee8525d34adc} 
+\index{RPiController::Agc@{RPiController::Agc}!setActiveChannels@{setActiveChannels}}
+\index{setActiveChannels@{setActiveChannels}!RPiController::Agc@{RPiController::Agc}}
+\doxysubsubsection{\texorpdfstring{setActiveChannels()}{setActiveChannels()}}
+{\footnotesize\ttfamily void Agc\+::set\+Active\+Channels (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ unsigned int $>$ \&}]{active\+Channels }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classRPiController_1_1AgcAlgorithm}{RPi\+Controller\+::\+Agc\+Algorithm}}.
+
+\Hypertarget{classRPiController_1_1Agc_a10d79d735574369746622ed8be1424cc}\label{classRPiController_1_1Agc_a10d79d735574369746622ed8be1424cc} 
+\index{RPiController::Agc@{RPiController::Agc}!setConstraintMode@{setConstraintMode}}
+\index{setConstraintMode@{setConstraintMode}!RPiController::Agc@{RPiController::Agc}}
+\doxysubsubsection{\texorpdfstring{setConstraintMode()}{setConstraintMode()}}
+{\footnotesize\ttfamily void Agc\+::set\+Constraint\+Mode (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{contraint\+Mode\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classRPiController_1_1AgcAlgorithm}{RPi\+Controller\+::\+Agc\+Algorithm}}.
+
+\Hypertarget{classRPiController_1_1Agc_a8315051e33e1995c6996d7fb5e195a34}\label{classRPiController_1_1Agc_a8315051e33e1995c6996d7fb5e195a34} 
+\index{RPiController::Agc@{RPiController::Agc}!setEv@{setEv}}
+\index{setEv@{setEv}!RPiController::Agc@{RPiController::Agc}}
+\doxysubsubsection{\texorpdfstring{setEv()}{setEv()}}
+{\footnotesize\ttfamily void Agc\+::set\+Ev (\begin{DoxyParamCaption}\item[{unsigned int}]{channel,  }\item[{double}]{ev }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classRPiController_1_1AgcAlgorithm}{RPi\+Controller\+::\+Agc\+Algorithm}}.
+
+\Hypertarget{classRPiController_1_1Agc_aa60a43516792622a5b012fc3caf1c706}\label{classRPiController_1_1Agc_aa60a43516792622a5b012fc3caf1c706} 
+\index{RPiController::Agc@{RPiController::Agc}!setExposureMode@{setExposureMode}}
+\index{setExposureMode@{setExposureMode}!RPiController::Agc@{RPiController::Agc}}
+\doxysubsubsection{\texorpdfstring{setExposureMode()}{setExposureMode()}}
+{\footnotesize\ttfamily void Agc\+::set\+Exposure\+Mode (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{exposure\+Mode\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classRPiController_1_1AgcAlgorithm}{RPi\+Controller\+::\+Agc\+Algorithm}}.
+
+\Hypertarget{classRPiController_1_1Agc_ac17bf42ebfeb5b1eda892007a0f7a3e7}\label{classRPiController_1_1Agc_ac17bf42ebfeb5b1eda892007a0f7a3e7} 
+\index{RPiController::Agc@{RPiController::Agc}!setFixedAnalogueGain@{setFixedAnalogueGain}}
+\index{setFixedAnalogueGain@{setFixedAnalogueGain}!RPiController::Agc@{RPiController::Agc}}
+\doxysubsubsection{\texorpdfstring{setFixedAnalogueGain()}{setFixedAnalogueGain()}}
+{\footnotesize\ttfamily void Agc\+::set\+Fixed\+Analogue\+Gain (\begin{DoxyParamCaption}\item[{unsigned int}]{channel\+Index,  }\item[{double}]{fixed\+Analogue\+Gain }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classRPiController_1_1AgcAlgorithm}{RPi\+Controller\+::\+Agc\+Algorithm}}.
+
+\Hypertarget{classRPiController_1_1Agc_a771771ab85fb47dbb323c1b553831726}\label{classRPiController_1_1Agc_a771771ab85fb47dbb323c1b553831726} 
+\index{RPiController::Agc@{RPiController::Agc}!setFixedExposureTime@{setFixedExposureTime}}
+\index{setFixedExposureTime@{setFixedExposureTime}!RPiController::Agc@{RPiController::Agc}}
+\doxysubsubsection{\texorpdfstring{setFixedExposureTime()}{setFixedExposureTime()}}
+{\footnotesize\ttfamily void Agc\+::set\+Fixed\+Exposure\+Time (\begin{DoxyParamCaption}\item[{unsigned int}]{channel\+Index,  }\item[{\mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{libcamera\+::utils\+::\+Duration}}}]{fixed\+Exposure\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classRPiController_1_1AgcAlgorithm}{RPi\+Controller\+::\+Agc\+Algorithm}}.
+
+\Hypertarget{classRPiController_1_1Agc_afe0e86dafd976feb3eb9781abc700143}\label{classRPiController_1_1Agc_afe0e86dafd976feb3eb9781abc700143} 
+\index{RPiController::Agc@{RPiController::Agc}!setFlickerPeriod@{setFlickerPeriod}}
+\index{setFlickerPeriod@{setFlickerPeriod}!RPiController::Agc@{RPiController::Agc}}
+\doxysubsubsection{\texorpdfstring{setFlickerPeriod()}{setFlickerPeriod()}}
+{\footnotesize\ttfamily void Agc\+::set\+Flicker\+Period (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{libcamera\+::utils\+::\+Duration}}}]{flicker\+Period }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classRPiController_1_1AgcAlgorithm}{RPi\+Controller\+::\+Agc\+Algorithm}}.
+
+\Hypertarget{classRPiController_1_1Agc_a962c9614b1de463bc00efa33bf220868}\label{classRPiController_1_1Agc_a962c9614b1de463bc00efa33bf220868} 
+\index{RPiController::Agc@{RPiController::Agc}!setMaxExposureTime@{setMaxExposureTime}}
+\index{setMaxExposureTime@{setMaxExposureTime}!RPiController::Agc@{RPiController::Agc}}
+\doxysubsubsection{\texorpdfstring{setMaxExposureTime()}{setMaxExposureTime()}}
+{\footnotesize\ttfamily void Agc\+::set\+Max\+Exposure\+Time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{libcamera\+::utils\+::\+Duration}}}]{max\+Exposure\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classRPiController_1_1AgcAlgorithm}{RPi\+Controller\+::\+Agc\+Algorithm}}.
+
+\Hypertarget{classRPiController_1_1Agc_a4f3a1dc3083b71af2afcba8a7237bae5}\label{classRPiController_1_1Agc_a4f3a1dc3083b71af2afcba8a7237bae5} 
+\index{RPiController::Agc@{RPiController::Agc}!setMeteringMode@{setMeteringMode}}
+\index{setMeteringMode@{setMeteringMode}!RPiController::Agc@{RPiController::Agc}}
+\doxysubsubsection{\texorpdfstring{setMeteringMode()}{setMeteringMode()}}
+{\footnotesize\ttfamily void Agc\+::set\+Metering\+Mode (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{metering\+Mode\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classRPiController_1_1AgcAlgorithm}{RPi\+Controller\+::\+Agc\+Algorithm}}.
+
+\Hypertarget{classRPiController_1_1Agc_a7db2e9c4f7b7c587f95ee2c00a74c82a}\label{classRPiController_1_1Agc_a7db2e9c4f7b7c587f95ee2c00a74c82a} 
+\index{RPiController::Agc@{RPiController::Agc}!switchMode@{switchMode}}
+\index{switchMode@{switchMode}!RPiController::Agc@{RPiController::Agc}}
+\doxysubsubsection{\texorpdfstring{switchMode()}{switchMode()}}
+{\footnotesize\ttfamily void Agc\+::switch\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCameraMode}{Camera\+Mode}} const \&}]{camera\+Mode,  }\item[{Metadata \texorpdfstring{$\ast$}{*}}]{metadata }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classRPiController_1_1Algorithm}{RPi\+Controller\+::\+Algorithm}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/ipa/rpi/controller/rpi/agc.\+h\item 
+src/peripherals/camera/libcamera/src/ipa/rpi/controller/rpi/agc.\+cpp\end{DoxyCompactItemize}

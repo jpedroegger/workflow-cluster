@@ -1,0 +1,26 @@
+\doxysection{awb\+\_\+status.\+h}
+\hypertarget{awb__status_8h_source}{}\label{awb__status_8h_source}\index{src/peripherals/camera/libcamera/src/ipa/rpi/controller/awb\_status.h@{src/peripherals/camera/libcamera/src/ipa/rpi/controller/awb\_status.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ BSD-\/2-\/Clause\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2019,\ Raspberry\ Pi\ Ltd}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ AWB\ control\ algorithm\ status}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ The\ AWB\ algorithm\ places\ its\ results\ into\ both\ the\ image\ and\ global\ metadata,}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ under\ the\ tag\ "{}awb.status"{}.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structAwbStatus}{AwbStatus}}\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{char}\ mode[32];}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structAwbStatus_ab7b02bd8855585c89b4cab12de3f55e5}{temperatureK}};}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{double}\ gainR;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{double}\ gainG;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{double}\ gainB;}
+\DoxyCodeLine{00020\ \};}
+
+\end{DoxyCode}

@@ -1,0 +1,74 @@
+\doxysection{camera\+\_\+hal\+\_\+manager.\+h}
+\hypertarget{camera__hal__manager_8h_source}{}\label{camera__hal__manager_8h_source}\index{src/peripherals/camera/libcamera/src/android/camera\_hal\_manager.h@{src/peripherals/camera/libcamera/src/android/camera\_hal\_manager.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2019,\ Google\ Inc.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ libcamera\ Android\ Camera\ Manager}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <tuple>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <hardware/camera\_common.h>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <hardware/hardware.h>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <system/camera\_metadata.h>}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{class_8h}{libcamera/base/class.h}}>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{mutex_8h}{libcamera/base/mutex.h}}>}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{camera__manager_8h}{libcamera/camera\_manager.h}}>}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}camera\_hal\_config.h"{}}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCameraDevice}{CameraDevice}};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCameraHalManager}{CameraHalManager}}}
+\DoxyCodeLine{00029\ \{}
+\DoxyCodeLine{00030\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{classCameraHalManager}{\string~CameraHalManager}}();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classCameraHalManager}{CameraHalManager}}\ *instance();}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{int}\ init();}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ std::tuple<CameraDevice\ *,\ int>}
+\DoxyCodeLine{00038\ \ \ \ \ open(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structhw__module__t}{hw\_module\_t}}\ *module);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ numCameras()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{int}\ getCameraInfo(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structcamera__info}{camera\_info}}\ *info);}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ setCallbacks(\textcolor{keyword}{const}\ \mbox{\hyperlink{structcamera__module__callbacks}{camera\_module\_callbacks\_t}}\ *callbacks);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{class_8h_a3dfeb3af0e6990136655ba6125587d2f}{LIBCAMERA\_DISABLE\_COPY\_AND\_MOVE}}(\mbox{\hyperlink{classCameraHalManager}{CameraHalManager}})}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ firstExternalCameraId\_\ =\ 1000;}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{classCameraHalManager}{CameraHalManager}}();}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{static}\ int32\_t\ cameraLocation(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Camera}{libcamera::Camera}}\ *cam);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ cameraAdded(std::shared\_ptr<libcamera::Camera>\ cam);}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ cameraRemoved(std::shared\_ptr<libcamera::Camera>\ cam);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{classCameraDevice}{CameraDevice}}\ *cameraDeviceFromHalId(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})\ LIBCAMERA\_TSA\_REQUIRES(mutex\_);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ std::unique\_ptr<libcamera::CameraManager>\ cameraManager\_;}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{classCameraHalConfig}{CameraHalConfig}}\ halConfig\_;}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structcamera__module__callbacks}{camera\_module\_callbacks\_t}}\ *callbacks\_;}
+\DoxyCodeLine{00062\ \ \ \ \ std::vector<std::unique\_ptr<CameraDevice>>\ cameras\_\ LIBCAMERA\_TSA\_GUARDED\_BY(mutex\_);}
+\DoxyCodeLine{00063\ \ \ \ \ std::map<std::string,\ unsigned\ int>\ cameraIdsMap\_\ LIBCAMERA\_TSA\_GUARDED\_BY(mutex\_);}
+\DoxyCodeLine{00064\ \ \ \ \ libcamera::Mutex\ mutex\_;}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ numInternalCameras\_;}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ nextExternalCameraId\_;}
+\DoxyCodeLine{00068\ \};}
+
+\end{DoxyCode}

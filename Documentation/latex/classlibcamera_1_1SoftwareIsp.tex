@@ -1,0 +1,309 @@
+\doxysection{libcamera\+::Software\+Isp Class Reference}
+\hypertarget{classlibcamera_1_1SoftwareIsp}{}\label{classlibcamera_1_1SoftwareIsp}\index{libcamera::SoftwareIsp@{libcamera::SoftwareIsp}}
+
+
+Class for the Software ISP.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1SoftwareIsp_ae497ad89423f186390317bd27ee7dfbf}{Software\+Isp}} (\mbox{\hyperlink{classlibcamera_1_1PipelineHandler}{Pipeline\+Handler}} \texorpdfstring{$\ast$}{*}pipe, const \mbox{\hyperlink{classlibcamera_1_1CameraSensor}{Camera\+Sensor}} \texorpdfstring{$\ast$}{*}sensor, \mbox{\hyperlink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map}} \texorpdfstring{$\ast$}{*}ipa\+Controls)
+\begin{DoxyCompactList}\small\item\em Constructs \doxylink{classlibcamera_1_1SoftwareIsp}{Software\+Isp} object. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classlibcamera_1_1SoftwareIsp_a440e705a54470011b7b0db99f60a8255}{load\+Configuration}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Load a configuration from a file. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlibcamera_1_1SoftwareIsp_ab7d1eb65caaaea82d7027c9eda7793fe}{is\+Valid}} () const
+\begin{DoxyCompactList}\small\item\em Check the validity of Software Isp object. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classlibcamera_1_1PixelFormat}{Pixel\+Format}} $>$ \mbox{\hyperlink{classlibcamera_1_1SoftwareIsp_a5ab631932cb0c2be16204cd85ae4b6a1}{formats}} (\mbox{\hyperlink{classlibcamera_1_1PixelFormat}{Pixel\+Format}} input)
+\begin{DoxyCompactList}\small\item\em Get the output formats supported for the given input format. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1SizeRange}{Size\+Range}} \mbox{\hyperlink{classlibcamera_1_1SoftwareIsp_aea60beee99b4e652342e5c11a3219948}{sizes}} (\mbox{\hyperlink{classlibcamera_1_1PixelFormat}{Pixel\+Format}} input\+Format, const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&input\+Size)
+\begin{DoxyCompactList}\small\item\em Get the supported output sizes for the given input format and size. \end{DoxyCompactList}\item 
+std\+::tuple$<$ unsigned int, unsigned int $>$ \mbox{\hyperlink{classlibcamera_1_1SoftwareIsp_ac0a4f11e401a5973209f8101c24a4718}{stride\+And\+Frame\+Size}} (const \mbox{\hyperlink{classlibcamera_1_1PixelFormat}{Pixel\+Format}} \&output\+Format, const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&size)
+\item 
+int \mbox{\hyperlink{classlibcamera_1_1SoftwareIsp_a919f7165a228fdc68b10d968fbeb5a47}{configure}} (const \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration}{Stream\+Configuration}} \&input\+Cfg, const std\+::vector$<$ std\+::reference\+\_\+wrapper$<$ \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration}{Stream\+Configuration}} $>$ $>$ \&output\+Cfgs, const ipa\+::soft\+::\+IPAConfig\+Info \&config\+Info)
+\begin{DoxyCompactList}\small\item\em Configure the \doxylink{classlibcamera_1_1SoftwareIsp}{Software\+Isp} object according to the passed in parameters. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classlibcamera_1_1SoftwareIsp_a6d6e334de2001981e870922c84372cb4}{export\+Buffers}} (const \mbox{\hyperlink{classlibcamera_1_1Stream}{Stream}} \texorpdfstring{$\ast$}{*}stream, unsigned int count, std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} $>$ $>$ \texorpdfstring{$\ast$}{*}buffers)
+\begin{DoxyCompactList}\small\item\em Export the buffers from the Software ISP. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1SoftwareIsp_a2dfb1146862a68c366414064df52a333}{process\+Stats}} (const uint32\+\_\+t frame, const uint32\+\_\+t buffer\+Id, const \mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} \&sensor\+Controls)
+\begin{DoxyCompactList}\small\item\em \doxylink{classlibcamera_1_1Process}{Process} the statistics gathered. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classlibcamera_1_1SoftwareIsp_af9b9eeb091be51db551189b3c6107201}{start}} ()
+\begin{DoxyCompactList}\small\item\em Starts the Software ISP streaming operation. \end{DoxyCompactList}\item 
+\Hypertarget{classlibcamera_1_1SoftwareIsp_a0e692afe489577dc55d0a42119a3dade}\label{classlibcamera_1_1SoftwareIsp_a0e692afe489577dc55d0a42119a3dade} 
+void {\bfseries stop} ()
+\begin{DoxyCompactList}\small\item\em Stops the Software ISP streaming operation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1SoftwareIsp_af4139e324c823611e03ea8ff61380065}{queue\+Request}} (const uint32\+\_\+t frame, const \mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} \&controls)
+\begin{DoxyCompactList}\small\item\em Queue a request and process the control list from the application. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classlibcamera_1_1SoftwareIsp_a054473ce2c64a2b14dd745f0d3e48fa4}{queue\+Buffers}} (uint32\+\_\+t frame, \mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} \texorpdfstring{$\ast$}{*}input, const std\+::map$<$ const \mbox{\hyperlink{classlibcamera_1_1Stream}{Stream}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} \texorpdfstring{$\ast$}{*} $>$ \&outputs)
+\begin{DoxyCompactList}\small\item\em Queue buffers to Software ISP. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1SoftwareIsp_a6d50ffae2e1ad4b101b580c8ec8e5100}{process}} (uint32\+\_\+t frame, \mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} \texorpdfstring{$\ast$}{*}input, \mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} \texorpdfstring{$\ast$}{*}output)
+\begin{DoxyCompactList}\small\item\em Passes the input framebuffer to the ISP worker to process. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1SoftwareIsp_a80429362805e8821ab9e82549f9b98f3}\label{classlibcamera_1_1SoftwareIsp_a80429362805e8821ab9e82549f9b98f3} 
+\mbox{\hyperlink{classlibcamera_1_1Signal}{Signal}}$<$ \mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries input\+Buffer\+Ready}
+\begin{DoxyCompactList}\small\item\em A signal emitted when the input frame buffer completes. \end{DoxyCompactList}\item 
+\Hypertarget{classlibcamera_1_1SoftwareIsp_a0b5e960bb1944f0557a63780b571fe86}\label{classlibcamera_1_1SoftwareIsp_a0b5e960bb1944f0557a63780b571fe86} 
+\mbox{\hyperlink{classlibcamera_1_1Signal}{Signal}}$<$ \mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries output\+Buffer\+Ready}
+\begin{DoxyCompactList}\small\item\em A signal emitted when the output frame buffer completes. \end{DoxyCompactList}\item 
+\Hypertarget{classlibcamera_1_1SoftwareIsp_af7e7dc0dc59e60cf6ec75a9fd430cd2a}\label{classlibcamera_1_1SoftwareIsp_af7e7dc0dc59e60cf6ec75a9fd430cd2a} 
+\mbox{\hyperlink{classlibcamera_1_1Signal}{Signal}}$<$ uint32\+\_\+t, uint32\+\_\+t $>$ {\bfseries isp\+Stats\+Ready}
+\begin{DoxyCompactList}\small\item\em A signal emitted when the statistics for IPA are ready. \end{DoxyCompactList}\item 
+\Hypertarget{classlibcamera_1_1SoftwareIsp_a84fdecc7d4b382f65a6c80d895ffc1df}\label{classlibcamera_1_1SoftwareIsp_a84fdecc7d4b382f65a6c80d895ffc1df} 
+\mbox{\hyperlink{classlibcamera_1_1Signal}{Signal}}$<$ const \mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} \& $>$ {\bfseries set\+Sensor\+Controls}
+\begin{DoxyCompactList}\small\item\em A signal emitted when the values to write to the sensor controls are ready. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for the Software ISP. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlibcamera_1_1SoftwareIsp_ae497ad89423f186390317bd27ee7dfbf}\label{classlibcamera_1_1SoftwareIsp_ae497ad89423f186390317bd27ee7dfbf} 
+\index{libcamera::SoftwareIsp@{libcamera::SoftwareIsp}!SoftwareIsp@{SoftwareIsp}}
+\index{SoftwareIsp@{SoftwareIsp}!libcamera::SoftwareIsp@{libcamera::SoftwareIsp}}
+\doxysubsubsection{\texorpdfstring{SoftwareIsp()}{SoftwareIsp()}}
+{\footnotesize\ttfamily libcamera\+::\+Software\+Isp\+::\+Software\+Isp (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1PipelineHandler}{Pipeline\+Handler}} \texorpdfstring{$\ast$}{*}}]{pipe,  }\item[{const \mbox{\hyperlink{classlibcamera_1_1CameraSensor}{Camera\+Sensor}} \texorpdfstring{$\ast$}{*}}]{sensor,  }\item[{\mbox{\hyperlink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map}} \texorpdfstring{$\ast$}{*}}]{ipa\+Controls }\end{DoxyParamCaption})}
+
+
+
+Constructs \doxylink{classlibcamera_1_1SoftwareIsp}{Software\+Isp} object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em pipe} & The pipeline handler in use \\
+\hline
+\mbox{\texttt{ in}}  & {\em sensor} & Pointer to the \doxylink{classlibcamera_1_1CameraSensor}{Camera\+Sensor} instance owned by the pipeline \\
+\hline
+\mbox{\texttt{ out}}  & {\em ipa\+Controls} & The IPA controls to update handler \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1SoftwareIsp_a919f7165a228fdc68b10d968fbeb5a47}\label{classlibcamera_1_1SoftwareIsp_a919f7165a228fdc68b10d968fbeb5a47} 
+\index{libcamera::SoftwareIsp@{libcamera::SoftwareIsp}!configure@{configure}}
+\index{configure@{configure}!libcamera::SoftwareIsp@{libcamera::SoftwareIsp}}
+\doxysubsubsection{\texorpdfstring{configure()}{configure()}}
+{\footnotesize\ttfamily int libcamera\+::\+Software\+Isp\+::configure (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration}{Stream\+Configuration}} \&}]{input\+Cfg,  }\item[{const std\+::vector$<$ std\+::reference\+\_\+wrapper$<$ \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration}{Stream\+Configuration}} $>$ $>$ \&}]{output\+Cfgs,  }\item[{const ipa\+::soft\+::\+IPAConfig\+Info \&}]{config\+Info }\end{DoxyParamCaption})}
+
+
+
+Configure the \doxylink{classlibcamera_1_1SoftwareIsp}{Software\+Isp} object according to the passed in parameters. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em input\+Cfg} & The input configuration \\
+\hline
+\mbox{\texttt{ in}}  & {\em output\+Cfgs} & The output configurations \\
+\hline
+\mbox{\texttt{ in}}  & {\em config\+Info} & The IPA configuration data, received from the pipeline handler \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, a negative errno on failure 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1SoftwareIsp_a6d6e334de2001981e870922c84372cb4}\label{classlibcamera_1_1SoftwareIsp_a6d6e334de2001981e870922c84372cb4} 
+\index{libcamera::SoftwareIsp@{libcamera::SoftwareIsp}!exportBuffers@{exportBuffers}}
+\index{exportBuffers@{exportBuffers}!libcamera::SoftwareIsp@{libcamera::SoftwareIsp}}
+\doxysubsubsection{\texorpdfstring{exportBuffers()}{exportBuffers()}}
+{\footnotesize\ttfamily int libcamera\+::\+Software\+Isp\+::export\+Buffers (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1Stream}{Stream}} \texorpdfstring{$\ast$}{*}}]{stream,  }\item[{unsigned int}]{count,  }\item[{std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} $>$ $>$ \texorpdfstring{$\ast$}{*}}]{buffers }\end{DoxyParamCaption})}
+
+
+
+Export the buffers from the Software ISP. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em stream} & Output stream exporting the buffers \\
+\hline
+\mbox{\texttt{ in}}  & {\em count} & Number of buffers to allocate \\
+\hline
+\mbox{\texttt{ out}}  & {\em buffers} & Vector to store the allocated buffers \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of allocated buffers on success or a negative error code otherwise 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1SoftwareIsp_a5ab631932cb0c2be16204cd85ae4b6a1}\label{classlibcamera_1_1SoftwareIsp_a5ab631932cb0c2be16204cd85ae4b6a1} 
+\index{libcamera::SoftwareIsp@{libcamera::SoftwareIsp}!formats@{formats}}
+\index{formats@{formats}!libcamera::SoftwareIsp@{libcamera::SoftwareIsp}}
+\doxysubsubsection{\texorpdfstring{formats()}{formats()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classlibcamera_1_1PixelFormat}{Pixel\+Format}} $>$ libcamera\+::\+Software\+Isp\+::formats (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1PixelFormat}{Pixel\+Format}}}]{input\+Format }\end{DoxyParamCaption})}
+
+
+
+Get the output formats supported for the given input format. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em input\+Format} & The input format \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+All the supported output formats or an empty vector if there are none 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1SoftwareIsp_ab7d1eb65caaaea82d7027c9eda7793fe}\label{classlibcamera_1_1SoftwareIsp_ab7d1eb65caaaea82d7027c9eda7793fe} 
+\index{libcamera::SoftwareIsp@{libcamera::SoftwareIsp}!isValid@{isValid}}
+\index{isValid@{isValid}!libcamera::SoftwareIsp@{libcamera::SoftwareIsp}}
+\doxysubsubsection{\texorpdfstring{isValid()}{isValid()}}
+{\footnotesize\ttfamily bool libcamera\+::\+Software\+Isp\+::is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Check the validity of Software Isp object. 
+
+\begin{DoxyReturn}{Returns}
+True if Software Isp is valid, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1SoftwareIsp_a440e705a54470011b7b0db99f60a8255}\label{classlibcamera_1_1SoftwareIsp_a440e705a54470011b7b0db99f60a8255} 
+\index{libcamera::SoftwareIsp@{libcamera::SoftwareIsp}!loadConfiguration@{loadConfiguration}}
+\index{loadConfiguration@{loadConfiguration}!libcamera::SoftwareIsp@{libcamera::SoftwareIsp}}
+\doxysubsubsection{\texorpdfstring{loadConfiguration()}{loadConfiguration()}}
+{\footnotesize\ttfamily int libcamera\+::\+Software\+Isp\+::load\+Configuration (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Load a configuration from a file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em filename} & The file to load the configuration data from\\
+\hline
+\end{DoxyParams}
+Currently is a stub doing nothing and always returning "{}success"{}.
+
+\begin{DoxyReturn}{Returns}
+0 on success 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1SoftwareIsp_a6d50ffae2e1ad4b101b580c8ec8e5100}\label{classlibcamera_1_1SoftwareIsp_a6d50ffae2e1ad4b101b580c8ec8e5100} 
+\index{libcamera::SoftwareIsp@{libcamera::SoftwareIsp}!process@{process}}
+\index{process@{process}!libcamera::SoftwareIsp@{libcamera::SoftwareIsp}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily void libcamera\+::\+Software\+Isp\+::process (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{frame,  }\item[{\mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} \texorpdfstring{$\ast$}{*}}]{input,  }\item[{\mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} \texorpdfstring{$\ast$}{*}}]{output }\end{DoxyParamCaption})}
+
+
+
+Passes the input framebuffer to the ISP worker to process. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em frame} & The frame number \\
+\hline
+\mbox{\texttt{ in}}  & {\em input} & The input framebuffer \\
+\hline
+\mbox{\texttt{ out}}  & {\em output} & The framebuffer to write the processed frame to \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classlibcamera_1_1SoftwareIsp_a2dfb1146862a68c366414064df52a333}\label{classlibcamera_1_1SoftwareIsp_a2dfb1146862a68c366414064df52a333} 
+\index{libcamera::SoftwareIsp@{libcamera::SoftwareIsp}!processStats@{processStats}}
+\index{processStats@{processStats}!libcamera::SoftwareIsp@{libcamera::SoftwareIsp}}
+\doxysubsubsection{\texorpdfstring{processStats()}{processStats()}}
+{\footnotesize\ttfamily void libcamera\+::\+Software\+Isp\+::process\+Stats (\begin{DoxyParamCaption}\item[{const uint32\+\_\+t}]{frame,  }\item[{const uint32\+\_\+t}]{buffer\+Id,  }\item[{const \mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} \&}]{sensor\+Controls }\end{DoxyParamCaption})}
+
+
+
+\doxylink{classlibcamera_1_1Process}{Process} the statistics gathered. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em frame} & The frame number \\
+\hline
+\mbox{\texttt{ in}}  & {\em buffer\+Id} & ID of the statistics buffer \\
+\hline
+\mbox{\texttt{ in}}  & {\em sensor\+Controls} & The sensor controls\\
+\hline
+\end{DoxyParams}
+Requests the IPA to calculate new parameters for ISP and new control values for the sensor. \Hypertarget{classlibcamera_1_1SoftwareIsp_a054473ce2c64a2b14dd745f0d3e48fa4}\label{classlibcamera_1_1SoftwareIsp_a054473ce2c64a2b14dd745f0d3e48fa4} 
+\index{libcamera::SoftwareIsp@{libcamera::SoftwareIsp}!queueBuffers@{queueBuffers}}
+\index{queueBuffers@{queueBuffers}!libcamera::SoftwareIsp@{libcamera::SoftwareIsp}}
+\doxysubsubsection{\texorpdfstring{queueBuffers()}{queueBuffers()}}
+{\footnotesize\ttfamily int libcamera\+::\+Software\+Isp\+::queue\+Buffers (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{frame,  }\item[{\mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} \texorpdfstring{$\ast$}{*}}]{input,  }\item[{const std\+::map$<$ const \mbox{\hyperlink{classlibcamera_1_1Stream}{Stream}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} \texorpdfstring{$\ast$}{*} $>$ \&}]{outputs }\end{DoxyParamCaption})}
+
+
+
+Queue buffers to Software ISP. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em frame} & The frame number \\
+\hline
+\mbox{\texttt{ in}}  & {\em input} & The input framebuffer \\
+\hline
+\mbox{\texttt{ in}}  & {\em outputs} & The container holding the output stream pointers and their respective frame buffer outputs \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, a negative errno on failure 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1SoftwareIsp_af4139e324c823611e03ea8ff61380065}\label{classlibcamera_1_1SoftwareIsp_af4139e324c823611e03ea8ff61380065} 
+\index{libcamera::SoftwareIsp@{libcamera::SoftwareIsp}!queueRequest@{queueRequest}}
+\index{queueRequest@{queueRequest}!libcamera::SoftwareIsp@{libcamera::SoftwareIsp}}
+\doxysubsubsection{\texorpdfstring{queueRequest()}{queueRequest()}}
+{\footnotesize\ttfamily void libcamera\+::\+Software\+Isp\+::queue\+Request (\begin{DoxyParamCaption}\item[{const uint32\+\_\+t}]{frame,  }\item[{const \mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} \&}]{controls }\end{DoxyParamCaption})}
+
+
+
+Queue a request and process the control list from the application. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em frame} & The number of the frame which will be processed next \\
+\hline
+\mbox{\texttt{ in}}  & {\em controls} & The controls for the {\itshape frame} \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classlibcamera_1_1SoftwareIsp_aea60beee99b4e652342e5c11a3219948}\label{classlibcamera_1_1SoftwareIsp_aea60beee99b4e652342e5c11a3219948} 
+\index{libcamera::SoftwareIsp@{libcamera::SoftwareIsp}!sizes@{sizes}}
+\index{sizes@{sizes}!libcamera::SoftwareIsp@{libcamera::SoftwareIsp}}
+\doxysubsubsection{\texorpdfstring{sizes()}{sizes()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1SizeRange}{Size\+Range}} libcamera\+::\+Software\+Isp\+::sizes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1PixelFormat}{Pixel\+Format}}}]{input\+Format,  }\item[{const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&}]{input\+Size }\end{DoxyParamCaption})}
+
+
+
+Get the supported output sizes for the given input format and size. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em input\+Format} & The input format \\
+\hline
+\mbox{\texttt{ in}}  & {\em input\+Size} & The input frame size \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The valid size range or an empty range if there are none 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1SoftwareIsp_af9b9eeb091be51db551189b3c6107201}\label{classlibcamera_1_1SoftwareIsp_af9b9eeb091be51db551189b3c6107201} 
+\index{libcamera::SoftwareIsp@{libcamera::SoftwareIsp}!start@{start}}
+\index{start@{start}!libcamera::SoftwareIsp@{libcamera::SoftwareIsp}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily int libcamera\+::\+Software\+Isp\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Starts the Software ISP streaming operation. 
+
+\begin{DoxyReturn}{Returns}
+0 on success, any other value indicates an error 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1SoftwareIsp_ac0a4f11e401a5973209f8101c24a4718}\label{classlibcamera_1_1SoftwareIsp_ac0a4f11e401a5973209f8101c24a4718} 
+\index{libcamera::SoftwareIsp@{libcamera::SoftwareIsp}!strideAndFrameSize@{strideAndFrameSize}}
+\index{strideAndFrameSize@{strideAndFrameSize}!libcamera::SoftwareIsp@{libcamera::SoftwareIsp}}
+\doxysubsubsection{\texorpdfstring{strideAndFrameSize()}{strideAndFrameSize()}}
+{\footnotesize\ttfamily std\+::tuple$<$ unsigned int, unsigned int $>$ libcamera\+::\+Software\+Isp\+::stride\+And\+Frame\+Size (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1PixelFormat}{Pixel\+Format}} \&}]{output\+Format,  }\item[{const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&}]{size }\end{DoxyParamCaption})}
+
+Get the output stride and the frame size in bytes for the given output format and size 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em output\+Format} & The output format \\
+\hline
+\mbox{\texttt{ in}}  & {\em size} & The output size (width and height in pixels) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A tuple of the stride and the frame size in bytes, or a tuple of 0,0 if there is no valid output config 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/internal/software\+\_\+isp/software\+\_\+isp.\+h\item 
+src/peripherals/camera/libcamera/src/libcamera/software\+\_\+isp/\mbox{\hyperlink{software__isp_8cpp}{software\+\_\+isp.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,91 @@
+\doxysection{pwl.\+h}
+\hypertarget{pwl_8h_source}{}\label{pwl_8h_source}\index{src/peripherals/camera/libcamera/src/ipa/libipa/pwl.h@{src/peripherals/camera/libcamera/src/ipa/libipa/pwl.h}}
+\mbox{\hyperlink{pwl_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ BSD-\/2-\/Clause\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2019,\ Raspberry\ Pi\ Ltd}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Piecewise\ linear\ functions\ interface}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vector_8h}{vector.h}}"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacelibcamera}{libcamera}}\ \{}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{namespace\ }ipa\ \{}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Pwl}{Pwl}}}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{Point}}\ =\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Vector}{Vector<double,\ 2>}};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structlibcamera_1_1ipa_1_1Pwl_1_1Interval}{Interval}}\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1Pwl_1_1Interval_a29d5f017b92bc1df8ad0621da6665d82}{Interval}}(\textcolor{keywordtype}{double}\ \_start,\ \textcolor{keywordtype}{double}\ \_end)}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1Pwl_1_1Interval_a689264a7d09b86e8b9eaea711f046222}{start}}(\_start),\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1Pwl_1_1Interval_ad779d7f5042fe585db27411cb072f7b4}{end}}(\_end)\ \{\}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1Pwl_1_1Interval_a0744ccb80ca7a1f279582fff1d9bd9ab}{contains}}(\textcolor{keywordtype}{double}\ value)}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ value\ >=\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1Pwl_1_1Interval_a689264a7d09b86e8b9eaea711f046222}{start}}\ \&\&\ value\ <=\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1Pwl_1_1Interval_ad779d7f5042fe585db27411cb072f7b4}{end}};}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1Pwl_1_1Interval_a89857c962ee2c8d0a411ab8bbe6d6c70}{clamp}}(\textcolor{keywordtype}{double}\ value)}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::clamp(value,\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1Pwl_1_1Interval_a689264a7d09b86e8b9eaea711f046222}{start}},\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1Pwl_1_1Interval_ad779d7f5042fe585db27411cb072f7b4}{end}});}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1Pwl_1_1Interval_a87688b391247739897894b7fc04c4963}{length}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1Pwl_1_1Interval_ad779d7f5042fe585db27411cb072f7b4}{end}}\ -\/\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1Pwl_1_1Interval_a689264a7d09b86e8b9eaea711f046222}{start}};\ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1Pwl_1_1Interval_a689264a7d09b86e8b9eaea711f046222}{start}},\ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1Pwl_1_1Interval_ad779d7f5042fe585db27411cb072f7b4}{end}};}
+\DoxyCodeLine{00043\ \ \ \ \ \};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Pwl_ae7bb86b834dc8b800e14686c7940c375}{Pwl}}();}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Pwl_ae7bb86b834dc8b800e14686c7940c375}{Pwl}}(\textcolor{keyword}{const}\ std::vector<Point>\ \&points);}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Pwl_ae7bb86b834dc8b800e14686c7940c375}{Pwl}}(std::vector<Point>\ \&\&points);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Pwl_a326e754f0f31c9a744c5a7aafe90e33a}{append}}(\textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ y,\ \textcolor{keywordtype}{double}\ eps\ =\ 1e-\/6);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Pwl_af9f9d288374bbcb8638efbfbc760bdb0}{empty}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ points\_.empty();\ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Pwl_a214901a850b288ce85222c00ea09564b}{size}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ points\_.size();\ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ Interval\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Pwl_a8e4fe0ad17da550fcabec413e8fd8fdd}{domain}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00055\ \ \ \ \ Interval\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Pwl_af13b19bed33c49102c4f496930b77df5}{range}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Pwl_a7ed645d65bd644884a850d0e14c27903}{eval}}(\textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{int}\ *span\ =\ \textcolor{keyword}{nullptr},}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ updateSpan\ =\ \textcolor{keyword}{true})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ std::pair<Pwl,\ bool>\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Pwl_abb22c72fa3dd7c23166c909f6db5fed0}{inverse}}(\textcolor{keywordtype}{double}\ eps\ =\ 1e-\/6)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Pwl}{Pwl}}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Pwl_a73d79b18542af3b2686ff0b3c84023c2}{compose}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Pwl}{Pwl}}\ \&other,\ \textcolor{keywordtype}{double}\ eps\ =\ 1e-\/6)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Pwl_a3b0a9a70896c4c279c479f727f3dae82}{map}}(std::function<\textcolor{keywordtype}{void}(\textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ y)>\ f)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Pwl}{Pwl}}}
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Pwl_a72b195cf258cf98ce1d2cacca0fe1c5c}{combine}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Pwl}{Pwl}}\ \&pwl0,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Pwl}{Pwl}}\ \&pwl1,}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ std::function<\textcolor{keywordtype}{double}(\textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ y0,\ \textcolor{keywordtype}{double}\ y1)>\ f,}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ eps\ =\ 1e-\/6);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Pwl}{Pwl}}\ \&\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Pwl_ae60aec75e872f9fbf9f095c5ca731d41}{operator*=}}(\textcolor{keywordtype}{double}\ d);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ std::string\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Pwl_a201b4a62c3ebbe990543efce05680517}{toString}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ map2(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Pwl}{Pwl}}\ \&pwl0,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Pwl}{Pwl}}\ \&pwl1,}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ std::function<\textcolor{keywordtype}{void}(\textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ y0,\ \textcolor{keywordtype}{double}\ y1)>\ f);}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ prepend(\textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ y,\ \textcolor{keywordtype}{double}\ eps\ =\ 1e-\/6);}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{int}\ findSpan(\textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{int}\ span)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ std::vector<Point>\ points\_;}
+\DoxyCodeLine{00081\ \};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \}\ \textcolor{comment}{/*\ namespace\ ipa\ */}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \}\ \textcolor{comment}{/*\ namespace\ libcamera\ */}}
+
+\end{DoxyCode}

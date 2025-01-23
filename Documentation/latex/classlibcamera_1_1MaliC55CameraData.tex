@@ -1,0 +1,93 @@
+\doxysection{libcamera\+::Mali\+C55\+Camera\+Data Class Reference}
+\hypertarget{classlibcamera_1_1MaliC55CameraData}{}\label{classlibcamera_1_1MaliC55CameraData}\index{libcamera::MaliC55CameraData@{libcamera::MaliC55CameraData}}
+Inheritance diagram for libcamera\+::Mali\+C55\+Camera\+Data\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classlibcamera_1_1MaliC55CameraData}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1MaliC55CameraData_aa745325c61634ef6028efea7e2e63859}\label{classlibcamera_1_1MaliC55CameraData_aa745325c61634ef6028efea7e2e63859} 
+{\bfseries Mali\+C55\+Camera\+Data} (\mbox{\hyperlink{classlibcamera_1_1PipelineHandler}{Pipeline\+Handler}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classlibcamera_1_1Camera_1_1Private_a765fac25ebdff5caf7be65a181cba38c}{pipe}}, \mbox{\hyperlink{classlibcamera_1_1MediaEntity}{Media\+Entity}} \texorpdfstring{$\ast$}{*}entity)
+\item 
+\Hypertarget{classlibcamera_1_1MaliC55CameraData_a55de983fef385799bcce5270a303fb9a}\label{classlibcamera_1_1MaliC55CameraData_a55de983fef385799bcce5270a303fb9a} 
+int {\bfseries init} ()
+\item 
+\Hypertarget{classlibcamera_1_1MaliC55CameraData_a5851f80e6d0057a8036052b5ff5a5062}\label{classlibcamera_1_1MaliC55CameraData_a5851f80e6d0057a8036052b5ff5a5062} 
+const std\+::vector$<$ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} $>$ {\bfseries sizes} (unsigned int mbus\+Code) const
+\item 
+\Hypertarget{classlibcamera_1_1MaliC55CameraData_a7b9b19bf1eb6acaffc57e6a043885ca3}\label{classlibcamera_1_1MaliC55CameraData_a7b9b19bf1eb6acaffc57e6a043885ca3} 
+const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} {\bfseries resolution} () const
+\item 
+\Hypertarget{classlibcamera_1_1MaliC55CameraData_af4e00893de1ce9b9e3febb09ab351525}\label{classlibcamera_1_1MaliC55CameraData_af4e00893de1ce9b9e3febb09ab351525} 
+int {\bfseries pixfmt\+To\+Mbus\+Code} (const \mbox{\hyperlink{classlibcamera_1_1PixelFormat}{Pixel\+Format}} \&pix\+Fmt) const
+\item 
+\Hypertarget{classlibcamera_1_1MaliC55CameraData_a79da5af7b30f9f371306fb40ddd16b8d}\label{classlibcamera_1_1MaliC55CameraData_a79da5af7b30f9f371306fb40ddd16b8d} 
+const \mbox{\hyperlink{classlibcamera_1_1PixelFormat}{Pixel\+Format}} \& {\bfseries best\+Raw\+Format} () const
+\item 
+\Hypertarget{classlibcamera_1_1MaliC55CameraData_a135f3aa6e22e741f4c39044fc0082da7}\label{classlibcamera_1_1MaliC55CameraData_a135f3aa6e22e741f4c39044fc0082da7} 
+void {\bfseries update\+Controls} ()
+\item 
+\Hypertarget{classlibcamera_1_1MaliC55CameraData_a3dd3d012f62b5761b87e86f57e1b7fbc}\label{classlibcamera_1_1MaliC55CameraData_a3dd3d012f62b5761b87e86f57e1b7fbc} 
+\mbox{\hyperlink{classlibcamera_1_1PixelFormat}{Pixel\+Format}} {\bfseries adjust\+Raw\+Format} (const \mbox{\hyperlink{classlibcamera_1_1PixelFormat}{Pixel\+Format}} \&pix\+Fmt) const
+\item 
+\Hypertarget{classlibcamera_1_1MaliC55CameraData_aee586f4f0375b97e4ec8fa932a759c60}\label{classlibcamera_1_1MaliC55CameraData_aee586f4f0375b97e4ec8fa932a759c60} 
+\mbox{\hyperlink{classlibcamera_1_1Size}{Size}} {\bfseries adjust\+Raw\+Sizes} (const \mbox{\hyperlink{classlibcamera_1_1PixelFormat}{Pixel\+Format}} \&pix\+Fmt, const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&raw\+Size) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1Camera_1_1Private}{libcamera\+::\+Camera\+::\+Private}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1Camera_1_1Private_a9a4e997ad0fab497b95350f7bc82ec16}{Private}} (\mbox{\hyperlink{classlibcamera_1_1PipelineHandler}{Pipeline\+Handler}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classlibcamera_1_1Camera_1_1Private_a765fac25ebdff5caf7be65a181cba38c}{pipe}})
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{classlibcamera_1_1Camera_1_1Private}{Camera\+::\+Private} instance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1PipelineHandler}{Pipeline\+Handler}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1Camera_1_1Private_a765fac25ebdff5caf7be65a181cba38c}{pipe}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the pipeline handler related to this camera. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classlibcamera_1_1CameraControlValidator}{Camera\+Control\+Validator}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1Camera_1_1Private_ab3b02eaffac28effb9752c332318062b}{validator}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the control validator related to this camera. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1Extensible_1_1Private}{libcamera\+::\+Extensible\+::\+Private}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Private} ()
+\begin{DoxyCompactList}\small\item\em Construct an instance of an \doxylink{classlibcamera_1_1Extensible}{Extensible} class private data. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\const T \texorpdfstring{$\ast$}{*} {\bfseries \+\_\+o} () const
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \texorpdfstring{$\ast$}{*} {\bfseries \+\_\+o} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1MaliC55CameraData_afe45377b1ca11ea93e8b1fb76e1c8602}\label{classlibcamera_1_1MaliC55CameraData_afe45377b1ca11ea93e8b1fb76e1c8602} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1CameraSensor}{Camera\+Sensor}} $>$ {\bfseries sensor\+\_\+}
+\item 
+\Hypertarget{classlibcamera_1_1MaliC55CameraData_a5a7fb1ae11fa4748308e45209c3f537b}\label{classlibcamera_1_1MaliC55CameraData_a5a7fb1ae11fa4748308e45209c3f537b} 
+\mbox{\hyperlink{classlibcamera_1_1MediaEntity}{Media\+Entity}} \texorpdfstring{$\ast$}{*} {\bfseries entity\+\_\+}
+\item 
+\Hypertarget{classlibcamera_1_1MaliC55CameraData_ac7edbf4eff827fbeac0bda2226c6740b}\label{classlibcamera_1_1MaliC55CameraData_ac7edbf4eff827fbeac0bda2226c6740b} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1V4L2Subdevice}{V4\+L2\+Subdevice}} $>$ {\bfseries csi\+\_\+}
+\item 
+\Hypertarget{classlibcamera_1_1MaliC55CameraData_a06712f0c08e00efee69ba93f0cf783f6}\label{classlibcamera_1_1MaliC55CameraData_a06712f0c08e00efee69ba93f0cf783f6} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1V4L2Subdevice}{V4\+L2\+Subdevice}} $>$ {\bfseries sd\+\_\+}
+\item 
+\Hypertarget{classlibcamera_1_1MaliC55CameraData_af457a6806a8686a2a6de30d8387e3f40}\label{classlibcamera_1_1MaliC55CameraData_af457a6806a8686a2a6de30d8387e3f40} 
+\mbox{\hyperlink{classlibcamera_1_1Stream}{Stream}} {\bfseries fr\+Stream\+\_\+}
+\item 
+\Hypertarget{classlibcamera_1_1MaliC55CameraData_a15efee698b14c7a7e3cd79616fd2ff93}\label{classlibcamera_1_1MaliC55CameraData_a15efee698b14c7a7e3cd79616fd2ff93} 
+\mbox{\hyperlink{classlibcamera_1_1Stream}{Stream}} {\bfseries ds\+Stream\+\_\+}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classlibcamera_1_1Camera_1_1Private}{libcamera\+::\+Camera\+::\+Private}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::list$<$ \mbox{\hyperlink{classlibcamera_1_1Request}{Request}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classlibcamera_1_1Camera_1_1Private_ae5de4f5bb004bf9039363c9fd9e6240a}{queued\+Requests\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The list of queued and not yet completed requests. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map}} \mbox{\hyperlink{classlibcamera_1_1Camera_1_1Private_ab4e183eb4dabe929d1b2bbbb519b969f}{control\+Info\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The set of controls supported by the camera. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} \mbox{\hyperlink{classlibcamera_1_1Camera_1_1Private_ad31f12f5ed9c1fbe25750902f4791064}{properties\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The list of properties supported by the camera. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classlibcamera_1_1Camera_1_1Private_ace8c943a338ec3c0aa8b56c05b97463d}{request\+Sequence\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The queuing sequence number of the request. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/libcamera/pipeline/mali-\/c55/mali-\/c55.\+cpp\end{DoxyCompactItemize}

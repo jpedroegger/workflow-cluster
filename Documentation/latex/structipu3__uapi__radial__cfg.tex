@@ -1,0 +1,31 @@
+\doxysection{ipu3\+\_\+uapi\+\_\+radial\+\_\+cfg Struct Reference}
+\hypertarget{structipu3__uapi__radial__cfg}{}\label{structipu3__uapi__radial__cfg}\index{ipu3\_uapi\_radial\_cfg@{ipu3\_uapi\_radial\_cfg}}
+
+
+{\ttfamily \#include $<$intel-\/ipu3.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structipu3__uapi__radial__cfg_a0e28eaf06c37607262be6ea453da296c}\label{structipu3__uapi__radial__cfg_a0e28eaf06c37607262be6ea453da296c} 
+\+\_\+\+\_\+u32 {\bfseries rad\+\_\+nf}\+:4
+\item 
+\Hypertarget{structipu3__uapi__radial__cfg_a8399fc72c9cc92622ab49d8cdd389e19}\label{structipu3__uapi__radial__cfg_a8399fc72c9cc92622ab49d8cdd389e19} 
+\+\_\+\+\_\+u32 {\bfseries reserved0}\+:4
+\item 
+\Hypertarget{structipu3__uapi__radial__cfg_a518d1daa79f5fee0fd14cba7e94100a1}\label{structipu3__uapi__radial__cfg_a518d1daa79f5fee0fd14cba7e94100a1} 
+\+\_\+\+\_\+u32 {\bfseries rad\+\_\+inv\+\_\+r2}\+:7
+\item 
+\Hypertarget{structipu3__uapi__radial__cfg_ac14dd26e4efceccc0d3cbfedf960ef89}\label{structipu3__uapi__radial__cfg_ac14dd26e4efceccc0d3cbfedf960ef89} 
+\+\_\+\+\_\+u32 {\bfseries reserved1}\+:17
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structipu3__uapi__radial__cfg}{ipu3\+\_\+uapi\+\_\+radial\+\_\+cfg} -\/ Radial config
+
+@rad\+\_\+nf\+: Radial. R\texorpdfstring{$^\wedge$}{\string^}2 normalization factor is scale down by 2\texorpdfstring{$^\wedge$}{\string^} -\/ (15 + scale) @reserved0\+: reserved @rad\+\_\+inv\+\_\+r2\+: Radial R\texorpdfstring{$^\wedge$}{\string^}-\/2 normelized to (0.\+5..1). Precision u7, range \mbox{[}0, 127\mbox{]}. @reserved1\+: reserved 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/intel-\/ipu3.\+h\end{DoxyCompactItemize}

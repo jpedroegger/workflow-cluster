@@ -1,0 +1,30 @@
+\doxysection{format\+\_\+mapping.\+hpp}
+\hypertarget{format__mapping_8hpp_source}{}\label{format__mapping_8hpp_source}\index{src/peripherals/camera/camera\_ros/src/format\_mapping.hpp@{src/peripherals/camera/camera\_ros/src/format\_mapping.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacelibcamera}{libcamera}}}
+\DoxyCodeLine{00005\ \{}
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }PixelFormat;}
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }StreamFormats;}
+\DoxyCodeLine{00008\ \}\ \textcolor{comment}{//\ namespace\ libcamera}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{enum\ class}\ FormatType}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \ \ NONE,}
+\DoxyCodeLine{00013\ \ \ RAW,}
+\DoxyCodeLine{00014\ \ \ COMPRESSED,}
+\DoxyCodeLine{00015\ \};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ std::string}
+\DoxyCodeLine{00018\ get\_ros\_encoding(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1PixelFormat}{libcamera::PixelFormat}}\ \&pixelformat);}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ FormatType}
+\DoxyCodeLine{00021\ format\_type(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1PixelFormat}{libcamera::PixelFormat}}\ \&pixelformat);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \mbox{\hyperlink{classlibcamera_1_1StreamFormats}{libcamera::StreamFormats}}}
+\DoxyCodeLine{00024\ get\_common\_stream\_formats(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1StreamFormats}{libcamera::StreamFormats}}\ \&formats);}
+
+\end{DoxyCode}

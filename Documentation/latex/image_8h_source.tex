@@ -1,0 +1,56 @@
+\doxysection{image.\+h}
+\hypertarget{image_8h_source}{}\label{image_8h_source}\index{src/peripherals/camera/libcamera/src/apps/common/image.h@{src/peripherals/camera/libcamera/src/apps/common/image.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2021,\ Ideas\ on\ Board\ Oy}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Multi-\/planar\ image\ with\ access\ to\ pixel\ data}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{class_8h}{libcamera/base/class.h}}>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{flags_8h}{libcamera/base/flags.h}}>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <libcamera/base/span.h>}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{framebuffer_8h}{libcamera/framebuffer.h}}>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classImage}{Image}}}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{enum\ class}\ MapMode\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ ReadOnly\ =\ 1\ <<\ 0,}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ WriteOnly\ =\ 1\ <<\ 1,}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ ReadWrite\ =\ ReadOnly\ |\ WriteOnly,}
+\DoxyCodeLine{00027\ \ \ \ \ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{static}\ std::unique\_ptr<Image>\ fromFrameBuffer(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{libcamera::FrameBuffer}}\ *buffer,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MapMode\ mode);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{classImage}{\string~Image}}();}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ numPlanes()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Span}{libcamera::Span<uint8\_t>}}\ data(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ plane);}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Span}{libcamera::Span<const\ uint8\_t>}}\ data(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ plane)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_8h_ace000c18250df4aeac259f1ab739c655}{LIBCAMERA\_DISABLE\_COPY}}(\mbox{\hyperlink{classImage}{Image}})}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{classImage}{Image}}();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ std::vector<libcamera::Span<uint8\_t>>\ maps\_;}
+\DoxyCodeLine{00045\ \ \ \ \ std::vector<libcamera::Span<uint8\_t>>\ planes\_;}
+\DoxyCodeLine{00046\ \};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacelibcamera}{libcamera}}\ \{}
+\DoxyCodeLine{00049\ \mbox{\hyperlink{flags_8h_af343143bcb24209ae99e7bf7e28936a1}{LIBCAMERA\_FLAGS\_ENABLE\_OPERATORS}}(Image::MapMode)}
+\DoxyCodeLine{00050\ \}}
+
+\end{DoxyCode}

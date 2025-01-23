@@ -1,0 +1,76 @@
+\doxysection{RPi\+Controller\+::Cac Class Reference}
+\hypertarget{classRPiController_1_1Cac}{}\label{classRPiController_1_1Cac}\index{RPiController::Cac@{RPiController::Cac}}
+Inheritance diagram for RPi\+Controller\+::Cac\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classRPiController_1_1Cac}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classRPiController_1_1Cac_ad57b241e5926b52b99f8192cdffc5815}\label{classRPiController_1_1Cac_ad57b241e5926b52b99f8192cdffc5815} 
+{\bfseries Cac} (\mbox{\hyperlink{classRPiController_1_1Controller}{Controller}} \texorpdfstring{$\ast$}{*}controller=NULL)
+\item 
+char const \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classRPiController_1_1Cac_a5d1936fee3044ab1214304b9d2dd2134}{name}} () const override
+\item 
+int \mbox{\hyperlink{classRPiController_1_1Cac_aebbd09e22f90d6793886a6cd1e92a35f}{read}} (const \mbox{\hyperlink{classlibcamera_1_1YamlObject}{libcamera\+::\+Yaml\+Object}} \&params) override
+\item 
+void \mbox{\hyperlink{classRPiController_1_1Cac_a5d940a84f748e32880faba7904959145}{prepare}} (Metadata \texorpdfstring{$\ast$}{*}image\+Metadata) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classRPiController_1_1Algorithm}{RPi\+Controller\+::\+Algorithm}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Algorithm} (\mbox{\hyperlink{classRPiController_1_1Controller}{Controller}} \texorpdfstring{$\ast$}{*}controller)
+\item 
+virtual void {\bfseries initialise} ()
+\item 
+virtual void {\bfseries switch\+Mode} (\mbox{\hyperlink{structCameraMode}{Camera\+Mode}} const \&camera\+Mode, Metadata \texorpdfstring{$\ast$}{*}metadata)
+\item 
+virtual void {\bfseries process} (Statistics\+Ptr \&stats, Metadata \texorpdfstring{$\ast$}{*}image\+Metadata)
+\item 
+Metadata \& {\bfseries get\+Global\+Metadata} () const
+\item 
+const std\+::string \& {\bfseries get\+Target} () const
+\item 
+const \mbox{\hyperlink{structRPiController_1_1Controller_1_1HardwareConfig}{Controller\+::\+Hardware\+Config}} \& {\bfseries get\+Hardware\+Config} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classRPiController_1_1Cac_a5d1936fee3044ab1214304b9d2dd2134}\label{classRPiController_1_1Cac_a5d1936fee3044ab1214304b9d2dd2134} 
+\index{RPiController::Cac@{RPiController::Cac}!name@{name}}
+\index{name@{name}!RPiController::Cac@{RPiController::Cac}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily char const  \texorpdfstring{$\ast$}{*} Cac\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classRPiController_1_1Algorithm}{RPi\+Controller\+::\+Algorithm}}.
+
+\Hypertarget{classRPiController_1_1Cac_a5d940a84f748e32880faba7904959145}\label{classRPiController_1_1Cac_a5d940a84f748e32880faba7904959145} 
+\index{RPiController::Cac@{RPiController::Cac}!prepare@{prepare}}
+\index{prepare@{prepare}!RPiController::Cac@{RPiController::Cac}}
+\doxysubsubsection{\texorpdfstring{prepare()}{prepare()}}
+{\footnotesize\ttfamily void Cac\+::prepare (\begin{DoxyParamCaption}\item[{Metadata \texorpdfstring{$\ast$}{*}}]{image\+Metadata }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classRPiController_1_1Algorithm}{RPi\+Controller\+::\+Algorithm}}.
+
+\Hypertarget{classRPiController_1_1Cac_aebbd09e22f90d6793886a6cd1e92a35f}\label{classRPiController_1_1Cac_aebbd09e22f90d6793886a6cd1e92a35f} 
+\index{RPiController::Cac@{RPiController::Cac}!read@{read}}
+\index{read@{read}!RPiController::Cac@{RPiController::Cac}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily int Cac\+::read (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1YamlObject}{libcamera\+::\+Yaml\+Object}} \&}]{params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classRPiController_1_1Algorithm}{RPi\+Controller\+::\+Algorithm}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/ipa/rpi/controller/rpi/cac.\+h\item 
+src/peripherals/camera/libcamera/src/ipa/rpi/controller/rpi/cac.\+cpp\end{DoxyCompactItemize}

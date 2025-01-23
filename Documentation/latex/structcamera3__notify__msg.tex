@@ -1,0 +1,58 @@
+\doxysection{camera3\+\_\+notify\+\_\+msg Struct Reference}
+\hypertarget{structcamera3__notify__msg}{}\label{structcamera3__notify__msg}\index{camera3\_notify\_msg@{camera3\_notify\_msg}}
+
+
+{\ttfamily \#include $<$camera3.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{structcamera3__notify__msg_ada0f41543ed9f302993c25c57e117633}{type}}
+\item 
+\Hypertarget{structcamera3__notify__msg_a896087956e6f49df632a15eec110cc81}\label{structcamera3__notify__msg_a896087956e6f49df632a15eec110cc81} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>\mbox{\hyperlink{structcamera3__error__msg}{camera3\_error\_msg\_t}} \mbox{\hyperlink{structcamera3__notify__msg_afcab63cbc3cce755a9ab3b0135095917}{error}}\\
+\>\mbox{\hyperlink{structcamera3__shutter__msg}{camera3\_shutter\_msg\_t}} \mbox{\hyperlink{structcamera3__notify__msg_ae532b13830dbf34ee05a3dd8bca707c9}{shutter}}\\
+\>uint8\_t \mbox{\hyperlink{structcamera3__notify__msg_af4e1346c7b08e58edb74a136d4bb03c3}{generic}} \mbox{[}32\mbox{]}\\
+\} {\bfseries message}\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+camera3\+\_\+notify\+\_\+msg\+\_\+t\+:
+
+The message structure sent to \doxylink{structcamera3__callback__ops_a6b866f7b468e677ce586580fab546768}{camera3\+\_\+callback\+\_\+ops\+\_\+t.\+notify()} 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structcamera3__notify__msg_afcab63cbc3cce755a9ab3b0135095917}\label{structcamera3__notify__msg_afcab63cbc3cce755a9ab3b0135095917} 
+\index{camera3\_notify\_msg@{camera3\_notify\_msg}!error@{error}}
+\index{error@{error}!camera3\_notify\_msg@{camera3\_notify\_msg}}
+\doxysubsubsection{\texorpdfstring{error}{error}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structcamera3__error__msg}{camera3\+\_\+error\+\_\+msg\+\_\+t}} camera3\+\_\+notify\+\_\+msg\+::error}
+
+Error message contents. Valid if type is CAMERA3\+\_\+\+MSG\+\_\+\+ERROR \Hypertarget{structcamera3__notify__msg_af4e1346c7b08e58edb74a136d4bb03c3}\label{structcamera3__notify__msg_af4e1346c7b08e58edb74a136d4bb03c3} 
+\index{camera3\_notify\_msg@{camera3\_notify\_msg}!generic@{generic}}
+\index{generic@{generic}!camera3\_notify\_msg@{camera3\_notify\_msg}}
+\doxysubsubsection{\texorpdfstring{generic}{generic}}
+{\footnotesize\ttfamily uint8\+\_\+t camera3\+\_\+notify\+\_\+msg\+::generic\mbox{[}32\mbox{]}}
+
+Generic message contents. Used to ensure a minimum size for custom message types. \Hypertarget{structcamera3__notify__msg_ae532b13830dbf34ee05a3dd8bca707c9}\label{structcamera3__notify__msg_ae532b13830dbf34ee05a3dd8bca707c9} 
+\index{camera3\_notify\_msg@{camera3\_notify\_msg}!shutter@{shutter}}
+\index{shutter@{shutter}!camera3\_notify\_msg@{camera3\_notify\_msg}}
+\doxysubsubsection{\texorpdfstring{shutter}{shutter}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structcamera3__shutter__msg}{camera3\+\_\+shutter\+\_\+msg\+\_\+t}} camera3\+\_\+notify\+\_\+msg\+::shutter}
+
+Shutter message contents. Valid if type is CAMERA3\+\_\+\+MSG\+\_\+\+SHUTTER \Hypertarget{structcamera3__notify__msg_ada0f41543ed9f302993c25c57e117633}\label{structcamera3__notify__msg_ada0f41543ed9f302993c25c57e117633} 
+\index{camera3\_notify\_msg@{camera3\_notify\_msg}!type@{type}}
+\index{type@{type}!camera3\_notify\_msg@{camera3\_notify\_msg}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily int camera3\+\_\+notify\+\_\+msg\+::type}
+
+The message type. One of camera3\+\_\+notify\+\_\+msg\+\_\+type, or a private extension. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/android/hardware/libhardware/include/hardware/camera3.\+h\end{DoxyCompactItemize}

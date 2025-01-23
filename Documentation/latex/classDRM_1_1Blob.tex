@@ -1,0 +1,69 @@
+\doxysection{DRM\+::Blob Class Reference}
+\hypertarget{classDRM_1_1Blob}{}\label{classDRM_1_1Blob}\index{DRM::Blob@{DRM::Blob}}
+Inheritance diagram for DRM\+::Blob\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classDRM_1_1Blob}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classDRM_1_1Blob_a680539fb27fc7b0b5caf10258f3b817c}\label{classDRM_1_1Blob_a680539fb27fc7b0b5caf10258f3b817c} 
+{\bfseries Blob} (\mbox{\hyperlink{classDRM_1_1Device}{Device}} \texorpdfstring{$\ast$}{*}dev, const \mbox{\hyperlink{classlibcamera_1_1Span}{libcamera\+::\+Span}}$<$ const uint8\+\_\+t $>$ \&data)
+\item 
+\Hypertarget{classDRM_1_1Blob_a9a3fdc93cf12af99dd6f0c7dd97e51ce}\label{classDRM_1_1Blob_a9a3fdc93cf12af99dd6f0c7dd97e51ce} 
+bool {\bfseries is\+Valid} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classDRM_1_1Object}{DRM\+::\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Object} (\mbox{\hyperlink{classDRM_1_1Device}{Device}} \texorpdfstring{$\ast$}{*}dev, uint32\+\_\+t id, Type type)
+\item 
+\mbox{\hyperlink{classDRM_1_1Device}{Device}} \texorpdfstring{$\ast$}{*} {\bfseries device} () const
+\item 
+uint32\+\_\+t {\bfseries id} () const
+\item 
+Type {\bfseries type} () const
+\item 
+const \mbox{\hyperlink{classDRM_1_1Property}{Property}} \texorpdfstring{$\ast$}{*} {\bfseries property} (const std\+::string \&name) const
+\item 
+const \mbox{\hyperlink{classDRM_1_1PropertyValue}{Property\+Value}} \texorpdfstring{$\ast$}{*} {\bfseries property\+Value} (const std\+::string \&name) const
+\item 
+const std\+::vector$<$ \mbox{\hyperlink{classDRM_1_1PropertyValue}{Property\+Value}} $>$ \& {\bfseries properties} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{classDRM_1_1Object}{DRM\+::\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classDRM_1_1Object_a67b0ae5a4d2d695fb1dc93602fd65ecf}\label{classDRM_1_1Object_a67b0ae5a4d2d695fb1dc93602fd65ecf} 
+enum {\bfseries Type} \{ \newline
+{\bfseries Type\+Crtc} = DRM\+\_\+\+MODE\+\_\+\+OBJECT\+\_\+\+CRTC
+, {\bfseries Type\+Connector} = DRM\+\_\+\+MODE\+\_\+\+OBJECT\+\_\+\+CONNECTOR
+, {\bfseries Type\+Encoder} = DRM\+\_\+\+MODE\+\_\+\+OBJECT\+\_\+\+ENCODER
+, {\bfseries Type\+Mode} = DRM\+\_\+\+MODE\+\_\+\+OBJECT\+\_\+\+MODE
+, \newline
+{\bfseries Type\+Property} = DRM\+\_\+\+MODE\+\_\+\+OBJECT\+\_\+\+PROPERTY
+, {\bfseries Type\+Fb} = DRM\+\_\+\+MODE\+\_\+\+OBJECT\+\_\+\+FB
+, {\bfseries Type\+Blob} = DRM\+\_\+\+MODE\+\_\+\+OBJECT\+\_\+\+BLOB
+, {\bfseries Type\+Plane} = DRM\+\_\+\+MODE\+\_\+\+OBJECT\+\_\+\+PLANE
+, \newline
+{\bfseries Type\+Any} = DRM\+\_\+\+MODE\+\_\+\+OBJECT\+\_\+\+ANY
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classDRM_1_1Object}{DRM\+::\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual int {\bfseries setup} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classDRM_1_1Object}{DRM\+::\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t {\bfseries id\+\_\+}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/apps/cam/drm.\+h\item 
+src/peripherals/camera/libcamera/src/apps/cam/drm.\+cpp\end{DoxyCompactItemize}

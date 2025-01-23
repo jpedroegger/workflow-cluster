@@ -1,0 +1,63 @@
+\doxysection{libcamera\+::ipa\+::RPi\+::Ipa\+Vc4 Class Reference}
+\hypertarget{classlibcamera_1_1ipa_1_1RPi_1_1IpaVc4}{}\label{classlibcamera_1_1ipa_1_1RPi_1_1IpaVc4}\index{libcamera::ipa::RPi::IpaVc4@{libcamera::ipa::RPi::IpaVc4}}
+Inheritance diagram for libcamera\+::ipa\+::RPi\+::Ipa\+Vc4\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classlibcamera_1_1ipa_1_1RPi_1_1IpaVc4}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1ipa_1_1RPi_1_1IpaBase}{libcamera\+::ipa\+::\+RPi\+::\+Ipa\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t {\bfseries init} (const IPASettings \&settings, const Init\+Params \&params, Init\+Result \texorpdfstring{$\ast$}{*}result) override
+\item 
+int32\+\_\+t {\bfseries configure} (const IPACamera\+Sensor\+Info \&sensor\+Info, const Config\+Params \&params, Config\+Result \texorpdfstring{$\ast$}{*}result) override
+\item 
+void {\bfseries start} (const \mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} \&controls, Start\+Result \texorpdfstring{$\ast$}{*}result) override
+\item 
+void {\bfseries stop} () override
+\item 
+void {\bfseries map\+Buffers} (const std\+::vector$<$ IPABuffer $>$ \&buffers) override
+\item 
+void {\bfseries unmap\+Buffers} (const std\+::vector$<$ unsigned int $>$ \&ids) override
+\item 
+void {\bfseries prepare\+Isp} (const Prepare\+Params \&params) override
+\item 
+void {\bfseries process\+Stats} (const Process\+Params \&params) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1ipa_1_1RPi_1_1IpaBase}{libcamera\+::ipa\+::\+RPi\+::\+Ipa\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries mono\+Sensor} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classlibcamera_1_1ipa_1_1RPi_1_1IpaBase}{libcamera\+::ipa\+::\+RPi\+::\+Ipa\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classRPiController_1_1CamHelper}{RPi\+Controller\+::\+Cam\+Helper}} $>$ {\bfseries helper\+\_\+}
+\item 
+\mbox{\hyperlink{classRPiController_1_1Controller}{RPi\+Controller\+::\+Controller}} {\bfseries controller\+\_\+}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map}} {\bfseries sensor\+Ctrls\+\_\+}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map}} {\bfseries lens\+Ctrls\+\_\+}
+\item 
+\mbox{\hyperlink{structCameraMode}{Camera\+Mode}} {\bfseries mode\+\_\+}
+\item 
+std\+::deque$<$ \mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{utils\+::\+Duration}} $>$ {\bfseries frame\+Lengths\+\_\+}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{utils\+::\+Duration}} {\bfseries last\+Timeout\+\_\+}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} {\bfseries libcamera\+Metadata\+\_\+}
+\item 
+bool {\bfseries stats\+Metadata\+Output\+\_\+}
+\item 
+\mbox{\hyperlink{structHdrStatus}{Hdr\+Status}} {\bfseries hdr\+Status\+\_\+}
+\item 
+bool {\bfseries stitch\+Swap\+Buffers\+\_\+}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/ipa/rpi/vc4/vc4.\+cpp\end{DoxyCompactItemize}

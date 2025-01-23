@@ -1,0 +1,45 @@
+\doxysection{Colors.\+h}
+\hypertarget{Colors_8h_source}{}\label{Colors_8h_source}\index{src/head\_unit/cluster\_qt/includes/Colors.h@{src/head\_unit/cluster\_qt/includes/Colors.h}}
+\mbox{\hyperlink{Colors_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ COLOR\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ COLOR\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classColor}{Color}}}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{classColor_a9a742cbe9f9f4037f5d9f4e81a9b2428}{Color}}()\{\};}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{classColor_a3cfce6c6821d3bf489e26074c55378c0}{\string~Color}}()\{\};}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{classColor}{Color}}\&\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classColor_ac94eaf1e0f9df979877224fe96058afa}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classColor}{Color}}\&)\ \{\textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};\}}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classColor_a49b78e6423d392cd7e30571df8478f8b}{counter}}\ =\ 0;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ QColor\ \ \mbox{\hyperlink{classColor_affdbadf312940070be783223d7457f8e}{main\_color\_array}}[4]\ =\ \{\textcolor{stringliteral}{"{}\#312244"{}},\ \textcolor{stringliteral}{"{}\#9A031E"{}},\ \textcolor{stringliteral}{"{}\#FF99C8"{}},\ \textcolor{stringliteral}{"{}\#9A031E"{}}\};}
+\DoxyCodeLine{00016\ \ \ \ \ QColor\ \ \mbox{\hyperlink{classColor_a00b19a0fa8a8fcbd7b9351e0c34afed2}{main\_color}}\ =\ \mbox{\hyperlink{classColor_affdbadf312940070be783223d7457f8e}{main\_color\_array}}[0];}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ QColor\ \ \mbox{\hyperlink{classColor_adc99bd4188d5381db98bd9d59dd51bd2}{accent\_color\_array}}[4]\ =\ \{\textcolor{stringliteral}{"{}\#4D194D"{}},\ \textcolor{stringliteral}{"{}\#FB8B24"{}},\ \textcolor{stringliteral}{"{}\#A9DEF9"{}},\ \textcolor{stringliteral}{"{}\#9A031E"{}}\};}
+\DoxyCodeLine{00019\ \ \ \ \ QColor\ \ \mbox{\hyperlink{classColor_a39e73e04ef1ffef494d70e1448098c58}{accent\_color}}\ =\ \mbox{\hyperlink{classColor_adc99bd4188d5381db98bd9d59dd51bd2}{accent\_color\_array}}[0];}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ QColor\ \ \mbox{\hyperlink{classColor_a5a1a0b3796e51e07ed6b92d25d12d757}{alphabet\_color\_array}}[4]\ =\ \{\textcolor{stringliteral}{"{}\#006466"{}},\ \textcolor{stringliteral}{"{}\#E36414"{}},\ \textcolor{stringliteral}{"{}\#E4C1F9"{}},\ \textcolor{stringliteral}{"{}\#9A031E"{}}\};}
+\DoxyCodeLine{00022\ \ \ \ \ QColor\ \ \mbox{\hyperlink{classColor_ae4928e1176b4884bed811328b06bf83e}{alphabet\_color}}\ =\ \mbox{\hyperlink{classColor_a5a1a0b3796e51e07ed6b92d25d12d757}{alphabet\_color\_array}}[0];}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ QString\ \mbox{\hyperlink{classColor_ac73b3176989c3a5e3c77fb15aada2c63}{background\_array}}[4]\ =\ \{\textcolor{stringliteral}{"{}background-\/color:\ \#212F45"{}},\ \textcolor{stringliteral}{"{}background-\/color:\ \#5F0F40"{}},\ \textcolor{stringliteral}{"{}background-\/color:\ \#D0F4DE"{}},\ \textcolor{stringliteral}{"{}background-\/color:\ \#212F45"{}}\};}
+\DoxyCodeLine{00025\ \ \ \ \ QString\ \mbox{\hyperlink{classColor_a31591dfc864d631ef9134d538d85cfdd}{background}}\ =\ \mbox{\hyperlink{classColor_ac73b3176989c3a5e3c77fb15aada2c63}{background\_array}}[0];}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classColor_a08a5f8263111709aed4c8da769221e03}{indent}}()}
+\DoxyCodeLine{00027\ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ this-\/>counter++;}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>counter\ >\ 3)}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>counter\ =\ 0;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ this-\/>main\_color\ =\ \mbox{\hyperlink{classColor_affdbadf312940070be783223d7457f8e}{main\_color\_array}}[\mbox{\hyperlink{classColor_a49b78e6423d392cd7e30571df8478f8b}{counter}}];}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ this-\/>accent\_color\ =\ \mbox{\hyperlink{classColor_adc99bd4188d5381db98bd9d59dd51bd2}{accent\_color\_array}}[\mbox{\hyperlink{classColor_a49b78e6423d392cd7e30571df8478f8b}{counter}}];}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ this-\/>alphabet\_color\ =\ \mbox{\hyperlink{classColor_a5a1a0b3796e51e07ed6b92d25d12d757}{alphabet\_color\_array}}[\mbox{\hyperlink{classColor_a49b78e6423d392cd7e30571df8478f8b}{counter}}];}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ this-\/>background\ =\ \mbox{\hyperlink{classColor_ac73b3176989c3a5e3c77fb15aada2c63}{background\_array}}[\mbox{\hyperlink{classColor_a49b78e6423d392cd7e30571df8478f8b}{counter}}];}
+\DoxyCodeLine{00035\ \ \ \ \ \};}
+\DoxyCodeLine{00036\ \ \ \ \ }
+\DoxyCodeLine{00037\ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

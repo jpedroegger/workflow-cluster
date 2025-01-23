@@ -1,0 +1,59 @@
+\doxysection{exposure\+\_\+mode\+\_\+helper.\+h}
+\hypertarget{exposure__mode__helper_8h_source}{}\label{exposure__mode__helper_8h_source}\index{src/peripherals/camera/libcamera/src/ipa/libipa/exposure\_mode\_helper.h@{src/peripherals/camera/libcamera/src/ipa/libipa/exposure\_mode\_helper.h}}
+\mbox{\hyperlink{exposure__mode__helper_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2024,\ Paul\ Elder\ <paul.elder@ideasonboard.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Helper\ class\ that\ performs\ computations\ relating\ to\ exposure}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <tuple>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <libcamera/base/span.h>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{include_2libcamera_2base_2utils_8h}{libcamera/base/utils.h}}>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacelibcamera}{libcamera}}\ \{}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{namespace\ }ipa\ \{}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1ipa_1_1ExposureModeHelper}{ExposureModeHelper}}}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1ExposureModeHelper}{ExposureModeHelper}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Span}{Span}}<std::pair<utils::Duration,\ double>>\ stages);}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1ExposureModeHelper}{\string~ExposureModeHelper}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1ExposureModeHelper_a65fb41ca9eac111b7134c03a25cf331f}{setLimits}}(\mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{utils::Duration}}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1ExposureModeHelper_a0e9b21ab8a26c0a7c0448204d482d640}{minExposureTime}},\ \mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{utils::Duration}}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1ExposureModeHelper_a3407fa04632f178ab7401f4fc005062a}{maxExposureTime}},}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1ExposureModeHelper_aa4834455245f11980ed6b887d3dc95ab}{minGain}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1ExposureModeHelper_a996352f205f85833243a5cf709dff71f}{maxGain}});}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ std::tuple<utils::Duration,\ double,\ double>}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1ExposureModeHelper_a31ca71c05f578afb5312774dae30d1fa}{splitExposure}}(\mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{utils::Duration}}\ exposure)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{utils::Duration}}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1ExposureModeHelper_a0e9b21ab8a26c0a7c0448204d482d640}{minExposureTime}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ minExposureTime\_;\ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{utils::Duration}}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1ExposureModeHelper_a3407fa04632f178ab7401f4fc005062a}{maxExposureTime}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ maxExposureTime\_;\ \}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1ExposureModeHelper_aa4834455245f11980ed6b887d3dc95ab}{minGain}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ minGain\_;\ \}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1ExposureModeHelper_a996352f205f85833243a5cf709dff71f}{maxGain}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ maxGain\_;\ \}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{utils::Duration}}\ clampExposureTime(\mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{utils::Duration}}\ exposureTime)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{double}\ clampGain(\textcolor{keywordtype}{double}\ gain)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ std::vector<utils::Duration>\ exposureTimes\_;}
+\DoxyCodeLine{00043\ \ \ \ \ std::vector<double>\ gains\_;}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{utils::Duration}}\ minExposureTime\_;}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{utils::Duration}}\ maxExposureTime\_;}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{double}\ minGain\_;}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{double}\ maxGain\_;}
+\DoxyCodeLine{00049\ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \}\ \textcolor{comment}{/*\ namespace\ ipa\ */}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \}\ \textcolor{comment}{/*\ namespace\ libcamera\ */}}
+
+\end{DoxyCode}

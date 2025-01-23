@@ -1,0 +1,93 @@
+\doxysection{byte\+\_\+stream\+\_\+buffer.\+h}
+\hypertarget{byte__stream__buffer_8h_source}{}\label{byte__stream__buffer_8h_source}\index{src/peripherals/camera/libcamera/include/libcamera/internal/byte\_stream\_buffer.h@{src/peripherals/camera/libcamera/include/libcamera/internal/byte\_stream\_buffer.h}}
+\mbox{\hyperlink{byte__stream__buffer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2019,\ Google\ Inc.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Byte\ stream\ buffer}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <type\_traits>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{class_8h}{libcamera/base/class.h}}>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <libcamera/base/span.h>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacelibcamera}{libcamera}}\ \{}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer}{ByteStreamBuffer}}}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer}{ByteStreamBuffer}}(\textcolor{keyword}{const}\ uint8\_t\ *\mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_a61bfdddc677f7c3bc589f956f269018c}{base}},\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_ab6b3af2aaaec289b4502e7cee4a64183}{size}});}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer}{ByteStreamBuffer}}(uint8\_t\ *\mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_a61bfdddc677f7c3bc589f956f269018c}{base}},\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_ab6b3af2aaaec289b4502e7cee4a64183}{size}});}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer}{ByteStreamBuffer}}(\mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer}{ByteStreamBuffer}}\ \&\&other);}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer}{ByteStreamBuffer}}\ \&\mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_a311fc7a5d897e86b50f15751c31bf006}{operator=}}(\mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer}{ByteStreamBuffer}}\ \&\&other);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ *\mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_a61bfdddc677f7c3bc589f956f269018c}{base}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ base\_;\ \}}
+\DoxyCodeLine{00028\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_a84dd3793fe90e5d525087275c83efe30}{offset}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ (write\_\ ?\ write\_\ :\ read\_)\ -\/\ base\_;\ \}}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_ab6b3af2aaaec289b4502e7cee4a64183}{size}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ size\_;\ \}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_acb29445e9ea98ad3df00ac60e3f58786}{overflow}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ overflow\_;\ \}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer}{ByteStreamBuffer}}\ \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_a1be0172bbc8c87b267f4ff162166743d}{carveOut}}(\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_ab6b3af2aaaec289b4502e7cee4a64183}{size}});}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_a8a8a084b45dfd4f29092aab83d4961cd}{skip}}(\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_ab6b3af2aaaec289b4502e7cee4a64183}{size}});}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_ad904b7ed94da3c8d266863a1ed2cf995}{read}}(T\ *t)}
+\DoxyCodeLine{00037\ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_ad904b7ed94da3c8d266863a1ed2cf995}{read}}(\textcolor{keyword}{reinterpret\_cast<}uint8\_t\ *\textcolor{keyword}{>}(t),\ \textcolor{keyword}{sizeof}(*t));}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_a8a614c18384f105e295724f9aef2a1ec}{read}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Span}{Span<T>}}\ \&data)}
+\DoxyCodeLine{00043\ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_ad904b7ed94da3c8d266863a1ed2cf995}{read}}(\textcolor{keyword}{reinterpret\_cast<}uint8\_t\ *\textcolor{keyword}{>}(data.data()),}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data.size\_bytes());}
+\DoxyCodeLine{00046\ \ \ \ \ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{const}\ std::remove\_reference\_t<T>\ *\mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_a5128ab4e3c75aa968dee6dd5ed0f2d94}{read}}(\textcolor{keywordtype}{size\_t}\ count\ =\ 1)}
+\DoxyCodeLine{00050\ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }return\_type\ =\ \textcolor{keyword}{const}\ std::remove\_reference\_t<T>\ *;}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{reinterpret\_cast<}return\_type\textcolor{keyword}{>}(\mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_ad904b7ed94da3c8d266863a1ed2cf995}{read}}(\textcolor{keyword}{sizeof}(T),\ count));}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_acc0b98c87ec6feb3785eb576f684e40c}{write}}(\textcolor{keyword}{const}\ T\ *t)}
+\DoxyCodeLine{00057\ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_acc0b98c87ec6feb3785eb576f684e40c}{write}}(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }uint8\_t\ *\textcolor{keyword}{>}(t),\ \textcolor{keyword}{sizeof}(*t));}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_ab79ce758fb1ebca947457e38c450dc20}{write}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Span}{Span<T>}}\ \&data)}
+\DoxyCodeLine{00063\ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_acc0b98c87ec6feb3785eb576f684e40c}{write}}(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }uint8\_t\ *\textcolor{keyword}{>}(data.data()),}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data.size\_bytes());}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{class_8h_ace000c18250df4aeac259f1ab739c655}{LIBCAMERA\_DISABLE\_COPY}}(\mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer}{ByteStreamBuffer}})}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ setOverflow();}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_ad904b7ed94da3c8d266863a1ed2cf995}{read}}(uint8\_t\ *data,\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_ab6b3af2aaaec289b4502e7cee4a64183}{size}});}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ *\mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_ad904b7ed94da3c8d266863a1ed2cf995}{read}}(\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_ab6b3af2aaaec289b4502e7cee4a64183}{size}},\ \textcolor{keywordtype}{size\_t}\ count);}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_acc0b98c87ec6feb3785eb576f684e40c}{write}}(\textcolor{keyword}{const}\ uint8\_t\ *data,\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer_ab6b3af2aaaec289b4502e7cee4a64183}{size}});}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ByteStreamBuffer}{ByteStreamBuffer}}\ *parent\_;}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ *base\_;}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size\_;}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{bool}\ overflow\_;}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ *read\_;}
+\DoxyCodeLine{00084\ \ \ \ \ uint8\_t\ *write\_;}
+\DoxyCodeLine{00085\ \};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \}\ \textcolor{comment}{/*\ namespace\ libcamera\ */}}
+
+\end{DoxyCode}

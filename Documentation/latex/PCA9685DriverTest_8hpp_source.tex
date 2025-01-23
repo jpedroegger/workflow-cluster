@@ -1,0 +1,25 @@
+\doxysection{PCA9685\+Driver\+Test.\+hpp}
+\hypertarget{PCA9685DriverTest_8hpp_source}{}\label{PCA9685DriverTest_8hpp_source}\index{src/drivers/pca9685\_driver/test/include/PCA9685DriverTest.hpp@{src/drivers/pca9685\_driver/test/include/PCA9685DriverTest.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}MockI2cService.hpp"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <custom\_msgs/srv/i2c\_service.hpp>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <gmock/gmock.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <gtest/gtest.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <rclcpp/rclcpp.hpp>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPCA9685DriverTest}{PCA9685DriverTest}}\ :\ \textcolor{keyword}{public}\ ::testing::Test}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetUp()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ TearDown()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ std::shared\_ptr<rclcpp::Node>\ test\_node\_;}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ std::shared\_ptr<MockI2cServiceNode>\ mock\_i2c\_node\_;}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ std::shared\_ptr<rclcpp::executors::SingleThreadedExecutor>\ executor\_;}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ std::thread\ executor\_thread\_;}
+\DoxyCodeLine{00019\ \};}
+
+\end{DoxyCode}

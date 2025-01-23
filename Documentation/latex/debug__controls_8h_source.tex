@@ -1,0 +1,52 @@
+\doxysection{debug\+\_\+controls.\+h}
+\hypertarget{debug__controls_8h_source}{}\label{debug__controls_8h_source}\index{src/peripherals/camera/libcamera/include/libcamera/internal/debug\_controls.h@{src/peripherals/camera/libcamera/include/libcamera/internal/debug\_controls.h}}
+\mbox{\hyperlink{debug__controls_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2024,\ Google\ Inc.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Debug\ metadata\ helpers}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <libcamera/control\_ids.h>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacelibcamera}{libcamera}}\ \{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1DebugMetadata}{DebugMetadata}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1DebugMetadata}{DebugMetadata}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1DebugMetadata_a8163608749c5f38f7b8f964a42680ede}{enableByControl}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1ControlList}{ControlList}}\ \&controls);}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1DebugMetadata_a28488fc16cdc3a556273e17567c75bf8}{enable}}(\textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classlibcamera_1_1DebugMetadata_a28488fc16cdc3a556273e17567c75bf8}{enable}}\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1DebugMetadata_a9cce87fd88572f4f6ddf57c1238e24b0}{setParent}}(\mbox{\hyperlink{classlibcamera_1_1DebugMetadata}{DebugMetadata}}\ *parent);}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1DebugMetadata_a1f327440ab91a6f6560eb2fd8891b790}{moveEntries}}(\mbox{\hyperlink{classlibcamera_1_1ControlList}{ControlList}}\ \&list);}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ V>}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1DebugMetadata_a78f2e124e11dd9fa0552418a9c5f15db}{set}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Control}{Control<T>}}\ \&ctrl,\ \textcolor{keyword}{const}\ V\ \&value)}
+\DoxyCodeLine{00026\ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (parent\_)\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ parent\_-\/>\mbox{\hyperlink{classlibcamera_1_1DebugMetadata_a78f2e124e11dd9fa0552418a9c5f15db}{set}}(ctrl,\ value);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!enabled\_)}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ cache\_.\mbox{\hyperlink{classlibcamera_1_1ControlList_aa41c425f3075349747fdbfc1e3a6fc46}{set}}(ctrl,\ value);}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1DebugMetadata_a78f2e124e11dd9fa0552418a9c5f15db}{set}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1ControlValue}{ControlValue}}\ \&value);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{bool}\ enabled\_\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1DebugMetadata}{DebugMetadata}}\ *parent\_\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ControlList}{ControlList}}\ cache\_;}
+\DoxyCodeLine{00044\ \};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \}\ \textcolor{comment}{/*\ namespace\ libcamera\ */}}
+
+\end{DoxyCode}

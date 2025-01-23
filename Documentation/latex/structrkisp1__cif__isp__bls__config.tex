@@ -1,0 +1,37 @@
+\doxysection{rkisp1\+\_\+cif\+\_\+isp\+\_\+bls\+\_\+config Struct Reference}
+\hypertarget{structrkisp1__cif__isp__bls__config}{}\label{structrkisp1__cif__isp__bls__config}\index{rkisp1\_cif\_isp\_bls\_config@{rkisp1\_cif\_isp\_bls\_config}}
+
+
+{\ttfamily \#include $<$rkisp1-\/config.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structrkisp1__cif__isp__bls__config_a5695e5b240700525bdbaa61ca618d8e4}\label{structrkisp1__cif__isp__bls__config_a5695e5b240700525bdbaa61ca618d8e4} 
+\+\_\+\+\_\+u8 {\bfseries enable\+\_\+auto}
+\item 
+\Hypertarget{structrkisp1__cif__isp__bls__config_aba507433e93a848ad6137d8f73cf9016}\label{structrkisp1__cif__isp__bls__config_aba507433e93a848ad6137d8f73cf9016} 
+\+\_\+\+\_\+u8 {\bfseries en\+\_\+windows}
+\item 
+\Hypertarget{structrkisp1__cif__isp__bls__config_acfea913906c21ba2bf071a8963308044}\label{structrkisp1__cif__isp__bls__config_acfea913906c21ba2bf071a8963308044} 
+struct \mbox{\hyperlink{structrkisp1__cif__isp__window}{rkisp1\+\_\+cif\+\_\+isp\+\_\+window}} {\bfseries bls\+\_\+window1}
+\item 
+\Hypertarget{structrkisp1__cif__isp__bls__config_a96bd8313fae69278f6f09e5ec0d17b57}\label{structrkisp1__cif__isp__bls__config_a96bd8313fae69278f6f09e5ec0d17b57} 
+struct \mbox{\hyperlink{structrkisp1__cif__isp__window}{rkisp1\+\_\+cif\+\_\+isp\+\_\+window}} {\bfseries bls\+\_\+window2}
+\item 
+\Hypertarget{structrkisp1__cif__isp__bls__config_a0b18dd831d87a0272e164c03c3b5b9a2}\label{structrkisp1__cif__isp__bls__config_a0b18dd831d87a0272e164c03c3b5b9a2} 
+\+\_\+\+\_\+u8 {\bfseries bls\+\_\+samples}
+\item 
+\Hypertarget{structrkisp1__cif__isp__bls__config_af242e2ab9637d4f10a9b7b471a23c5dd}\label{structrkisp1__cif__isp__bls__config_af242e2ab9637d4f10a9b7b471a23c5dd} 
+struct \mbox{\hyperlink{structrkisp1__cif__isp__bls__fixed__val}{rkisp1\+\_\+cif\+\_\+isp\+\_\+bls\+\_\+fixed\+\_\+val}} {\bfseries fixed\+\_\+val}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structrkisp1__cif__isp__bls__config}{rkisp1\+\_\+cif\+\_\+isp\+\_\+bls\+\_\+config} -\/ Configuration used by black level subtraction
+
+@enable\+\_\+auto\+: Automatic mode activated means that the measured values are subtracted. Otherwise the fixed subtraction values will be subtracted. @en\+\_\+windows\+: enabled window @bls\+\_\+window1\+: Measurement window 1 size @bls\+\_\+window2\+: Measurement window 2 size @bls\+\_\+samples\+: Set amount of measured pixels for each Bayer position (A, B,C and D) to 2\texorpdfstring{$^\wedge$}{\string^}bls\+\_\+samples. @fixed\+\_\+val\+: Fixed subtraction values 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/rkisp1-\/config.\+h\end{DoxyCompactItemize}

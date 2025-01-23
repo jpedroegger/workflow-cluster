@@ -1,0 +1,202 @@
+\doxysection{libcamera\+::Device\+Enumerator Class Reference}
+\hypertarget{classlibcamera_1_1DeviceEnumerator}{}\label{classlibcamera_1_1DeviceEnumerator}\index{libcamera::DeviceEnumerator@{libcamera::DeviceEnumerator}}
+
+
+Enumerate, store and search media devices.  
+
+
+Inheritance diagram for libcamera\+::Device\+Enumerator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlibcamera_1_1DeviceEnumerator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int \mbox{\hyperlink{classlibcamera_1_1DeviceEnumerator_ae934100856a870398c8c663dbabdb79b}{init}} ()=0
+\begin{DoxyCompactList}\small\item\em Initialize the enumerator. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classlibcamera_1_1DeviceEnumerator_a2f2488074535c414b8c25370e9997d0b}{enumerate}} ()=0
+\begin{DoxyCompactList}\small\item\em Enumerate all media devices in the system. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1MediaDevice}{Media\+Device}} $>$ \mbox{\hyperlink{classlibcamera_1_1DeviceEnumerator_a03ca0740a3c9ba6e07c28d4a00c23aa4}{search}} (const \mbox{\hyperlink{classlibcamera_1_1DeviceMatch}{Device\+Match}} \&dm)
+\begin{DoxyCompactList}\small\item\em Search available media devices for a pattern match. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1DeviceEnumerator}{Device\+Enumerator}} $>$ \mbox{\hyperlink{classlibcamera_1_1DeviceEnumerator_a044d5276cf58335f3afc8cdd90d75e08}{create}} ()
+\begin{DoxyCompactList}\small\item\em Create a new device enumerator matching the systems capabilities. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1Signal}{Signal}} \mbox{\hyperlink{classlibcamera_1_1DeviceEnumerator_a26fc265cd987d84f66dc0292f4fe5220}{devices\+Added}}
+\begin{DoxyCompactList}\small\item\em Notify of new media devices being found. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1MediaDevice}{Media\+Device}} $>$ \mbox{\hyperlink{classlibcamera_1_1DeviceEnumerator_ac18ba2dec80bb01666bc635f4556e2c3}{create\+Device}} (const std\+::string \&device\+Node)
+\begin{DoxyCompactList}\small\item\em Create a media device instance. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1DeviceEnumerator_a1e618229382268ba6ef0a559afaa51cf}{add\+Device}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1MediaDevice}{Media\+Device}} $>$ media)
+\begin{DoxyCompactList}\small\item\em Add a media device to the enumerator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1DeviceEnumerator_a3c539b6b75170fcf224ed5574c971842}{remove\+Device}} (const std\+::string \&device\+Node)
+\begin{DoxyCompactList}\small\item\em Remove a media device from the enumerator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Enumerate, store and search media devices. 
+
+The \doxylink{classlibcamera_1_1DeviceEnumerator}{Device\+Enumerator} class is responsible for all interactions with the operating system related to media devices. It enumerates all media devices in the system, and for each device found creates an instance of the \doxylink{classlibcamera_1_1MediaDevice}{Media\+Device} class and stores it internally. The list of media devices can then be searched using \doxylink{classlibcamera_1_1DeviceMatch}{Device\+Match} search patterns.
+
+The enumerator also associates media device entities with device node paths. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1DeviceEnumerator_a1e618229382268ba6ef0a559afaa51cf}\label{classlibcamera_1_1DeviceEnumerator_a1e618229382268ba6ef0a559afaa51cf} 
+\index{libcamera::DeviceEnumerator@{libcamera::DeviceEnumerator}!addDevice@{addDevice}}
+\index{addDevice@{addDevice}!libcamera::DeviceEnumerator@{libcamera::DeviceEnumerator}}
+\doxysubsubsection{\texorpdfstring{addDevice()}{addDevice()}}
+{\footnotesize\ttfamily void libcamera\+::\+Device\+Enumerator\+::add\+Device (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1MediaDevice}{Media\+Device}} $>$}]{media }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Add a media device to the enumerator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em media} & media device instance to add\\
+\hline
+\end{DoxyParams}
+Store the media device in the internal list for later matching with pipeline handlers. {\itshape media} shall be created with \doxylink{classlibcamera_1_1DeviceEnumerator_ac18ba2dec80bb01666bc635f4556e2c3}{create\+Device()} first. This function shall be called after all members of the entities of the media graph have been confirmed to be initialized. \Hypertarget{classlibcamera_1_1DeviceEnumerator_a044d5276cf58335f3afc8cdd90d75e08}\label{classlibcamera_1_1DeviceEnumerator_a044d5276cf58335f3afc8cdd90d75e08} 
+\index{libcamera::DeviceEnumerator@{libcamera::DeviceEnumerator}!create@{create}}
+\index{create@{create}!libcamera::DeviceEnumerator@{libcamera::DeviceEnumerator}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1DeviceEnumerator}{Device\+Enumerator}} $>$ libcamera\+::\+Device\+Enumerator\+::create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create a new device enumerator matching the systems capabilities. 
+
+Depending on how the operating system handles device detection, hot-\/plug notification and device node lookup, different device enumerator implementations may be needed. This function creates the best enumerator for the operating system based on the available resources. Not all different enumerator types are guaranteed to support all features.
+
+\begin{DoxyReturn}{Returns}
+A pointer to the newly created device enumerator on success, or nullptr if an error occurs 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1DeviceEnumerator_ac18ba2dec80bb01666bc635f4556e2c3}\label{classlibcamera_1_1DeviceEnumerator_ac18ba2dec80bb01666bc635f4556e2c3} 
+\index{libcamera::DeviceEnumerator@{libcamera::DeviceEnumerator}!createDevice@{createDevice}}
+\index{createDevice@{createDevice}!libcamera::DeviceEnumerator@{libcamera::DeviceEnumerator}}
+\doxysubsubsection{\texorpdfstring{createDevice()}{createDevice()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1MediaDevice}{Media\+Device}} $>$ libcamera\+::\+Device\+Enumerator\+::create\+Device (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{device\+Node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Create a media device instance. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em device\+Node} & path to the media device to create\\
+\hline
+\end{DoxyParams}
+Create a media device for the {\itshape device\+Node}, open it, and populate its media graph. The device enumerator shall then populate the media device by associating device nodes with entities using \doxylink{classlibcamera_1_1MediaEntity_afc48af8e052b6436492eb9196abced71}{Media\+Entity\+::set\+Device\+Node()}. This process is specific to each device enumerator, and the device enumerator shall ensure that device nodes are ready to be used (for instance, if applicable, by waiting for device nodes to be created and access permissions to be set by the system). Once done, it shall add the media device to the system with \doxylink{classlibcamera_1_1DeviceEnumerator_a1e618229382268ba6ef0a559afaa51cf}{add\+Device()}.
+
+\begin{DoxyReturn}{Returns}
+Created media device instance on success, or nullptr otherwise 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1DeviceEnumerator_a2f2488074535c414b8c25370e9997d0b}\label{classlibcamera_1_1DeviceEnumerator_a2f2488074535c414b8c25370e9997d0b} 
+\index{libcamera::DeviceEnumerator@{libcamera::DeviceEnumerator}!enumerate@{enumerate}}
+\index{enumerate@{enumerate}!libcamera::DeviceEnumerator@{libcamera::DeviceEnumerator}}
+\doxysubsubsection{\texorpdfstring{enumerate()}{enumerate()}}
+{\footnotesize\ttfamily libcamera\+::\+Device\+Enumerator\+::enumerate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Enumerate all media devices in the system. 
+
+This function finds and add all media devices in the system to the enumerator. It shall be implemented by all subclasses of \doxylink{classlibcamera_1_1DeviceEnumerator}{Device\+Enumerator} using system-\/specific methods.
+
+Individual media devices that can\textquotesingle{}t be properly enumerated shall be skipped with a warning message logged, without returning an error. Only errors that prevent enumeration altogether shall be fatal.
+
+\textbackslash{}context This function is \textbackslash{}threadbound.
+
+\begin{DoxyReturn}{Returns}
+0 on success or a negative error code otherwise 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classlibcamera_1_1DeviceEnumeratorSysfs_a78b0e983ab329d0189861afda33a58af}{libcamera\+::\+Device\+Enumerator\+Sysfs}}, and \mbox{\hyperlink{classlibcamera_1_1DeviceEnumeratorUdev_a62be68b010f4e2051d8f30e99006e4e2}{libcamera\+::\+Device\+Enumerator\+Udev}}.
+
+\Hypertarget{classlibcamera_1_1DeviceEnumerator_ae934100856a870398c8c663dbabdb79b}\label{classlibcamera_1_1DeviceEnumerator_ae934100856a870398c8c663dbabdb79b} 
+\index{libcamera::DeviceEnumerator@{libcamera::DeviceEnumerator}!init@{init}}
+\index{init@{init}!libcamera::DeviceEnumerator@{libcamera::DeviceEnumerator}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily libcamera\+::\+Device\+Enumerator\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Initialize the enumerator. 
+
+\begin{DoxyReturn}{Returns}
+0 on success or a negative error code otherwise 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em -\/\+EBUSY} & the enumerator has already been initialized \\
+\hline
+{\em -\/\+ENODEV} & the enumerator can\textquotesingle{}t enumerate devices \\
+\hline
+\end{DoxyRetVals}
+
+
+Implemented in \mbox{\hyperlink{classlibcamera_1_1DeviceEnumeratorSysfs_a94312a552a82247c54c779af3b4d32e7}{libcamera\+::\+Device\+Enumerator\+Sysfs}}, and \mbox{\hyperlink{classlibcamera_1_1DeviceEnumeratorUdev_aae2f67061798eb1414432beff8061c47}{libcamera\+::\+Device\+Enumerator\+Udev}}.
+
+\Hypertarget{classlibcamera_1_1DeviceEnumerator_a3c539b6b75170fcf224ed5574c971842}\label{classlibcamera_1_1DeviceEnumerator_a3c539b6b75170fcf224ed5574c971842} 
+\index{libcamera::DeviceEnumerator@{libcamera::DeviceEnumerator}!removeDevice@{removeDevice}}
+\index{removeDevice@{removeDevice}!libcamera::DeviceEnumerator@{libcamera::DeviceEnumerator}}
+\doxysubsubsection{\texorpdfstring{removeDevice()}{removeDevice()}}
+{\footnotesize\ttfamily void libcamera\+::\+Device\+Enumerator\+::remove\+Device (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{device\+Node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Remove a media device from the enumerator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em device\+Node} & Path to the media device to remove\\
+\hline
+\end{DoxyParams}
+Remove the media device identified by {\itshape device\+Node} previously added to the enumerator with \doxylink{classlibcamera_1_1DeviceEnumerator_a1e618229382268ba6ef0a559afaa51cf}{add\+Device()}. The media device\textquotesingle{}s \doxylink{classlibcamera_1_1MediaDevice_a5d1572fad6ad84bc88274d80cc86c80f}{Media\+Device\+::disconnected} signal is emitted. \Hypertarget{classlibcamera_1_1DeviceEnumerator_a03ca0740a3c9ba6e07c28d4a00c23aa4}\label{classlibcamera_1_1DeviceEnumerator_a03ca0740a3c9ba6e07c28d4a00c23aa4} 
+\index{libcamera::DeviceEnumerator@{libcamera::DeviceEnumerator}!search@{search}}
+\index{search@{search}!libcamera::DeviceEnumerator@{libcamera::DeviceEnumerator}}
+\doxysubsubsection{\texorpdfstring{search()}{search()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1MediaDevice}{Media\+Device}} $>$ libcamera\+::\+Device\+Enumerator\+::search (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1DeviceMatch}{Device\+Match}} \&}]{dm }\end{DoxyParamCaption})}
+
+
+
+Search available media devices for a pattern match. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em dm} & Search pattern\\
+\hline
+\end{DoxyParams}
+Search in the enumerated media devices that are not already in use for a match described in {\itshape dm}. If a match is found and the caller intends to use it the caller is responsible for acquiring the \doxylink{classlibcamera_1_1MediaDevice}{Media\+Device} object and releasing it when done with it.
+
+\begin{DoxyReturn}{Returns}
+pointer to the matching \doxylink{classlibcamera_1_1MediaDevice}{Media\+Device}, or nullptr if no match is found 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classlibcamera_1_1DeviceEnumerator_a26fc265cd987d84f66dc0292f4fe5220}\label{classlibcamera_1_1DeviceEnumerator_a26fc265cd987d84f66dc0292f4fe5220} 
+\index{libcamera::DeviceEnumerator@{libcamera::DeviceEnumerator}!devicesAdded@{devicesAdded}}
+\index{devicesAdded@{devicesAdded}!libcamera::DeviceEnumerator@{libcamera::DeviceEnumerator}}
+\doxysubsubsection{\texorpdfstring{devicesAdded}{devicesAdded}}
+{\footnotesize\ttfamily libcamera\+::\+Device\+Enumerator\+::devices\+Added}
+
+
+
+Notify of new media devices being found. 
+
+This signal is emitted when the device enumerator finds new media devices in the system. It may be emitted for every newly detected device, or once for multiple devices, at the discretion of the device enumerator. Not all device enumerator types may support dynamic detection of new devices. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/internal/\mbox{\hyperlink{device__enumerator_8h}{device\+\_\+enumerator.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/device\+\_\+enumerator.\+cpp\end{DoxyCompactItemize}

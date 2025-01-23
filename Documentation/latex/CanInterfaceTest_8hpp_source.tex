@@ -1,0 +1,26 @@
+\doxysection{Can\+Interface\+Test.\+hpp}
+\hypertarget{CanInterfaceTest_8hpp_source}{}\label{CanInterfaceTest_8hpp_source}\index{src/bus\_interfaces/can\_interface/test/include/CanInterfaceTest.hpp@{src/bus\_interfaces/can\_interface/test/include/CanInterfaceTest.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}CanInterface.hpp"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}MockCanDriver.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <gmock/gmock.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <rclcpp/rclcpp.hpp>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCanInterfaceTest}{CanInterfaceTest}}\ :\ \textcolor{keyword}{public}\ ::testing::Test}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetUp()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ TearDown()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ std::shared\_ptr<CanInterface>\ test\_node\_;}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ rclcpp::executors::SingleThreadedExecutor::UniquePtr\ executor\_;}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ std::shared\_ptr<MockCanDriver>\ mock\_driver\_;}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ rclcpp::Client<custom\_msgs::srv::CanService>::SharedPtr\ can\_client\_;}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ std::thread\ executor\_thread\_;}
+\DoxyCodeLine{00020\ \};}
+
+\end{DoxyCode}

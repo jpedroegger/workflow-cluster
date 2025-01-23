@@ -1,0 +1,103 @@
+\doxysection{KMSSink Class Reference}
+\hypertarget{classKMSSink}{}\label{classKMSSink}\index{KMSSink@{KMSSink}}
+Inheritance diagram for KMSSink\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classKMSSink}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classKMSSink_a71663f72d276edd6ed2fe8143462caf6}\label{classKMSSink_a71663f72d276edd6ed2fe8143462caf6} 
+{\bfseries KMSSink} (const std\+::string \&connector\+Name)
+\item 
+void \mbox{\hyperlink{classKMSSink_a006d41354d8f77bdb95c8e9525d45829}{map\+Buffer}} (\mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{libcamera\+::\+Frame\+Buffer}} \texorpdfstring{$\ast$}{*}buffer) override
+\item 
+int \mbox{\hyperlink{classKMSSink_a4ae11ad5e179893cbfaa671f1027fe8c}{configure}} (const \mbox{\hyperlink{classlibcamera_1_1CameraConfiguration}{libcamera\+::\+Camera\+Configuration}} \&config) override
+\item 
+int \mbox{\hyperlink{classKMSSink_af33500186b16852806e3cf3be8a9a0e3}{start}} () override
+\item 
+int \mbox{\hyperlink{classKMSSink_a41cf5e6ac71e5d4c11a42f41965ac716}{stop}} () override
+\item 
+bool \mbox{\hyperlink{classKMSSink_a9b20621341bd65a5a161d3fdd2f71be7}{process\+Request}} (\mbox{\hyperlink{classlibcamera_1_1Request}{libcamera\+::\+Request}} \texorpdfstring{$\ast$}{*}request) override
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classFrameSink}{Frame\+Sink}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1Signal}{libcamera\+::\+Signal}}$<$ \mbox{\hyperlink{classlibcamera_1_1Request}{libcamera\+::\+Request}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries request\+Processed}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classKMSSink_a4ae11ad5e179893cbfaa671f1027fe8c}\label{classKMSSink_a4ae11ad5e179893cbfaa671f1027fe8c} 
+\index{KMSSink@{KMSSink}!configure@{configure}}
+\index{configure@{configure}!KMSSink@{KMSSink}}
+\doxysubsubsection{\texorpdfstring{configure()}{configure()}}
+{\footnotesize\ttfamily int KMSSink\+::configure (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1CameraConfiguration}{libcamera\+::\+Camera\+Configuration}} \&}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classFrameSink}{Frame\+Sink}}.
+
+\Hypertarget{classKMSSink_a006d41354d8f77bdb95c8e9525d45829}\label{classKMSSink_a006d41354d8f77bdb95c8e9525d45829} 
+\index{KMSSink@{KMSSink}!mapBuffer@{mapBuffer}}
+\index{mapBuffer@{mapBuffer}!KMSSink@{KMSSink}}
+\doxysubsubsection{\texorpdfstring{mapBuffer()}{mapBuffer()}}
+{\footnotesize\ttfamily void KMSSink\+::map\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{libcamera\+::\+Frame\+Buffer}} \texorpdfstring{$\ast$}{*}}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classFrameSink}{Frame\+Sink}}.
+
+\Hypertarget{classKMSSink_a9b20621341bd65a5a161d3fdd2f71be7}\label{classKMSSink_a9b20621341bd65a5a161d3fdd2f71be7} 
+\index{KMSSink@{KMSSink}!processRequest@{processRequest}}
+\index{processRequest@{processRequest}!KMSSink@{KMSSink}}
+\doxysubsubsection{\texorpdfstring{processRequest()}{processRequest()}}
+{\footnotesize\ttfamily bool KMSSink\+::process\+Request (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1Request}{libcamera\+::\+Request}} \texorpdfstring{$\ast$}{*}}]{request }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em request} & The request\\
+\hline
+\end{DoxyParams}
+This function is called to instruct the sink to process a request. The sink may process the request synchronously or queue it for asynchronous processing.
+
+When the request is processed synchronously, this function shall return true. The {\itshape request} shall not be accessed by the \doxylink{classFrameSink}{Frame\+Sink} after the function returns.
+
+When the request is processed asynchronously, the \doxylink{classFrameSink}{Frame\+Sink} temporarily takes ownership of the {\itshape request}. The function shall return false, and the \doxylink{classFrameSink}{Frame\+Sink} shall emit the request\+Processed signal when the request processing completes. If the stop() function is called before the request processing completes, it shall release the request synchronously.
+
+\begin{DoxyReturn}{Returns}
+True if the request has been processed synchronously, false if processing has been queued 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classFrameSink_a612e4d9d9716ed74984cc08ca0fd988e}{Frame\+Sink}}.
+
+\Hypertarget{classKMSSink_af33500186b16852806e3cf3be8a9a0e3}\label{classKMSSink_af33500186b16852806e3cf3be8a9a0e3} 
+\index{KMSSink@{KMSSink}!start@{start}}
+\index{start@{start}!KMSSink@{KMSSink}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily int KMSSink\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classFrameSink}{Frame\+Sink}}.
+
+\Hypertarget{classKMSSink_a41cf5e6ac71e5d4c11a42f41965ac716}\label{classKMSSink_a41cf5e6ac71e5d4c11a42f41965ac716} 
+\index{KMSSink@{KMSSink}!stop@{stop}}
+\index{stop@{stop}!KMSSink@{KMSSink}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily int KMSSink\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classFrameSink}{Frame\+Sink}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/apps/cam/kms\+\_\+sink.\+h\item 
+src/peripherals/camera/libcamera/src/apps/cam/kms\+\_\+sink.\+cpp\end{DoxyCompactItemize}

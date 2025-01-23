@@ -1,0 +1,49 @@
+\doxysection{gstlibcamera-\/controls.h}
+\hypertarget{gstlibcamera-controls_8h_source}{}\label{gstlibcamera-controls_8h_source}\index{src/peripherals/camera/libcamera/src/gstreamer/gstlibcamera-\/controls.h@{src/peripherals/camera/libcamera/src/gstreamer/gstlibcamera-\/controls.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2023,\ Collabora\ Ltd.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ Author:\ Nicolas\ Dufresne\ <nicolas.dufresne@collabora.com>}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ GStreamer\ Camera\ Controls}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{libcamera_2camera_8h}{libcamera/camera.h}}>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{controls_8h}{libcamera/controls.h}}>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{request_8h}{libcamera/request.h}}>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}gstlibcamerasrc.h"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacelibcamera}{libcamera}}\ \{}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1GstCameraControls}{GstCameraControls}}}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ installProperties(GObjectClass\ *klass,\ \textcolor{keywordtype}{int}\ lastProp);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{bool}\ getProperty(guint\ propId,\ GValue\ *value,\ GParamSpec\ *pspec);}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{bool}\ setProperty(guint\ propId,\ \textcolor{keyword}{const}\ GValue\ *value,\ GParamSpec\ *pspec);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ setCamera(\textcolor{keyword}{const}\ std::shared\_ptr<libcamera::Camera>\ \&cam);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ applyControls(std::unique\_ptr<libcamera::Request>\ \&request);}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ readMetadata(\mbox{\hyperlink{classlibcamera_1_1Request}{libcamera::Request}}\ *request);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{/*\ Supported\ controls\ and\ limits\ of\ camera.\ */}}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ControlInfoMap}{ControlInfoMap}}\ capabilities\_;}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{comment}{/*\ Set\ of\ user\ modified\ controls.\ */}}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ControlList}{ControlList}}\ controls\_;}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{/*\ Accumulator\ of\ all\ controls\ ever\ set\ and\ metadata\ returned\ by\ camera\ */}}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ControlList}{ControlList}}\ controls\_acc\_;}
+\DoxyCodeLine{00041\ \};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \}\ \textcolor{comment}{/*\ namespace\ libcamera\ */}}
+
+\end{DoxyCode}

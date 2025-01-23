@@ -1,0 +1,60 @@
+\doxysection{Stream\+Key\+Value\+Parser Class Reference}
+\hypertarget{classStreamKeyValueParser}{}\label{classStreamKeyValueParser}\index{StreamKeyValueParser@{StreamKeyValueParser}}
+Inheritance diagram for Stream\+Key\+Value\+Parser\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classStreamKeyValueParser}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classKeyValueParser_1_1Options}{Key\+Value\+Parser\+::\+Options}} \mbox{\hyperlink{classStreamKeyValueParser_ac088830d54be059c5c50032e9f13e384}{parse}} (const char \texorpdfstring{$\ast$}{*}arguments) override
+\begin{DoxyCompactList}\small\item\em Parse a string containing a list of key-\/value pairs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classKeyValueParser}{Key\+Value\+Parser}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classKeyValueParser_a5ad0f5f92799b232028f030877570740}{add\+Option}} (const char \texorpdfstring{$\ast$}{*}name, Option\+Type type, const char \texorpdfstring{$\ast$}{*}help, Option\+Argument argument=Argument\+None)
+\begin{DoxyCompactList}\small\item\em Add a supported option to the parser. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classStreamKeyValueParser_aa70648c2b1e36bfc51868e4650174de0}\label{classStreamKeyValueParser_aa70648c2b1e36bfc51868e4650174de0} 
+static std\+::vector$<$ \mbox{\hyperlink{namespacelibcamera_a295d1f5e7828d95c0b0aabc0a8baac03}{libcamera\+::\+Stream\+Role}} $>$ {\bfseries roles} (const \mbox{\hyperlink{classOptionValue}{Option\+Value}} \&values)
+\item 
+\Hypertarget{classStreamKeyValueParser_a9cb4dd4ad57a03c94e1627874effacc0}\label{classStreamKeyValueParser_a9cb4dd4ad57a03c94e1627874effacc0} 
+static int {\bfseries update\+Configuration} (\mbox{\hyperlink{classlibcamera_1_1CameraConfiguration}{libcamera\+::\+Camera\+Configuration}} \texorpdfstring{$\ast$}{*}config, const \mbox{\hyperlink{classOptionValue}{Option\+Value}} \&values)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classStreamKeyValueParser_ac088830d54be059c5c50032e9f13e384}\label{classStreamKeyValueParser_ac088830d54be059c5c50032e9f13e384} 
+\index{StreamKeyValueParser@{StreamKeyValueParser}!parse@{parse}}
+\index{parse@{parse}!StreamKeyValueParser@{StreamKeyValueParser}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classKeyValueParser_1_1Options}{Key\+Value\+Parser\+::\+Options}} Stream\+Key\+Value\+Parser\+::parse (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{arguments }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Parse a string containing a list of key-\/value pairs. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em arguments} & The key-\/value pairs string to parse\\
+\hline
+\end{DoxyParams}
+If a parsing error occurs, the parsing stops and the function returns an invalid container. The container is populated with the options successfully parsed so far.
+
+\begin{DoxyReturn}{Returns}
+A valid container with the list of parsed options on success, or an invalid container otherwise 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classKeyValueParser_a53e6ed9e160fe5d5c036ce87318c27b9}{Key\+Value\+Parser}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/apps/common/stream\+\_\+options.\+h\item 
+src/peripherals/camera/libcamera/src/apps/common/stream\+\_\+options.\+cpp\end{DoxyCompactItemize}

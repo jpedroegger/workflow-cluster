@@ -1,0 +1,69 @@
+\doxysection{src/peripherals/camera/libcamera/include/libcamera/ipa/ipa\+\_\+module\+\_\+info.h File Reference}
+\hypertarget{ipa__module__info_8h}{}\label{ipa__module__info_8h}\index{src/peripherals/camera/libcamera/include/libcamera/ipa/ipa\_module\_info.h@{src/peripherals/camera/libcamera/include/libcamera/ipa/ipa\_module\_info.h}}
+
+
+\doxylink{classImage}{Image} Processing Algorithm module information.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structlibcamera_1_1IPAModuleInfo}{libcamera\+::\+IPAModule\+Info}}
+\begin{DoxyCompactList}\small\item\em Information of an IPA module. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacelibcamera}{libcamera}}
+\begin{DoxyCompactList}\small\item\em Top-\/level libcamera namespace. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{ipa__module__info_8h_a843cec59bcc51f5f1ea4a48d54ed5ee5}{IPA\+\_\+\+MODULE\+\_\+\+API\+\_\+\+VERSION}}~1
+\begin{DoxyCompactList}\small\item\em The IPA module API version. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{namespacelibcamera_a468012bcbbf793f596b84f1bfd6f8cda}\label{namespacelibcamera_a468012bcbbf793f596b84f1bfd6f8cda} 
+struct \mbox{\hyperlink{structlibcamera_1_1IPAModuleInfo}{libcamera\+::\+IPAModule\+Info}} {\bfseries libcamera\+::\+\_\+\+\_\+attribute\+\_\+\+\_\+} ((packed))
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{ipa__module__info_8h_a23ab312de866002050556689c3cabde1}\label{ipa__module__info_8h_a23ab312de866002050556689c3cabde1} 
+int {\bfseries module\+APIVersion}
+\item 
+\Hypertarget{ipa__module__info_8h_a87a3133bef0d356a98e90de93b623996}\label{ipa__module__info_8h_a87a3133bef0d356a98e90de93b623996} 
+uint32\+\_\+t {\bfseries pipeline\+Version}
+\item 
+\Hypertarget{ipa__module__info_8h_a8975b952a4668c81ab9cd72aeffd0085}\label{ipa__module__info_8h_a8975b952a4668c81ab9cd72aeffd0085} 
+char {\bfseries pipeline\+Name} \mbox{[}256\mbox{]}
+\item 
+\Hypertarget{ipa__module__info_8h_aba338e28bfcf5d65ce5f6b3396a376ca}\label{ipa__module__info_8h_aba338e28bfcf5d65ce5f6b3396a376ca} 
+char {\bfseries name} \mbox{[}256\mbox{]}
+\item 
+const struct \mbox{\hyperlink{structlibcamera_1_1IPAModuleInfo}{IPAModule\+Info}} \mbox{\hyperlink{namespacelibcamera_a7d3ef249bde4714cf047da4dc80d9d09}{libcamera\+::ipa\+Module\+Info}}
+\begin{DoxyCompactList}\small\item\em External IPA module interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classImage}{Image} Processing Algorithm module information. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{ipa__module__info_8h_a843cec59bcc51f5f1ea4a48d54ed5ee5}\label{ipa__module__info_8h_a843cec59bcc51f5f1ea4a48d54ed5ee5} 
+\index{ipa\_module\_info.h@{ipa\_module\_info.h}!IPA\_MODULE\_API\_VERSION@{IPA\_MODULE\_API\_VERSION}}
+\index{IPA\_MODULE\_API\_VERSION@{IPA\_MODULE\_API\_VERSION}!ipa\_module\_info.h@{ipa\_module\_info.h}}
+\doxysubsubsection{\texorpdfstring{IPA\_MODULE\_API\_VERSION}{IPA\_MODULE\_API\_VERSION}}
+{\footnotesize\ttfamily \#define IPA\+\_\+\+MODULE\+\_\+\+API\+\_\+\+VERSION~1}
+
+
+
+The IPA module API version. 
+
+This version number specifies the version for the layout of struct IPAModule\+Info. The IPA module shall use this macro to set its module\+APIVersion field.
+
+\begin{DoxySeeAlso}{See also}
+IPAModule\+Info\+::module\+APIVersion 
+\end{DoxySeeAlso}

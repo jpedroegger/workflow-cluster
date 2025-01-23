@@ -1,0 +1,31 @@
+\doxysection{hdr\+\_\+algorithm.\+h}
+\hypertarget{hdr__algorithm_8h_source}{}\label{hdr__algorithm_8h_source}\index{src/peripherals/camera/libcamera/src/ipa/rpi/controller/hdr\_algorithm.h@{src/peripherals/camera/libcamera/src/ipa/rpi/controller/hdr\_algorithm.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ BSD-\/2-\/Clause\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2023,\ Raspberry\ Pi\ Ltd}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ HDR\ control\ algorithm\ interface}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}algorithm.h"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }RPiController\ \{}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRPiController_1_1HdrAlgorithm}{HdrAlgorithm}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classRPiController_1_1Algorithm}{Algorithm}}}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{classRPiController_1_1HdrAlgorithm}{HdrAlgorithm}}(\mbox{\hyperlink{classRPiController_1_1Controller}{Controller}}\ *controller)}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classRPiController_1_1Algorithm}{Algorithm}}(controller)\ \{\}}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{comment}{/*\ An\ HDR\ algorithm\ must\ provide\ the\ following:\ */}}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ setMode(std::string\ \textcolor{keyword}{const}\ \&modeName)\ =\ 0;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{virtual}\ std::vector<unsigned\ int>\ getChannels()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00023\ \};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \}\ \textcolor{comment}{/*\ namespace\ RPiController\ */}}
+
+\end{DoxyCode}

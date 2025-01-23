@@ -1,0 +1,33 @@
+\doxysection{v4l2\+\_\+ctrl\+\_\+mpeg2\+\_\+quantisation Struct Reference}
+\hypertarget{structv4l2__ctrl__mpeg2__quantisation}{}\label{structv4l2__ctrl__mpeg2__quantisation}\index{v4l2\_ctrl\_mpeg2\_quantisation@{v4l2\_ctrl\_mpeg2\_quantisation}}
+
+
+{\ttfamily \#include $<$v4l2-\/controls.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structv4l2__ctrl__mpeg2__quantisation_aa1ab9f5bd51f82bd67bdc08f1972a59d}\label{structv4l2__ctrl__mpeg2__quantisation_aa1ab9f5bd51f82bd67bdc08f1972a59d} 
+\+\_\+\+\_\+u8 {\bfseries intra\+\_\+quantiser\+\_\+matrix} \mbox{[}64\mbox{]}
+\item 
+\Hypertarget{structv4l2__ctrl__mpeg2__quantisation_a8a894691f3802083a3fee22e1a4624bd}\label{structv4l2__ctrl__mpeg2__quantisation_a8a894691f3802083a3fee22e1a4624bd} 
+\+\_\+\+\_\+u8 {\bfseries non\+\_\+intra\+\_\+quantiser\+\_\+matrix} \mbox{[}64\mbox{]}
+\item 
+\Hypertarget{structv4l2__ctrl__mpeg2__quantisation_a52274b9ea8e03907b8846e79620c70d1}\label{structv4l2__ctrl__mpeg2__quantisation_a52274b9ea8e03907b8846e79620c70d1} 
+\+\_\+\+\_\+u8 {\bfseries chroma\+\_\+intra\+\_\+quantiser\+\_\+matrix} \mbox{[}64\mbox{]}
+\item 
+\Hypertarget{structv4l2__ctrl__mpeg2__quantisation_af279eacd9f9619bfd54d2ffdea553fca}\label{structv4l2__ctrl__mpeg2__quantisation_af279eacd9f9619bfd54d2ffdea553fca} 
+\+\_\+\+\_\+u8 {\bfseries chroma\+\_\+non\+\_\+intra\+\_\+quantiser\+\_\+matrix} \mbox{[}64\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structv4l2__ctrl__mpeg2__quantisation}{v4l2\+\_\+ctrl\+\_\+mpeg2\+\_\+quantisation} -\/ MPEG-\/2 quantisation
+
+Quantisation matrices as specified by section 6.\+3.\+7 "{}\+Quant matrix extension"{}.
+
+@intra\+\_\+quantiser\+\_\+matrix\+: The quantisation matrix coefficients for intra-\/coded frames, in zigzag scanning order. It is relevant for both luma and chroma components, although it can be superseded by the chroma-\/specific matrix for non-\/4\+:2\+:0 YUV formats. @non\+\_\+intra\+\_\+quantiser\+\_\+matrix\+: The quantisation matrix coefficients for non-\/intra-\/coded frames, in zigzag scanning order. It is relevant for both luma and chroma components, although it can be superseded by the chroma-\/specific matrix for non-\/4\+:2\+:0 YUV formats. @chroma\+\_\+intra\+\_\+quantiser\+\_\+matrix\+: The quantisation matrix coefficients for the chominance component of intra-\/coded frames, in zigzag scanning order. Only relevant for 4\+:2\+:2 and 4\+:4\+:4 YUV formats. @chroma\+\_\+non\+\_\+intra\+\_\+quantiser\+\_\+matrix\+: The quantisation matrix coefficients for the chrominance component of non-\/intra-\/coded frames, in zigzag scanning order. Only relevant for 4\+:2\+:2 and 4\+:4\+:4 YUV formats. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/v4l2-\/controls.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,115 @@
+\doxysection{libcamera\+::Extensible Class Reference}
+\hypertarget{classlibcamera_1_1Extensible}{}\label{classlibcamera_1_1Extensible}\index{libcamera::Extensible@{libcamera::Extensible}}
+
+
+Base class to manage private data through a d-\/pointer.  
+
+
+Inheritance diagram for libcamera\+::Extensible\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.276596cm]{classlibcamera_1_1Extensible}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classlibcamera_1_1Extensible_1_1Private}{Private}}
+\begin{DoxyCompactList}\small\item\em Base class for private data managed through a d-\/pointer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1Extensible_afb1c6e39d8fe4fbeab1cbbbe65517f4c}{Extensible}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1Extensible_1_1Private}{Private}} $>$ d)
+\begin{DoxyCompactList}\small\item\em Construct an instance of an \doxylink{classlibcamera_1_1Extensible}{Extensible} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\const T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1Extensible_a6625afb4df192443c12d118f5f1a17ac}{\+\_\+d}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the private data instance. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1Extensible_a30a918eee516b7e1d97a7f346ce99fca}{\+\_\+d}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the private data instance.   \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class to manage private data through a d-\/pointer. 
+
+The \doxylink{classlibcamera_1_1Extensible}{Extensible} class provides a base class to implement the \href{https://wiki.qt.io/D-Pointer}{\texttt{ d-\/pointer}} design pattern (also known as \href{https://en.wikipedia.org/wiki/Opaque_pointer}{\texttt{ opaque pointer}} or \href{https://en.cppreference.com/w/cpp/language/pimpl}{\texttt{ p\+Impl idiom}}). It helps creating public classes that can be extended without breaking their ABI. Such classes store their private data in a separate private data object, referenced by a pointer in the public class (hence the name d-\/pointer).
+
+Classes that follow this design pattern are referred herein as extensible classes. To be extensible, a class Public\+Class shall\+:
+
+
+\begin{DoxyItemize}
+\item inherit from the \doxylink{classlibcamera_1_1Extensible}{Extensible} class or from another extensible class
+\item invoke the \doxylink{class_8h_a173cff214f6288d300840b7b474b7803}{LIBCAMERA\+\_\+\+DECLARE\+\_\+\+PRIVATE()} macro at the very top of the class definition
+\item define a private data class named Public\+Class\+::\+Private that inherits from the \doxylink{classlibcamera_1_1Extensible_1_1Private}{Private} data class of the base class
+\item invoke the \doxylink{class_8h_af850b1c484bfa1f484a53c6c2ac7fbad}{LIBCAMERA\+\_\+\+DECLARE\+\_\+\+PUBLIC()} macro at the very top of the \doxylink{classlibcamera_1_1Extensible_1_1Private}{Private} data class definition
+\item pass a pointer to a newly allocated \doxylink{classlibcamera_1_1Extensible_1_1Private}{Private} data object to the constructor of the base class
+\end{DoxyItemize}
+
+Additionally, if the Public\+Class is not final, it shall expose one or more constructors that takes a pointer to a \doxylink{classlibcamera_1_1Extensible_1_1Private}{Private} data instance, to be used by derived classes.
+
+The \doxylink{classlibcamera_1_1Extensible_1_1Private}{Private} class is fully opaque to users of the libcamera public API. Internally, it can be kept private to the implementation of Public\+Class, or be exposed to other classes. In the latter case, the members of the \doxylink{classlibcamera_1_1Extensible_1_1Private}{Private} class need to be qualified with appropriate access specifiers. The Public\+Class and \doxylink{classlibcamera_1_1Extensible_1_1Private}{Private} classes always have full access to each other\textquotesingle{}s protected and private members.
+
+The Public\+Class exposes its \doxylink{classlibcamera_1_1Extensible_1_1Private}{Private} data pointer through the \doxylink{classlibcamera_1_1Extensible_a30a918eee516b7e1d97a7f346ce99fca}{\+\_\+d()} function. In the other direction, the pointer to the Public\+Class can be retrieved in functions of the \doxylink{classlibcamera_1_1Extensible_1_1Private}{Private} class using the \doxylink{class_8h_ad8c78641ec06c49edd227b63cc8449b5}{LIBCAMERA\+\_\+\+O\+\_\+\+PTR()} macro. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlibcamera_1_1Extensible_afb1c6e39d8fe4fbeab1cbbbe65517f4c}\label{classlibcamera_1_1Extensible_afb1c6e39d8fe4fbeab1cbbbe65517f4c} 
+\index{libcamera::Extensible@{libcamera::Extensible}!Extensible@{Extensible}}
+\index{Extensible@{Extensible}!libcamera::Extensible@{libcamera::Extensible}}
+\doxysubsubsection{\texorpdfstring{Extensible()}{Extensible()}}
+{\footnotesize\ttfamily libcamera\+::\+Extensible\+::\+Extensible (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1Extensible_1_1Private}{Private}} $>$}]{d }\end{DoxyParamCaption})}
+
+
+
+Construct an instance of an \doxylink{classlibcamera_1_1Extensible}{Extensible} class. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em d} & Pointer to the private data instance\\
+\hline
+\end{DoxyParams}
+The private data lifetime is managed by the \doxylink{classlibcamera_1_1Extensible}{Extensible} class, which destroys it when the \doxylink{classlibcamera_1_1Extensible}{Extensible} instance is destroyed. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1Extensible_a30a918eee516b7e1d97a7f346ce99fca}\label{classlibcamera_1_1Extensible_a30a918eee516b7e1d97a7f346ce99fca} 
+\index{libcamera::Extensible@{libcamera::Extensible}!\_d@{\_d}}
+\index{\_d@{\_d}!libcamera::Extensible@{libcamera::Extensible}}
+\doxysubsubsection{\texorpdfstring{\_d()}{\_d()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+libcamera\+::\+Extensible\+::\+\_\+d (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Retrieve the private data instance.   
+
+This template function isn\textquotesingle{}t meant to be called directly. Instead, classes derived from \doxylink{classlibcamera_1_1Extensible}{Extensible} get, through the \doxylink{class_8h_a173cff214f6288d300840b7b474b7803}{LIBCAMERA\+\_\+\+DECLARE\+\_\+\+PRIVATE()} macro, overriden \doxylink{classlibcamera_1_1Extensible_a30a918eee516b7e1d97a7f346ce99fca}{\+\_\+d()} functions that return the correct pointer type to the corresponding derived \doxylink{classlibcamera_1_1Extensible_1_1Private}{Private} class.
+
+The lifetime of the private data is tied to the \doxylink{classlibcamera_1_1Extensible}{Extensible} class. The caller shall not retain any reference to the returned pointer for longer than it holds a reference to the \doxylink{classlibcamera_1_1Extensible}{Extensible} instance.
+
+\begin{DoxyReturn}{Returns}
+A pointer to the private data instance   
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1Extensible_a6625afb4df192443c12d118f5f1a17ac}\label{classlibcamera_1_1Extensible_a6625afb4df192443c12d118f5f1a17ac} 
+\index{libcamera::Extensible@{libcamera::Extensible}!\_d@{\_d}}
+\index{\_d@{\_d}!libcamera::Extensible@{libcamera::Extensible}}
+\doxysubsubsection{\texorpdfstring{\_d()}{\_d()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+libcamera\+::\+Extensible\+::\+\_\+d (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Retrieve the private data instance. 
+
+This template function isn\textquotesingle{}t meant to be called directly. Instead, classes derived from \doxylink{classlibcamera_1_1Extensible}{Extensible} get, through the \doxylink{class_8h_a173cff214f6288d300840b7b474b7803}{LIBCAMERA\+\_\+\+DECLARE\+\_\+\+PRIVATE()} macro, overriden \doxylink{classlibcamera_1_1Extensible_a30a918eee516b7e1d97a7f346ce99fca}{\+\_\+d()} functions that return the correct pointer type to the corresponding derived \doxylink{classlibcamera_1_1Extensible_1_1Private}{Private} class.
+
+The lifetime of the private data is tied to the \doxylink{classlibcamera_1_1Extensible}{Extensible} class. The caller shall not retain any reference to the returned pointer for longer than it holds a reference to the \doxylink{classlibcamera_1_1Extensible}{Extensible} instance.
+
+\begin{DoxyReturn}{Returns}
+A pointer to the private data instance 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/base/\mbox{\hyperlink{class_8h}{class.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/base/class.\+cpp\end{DoxyCompactItemize}

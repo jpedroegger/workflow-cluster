@@ -1,0 +1,76 @@
+\doxysection{Frame\+Sink Class Reference}
+\hypertarget{classFrameSink}{}\label{classFrameSink}\index{FrameSink@{FrameSink}}
+
+
+Abstract class to model a consumer of frames.  
+
+
+Inheritance diagram for Frame\+Sink\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classFrameSink}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classFrameSink_aa4171f9e7c990de85218258c052428e1}\label{classFrameSink_aa4171f9e7c990de85218258c052428e1} 
+virtual int {\bfseries configure} (const \mbox{\hyperlink{classlibcamera_1_1CameraConfiguration}{libcamera\+::\+Camera\+Configuration}} \&config)
+\item 
+\Hypertarget{classFrameSink_a459fca01dea45b33a45e28c3f216c032}\label{classFrameSink_a459fca01dea45b33a45e28c3f216c032} 
+virtual void {\bfseries map\+Buffer} (\mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{libcamera\+::\+Frame\+Buffer}} \texorpdfstring{$\ast$}{*}buffer)
+\item 
+\Hypertarget{classFrameSink_a0efe6c750245a9f6692bcca075be6104}\label{classFrameSink_a0efe6c750245a9f6692bcca075be6104} 
+virtual int {\bfseries start} ()
+\item 
+\Hypertarget{classFrameSink_a9b53e07fb6263e52940272380015b46a}\label{classFrameSink_a9b53e07fb6263e52940272380015b46a} 
+virtual int {\bfseries stop} ()
+\item 
+virtual bool \mbox{\hyperlink{classFrameSink_a612e4d9d9716ed74984cc08ca0fd988e}{process\+Request}} (\mbox{\hyperlink{classlibcamera_1_1Request}{libcamera\+::\+Request}} \texorpdfstring{$\ast$}{*}request)=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classFrameSink_ab8dc4c3be6c512c4ec94785ebee4790a}\label{classFrameSink_ab8dc4c3be6c512c4ec94785ebee4790a} 
+\mbox{\hyperlink{classlibcamera_1_1Signal}{libcamera\+::\+Signal}}$<$ \mbox{\hyperlink{classlibcamera_1_1Request}{libcamera\+::\+Request}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries request\+Processed}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract class to model a consumer of frames. 
+
+The \doxylink{classFrameSink}{Frame\+Sink} class models the consumer that processes frames after a request completes. It receives requests through \doxylink{classFrameSink_a612e4d9d9716ed74984cc08ca0fd988e}{process\+Request()}, and processes them synchronously or asynchronously. This allows frame sinks to hold onto frames for an extended period of time, for instance to display them until a new frame arrives.
+
+A frame sink processes whole requests, and is solely responsible for deciding how to handle different frame buffers in case multiple streams are captured. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classFrameSink_a612e4d9d9716ed74984cc08ca0fd988e}\label{classFrameSink_a612e4d9d9716ed74984cc08ca0fd988e} 
+\index{FrameSink@{FrameSink}!processRequest@{processRequest}}
+\index{processRequest@{processRequest}!FrameSink@{FrameSink}}
+\doxysubsubsection{\texorpdfstring{processRequest()}{processRequest()}}
+{\footnotesize\ttfamily Frame\+Sink\+::process\+Request (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1Request}{libcamera\+::\+Request}} \texorpdfstring{$\ast$}{*}}]{request }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em request} & The request\\
+\hline
+\end{DoxyParams}
+This function is called to instruct the sink to process a request. The sink may process the request synchronously or queue it for asynchronous processing.
+
+When the request is processed synchronously, this function shall return true. The {\itshape request} shall not be accessed by the \doxylink{classFrameSink}{Frame\+Sink} after the function returns.
+
+When the request is processed asynchronously, the \doxylink{classFrameSink}{Frame\+Sink} temporarily takes ownership of the {\itshape request}. The function shall return false, and the \doxylink{classFrameSink}{Frame\+Sink} shall emit the request\+Processed signal when the request processing completes. If the stop() function is called before the request processing completes, it shall release the request synchronously.
+
+\begin{DoxyReturn}{Returns}
+True if the request has been processed synchronously, false if processing has been queued 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classFileSink_a594a79174bc5a275227f9c01510aab64}{File\+Sink}}, \mbox{\hyperlink{classKMSSink_a9b20621341bd65a5a161d3fdd2f71be7}{KMSSink}}, and \mbox{\hyperlink{classSDLSink_a3bee0b343c4a9c1fe50a74f97825010e}{SDLSink}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/apps/cam/frame\+\_\+sink.\+h\item 
+src/peripherals/camera/libcamera/src/apps/cam/frame\+\_\+sink.\+cpp\end{DoxyCompactItemize}

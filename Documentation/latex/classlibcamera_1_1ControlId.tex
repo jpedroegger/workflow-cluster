@@ -1,0 +1,165 @@
+\doxysection{libcamera\+::Control\+Id Class Reference}
+\hypertarget{classlibcamera_1_1ControlId}{}\label{classlibcamera_1_1ControlId}\index{libcamera::ControlId@{libcamera::ControlId}}
+
+
+\doxylink{classlibcamera_1_1Control}{Control} static metadata.  
+
+
+Inheritance diagram for libcamera\+::Control\+Id\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlibcamera_1_1ControlId}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1ControlId_a116d051c480ad1aadffa44c64bca90b6}{Control\+Id}} (unsigned int \mbox{\hyperlink{classlibcamera_1_1ControlId_ae86fd155e220da401ce38972df6efb1d}{id}}, const std\+::string \&\mbox{\hyperlink{classlibcamera_1_1ControlId_ad4bc9b31b0adb86dabbca46ada345f59}{name}}, const std\+::string \&\mbox{\hyperlink{classlibcamera_1_1ControlId_aba34f493d8313c60930c9d9cce61922c}{vendor}}, \mbox{\hyperlink{namespacelibcamera_a40a8adae6eaa668ac965dc350ca2b295}{Control\+Type}} \mbox{\hyperlink{classlibcamera_1_1ControlId_a5425d856405d8f0696535c4eebcf13fe}{type}}, std\+::size\+\_\+t \mbox{\hyperlink{classlibcamera_1_1ControlId_ad71c864abd6dd0cb05016cf889c0a51b}{size}}=0, const std\+::map$<$ std\+::string, int32\+\_\+t $>$ \&enum\+Str\+Map=\{\})
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{classlibcamera_1_1ControlId}{Control\+Id} instance. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classlibcamera_1_1ControlId_ae86fd155e220da401ce38972df6efb1d}{id}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the control numerical ID. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{classlibcamera_1_1ControlId_ad4bc9b31b0adb86dabbca46ada345f59}{name}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the control name. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{classlibcamera_1_1ControlId_aba34f493d8313c60930c9d9cce61922c}{vendor}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the vendor name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacelibcamera_a40a8adae6eaa668ac965dc350ca2b295}{Control\+Type}} \mbox{\hyperlink{classlibcamera_1_1ControlId_a5425d856405d8f0696535c4eebcf13fe}{type}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the control data type. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlibcamera_1_1ControlId_ac09b7078907ce4d6a368c9a5cdeae12c}{is\+Array}} () const
+\begin{DoxyCompactList}\small\item\em Determine if the control is an array control. \end{DoxyCompactList}\item 
+std\+::size\+\_\+t \mbox{\hyperlink{classlibcamera_1_1ControlId_ad71c864abd6dd0cb05016cf889c0a51b}{size}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the size of the control if it is an array control. \end{DoxyCompactList}\item 
+const std\+::map$<$ int32\+\_\+t, std\+::string $>$ \& \mbox{\hyperlink{classlibcamera_1_1ControlId_a391727a6596f30a6222e0fac720cbdae}{enumerators}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the map of enum values to enum names. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classlibcamera_1_1Control}{Control} static metadata. 
+
+The \doxylink{classlibcamera_1_1ControlId}{Control\+Id} class stores a control ID, name and data type. It provides unique identification of a control, but without support for compile-\/time type deduction that the derived template \doxylink{classlibcamera_1_1Control}{Control} class supports. See the \doxylink{classlibcamera_1_1Control}{Control} class for more information. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlibcamera_1_1ControlId_a116d051c480ad1aadffa44c64bca90b6}\label{classlibcamera_1_1ControlId_a116d051c480ad1aadffa44c64bca90b6} 
+\index{libcamera::ControlId@{libcamera::ControlId}!ControlId@{ControlId}}
+\index{ControlId@{ControlId}!libcamera::ControlId@{libcamera::ControlId}}
+\doxysubsubsection{\texorpdfstring{ControlId()}{ControlId()}}
+{\footnotesize\ttfamily libcamera\+::\+Control\+Id\+::\+Control\+Id (\begin{DoxyParamCaption}\item[{unsigned int}]{id,  }\item[{const std\+::string \&}]{name,  }\item[{const std\+::string \&}]{vendor,  }\item[{\mbox{\hyperlink{namespacelibcamera_a40a8adae6eaa668ac965dc350ca2b295}{Control\+Type}}}]{type,  }\item[{std\+::size\+\_\+t}]{size = {\ttfamily 0},  }\item[{const std\+::map$<$ std\+::string, int32\+\_\+t $>$ \&}]{enum\+Str\+Map = {\ttfamily \{\}} }\end{DoxyParamCaption})}
+
+
+
+Construct a \doxylink{classlibcamera_1_1ControlId}{Control\+Id} instance. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em id} & The control numerical ID \\
+\hline
+\mbox{\texttt{ in}}  & {\em name} & The control name \\
+\hline
+\mbox{\texttt{ in}}  & {\em vendor} & The vendor name \\
+\hline
+\mbox{\texttt{ in}}  & {\em type} & The control data type \\
+\hline
+\mbox{\texttt{ in}}  & {\em size} & The size of the array control, or 0 if scalar control \\
+\hline
+\mbox{\texttt{ in}}  & {\em enum\+Str\+Map} & The map from enum names to values (optional) \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1ControlId_a391727a6596f30a6222e0fac720cbdae}\label{classlibcamera_1_1ControlId_a391727a6596f30a6222e0fac720cbdae} 
+\index{libcamera::ControlId@{libcamera::ControlId}!enumerators@{enumerators}}
+\index{enumerators@{enumerators}!libcamera::ControlId@{libcamera::ControlId}}
+\doxysubsubsection{\texorpdfstring{enumerators()}{enumerators()}}
+{\footnotesize\ttfamily const std\+::map$<$ int32\+\_\+t, std\+::string $>$ \& libcamera\+::\+Control\+Id\+::enumerators (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the map of enum values to enum names. 
+
+\begin{DoxyReturn}{Returns}
+The map of enum values to enum names 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ControlId_ae86fd155e220da401ce38972df6efb1d}\label{classlibcamera_1_1ControlId_ae86fd155e220da401ce38972df6efb1d} 
+\index{libcamera::ControlId@{libcamera::ControlId}!id@{id}}
+\index{id@{id}!libcamera::ControlId@{libcamera::ControlId}}
+\doxysubsubsection{\texorpdfstring{id()}{id()}}
+{\footnotesize\ttfamily unsigned int libcamera\+::\+Control\+Id\+::id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the control numerical ID. 
+
+\begin{DoxyReturn}{Returns}
+The control numerical ID 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ControlId_ac09b7078907ce4d6a368c9a5cdeae12c}\label{classlibcamera_1_1ControlId_ac09b7078907ce4d6a368c9a5cdeae12c} 
+\index{libcamera::ControlId@{libcamera::ControlId}!isArray@{isArray}}
+\index{isArray@{isArray}!libcamera::ControlId@{libcamera::ControlId}}
+\doxysubsubsection{\texorpdfstring{isArray()}{isArray()}}
+{\footnotesize\ttfamily bool libcamera\+::\+Control\+Id\+::is\+Array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Determine if the control is an array control. 
+
+\begin{DoxyReturn}{Returns}
+True if the control is an array control, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ControlId_ad4bc9b31b0adb86dabbca46ada345f59}\label{classlibcamera_1_1ControlId_ad4bc9b31b0adb86dabbca46ada345f59} 
+\index{libcamera::ControlId@{libcamera::ControlId}!name@{name}}
+\index{name@{name}!libcamera::ControlId@{libcamera::ControlId}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily const char \texorpdfstring{$\ast$}{*} libcamera\+::\+Control\+Id\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the control name. 
+
+\begin{DoxyReturn}{Returns}
+The control name 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ControlId_ad71c864abd6dd0cb05016cf889c0a51b}\label{classlibcamera_1_1ControlId_ad71c864abd6dd0cb05016cf889c0a51b} 
+\index{libcamera::ControlId@{libcamera::ControlId}!size@{size}}
+\index{size@{size}!libcamera::ControlId@{libcamera::ControlId}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily std\+::size\+\_\+t libcamera\+::\+Control\+Id\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the size of the control if it is an array control. 
+
+\begin{DoxyReturn}{Returns}
+The size of the array control, size\+\_\+t\+::max for dynamic extent, or 0 for non-\/array 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ControlId_a5425d856405d8f0696535c4eebcf13fe}\label{classlibcamera_1_1ControlId_a5425d856405d8f0696535c4eebcf13fe} 
+\index{libcamera::ControlId@{libcamera::ControlId}!type@{type}}
+\index{type@{type}!libcamera::ControlId@{libcamera::ControlId}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacelibcamera_a40a8adae6eaa668ac965dc350ca2b295}{Control\+Type}} libcamera\+::\+Control\+Id\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the control data type. 
+
+\begin{DoxyReturn}{Returns}
+The control data type 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ControlId_aba34f493d8313c60930c9d9cce61922c}\label{classlibcamera_1_1ControlId_aba34f493d8313c60930c9d9cce61922c} 
+\index{libcamera::ControlId@{libcamera::ControlId}!vendor@{vendor}}
+\index{vendor@{vendor}!libcamera::ControlId@{libcamera::ControlId}}
+\doxysubsubsection{\texorpdfstring{vendor()}{vendor()}}
+{\footnotesize\ttfamily const std\+::string \& libcamera\+::\+Control\+Id\+::vendor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the vendor name. 
+
+\begin{DoxyReturn}{Returns}
+The vendor name, as a string 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/\mbox{\hyperlink{controls_8h}{controls.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/controls.\+cpp\end{DoxyCompactItemize}

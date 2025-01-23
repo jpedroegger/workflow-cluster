@@ -1,0 +1,604 @@
+\doxysection{libcamera\+::Camera\+Sensor Class Reference}
+\hypertarget{classlibcamera_1_1CameraSensor}{}\label{classlibcamera_1_1CameraSensor}\index{libcamera::CameraSensor@{libcamera::CameraSensor}}
+
+
+A abstract camera sensor.  
+
+
+Inheritance diagram for libcamera\+::Camera\+Sensor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlibcamera_1_1CameraSensor}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1CameraSensor_a62541b847d81210c72493f9e49fc9b1d}\label{classlibcamera_1_1CameraSensor_a62541b847d81210c72493f9e49fc9b1d} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Camera\+Sensor} ()
+\begin{DoxyCompactList}\small\item\em Destroy a \doxylink{classlibcamera_1_1CameraSensor}{Camera\+Sensor}. \end{DoxyCompactList}\item 
+virtual const std\+::string \& \mbox{\hyperlink{classlibcamera_1_1CameraSensor_adfd4fa08b683442a23fd5a168b459774}{model}} () const =0
+\begin{DoxyCompactList}\small\item\em Retrieve the sensor model name. \end{DoxyCompactList}\item 
+virtual const std\+::string \& \mbox{\hyperlink{classlibcamera_1_1CameraSensor_ada5a8affea78c9a3b4e1f478c796b089}{id}} () const =0
+\begin{DoxyCompactList}\small\item\em Retrieve the sensor ID. \end{DoxyCompactList}\item 
+virtual const \mbox{\hyperlink{classlibcamera_1_1MediaEntity}{Media\+Entity}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1CameraSensor_a626e9f47783fe339ac402cdc5f4f0aa1}{entity}} () const =0
+\begin{DoxyCompactList}\small\item\em Retrieve the sensor media entity. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classlibcamera_1_1V4L2Subdevice}{V4\+L2\+Subdevice}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1CameraSensor_ab14ea54646bd5c542a5950de5c7671f0}{device}} ()=0
+\begin{DoxyCompactList}\small\item\em Retrieve the camera sensor device. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classlibcamera_1_1CameraLens}{Camera\+Lens}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1CameraSensor_a7d0f6cea698adfeabf487111bc57408b}{focus\+Lens}} ()=0
+\begin{DoxyCompactList}\small\item\em Retrieve the focus lens controller. \end{DoxyCompactList}\item 
+virtual const std\+::vector$<$ unsigned int $>$ \& \mbox{\hyperlink{classlibcamera_1_1CameraSensor_a39a823a3eec94b6ae1daf273f5eed820}{mbus\+Codes}} () const =0
+\begin{DoxyCompactList}\small\item\em Retrieve the media bus codes supported by the camera sensor. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} $>$ \mbox{\hyperlink{classlibcamera_1_1CameraSensor_a0d7f0a0296945aaed955dbf0457c2037}{sizes}} (unsigned int mbus\+Code) const =0
+\begin{DoxyCompactList}\small\item\em Retrieve the supported frame sizes for a media bus code. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \mbox{\hyperlink{classlibcamera_1_1CameraSensor_abcd1c5043bbf5c848a4187a3e36fad13}{resolution}} () const =0
+\begin{DoxyCompactList}\small\item\em Retrieve the camera sensor resolution. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{structlibcamera_1_1V4L2SubdeviceFormat}{V4\+L2\+Subdevice\+Format}} \mbox{\hyperlink{classlibcamera_1_1CameraSensor_a9bfaf1b19d324547a3a4a072c359906f}{get\+Format}} (const std\+::vector$<$ unsigned int $>$ \&\mbox{\hyperlink{classlibcamera_1_1CameraSensor_a39a823a3eec94b6ae1daf273f5eed820}{mbus\+Codes}}, const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&size) const =0
+\begin{DoxyCompactList}\small\item\em Retrieve the best sensor format for a desired output. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classlibcamera_1_1CameraSensor_ad871514dff7a30406df5f8cd557672d7}{set\+Format}} (\mbox{\hyperlink{structlibcamera_1_1V4L2SubdeviceFormat}{V4\+L2\+Subdevice\+Format}} \texorpdfstring{$\ast$}{*}format, \mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571}{Transform}} transform=\mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571ac9c5c65fb4af9cf90eb99b3b84424189}{Transform\+::\+Identity}})=0
+\begin{DoxyCompactList}\small\item\em Set the sensor output format. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classlibcamera_1_1CameraSensor_a1d3d7d3ef571499184fbe7425f8da927}{try\+Format}} (\mbox{\hyperlink{structlibcamera_1_1V4L2SubdeviceFormat}{V4\+L2\+Subdevice\+Format}} \texorpdfstring{$\ast$}{*}format) const =0
+\begin{DoxyCompactList}\small\item\em Try the sensor output format. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classlibcamera_1_1CameraSensor_a36b9ce9307b2b6eb1c741d59b6473368}{apply\+Configuration}} (const \mbox{\hyperlink{classlibcamera_1_1SensorConfiguration}{Sensor\+Configuration}} \&config, \mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571}{Transform}} transform=\mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571ac9c5c65fb4af9cf90eb99b3b84424189}{Transform\+::\+Identity}}, \mbox{\hyperlink{structlibcamera_1_1V4L2SubdeviceFormat}{V4\+L2\+Subdevice\+Format}} \texorpdfstring{$\ast$}{*}sensor\+Format=nullptr)=0
+\begin{DoxyCompactList}\small\item\em Apply a sensor configuration to the camera sensor. \end{DoxyCompactList}\item 
+virtual const \mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} \& \mbox{\hyperlink{classlibcamera_1_1CameraSensor_a5920ce0c8a3df3f438e3f54582974bd7}{properties}} () const =0
+\begin{DoxyCompactList}\small\item\em Retrieve the camera sensor properties. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classlibcamera_1_1CameraSensor_add91c30dc0cd77e32358bb19e39061cd}{sensor\+Info}} (IPACamera\+Sensor\+Info \texorpdfstring{$\ast$}{*}info) const =0
+\begin{DoxyCompactList}\small\item\em Assemble and return the camera sensor info. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571}{Transform}} \mbox{\hyperlink{classlibcamera_1_1CameraSensor_aa4b012ff51c421b538f9f20bda0c9410}{compute\+Transform}} (\mbox{\hyperlink{namespacelibcamera_a80ea01625b93ecfe879249ac60c79384}{Orientation}} \texorpdfstring{$\ast$}{*}orientation) const =0
+\begin{DoxyCompactList}\small\item\em Compute the Transform that gives the requested {\itshape orientation}. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classlibcamera_1_1BayerFormat_a72f709c68ce975ab0cbfc65cc5a73b95}{Bayer\+Format\+::\+Order}} \mbox{\hyperlink{classlibcamera_1_1CameraSensor_a65e3530e09c358fd8564c413a077a769}{bayer\+Order}} (\mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571}{Transform}} t) const =0
+\begin{DoxyCompactList}\small\item\em Compute the Bayer order that results from the given Transform. \end{DoxyCompactList}\item 
+virtual const \mbox{\hyperlink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map}} \& \mbox{\hyperlink{classlibcamera_1_1CameraSensor_a276da213f947a316345f8f3cee87833f}{controls}} () const =0
+\begin{DoxyCompactList}\small\item\em Retrieve the supported V4\+L2 controls and their information. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} \mbox{\hyperlink{classlibcamera_1_1CameraSensor_ac3fe0f2ea124fa0d82efacf1a6ae368f}{get\+Controls}} (const std\+::vector$<$ uint32\+\_\+t $>$ \&ids)=0
+\begin{DoxyCompactList}\small\item\em Read V4\+L2 controls from the sensor. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classlibcamera_1_1CameraSensor_acd6531f90b8b30fd347f3925f94103e6}{set\+Controls}} (\mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} \texorpdfstring{$\ast$}{*}ctrls)=0
+\begin{DoxyCompactList}\small\item\em Write V4\+L2 controls to the sensor. \end{DoxyCompactList}\item 
+virtual const std\+::vector$<$ controls\+::draft\+::\+Test\+Pattern\+Mode\+Enum $>$ \& \mbox{\hyperlink{classlibcamera_1_1CameraSensor_aeb3893db05dde5b030c6c9e42e0ac748}{test\+Pattern\+Modes}} () const =0
+\begin{DoxyCompactList}\small\item\em Retrieve all the supported test pattern modes of the camera sensor The test pattern mode values correspond to the controls\+::\+Test\+Pattern control. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classlibcamera_1_1CameraSensor_a87d4b19ccd88bb7c4f0c7532e39583e4}{set\+Test\+Pattern\+Mode}} (controls\+::draft\+::\+Test\+Pattern\+Mode\+Enum mode)=0
+\begin{DoxyCompactList}\small\item\em Set the test pattern mode for the camera sensor. \end{DoxyCompactList}\item 
+virtual const \mbox{\hyperlink{structlibcamera_1_1CameraSensorProperties_1_1SensorDelays}{Camera\+Sensor\+Properties\+::\+Sensor\+Delays}} \& \mbox{\hyperlink{classlibcamera_1_1CameraSensor_ae63a2973a50ba1344d2c21182fee2d18}{sensor\+Delays}} ()=0
+\begin{DoxyCompactList}\small\item\em Fetch the sensor delay values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A abstract camera sensor. 
+
+The \doxylink{classlibcamera_1_1CameraSensor}{Camera\+Sensor} class eases handling of sensors for pipeline handlers by hiding the details of the kernel API and caching sensor information. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1CameraSensor_a36b9ce9307b2b6eb1c741d59b6473368}\label{classlibcamera_1_1CameraSensor_a36b9ce9307b2b6eb1c741d59b6473368} 
+\index{libcamera::CameraSensor@{libcamera::CameraSensor}!applyConfiguration@{applyConfiguration}}
+\index{applyConfiguration@{applyConfiguration}!libcamera::CameraSensor@{libcamera::CameraSensor}}
+\doxysubsubsection{\texorpdfstring{applyConfiguration()}{applyConfiguration()}}
+{\footnotesize\ttfamily libcamera\+::\+Camera\+Sensor\+::apply\+Configuration (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1SensorConfiguration}{Sensor\+Configuration}} \&}]{config,  }\item[{\mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571}{Transform}}}]{transform = {\ttfamily \mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571ac9c5c65fb4af9cf90eb99b3b84424189}{Transform\+::\+Identity}}},  }\item[{\mbox{\hyperlink{structlibcamera_1_1V4L2SubdeviceFormat}{V4\+L2\+Subdevice\+Format}} \texorpdfstring{$\ast$}{*}}]{sensor\+Format = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Apply a sensor configuration to the camera sensor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em config} & The sensor configuration \\
+\hline
+\mbox{\texttt{ in}}  & {\em transform} & The transform to be applied on the sensor. Defaults to Identity \\
+\hline
+\mbox{\texttt{ out}}  & {\em sensor\+Format} & \doxylink{classFormat}{Format} applied to the sensor (optional)\\
+\hline
+\end{DoxyParams}
+Apply to the camera sensor the configuration {\itshape config}.
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000046}{Todo}}]The configuration shall be fully populated and if any of the fields specified cannot be applied exactly, an error code is returned.\end{DoxyRefDesc}
+
+
+\begin{DoxyReturn}{Returns}
+0 if {\itshape config} is applied correctly to the camera sensor, a negative error code otherwise 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classlibcamera_1_1CameraSensorLegacy_a8f1e9a86cc63e4a51ad98f3780c43cbd}{libcamera\+::\+Camera\+Sensor\+Legacy}}.
+
+\Hypertarget{classlibcamera_1_1CameraSensor_a65e3530e09c358fd8564c413a077a769}\label{classlibcamera_1_1CameraSensor_a65e3530e09c358fd8564c413a077a769} 
+\index{libcamera::CameraSensor@{libcamera::CameraSensor}!bayerOrder@{bayerOrder}}
+\index{bayerOrder@{bayerOrder}!libcamera::CameraSensor@{libcamera::CameraSensor}}
+\doxysubsubsection{\texorpdfstring{bayerOrder()}{bayerOrder()}}
+{\footnotesize\ttfamily libcamera\+::\+Camera\+Sensor\+::bayer\+Order (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571}{Transform}}}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Compute the Bayer order that results from the given Transform. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em t} & The Transform to apply to the sensor\\
+\hline
+\end{DoxyParams}
+Some sensors change their Bayer order when they are h-\/flipped or v-\/flipped. This function computes and returns the Bayer order that would result from the given transform applied to the sensor.
+
+This function is valid only when the sensor produces raw Bayer formats.
+
+\begin{DoxyReturn}{Returns}
+The Bayer order produced by the sensor when the Transform is applied 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classlibcamera_1_1CameraSensorLegacy_a9b1763c83f89ed67cc0f82eeec49521c}{libcamera\+::\+Camera\+Sensor\+Legacy}}.
+
+\Hypertarget{classlibcamera_1_1CameraSensor_aa4b012ff51c421b538f9f20bda0c9410}\label{classlibcamera_1_1CameraSensor_aa4b012ff51c421b538f9f20bda0c9410} 
+\index{libcamera::CameraSensor@{libcamera::CameraSensor}!computeTransform@{computeTransform}}
+\index{computeTransform@{computeTransform}!libcamera::CameraSensor@{libcamera::CameraSensor}}
+\doxysubsubsection{\texorpdfstring{computeTransform()}{computeTransform()}}
+{\footnotesize\ttfamily libcamera\+::\+Camera\+Sensor\+::compute\+Transform (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacelibcamera_a80ea01625b93ecfe879249ac60c79384}{Orientation}} \texorpdfstring{$\ast$}{*}}]{orientation }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Compute the Transform that gives the requested {\itshape orientation}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em orientation} & The desired image orientation\\
+\hline
+\end{DoxyParams}
+This function computes the Transform that the pipeline handler should apply to the \doxylink{classlibcamera_1_1CameraSensor}{Camera\+Sensor} to obtain the requested {\itshape orientation}.
+
+The intended caller of this function is the validate() implementation of pipeline handlers, that pass in the application requested \doxylink{classlibcamera_1_1CameraConfiguration_a44acd9a3af5ce3a937c008e0843268b4}{Camera\+Configuration\+::orientation} and obtain a Transform to apply to the camera sensor, likely at configure() time.
+
+If the requested {\itshape orientation} cannot be obtained, the {\itshape orientation} parameter is adjusted to report the current image orientation and \doxylink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571ac9c5c65fb4af9cf90eb99b3b84424189}{Transform\+::\+Identity} is returned.
+
+If the requested {\itshape orientation} can be obtained, the function computes a Transform and does not adjust {\itshape orientation}.
+
+Pipeline handlers are expected to verify if {\itshape orientation} has been adjusted by this function and set the Camera\+Configuration\+::status to Adjusted accordingly.
+
+\begin{DoxyReturn}{Returns}
+A Transform instance that applied to the \doxylink{classlibcamera_1_1CameraSensor}{Camera\+Sensor} produces images with {\itshape orientation} 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classlibcamera_1_1CameraSensorLegacy_a117ed9170c7bc47875a61e59251bdf41}{libcamera\+::\+Camera\+Sensor\+Legacy}}.
+
+\Hypertarget{classlibcamera_1_1CameraSensor_a276da213f947a316345f8f3cee87833f}\label{classlibcamera_1_1CameraSensor_a276da213f947a316345f8f3cee87833f} 
+\index{libcamera::CameraSensor@{libcamera::CameraSensor}!controls@{controls}}
+\index{controls@{controls}!libcamera::CameraSensor@{libcamera::CameraSensor}}
+\doxysubsubsection{\texorpdfstring{controls()}{controls()}}
+{\footnotesize\ttfamily libcamera\+::\+Camera\+Sensor\+::controls (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Retrieve the supported V4\+L2 controls and their information. 
+
+\doxylink{classlibcamera_1_1Control}{Control} information is updated automatically to reflect the current sensor configuration when the \doxylink{classlibcamera_1_1CameraSensor_ad871514dff7a30406df5f8cd557672d7}{set\+Format()} function is called, without invalidating any iterator on the \doxylink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map}.
+
+\begin{DoxyReturn}{Returns}
+A map of the V4\+L2 controls supported by the sensor 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classlibcamera_1_1CameraSensorLegacy_ac3f99c31558e53e0525a362dd0d8d6b9}{libcamera\+::\+Camera\+Sensor\+Legacy}}.
+
+\Hypertarget{classlibcamera_1_1CameraSensor_ab14ea54646bd5c542a5950de5c7671f0}\label{classlibcamera_1_1CameraSensor_ab14ea54646bd5c542a5950de5c7671f0} 
+\index{libcamera::CameraSensor@{libcamera::CameraSensor}!device@{device}}
+\index{device@{device}!libcamera::CameraSensor@{libcamera::CameraSensor}}
+\doxysubsubsection{\texorpdfstring{device()}{device()}}
+{\footnotesize\ttfamily libcamera\+::\+Camera\+Sensor\+::device (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Retrieve the camera sensor device. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000043}{Todo}}]Remove this function by integrating Delayed\+Control with \doxylink{classlibcamera_1_1CameraSensor}{Camera\+Sensor} \end{DoxyRefDesc}
+\begin{DoxyReturn}{Returns}
+The camera sensor device 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classlibcamera_1_1CameraSensorLegacy_a9afc034f697036b28dfce3266b76fc91}{libcamera\+::\+Camera\+Sensor\+Legacy}}.
+
+\Hypertarget{classlibcamera_1_1CameraSensor_a626e9f47783fe339ac402cdc5f4f0aa1}\label{classlibcamera_1_1CameraSensor_a626e9f47783fe339ac402cdc5f4f0aa1} 
+\index{libcamera::CameraSensor@{libcamera::CameraSensor}!entity@{entity}}
+\index{entity@{entity}!libcamera::CameraSensor@{libcamera::CameraSensor}}
+\doxysubsubsection{\texorpdfstring{entity()}{entity()}}
+{\footnotesize\ttfamily libcamera\+::\+Camera\+Sensor\+::entity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Retrieve the sensor media entity. 
+
+\begin{DoxyReturn}{Returns}
+The sensor media entity 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classlibcamera_1_1CameraSensorLegacy_ad672a190ec37b37f2841ec854c9b9fdb}{libcamera\+::\+Camera\+Sensor\+Legacy}}.
+
+\Hypertarget{classlibcamera_1_1CameraSensor_a7d0f6cea698adfeabf487111bc57408b}\label{classlibcamera_1_1CameraSensor_a7d0f6cea698adfeabf487111bc57408b} 
+\index{libcamera::CameraSensor@{libcamera::CameraSensor}!focusLens@{focusLens}}
+\index{focusLens@{focusLens}!libcamera::CameraSensor@{libcamera::CameraSensor}}
+\doxysubsubsection{\texorpdfstring{focusLens()}{focusLens()}}
+{\footnotesize\ttfamily libcamera\+::\+Camera\+Sensor\+::focus\+Lens (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Retrieve the focus lens controller. 
+
+\begin{DoxyReturn}{Returns}
+The focus lens controller. nullptr if no focus lens controller is connected to the sensor 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classlibcamera_1_1CameraSensorLegacy_ae7d995d17e2549a8296201de08ae19a9}{libcamera\+::\+Camera\+Sensor\+Legacy}}.
+
+\Hypertarget{classlibcamera_1_1CameraSensor_ac3fe0f2ea124fa0d82efacf1a6ae368f}\label{classlibcamera_1_1CameraSensor_ac3fe0f2ea124fa0d82efacf1a6ae368f} 
+\index{libcamera::CameraSensor@{libcamera::CameraSensor}!getControls@{getControls}}
+\index{getControls@{getControls}!libcamera::CameraSensor@{libcamera::CameraSensor}}
+\doxysubsubsection{\texorpdfstring{getControls()}{getControls()}}
+{\footnotesize\ttfamily libcamera\+::\+Camera\+Sensor\+::get\+Controls (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ uint32\+\_\+t $>$ \&}]{ids }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Read V4\+L2 controls from the sensor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ids} & The list of controls to read, specified by their ID\\
+\hline
+\end{DoxyParams}
+This function reads the value of all controls contained in {\itshape ids}, and returns their values as a \doxylink{classlibcamera_1_1ControlList}{Control\+List}. The control identifiers are defined by the V4\+L2 specification (V4\+L2\+\_\+\+CID\+\_\+\texorpdfstring{$\ast$}{*}).
+
+If any control in {\itshape ids} is not supported by the device, is disabled (i.\+e. has the V4\+L2\+\_\+\+CTRL\+\_\+\+FLAG\+\_\+\+DISABLED flag set), or if any other error occurs during validation of the requested controls, no control is read and this function returns an empty control list.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classlibcamera_1_1V4L2Device_aaaadfb4e56d3099f9a84fa0a7a3fec50}{V4\+L2\+Device\+::get\+Controls()}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+The control values in a \doxylink{classlibcamera_1_1ControlList}{Control\+List} on success, or an empty list on error 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classlibcamera_1_1CameraSensorLegacy_ac1a33c0481efff7a398755a628fca9f0}{libcamera\+::\+Camera\+Sensor\+Legacy}}.
+
+\Hypertarget{classlibcamera_1_1CameraSensor_a9bfaf1b19d324547a3a4a072c359906f}\label{classlibcamera_1_1CameraSensor_a9bfaf1b19d324547a3a4a072c359906f} 
+\index{libcamera::CameraSensor@{libcamera::CameraSensor}!getFormat@{getFormat}}
+\index{getFormat@{getFormat}!libcamera::CameraSensor@{libcamera::CameraSensor}}
+\doxysubsubsection{\texorpdfstring{getFormat()}{getFormat()}}
+{\footnotesize\ttfamily libcamera\+::\+Camera\+Sensor\+::get\+Format (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ unsigned int $>$ \&}]{mbus\+Codes,  }\item[{const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&}]{size }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Retrieve the best sensor format for a desired output. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em mbus\+Codes} & The list of acceptable media bus codes \\
+\hline
+\mbox{\texttt{ in}}  & {\em size} & The desired size\\
+\hline
+\end{DoxyParams}
+Media bus codes are selected from {\itshape mbus\+Codes}, which lists all acceptable codes in decreasing order of preference. Media bus codes supported by the sensor but not listed in {\itshape mbus\+Codes} are ignored. If none of the desired codes is supported, it returns an error.
+
+{\itshape size} indicates the desired size at the output of the sensor. This function selects the best media bus code and size supported by the sensor according to the following criteria.
+
+
+\begin{DoxyItemize}
+\item The desired {\itshape size} shall fit in the sensor output size to avoid the need to up-\/scale.
+\item The sensor output size shall match the desired aspect ratio to avoid the need to crop the field of view.
+\item The sensor output size shall be as small as possible to lower the required bandwidth.
+\item The desired {\itshape size} shall be supported by one of the media bus code listed in {\itshape mbus\+Codes}.
+\end{DoxyItemize}
+
+When multiple media bus codes can produce the same size, the code at the lowest position in {\itshape mbus\+Codes} is selected.
+
+The use of this function is optional, as the above criteria may not match the needs of all pipeline handlers. Pipeline handlers may implement custom sensor format selection when needed.
+
+The returned sensor output format is guaranteed to be acceptable by the \doxylink{classlibcamera_1_1CameraSensor_ad871514dff7a30406df5f8cd557672d7}{set\+Format()} function without any modification.
+
+\begin{DoxyReturn}{Returns}
+The best sensor output format matching the desired media bus codes and size on success, or an empty format otherwise. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classlibcamera_1_1CameraSensorLegacy_a05c7e0969d6331b0b4f85565a1383440}{libcamera\+::\+Camera\+Sensor\+Legacy}}.
+
+\Hypertarget{classlibcamera_1_1CameraSensor_ada5a8affea78c9a3b4e1f478c796b089}\label{classlibcamera_1_1CameraSensor_ada5a8affea78c9a3b4e1f478c796b089} 
+\index{libcamera::CameraSensor@{libcamera::CameraSensor}!id@{id}}
+\index{id@{id}!libcamera::CameraSensor@{libcamera::CameraSensor}}
+\doxysubsubsection{\texorpdfstring{id()}{id()}}
+{\footnotesize\ttfamily libcamera\+::\+Camera\+Sensor\+::id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Retrieve the sensor ID. 
+
+The sensor ID is a free-\/form string that uniquely identifies the sensor in the system. The ID satisfies the requirements to be used as a camera ID.
+
+\begin{DoxyReturn}{Returns}
+The sensor ID 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classlibcamera_1_1CameraSensorLegacy_abf6e43c7641804f60dd6f6bc64bbebf7}{libcamera\+::\+Camera\+Sensor\+Legacy}}.
+
+\Hypertarget{classlibcamera_1_1CameraSensor_a39a823a3eec94b6ae1daf273f5eed820}\label{classlibcamera_1_1CameraSensor_a39a823a3eec94b6ae1daf273f5eed820} 
+\index{libcamera::CameraSensor@{libcamera::CameraSensor}!mbusCodes@{mbusCodes}}
+\index{mbusCodes@{mbusCodes}!libcamera::CameraSensor@{libcamera::CameraSensor}}
+\doxysubsubsection{\texorpdfstring{mbusCodes()}{mbusCodes()}}
+{\footnotesize\ttfamily libcamera\+::\+Camera\+Sensor\+::mbus\+Codes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Retrieve the media bus codes supported by the camera sensor. 
+
+Any Bayer formats are listed using the sensor\textquotesingle{}s native Bayer order, that is, with the effect of V4\+L2\+\_\+\+CID\+\_\+\+HFLIP and V4\+L2\+\_\+\+CID\+\_\+\+VFLIP undone (where these controls exist).
+
+\begin{DoxyReturn}{Returns}
+The supported media bus codes sorted in increasing order 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classlibcamera_1_1CameraSensorLegacy_aef083ec1b68113a3d60f7a7a7bf0c041}{libcamera\+::\+Camera\+Sensor\+Legacy}}.
+
+\Hypertarget{classlibcamera_1_1CameraSensor_adfd4fa08b683442a23fd5a168b459774}\label{classlibcamera_1_1CameraSensor_adfd4fa08b683442a23fd5a168b459774} 
+\index{libcamera::CameraSensor@{libcamera::CameraSensor}!model@{model}}
+\index{model@{model}!libcamera::CameraSensor@{libcamera::CameraSensor}}
+\doxysubsubsection{\texorpdfstring{model()}{model()}}
+{\footnotesize\ttfamily libcamera\+::\+Camera\+Sensor\+::model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Retrieve the sensor model name. 
+
+The sensor model name is a free-\/formed string that uniquely identifies the sensor model.
+
+\begin{DoxyReturn}{Returns}
+The sensor model name 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classlibcamera_1_1CameraSensorLegacy_a0e507e40de4434fd37494c876e46ccb0}{libcamera\+::\+Camera\+Sensor\+Legacy}}.
+
+\Hypertarget{classlibcamera_1_1CameraSensor_a5920ce0c8a3df3f438e3f54582974bd7}\label{classlibcamera_1_1CameraSensor_a5920ce0c8a3df3f438e3f54582974bd7} 
+\index{libcamera::CameraSensor@{libcamera::CameraSensor}!properties@{properties}}
+\index{properties@{properties}!libcamera::CameraSensor@{libcamera::CameraSensor}}
+\doxysubsubsection{\texorpdfstring{properties()}{properties()}}
+{\footnotesize\ttfamily libcamera\+::\+Camera\+Sensor\+::properties (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Retrieve the camera sensor properties. 
+
+\begin{DoxyReturn}{Returns}
+The list of camera sensor properties 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classlibcamera_1_1CameraSensorLegacy_a749e92dd3e50cfd9a8a5c28f94c9e410}{libcamera\+::\+Camera\+Sensor\+Legacy}}.
+
+\Hypertarget{classlibcamera_1_1CameraSensor_abcd1c5043bbf5c848a4187a3e36fad13}\label{classlibcamera_1_1CameraSensor_abcd1c5043bbf5c848a4187a3e36fad13} 
+\index{libcamera::CameraSensor@{libcamera::CameraSensor}!resolution@{resolution}}
+\index{resolution@{resolution}!libcamera::CameraSensor@{libcamera::CameraSensor}}
+\doxysubsubsection{\texorpdfstring{resolution()}{resolution()}}
+{\footnotesize\ttfamily libcamera\+::\+Camera\+Sensor\+::resolution (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Retrieve the camera sensor resolution. 
+
+The camera sensor resolution is the active pixel area size, clamped to the maximum frame size the sensor can produce if it is smaller than the active pixel area.
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000044}{Todo}}]Consider if it desirable to distinguish between the maximum resolution the sensor can produce (also including upscaled ones) and the actual pixel array size by splitting this function in two.\end{DoxyRefDesc}
+
+
+\begin{DoxyReturn}{Returns}
+The camera sensor resolution in pixels 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classlibcamera_1_1CameraSensorLegacy_adddba1c4fefb7796caf9b8841a7dae2f}{libcamera\+::\+Camera\+Sensor\+Legacy}}.
+
+\Hypertarget{classlibcamera_1_1CameraSensor_ae63a2973a50ba1344d2c21182fee2d18}\label{classlibcamera_1_1CameraSensor_ae63a2973a50ba1344d2c21182fee2d18} 
+\index{libcamera::CameraSensor@{libcamera::CameraSensor}!sensorDelays@{sensorDelays}}
+\index{sensorDelays@{sensorDelays}!libcamera::CameraSensor@{libcamera::CameraSensor}}
+\doxysubsubsection{\texorpdfstring{sensorDelays()}{sensorDelays()}}
+{\footnotesize\ttfamily libcamera\+::\+Camera\+Sensor\+::sensor\+Delays (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Fetch the sensor delay values. 
+
+This function retrieves the delays that the sensor applies to controls. If the static properties database doesn\textquotesingle{}t specifiy control delay values for the sensor, default delays that may be suitable are returned and a warning is logged.
+
+\begin{DoxyReturn}{Returns}
+The sensor delay values 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classlibcamera_1_1CameraSensorLegacy_abf1a7b6c6ee09c472844d51d4380a8fc}{libcamera\+::\+Camera\+Sensor\+Legacy}}.
+
+\Hypertarget{classlibcamera_1_1CameraSensor_add91c30dc0cd77e32358bb19e39061cd}\label{classlibcamera_1_1CameraSensor_add91c30dc0cd77e32358bb19e39061cd} 
+\index{libcamera::CameraSensor@{libcamera::CameraSensor}!sensorInfo@{sensorInfo}}
+\index{sensorInfo@{sensorInfo}!libcamera::CameraSensor@{libcamera::CameraSensor}}
+\doxysubsubsection{\texorpdfstring{sensorInfo()}{sensorInfo()}}
+{\footnotesize\ttfamily libcamera\+::\+Camera\+Sensor\+::sensor\+Info (\begin{DoxyParamCaption}\item[{IPACamera\+Sensor\+Info \texorpdfstring{$\ast$}{*}}]{info }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Assemble and return the camera sensor info. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em info} & The camera sensor info\\
+\hline
+\end{DoxyParams}
+This function fills {\itshape info} with information that describes the camera sensor and its current configuration. The information combines static data (such as the the sensor model or active pixel array size) and data specific to the current sensor configuration (such as the line length and pixel rate).
+
+Sensor information is only available for raw sensors. When called for a YUV sensor, this function returns -\/EINVAL.
+
+\begin{DoxyReturn}{Returns}
+0 on success, a negative error code otherwise 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classlibcamera_1_1CameraSensorLegacy_a3239cf46a9b3074793d9141ca4a4f373}{libcamera\+::\+Camera\+Sensor\+Legacy}}.
+
+\Hypertarget{classlibcamera_1_1CameraSensor_acd6531f90b8b30fd347f3925f94103e6}\label{classlibcamera_1_1CameraSensor_acd6531f90b8b30fd347f3925f94103e6} 
+\index{libcamera::CameraSensor@{libcamera::CameraSensor}!setControls@{setControls}}
+\index{setControls@{setControls}!libcamera::CameraSensor@{libcamera::CameraSensor}}
+\doxysubsubsection{\texorpdfstring{setControls()}{setControls()}}
+{\footnotesize\ttfamily libcamera\+::\+Camera\+Sensor\+::set\+Controls (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} \texorpdfstring{$\ast$}{*}}]{ctrls }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Write V4\+L2 controls to the sensor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ctrls} & The list of controls to write\\
+\hline
+\end{DoxyParams}
+This function writes the value of all controls contained in {\itshape ctrls}, and stores the values actually applied to the device in the corresponding {\itshape ctrls} entry. The control identifiers are defined by the V4\+L2 specification (V4\+L2\+\_\+\+CID\+\_\+\texorpdfstring{$\ast$}{*}).
+
+If any control in {\itshape ctrls} is not supported by the device, is disabled (i.\+e. has the V4\+L2\+\_\+\+CTRL\+\_\+\+FLAG\+\_\+\+DISABLED flag set), is read-\/only, or if any other error occurs during validation of the requested controls, no control is written and this function returns -\/EINVAL.
+
+If an error occurs while writing the controls, the index of the first control that couldn\textquotesingle{}t be written is returned. All controls below that index are written and their values are updated in {\itshape ctrls}, while all other controls are not written and their values are not changed.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classlibcamera_1_1V4L2Device_ab0485054b749a15cb5152cc751c81750}{V4\+L2\+Device\+::set\+Controls()}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+0 on success or an error code otherwise 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em -\/\+EINVAL} & One of the control is not supported or not accessible \\
+\hline
+{\em i} & The index of the control that failed \\
+\hline
+\end{DoxyRetVals}
+
+
+Implemented in \mbox{\hyperlink{classlibcamera_1_1CameraSensorLegacy_a559b2c5f779a9b34c1bf1693832b1898}{libcamera\+::\+Camera\+Sensor\+Legacy}}.
+
+\Hypertarget{classlibcamera_1_1CameraSensor_ad871514dff7a30406df5f8cd557672d7}\label{classlibcamera_1_1CameraSensor_ad871514dff7a30406df5f8cd557672d7} 
+\index{libcamera::CameraSensor@{libcamera::CameraSensor}!setFormat@{setFormat}}
+\index{setFormat@{setFormat}!libcamera::CameraSensor@{libcamera::CameraSensor}}
+\doxysubsubsection{\texorpdfstring{setFormat()}{setFormat()}}
+{\footnotesize\ttfamily libcamera\+::\+Camera\+Sensor\+::set\+Format (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlibcamera_1_1V4L2SubdeviceFormat}{V4\+L2\+Subdevice\+Format}} \texorpdfstring{$\ast$}{*}}]{format,  }\item[{\mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571}{Transform}}}]{transform = {\ttfamily \mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571ac9c5c65fb4af9cf90eb99b3b84424189}{Transform\+::\+Identity}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Set the sensor output format. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em format} & The desired sensor output format \\
+\hline
+\mbox{\texttt{ in}}  & {\em transform} & The transform to be applied on the sensor. Defaults to Identity.\\
+\hline
+\end{DoxyParams}
+If flips are writable they are configured according to the desired Transform. \doxylink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571ac9c5c65fb4af9cf90eb99b3b84424189}{Transform\+::\+Identity} always corresponds to H/V flip being disabled if the controls are writable. Flips are set before the new format is applied as they can effectively change the Bayer pattern ordering.
+
+The ranges of any controls associated with the sensor are also updated.
+
+\begin{DoxyReturn}{Returns}
+0 on success or a negative error code otherwise 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classlibcamera_1_1CameraSensorLegacy_ae66e86ef1d254715ca7cea337ed2d37b}{libcamera\+::\+Camera\+Sensor\+Legacy}}.
+
+\Hypertarget{classlibcamera_1_1CameraSensor_a87d4b19ccd88bb7c4f0c7532e39583e4}\label{classlibcamera_1_1CameraSensor_a87d4b19ccd88bb7c4f0c7532e39583e4} 
+\index{libcamera::CameraSensor@{libcamera::CameraSensor}!setTestPatternMode@{setTestPatternMode}}
+\index{setTestPatternMode@{setTestPatternMode}!libcamera::CameraSensor@{libcamera::CameraSensor}}
+\doxysubsubsection{\texorpdfstring{setTestPatternMode()}{setTestPatternMode()}}
+{\footnotesize\ttfamily libcamera\+::\+Camera\+Sensor\+::set\+Test\+Pattern\+Mode (\begin{DoxyParamCaption}\item[{controls\+::draft\+::\+Test\+Pattern\+Mode\+Enum}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Set the test pattern mode for the camera sensor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em mode} & The test pattern mode\\
+\hline
+\end{DoxyParams}
+The new {\itshape mode} is applied to the sensor if it differs from the active test pattern mode. Otherwise, this function is a no-\/op. Setting the same test pattern mode for every frame thus incurs no performance penalty. 
+
+Implemented in \mbox{\hyperlink{classlibcamera_1_1CameraSensorLegacy_aae9e326170bec2e2c5f04eeab0e2de91}{libcamera\+::\+Camera\+Sensor\+Legacy}}.
+
+\Hypertarget{classlibcamera_1_1CameraSensor_a0d7f0a0296945aaed955dbf0457c2037}\label{classlibcamera_1_1CameraSensor_a0d7f0a0296945aaed955dbf0457c2037} 
+\index{libcamera::CameraSensor@{libcamera::CameraSensor}!sizes@{sizes}}
+\index{sizes@{sizes}!libcamera::CameraSensor@{libcamera::CameraSensor}}
+\doxysubsubsection{\texorpdfstring{sizes()}{sizes()}}
+{\footnotesize\ttfamily libcamera\+::\+Camera\+Sensor\+::sizes (\begin{DoxyParamCaption}\item[{unsigned int}]{mbus\+Code }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Retrieve the supported frame sizes for a media bus code. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em mbus\+Code} & The media bus code for which sizes are requested\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The supported frame sizes for {\itshape mbus\+Code} sorted in increasing order 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classlibcamera_1_1CameraSensorLegacy_a5856099b4cca79d3c5abe42a19b88638}{libcamera\+::\+Camera\+Sensor\+Legacy}}.
+
+\Hypertarget{classlibcamera_1_1CameraSensor_aeb3893db05dde5b030c6c9e42e0ac748}\label{classlibcamera_1_1CameraSensor_aeb3893db05dde5b030c6c9e42e0ac748} 
+\index{libcamera::CameraSensor@{libcamera::CameraSensor}!testPatternModes@{testPatternModes}}
+\index{testPatternModes@{testPatternModes}!libcamera::CameraSensor@{libcamera::CameraSensor}}
+\doxysubsubsection{\texorpdfstring{testPatternModes()}{testPatternModes()}}
+{\footnotesize\ttfamily libcamera\+::\+Camera\+Sensor\+::test\+Pattern\+Modes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Retrieve all the supported test pattern modes of the camera sensor The test pattern mode values correspond to the controls\+::\+Test\+Pattern control. 
+
+\begin{DoxyReturn}{Returns}
+The list of test pattern modes 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classlibcamera_1_1CameraSensorLegacy_a18036d65f91fc51ad99ec3b2f7f86c8f}{libcamera\+::\+Camera\+Sensor\+Legacy}}.
+
+\Hypertarget{classlibcamera_1_1CameraSensor_a1d3d7d3ef571499184fbe7425f8da927}\label{classlibcamera_1_1CameraSensor_a1d3d7d3ef571499184fbe7425f8da927} 
+\index{libcamera::CameraSensor@{libcamera::CameraSensor}!tryFormat@{tryFormat}}
+\index{tryFormat@{tryFormat}!libcamera::CameraSensor@{libcamera::CameraSensor}}
+\doxysubsubsection{\texorpdfstring{tryFormat()}{tryFormat()}}
+{\footnotesize\ttfamily libcamera\+::\+Camera\+Sensor\+::try\+Format (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlibcamera_1_1V4L2SubdeviceFormat}{V4\+L2\+Subdevice\+Format}} \texorpdfstring{$\ast$}{*}}]{format }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Try the sensor output format. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em format} & The desired sensor output format\\
+\hline
+\end{DoxyParams}
+The ranges of any controls associated with the sensor are not updated.
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000045}{Todo}}]Add support for Transform by changing the format\textquotesingle{}s Bayer ordering before calling subdev\+\_\+-\/\texorpdfstring{$>$}{>}\doxylink{classlibcamera_1_1CameraSensor_ad871514dff7a30406df5f8cd557672d7}{set\+Format()}.\end{DoxyRefDesc}
+
+
+\begin{DoxyReturn}{Returns}
+0 on success or a negative error code otherwise 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classlibcamera_1_1CameraSensorLegacy_ae55ab53844419331040f036aeeeee40e}{libcamera\+::\+Camera\+Sensor\+Legacy}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/internal/\mbox{\hyperlink{camera__sensor_8h}{camera\+\_\+sensor.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/sensor/camera\+\_\+sensor.\+cpp\end{DoxyCompactItemize}

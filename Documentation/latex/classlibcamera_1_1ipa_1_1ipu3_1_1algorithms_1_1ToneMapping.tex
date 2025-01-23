@@ -1,0 +1,119 @@
+\doxysection{libcamera\+::ipa\+::ipu3\+::algorithms\+::Tone\+Mapping Class Reference}
+\hypertarget{classlibcamera_1_1ipa_1_1ipu3_1_1algorithms_1_1ToneMapping}{}\label{classlibcamera_1_1ipa_1_1ipu3_1_1algorithms_1_1ToneMapping}\index{libcamera::ipa::ipu3::algorithms::ToneMapping@{libcamera::ipa::ipu3::algorithms::ToneMapping}}
+
+
+A class to handle tone mapping based on gamma.  
+
+
+Inheritance diagram for libcamera\+::ipa\+::ipu3\+::algorithms\+::Tone\+Mapping\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlibcamera_1_1ipa_1_1ipu3_1_1algorithms_1_1ToneMapping}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classlibcamera_1_1ipa_1_1ipu3_1_1algorithms_1_1ToneMapping_af216cddc8285765d9cc239915dece1c2}{configure}} (\mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAContext}{IPAContext}} \&context, const IPAConfig\+Info \&config\+Info) override
+\begin{DoxyCompactList}\small\item\em Configure the tone mapping given a config\+Info. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1ipa_1_1ipu3_1_1algorithms_1_1ToneMapping_a9ee116ad1dd98f80634335229a5ef6d3}{prepare}} (\mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAContext}{IPAContext}} \&context, const uint32\+\_\+t frame, \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAFrameContext}{IPAFrame\+Context}} \&frame\+Context, \mbox{\hyperlink{structipu3__uapi__params}{ipu3\+\_\+uapi\+\_\+params}} \texorpdfstring{$\ast$}{*}params) override
+\begin{DoxyCompactList}\small\item\em Fill in the parameter structure, and enable gamma control. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1ipa_1_1ipu3_1_1algorithms_1_1ToneMapping_a7ec1e1264e29c61864ce4e1c85b8b4d4}{process}} (\mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAContext}{IPAContext}} \&context, const uint32\+\_\+t frame, \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAFrameContext}{IPAFrame\+Context}} \&frame\+Context, const \mbox{\hyperlink{structipu3__uapi__stats__3a}{ipu3\+\_\+uapi\+\_\+stats\+\_\+3a}} \texorpdfstring{$\ast$}{*}stats, \mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} \&metadata) override
+\begin{DoxyCompactList}\small\item\em Calculate the tone mapping look up table. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Algorithm}{libcamera\+::ipa\+::\+Algorithm$<$ Module $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual int \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Algorithm_a68ad78f4d948f8cebefaaae22b743687}{init}} (typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a2a12d05faa4f517f4dfcfa087063fd27}{Module\+::\+Context}} \&context, const \mbox{\hyperlink{classlibcamera_1_1YamlObject}{Yaml\+Object}} \&tuning\+Data)
+\begin{DoxyCompactList}\small\item\em Initialize the \doxylink{classlibcamera_1_1ipa_1_1Algorithm}{Algorithm} with tuning data. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Algorithm_a5e3cd461b46cdd1d366bf211f87d8f3d}{configure}} (typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a2a12d05faa4f517f4dfcfa087063fd27}{Module\+::\+Context}} \&context, const typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a7c0b7a42c526c07bafeca4018b38b8c9}{Module\+::\+Config}} \&config\+Info)
+\begin{DoxyCompactList}\small\item\em Configure the \doxylink{classlibcamera_1_1ipa_1_1Algorithm}{Algorithm} given an IPAConfig\+Info. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Algorithm_a307cf5dd6b48ccc1c772901c07e14afe}{queue\+Request}} (typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a2a12d05faa4f517f4dfcfa087063fd27}{Module\+::\+Context}} \&context, const uint32\+\_\+t frame, typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a5a1bf7efd7811fb9da8ff311aeef3b1c}{Module\+::\+Frame\+Context}} \&frame\+Context, const \mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} \&controls)
+\begin{DoxyCompactList}\small\item\em Provide control values to the algorithm. \end{DoxyCompactList}\item 
+virtual void {\bfseries prepare} (typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a2a12d05faa4f517f4dfcfa087063fd27}{Module\+::\+Context}} \&context, const uint32\+\_\+t frame, typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a5a1bf7efd7811fb9da8ff311aeef3b1c}{Module\+::\+Frame\+Context}} \&frame\+Context, typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a48ee62113eed1c9ad7a001887dc59674}{Module\+::\+Params}} \texorpdfstring{$\ast$}{*}params)
+\item 
+virtual void {\bfseries process} (typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a2a12d05faa4f517f4dfcfa087063fd27}{Module\+::\+Context}} \&context, const uint32\+\_\+t frame, typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_a5a1bf7efd7811fb9da8ff311aeef3b1c}{Module\+::\+Frame\+Context}} \&frame\+Context, const typename \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Module_afdcea0695dc0eb1226d66442a5647a41}{Module\+::\+Stats}} \texorpdfstring{$\ast$}{*}stats, \mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} \&metadata)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Algorithm}{libcamera\+::ipa\+::\+Algorithm$<$ Module $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+using {\bfseries Module} = \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Algorithm_ac52491716c9cd932770dc1a02d7d9b25}{Module}}
+\begin{DoxyCompactList}\small\item\em The IPA module type for this class of algorithms. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class to handle tone mapping based on gamma. 
+
+This algorithm improves the image dynamic using a look-\/up table which is generated based on a gamma parameter. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1ipa_1_1ipu3_1_1algorithms_1_1ToneMapping_af216cddc8285765d9cc239915dece1c2}\label{classlibcamera_1_1ipa_1_1ipu3_1_1algorithms_1_1ToneMapping_af216cddc8285765d9cc239915dece1c2} 
+\index{libcamera::ipa::ipu3::algorithms::ToneMapping@{libcamera::ipa::ipu3::algorithms::ToneMapping}!configure@{configure}}
+\index{configure@{configure}!libcamera::ipa::ipu3::algorithms::ToneMapping@{libcamera::ipa::ipu3::algorithms::ToneMapping}}
+\doxysubsubsection{\texorpdfstring{configure()}{configure()}}
+{\footnotesize\ttfamily int libcamera\+::ipa\+::ipu3\+::algorithms\+::\+Tone\+Mapping\+::configure (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAContext}{IPAContext}} \&}]{context,  }\item[{const IPAConfig\+Info \&}]{config\+Info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Configure the tone mapping given a config\+Info. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em context} & The shared IPA context \\
+\hline
+\mbox{\texttt{ in}}  & {\em config\+Info} & The IPA configuration data\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1ipa_1_1ipu3_1_1algorithms_1_1ToneMapping_a9ee116ad1dd98f80634335229a5ef6d3}\label{classlibcamera_1_1ipa_1_1ipu3_1_1algorithms_1_1ToneMapping_a9ee116ad1dd98f80634335229a5ef6d3} 
+\index{libcamera::ipa::ipu3::algorithms::ToneMapping@{libcamera::ipa::ipu3::algorithms::ToneMapping}!prepare@{prepare}}
+\index{prepare@{prepare}!libcamera::ipa::ipu3::algorithms::ToneMapping@{libcamera::ipa::ipu3::algorithms::ToneMapping}}
+\doxysubsubsection{\texorpdfstring{prepare()}{prepare()}}
+{\footnotesize\ttfamily void libcamera\+::ipa\+::ipu3\+::algorithms\+::\+Tone\+Mapping\+::prepare (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAContext}{IPAContext}} \&}]{context,  }\item[{const uint32\+\_\+t}]{frame,  }\item[{\mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAFrameContext}{IPAFrame\+Context}} \&}]{frame\+Context,  }\item[{\mbox{\hyperlink{structipu3__uapi__params}{ipu3\+\_\+uapi\+\_\+params}} \texorpdfstring{$\ast$}{*}}]{params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Fill in the parameter structure, and enable gamma control. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em context} & The shared IPA context \\
+\hline
+\mbox{\texttt{ in}}  & {\em frame} & The frame context sequence number \\
+\hline
+\mbox{\texttt{ in}}  & {\em frame\+Context} & The \doxylink{structlibcamera_1_1ipa_1_1FrameContext}{Frame\+Context} for this frame \\
+\hline
+\mbox{\texttt{ out}}  & {\em params} & The IPU3 parameters\\
+\hline
+\end{DoxyParams}
+Populate the IPU3 parameter structure with our tone mapping look up table and enable the gamma control module in the processing blocks. \Hypertarget{classlibcamera_1_1ipa_1_1ipu3_1_1algorithms_1_1ToneMapping_a7ec1e1264e29c61864ce4e1c85b8b4d4}\label{classlibcamera_1_1ipa_1_1ipu3_1_1algorithms_1_1ToneMapping_a7ec1e1264e29c61864ce4e1c85b8b4d4} 
+\index{libcamera::ipa::ipu3::algorithms::ToneMapping@{libcamera::ipa::ipu3::algorithms::ToneMapping}!process@{process}}
+\index{process@{process}!libcamera::ipa::ipu3::algorithms::ToneMapping@{libcamera::ipa::ipu3::algorithms::ToneMapping}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily void libcamera\+::ipa\+::ipu3\+::algorithms\+::\+Tone\+Mapping\+::process (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAContext}{IPAContext}} \&}]{context,  }\item[{const uint32\+\_\+t}]{frame,  }\item[{\mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAFrameContext}{IPAFrame\+Context}} \&}]{frame\+Context,  }\item[{const \mbox{\hyperlink{structipu3__uapi__stats__3a}{ipu3\+\_\+uapi\+\_\+stats\+\_\+3a}} \texorpdfstring{$\ast$}{*}}]{stats,  }\item[{\mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} \&}]{metadata }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Calculate the tone mapping look up table. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em context} & The shared IPA context \\
+\hline
+\mbox{\texttt{ in}}  & {\em frame} & The current frame sequence number \\
+\hline
+\mbox{\texttt{ in}}  & {\em frame\+Context} & The current frame context \\
+\hline
+\mbox{\texttt{ in}}  & {\em stats} & The IPU3 statistics and ISP results \\
+\hline
+\mbox{\texttt{ out}}  & {\em metadata} & Metadata for the frame, to be filled by the algorithm\\
+\hline
+\end{DoxyParams}
+The tone mapping look up table is generated as an inverse power curve from our gamma setting. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/ipa/ipu3/algorithms/\mbox{\hyperlink{tone__mapping_8h}{tone\+\_\+mapping.\+h}}\item 
+src/peripherals/camera/libcamera/src/ipa/ipu3/algorithms/tone\+\_\+mapping.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,32 @@
+\doxysection{Can\+Interface.\+hpp}
+\hypertarget{CanInterface_8hpp_source}{}\label{CanInterface_8hpp_source}\index{src/bus\_interfaces/can\_interface/include/CanInterface.hpp@{src/bus\_interfaces/can\_interface/include/CanInterface.hpp}}
+\mbox{\hyperlink{CanInterface_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ICanDriver_8hpp}{ICanDriver.hpp}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}custom\_msgs/srv/can\_service.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <rclcpp/rclcpp.hpp>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{using\ }sockcanpp::CanDriver;}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCanInterface}{CanInterface}}\ :\ \textcolor{keyword}{public}\ rclcpp::Node}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCanInterface}{CanInterface}}(std::shared\_ptr<ICanDriver>\ mock\_driver\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCanInterface_a3fa5a7ee5010efff5904c1b8d402ad96}{\string~CanInterface}}();}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCanInterface_af4cc2bbdab6b48b3978467fe2fb6f893}{pollCanBus}}();}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ std::shared\_ptr<ICanDriver>\ \mbox{\hyperlink{classCanInterface_a159e720a9b166d95a9811d0084b1275a}{can\_driver\_}};}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ rclcpp::Service<custom\_msgs::srv::CanService>::SharedPtr\ \mbox{\hyperlink{classCanInterface_a9b3d907bc2447d7bf85a9a8e20a9c572}{can\_service\_}};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCanInterface_af7595149aef5b782e73838aff86a295e}{handleCanRequest}}(}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::shared\_ptr<custom\_msgs::srv::CanService::Request>}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ request,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<custom\_msgs::srv::CanService::Response>\ response);}
+\DoxyCodeLine{00031\ \};}
+
+\end{DoxyCode}

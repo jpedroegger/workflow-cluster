@@ -1,0 +1,151 @@
+\doxysection{libcamera\+::Shared\+Mem Class Reference}
+\hypertarget{classlibcamera_1_1SharedMem}{}\label{classlibcamera_1_1SharedMem}\index{libcamera::SharedMem@{libcamera::SharedMem}}
+
+
+Helper class to allocate and manage memory shareable between processes.  
+
+
+Inheritance diagram for libcamera\+::Shared\+Mem\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.031308cm]{classlibcamera_1_1SharedMem}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1SharedMem_a94a2258cce3b73cef779e885c5edbf3f}{Shared\+Mem}} (const std\+::string \&name, std\+::size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{classlibcamera_1_1SharedMem}{Shared\+Mem} with memory of the given {\itshape size}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1SharedMem_a4857f42d97283d4a3c9d515579786be2}{Shared\+Mem}} (\mbox{\hyperlink{classlibcamera_1_1SharedMem}{Shared\+Mem}} \&\&rhs)
+\begin{DoxyCompactList}\small\item\em Move constructor for \doxylink{classlibcamera_1_1SharedMem}{Shared\+Mem}. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classlibcamera_1_1SharedMem_a8c80aa9a9ca5a38792a098f75aff7ec5}{\texorpdfstring{$\sim$}{\string~}\+Shared\+Mem}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \doxylink{classlibcamera_1_1SharedMem}{Shared\+Mem} instance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1SharedMem}{Shared\+Mem}} \& \mbox{\hyperlink{classlibcamera_1_1SharedMem_ac002a4ebe16024fdb1aa2953e3f35e8d}{operator=}} (\mbox{\hyperlink{classlibcamera_1_1SharedMem}{Shared\+Mem}} \&\&rhs)
+\begin{DoxyCompactList}\small\item\em Move assignment operator for \doxylink{classlibcamera_1_1SharedMem}{Shared\+Mem}. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classlibcamera_1_1SharedFD}{Shared\+FD}} \& \mbox{\hyperlink{classlibcamera_1_1SharedMem_ae490bbd85e56c07d853b50394ace6f0c}{fd}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the file descriptor for the underlying shared memory. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1Span}{Span}}$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{classlibcamera_1_1SharedMem_ab12ce3844ebcb8a502bafb094b375c2e}{mem}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the underlying shared memory. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1SharedMem_acffb7213691b9c921ce920cb8679fc40}{operator bool}} () const
+\begin{DoxyCompactList}\small\item\em Check if the shared memory allocation succeeded. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Helper class to allocate and manage memory shareable between processes. 
+
+\doxylink{classlibcamera_1_1SharedMem}{Shared\+Mem} manages memory suitable for sharing between processes. When an instance is constructed, it allocates a memory buffer of the requested size backed by an anonymous file, using the memfd API.
+
+The allocated memory is exposed by the \doxylink{classlibcamera_1_1SharedMem_ab12ce3844ebcb8a502bafb094b375c2e}{mem()} function. If memory allocation fails, the function returns an empty \doxylink{classlibcamera_1_1Span}{Span}. This can be also checked using the bool() operator.
+
+The file descriptor for the backing file is exposed as a \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} by the \doxylink{classlibcamera_1_1SharedMem_ae490bbd85e56c07d853b50394ace6f0c}{fd()} function. It can be shared with other processes across IPC boundaries, which can then map the memory with mmap().
+
+A single memfd is created for every \doxylink{classlibcamera_1_1SharedMem}{Shared\+Mem}. If there is a need to allocate a large number of objects in shared memory, these objects should be grouped together and use the shared memory allocated by a single \doxylink{classlibcamera_1_1SharedMem}{Shared\+Mem} object if possible. This will help to minimize the number of created memfd\textquotesingle{}s. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlibcamera_1_1SharedMem_a94a2258cce3b73cef779e885c5edbf3f}\label{classlibcamera_1_1SharedMem_a94a2258cce3b73cef779e885c5edbf3f} 
+\index{libcamera::SharedMem@{libcamera::SharedMem}!SharedMem@{SharedMem}}
+\index{SharedMem@{SharedMem}!libcamera::SharedMem@{libcamera::SharedMem}}
+\doxysubsubsection{\texorpdfstring{SharedMem()}{SharedMem()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily libcamera\+::\+Shared\+Mem\+::\+Shared\+Mem (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{std\+::size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Construct a \doxylink{classlibcamera_1_1SharedMem}{Shared\+Mem} with memory of the given {\itshape size}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em name} & Name of the \doxylink{classlibcamera_1_1SharedMem}{Shared\+Mem} \\
+\hline
+\mbox{\texttt{ in}}  & {\em size} & \doxylink{classlibcamera_1_1Size}{Size} of the shared memory to allocate and map\\
+\hline
+\end{DoxyParams}
+The {\itshape name} is used for debugging purpose only. Multiple \doxylink{classlibcamera_1_1SharedMem}{Shared\+Mem} instances can have the same name. \Hypertarget{classlibcamera_1_1SharedMem_a4857f42d97283d4a3c9d515579786be2}\label{classlibcamera_1_1SharedMem_a4857f42d97283d4a3c9d515579786be2} 
+\index{libcamera::SharedMem@{libcamera::SharedMem}!SharedMem@{SharedMem}}
+\index{SharedMem@{SharedMem}!libcamera::SharedMem@{libcamera::SharedMem}}
+\doxysubsubsection{\texorpdfstring{SharedMem()}{SharedMem()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily libcamera\+::\+Shared\+Mem\+::\+Shared\+Mem (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1SharedMem}{Shared\+Mem}} \&\&}]{rhs }\end{DoxyParamCaption})}
+
+
+
+Move constructor for \doxylink{classlibcamera_1_1SharedMem}{Shared\+Mem}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em rhs} & The object to move \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classlibcamera_1_1SharedMem_a8c80aa9a9ca5a38792a098f75aff7ec5}\label{classlibcamera_1_1SharedMem_a8c80aa9a9ca5a38792a098f75aff7ec5} 
+\index{libcamera::SharedMem@{libcamera::SharedMem}!````~SharedMem@{\texorpdfstring{$\sim$}{\string~}SharedMem}}
+\index{````~SharedMem@{\texorpdfstring{$\sim$}{\string~}SharedMem}!libcamera::SharedMem@{libcamera::SharedMem}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}SharedMem()}{\string~SharedMem()}}
+{\footnotesize\ttfamily libcamera\+::\+Shared\+Mem\+::\texorpdfstring{$\sim$}{\string~}\+Shared\+Mem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destroy the \doxylink{classlibcamera_1_1SharedMem}{Shared\+Mem} instance. 
+
+Destroying an instance invalidates the memory mapping exposed with \doxylink{classlibcamera_1_1SharedMem_ab12ce3844ebcb8a502bafb094b375c2e}{mem()}. Other mappings of the backing file, created in this or other processes with mmap(), remain valid.
+
+Similarly, other references to the backing file descriptor created by copying the \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} returned by \doxylink{classlibcamera_1_1SharedMem_ae490bbd85e56c07d853b50394ace6f0c}{fd()} remain valid. The underlying memory will be freed only when all file descriptors that reference the anonymous file get closed. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1SharedMem_ae490bbd85e56c07d853b50394ace6f0c}\label{classlibcamera_1_1SharedMem_ae490bbd85e56c07d853b50394ace6f0c} 
+\index{libcamera::SharedMem@{libcamera::SharedMem}!fd@{fd}}
+\index{fd@{fd}!libcamera::SharedMem@{libcamera::SharedMem}}
+\doxysubsubsection{\texorpdfstring{fd()}{fd()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classlibcamera_1_1SharedFD}{Shared\+FD}} \& libcamera\+::\+Shared\+Mem\+::fd (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the file descriptor for the underlying shared memory. 
+
+\begin{DoxyReturn}{Returns}
+The file descriptor, or an invalid \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} if allocation failed 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1SharedMem_ab12ce3844ebcb8a502bafb094b375c2e}\label{classlibcamera_1_1SharedMem_ab12ce3844ebcb8a502bafb094b375c2e} 
+\index{libcamera::SharedMem@{libcamera::SharedMem}!mem@{mem}}
+\index{mem@{mem}!libcamera::SharedMem@{libcamera::SharedMem}}
+\doxysubsubsection{\texorpdfstring{mem()}{mem()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1Span}{Span}}$<$ uint8\+\_\+t $>$ libcamera\+::\+Shared\+Mem\+::mem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the underlying shared memory. 
+
+\begin{DoxyReturn}{Returns}
+The memory buffer, or an empty \doxylink{classlibcamera_1_1Span}{Span} if allocation failed 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1SharedMem_acffb7213691b9c921ce920cb8679fc40}\label{classlibcamera_1_1SharedMem_acffb7213691b9c921ce920cb8679fc40} 
+\index{libcamera::SharedMem@{libcamera::SharedMem}!operator bool@{operator bool}}
+\index{operator bool@{operator bool}!libcamera::SharedMem@{libcamera::SharedMem}}
+\doxysubsubsection{\texorpdfstring{operator bool()}{operator bool()}}
+{\footnotesize\ttfamily libcamera\+::\+Shared\+Mem\+::operator bool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Check if the shared memory allocation succeeded. 
+
+\begin{DoxyReturn}{Returns}
+True if allocation of the shared memory succeeded, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1SharedMem_ac002a4ebe16024fdb1aa2953e3f35e8d}\label{classlibcamera_1_1SharedMem_ac002a4ebe16024fdb1aa2953e3f35e8d} 
+\index{libcamera::SharedMem@{libcamera::SharedMem}!operator=@{operator=}}
+\index{operator=@{operator=}!libcamera::SharedMem@{libcamera::SharedMem}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1SharedMem}{Shared\+Mem}} \& libcamera\+::\+Shared\+Mem\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1SharedMem}{Shared\+Mem}} \&\&}]{rhs }\end{DoxyParamCaption})}
+
+
+
+Move assignment operator for \doxylink{classlibcamera_1_1SharedMem}{Shared\+Mem}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em rhs} & The object to move \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/internal/shared\+\_\+mem\+\_\+object.\+h\item 
+src/peripherals/camera/libcamera/src/libcamera/\mbox{\hyperlink{shared__mem__object_8cpp}{shared\+\_\+mem\+\_\+object.\+cpp}}\end{DoxyCompactItemize}

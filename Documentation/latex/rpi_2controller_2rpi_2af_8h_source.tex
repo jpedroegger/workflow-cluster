@@ -1,0 +1,172 @@
+\doxysection{af.\+h}
+\hypertarget{rpi_2controller_2rpi_2af_8h_source}{}\label{rpi_2controller_2rpi_2af_8h_source}\index{src/peripherals/camera/libcamera/src/ipa/rpi/controller/rpi/af.h@{src/peripherals/camera/libcamera/src/ipa/rpi/controller/rpi/af.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ BSD-\/2-\/Clause\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2022-\/2023,\ Raspberry\ Pi\ Ltd}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Autofocus\ control\ algorithm}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}../af\_algorithm.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../af\_status.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}../pdaf\_data.h"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pwl_8h}{libipa/pwl.h}}"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ This\ algorithm\ implements\ a\ hybrid\ of\ CDAF\ and\ PDAF,\ favouring\ PDAF.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ Whenever\ PDAF\ is\ available,\ it\ is\ used\ in\ a\ continuous\ feedback\ loop.}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ When\ triggered\ in\ auto\ mode,\ we\ simply\ enable\ AF\ for\ a\ limited\ number}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ of\ frames\ (it\ may\ terminate\ early\ if\ the\ delta\ becomes\ small\ enough).}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ When\ PDAF\ confidence\ is\ low\ (due\ e.g.\ to\ low\ contrast\ or\ extreme\ defocus)}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ or\ PDAF\ data\ are\ absent,\ fall\ back\ to\ CDAF\ with\ a\ programmed\ scan\ pattern.}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ A\ coarse\ and\ fine\ scan\ are\ performed,\ using\ ISP's\ CDAF\ focus\ FoM\ to}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ estimate\ the\ lens\ position\ with\ peak\ contrast.\ This\ is\ slower\ due\ to}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ extra\ latency\ in\ the\ ISP,\ and\ requires\ a\ settling\ time\ between\ steps.}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ Some\ hysteresis\ is\ applied\ to\ the\ switch\ between\ PDAF\ and\ CDAF,\ to\ avoid}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ *\ "{}nuisance"{}\ scans.\ During\ each\ interval\ where\ PDAF\ is\ not\ working,\ only}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ *\ ONE\ scan\ will\ be\ performed;\ CAF\ cannot\ track\ objects\ using\ CDAF\ alone.}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{namespace\ }RPiController\ \{}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRPiController_1_1Af}{Af}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classRPiController_1_1AfAlgorithm}{AfAlgorithm}}}
+\DoxyCodeLine{00037\ \{}
+\DoxyCodeLine{00038\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{classRPiController_1_1Af}{Af}}(\mbox{\hyperlink{classRPiController_1_1Controller}{Controller}}\ *controller\ =\ NULL);}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{classRPiController_1_1Af}{\string~Af}}();}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{char}\ \textcolor{keyword}{const}\ *name()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{int}\ read(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1YamlObject}{libcamera::YamlObject}}\ \&params)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ initialise()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{comment}{/*\ IPA\ calls\ */}}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ switchMode(\mbox{\hyperlink{structCameraMode}{CameraMode}}\ \textcolor{keyword}{const}\ \&cameraMode,\ Metadata\ *metadata)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ prepare(Metadata\ *imageMetadata)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ process(StatisticsPtr\ \&stats,\ Metadata\ *imageMetadata)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{comment}{/*\ controls\ */}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ setRange(AfRange\ range)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ setSpeed(AfSpeed\ speed)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ setMetering(\textcolor{keywordtype}{bool}\ use\_windows)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ setWindows(\mbox{\hyperlink{classlibcamera_1_1Span}{libcamera::Span<libcamera::Rectangle\ const>}}\ \textcolor{keyword}{const}\ \&wins)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ setMode(AfMode\ mode)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00056\ \ \ \ \ AfMode\ getMode()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{bool}\ setLensPosition(\textcolor{keywordtype}{double}\ dioptres,\ int32\_t\ *hwpos)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00058\ \ \ \ \ std::optional<double>\ getLensPosition()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ triggerScan()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ cancelScan()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ pause(AfPause\ pause)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{enum\ class}\ ScanState\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ Idle\ =\ 0,}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ Trigger,}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ Pdaf,}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ Coarse,}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ Fine,}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ Settle}
+\DoxyCodeLine{00071\ \ \ \ \ \};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{struct\ }RangeDependentParams\ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ focusMin;\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ lower\ (far)\ limit\ in\ dipotres\ */}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ focusMax;\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ upper\ (near)\ limit\ in\ dioptres\ */}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ focusDefault;\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ default\ setting\ ("{}hyperfocal"{})\ */}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ RangeDependentParams();}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ read(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1YamlObject}{libcamera::YamlObject}}\ \&params);}
+\DoxyCodeLine{00080\ \ \ \ \ \};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{struct\ }SpeedDependentParams\ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ stepCoarse;\ \ \ \ \ \ \textcolor{comment}{/*\ used\ for\ scans\ */}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ stepFine;\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ used\ for\ scans\ */}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ contrastRatio;\ \ \ \ \ \ \ \textcolor{comment}{/*\ used\ for\ scan\ termination\ and\ reporting\ */}}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ pdafGain;\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ coefficient\ for\ PDAF\ feedback\ loop\ */}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ pdafSquelch;\ \ \ \ \ \textcolor{comment}{/*\ PDAF\ stability\ parameter\ (device-\/specific)\ */}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ maxSlew;\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ limit\ for\ lens\ movement\ per\ frame\ */}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ uint32\_t\ pdafFrames;\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ number\ of\ iterations\ when\ triggered\ */}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ uint32\_t\ dropoutFrames;\ \ \ \ \ \textcolor{comment}{/*\ number\ of\ non-\/PDAF\ frames\ to\ switch\ to\ CDAF\ */}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ uint32\_t\ stepFrames;\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ frames\ to\ skip\ in\ between\ steps\ of\ a\ scan\ */}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ SpeedDependentParams();}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ read(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1YamlObject}{libcamera::YamlObject}}\ \&params);}
+\DoxyCodeLine{00095\ \ \ \ \ \};}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keyword}{struct\ }CfgParams\ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ RangeDependentParams\ ranges[AfRangeMax];}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ SpeedDependentParams\ speeds[AfSpeedMax];}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ uint32\_t\ confEpsilon;\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ PDAF\ hysteresis\ threshold\ (sensor-\/specific)\ */}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ uint32\_t\ confThresh;\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ PDAF\ confidence\ cell\ min\ (sensor-\/specific)\ */}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ uint32\_t\ confClip;\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ PDAF\ confidence\ cell\ max\ (sensor-\/specific)\ */}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ uint32\_t\ skipFrames;\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ frames\ to\ skip\ at\ start\ or\ modeswitch\ */}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Pwl}{libcamera::ipa::Pwl}}\ map;\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ converts\ dioptres\ -\/>\ lens\ driver\ position\ */}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ CfgParams();}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ read(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1YamlObject}{libcamera::YamlObject}}\ \&params);}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ initialise();}
+\DoxyCodeLine{00109\ \ \ \ \ \};}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keyword}{struct\ }ScanRecord\ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ focus;}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ contrast;}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ phase;}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ conf;}
+\DoxyCodeLine{00116\ \ \ \ \ \};}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keyword}{struct\ }RegionWeights\ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ rows;}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ cols;}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ uint32\_t\ sum;}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ std::vector<uint16\_t>\ w;}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ RegionWeights()}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ :\ rows(0),\ cols(0),\ sum(0),\ w()\ \{\}}
+\DoxyCodeLine{00126\ \ \ \ \ \};}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{void}\ computeWeights(RegionWeights\ *wgts,\ \textcolor{keywordtype}{unsigned}\ rows,\ \textcolor{keywordtype}{unsigned}\ cols);}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{void}\ invalidateWeights();}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordtype}{bool}\ getPhase(\mbox{\hyperlink{classRPiController_1_1RegionStats}{PdafRegions}}\ \textcolor{keyword}{const}\ \&regions,\ \textcolor{keywordtype}{double}\ \&phase,\ \textcolor{keywordtype}{double}\ \&conf);}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordtype}{double}\ getContrast(\textcolor{keyword}{const}\ \mbox{\hyperlink{classRPiController_1_1RegionStats}{FocusRegions}}\ \&focusStats);}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{void}\ doPDAF(\textcolor{keywordtype}{double}\ phase,\ \textcolor{keywordtype}{double}\ conf);}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{bool}\ earlyTerminationByPhase(\textcolor{keywordtype}{double}\ phase);}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{double}\ findPeak(\textcolor{keywordtype}{unsigned}\ index)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{void}\ doScan(\textcolor{keywordtype}{double}\ contrast,\ \textcolor{keywordtype}{double}\ phase,\ \textcolor{keywordtype}{double}\ conf);}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{void}\ doAF(\textcolor{keywordtype}{double}\ contrast,\ \textcolor{keywordtype}{double}\ phase,\ \textcolor{keywordtype}{double}\ conf);}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordtype}{void}\ updateLensPosition();}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordtype}{void}\ startAF();}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordtype}{void}\ startProgrammedScan();}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{void}\ goIdle();}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{comment}{/*\ Configuration\ and\ settings\ */}}
+\DoxyCodeLine{00143\ \ \ \ \ CfgParams\ cfg\_;}
+\DoxyCodeLine{00144\ \ \ \ \ AfRange\ range\_;}
+\DoxyCodeLine{00145\ \ \ \ \ AfSpeed\ speed\_;}
+\DoxyCodeLine{00146\ \ \ \ \ AfMode\ mode\_;}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordtype}{bool}\ pauseFlag\_;}
+\DoxyCodeLine{00148\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Rectangle}{libcamera::Rectangle}}\ statsRegion\_;}
+\DoxyCodeLine{00149\ \ \ \ \ std::vector<libcamera::Rectangle>\ windows\_;}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordtype}{bool}\ useWindows\_;}
+\DoxyCodeLine{00151\ \ \ \ \ RegionWeights\ phaseWeights\_;}
+\DoxyCodeLine{00152\ \ \ \ \ RegionWeights\ contrastWeights\_;}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{comment}{/*\ Working\ state.\ */}}
+\DoxyCodeLine{00155\ \ \ \ \ ScanState\ scanState\_;}
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{bool}\ initted\_;}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordtype}{double}\ ftarget\_,\ fsmooth\_;}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordtype}{double}\ prevContrast\_;}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ skipCount\_,\ stepCount\_,\ dropCount\_;}
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ scanMaxIndex\_;}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{double}\ scanMaxContrast\_,\ scanMinContrast\_;}
+\DoxyCodeLine{00162\ \ \ \ \ std::vector<ScanRecord>\ scanData\_;}
+\DoxyCodeLine{00163\ \ \ \ \ AfState\ reportState\_;}
+\DoxyCodeLine{00164\ \};}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \}\ \textcolor{comment}{//\ namespace\ RPiController}}
+
+\end{DoxyCode}

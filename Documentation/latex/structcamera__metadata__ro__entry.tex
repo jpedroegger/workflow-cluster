@@ -1,0 +1,42 @@
+\doxysection{camera\+\_\+metadata\+\_\+ro\+\_\+entry Struct Reference}
+\hypertarget{structcamera__metadata__ro__entry}{}\label{structcamera__metadata__ro__entry}\index{camera\_metadata\_ro\_entry@{camera\_metadata\_ro\_entry}}
+
+
+{\ttfamily \#include $<$camera\+\_\+metadata.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structcamera__metadata__ro__entry_a5036665731e41dcb0f461bfd7ce54b01}\label{structcamera__metadata__ro__entry_a5036665731e41dcb0f461bfd7ce54b01} 
+size\+\_\+t {\bfseries index}
+\item 
+\Hypertarget{structcamera__metadata__ro__entry_afaa24c20ff9a62b70f84822c1aef6f27}\label{structcamera__metadata__ro__entry_afaa24c20ff9a62b70f84822c1aef6f27} 
+uint32\+\_\+t {\bfseries tag}
+\item 
+\Hypertarget{structcamera__metadata__ro__entry_a43fe9b2b41e9dce0c581d8d9fc6b2db2}\label{structcamera__metadata__ro__entry_a43fe9b2b41e9dce0c581d8d9fc6b2db2} 
+uint8\+\_\+t {\bfseries type}
+\item 
+\Hypertarget{structcamera__metadata__ro__entry_abd1bdaa936861d7a40fcb8394302ed31}\label{structcamera__metadata__ro__entry_abd1bdaa936861d7a40fcb8394302ed31} 
+size\+\_\+t {\bfseries count}
+\item 
+\Hypertarget{structcamera__metadata__ro__entry_a5cb4a535add17d4dc98eed4fd0541ee1}\label{structcamera__metadata__ro__entry_a5cb4a535add17d4dc98eed4fd0541ee1} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>const uint8\_t \texorpdfstring{$\ast$}{*} {\bfseries u8}\\
+\>const int32\_t \texorpdfstring{$\ast$}{*} {\bfseries i32}\\
+\>const float \texorpdfstring{$\ast$}{*} {\bfseries f}\\
+\>const int64\_t \texorpdfstring{$\ast$}{*} {\bfseries i64}\\
+\>const double \texorpdfstring{$\ast$}{*} {\bfseries d}\\
+\>const \mbox{\hyperlink{structcamera__metadata__rational}{camera\_metadata\_rational\_t}} \texorpdfstring{$\ast$}{*} {\bfseries r}\\
+\} {\bfseries data}\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A read-\/only reference to a metadata entry in a buffer. Identical to \doxylink{structcamera__metadata__entry}{camera\+\_\+metadata\+\_\+entry} in layout 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/android/metadata/system/camera\+\_\+metadata.\+h\end{DoxyCompactItemize}

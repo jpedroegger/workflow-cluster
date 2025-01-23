@@ -1,0 +1,36 @@
+\doxysection{Post\+Processor Class Reference}
+\hypertarget{classPostProcessor}{}\label{classPostProcessor}\index{PostProcessor@{PostProcessor}}
+Inheritance diagram for Post\+Processor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPostProcessor}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classPostProcessor_aada6f4748174866925b2fd29b52399ce}\label{classPostProcessor_aada6f4748174866925b2fd29b52399ce} 
+enum class {\bfseries Status} \{ {\bfseries Error}
+, {\bfseries Success}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classPostProcessor_a6e8c2e61805569aaf7e46c4d8cbb018f}\label{classPostProcessor_a6e8c2e61805569aaf7e46c4d8cbb018f} 
+virtual int {\bfseries configure} (const \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration}{libcamera\+::\+Stream\+Configuration}} \&in\+Cfg, const \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration}{libcamera\+::\+Stream\+Configuration}} \&out\+Cfg)=0
+\item 
+\Hypertarget{classPostProcessor_a89b1c37de9b4a9b1d2b2687d47a01aaa}\label{classPostProcessor_a89b1c37de9b4a9b1d2b2687d47a01aaa} 
+virtual void {\bfseries process} (\mbox{\hyperlink{structCamera3RequestDescriptor_1_1StreamBuffer}{Camera3\+Request\+Descriptor\+::\+Stream\+Buffer}} \texorpdfstring{$\ast$}{*}stream\+Buffer)=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classPostProcessor_ab896e7487f4bf79b3ef17224661aea4b}\label{classPostProcessor_ab896e7487f4bf79b3ef17224661aea4b} 
+\mbox{\hyperlink{classlibcamera_1_1Signal}{libcamera\+::\+Signal}}$<$ \mbox{\hyperlink{structCamera3RequestDescriptor_1_1StreamBuffer}{Camera3\+Request\+Descriptor\+::\+Stream\+Buffer}} \texorpdfstring{$\ast$}{*}, Status $>$ {\bfseries process\+Complete}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/android/post\+\_\+processor.\+h\end{DoxyCompactItemize}

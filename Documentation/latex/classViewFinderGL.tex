@@ -1,0 +1,101 @@
+\doxysection{View\+Finder\+GL Class Reference}
+\hypertarget{classViewFinderGL}{}\label{classViewFinderGL}\index{ViewFinderGL@{ViewFinderGL}}
+Inheritance diagram for View\+Finder\+GL\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classViewFinderGL}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classViewFinderGL_a7314ed4970298708283b9c6fc65c8e2c}\label{classViewFinderGL_a7314ed4970298708283b9c6fc65c8e2c} 
+void {\bfseries render\+Complete} (\mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{libcamera\+::\+Frame\+Buffer}} \texorpdfstring{$\ast$}{*}buffer)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classViewFinderGL_a6cac5341c5ce03a5f3876342461f1aef}\label{classViewFinderGL_a6cac5341c5ce03a5f3876342461f1aef} 
+{\bfseries View\+Finder\+GL} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+const QList$<$ \mbox{\hyperlink{classlibcamera_1_1PixelFormat}{libcamera\+::\+Pixel\+Format}} $>$ \& \mbox{\hyperlink{classViewFinderGL_a673f91e1b267b57620dc941a872167d4}{native\+Formats}} () const override
+\item 
+int \mbox{\hyperlink{classViewFinderGL_ab97a176e59e0a6308b9b52c414da71a5}{set\+Format}} (const \mbox{\hyperlink{classlibcamera_1_1PixelFormat}{libcamera\+::\+Pixel\+Format}} \&format, const QSize \&size, const \mbox{\hyperlink{classlibcamera_1_1ColorSpace}{libcamera\+::\+Color\+Space}} \&color\+Space, unsigned int stride) override
+\item 
+void \mbox{\hyperlink{classViewFinderGL_a7db207674f319711580a84ebbd73db89}{render}} (\mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{libcamera\+::\+Frame\+Buffer}} \texorpdfstring{$\ast$}{*}buffer, \mbox{\hyperlink{classImage}{Image}} \texorpdfstring{$\ast$}{*}image) override
+\item 
+void \mbox{\hyperlink{classViewFinderGL_aeccd40325e0e31482b66e4b4ff1a1cb7}{stop}} () override
+\item 
+QImage \mbox{\hyperlink{classViewFinderGL_af19d15be90926226482053ee58a5917b}{get\+Current\+Image}} () override
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classViewFinderGL_a4715db73b77e9ae9cc79d776de308ad6}\label{classViewFinderGL_a4715db73b77e9ae9cc79d776de308ad6} 
+void {\bfseries initialize\+GL} () override
+\item 
+\Hypertarget{classViewFinderGL_abfa19af83b7a756c77f23e0d16fc7af7}\label{classViewFinderGL_abfa19af83b7a756c77f23e0d16fc7af7} 
+void {\bfseries paint\+GL} () override
+\item 
+\Hypertarget{classViewFinderGL_a577dc06e53809a359122f0055379d93a}\label{classViewFinderGL_a577dc06e53809a359122f0055379d93a} 
+QSize {\bfseries size\+Hint} () const override
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classViewFinderGL_af19d15be90926226482053ee58a5917b}\label{classViewFinderGL_af19d15be90926226482053ee58a5917b} 
+\index{ViewFinderGL@{ViewFinderGL}!getCurrentImage@{getCurrentImage}}
+\index{getCurrentImage@{getCurrentImage}!ViewFinderGL@{ViewFinderGL}}
+\doxysubsubsection{\texorpdfstring{getCurrentImage()}{getCurrentImage()}}
+{\footnotesize\ttfamily QImage View\+Finder\+GL\+::get\+Current\+Image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classViewFinder}{View\+Finder}}.
+
+\Hypertarget{classViewFinderGL_a673f91e1b267b57620dc941a872167d4}\label{classViewFinderGL_a673f91e1b267b57620dc941a872167d4} 
+\index{ViewFinderGL@{ViewFinderGL}!nativeFormats@{nativeFormats}}
+\index{nativeFormats@{nativeFormats}!ViewFinderGL@{ViewFinderGL}}
+\doxysubsubsection{\texorpdfstring{nativeFormats()}{nativeFormats()}}
+{\footnotesize\ttfamily const QList$<$ \mbox{\hyperlink{classlibcamera_1_1PixelFormat}{libcamera\+::\+Pixel\+Format}} $>$ \& View\+Finder\+GL\+::native\+Formats (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classViewFinder}{View\+Finder}}.
+
+\Hypertarget{classViewFinderGL_a7db207674f319711580a84ebbd73db89}\label{classViewFinderGL_a7db207674f319711580a84ebbd73db89} 
+\index{ViewFinderGL@{ViewFinderGL}!render@{render}}
+\index{render@{render}!ViewFinderGL@{ViewFinderGL}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void View\+Finder\+GL\+::render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{libcamera\+::\+Frame\+Buffer}} \texorpdfstring{$\ast$}{*}}]{buffer,  }\item[{\mbox{\hyperlink{classImage}{Image}} \texorpdfstring{$\ast$}{*}}]{image }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classViewFinder}{View\+Finder}}.
+
+\Hypertarget{classViewFinderGL_ab97a176e59e0a6308b9b52c414da71a5}\label{classViewFinderGL_ab97a176e59e0a6308b9b52c414da71a5} 
+\index{ViewFinderGL@{ViewFinderGL}!setFormat@{setFormat}}
+\index{setFormat@{setFormat}!ViewFinderGL@{ViewFinderGL}}
+\doxysubsubsection{\texorpdfstring{setFormat()}{setFormat()}}
+{\footnotesize\ttfamily int View\+Finder\+GL\+::set\+Format (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1PixelFormat}{libcamera\+::\+Pixel\+Format}} \&}]{format,  }\item[{const QSize \&}]{size,  }\item[{const \mbox{\hyperlink{classlibcamera_1_1ColorSpace}{libcamera\+::\+Color\+Space}} \&}]{color\+Space,  }\item[{unsigned int}]{stride }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classViewFinder}{View\+Finder}}.
+
+\Hypertarget{classViewFinderGL_aeccd40325e0e31482b66e4b4ff1a1cb7}\label{classViewFinderGL_aeccd40325e0e31482b66e4b4ff1a1cb7} 
+\index{ViewFinderGL@{ViewFinderGL}!stop@{stop}}
+\index{stop@{stop}!ViewFinderGL@{ViewFinderGL}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void View\+Finder\+GL\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classViewFinder}{View\+Finder}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/apps/qcam/viewfinder\+\_\+gl.\+h\item 
+src/peripherals/camera/libcamera/src/apps/qcam/viewfinder\+\_\+gl.\+cpp\end{DoxyCompactItemize}

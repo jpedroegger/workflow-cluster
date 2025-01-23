@@ -1,0 +1,125 @@
+\doxysection{libcamera\+::Pipeline\+Handler\+Factory\+Base Class Reference}
+\hypertarget{classlibcamera_1_1PipelineHandlerFactoryBase}{}\label{classlibcamera_1_1PipelineHandlerFactoryBase}\index{libcamera::PipelineHandlerFactoryBase@{libcamera::PipelineHandlerFactoryBase}}
+
+
+Base class for pipeline handler factories.  
+
+
+Inheritance diagram for libcamera\+::Pipeline\+Handler\+Factory\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlibcamera_1_1PipelineHandlerFactoryBase}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1PipelineHandlerFactoryBase_abe0669e72e50130227b2348f4c1a7b63}{Pipeline\+Handler\+Factory\+Base}} (const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classlibcamera_1_1PipelineHandlerFactoryBase_a7e51edd15527f45e6e9ee0e00f7be6dc}{name}})
+\begin{DoxyCompactList}\small\item\em Construct a pipeline handler factory base. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1PipelineHandler}{Pipeline\+Handler}} $>$ \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerFactoryBase_ada3bc5859a7dc78b30683da70ec707ca}{create}} (\mbox{\hyperlink{classlibcamera_1_1CameraManager}{Camera\+Manager}} \texorpdfstring{$\ast$}{*}manager) const
+\begin{DoxyCompactList}\small\item\em Create an instance of the \doxylink{classlibcamera_1_1PipelineHandler}{Pipeline\+Handler} corresponding to the factory. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerFactoryBase_a7e51edd15527f45e6e9ee0e00f7be6dc}{name}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the factory name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerFactoryBase}{Pipeline\+Handler\+Factory\+Base}} \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerFactoryBase_ad7616357a5b8d824f22713554a844ce5}{factories}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the list of all pipeline handler factories. \end{DoxyCompactList}\item 
+static const \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerFactoryBase}{Pipeline\+Handler\+Factory\+Base}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerFactoryBase_a55d4bfb4530c2b7d54ca278390cd00c7}{get\+Factory\+By\+Name}} (const std\+::string \&\mbox{\hyperlink{classlibcamera_1_1PipelineHandlerFactoryBase_a7e51edd15527f45e6e9ee0e00f7be6dc}{name}})
+\begin{DoxyCompactList}\small\item\em Return the factory for the pipeline handler with name {\itshape name}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for pipeline handler factories. 
+
+The \doxylink{classlibcamera_1_1PipelineHandlerFactoryBase}{Pipeline\+Handler\+Factory\+Base} class is the base of all specializations of the \doxylink{classlibcamera_1_1PipelineHandlerFactory}{Pipeline\+Handler\+Factory} class template. It implements the factory registration, maintains a registry of factories, and provides access to the registered factories. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlibcamera_1_1PipelineHandlerFactoryBase_abe0669e72e50130227b2348f4c1a7b63}\label{classlibcamera_1_1PipelineHandlerFactoryBase_abe0669e72e50130227b2348f4c1a7b63} 
+\index{libcamera::PipelineHandlerFactoryBase@{libcamera::PipelineHandlerFactoryBase}!PipelineHandlerFactoryBase@{PipelineHandlerFactoryBase}}
+\index{PipelineHandlerFactoryBase@{PipelineHandlerFactoryBase}!libcamera::PipelineHandlerFactoryBase@{libcamera::PipelineHandlerFactoryBase}}
+\doxysubsubsection{\texorpdfstring{PipelineHandlerFactoryBase()}{PipelineHandlerFactoryBase()}}
+{\footnotesize\ttfamily libcamera\+::\+Pipeline\+Handler\+Factory\+Base\+::\+Pipeline\+Handler\+Factory\+Base (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{name }\end{DoxyParamCaption})}
+
+
+
+Construct a pipeline handler factory base. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em name} & Name of the pipeline handler class\\
+\hline
+\end{DoxyParams}
+Creating an instance of the factory base registers it with the global list of factories, accessible through the \doxylink{classlibcamera_1_1PipelineHandlerFactoryBase_ad7616357a5b8d824f22713554a844ce5}{factories()} function.
+
+The factory {\itshape name} is used for debug purpose and shall be unique. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1PipelineHandlerFactoryBase_ada3bc5859a7dc78b30683da70ec707ca}\label{classlibcamera_1_1PipelineHandlerFactoryBase_ada3bc5859a7dc78b30683da70ec707ca} 
+\index{libcamera::PipelineHandlerFactoryBase@{libcamera::PipelineHandlerFactoryBase}!create@{create}}
+\index{create@{create}!libcamera::PipelineHandlerFactoryBase@{libcamera::PipelineHandlerFactoryBase}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1PipelineHandler}{Pipeline\+Handler}} $>$ libcamera\+::\+Pipeline\+Handler\+Factory\+Base\+::create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1CameraManager}{Camera\+Manager}} \texorpdfstring{$\ast$}{*}}]{manager }\end{DoxyParamCaption}) const}
+
+
+
+Create an instance of the \doxylink{classlibcamera_1_1PipelineHandler}{Pipeline\+Handler} corresponding to the factory. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em manager} & The camera manager\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A shared pointer to a new instance of the \doxylink{classlibcamera_1_1PipelineHandler}{Pipeline\+Handler} subclass corresponding to the factory 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1PipelineHandlerFactoryBase_ad7616357a5b8d824f22713554a844ce5}\label{classlibcamera_1_1PipelineHandlerFactoryBase_ad7616357a5b8d824f22713554a844ce5} 
+\index{libcamera::PipelineHandlerFactoryBase@{libcamera::PipelineHandlerFactoryBase}!factories@{factories}}
+\index{factories@{factories}!libcamera::PipelineHandlerFactoryBase@{libcamera::PipelineHandlerFactoryBase}}
+\doxysubsubsection{\texorpdfstring{factories()}{factories()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerFactoryBase}{Pipeline\+Handler\+Factory\+Base}} \texorpdfstring{$\ast$}{*} $>$ \& libcamera\+::\+Pipeline\+Handler\+Factory\+Base\+::factories (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retrieve the list of all pipeline handler factories. 
+
+\begin{DoxyReturn}{Returns}
+the list of pipeline handler factories 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1PipelineHandlerFactoryBase_a55d4bfb4530c2b7d54ca278390cd00c7}\label{classlibcamera_1_1PipelineHandlerFactoryBase_a55d4bfb4530c2b7d54ca278390cd00c7} 
+\index{libcamera::PipelineHandlerFactoryBase@{libcamera::PipelineHandlerFactoryBase}!getFactoryByName@{getFactoryByName}}
+\index{getFactoryByName@{getFactoryByName}!libcamera::PipelineHandlerFactoryBase@{libcamera::PipelineHandlerFactoryBase}}
+\doxysubsubsection{\texorpdfstring{getFactoryByName()}{getFactoryByName()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classlibcamera_1_1PipelineHandlerFactoryBase}{Pipeline\+Handler\+Factory\+Base}} \texorpdfstring{$\ast$}{*} libcamera\+::\+Pipeline\+Handler\+Factory\+Base\+::get\+Factory\+By\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Return the factory for the pipeline handler with name {\itshape name}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em name} & The pipeline handler name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The factory of the pipeline with name {\itshape name}, or nullptr if not found 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1PipelineHandlerFactoryBase_a7e51edd15527f45e6e9ee0e00f7be6dc}\label{classlibcamera_1_1PipelineHandlerFactoryBase_a7e51edd15527f45e6e9ee0e00f7be6dc} 
+\index{libcamera::PipelineHandlerFactoryBase@{libcamera::PipelineHandlerFactoryBase}!name@{name}}
+\index{name@{name}!libcamera::PipelineHandlerFactoryBase@{libcamera::PipelineHandlerFactoryBase}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily libcamera\+::\+Pipeline\+Handler\+Factory\+Base\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the factory name. 
+
+\begin{DoxyReturn}{Returns}
+The factory name 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/internal/\mbox{\hyperlink{pipeline__handler_8h}{pipeline\+\_\+handler.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/pipeline\+\_\+handler.\+cpp\end{DoxyCompactItemize}

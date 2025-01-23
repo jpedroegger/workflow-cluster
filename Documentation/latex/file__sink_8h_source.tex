@@ -1,0 +1,63 @@
+\doxysection{file\+\_\+sink.\+h}
+\hypertarget{file__sink_8h_source}{}\label{file__sink_8h_source}\index{src/peripherals/camera/libcamera/src/apps/cam/file\_sink.h@{src/peripherals/camera/libcamera/src/apps/cam/file\_sink.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ GPL-\/2.0-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2019,\ Google\ Inc.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ File\ Sink}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{stream_8h}{libcamera/stream.h}}>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}frame\_sink.h"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classImage}{Image}};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classFileSink}{FileSink}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classFrameSink}{FrameSink}}}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{classFileSink}{FileSink}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Camera}{libcamera::Camera}}\ *camera,}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::map<const\ libcamera::Stream\ *,\ std::string>\ \&streamNames);}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{classFileSink}{\string~FileSink}}();}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{int}\ setFilePattern(\textcolor{keyword}{const}\ std::string\ \&pattern);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{int}\ configure(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1CameraConfiguration}{libcamera::CameraConfiguration}}\ \&config)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ mapBuffer(\mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{libcamera::FrameBuffer}}\ *buffer)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classFileSink_a594a79174bc5a275227f9c01510aab64}{processRequest}}(\mbox{\hyperlink{classlibcamera_1_1Request}{libcamera::Request}}\ *request)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *kDefaultFilePattern\ =\ \textcolor{stringliteral}{"{}frame-\/\#.bin"{}};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{enum\ class}\ FileType\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ Binary,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ Dng,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ Ppm,}
+\DoxyCodeLine{00042\ \ \ \ \ \};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ writeBuffer(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Stream}{libcamera::Stream}}\ *stream,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{libcamera::FrameBuffer}}\ *buffer,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1ControlList}{libcamera::ControlList}}\ \&metadata);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#ifdef\ HAVE\_TIFF}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Camera}{libcamera::Camera}}\ *camera\_;}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ std::string\ pattern\_;}
+\DoxyCodeLine{00053\ \ \ \ \ FileType\ fileType\_;}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ std::map<const\ libcamera::Stream\ *,\ std::string>\ streamNames\_;}
+\DoxyCodeLine{00056\ \ \ \ \ std::map<libcamera::FrameBuffer\ *,\ std::unique\_ptr<Image>>\ mappedBuffers\_;}
+\DoxyCodeLine{00057\ \};}
+
+\end{DoxyCode}

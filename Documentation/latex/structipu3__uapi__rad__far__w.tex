@@ -1,0 +1,31 @@
+\doxysection{ipu3\+\_\+uapi\+\_\+rad\+\_\+far\+\_\+w Struct Reference}
+\hypertarget{structipu3__uapi__rad__far__w}{}\label{structipu3__uapi__rad__far__w}\index{ipu3\_uapi\_rad\_far\_w@{ipu3\_uapi\_rad\_far\_w}}
+
+
+{\ttfamily \#include $<$intel-\/ipu3.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structipu3__uapi__rad__far__w_a0bd2fa08dad17e7fdaa94f65b96181b9}\label{structipu3__uapi__rad__far__w_a0bd2fa08dad17e7fdaa94f65b96181b9} 
+\+\_\+\+\_\+u32 {\bfseries rad\+\_\+dir\+\_\+far\+\_\+sharp\+\_\+w}\+:8
+\item 
+\Hypertarget{structipu3__uapi__rad__far__w_a21ab57d5530fdd2cd3a5ecbee52d1fee}\label{structipu3__uapi__rad__far__w_a21ab57d5530fdd2cd3a5ecbee52d1fee} 
+\+\_\+\+\_\+u32 {\bfseries rad\+\_\+dir\+\_\+far\+\_\+dns\+\_\+w}\+:8
+\item 
+\Hypertarget{structipu3__uapi__rad__far__w_ad0c82870994308946537dd12178ce038}\label{structipu3__uapi__rad__far__w_ad0c82870994308946537dd12178ce038} 
+\+\_\+\+\_\+u32 {\bfseries rad\+\_\+ndir\+\_\+far\+\_\+dns\+\_\+power}\+:8
+\item 
+\Hypertarget{structipu3__uapi__rad__far__w_a254f60c88982cc8e57da06d7f9e81bf5}\label{structipu3__uapi__rad__far__w_a254f60c88982cc8e57da06d7f9e81bf5} 
+\+\_\+\+\_\+u32 {\bfseries reserved}\+:8
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structipu3__uapi__rad__far__w}{ipu3\+\_\+uapi\+\_\+rad\+\_\+far\+\_\+w} -\/ Radial FAR sub-\/group
+
+@rad\+\_\+dir\+\_\+far\+\_\+sharp\+\_\+w\+: Weight of wide direct sharpening, u1.\+6, range \mbox{[}0, 64\mbox{]}, default 64. @rad\+\_\+dir\+\_\+far\+\_\+dns\+\_\+w\+: Weight of wide direct denoising, u1.\+6, range \mbox{[}0, 64\mbox{]}, default 0. @rad\+\_\+ndir\+\_\+far\+\_\+dns\+\_\+power\+: power of non-\/direct sharpening, u1.\+6, range \mbox{[}0, 64\mbox{]}, default 0. @reserved\+: reserved 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/intel-\/ipu3.\+h\end{DoxyCompactItemize}

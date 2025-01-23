@@ -1,0 +1,90 @@
+\doxysection{DRM\+::Connector Class Reference}
+\hypertarget{classDRM_1_1Connector}{}\label{classDRM_1_1Connector}\index{DRM::Connector@{DRM::Connector}}
+Inheritance diagram for DRM\+::Connector\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classDRM_1_1Connector}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classDRM_1_1Connector_a4b8dc61a9a8bdb53952dc2b78800652e}\label{classDRM_1_1Connector_a4b8dc61a9a8bdb53952dc2b78800652e} 
+enum {\bfseries Status} \{ {\bfseries Connected}
+, {\bfseries Disconnected}
+, {\bfseries Unknown}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{classDRM_1_1Object}{DRM\+::\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classDRM_1_1Object_a67b0ae5a4d2d695fb1dc93602fd65ecf}\label{classDRM_1_1Object_a67b0ae5a4d2d695fb1dc93602fd65ecf} 
+enum {\bfseries Type} \{ \newline
+{\bfseries Type\+Crtc} = DRM\+\_\+\+MODE\+\_\+\+OBJECT\+\_\+\+CRTC
+, {\bfseries Type\+Connector} = DRM\+\_\+\+MODE\+\_\+\+OBJECT\+\_\+\+CONNECTOR
+, {\bfseries Type\+Encoder} = DRM\+\_\+\+MODE\+\_\+\+OBJECT\+\_\+\+ENCODER
+, {\bfseries Type\+Mode} = DRM\+\_\+\+MODE\+\_\+\+OBJECT\+\_\+\+MODE
+, \newline
+{\bfseries Type\+Property} = DRM\+\_\+\+MODE\+\_\+\+OBJECT\+\_\+\+PROPERTY
+, {\bfseries Type\+Fb} = DRM\+\_\+\+MODE\+\_\+\+OBJECT\+\_\+\+FB
+, {\bfseries Type\+Blob} = DRM\+\_\+\+MODE\+\_\+\+OBJECT\+\_\+\+BLOB
+, {\bfseries Type\+Plane} = DRM\+\_\+\+MODE\+\_\+\+OBJECT\+\_\+\+PLANE
+, \newline
+{\bfseries Type\+Any} = DRM\+\_\+\+MODE\+\_\+\+OBJECT\+\_\+\+ANY
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classDRM_1_1Connector_a94f9c31e45804d7890618eacfb92098d}\label{classDRM_1_1Connector_a94f9c31e45804d7890618eacfb92098d} 
+{\bfseries Connector} (\mbox{\hyperlink{classDRM_1_1Device}{Device}} \texorpdfstring{$\ast$}{*}dev, const drm\+Mode\+Connector \texorpdfstring{$\ast$}{*}connector)
+\item 
+\Hypertarget{classDRM_1_1Connector_a030f22631a40e99be5375a7f82450daf}\label{classDRM_1_1Connector_a030f22631a40e99be5375a7f82450daf} 
+uint32\+\_\+t {\bfseries type} () const
+\item 
+\Hypertarget{classDRM_1_1Connector_ac10dc2416a120489ebfdb05401bcec37}\label{classDRM_1_1Connector_ac10dc2416a120489ebfdb05401bcec37} 
+const std\+::string \& {\bfseries name} () const
+\item 
+\Hypertarget{classDRM_1_1Connector_a92e859e064460dddef74ac91a21776df}\label{classDRM_1_1Connector_a92e859e064460dddef74ac91a21776df} 
+Status {\bfseries status} () const
+\item 
+\Hypertarget{classDRM_1_1Connector_a959e5fab15d7da53c4d12679a9ecb0d3}\label{classDRM_1_1Connector_a959e5fab15d7da53c4d12679a9ecb0d3} 
+const std\+::vector$<$ const \mbox{\hyperlink{classDRM_1_1Encoder}{Encoder}} \texorpdfstring{$\ast$}{*} $>$ \& {\bfseries encoders} () const
+\item 
+\Hypertarget{classDRM_1_1Connector_a9e79b0274c549a943daacd8aa5106939}\label{classDRM_1_1Connector_a9e79b0274c549a943daacd8aa5106939} 
+const std\+::vector$<$ \mbox{\hyperlink{classDRM_1_1Mode}{Mode}} $>$ \& {\bfseries modes} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classDRM_1_1Object}{DRM\+::\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Object} (\mbox{\hyperlink{classDRM_1_1Device}{Device}} \texorpdfstring{$\ast$}{*}dev, uint32\+\_\+t id, Type type)
+\item 
+\mbox{\hyperlink{classDRM_1_1Device}{Device}} \texorpdfstring{$\ast$}{*} {\bfseries device} () const
+\item 
+uint32\+\_\+t {\bfseries id} () const
+\item 
+Type {\bfseries type} () const
+\item 
+const \mbox{\hyperlink{classDRM_1_1Property}{Property}} \texorpdfstring{$\ast$}{*} {\bfseries property} (const std\+::string \&name) const
+\item 
+const \mbox{\hyperlink{classDRM_1_1PropertyValue}{Property\+Value}} \texorpdfstring{$\ast$}{*} {\bfseries property\+Value} (const std\+::string \&name) const
+\item 
+const std\+::vector$<$ \mbox{\hyperlink{classDRM_1_1PropertyValue}{Property\+Value}} $>$ \& {\bfseries properties} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classDRM_1_1Object}{DRM\+::\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual int {\bfseries setup} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classDRM_1_1Object}{DRM\+::\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t {\bfseries id\+\_\+}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/apps/cam/drm.\+h\item 
+src/peripherals/camera/libcamera/src/apps/cam/drm.\+cpp\end{DoxyCompactItemize}

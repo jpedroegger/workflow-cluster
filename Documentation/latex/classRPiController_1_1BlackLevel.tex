@@ -1,0 +1,93 @@
+\doxysection{RPi\+Controller\+::Black\+Level Class Reference}
+\hypertarget{classRPiController_1_1BlackLevel}{}\label{classRPiController_1_1BlackLevel}\index{RPiController::BlackLevel@{RPiController::BlackLevel}}
+Inheritance diagram for RPi\+Controller\+::Black\+Level\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classRPiController_1_1BlackLevel}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classRPiController_1_1BlackLevel_aa3490c417d5f19fc626086c4cdd6bf46}\label{classRPiController_1_1BlackLevel_aa3490c417d5f19fc626086c4cdd6bf46} 
+{\bfseries Black\+Level} (\mbox{\hyperlink{classRPiController_1_1Controller}{Controller}} \texorpdfstring{$\ast$}{*}controller)
+\item 
+char const \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classRPiController_1_1BlackLevel_a13b17955aed155476abc6f3fe00ce5cb}{name}} () const override
+\item 
+int \mbox{\hyperlink{classRPiController_1_1BlackLevel_a83360e15c6cf8dd8ad68bde30834d3bc}{read}} (const \mbox{\hyperlink{classlibcamera_1_1YamlObject}{libcamera\+::\+Yaml\+Object}} \&params) override
+\item 
+void \mbox{\hyperlink{classRPiController_1_1BlackLevel_a1242f73210e70c2fafe99b998361dcd5}{initial\+Values}} (uint16\+\_\+t \&black\+LevelR, uint16\+\_\+t \&black\+LevelG, uint16\+\_\+t \&black\+LevelB) override
+\item 
+void \mbox{\hyperlink{classRPiController_1_1BlackLevel_ac010ce3d58263f03848e3fee8705827d}{prepare}} (Metadata \texorpdfstring{$\ast$}{*}image\+Metadata) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classRPiController_1_1BlackLevelAlgorithm}{RPi\+Controller\+::\+Black\+Level\+Algorithm}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Black\+Level\+Algorithm} (\mbox{\hyperlink{classRPiController_1_1Controller}{Controller}} \texorpdfstring{$\ast$}{*}controller)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classRPiController_1_1Algorithm}{RPi\+Controller\+::\+Algorithm}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Algorithm} (\mbox{\hyperlink{classRPiController_1_1Controller}{Controller}} \texorpdfstring{$\ast$}{*}controller)
+\item 
+virtual void {\bfseries initialise} ()
+\item 
+virtual void {\bfseries switch\+Mode} (\mbox{\hyperlink{structCameraMode}{Camera\+Mode}} const \&camera\+Mode, Metadata \texorpdfstring{$\ast$}{*}metadata)
+\item 
+virtual void {\bfseries process} (Statistics\+Ptr \&stats, Metadata \texorpdfstring{$\ast$}{*}image\+Metadata)
+\item 
+Metadata \& {\bfseries get\+Global\+Metadata} () const
+\item 
+const std\+::string \& {\bfseries get\+Target} () const
+\item 
+const \mbox{\hyperlink{structRPiController_1_1Controller_1_1HardwareConfig}{Controller\+::\+Hardware\+Config}} \& {\bfseries get\+Hardware\+Config} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classRPiController_1_1BlackLevel_a1242f73210e70c2fafe99b998361dcd5}\label{classRPiController_1_1BlackLevel_a1242f73210e70c2fafe99b998361dcd5} 
+\index{RPiController::BlackLevel@{RPiController::BlackLevel}!initialValues@{initialValues}}
+\index{initialValues@{initialValues}!RPiController::BlackLevel@{RPiController::BlackLevel}}
+\doxysubsubsection{\texorpdfstring{initialValues()}{initialValues()}}
+{\footnotesize\ttfamily void Black\+Level\+::initial\+Values (\begin{DoxyParamCaption}\item[{uint16\+\_\+t \&}]{black\+LevelR,  }\item[{uint16\+\_\+t \&}]{black\+LevelG,  }\item[{uint16\+\_\+t \&}]{black\+LevelB }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classRPiController_1_1BlackLevelAlgorithm}{RPi\+Controller\+::\+Black\+Level\+Algorithm}}.
+
+\Hypertarget{classRPiController_1_1BlackLevel_a13b17955aed155476abc6f3fe00ce5cb}\label{classRPiController_1_1BlackLevel_a13b17955aed155476abc6f3fe00ce5cb} 
+\index{RPiController::BlackLevel@{RPiController::BlackLevel}!name@{name}}
+\index{name@{name}!RPiController::BlackLevel@{RPiController::BlackLevel}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily char const  \texorpdfstring{$\ast$}{*} Black\+Level\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classRPiController_1_1Algorithm}{RPi\+Controller\+::\+Algorithm}}.
+
+\Hypertarget{classRPiController_1_1BlackLevel_ac010ce3d58263f03848e3fee8705827d}\label{classRPiController_1_1BlackLevel_ac010ce3d58263f03848e3fee8705827d} 
+\index{RPiController::BlackLevel@{RPiController::BlackLevel}!prepare@{prepare}}
+\index{prepare@{prepare}!RPiController::BlackLevel@{RPiController::BlackLevel}}
+\doxysubsubsection{\texorpdfstring{prepare()}{prepare()}}
+{\footnotesize\ttfamily void Black\+Level\+::prepare (\begin{DoxyParamCaption}\item[{Metadata \texorpdfstring{$\ast$}{*}}]{image\+Metadata }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classRPiController_1_1Algorithm}{RPi\+Controller\+::\+Algorithm}}.
+
+\Hypertarget{classRPiController_1_1BlackLevel_a83360e15c6cf8dd8ad68bde30834d3bc}\label{classRPiController_1_1BlackLevel_a83360e15c6cf8dd8ad68bde30834d3bc} 
+\index{RPiController::BlackLevel@{RPiController::BlackLevel}!read@{read}}
+\index{read@{read}!RPiController::BlackLevel@{RPiController::BlackLevel}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily int Black\+Level\+::read (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1YamlObject}{libcamera\+::\+Yaml\+Object}} \&}]{params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classRPiController_1_1Algorithm}{RPi\+Controller\+::\+Algorithm}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/ipa/rpi/controller/rpi/black\+\_\+level.\+h\item 
+src/peripherals/camera/libcamera/src/ipa/rpi/controller/rpi/black\+\_\+level.\+cpp\end{DoxyCompactItemize}

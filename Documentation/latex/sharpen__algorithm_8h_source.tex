@@ -1,0 +1,27 @@
+\doxysection{sharpen\+\_\+algorithm.\+h}
+\hypertarget{sharpen__algorithm_8h_source}{}\label{sharpen__algorithm_8h_source}\index{src/peripherals/camera/libcamera/src/ipa/rpi/controller/sharpen\_algorithm.h@{src/peripherals/camera/libcamera/src/ipa/rpi/controller/sharpen\_algorithm.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ BSD-\/2-\/Clause\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2020,\ Raspberry\ Pi\ Ltd}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ sharpness\ control\ algorithm\ interface}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}algorithm.h"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }RPiController\ \{}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRPiController_1_1SharpenAlgorithm}{SharpenAlgorithm}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classRPiController_1_1Algorithm}{Algorithm}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{classRPiController_1_1SharpenAlgorithm}{SharpenAlgorithm}}(\mbox{\hyperlink{classRPiController_1_1Controller}{Controller}}\ *controller)\ :\ \mbox{\hyperlink{classRPiController_1_1Algorithm}{Algorithm}}(controller)\ \{\}}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{/*\ A\ sharpness\ control\ algorithm\ must\ provide\ the\ following:\ */}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ setStrength(\textcolor{keywordtype}{double}\ strength)\ =\ 0;}
+\DoxyCodeLine{00019\ \};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \}\ \textcolor{comment}{/*\ namespace\ RPiController\ */}}
+
+\end{DoxyCode}

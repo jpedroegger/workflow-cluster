@@ -1,0 +1,49 @@
+\doxysection{v4l2\+\_\+videodevice\+\_\+test.\+h}
+\hypertarget{v4l2__videodevice__test_8h_source}{}\label{v4l2__videodevice__test_8h_source}\index{src/peripherals/camera/libcamera/test/v4l2\_videodevice/v4l2\_videodevice\_test.h@{src/peripherals/camera/libcamera/test/v4l2\_videodevice/v4l2\_videodevice\_test.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ GPL-\/2.0-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2018,\ Google\ Inc.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ libcamera\ v4l2device\ test\ base\ class}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{framebuffer_8h}{libcamera/framebuffer.h}}>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{camera__sensor_8h}{libcamera/internal/camera\_sensor.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{device__enumerator_8h}{libcamera/internal/device\_enumerator.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{media__device_8h}{libcamera/internal/media\_device.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{v4l2__subdevice_8h}{libcamera/internal/v4l2\_subdevice.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{v4l2__videodevice_8h}{libcamera/internal/v4l2\_videodevice.h}}"{}}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}test.h"{}}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classV4L2VideoDeviceTest}{V4L2VideoDeviceTest}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classTest}{Test}}}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{classV4L2VideoDeviceTest}{V4L2VideoDeviceTest}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *driver,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *entity)}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ :\ driver\_(driver),\ entity\_(entity),\ sensor\_(\textcolor{keyword}{nullptr}),}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ debayer\_(\textcolor{keyword}{nullptr}),\ capture\_(\textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00028\ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{int}\ init();}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ cleanup();}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ std::string\ driver\_;}
+\DoxyCodeLine{00036\ \ \ \ \ std::string\ entity\_;}
+\DoxyCodeLine{00037\ \ \ \ \ std::unique\_ptr<libcamera::DeviceEnumerator>\ enumerator\_;}
+\DoxyCodeLine{00038\ \ \ \ \ std::shared\_ptr<libcamera::MediaDevice>\ media\_;}
+\DoxyCodeLine{00039\ \ \ \ \ std::unique\_ptr<libcamera::CameraSensor>\ sensor\_;}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1V4L2Subdevice}{libcamera::V4L2Subdevice}}\ *debayer\_;}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1V4L2VideoDevice}{libcamera::V4L2VideoDevice}}\ *capture\_;}
+\DoxyCodeLine{00042\ \ \ \ \ std::vector<std::unique\_ptr<libcamera::FrameBuffer>>\ buffers\_;}
+\DoxyCodeLine{00043\ \};}
+
+\end{DoxyCode}

@@ -1,0 +1,39 @@
+\doxysection{v4l2\+\_\+vp9\+\_\+loop\+\_\+filter Struct Reference}
+\hypertarget{structv4l2__vp9__loop__filter}{}\label{structv4l2__vp9__loop__filter}\index{v4l2\_vp9\_loop\_filter@{v4l2\_vp9\_loop\_filter}}
+
+
+{\ttfamily \#include $<$v4l2-\/controls.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structv4l2__vp9__loop__filter_a1861474d97fe06c40cf4ec558c6e70a0}\label{structv4l2__vp9__loop__filter_a1861474d97fe06c40cf4ec558c6e70a0} 
+\+\_\+\+\_\+s8 {\bfseries ref\+\_\+deltas} \mbox{[}4\mbox{]}
+\item 
+\Hypertarget{structv4l2__vp9__loop__filter_a7ea6549429d4108b8f00122b151cb1be}\label{structv4l2__vp9__loop__filter_a7ea6549429d4108b8f00122b151cb1be} 
+\+\_\+\+\_\+s8 {\bfseries mode\+\_\+deltas} \mbox{[}2\mbox{]}
+\item 
+\Hypertarget{structv4l2__vp9__loop__filter_a5138696de0ce35b2c9b51945aa980cb6}\label{structv4l2__vp9__loop__filter_a5138696de0ce35b2c9b51945aa980cb6} 
+\+\_\+\+\_\+u8 {\bfseries level}
+\item 
+\Hypertarget{structv4l2__vp9__loop__filter_ab41700572e7c2bfebec87ce5ff92856f}\label{structv4l2__vp9__loop__filter_ab41700572e7c2bfebec87ce5ff92856f} 
+\+\_\+\+\_\+u8 {\bfseries sharpness}
+\item 
+\Hypertarget{structv4l2__vp9__loop__filter_a7b3b995644589ce70bd9aa1b465f8b3b}\label{structv4l2__vp9__loop__filter_a7b3b995644589ce70bd9aa1b465f8b3b} 
+\+\_\+\+\_\+u8 {\bfseries flags}
+\item 
+\Hypertarget{structv4l2__vp9__loop__filter_a49f6ec2e7ea1d700628fe8c07d02fcf3}\label{structv4l2__vp9__loop__filter_a49f6ec2e7ea1d700628fe8c07d02fcf3} 
+\+\_\+\+\_\+u8 {\bfseries reserved} \mbox{[}7\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structv4l2__vp9__loop__filter}{v4l2\+\_\+vp9\+\_\+loop\+\_\+filter} -\/ VP9 loop filter parameters
+
+@ref\+\_\+deltas\+: contains the adjustment needed for the filter level based on the chosen reference frame. If this syntax element is not present in the bitstream, users should pass its last value. @mode\+\_\+deltas\+: contains the adjustment needed for the filter level based on the chosen mode. If this syntax element is not present in the bitstream, users should pass its last value. @level\+: indicates the loop filter strength. @sharpness\+: indicates the sharpness level. @flags\+: combination of V4\+L2\+\_\+\+VP9\+\_\+\+LOOP\+\_\+\+FILTER\+\_\+\+FLAG\+\_\+\{\} flags. @reserved\+: padding field. Should be zeroed by applications.
+
+This structure contains all loop filter related parameters. See sections \textquotesingle{}7.\+2.\+8 Loop filter semantics\textquotesingle{} of the VP9 specification for more details. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/v4l2-\/controls.\+h\end{DoxyCompactItemize}

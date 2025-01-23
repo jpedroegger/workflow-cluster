@@ -1,0 +1,39 @@
+\doxysection{post\+\_\+processor.\+h}
+\hypertarget{post__processor_8h_source}{}\label{post__processor_8h_source}\index{src/peripherals/camera/libcamera/src/android/post\_processor.h@{src/peripherals/camera/libcamera/src/android/post\_processor.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2020,\ Google\ Inc.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ CameraStream\ Post\ Processing\ Interface}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{signal_8h}{libcamera/base/signal.h}}>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{framebuffer_8h}{libcamera/framebuffer.h}}>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{stream_8h}{libcamera/stream.h}}>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}camera\_buffer.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}camera\_request.h"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPostProcessor}{PostProcessor}}}
+\DoxyCodeLine{00019\ \{}
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{enum\ class}\ Status\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ Error,}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ Success}
+\DoxyCodeLine{00024\ \ \ \ \ \};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classPostProcessor}{\string~PostProcessor}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ configure(\textcolor{keyword}{const}\ \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration}{libcamera::StreamConfiguration}}\ \&inCfg,}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration}{libcamera::StreamConfiguration}}\ \&outCfg)\ =\ 0;}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ process(\mbox{\hyperlink{structCamera3RequestDescriptor_1_1StreamBuffer}{Camera3RequestDescriptor::StreamBuffer}}\ *streamBuffer)\ =\ 0;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Signal}{libcamera::Signal<Camera3RequestDescriptor::StreamBuffer\ *,\ Status>}}\ processComplete;}
+\DoxyCodeLine{00033\ \};}
+
+\end{DoxyCode}

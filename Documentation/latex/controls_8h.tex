@@ -1,0 +1,117 @@
+\doxysection{src/peripherals/camera/libcamera/include/libcamera/controls.h File Reference}
+\hypertarget{controls_8h}{}\label{controls_8h}\index{src/peripherals/camera/libcamera/include/libcamera/controls.h@{src/peripherals/camera/libcamera/include/libcamera/controls.h}}
+
+
+Framework to manage controls related to an object.  
+
+
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$optional$>$}\newline
+{\ttfamily \#include $<$set$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$libcamera/base/class.\+h$>$}\newline
+{\ttfamily \#include $<$libcamera/base/span.\+h$>$}\newline
+{\ttfamily \#include $<$libcamera/geometry.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structlibcamera_1_1details_1_1control__type}{libcamera\+::details\+::control\+\_\+type$<$ T, typename $>$}}
+\item 
+struct \mbox{\hyperlink{structlibcamera_1_1details_1_1control__type_3_01void_01_4}{libcamera\+::details\+::control\+\_\+type$<$ void $>$}}
+\item 
+struct \mbox{\hyperlink{structlibcamera_1_1details_1_1control__type_3_01bool_01_4}{libcamera\+::details\+::control\+\_\+type$<$ bool $>$}}
+\item 
+struct \mbox{\hyperlink{structlibcamera_1_1details_1_1control__type_3_01uint8__t_01_4}{libcamera\+::details\+::control\+\_\+type$<$ uint8\+\_\+t $>$}}
+\item 
+struct \mbox{\hyperlink{structlibcamera_1_1details_1_1control__type_3_01uint16__t_01_4}{libcamera\+::details\+::control\+\_\+type$<$ uint16\+\_\+t $>$}}
+\item 
+struct \mbox{\hyperlink{structlibcamera_1_1details_1_1control__type_3_01uint32__t_01_4}{libcamera\+::details\+::control\+\_\+type$<$ uint32\+\_\+t $>$}}
+\item 
+struct \mbox{\hyperlink{structlibcamera_1_1details_1_1control__type_3_01int32__t_01_4}{libcamera\+::details\+::control\+\_\+type$<$ int32\+\_\+t $>$}}
+\item 
+struct \mbox{\hyperlink{structlibcamera_1_1details_1_1control__type_3_01int64__t_01_4}{libcamera\+::details\+::control\+\_\+type$<$ int64\+\_\+t $>$}}
+\item 
+struct \mbox{\hyperlink{structlibcamera_1_1details_1_1control__type_3_01float_01_4}{libcamera\+::details\+::control\+\_\+type$<$ float $>$}}
+\item 
+struct \mbox{\hyperlink{structlibcamera_1_1details_1_1control__type_3_01std_1_1string_01_4}{libcamera\+::details\+::control\+\_\+type$<$ std\+::string $>$}}
+\item 
+struct \mbox{\hyperlink{structlibcamera_1_1details_1_1control__type_3_01Rectangle_01_4}{libcamera\+::details\+::control\+\_\+type$<$ Rectangle $>$}}
+\item 
+struct \mbox{\hyperlink{structlibcamera_1_1details_1_1control__type_3_01Size_01_4}{libcamera\+::details\+::control\+\_\+type$<$ Size $>$}}
+\item 
+struct \mbox{\hyperlink{structlibcamera_1_1details_1_1control__type_3_01Point_01_4}{libcamera\+::details\+::control\+\_\+type$<$ Point $>$}}
+\item 
+struct \mbox{\hyperlink{structlibcamera_1_1details_1_1control__type_3_01Span_3_01T_00_01N_01_4_01_4}{libcamera\+::details\+::control\+\_\+type$<$ Span$<$ T, N $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{structlibcamera_1_1details_1_1control__type_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__enum__v_3_01T_01_4_01_4_01_4}{libcamera\+::details\+::control\+\_\+type$<$ T, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+enum\+\_\+v$<$ T $>$ $>$ $>$}}
+\item 
+class \mbox{\hyperlink{classlibcamera_1_1ControlValue}{libcamera\+::\+Control\+Value}}
+\begin{DoxyCompactList}\small\item\em Abstract type representing the value of a control. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classlibcamera_1_1ControlId}{libcamera\+::\+Control\+Id}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classlibcamera_1_1Control}{Control} static metadata. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classlibcamera_1_1Control}{libcamera\+::\+Control$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em Describe a control and its intrinsic properties. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classlibcamera_1_1ControlInfo}{libcamera\+::\+Control\+Info}}
+\begin{DoxyCompactList}\small\item\em Describe the limits of valid values for a \doxylink{classlibcamera_1_1Control}{Control}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classlibcamera_1_1ControlInfoMap}{libcamera\+::\+Control\+Info\+Map}}
+\begin{DoxyCompactList}\small\item\em A map of \doxylink{classlibcamera_1_1ControlId}{Control\+Id} to \doxylink{classlibcamera_1_1ControlInfo}{Control\+Info}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classlibcamera_1_1ControlList}{libcamera\+::\+Control\+List}}
+\begin{DoxyCompactList}\small\item\em Associate a list of \doxylink{classlibcamera_1_1ControlId}{Control\+Id} with their values for an object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacelibcamera}{libcamera}}
+\begin{DoxyCompactList}\small\item\em Top-\/level libcamera namespace. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespacelibcamera_a7d3fda0fdcda064b681b36fff326cdb7}{libcamera\+::\+Control\+Id\+Map}} = std\+::unordered\+\_\+map$<$ unsigned int, const \mbox{\hyperlink{classlibcamera_1_1ControlId}{Control\+Id}} \texorpdfstring{$\ast$}{*} $>$
+\begin{DoxyCompactList}\small\item\em A map of numerical control ID to \doxylink{classlibcamera_1_1ControlId}{Control\+Id}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespacelibcamera_a40a8adae6eaa668ac965dc350ca2b295}{libcamera\+::\+Control\+Type}} \{ \newline
+\mbox{\hyperlink{namespacelibcamera_a40a8adae6eaa668ac965dc350ca2b295a09637a413cc05c3febe0186b9df53dc2}{libcamera\+::\+Control\+Type\+None}}
+, \mbox{\hyperlink{namespacelibcamera_a40a8adae6eaa668ac965dc350ca2b295a3641e02d6ead97e65a83aab0f269f7b6}{libcamera\+::\+Control\+Type\+Bool}}
+, \mbox{\hyperlink{namespacelibcamera_a40a8adae6eaa668ac965dc350ca2b295ac288a6fd3bc7e90945f56e5cefe97fab}{libcamera\+::\+Control\+Type\+Byte}}
+, \mbox{\hyperlink{namespacelibcamera_a40a8adae6eaa668ac965dc350ca2b295a1ab6ab790e1c3743ffabb000ca4358db}{libcamera\+::\+Control\+Type\+Unsigned16}}
+, \newline
+\mbox{\hyperlink{namespacelibcamera_a40a8adae6eaa668ac965dc350ca2b295a44a24b589ee0728297f80a7887efdd59}{libcamera\+::\+Control\+Type\+Unsigned32}}
+, \mbox{\hyperlink{namespacelibcamera_a40a8adae6eaa668ac965dc350ca2b295a5bb3a1128cd7bbec498ac09a131dc352}{libcamera\+::\+Control\+Type\+Integer32}}
+, \mbox{\hyperlink{namespacelibcamera_a40a8adae6eaa668ac965dc350ca2b295a8af759a110c3a56a65706e032fba8fbe}{libcamera\+::\+Control\+Type\+Integer64}}
+, \mbox{\hyperlink{namespacelibcamera_a40a8adae6eaa668ac965dc350ca2b295a1630a1ea4b73b007313eef0068150732}{libcamera\+::\+Control\+Type\+Float}}
+, \newline
+\mbox{\hyperlink{namespacelibcamera_a40a8adae6eaa668ac965dc350ca2b295a875e35bb1af700a3a3d7dc9a6f7b418b}{libcamera\+::\+Control\+Type\+String}}
+, {\bfseries Control\+Type\+Rectangle}
+, {\bfseries Control\+Type\+Size}
+, {\bfseries Control\+Type\+Point}
+ \}
+\begin{DoxyCompactList}\small\item\em Define the data type of a Control. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Framework to manage controls related to an object. 
+
+A control is a mean to govern or influence the operation of an object, and in particular of a camera. Every control is defined by a unique numerical ID, a name string and the data type of the value it stores. The libcamera API defines a set of standard controls in the libcamera\+::controls namespace, as a set of instances of the Control class.
+
+The main way for applications to interact with controls is through the Control\+List stored in the Request class\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Request\ *req\ =\ ...;}
+\DoxyCodeLine{ControlList\ \&controls\ =\ req-\/>controls();}
+\DoxyCodeLine{controls-\/>set(controls::AwbEnable,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{controls-\/>set(controls::ManualExposure,\ 1000);}
+\DoxyCodeLine{}
+\DoxyCodeLine{...}
+\DoxyCodeLine{}
+\DoxyCodeLine{int32\_t\ exposure\ =\ controls-\/>get(controls::ManualExposure);}
+
+\end{DoxyCode}
+
+
+The Control\+List\+::get() and Control\+List\+::set() functions automatically deduce the data type based on the control. 

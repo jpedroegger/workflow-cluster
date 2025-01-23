@@ -1,0 +1,51 @@
+\doxysection{lux.\+h}
+\hypertarget{lux_8h_source}{}\label{lux_8h_source}\index{src/peripherals/camera/libcamera/src/ipa/rpi/controller/rpi/lux.h@{src/peripherals/camera/libcamera/src/ipa/rpi/controller/rpi/lux.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ BSD-\/2-\/Clause\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2019,\ Raspberry\ Pi\ Ltd}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Lux\ control\ algorithm}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{include_2libcamera_2base_2utils_8h}{libcamera/base/utils.h}}>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}../lux\_status.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}../algorithm.h"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{comment}{/*\ This\ is\ our\ implementation\ of\ the\ "{}lux\ control\ algorithm"{}.\ */}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{namespace\ }RPiController\ \{}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRPiController_1_1Lux}{Lux}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classRPiController_1_1Algorithm}{Algorithm}}}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{classRPiController_1_1Lux}{Lux}}(\mbox{\hyperlink{classRPiController_1_1Controller}{Controller}}\ *controller);}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{char}\ \textcolor{keyword}{const}\ *name()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{int}\ read(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1YamlObject}{libcamera::YamlObject}}\ \&params)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ prepare(Metadata\ *imageMetadata)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ process(StatisticsPtr\ \&stats,\ Metadata\ *imageMetadata)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ setCurrentAperture(\textcolor{keywordtype}{double}\ aperture);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ \ \ \ \ *\ These\ values\ define\ the\ conditions\ of\ the\ reference\ image,\ against}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ \ \ \ \ *\ which\ we\ compare\ the\ new\ image.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{libcamera::utils::Duration}}\ referenceExposureTime\_;}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{double}\ referenceGain\_;}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{double}\ referenceAperture\_;\ \textcolor{comment}{/*\ units\ of\ 1/f\ */}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{double}\ referenceY\_;\ \textcolor{comment}{/*\ out\ of\ 65536\ */}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{double}\ referenceLux\_;}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{double}\ currentAperture\_;}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{structLuxStatus}{LuxStatus}}\ status\_;}
+\DoxyCodeLine{00042\ \ \ \ \ std::mutex\ mutex\_;}
+\DoxyCodeLine{00043\ \};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \}\ \textcolor{comment}{/*\ namespace\ RPiController\ */}}
+
+\end{DoxyCode}

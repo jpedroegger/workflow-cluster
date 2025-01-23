@@ -1,0 +1,94 @@
+\doxysection{stream.\+h}
+\hypertarget{stream_8h_source}{}\label{stream_8h_source}\index{src/peripherals/camera/libcamera/include/libcamera/stream.h@{src/peripherals/camera/libcamera/include/libcamera/stream.h}}
+\mbox{\hyperlink{stream_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2019,\ Google\ Inc.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Video\ stream\ for\ a\ Camera}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <ostream>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{color__space_8h}{libcamera/color\_space.h}}>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{framebuffer_8h}{libcamera/framebuffer.h}}>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{geometry_8h}{libcamera/geometry.h}}>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{pixel__format_8h}{libcamera/pixel\_format.h}}>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacelibcamera}{libcamera}}\ \{}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }Camera;}
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }Stream;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1StreamFormats}{StreamFormats}}}
+\DoxyCodeLine{00026\ \{}
+\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1StreamFormats}{StreamFormats}}();}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1StreamFormats}{StreamFormats}}(\textcolor{keyword}{const}\ std::map<\mbox{\hyperlink{classlibcamera_1_1PixelFormat}{PixelFormat}},\ std::vector<SizeRange>>\ \&formats);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ std::vector<PixelFormat>\ \mbox{\hyperlink{classlibcamera_1_1StreamFormats_ab956a73dcc86314d903227ad736a29a4}{pixelformats}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00032\ \ \ \ \ std::vector<Size>\ \mbox{\hyperlink{classlibcamera_1_1StreamFormats_a4321746fcfffed9750f6f9dbffcf102b}{sizes}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1PixelFormat}{PixelFormat}}\ \&pixelformat)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1SizeRange}{SizeRange}}\ \mbox{\hyperlink{classlibcamera_1_1StreamFormats_a8f966e5f785f2c30669889c5b5307801}{range}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1PixelFormat}{PixelFormat}}\ \&pixelformat)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00037\ \ \ \ \ std::map<PixelFormat,\ std::vector<SizeRange>>\ formats\_;}
+\DoxyCodeLine{00038\ \};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structlibcamera_1_1StreamConfiguration}{StreamConfiguration}}\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration_a396e09188db732ef3f8a149808d876f7}{StreamConfiguration}}();}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration_a396e09188db732ef3f8a149808d876f7}{StreamConfiguration}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1StreamFormats}{StreamFormats}}\ \&\mbox{\hyperlink{structlibcamera_1_1StreamConfiguration_a37725e6b9e179ca80be0e57ed97857d3}{formats}});}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1PixelFormat}{PixelFormat}}\ \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration_ac1e89568d5c4a1fbed4157908a9af02e}{pixelFormat}};}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration_a31c5b57d37b61757fb113ace765d2e49}{size}};}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration_afdcc090df5c36895ac0554f0b14c0689}{stride}};}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration_adb91542e49bac6509e757c1f8774b923}{frameSize}};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration_a26fe77de40cad643d99033623e7c12af}{bufferCount}};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ std::optional<ColorSpace>\ \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration_a99ead3d97d71da92b6560164e860bb34}{colorSpace}};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Stream}{Stream}}\ *\mbox{\hyperlink{structlibcamera_1_1StreamConfiguration_ad0e405752ad033249b515165e4864bbb}{stream}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ stream\_;\ \}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration_a74a0eb44dad1b00112c7c0443ae54a12}{setStream}}(\mbox{\hyperlink{classlibcamera_1_1Stream}{Stream}}\ *\mbox{\hyperlink{structlibcamera_1_1StreamConfiguration_ad0e405752ad033249b515165e4864bbb}{stream}})\ \{\ stream\_\ =\ \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration_ad0e405752ad033249b515165e4864bbb}{stream}};\ \}}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1StreamFormats}{StreamFormats}}\ \&\mbox{\hyperlink{structlibcamera_1_1StreamConfiguration_a37725e6b9e179ca80be0e57ed97857d3}{formats}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ formats\_;\ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ std::string\ \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration_ab9b2231ceed6c34870464e7d7148a631}{toString}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Stream}{Stream}}\ *stream\_;}
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1StreamFormats}{StreamFormats}}\ formats\_;}
+\DoxyCodeLine{00062\ \};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ std::ostream\ \&operator<<(std::ostream\ \&out,\ \textcolor{keyword}{const}\ StreamConfiguration\ \&cfg);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespacelibcamera_a295d1f5e7828d95c0b0aabc0a8baac03}{StreamRole}}\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{namespacelibcamera_a295d1f5e7828d95c0b0aabc0a8baac03a65e65c8ab0d8609ce12fc68a03cb8e00}{Raw}},}
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{namespacelibcamera_a295d1f5e7828d95c0b0aabc0a8baac03ab6d498e09460a56e1c69af18830c9b9a}{StillCapture}},}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{namespacelibcamera_a295d1f5e7828d95c0b0aabc0a8baac03ae1ff48054403b149f903eb40e16ec86e}{VideoRecording}},}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{namespacelibcamera_a295d1f5e7828d95c0b0aabc0a8baac03a30b5987e4c03f83a7e1909e4f72eefd4}{Viewfinder}},}
+\DoxyCodeLine{00071\ \};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ std::ostream\ \&operator<<(std::ostream\ \&out,\ \mbox{\hyperlink{namespacelibcamera_a295d1f5e7828d95c0b0aabc0a8baac03}{StreamRole}}\ role);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1Stream}{Stream}}}
+\DoxyCodeLine{00076\ \{}
+\DoxyCodeLine{00077\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Stream_ac4dccfedb5dca7e2e475ad5de07ce79c}{Stream}}();}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration}{StreamConfiguration}}\ \&\mbox{\hyperlink{classlibcamera_1_1Stream_a285540c48af574a480365424f1723115}{configuration}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classlibcamera_1_1Stream_ac4322d978e351a67154464bdf1a23840}{configuration\_}};\ \}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration}{StreamConfiguration}}\ \mbox{\hyperlink{classlibcamera_1_1Stream_ac4322d978e351a67154464bdf1a23840}{configuration\_}};}
+\DoxyCodeLine{00086\ \};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \}\ \textcolor{comment}{/*\ namespace\ libcamera\ */}}
+
+\end{DoxyCode}

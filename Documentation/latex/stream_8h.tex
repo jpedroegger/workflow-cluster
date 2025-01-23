@@ -1,0 +1,55 @@
+\doxysection{src/peripherals/camera/libcamera/include/libcamera/stream.h File Reference}
+\hypertarget{stream_8h}{}\label{stream_8h}\index{src/peripherals/camera/libcamera/include/libcamera/stream.h@{src/peripherals/camera/libcamera/include/libcamera/stream.h}}
+
+
+Video stream for a Camera.  
+
+
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$ostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$libcamera/color\+\_\+space.\+h$>$}\newline
+{\ttfamily \#include $<$libcamera/framebuffer.\+h$>$}\newline
+{\ttfamily \#include $<$libcamera/geometry.\+h$>$}\newline
+{\ttfamily \#include $<$libcamera/pixel\+\_\+format.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classlibcamera_1_1StreamFormats}{libcamera\+::\+Stream\+Formats}}
+\begin{DoxyCompactList}\small\item\em Hold information about supported stream formats. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration}{libcamera\+::\+Stream\+Configuration}}
+\begin{DoxyCompactList}\small\item\em Configuration parameters for a stream. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classlibcamera_1_1Stream}{libcamera\+::\+Stream}}
+\begin{DoxyCompactList}\small\item\em Video stream for a camera. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacelibcamera}{libcamera}}
+\begin{DoxyCompactList}\small\item\em Top-\/level libcamera namespace. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespacelibcamera_a295d1f5e7828d95c0b0aabc0a8baac03}{libcamera\+::\+Stream\+Role}} \{ \mbox{\hyperlink{namespacelibcamera_a295d1f5e7828d95c0b0aabc0a8baac03a65e65c8ab0d8609ce12fc68a03cb8e00}{libcamera\+::\+Raw}}
+, \mbox{\hyperlink{namespacelibcamera_a295d1f5e7828d95c0b0aabc0a8baac03ab6d498e09460a56e1c69af18830c9b9a}{libcamera\+::\+Still\+Capture}}
+, \mbox{\hyperlink{namespacelibcamera_a295d1f5e7828d95c0b0aabc0a8baac03ae1ff48054403b149f903eb40e16ec86e}{libcamera\+::\+Video\+Recording}}
+, \mbox{\hyperlink{namespacelibcamera_a295d1f5e7828d95c0b0aabc0a8baac03a30b5987e4c03f83a7e1909e4f72eefd4}{libcamera\+::\+Viewfinder}}
+ \}
+\begin{DoxyCompactList}\small\item\em Identify the role a stream is intended to play. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{namespacelibcamera_aadde8916b8c86c682c5ea0b6d205538e}{libcamera\+::operator$<$$<$}} (std\+::ostream \&out, const \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration}{Stream\+Configuration}} \&cfg)
+\begin{DoxyCompactList}\small\item\em Insert a text representation of a \doxylink{structlibcamera_1_1StreamConfiguration}{Stream\+Configuration} into an output stream. \end{DoxyCompactList}\item 
+std\+::ostream \& \mbox{\hyperlink{namespacelibcamera_aa4befed8e0befd567ed2f8bdeaf19f82}{libcamera\+::operator$<$$<$}} (std\+::ostream \&out, \mbox{\hyperlink{namespacelibcamera_a295d1f5e7828d95c0b0aabc0a8baac03}{Stream\+Role}} role)
+\begin{DoxyCompactList}\small\item\em Insert a text representation of a Stream\+Role into an output stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Video stream for a Camera. 
+
+A camera device can provide frames in different resolutions and formats concurrently from a single image source. The Stream class represents one of the multiple concurrent streams.
+
+All streams exposed by a camera device share the same image source and are thus not fully independent. Parameters related to the image source, such as the exposure time or flash control, are common to all streams. Other parameters, such as format or resolution, may be specified per-\/stream, depending on the capabilities of the camera device.
+
+Camera devices expose at least one stream, and may expose additional streams based on the device capabilities. This can be used, for instance, to implement concurrent viewfinder and video capture, or concurrent viewfinder, video capture and still image capture. 

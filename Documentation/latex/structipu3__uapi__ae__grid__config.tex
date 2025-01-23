@@ -1,0 +1,57 @@
+\doxysection{ipu3\+\_\+uapi\+\_\+ae\+\_\+grid\+\_\+config Struct Reference}
+\hypertarget{structipu3__uapi__ae__grid__config}{}\label{structipu3__uapi__ae__grid__config}\index{ipu3\_uapi\_ae\_grid\_config@{ipu3\_uapi\_ae\_grid\_config}}
+
+
+{\ttfamily \#include $<$intel-\/ipu3.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structipu3__uapi__ae__grid__config_a9024672f408134626e0fc50ef48c4ad3}\label{structipu3__uapi__ae__grid__config_a9024672f408134626e0fc50ef48c4ad3} 
+\+\_\+\+\_\+u8 {\bfseries width}
+\item 
+\Hypertarget{structipu3__uapi__ae__grid__config_aba6c75d20ee9dbf5b03f41b4193c8920}\label{structipu3__uapi__ae__grid__config_aba6c75d20ee9dbf5b03f41b4193c8920} 
+\+\_\+\+\_\+u8 {\bfseries height}
+\item 
+\Hypertarget{structipu3__uapi__ae__grid__config_ad5a51625757bd126de3dc526195f2342}\label{structipu3__uapi__ae__grid__config_ad5a51625757bd126de3dc526195f2342} 
+\+\_\+\+\_\+u8 {\bfseries block\+\_\+width\+\_\+log2}\+:4
+\item 
+\Hypertarget{structipu3__uapi__ae__grid__config_a3d836655f473c80a3b92e4b655e685c8}\label{structipu3__uapi__ae__grid__config_a3d836655f473c80a3b92e4b655e685c8} 
+\+\_\+\+\_\+u8 {\bfseries block\+\_\+height\+\_\+log2}\+:4
+\item 
+\Hypertarget{structipu3__uapi__ae__grid__config_a25ba7a87c5d06ef215957f2320a7b46f}\label{structipu3__uapi__ae__grid__config_a25ba7a87c5d06ef215957f2320a7b46f} 
+\+\_\+\+\_\+u8 {\bfseries reserved0}\+:5
+\item 
+\Hypertarget{structipu3__uapi__ae__grid__config_ad2d76c2eca3d83f8b3f75eee3e46a487}\label{structipu3__uapi__ae__grid__config_ad2d76c2eca3d83f8b3f75eee3e46a487} 
+\+\_\+\+\_\+u8 {\bfseries ae\+\_\+en}\+:1
+\item 
+\Hypertarget{structipu3__uapi__ae__grid__config_a5c431f266fe4f86138cbbfa87c8a54cb}\label{structipu3__uapi__ae__grid__config_a5c431f266fe4f86138cbbfa87c8a54cb} 
+\+\_\+\+\_\+u8 {\bfseries rst\+\_\+hist\+\_\+array}\+:1
+\item 
+\Hypertarget{structipu3__uapi__ae__grid__config_aeff831168309e5f3b0657088bf2a5b00}\label{structipu3__uapi__ae__grid__config_aeff831168309e5f3b0657088bf2a5b00} 
+\+\_\+\+\_\+u8 {\bfseries done\+\_\+rst\+\_\+hist\+\_\+array}\+:1
+\item 
+\Hypertarget{structipu3__uapi__ae__grid__config_a34eace1b717248934f2f71917591e944}\label{structipu3__uapi__ae__grid__config_a34eace1b717248934f2f71917591e944} 
+\+\_\+\+\_\+u16 {\bfseries x\+\_\+start}
+\item 
+\Hypertarget{structipu3__uapi__ae__grid__config_af0ec595c8a1b46edfa5ea961e668d388}\label{structipu3__uapi__ae__grid__config_af0ec595c8a1b46edfa5ea961e668d388} 
+\+\_\+\+\_\+u16 {\bfseries y\+\_\+start}
+\item 
+\Hypertarget{structipu3__uapi__ae__grid__config_a397d4ac0a5b26f18664063d94fc25823}\label{structipu3__uapi__ae__grid__config_a397d4ac0a5b26f18664063d94fc25823} 
+\+\_\+\+\_\+u16 {\bfseries x\+\_\+end}
+\item 
+\Hypertarget{structipu3__uapi__ae__grid__config_a17a233010226a77a8dcbe34cf6d7ba6d}\label{structipu3__uapi__ae__grid__config_a17a233010226a77a8dcbe34cf6d7ba6d} 
+\+\_\+\+\_\+u16 {\bfseries y\+\_\+end}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structipu3__uapi__ae__grid__config}{ipu3\+\_\+uapi\+\_\+ae\+\_\+grid\+\_\+config} -\/ AE weight grid
+
+@width\+: Grid horizontal dimensions. Value\+: \mbox{[}16, 32\mbox{]}, default 16. @height\+: Grid vertical dimensions. Value\+: \mbox{[}16, 24\mbox{]}, default 16. @block\+\_\+width\+\_\+log2\+: Log2 of the width of the grid cell, value\+: \mbox{[}3, 7\mbox{]}. @block\+\_\+height\+\_\+log2\+: Log2 of the height of the grid cell, value\+: \mbox{[}3, 7\mbox{]}. default is 3 (cell size 8x8), 4 cell per grid. @reserved0\+: reserved @ae\+\_\+en\+: 0\+: does not write to \&\doxylink{structipu3__uapi__ae__raw__buffer__aligned}{ipu3\+\_\+uapi\+\_\+ae\+\_\+raw\+\_\+buffer\+\_\+aligned} array, 1\+: write normally. @rst\+\_\+hist\+\_\+array\+: write 1 to trigger histogram array reset. @done\+\_\+rst\+\_\+hist\+\_\+array\+: flag for histogram array reset done. @x\+\_\+start\+: X value of top left corner of ROI, default 0. @y\+\_\+start\+: Y value of top left corner of ROI, default 0. @x\+\_\+end\+: X value of bottom right corner of ROI @y\+\_\+end\+: Y value of bottom right corner of ROI
+
+The AE block accumulates 4 global weighted histograms(\+R, G, B, Y) over a defined ROI within the frame. The contribution of each pixel into the histogram, defined by \&\doxylink{structipu3__uapi__ae__weight__elem}{ipu3\+\_\+uapi\+\_\+ae\+\_\+weight\+\_\+elem} LUT, is indexed by a grid. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/intel-\/ipu3.\+h\end{DoxyCompactItemize}

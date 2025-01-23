@@ -1,0 +1,231 @@
+\doxysection{libcamera\+::Shared\+FD Class Reference}
+\hypertarget{classlibcamera_1_1SharedFD}{}\label{classlibcamera_1_1SharedFD}\index{libcamera::SharedFD@{libcamera::SharedFD}}
+
+
+RAII-\/style wrapper for file descriptors.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1SharedFD_a465dd27b9d95e65e44e8c3326d1f8fe8}{Shared\+FD}} (const int \&fd=-\/1)
+\begin{DoxyCompactList}\small\item\em Create a \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} copying a given {\itshape fd}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1SharedFD_a0be2e5ccf888246e63210685d0bd93f9}{Shared\+FD}} (int \&\&fd)
+\begin{DoxyCompactList}\small\item\em Create a \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} taking ownership of a given {\itshape fd}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1SharedFD_a7ed7ee6c08634cc971c93f5fb1984c59}{Shared\+FD}} (\mbox{\hyperlink{classlibcamera_1_1UniqueFD}{Unique\+FD}} fd)
+\begin{DoxyCompactList}\small\item\em Create a \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} taking ownership of a given \doxylink{classlibcamera_1_1UniqueFD}{Unique\+FD} {\itshape fd}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1SharedFD_a1cc2c655ccc3044484d8e32920c6c825}{Shared\+FD}} (const \mbox{\hyperlink{classlibcamera_1_1SharedFD}{Shared\+FD}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor, create a \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} from a copy of {\itshape other}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1SharedFD_ad5a4139e5ccd5525c5115b59fdcb1df9}{Shared\+FD}} (\mbox{\hyperlink{classlibcamera_1_1SharedFD}{Shared\+FD}} \&\&other)
+\begin{DoxyCompactList}\small\item\em Move constructor, create a \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} by taking over {\itshape other}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1SharedFD_a041fe2ba1582bace5628867e58f3d6e1}{\texorpdfstring{$\sim$}{\string~}\+Shared\+FD}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} instance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1SharedFD}{Shared\+FD}} \& \mbox{\hyperlink{classlibcamera_1_1SharedFD_ae6facb8e1bda1e100cf32b5af04145b0}{operator=}} (const \mbox{\hyperlink{classlibcamera_1_1SharedFD}{Shared\+FD}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy assignment operator, replace the wrapped file descriptor with a copy of {\itshape other}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1SharedFD}{Shared\+FD}} \& \mbox{\hyperlink{classlibcamera_1_1SharedFD_afa84e0085cf71079ca3a3bb627564235}{operator=}} (\mbox{\hyperlink{classlibcamera_1_1SharedFD}{Shared\+FD}} \&\&other)
+\begin{DoxyCompactList}\small\item\em Move assignment operator, replace the wrapped file descriptor by taking over {\itshape other}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlibcamera_1_1SharedFD_acd4e7477ee692b17553fba7d2cb65b5c}{is\+Valid}} () const
+\begin{DoxyCompactList}\small\item\em Check if the \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} instance is valid. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classlibcamera_1_1SharedFD_a3b6f9504b5407aa9b19a7a20f2f9497b}{get}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the numerical file descriptor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1UniqueFD}{Unique\+FD}} \mbox{\hyperlink{classlibcamera_1_1SharedFD_a0d518aab5754f5d411ef223518ac1dd9}{dup}} () const
+\begin{DoxyCompactList}\small\item\em Duplicate a \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+RAII-\/style wrapper for file descriptors. 
+
+The \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} class provides RAII-\/style lifetime management of file descriptors with an efficient mechanism for ownership sharing. At its core, an internal Descriptor object wraps a file descriptor (expressed as a signed integer) with an RAII-\/style interface. The Descriptor is then implicitly shared with all \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} instances constructed as copies.
+
+When constructed from a numerical file descriptor, the \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} instance either duplicates or takes over the file descriptor\+:
+
+
+\begin{DoxyItemize}
+\item The \doxylink{classlibcamera_1_1SharedFD_a465dd27b9d95e65e44e8c3326d1f8fe8}{Shared\+FD(const int \&)} constructor duplicates the numerical file descriptor and wraps the duplicate in a Descriptor. The caller is responsible for closing the original file descriptor, and the value returned by fd() will be different from the value passed to the constructor.
+\item The \doxylink{classlibcamera_1_1SharedFD_a0be2e5ccf888246e63210685d0bd93f9}{Shared\+FD(int \&\&)} constructor takes over the numerical file descriptor and wraps it in a Descriptor. The caller shall not touch the original file descriptor once the function returns, and the value returned by fd() will be identical to the value passed to the constructor.
+\end{DoxyItemize}
+
+The copy constructor and assignment operator create copies that share the Descriptor, while the move versions of those functions additionally make the other \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} invalid. When the last \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} that references a Descriptor is destroyed, the file descriptor is closed.
+
+The numerical file descriptor is available through the fd() function. All \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} instances created as copies of a \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} will report the same fd() value. Callers can perform operations on the fd(), but shall never close it manually. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlibcamera_1_1SharedFD_a465dd27b9d95e65e44e8c3326d1f8fe8}\label{classlibcamera_1_1SharedFD_a465dd27b9d95e65e44e8c3326d1f8fe8} 
+\index{libcamera::SharedFD@{libcamera::SharedFD}!SharedFD@{SharedFD}}
+\index{SharedFD@{SharedFD}!libcamera::SharedFD@{libcamera::SharedFD}}
+\doxysubsubsection{\texorpdfstring{SharedFD()}{SharedFD()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily libcamera\+::\+Shared\+FD\+::\+Shared\+FD (\begin{DoxyParamCaption}\item[{const int \&}]{fd = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Create a \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} copying a given {\itshape fd}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em fd} & \doxylink{classlibcamera_1_1File}{File} descriptor\\
+\hline
+\end{DoxyParams}
+Construct a \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} from a numerical file descriptor by duplicating the {\itshape fd}, and take ownership of the copy. The original {\itshape fd} is left untouched, and the caller is responsible for closing it when appropriate. The duplicated file descriptor will be closed automatically when all \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} instances that reference it are destroyed.
+
+If the {\itshape fd} is negative, the \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} is constructed as invalid and the fd() function will return -\/1. \Hypertarget{classlibcamera_1_1SharedFD_a0be2e5ccf888246e63210685d0bd93f9}\label{classlibcamera_1_1SharedFD_a0be2e5ccf888246e63210685d0bd93f9} 
+\index{libcamera::SharedFD@{libcamera::SharedFD}!SharedFD@{SharedFD}}
+\index{SharedFD@{SharedFD}!libcamera::SharedFD@{libcamera::SharedFD}}
+\doxysubsubsection{\texorpdfstring{SharedFD()}{SharedFD()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily libcamera\+::\+Shared\+FD\+::\+Shared\+FD (\begin{DoxyParamCaption}\item[{int \&\&}]{fd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Create a \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} taking ownership of a given {\itshape fd}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em fd} & \doxylink{classlibcamera_1_1File}{File} descriptor\\
+\hline
+\end{DoxyParams}
+Construct a \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} from a numerical file descriptor by taking ownership of the {\itshape fd}. The original {\itshape fd} is set to -\/1 and shall not be touched by the caller anymore. In particular, the caller shall not close the original {\itshape fd} manually. The duplicated file descriptor will be closed automatically when all \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} instances that reference it are destroyed.
+
+If the {\itshape fd} is negative, the \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} is constructed as invalid and the fd() function will return -\/1. \Hypertarget{classlibcamera_1_1SharedFD_a7ed7ee6c08634cc971c93f5fb1984c59}\label{classlibcamera_1_1SharedFD_a7ed7ee6c08634cc971c93f5fb1984c59} 
+\index{libcamera::SharedFD@{libcamera::SharedFD}!SharedFD@{SharedFD}}
+\index{SharedFD@{SharedFD}!libcamera::SharedFD@{libcamera::SharedFD}}
+\doxysubsubsection{\texorpdfstring{SharedFD()}{SharedFD()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily libcamera\+::\+Shared\+FD\+::\+Shared\+FD (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1UniqueFD}{Unique\+FD}}}]{fd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Create a \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} taking ownership of a given \doxylink{classlibcamera_1_1UniqueFD}{Unique\+FD} {\itshape fd}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em fd} & \doxylink{classlibcamera_1_1UniqueFD}{Unique\+FD}\\
+\hline
+\end{DoxyParams}
+Construct a \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} from \doxylink{classlibcamera_1_1UniqueFD}{Unique\+FD} by taking ownership of the {\itshape fd}. The original {\itshape fd} becomes invalid. \Hypertarget{classlibcamera_1_1SharedFD_a1cc2c655ccc3044484d8e32920c6c825}\label{classlibcamera_1_1SharedFD_a1cc2c655ccc3044484d8e32920c6c825} 
+\index{libcamera::SharedFD@{libcamera::SharedFD}!SharedFD@{SharedFD}}
+\index{SharedFD@{SharedFD}!libcamera::SharedFD@{libcamera::SharedFD}}
+\doxysubsubsection{\texorpdfstring{SharedFD()}{SharedFD()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily libcamera\+::\+Shared\+FD\+::\+Shared\+FD (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1SharedFD}{Shared\+FD}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Copy constructor, create a \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} from a copy of {\itshape other}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & The other \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD}\\
+\hline
+\end{DoxyParams}
+Copying a \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} implicitly shares ownership of the wrapped file descriptor. The original \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} is left untouched, and the caller is responsible for destroying it when appropriate. The wrapped file descriptor will be closed automatically when all \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} instances that reference it are destroyed. \Hypertarget{classlibcamera_1_1SharedFD_ad5a4139e5ccd5525c5115b59fdcb1df9}\label{classlibcamera_1_1SharedFD_ad5a4139e5ccd5525c5115b59fdcb1df9} 
+\index{libcamera::SharedFD@{libcamera::SharedFD}!SharedFD@{SharedFD}}
+\index{SharedFD@{SharedFD}!libcamera::SharedFD@{libcamera::SharedFD}}
+\doxysubsubsection{\texorpdfstring{SharedFD()}{SharedFD()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily libcamera\+::\+Shared\+FD\+::\+Shared\+FD (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1SharedFD}{Shared\+FD}} \&\&}]{other }\end{DoxyParamCaption})}
+
+
+
+Move constructor, create a \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} by taking over {\itshape other}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & The other \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD}\\
+\hline
+\end{DoxyParams}
+Moving a \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} moves the reference to the wrapped descriptor owned by {\itshape other} to the new \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD}. The {\itshape other} \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} is invalidated and its fd() function will return -\/1. The wrapped file descriptor will be closed automatically when all \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} instances that reference it are destroyed. \Hypertarget{classlibcamera_1_1SharedFD_a041fe2ba1582bace5628867e58f3d6e1}\label{classlibcamera_1_1SharedFD_a041fe2ba1582bace5628867e58f3d6e1} 
+\index{libcamera::SharedFD@{libcamera::SharedFD}!````~SharedFD@{\texorpdfstring{$\sim$}{\string~}SharedFD}}
+\index{````~SharedFD@{\texorpdfstring{$\sim$}{\string~}SharedFD}!libcamera::SharedFD@{libcamera::SharedFD}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}SharedFD()}{\string~SharedFD()}}
+{\footnotesize\ttfamily libcamera\+::\+Shared\+FD\+::\texorpdfstring{$\sim$}{\string~}\+Shared\+FD (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy the \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} instance. 
+
+Destroying a \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} instance releases its reference to the wrapped descriptor, if any. When the last instance that references a wrapped descriptor is destroyed, the file descriptor is automatically closed. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1SharedFD_a0d518aab5754f5d411ef223518ac1dd9}\label{classlibcamera_1_1SharedFD_a0d518aab5754f5d411ef223518ac1dd9} 
+\index{libcamera::SharedFD@{libcamera::SharedFD}!dup@{dup}}
+\index{dup@{dup}!libcamera::SharedFD@{libcamera::SharedFD}}
+\doxysubsubsection{\texorpdfstring{dup()}{dup()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1UniqueFD}{Unique\+FD}} libcamera\+::\+Shared\+FD\+::dup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Duplicate a \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD}. 
+
+Duplicating a \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} creates a duplicate of the wrapped file descriptor and returns a \doxylink{classlibcamera_1_1UniqueFD}{Unique\+FD} that owns the duplicate. The fd() function of the original and the \doxylink{classlibcamera_1_1SharedFD_a3b6f9504b5407aa9b19a7a20f2f9497b}{get()} function of the duplicate will return different values. The duplicate instance will not be affected by destruction of the original instance or its copies.
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classlibcamera_1_1UniqueFD}{Unique\+FD} owning a duplicate of the original file descriptor 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1SharedFD_a3b6f9504b5407aa9b19a7a20f2f9497b}\label{classlibcamera_1_1SharedFD_a3b6f9504b5407aa9b19a7a20f2f9497b} 
+\index{libcamera::SharedFD@{libcamera::SharedFD}!get@{get}}
+\index{get@{get}!libcamera::SharedFD@{libcamera::SharedFD}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily libcamera\+::\+Shared\+FD\+::get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the numerical file descriptor. 
+
+\begin{DoxyReturn}{Returns}
+The numerical file descriptor, which may be -\/1 if the \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} instance is invalid 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1SharedFD_acd4e7477ee692b17553fba7d2cb65b5c}\label{classlibcamera_1_1SharedFD_acd4e7477ee692b17553fba7d2cb65b5c} 
+\index{libcamera::SharedFD@{libcamera::SharedFD}!isValid@{isValid}}
+\index{isValid@{isValid}!libcamera::SharedFD@{libcamera::SharedFD}}
+\doxysubsubsection{\texorpdfstring{isValid()}{isValid()}}
+{\footnotesize\ttfamily libcamera\+::\+Shared\+FD\+::is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check if the \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} instance is valid. 
+
+\begin{DoxyReturn}{Returns}
+True if the \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} is valid, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1SharedFD_ae6facb8e1bda1e100cf32b5af04145b0}\label{classlibcamera_1_1SharedFD_ae6facb8e1bda1e100cf32b5af04145b0} 
+\index{libcamera::SharedFD@{libcamera::SharedFD}!operator=@{operator=}}
+\index{operator=@{operator=}!libcamera::SharedFD@{libcamera::SharedFD}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1SharedFD}{Shared\+FD}} \& libcamera\+::\+Shared\+FD\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1SharedFD}{Shared\+FD}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Copy assignment operator, replace the wrapped file descriptor with a copy of {\itshape other}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & The other \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD}\\
+\hline
+\end{DoxyParams}
+Copying a \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} creates a new reference to the wrapped file descriptor owner by {\itshape other}. If {\itshape other} is invalid, \texorpdfstring{$\ast$}{*}this will also be invalid. The original \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} is left untouched, and the caller is responsible for destroying it when appropriate. The wrapped file descriptor will be closed automatically when all \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} instances that reference it are destroyed.
+
+\begin{DoxyReturn}{Returns}
+A reference to this \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1SharedFD_afa84e0085cf71079ca3a3bb627564235}\label{classlibcamera_1_1SharedFD_afa84e0085cf71079ca3a3bb627564235} 
+\index{libcamera::SharedFD@{libcamera::SharedFD}!operator=@{operator=}}
+\index{operator=@{operator=}!libcamera::SharedFD@{libcamera::SharedFD}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1SharedFD}{Shared\+FD}} \& libcamera\+::\+Shared\+FD\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1SharedFD}{Shared\+FD}} \&\&}]{other }\end{DoxyParamCaption})}
+
+
+
+Move assignment operator, replace the wrapped file descriptor by taking over {\itshape other}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & The other \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD}\\
+\hline
+\end{DoxyParams}
+Moving a \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} moves the reference to the wrapped descriptor owned by {\itshape other} to the new \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD}. If {\itshape other} is invalid, \texorpdfstring{$\ast$}{*}this will also be invalid. The {\itshape other} \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} is invalidated and its fd() function will return -\/1. The wrapped file descriptor will be closed automatically when all \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} instances that reference it are destroyed.
+
+\begin{DoxyReturn}{Returns}
+A reference to this \doxylink{classlibcamera_1_1SharedFD}{Shared\+FD} 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/base/\mbox{\hyperlink{shared__fd_8h}{shared\+\_\+fd.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/base/shared\+\_\+fd.\+cpp\end{DoxyCompactItemize}

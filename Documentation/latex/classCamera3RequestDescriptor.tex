@@ -1,0 +1,60 @@
+\doxysection{Camera3\+Request\+Descriptor Class Reference}
+\hypertarget{classCamera3RequestDescriptor}{}\label{classCamera3RequestDescriptor}\index{Camera3RequestDescriptor@{Camera3RequestDescriptor}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structCamera3RequestDescriptor_1_1StreamBuffer}{Stream\+Buffer}}
+\begin{DoxyCompactList}\small\item\em Group information for per-\/stream buffer of \doxylink{classCamera3RequestDescriptor}{Camera3\+Request\+Descriptor}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classCamera3RequestDescriptor_aefbebc14da23404d986c03730aa5ed05}\label{classCamera3RequestDescriptor_aefbebc14da23404d986c03730aa5ed05} 
+enum class {\bfseries Status} \{ {\bfseries Success}
+, {\bfseries Error}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classCamera3RequestDescriptor_abb64704e74c79111e58fa7b849483c49}\label{classCamera3RequestDescriptor_abb64704e74c79111e58fa7b849483c49} 
+std\+::map$<$ \mbox{\hyperlink{classCameraStream}{Camera\+Stream}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{structCamera3RequestDescriptor_1_1StreamBuffer}{Stream\+Buffer}} \texorpdfstring{$\ast$}{*} $>$ pending\+Streams\+To\+Process\+\_\+ {\bfseries LIBCAMERA\+\_\+\+TSA\+\_\+\+GUARDED\+\_\+\+BY} (streams\+Process\+Mutex\+\_\+)
+\item 
+\Hypertarget{classCamera3RequestDescriptor_ad11b9ae5f12a2eba0bf2100188c58c28}\label{classCamera3RequestDescriptor_ad11b9ae5f12a2eba0bf2100188c58c28} 
+{\bfseries Camera3\+Request\+Descriptor} (\mbox{\hyperlink{classlibcamera_1_1Camera}{libcamera\+::\+Camera}} \texorpdfstring{$\ast$}{*}camera, const \mbox{\hyperlink{structcamera3__capture__request}{camera3\+\_\+capture\+\_\+request\+\_\+t}} \texorpdfstring{$\ast$}{*}camera3\+Request)
+\item 
+\Hypertarget{classCamera3RequestDescriptor_a75b7de7cb55c42e13dc2e7a85b62c94a}\label{classCamera3RequestDescriptor_a75b7de7cb55c42e13dc2e7a85b62c94a} 
+bool {\bfseries is\+Pending} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classCamera3RequestDescriptor_a675f21cae78c6529914c9461be9e94c2}\label{classCamera3RequestDescriptor_a675f21cae78c6529914c9461be9e94c2} 
+libcamera\+::\+Mutex {\bfseries streams\+Process\+Mutex\+\_\+}
+\item 
+\Hypertarget{classCamera3RequestDescriptor_ad164e07cfe12323dd726c897b86dbaca}\label{classCamera3RequestDescriptor_ad164e07cfe12323dd726c897b86dbaca} 
+uint32\+\_\+t {\bfseries frame\+Number\+\_\+} = 0
+\item 
+\Hypertarget{classCamera3RequestDescriptor_a9f29927db47e7bc4b07b6795fd7af9e0}\label{classCamera3RequestDescriptor_a9f29927db47e7bc4b07b6795fd7af9e0} 
+std\+::vector$<$ \mbox{\hyperlink{structCamera3RequestDescriptor_1_1StreamBuffer}{Stream\+Buffer}} $>$ {\bfseries buffers\+\_\+}
+\item 
+\Hypertarget{classCamera3RequestDescriptor_a723112f20098185e96394aa7f0597588}\label{classCamera3RequestDescriptor_a723112f20098185e96394aa7f0597588} 
+\mbox{\hyperlink{classCameraMetadata}{Camera\+Metadata}} {\bfseries settings\+\_\+}
+\item 
+\Hypertarget{classCamera3RequestDescriptor_abf2b0bc77e7834a62140894bf86a18fb}\label{classCamera3RequestDescriptor_abf2b0bc77e7834a62140894bf86a18fb} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1Request}{libcamera\+::\+Request}} $>$ {\bfseries request\+\_\+}
+\item 
+\Hypertarget{classCamera3RequestDescriptor_aaa67166e710ee632d7f759c03be6b25a}\label{classCamera3RequestDescriptor_aaa67166e710ee632d7f759c03be6b25a} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classCameraMetadata}{Camera\+Metadata}} $>$ {\bfseries result\+Metadata\+\_\+}
+\item 
+\Hypertarget{classCamera3RequestDescriptor_a4f95c80dc5d431e27a5faf2a4cadbc98}\label{classCamera3RequestDescriptor_a4f95c80dc5d431e27a5faf2a4cadbc98} 
+bool {\bfseries complete\+\_\+} = false
+\item 
+\Hypertarget{classCamera3RequestDescriptor_a7be686667f3ef4554134ea10bcd9f9bf}\label{classCamera3RequestDescriptor_a7be686667f3ef4554134ea10bcd9f9bf} 
+Status {\bfseries status\+\_\+} = Status\+::\+Success
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/android/camera\+\_\+request.\+h\item 
+src/peripherals/camera/libcamera/src/android/camera\+\_\+request.\+cpp\end{DoxyCompactItemize}

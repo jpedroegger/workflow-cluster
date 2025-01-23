@@ -1,0 +1,51 @@
+\doxysection{py\+\_\+camera\+\_\+manager.\+h}
+\hypertarget{py__camera__manager_8h_source}{}\label{py__camera__manager_8h_source}\index{src/peripherals/camera/libcamera/src/py/libcamera/py\_camera\_manager.h@{src/peripherals/camera/libcamera/src/py/libcamera/py\_camera\_manager.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2022,\ Tomi\ Valkeinen\ <tomi.valkeinen@ideasonboard.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{mutex_8h}{libcamera/base/mutex.h}}>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <libcamera/libcamera.h>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <pybind11/pybind11.h>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespacelibcamera}{libcamera}};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPyCameraManager}{PyCameraManager}}}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{classPyCameraManager}{PyCameraManager}}();}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{classPyCameraManager}{\string~PyCameraManager}}();}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ pybind11::list\ cameras();}
+\DoxyCodeLine{00023\ \ \ \ \ std::shared\_ptr<Camera>\ get(\textcolor{keyword}{const}\ std::string\ \&name)\ \{\ \textcolor{keywordflow}{return}\ cameraManager\_-\/>get(name);\ \}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ std::string\ \&version()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classlibcamera_1_1CameraManager_a491b49c074dfc3c55e791b2b63437011}{CameraManager::version}}();\ \}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{int}\ eventFd()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ eventFd\_.\mbox{\hyperlink{classlibcamera_1_1UniqueFD_a0769c043d5d1971da504a359fb35565c}{get}}();\ \}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ std::vector<pybind11::object>\ getReadyRequests();}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ handleRequestCompleted(\mbox{\hyperlink{classlibcamera_1_1Request}{Request}}\ *req);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00034\ \ \ \ \ std::unique\_ptr<CameraManager>\ cameraManager\_;}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1UniqueFD}{UniqueFD}}\ eventFd\_;}
+\DoxyCodeLine{00037\ \ \ \ \ libcamera::Mutex\ completedRequestsMutex\_;}
+\DoxyCodeLine{00038\ \ \ \ \ std::vector<Request\ *>\ completedRequests\_}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ LIBCAMERA\_TSA\_GUARDED\_BY(completedRequestsMutex\_);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ writeFd();}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{int}\ readFd();}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ pushRequest(\mbox{\hyperlink{classlibcamera_1_1Request}{Request}}\ *req);}
+\DoxyCodeLine{00044\ \ \ \ \ std::vector<Request\ *>\ getCompletedRequests();}
+\DoxyCodeLine{00045\ \};}
+
+\end{DoxyCode}

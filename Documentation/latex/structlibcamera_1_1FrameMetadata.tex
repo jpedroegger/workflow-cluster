@@ -1,0 +1,146 @@
+\doxysection{libcamera\+::Frame\+Metadata Struct Reference}
+\hypertarget{structlibcamera_1_1FrameMetadata}{}\label{structlibcamera_1_1FrameMetadata}\index{libcamera::FrameMetadata@{libcamera::FrameMetadata}}
+
+
+Metadata related to a captured frame.  
+
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structlibcamera_1_1FrameMetadata_1_1Plane}{Plane}}
+\begin{DoxyCompactList}\small\item\em Per-\/plane frame metadata. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{structlibcamera_1_1FrameMetadata_a0ba5ab50b5169a1d94f6963c429c9846}{Status}} \{ \mbox{\hyperlink{structlibcamera_1_1FrameMetadata_a0ba5ab50b5169a1d94f6963c429c9846af31d76e864a0067eddc5cf96cfcfca1d}{Frame\+Success}}
+, \mbox{\hyperlink{structlibcamera_1_1FrameMetadata_a0ba5ab50b5169a1d94f6963c429c9846a7c1aeab00983653a779208f2726e9a83}{Frame\+Error}}
+, \mbox{\hyperlink{structlibcamera_1_1FrameMetadata_a0ba5ab50b5169a1d94f6963c429c9846a1ca4a9a1fbd6225f498e4ab942da1ce4}{Frame\+Cancelled}}
+ \}
+\begin{DoxyCompactList}\small\item\em Define the frame completion status. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1Span}{Span}}$<$ \mbox{\hyperlink{structlibcamera_1_1FrameMetadata_1_1Plane}{Plane}} $>$ \mbox{\hyperlink{structlibcamera_1_1FrameMetadata_ad3250df0268a98a8c08d0f7bafe318b8}{planes}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the array of per-\/plane metadata.   \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1Span}{Span}}$<$ const \mbox{\hyperlink{structlibcamera_1_1FrameMetadata_1_1Plane}{Plane}} $>$ \mbox{\hyperlink{structlibcamera_1_1FrameMetadata_a75f505da19a6f81cccbd563c6c90d595}{planes}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the array of per-\/plane metadata. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structlibcamera_1_1FrameMetadata_a0ba5ab50b5169a1d94f6963c429c9846}{Status}} \mbox{\hyperlink{structlibcamera_1_1FrameMetadata_ae1d7383e0cfe72d33f492a26b9e01009}{status}}
+\begin{DoxyCompactList}\small\item\em Status of the frame. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{structlibcamera_1_1FrameMetadata_a4a380f9a873aba1d45638e8ad16669d5}{sequence}}
+\begin{DoxyCompactList}\small\item\em Frame sequence number. \end{DoxyCompactList}\item 
+uint64\+\_\+t \mbox{\hyperlink{structlibcamera_1_1FrameMetadata_a08999a7c7b62eeba0a36d352c314bc65}{timestamp}}
+\begin{DoxyCompactList}\small\item\em Time when the frame was captured. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structlibcamera_1_1FrameMetadata_a7e815028687ed9f9e9e25851d8a17b27}\label{structlibcamera_1_1FrameMetadata_a7e815028687ed9f9e9e25851d8a17b27} 
+class {\bfseries Frame\+Buffer}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Metadata related to a captured frame. 
+
+The \doxylink{structlibcamera_1_1FrameMetadata}{Frame\+Metadata} structure stores all metadata related to a captured frame, as stored in a \doxylink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}, such as capture status, timestamp and bytes used. 
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{structlibcamera_1_1FrameMetadata_a0ba5ab50b5169a1d94f6963c429c9846}\label{structlibcamera_1_1FrameMetadata_a0ba5ab50b5169a1d94f6963c429c9846} 
+\index{libcamera::FrameMetadata@{libcamera::FrameMetadata}!Status@{Status}}
+\index{Status@{Status}!libcamera::FrameMetadata@{libcamera::FrameMetadata}}
+\doxysubsubsection{\texorpdfstring{Status}{Status}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{structlibcamera_1_1FrameMetadata_a0ba5ab50b5169a1d94f6963c429c9846}{libcamera\+::\+Frame\+Metadata\+::\+Status}}}
+
+
+
+Define the frame completion status. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FrameSuccess@{FrameSuccess}!libcamera::FrameMetadata@{libcamera::FrameMetadata}}\index{libcamera::FrameMetadata@{libcamera::FrameMetadata}!FrameSuccess@{FrameSuccess}}}\Hypertarget{structlibcamera_1_1FrameMetadata_a0ba5ab50b5169a1d94f6963c429c9846af31d76e864a0067eddc5cf96cfcfca1d}\label{structlibcamera_1_1FrameMetadata_a0ba5ab50b5169a1d94f6963c429c9846af31d76e864a0067eddc5cf96cfcfca1d} 
+Frame\+Success&The frame has been captured with success and contains valid data. All fields of the \doxylink{structlibcamera_1_1FrameMetadata}{Frame\+Metadata} structure are valid. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FrameError@{FrameError}!libcamera::FrameMetadata@{libcamera::FrameMetadata}}\index{libcamera::FrameMetadata@{libcamera::FrameMetadata}!FrameError@{FrameError}}}\Hypertarget{structlibcamera_1_1FrameMetadata_a0ba5ab50b5169a1d94f6963c429c9846a7c1aeab00983653a779208f2726e9a83}\label{structlibcamera_1_1FrameMetadata_a0ba5ab50b5169a1d94f6963c429c9846a7c1aeab00983653a779208f2726e9a83} 
+Frame\+Error&An error occurred during capture of the frame. The frame data may be partly or fully invalid. The sequence and timestamp fields of the \doxylink{structlibcamera_1_1FrameMetadata}{Frame\+Metadata} structure is valid, the other fields may be invalid. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FrameCancelled@{FrameCancelled}!libcamera::FrameMetadata@{libcamera::FrameMetadata}}\index{libcamera::FrameMetadata@{libcamera::FrameMetadata}!FrameCancelled@{FrameCancelled}}}\Hypertarget{structlibcamera_1_1FrameMetadata_a0ba5ab50b5169a1d94f6963c429c9846a1ca4a9a1fbd6225f498e4ab942da1ce4}\label{structlibcamera_1_1FrameMetadata_a0ba5ab50b5169a1d94f6963c429c9846a1ca4a9a1fbd6225f498e4ab942da1ce4} 
+Frame\+Cancelled&\doxylink{classCapture}{Capture} stopped before the frame completed. The frame data is not valid. All fields of the \doxylink{structlibcamera_1_1FrameMetadata}{Frame\+Metadata} structure but the status field are invalid. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structlibcamera_1_1FrameMetadata_ad3250df0268a98a8c08d0f7bafe318b8}\label{structlibcamera_1_1FrameMetadata_ad3250df0268a98a8c08d0f7bafe318b8} 
+\index{libcamera::FrameMetadata@{libcamera::FrameMetadata}!planes@{planes}}
+\index{planes@{planes}!libcamera::FrameMetadata@{libcamera::FrameMetadata}}
+\doxysubsubsection{\texorpdfstring{planes()}{planes()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily libcamera\+::\+Frame\+Metadata\+::planes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the array of per-\/plane metadata.   
+
+\begin{DoxyReturn}{Returns}
+The array of per-\/plane metadata   
+\end{DoxyReturn}
+\Hypertarget{structlibcamera_1_1FrameMetadata_a75f505da19a6f81cccbd563c6c90d595}\label{structlibcamera_1_1FrameMetadata_a75f505da19a6f81cccbd563c6c90d595} 
+\index{libcamera::FrameMetadata@{libcamera::FrameMetadata}!planes@{planes}}
+\index{planes@{planes}!libcamera::FrameMetadata@{libcamera::FrameMetadata}}
+\doxysubsubsection{\texorpdfstring{planes()}{planes()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily libcamera\+::\+Frame\+Metadata\+::planes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the array of per-\/plane metadata. 
+
+\begin{DoxyReturn}{Returns}
+The array of per-\/plane metadata 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structlibcamera_1_1FrameMetadata_a4a380f9a873aba1d45638e8ad16669d5}\label{structlibcamera_1_1FrameMetadata_a4a380f9a873aba1d45638e8ad16669d5} 
+\index{libcamera::FrameMetadata@{libcamera::FrameMetadata}!sequence@{sequence}}
+\index{sequence@{sequence}!libcamera::FrameMetadata@{libcamera::FrameMetadata}}
+\doxysubsubsection{\texorpdfstring{sequence}{sequence}}
+{\footnotesize\ttfamily libcamera\+::\+Frame\+Metadata\+::sequence}
+
+
+
+Frame sequence number. 
+
+The sequence number is a monotonically increasing number assigned to the frames captured by the stream. The value is increased by one for each frame. Gaps in the sequence numbers indicate dropped frames. \Hypertarget{structlibcamera_1_1FrameMetadata_ae1d7383e0cfe72d33f492a26b9e01009}\label{structlibcamera_1_1FrameMetadata_ae1d7383e0cfe72d33f492a26b9e01009} 
+\index{libcamera::FrameMetadata@{libcamera::FrameMetadata}!status@{status}}
+\index{status@{status}!libcamera::FrameMetadata@{libcamera::FrameMetadata}}
+\doxysubsubsection{\texorpdfstring{status}{status}}
+{\footnotesize\ttfamily libcamera\+::\+Frame\+Metadata\+::status}
+
+
+
+Status of the frame. 
+
+The validity of other fields of the \doxylink{structlibcamera_1_1FrameMetadata}{Frame\+Metadata} structure depends on the status value. \Hypertarget{structlibcamera_1_1FrameMetadata_a08999a7c7b62eeba0a36d352c314bc65}\label{structlibcamera_1_1FrameMetadata_a08999a7c7b62eeba0a36d352c314bc65} 
+\index{libcamera::FrameMetadata@{libcamera::FrameMetadata}!timestamp@{timestamp}}
+\index{timestamp@{timestamp}!libcamera::FrameMetadata@{libcamera::FrameMetadata}}
+\doxysubsubsection{\texorpdfstring{timestamp}{timestamp}}
+{\footnotesize\ttfamily libcamera\+::\+Frame\+Metadata\+::timestamp}
+
+
+
+Time when the frame was captured. 
+
+The timestamp is expressed as a number of nanoseconds relative to the system clock since an unspecified time point.
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000027}{Todo}}]Be more precise on what timestamps refer to. \end{DoxyRefDesc}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/\mbox{\hyperlink{framebuffer_8h}{framebuffer.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/framebuffer.\+cpp\end{DoxyCompactItemize}

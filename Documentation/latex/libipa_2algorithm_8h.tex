@@ -1,0 +1,58 @@
+\doxysection{src/peripherals/camera/libcamera/src/ipa/libipa/algorithm.h File Reference}
+\hypertarget{libipa_2algorithm_8h}{}\label{libipa_2algorithm_8h}\index{src/peripherals/camera/libcamera/src/ipa/libipa/algorithm.h@{src/peripherals/camera/libcamera/src/ipa/libipa/algorithm.h}}
+
+
+Algorithm common interface.  
+
+
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$libcamera/controls.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Algorithm}{libcamera\+::ipa\+::\+Algorithm$<$ \+\_\+\+Module $>$}}
+\begin{DoxyCompactList}\small\item\em The base class for all IPA algorithms. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classlibcamera_1_1ipa_1_1AlgorithmFactoryBase}{libcamera\+::ipa\+::\+Algorithm\+Factory\+Base$<$ \+\_\+\+Module $>$}}
+\item 
+class \mbox{\hyperlink{classlibcamera_1_1ipa_1_1AlgorithmFactory}{libcamera\+::ipa\+::\+Algorithm\+Factory$<$ \+\_\+\+Algorithm $>$}}
+\begin{DoxyCompactList}\small\item\em Registration of \doxylink{classlibcamera_1_1ipa_1_1Algorithm}{Algorithm} classes and creation of instances. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacelibcamera}{libcamera}}
+\begin{DoxyCompactList}\small\item\em Top-\/level libcamera namespace. \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{namespacelibcamera_1_1ipa}{libcamera\+::ipa}}
+\begin{DoxyCompactList}\small\item\em The IPA (\doxylink{classImage}{Image} Processing \doxylink{classlibcamera_1_1ipa_1_1Algorithm}{Algorithm}) namespace. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{libipa_2algorithm_8h_a9c0ec8296766fc4ffeba075b5bfce072}{REGISTER\+\_\+\+IPA\+\_\+\+ALGORITHM}}(algorithm,  name)~static Algorithm\+Factory$<$algorithm$>$ global\+\_\+\#\#algorithm\#\#Factory(name);
+\begin{DoxyCompactList}\small\item\em Register an algorithm with the IPA module. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Algorithm common interface. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{libipa_2algorithm_8h_a9c0ec8296766fc4ffeba075b5bfce072}\label{libipa_2algorithm_8h_a9c0ec8296766fc4ffeba075b5bfce072} 
+\index{algorithm.h@{algorithm.h}!REGISTER\_IPA\_ALGORITHM@{REGISTER\_IPA\_ALGORITHM}}
+\index{REGISTER\_IPA\_ALGORITHM@{REGISTER\_IPA\_ALGORITHM}!algorithm.h@{algorithm.h}}
+\doxysubsubsection{\texorpdfstring{REGISTER\_IPA\_ALGORITHM}{REGISTER\_IPA\_ALGORITHM}}
+{\footnotesize\ttfamily \#define REGISTER\+\_\+\+IPA\+\_\+\+ALGORITHM(\begin{DoxyParamCaption}\item[{}]{algorithm,  }\item[{}]{name }\end{DoxyParamCaption})~static Algorithm\+Factory$<$algorithm$>$ global\+\_\+\#\#algorithm\#\#Factory(name);}
+
+
+
+Register an algorithm with the IPA module. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em algorithm} & Class name of Algorithm derived class to register \\
+\hline
+\mbox{\texttt{ in}}  & {\em name} & Name of the algorithm\\
+\hline
+\end{DoxyParams}
+Register an Algorithm subclass with the IPA module to make it available for instantiation through Module\+::create\+Algorithm(). The {\itshape name} identifies the algorithm and must be unique across all algorithms registered for the IPA module. 

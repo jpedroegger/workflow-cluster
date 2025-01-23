@@ -1,0 +1,39 @@
+\doxysection{v4l2\+\_\+vp9\+\_\+segmentation Struct Reference}
+\hypertarget{structv4l2__vp9__segmentation}{}\label{structv4l2__vp9__segmentation}\index{v4l2\_vp9\_segmentation@{v4l2\_vp9\_segmentation}}
+
+
+{\ttfamily \#include $<$v4l2-\/controls.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structv4l2__vp9__segmentation_afb6d77610ba70817f59a4968e6464a40}\label{structv4l2__vp9__segmentation_afb6d77610ba70817f59a4968e6464a40} 
+\+\_\+\+\_\+s16 {\bfseries feature\+\_\+data} \mbox{[}8\mbox{]}\mbox{[}4\mbox{]}
+\item 
+\Hypertarget{structv4l2__vp9__segmentation_a987e5a746cd596bba89ce7b2a8c2a99d}\label{structv4l2__vp9__segmentation_a987e5a746cd596bba89ce7b2a8c2a99d} 
+\+\_\+\+\_\+u8 {\bfseries feature\+\_\+enabled} \mbox{[}8\mbox{]}
+\item 
+\Hypertarget{structv4l2__vp9__segmentation_a7375e901cd9c2195fd6669297d940c5a}\label{structv4l2__vp9__segmentation_a7375e901cd9c2195fd6669297d940c5a} 
+\+\_\+\+\_\+u8 {\bfseries tree\+\_\+probs} \mbox{[}7\mbox{]}
+\item 
+\Hypertarget{structv4l2__vp9__segmentation_aa8958cece58ca6b187566dcce66ee976}\label{structv4l2__vp9__segmentation_aa8958cece58ca6b187566dcce66ee976} 
+\+\_\+\+\_\+u8 {\bfseries pred\+\_\+probs} \mbox{[}3\mbox{]}
+\item 
+\Hypertarget{structv4l2__vp9__segmentation_a340bfab09e5a3b53d7fff02417caf8ab}\label{structv4l2__vp9__segmentation_a340bfab09e5a3b53d7fff02417caf8ab} 
+\+\_\+\+\_\+u8 {\bfseries flags}
+\item 
+\Hypertarget{structv4l2__vp9__segmentation_a4c081899fa7b7dc601f1f8b77bfdc145}\label{structv4l2__vp9__segmentation_a4c081899fa7b7dc601f1f8b77bfdc145} 
+\+\_\+\+\_\+u8 {\bfseries reserved} \mbox{[}5\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structv4l2__vp9__segmentation}{v4l2\+\_\+vp9\+\_\+segmentation} -\/ VP9 segmentation parameters
+
+@feature\+\_\+data\+: data attached to each feature. Data entry is only valid if the feature is enabled. The array shall be indexed with segment number as the first dimension (0..7) and one of V4\+L2\+\_\+\+VP9\+\_\+\+SEG\+\_\+\{\} as the second dimension. @feature\+\_\+enabled\+: bitmask defining which features are enabled in each segment. The value for each segment is a combination of V4\+L2\+\_\+\+VP9\+\_\+\+SEGMENT\+\_\+\+FEATURE\+\_\+\+ENABLED(id) values where id is one of V4\+L2\+\_\+\+VP9\+\_\+\+SEG\+\_\+\+LVL\+\_\+\{\}. @tree\+\_\+probs\+: specifies the probability values to be used when decoding a Segment-\/\+ID. See \textquotesingle{}5.\+15. Segmentation map\textquotesingle{} section of the VP9 specification for more details. @pred\+\_\+probs\+: specifies the probability values to be used when decoding a Predicted-\/\+Segment-\/\+ID. See \textquotesingle{}6.\+4.\+14. Get segment id syntax\textquotesingle{} section of \+:ref\+:{\ttfamily vp9} for more details. @flags\+: combination of V4\+L2\+\_\+\+VP9\+\_\+\+SEGMENTATION\+\_\+\+FLAG\+\_\+\{\} flags. @reserved\+: padding field. Should be zeroed by applications.
+
+Encodes the quantization parameters. See section \textquotesingle{}7.\+2.\+10 Segmentation params syntax\textquotesingle{} of the VP9 specification for more details. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/v4l2-\/controls.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,41 @@
+\doxysection{Dc\+Motors\+Node\+Test Class Reference}
+\hypertarget{classDcMotorsNodeTest}{}\label{classDcMotorsNodeTest}\index{DcMotorsNodeTest@{DcMotorsNodeTest}}
+Inheritance diagram for Dc\+Motors\+Node\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classDcMotorsNodeTest}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classDcMotorsNodeTest_a57e1e448cfd15cad0fdb718bd7b49ee2}\label{classDcMotorsNodeTest_a57e1e448cfd15cad0fdb718bd7b49ee2} 
+void {\bfseries Set\+Up} () override
+\item 
+\Hypertarget{classDcMotorsNodeTest_a6c5fee179ffee924feebd1e527746c59}\label{classDcMotorsNodeTest_a6c5fee179ffee924feebd1e527746c59} 
+void {\bfseries Tear\+Down} () override
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classDcMotorsNodeTest_af5229f916d4d363bef659b449471348e}\label{classDcMotorsNodeTest_af5229f916d4d363bef659b449471348e} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classDcMotorsNode}{Dc\+Motors\+Node}} $>$ {\bfseries test\+\_\+node\+\_\+}
+\item 
+\Hypertarget{classDcMotorsNodeTest_ac677861abfa8405e83a3106b6faaad1b}\label{classDcMotorsNodeTest_ac677861abfa8405e83a3106b6faaad1b} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMockPCA9685Driver}{Mock\+PCA9685\+Driver}} $>$ {\bfseries mock\+\_\+driver\+\_\+}
+\item 
+\Hypertarget{classDcMotorsNodeTest_a13d72861ba193b70eebde00bc2f2ff49}\label{classDcMotorsNodeTest_a13d72861ba193b70eebde00bc2f2ff49} 
+std\+::shared\+\_\+ptr$<$ rclcpp\+::\+Publisher$<$ geometry\+\_\+msgs\+::msg\+::\+Twist $>$ $>$ {\bfseries cmd\+\_\+vel\+\_\+pub\+\_\+}
+\item 
+\Hypertarget{classDcMotorsNodeTest_a57dc69857b9f6d58d90e13705fdd52ae}\label{classDcMotorsNodeTest_a57dc69857b9f6d58d90e13705fdd52ae} 
+std\+::unique\+\_\+ptr$<$ rclcpp\+::executors\+::\+Single\+Threaded\+Executor $>$ {\bfseries executor\+\_\+}
+\item 
+\Hypertarget{classDcMotorsNodeTest_a8e05e750cb3ac256d5b4b51c6b985ca4}\label{classDcMotorsNodeTest_a8e05e750cb3ac256d5b4b51c6b985ca4} 
+std\+::thread {\bfseries executor\+\_\+thread\+\_\+}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/dc\+\_\+motors/test/include/Dc\+Motors\+Node\+Test.\+hpp\item 
+src/peripherals/dc\+\_\+motors/test/src/Dc\+Motors\+Node\+Test.\+cpp\end{DoxyCompactItemize}

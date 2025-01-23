@@ -1,0 +1,34 @@
+\doxysection{Mock\+Can\+Driver Class Reference}
+\hypertarget{classMockCanDriver}{}\label{classMockCanDriver}\index{MockCanDriver@{MockCanDriver}}
+Inheritance diagram for Mock\+Can\+Driver\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classMockCanDriver}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classMockCanDriver_af9c0be4fc37aa830c5eb15ddfdb26a6d}\label{classMockCanDriver_af9c0be4fc37aa830c5eb15ddfdb26a6d} 
+{\bfseries MOCK\+\_\+\+METHOD} (ssize\+\_\+t, send\+Message,(const sockcanpp\+::\+Can\+Message \&msg, bool force\+\_\+extended),(override))
+\item 
+\Hypertarget{classMockCanDriver_af28cb54e55d15371e1641896a19c641d}\label{classMockCanDriver_af28cb54e55d15371e1641896a19c641d} 
+{\bfseries MOCK\+\_\+\+METHOD} (sockcanpp\+::\+Can\+Message, read\+Message,(),(override))
+\item 
+\Hypertarget{classMockCanDriver_a0256b6415609833c403dbbfaa68a95fa}\label{classMockCanDriver_a0256b6415609833c403dbbfaa68a95fa} 
+{\bfseries MOCK\+\_\+\+METHOD} (bool, wait\+For\+Messages,(sockcanpp\+::milliseconds timeout),(override))
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classICanDriver}{ICan\+Driver}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual ssize\+\_\+t {\bfseries send\+Message} (const sockcanpp\+::\+Can\+Message \&msg, bool force\+\_\+extended=false)=0
+\item 
+virtual sockcanpp\+::\+Can\+Message {\bfseries read\+Message} ()=0
+\item 
+virtual bool {\bfseries wait\+For\+Messages} (sockcanpp\+::milliseconds timeout)=0
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/bus\+\_\+interfaces/can\+\_\+interface/test/include/Mock\+Can\+Driver.\+hpp\end{DoxyCompactItemize}

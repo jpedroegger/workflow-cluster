@@ -1,0 +1,36 @@
+\doxysection{v4l2\+\_\+vp9\+\_\+quantization Struct Reference}
+\hypertarget{structv4l2__vp9__quantization}{}\label{structv4l2__vp9__quantization}\index{v4l2\_vp9\_quantization@{v4l2\_vp9\_quantization}}
+
+
+{\ttfamily \#include $<$v4l2-\/controls.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structv4l2__vp9__quantization_a7bb2fa794ccbd1820c5abba100898fa6}\label{structv4l2__vp9__quantization_a7bb2fa794ccbd1820c5abba100898fa6} 
+\+\_\+\+\_\+u8 {\bfseries base\+\_\+q\+\_\+idx}
+\item 
+\Hypertarget{structv4l2__vp9__quantization_aff092a15351ab8677bafa73e46362634}\label{structv4l2__vp9__quantization_aff092a15351ab8677bafa73e46362634} 
+\+\_\+\+\_\+s8 {\bfseries delta\+\_\+q\+\_\+y\+\_\+dc}
+\item 
+\Hypertarget{structv4l2__vp9__quantization_ac341328eccb748c91da4b3f5239ea1d5}\label{structv4l2__vp9__quantization_ac341328eccb748c91da4b3f5239ea1d5} 
+\+\_\+\+\_\+s8 {\bfseries delta\+\_\+q\+\_\+uv\+\_\+dc}
+\item 
+\Hypertarget{structv4l2__vp9__quantization_aadd3b616d45afe4f627a6fe53df55af2}\label{structv4l2__vp9__quantization_aadd3b616d45afe4f627a6fe53df55af2} 
+\+\_\+\+\_\+s8 {\bfseries delta\+\_\+q\+\_\+uv\+\_\+ac}
+\item 
+\Hypertarget{structv4l2__vp9__quantization_af1151938fc923353cc83564ff5699efb}\label{structv4l2__vp9__quantization_af1151938fc923353cc83564ff5699efb} 
+\+\_\+\+\_\+u8 {\bfseries reserved} \mbox{[}4\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structv4l2__vp9__quantization}{v4l2\+\_\+vp9\+\_\+quantization} -\/ VP9 quantization parameters
+
+@base\+\_\+q\+\_\+idx\+: indicates the base frame qindex. @delta\+\_\+q\+\_\+y\+\_\+dc\+: indicates the Y DC quantizer relative to base\+\_\+q\+\_\+idx. @delta\+\_\+q\+\_\+uv\+\_\+dc\+: indicates the UV DC quantizer relative to base\+\_\+q\+\_\+idx. @delta\+\_\+q\+\_\+uv\+\_\+ac\+: indicates the UV AC quantizer relative to base\+\_\+q\+\_\+idx. @reserved\+: padding field. Should be zeroed by applications.
+
+Encodes the quantization parameters. See section \textquotesingle{}7.\+2.\+9 Quantization params syntax\textquotesingle{} of the VP9 specification for more details. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/v4l2-\/controls.\+h\end{DoxyCompactItemize}

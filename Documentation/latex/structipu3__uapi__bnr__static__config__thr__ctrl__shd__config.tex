@@ -1,0 +1,33 @@
+\doxysection{ipu3\+\_\+uapi\+\_\+bnr\+\_\+static\+\_\+config\+\_\+thr\+\_\+ctrl\+\_\+shd\+\_\+config Struct Reference}
+\hypertarget{structipu3__uapi__bnr__static__config__thr__ctrl__shd__config}{}\label{structipu3__uapi__bnr__static__config__thr__ctrl__shd__config}\index{ipu3\_uapi\_bnr\_static\_config\_thr\_ctrl\_shd\_config@{ipu3\_uapi\_bnr\_static\_config\_thr\_ctrl\_shd\_config}}
+
+
+{\ttfamily \#include $<$intel-\/ipu3.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structipu3__uapi__bnr__static__config__thr__ctrl__shd__config_a082f1a0409a2943b89c73ad45e6af345}\label{structipu3__uapi__bnr__static__config__thr__ctrl__shd__config_a082f1a0409a2943b89c73ad45e6af345} 
+\+\_\+\+\_\+u8 {\bfseries gr}
+\item 
+\Hypertarget{structipu3__uapi__bnr__static__config__thr__ctrl__shd__config_aa50701de4750ebe2dd63273b5cf26706}\label{structipu3__uapi__bnr__static__config__thr__ctrl__shd__config_aa50701de4750ebe2dd63273b5cf26706} 
+\+\_\+\+\_\+u8 {\bfseries r}
+\item 
+\Hypertarget{structipu3__uapi__bnr__static__config__thr__ctrl__shd__config_af760469813fce8f302c04893973fec78}\label{structipu3__uapi__bnr__static__config__thr__ctrl__shd__config_af760469813fce8f302c04893973fec78} 
+\+\_\+\+\_\+u8 {\bfseries b}
+\item 
+\Hypertarget{structipu3__uapi__bnr__static__config__thr__ctrl__shd__config_af30fd55a371577a4c0ec28647302fb94}\label{structipu3__uapi__bnr__static__config__thr__ctrl__shd__config_af30fd55a371577a4c0ec28647302fb94} 
+\+\_\+\+\_\+u8 {\bfseries gb}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structipu3__uapi__bnr__static__config__thr__ctrl__shd__config}{ipu3\+\_\+uapi\+\_\+bnr\+\_\+static\+\_\+config\+\_\+thr\+\_\+ctrl\+\_\+shd\+\_\+config} -\/ Shading config
+
+@gr\+: Coefficient defines lens shading gain approximation for gr channel @r\+: Coefficient defines lens shading gain approximation for r channel {\bfseries{}}\+: Coefficient defines lens shading gain approximation for b channel @gb\+: Coefficient defines lens shading gain approximation for gb channel
+
+Parameters for noise model (NM) adaptation of BNR due to shading correction. All above have precision of u3.\+3, default to 0. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/intel-\/ipu3.\+h\end{DoxyCompactItemize}

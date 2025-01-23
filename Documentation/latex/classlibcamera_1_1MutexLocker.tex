@@ -1,0 +1,43 @@
+\doxysection{libcamera\+::Mutex\+Locker Class Reference}
+\hypertarget{classlibcamera_1_1MutexLocker}{}\label{classlibcamera_1_1MutexLocker}\index{libcamera::MutexLocker@{libcamera::MutexLocker}}
+
+
+std\+::unique\+\_\+lock wrapper with clang thread safety annotation  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1MutexLocker_a7edf3930d3f5bb83ffcfa7bf20cb56fd}\label{classlibcamera_1_1MutexLocker_a7edf3930d3f5bb83ffcfa7bf20cb56fd} 
+{\bfseries Mutex\+Locker} (\mbox{\hyperlink{classMutex}{Mutex}} \&mutex) LIBCAMERA\+\_\+\+TSA\+\_\+\+ACQUIRE(mutex)
+\item 
+\Hypertarget{classlibcamera_1_1MutexLocker_ab5c5af778bf08f7548642816aa813310}\label{classlibcamera_1_1MutexLocker_ab5c5af778bf08f7548642816aa813310} 
+{\bfseries Mutex\+Locker} (\mbox{\hyperlink{classMutex}{Mutex}} \&mutex, std\+::defer\+\_\+lock\+\_\+t t) noexcept LIBCAMERA\+\_\+\+TSA\+\_\+\+EXCLUDES(mutex)
+\item 
+\Hypertarget{classlibcamera_1_1MutexLocker_ae9638da84d4563519ed7999043013a14}\label{classlibcamera_1_1MutexLocker_ae9638da84d4563519ed7999043013a14} 
+void {\bfseries lock} () LIBCAMERA\+\_\+\+TSA\+\_\+\+ACQUIRE()
+\item 
+\Hypertarget{classlibcamera_1_1MutexLocker_ad3c13a47e3c63651cf55e75263a25a92}\label{classlibcamera_1_1MutexLocker_ad3c13a47e3c63651cf55e75263a25a92} 
+bool {\bfseries try\+\_\+lock} () LIBCAMERA\+\_\+\+TSA\+\_\+\+TRY\+\_\+\+ACQUIRE(true)
+\item 
+\Hypertarget{classlibcamera_1_1MutexLocker_add1ec6c60f6fa4e8ad0c700ac41c90ef}\label{classlibcamera_1_1MutexLocker_add1ec6c60f6fa4e8ad0c700ac41c90ef} 
+void {\bfseries unlock} () LIBCAMERA\+\_\+\+TSA\+\_\+\+RELEASE()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1MutexLocker_ab270e49e575fdf0fe1a4f2ee911df116}\label{classlibcamera_1_1MutexLocker_ab270e49e575fdf0fe1a4f2ee911df116} 
+class {\bfseries Condition\+Variable}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+std\+::unique\+\_\+lock wrapper with clang thread safety annotation 
+
+The \doxylink{classlibcamera_1_1MutexLocker}{Mutex\+Locker} class wraps a std\+::unique\+\_\+lock instance to add clang thread safety annotation support. The class exposes the same interface as std\+::unique\+\_\+lock and can be used as a transparent replacement. It integrates with the \doxylink{classMutex}{Mutex} and \doxylink{classlibcamera_1_1ConditionVariable}{Condition\+Variable} classes.
+
+See \href{https://en.cppreference.com/w/cpp/thread/unique_lock}{\texttt{ https\+://en.\+cppreference.\+com/w/cpp/thread/unique\+\_\+lock}} for the complete API documentation. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/base/\mbox{\hyperlink{mutex_8h}{mutex.\+h}}\end{DoxyCompactItemize}

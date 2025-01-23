@@ -1,0 +1,134 @@
+\doxysection{camera.\+h}
+\hypertarget{android_2system_2core_2include_2system_2camera_8h_source}{}\label{android_2system_2core_2include_2system_2camera_8h_source}\index{src/peripherals/camera/libcamera/include/android/system/core/include/system/camera.h@{src/peripherals/camera/libcamera/include/android/system/core/include/system/camera.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ Apache-\/2.0\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2011\ The\ Android\ Open\ Source\ Project}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ SYSTEM\_CORE\_INCLUDE\_ANDROID\_CAMERA\_H}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ SYSTEM\_CORE\_INCLUDE\_ANDROID\_CAMERA\_H}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <sys/cdefs.h>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <sys/types.h>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <cutils/native\_handle.h>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <hardware/hardware.h>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <hardware/gralloc.h>}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \_\_BEGIN\_DECLS}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ CAMERA\_FRAME\_CALLBACK\_FLAG\_ENABLE\_MASK\ =\ 0x01,}
+\DoxyCodeLine{00063\ \ \ \ \ CAMERA\_FRAME\_CALLBACK\_FLAG\_ONE\_SHOT\_MASK\ =\ 0x02,}
+\DoxyCodeLine{00064\ \ \ \ \ CAMERA\_FRAME\_CALLBACK\_FLAG\_COPY\_OUT\_MASK\ =\ 0x04,}
+\DoxyCodeLine{00066\ \ \ \ \ CAMERA\_FRAME\_CALLBACK\_FLAG\_NOOP\ =\ 0x00,}
+\DoxyCodeLine{00067\ \ \ \ \ CAMERA\_FRAME\_CALLBACK\_FLAG\_CAMCORDER\ =\ 0x01,}
+\DoxyCodeLine{00068\ \ \ \ \ CAMERA\_FRAME\_CALLBACK\_FLAG\_CAMERA\ =\ 0x05,}
+\DoxyCodeLine{00069\ \ \ \ \ CAMERA\_FRAME\_CALLBACK\_FLAG\_BARCODE\_SCANNER\ =\ 0x07}
+\DoxyCodeLine{00070\ \};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00073\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00074\ \ \ \ \ CAMERA\_MSG\_ERROR\ =\ 0x0001,\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ notifyCallback}}
+\DoxyCodeLine{00075\ \ \ \ \ CAMERA\_MSG\_SHUTTER\ =\ 0x0002,\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ notifyCallback}}
+\DoxyCodeLine{00076\ \ \ \ \ CAMERA\_MSG\_FOCUS\ =\ 0x0004,\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ notifyCallback}}
+\DoxyCodeLine{00077\ \ \ \ \ CAMERA\_MSG\_ZOOM\ =\ 0x0008,\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ notifyCallback}}
+\DoxyCodeLine{00078\ \ \ \ \ CAMERA\_MSG\_PREVIEW\_FRAME\ =\ 0x0010,\ \ \ \ \textcolor{comment}{//\ dataCallback}}
+\DoxyCodeLine{00079\ \ \ \ \ CAMERA\_MSG\_VIDEO\_FRAME\ =\ 0x0020,\ \ \ \ \ \ \textcolor{comment}{//\ data\_timestamp\_callback}}
+\DoxyCodeLine{00080\ \ \ \ \ CAMERA\_MSG\_POSTVIEW\_FRAME\ =\ 0x0040,\ \ \ \textcolor{comment}{//\ dataCallback}}
+\DoxyCodeLine{00081\ \ \ \ \ CAMERA\_MSG\_RAW\_IMAGE\ =\ 0x0080,\ \ \ \ \ \ \ \ \textcolor{comment}{//\ dataCallback}}
+\DoxyCodeLine{00082\ \ \ \ \ CAMERA\_MSG\_COMPRESSED\_IMAGE\ =\ 0x0100,\ \textcolor{comment}{//\ dataCallback}}
+\DoxyCodeLine{00083\ \ \ \ \ CAMERA\_MSG\_RAW\_IMAGE\_NOTIFY\ =\ 0x0200,\ \textcolor{comment}{//\ dataCallback}}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{comment}{//\ Preview\ frame\ metadata.\ This\ can\ be\ combined\ with}}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{comment}{//\ CAMERA\_MSG\_PREVIEW\_FRAME\ in\ dataCallback.\ For\ example,\ the\ apps\ can}}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{comment}{//\ request\ FRAME\ and\ METADATA.\ Or\ the\ apps\ can\ request\ only\ FRAME\ or\ only}}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{comment}{//\ METADATA.}}
+\DoxyCodeLine{00088\ \ \ \ \ CAMERA\_MSG\_PREVIEW\_METADATA\ =\ 0x0400,\ \textcolor{comment}{//\ dataCallback}}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{comment}{//\ Notify\ on\ autofocus\ start\ and\ stop.\ This\ is\ useful\ in\ continuous}}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{comment}{//\ autofocus\ -\/\ FOCUS\_MODE\_CONTINUOUS\_VIDEO\ and\ FOCUS\_MODE\_CONTINUOUS\_PICTURE.}}
+\DoxyCodeLine{00091\ \ \ \ \ CAMERA\_MSG\_FOCUS\_MOVE\ =\ 0x0800,\ \ \ \ \ \ \ \textcolor{comment}{//\ notifyCallback}}
+\DoxyCodeLine{00092\ \ \ \ \ CAMERA\_MSG\_ALL\_MSGS\ =\ 0xFFFF}
+\DoxyCodeLine{00093\ \};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00096\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00097\ \ \ \ \ CAMERA\_CMD\_START\_SMOOTH\_ZOOM\ =\ 1,}
+\DoxyCodeLine{00098\ \ \ \ \ CAMERA\_CMD\_STOP\_SMOOTH\_ZOOM\ =\ 2,}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00115\ \ \ \ \ CAMERA\_CMD\_SET\_DISPLAY\_ORIENTATION\ =\ 3,}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00121\ \ \ \ \ CAMERA\_CMD\_ENABLE\_SHUTTER\_SOUND\ =\ 4,}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{comment}{/*\ cmdType\ to\ play\ recording\ sound\ */}}
+\DoxyCodeLine{00124\ \ \ \ \ CAMERA\_CMD\_PLAY\_RECORDING\_SOUND\ =\ 5,}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00144\ \ \ \ \ CAMERA\_CMD\_START\_FACE\_DETECTION\ =\ 6,}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00149\ \ \ \ \ CAMERA\_CMD\_STOP\_FACE\_DETECTION\ =\ 7,}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00155\ \ \ \ \ CAMERA\_CMD\_ENABLE\_FOCUS\_MOVE\_MSG\ =\ 8,}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00166\ \ \ \ \ CAMERA\_CMD\_PING\ =\ 9,}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00177\ \ \ \ \ CAMERA\_CMD\_SET\_VIDEO\_BUFFER\_COUNT\ =\ 10,}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00193\ \ \ \ \ CAMERA\_CMD\_SET\_VIDEO\_FORMAT\ =\ 11}
+\DoxyCodeLine{00194\ \};}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00197\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00198\ \ \ \ \ CAMERA\_ERROR\_UNKNOWN\ =\ 1,}
+\DoxyCodeLine{00206\ \ \ \ \ CAMERA\_ERROR\_RELEASED\ =\ 2,}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00215\ \ \ \ \ CAMERA\_ERROR\_DISABLED\ =\ 3,}
+\DoxyCodeLine{00216\ \ \ \ \ CAMERA\_ERROR\_SERVER\_DIED\ =\ 100}
+\DoxyCodeLine{00217\ \};}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00219\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00221\ \ \ \ \ CAMERA\_FACING\_BACK\ =\ 0,}
+\DoxyCodeLine{00223\ \ \ \ \ CAMERA\_FACING\_FRONT\ =\ 1,}
+\DoxyCodeLine{00228\ \ \ \ \ CAMERA\_FACING\_EXTERNAL\ =\ 2}
+\DoxyCodeLine{00229\ \};}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00231\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00233\ \ \ \ \ CAMERA\_FACE\_DETECTION\_HW\ =\ 0,}
+\DoxyCodeLine{00238\ \ \ \ \ CAMERA\_FACE\_DETECTION\_SW\ =\ 1}
+\DoxyCodeLine{00239\ \};}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00244\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structcamera__face}{camera\_face}}\ \{}
+\DoxyCodeLine{00255\ \ \ \ \ int32\_t\ \mbox{\hyperlink{structcamera__face_a1ac7c42a7a73e04b4ca985fa77da448a}{rect}}[4];}
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00262\ \ \ \ \ int32\_t\ \mbox{\hyperlink{structcamera__face_aa5462b11ba73045295a789065af29a55}{score}};}
+\DoxyCodeLine{00263\ }
+\DoxyCodeLine{00269\ \ \ \ \ int32\_t\ \mbox{\hyperlink{structcamera__face_aee897cf90e6785a226b24759041bb7ee}{id}};}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00275\ \ \ \ \ int32\_t\ \mbox{\hyperlink{structcamera__face_ae8eef0cbe0619a05ff99e6fd3a75b711}{left\_eye}}[2];}
+\DoxyCodeLine{00276\ }
+\DoxyCodeLine{00281\ \ \ \ \ int32\_t\ \mbox{\hyperlink{structcamera__face_abd98b692f571b49dd84d3165a8c14315}{right\_eye}}[2];}
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00287\ \ \ \ \ int32\_t\ \mbox{\hyperlink{structcamera__face_a1aa70fd3870c424edd8a4623bf946771}{mouth}}[2];}
+\DoxyCodeLine{00288\ }
+\DoxyCodeLine{00289\ \}\ \mbox{\hyperlink{structcamera__face}{camera\_face\_t}};}
+\DoxyCodeLine{00290\ }
+\DoxyCodeLine{00294\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structcamera__frame__metadata}{camera\_frame\_metadata}}\ \{}
+\DoxyCodeLine{00298\ \ \ \ \ int32\_t\ \mbox{\hyperlink{structcamera__frame__metadata_aab32d429368bcee13ea9606ff4cf8c6f}{number\_of\_faces}};}
+\DoxyCodeLine{00299\ }
+\DoxyCodeLine{00303\ \ \ \ \ \mbox{\hyperlink{structcamera__face}{camera\_face\_t}}\ *\mbox{\hyperlink{structcamera__frame__metadata_a84ae0fbde73a5d9c96e6f4bcc6d852f3}{faces}};}
+\DoxyCodeLine{00304\ \}\ \mbox{\hyperlink{structcamera__frame__metadata}{camera\_frame\_metadata\_t}};}
+\DoxyCodeLine{00305\ }
+\DoxyCodeLine{00306\ \_\_END\_DECLS}
+\DoxyCodeLine{00307\ }
+\DoxyCodeLine{00308\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ SYSTEM\_CORE\_INCLUDE\_ANDROID\_CAMERA\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

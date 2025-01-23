@@ -1,0 +1,205 @@
+\doxysection{awb.\+h}
+\hypertarget{rpi_2controller_2rpi_2awb_8h_source}{}\label{rpi_2controller_2rpi_2awb_8h_source}\index{src/peripherals/camera/libcamera/src/ipa/rpi/controller/rpi/awb.h@{src/peripherals/camera/libcamera/src/ipa/rpi/controller/rpi/awb.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ BSD-\/2-\/Clause\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2019,\ Raspberry\ Pi\ Ltd}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ AWB\ control\ algorithm}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <condition\_variable>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{geometry_8h}{libcamera/geometry.h}}>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}../awb\_algorithm.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}../awb\_status.h"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}../statistics.h"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pwl_8h}{libipa/pwl.h}}"{}}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{namespace\ }RPiController\ \{}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{/*\ Control\ algorithm\ to\ perform\ AWB\ calculations.\ */}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structRPiController_1_1AwbMode}{AwbMode}}\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{int}\ read(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1YamlObject}{libcamera::YamlObject}}\ \&params);}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{double}\ ctLo;\ \textcolor{comment}{/*\ low\ CT\ value\ for\ search\ */}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{double}\ ctHi;\ \textcolor{comment}{/*\ high\ CT\ value\ for\ search\ */}}
+\DoxyCodeLine{00029\ \};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structRPiController_1_1AwbPrior}{AwbPrior}}\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{int}\ read(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1YamlObject}{libcamera::YamlObject}}\ \&params);}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{double}\ lux;\ \textcolor{comment}{/*\ lux\ level\ */}}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Pwl}{libcamera::ipa::Pwl}}\ prior;\ \textcolor{comment}{/*\ maps\ CT\ to\ prior\ log\ likelihood\ for\ this\ lux\ level\ */}}
+\DoxyCodeLine{00035\ \};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structRPiController_1_1AwbConfig}{AwbConfig}}\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{structRPiController_1_1AwbConfig}{AwbConfig}}()\ :\ defaultMode(\textcolor{keyword}{nullptr})\ \{\}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{int}\ read(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1YamlObject}{libcamera::YamlObject}}\ \&params);}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{comment}{/*\ Only\ repeat\ the\ AWB\ calculation\ every\ "{}this\ many"{}\ frames\ */}}
+\DoxyCodeLine{00041\ \ \ \ \ uint16\_t\ framePeriod;}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{/*\ number\ of\ initial\ frames\ for\ which\ speed\ taken\ as\ 1.0\ (maximum)\ */}}
+\DoxyCodeLine{00043\ \ \ \ \ uint16\_t\ startupFrames;}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ convergenceFrames;\ \textcolor{comment}{/*\ approx\ number\ of\ frames\ to\ converge\ */}}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{double}\ speed;\ \textcolor{comment}{/*\ IIR\ filter\ speed\ applied\ to\ algorithm\ results\ */}}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{bool}\ fast;\ \textcolor{comment}{/*\ "{}fast"{}\ mode\ uses\ a\ 16x16\ rather\ than\ 32x32\ grid\ */}}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Pwl}{libcamera::ipa::Pwl}}\ ctR;\ \textcolor{comment}{/*\ function\ maps\ CT\ to\ r\ (=\ R/G)\ */}}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Pwl}{libcamera::ipa::Pwl}}\ ctB;\ \textcolor{comment}{/*\ function\ maps\ CT\ to\ b\ (=\ B/G)\ */}}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Pwl}{libcamera::ipa::Pwl}}\ ctRInverse;\ \textcolor{comment}{/*\ inverse\ of\ ctR\ */}}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Pwl}{libcamera::ipa::Pwl}}\ ctBInverse;\ \textcolor{comment}{/*\ inverse\ of\ ctB\ */}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{comment}{/*\ table\ of\ illuminant\ priors\ at\ different\ lux\ levels\ */}}
+\DoxyCodeLine{00052\ \ \ \ \ std::vector<AwbPrior>\ priors;}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{comment}{/*\ AWB\ "{}modes"{}\ (determines\ the\ search\ range)\ */}}
+\DoxyCodeLine{00054\ \ \ \ \ std::map<std::string,\ AwbMode>\ modes;}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{structRPiController_1_1AwbMode}{AwbMode}}\ *defaultMode;\ \textcolor{comment}{/*\ mode\ used\ if\ no\ mode\ selected\ */}}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00057\ \textcolor{comment}{\ \ \ \ \ *\ minimum\ proportion\ of\ pixels\ counted\ within\ AWB\ region\ for\ it\ to\ be}}
+\DoxyCodeLine{00058\ \textcolor{comment}{\ \ \ \ \ *\ "{}useful"{}}}
+\DoxyCodeLine{00059\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{double}\ minPixels;}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{/*\ minimum\ G\ value\ of\ those\ pixels,\ to\ be\ regarded\ a\ "{}useful"{}\ */}}
+\DoxyCodeLine{00062\ \ \ \ \ uint16\_t\ minG;}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00064\ \textcolor{comment}{\ \ \ \ \ *\ number\ of\ AWB\ regions\ that\ must\ be\ "{}useful"{}\ in\ order\ to\ do\ the\ AWB}}
+\DoxyCodeLine{00065\ \textcolor{comment}{\ \ \ \ \ *\ calculation}}
+\DoxyCodeLine{00066\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00067\ \ \ \ \ uint32\_t\ minRegions;}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{comment}{/*\ clamp\ on\ colour\ error\ term\ (so\ as\ not\ to\ penalise\ non-\/grey\ excessively)\ */}}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{double}\ deltaLimit;}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{comment}{/*\ step\ size\ control\ in\ coarse\ search\ */}}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{double}\ coarseStep;}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{comment}{/*\ how\ far\ to\ wander\ off\ CT\ curve\ towards\ "{}more\ purple"{}\ */}}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{double}\ transversePos;}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{comment}{/*\ how\ far\ to\ wander\ off\ CT\ curve\ towards\ "{}more\ green"{}\ */}}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{double}\ transverseNeg;}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00077\ \textcolor{comment}{\ \ \ \ \ *\ red\ sensitivity\ ratio\ (set\ to\ canonical\ sensor's\ R/G\ divided\ by\ this}}
+\DoxyCodeLine{00078\ \textcolor{comment}{\ \ \ \ \ *\ sensor's\ R/G)}}
+\DoxyCodeLine{00079\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{double}\ sensitivityR;}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00082\ \textcolor{comment}{\ \ \ \ \ *\ blue\ sensitivity\ ratio\ (set\ to\ canonical\ sensor's\ B/G\ divided\ by\ this}}
+\DoxyCodeLine{00083\ \textcolor{comment}{\ \ \ \ \ *\ sensor's\ B/G)}}
+\DoxyCodeLine{00084\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{double}\ sensitivityB;}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{comment}{/*\ The\ whitepoint\ (which\ we\ normally\ "{}aim"{}\ for)\ can\ be\ moved.\ */}}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{double}\ whitepointR;}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{double}\ whitepointB;}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{bool}\ bayes;\ \textcolor{comment}{/*\ use\ Bayesian\ algorithm\ */}}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{comment}{/*\ proportion\ of\ counted\ samples\ to\ add\ for\ the\ search\ bias\ */}}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{double}\ biasProportion;}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{comment}{/*\ CT\ target\ for\ the\ search\ bias\ */}}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{double}\ biasCT;}
+\DoxyCodeLine{00094\ \};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRPiController_1_1Awb}{Awb}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classRPiController_1_1AwbAlgorithm}{AwbAlgorithm}}}
+\DoxyCodeLine{00097\ \{}
+\DoxyCodeLine{00098\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{classRPiController_1_1Awb}{Awb}}(\mbox{\hyperlink{classRPiController_1_1Controller}{Controller}}\ *controller\ =\ NULL);}
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{classRPiController_1_1Awb}{\string~Awb}}();}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{char}\ \textcolor{keyword}{const}\ *name()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{void}\ initialise()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{int}\ read(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1YamlObject}{libcamera::YamlObject}}\ \&params)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ getConvergenceFrames()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{void}\ initialValues(\textcolor{keywordtype}{double}\ \&gainR,\ \textcolor{keywordtype}{double}\ \&gainB)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{void}\ setMode(std::string\ \textcolor{keyword}{const}\ \&name)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ setManualGains(\textcolor{keywordtype}{double}\ manualR,\ \textcolor{keywordtype}{double}\ manualB)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{void}\ enableAuto()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{void}\ disableAuto()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{void}\ switchMode(\mbox{\hyperlink{structCameraMode}{CameraMode}}\ \textcolor{keyword}{const}\ \&cameraMode,\ Metadata\ *metadata)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{void}\ prepare(Metadata\ *imageMetadata)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{void}\ process(StatisticsPtr\ \&stats,\ Metadata\ *imageMetadata)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structRPiController_1_1Awb_1_1RGB}{RGB}}\ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structRPiController_1_1Awb_1_1RGB}{RGB}}(\textcolor{keywordtype}{double}\ r\ =\ 0,\ \textcolor{keywordtype}{double}\ g\ =\ 0,\ \textcolor{keywordtype}{double}\ b\ =\ 0)}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ :\ R(r),\ G(g),\ B(b)}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ R,\ G,\ B;}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structRPiController_1_1Awb_1_1RGB}{RGB}}\ \&operator+=(\mbox{\hyperlink{structRPiController_1_1Awb_1_1RGB}{RGB}}\ \textcolor{keyword}{const}\ \&other)}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ R\ +=\ other.R,\ G\ +=\ other.G,\ B\ +=\ other.B;}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00124\ \ \ \ \ \};}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{bool}\ isAutoEnabled()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{comment}{/*\ configuration\ is\ read-\/only,\ and\ available\ to\ both\ threads\ */}}
+\DoxyCodeLine{00129\ \ \ \ \ \mbox{\hyperlink{structRPiController_1_1AwbConfig}{AwbConfig}}\ config\_;}
+\DoxyCodeLine{00130\ \ \ \ \ std::thread\ asyncThread\_;}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordtype}{void}\ asyncFunc();\ \textcolor{comment}{/*\ asynchronous\ thread\ function\ */}}
+\DoxyCodeLine{00132\ \ \ \ \ std::mutex\ mutex\_;}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{comment}{/*\ condvar\ for\ async\ thread\ to\ wait\ on\ */}}
+\DoxyCodeLine{00134\ \ \ \ \ std::condition\_variable\ asyncSignal\_;}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{comment}{/*\ condvar\ for\ synchronous\ thread\ to\ wait\ on\ */}}
+\DoxyCodeLine{00136\ \ \ \ \ std::condition\_variable\ syncSignal\_;}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{comment}{/*\ for\ sync\ thread\ to\ check\ \ if\ async\ thread\ finished\ (requires\ mutex)\ */}}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordtype}{bool}\ asyncFinished\_;}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{comment}{/*\ for\ async\ thread\ to\ check\ if\ it's\ been\ told\ to\ run\ (requires\ mutex)\ */}}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{bool}\ asyncStart\_;}
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{comment}{/*\ for\ async\ thread\ to\ check\ if\ it's\ been\ told\ to\ quit\ (requires\ mutex)\ */}}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordtype}{bool}\ asyncAbort\_;}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00145\ \textcolor{comment}{\ \ \ \ \ *\ The\ following\ are\ only\ for\ the\ synchronous\ thread\ to\ use:}}
+\DoxyCodeLine{00146\ \textcolor{comment}{\ \ \ \ \ *\ for\ sync\ thread\ to\ note\ its\ has\ asked\ async\ thread\ to\ run}}
+\DoxyCodeLine{00147\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordtype}{bool}\ asyncStarted\_;}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{comment}{/*\ counts\ up\ to\ framePeriod\ before\ restarting\ the\ async\ thread\ */}}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordtype}{int}\ framePhase\_;}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordtype}{int}\ frameCount\_;\ \textcolor{comment}{/*\ counts\ up\ to\ startup\_frames\ */}}
+\DoxyCodeLine{00152\ \ \ \ \ \mbox{\hyperlink{structAwbStatus}{AwbStatus}}\ syncResults\_;}
+\DoxyCodeLine{00153\ \ \ \ \ \mbox{\hyperlink{structAwbStatus}{AwbStatus}}\ prevSyncResults\_;}
+\DoxyCodeLine{00154\ \ \ \ \ std::string\ modeName\_;}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00156\ \textcolor{comment}{\ \ \ \ \ *\ The\ following\ are\ for\ the\ asynchronous\ thread\ to\ use,\ though\ the\ main}}
+\DoxyCodeLine{00157\ \textcolor{comment}{\ \ \ \ \ *\ thread\ can\ set/reset\ them\ if\ the\ async\ thread\ is\ known\ to\ be\ idle:}}
+\DoxyCodeLine{00158\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordtype}{void}\ restartAsync(StatisticsPtr\ \&stats,\ \textcolor{keywordtype}{double}\ lux);}
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{comment}{/*\ copy\ out\ the\ results\ from\ the\ async\ thread\ so\ that\ it\ can\ be\ restarted\ */}}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{void}\ fetchAsyncResults();}
+\DoxyCodeLine{00162\ \ \ \ \ StatisticsPtr\ statistics\_;}
+\DoxyCodeLine{00163\ \ \ \ \ \mbox{\hyperlink{structRPiController_1_1AwbMode}{AwbMode}}\ *mode\_;}
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordtype}{double}\ lux\_;}
+\DoxyCodeLine{00165\ \ \ \ \ \mbox{\hyperlink{structAwbStatus}{AwbStatus}}\ asyncResults\_;}
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keywordtype}{void}\ doAwb();}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordtype}{void}\ awbBayes();}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordtype}{void}\ awbGrey();}
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keywordtype}{void}\ prepareStats();}
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keywordtype}{double}\ computeDelta2Sum(\textcolor{keywordtype}{double}\ gainR,\ \textcolor{keywordtype}{double}\ gainB);}
+\DoxyCodeLine{00171\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Pwl}{libcamera::ipa::Pwl}}\ interpolatePrior();}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordtype}{double}\ coarseSearch(\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Pwl}{libcamera::ipa::Pwl}}\ \textcolor{keyword}{const}\ \&prior);}
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keywordtype}{void}\ fineSearch(\textcolor{keywordtype}{double}\ \&t,\ \textcolor{keywordtype}{double}\ \&r,\ \textcolor{keywordtype}{double}\ \&b,\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Pwl}{libcamera::ipa::Pwl}}\ \textcolor{keyword}{const}\ \&prior);}
+\DoxyCodeLine{00174\ \ \ \ \ std::vector<RGB>\ zones\_;}
+\DoxyCodeLine{00175\ \ \ \ \ std::vector<libcamera::ipa::Pwl::Point>\ points\_;}
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{comment}{/*\ manual\ r\ setting\ */}}
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keywordtype}{double}\ manualR\_;}
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{comment}{/*\ manual\ b\ setting\ */}}
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordtype}{double}\ manualB\_;}
+\DoxyCodeLine{00180\ \};}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structRPiController_1_1Awb_1_1RGB}{Awb::RGB}}\ operator+(\mbox{\hyperlink{structRPiController_1_1Awb_1_1RGB}{Awb::RGB}}\ \textcolor{keyword}{const}\ \&a,\ \mbox{\hyperlink{structRPiController_1_1Awb_1_1RGB}{Awb::RGB}}\ \textcolor{keyword}{const}\ \&b)}
+\DoxyCodeLine{00183\ \{}
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structRPiController_1_1Awb_1_1RGB}{Awb::RGB}}(a.R\ +\ b.R,\ a.G\ +\ b.G,\ a.B\ +\ b.B);}
+\DoxyCodeLine{00185\ \}}
+\DoxyCodeLine{00186\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ Awb::RGB\ operator-\/(Awb::RGB\ \textcolor{keyword}{const}\ \&a,\ Awb::RGB\ \textcolor{keyword}{const}\ \&b)}
+\DoxyCodeLine{00187\ \{}
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keywordflow}{return}\ Awb::RGB(a.R\ -\/\ b.R,\ a.G\ -\/\ b.G,\ a.B\ -\/\ b.B);}
+\DoxyCodeLine{00189\ \}}
+\DoxyCodeLine{00190\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ Awb::RGB\ \mbox{\hyperlink{namespacelibcamera_a6960a04032cb04acf26aa83428d528da}{operator*}}(\textcolor{keywordtype}{double}\ d,\ Awb::RGB\ \textcolor{keyword}{const}\ \&rgb)}
+\DoxyCodeLine{00191\ \{}
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keywordflow}{return}\ Awb::RGB(d\ *\ rgb.R,\ d\ *\ rgb.G,\ d\ *\ rgb.B);}
+\DoxyCodeLine{00193\ \}}
+\DoxyCodeLine{00194\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ Awb::RGB\ \mbox{\hyperlink{namespacelibcamera_a6960a04032cb04acf26aa83428d528da}{operator*}}(Awb::RGB\ \textcolor{keyword}{const}\ \&rgb,\ \textcolor{keywordtype}{double}\ d)}
+\DoxyCodeLine{00195\ \{}
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keywordflow}{return}\ d\ *\ rgb;}
+\DoxyCodeLine{00197\ \}}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \}\ \textcolor{comment}{/*\ namespace\ RPiController\ */}}
+
+\end{DoxyCode}

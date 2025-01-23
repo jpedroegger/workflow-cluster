@@ -1,0 +1,272 @@
+\doxysection{libcamera\+::Debayer\+Cpu Class Reference}
+\hypertarget{classlibcamera_1_1DebayerCpu}{}\label{classlibcamera_1_1DebayerCpu}\index{libcamera::DebayerCpu@{libcamera::DebayerCpu}}
+
+
+Class for debayering on the CPU.  
+
+
+Inheritance diagram for libcamera\+::Debayer\+Cpu\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlibcamera_1_1DebayerCpu}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1DebayerCpu_a3741e858de461b6d06188dc822c04696}{Debayer\+Cpu}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1SwStatsCpu}{Sw\+Stats\+Cpu}} $>$ stats)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classlibcamera_1_1DebayerCpu}{Debayer\+Cpu} object. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classlibcamera_1_1DebayerCpu_acfb003482aacb5f4b2756f9f8b185ad9}{configure}} (const \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration}{Stream\+Configuration}} \&input\+Cfg, const std\+::vector$<$ std\+::reference\+\_\+wrapper$<$ \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration}{Stream\+Configuration}} $>$ $>$ \&output\+Cfgs)
+\begin{DoxyCompactList}\small\item\em Configure the debayer object according to the passed in parameters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \mbox{\hyperlink{classlibcamera_1_1DebayerCpu_a1244659d82bd7411deaf58b28895de49}{pattern\+Size}} (\mbox{\hyperlink{classlibcamera_1_1PixelFormat}{Pixel\+Format}} input\+Format)
+\begin{DoxyCompactList}\small\item\em Get the width and height at which the bayer pattern repeats. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classlibcamera_1_1PixelFormat}{Pixel\+Format}} $>$ \mbox{\hyperlink{classlibcamera_1_1DebayerCpu_aee613f4b8a7d05cd0ccdb98b65009377}{formats}} (\mbox{\hyperlink{classlibcamera_1_1PixelFormat}{Pixel\+Format}} input)
+\begin{DoxyCompactList}\small\item\em Get the supported output formats. \end{DoxyCompactList}\item 
+std\+::tuple$<$ unsigned int, unsigned int $>$ \mbox{\hyperlink{classlibcamera_1_1DebayerCpu_af235a1381203658b0b8b37f49696d3dd}{stride\+And\+Frame\+Size}} (const \mbox{\hyperlink{classlibcamera_1_1PixelFormat}{Pixel\+Format}} \&output\+Format, const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&size)
+\begin{DoxyCompactList}\small\item\em Get the stride and the frame size. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1DebayerCpu_a0e83a0d14d3dc711ae7622c87ef8a655}{process}} (uint32\+\_\+t frame, \mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} \texorpdfstring{$\ast$}{*}input, \mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} \texorpdfstring{$\ast$}{*}output, \mbox{\hyperlink{structlibcamera_1_1DebayerParams}{Debayer\+Params}} params)
+\begin{DoxyCompactList}\small\item\em \doxylink{classlibcamera_1_1Process}{Process} the bayer data into the requested format. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1SizeRange}{Size\+Range}} \mbox{\hyperlink{classlibcamera_1_1DebayerCpu_a2ed0021813e3ca42fd945b7804f471ca}{sizes}} (\mbox{\hyperlink{classlibcamera_1_1PixelFormat}{Pixel\+Format}} input\+Format, const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&input\+Size)
+\begin{DoxyCompactList}\small\item\em Get the supported output sizes for the given input format and size. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classlibcamera_1_1SharedFD}{Shared\+FD}} \& \mbox{\hyperlink{classlibcamera_1_1DebayerCpu_afc389be2603536de8b2b2c400b98bd3a}{get\+Stats\+FD}} ()
+\begin{DoxyCompactList}\small\item\em Get the file descriptor for the statistics. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classlibcamera_1_1DebayerCpu_a5a2340eb70c69633826a050c8a2fcf61}{frame\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Get the output frame size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1Object}{libcamera\+::\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1Object_a0425e0a986630b5881558378fad91687}{Object}} (\mbox{\hyperlink{classlibcamera_1_1Object}{Object}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classlibcamera_1_1Object_a469143548519e7ac9525e5b2b45e983f}{parent}}=nullptr)
+\begin{DoxyCompactList}\small\item\em Construct an \doxylink{classlibcamera_1_1Object}{Object} instance. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classlibcamera_1_1Object_ad52c17ff4161b166ae71e766d0649b97}{\texorpdfstring{$\sim$}{\string~}\+Object}} ()
+\begin{DoxyCompactList}\small\item\em Destroy an \doxylink{classlibcamera_1_1Object}{Object} instance. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1Object_a7432a52a2e69a29cfe8144929686d1e6}{delete\+Later}} ()
+\begin{DoxyCompactList}\small\item\em Schedule deletion of the instance in the thread it belongs to. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1Object_af9ae92dfe5f3741c64ebdec61a2f5bef}{post\+Message}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1Message}{Message}} $>$ msg)
+\begin{DoxyCompactList}\small\item\em Post a message to the object\textquotesingle{}s thread. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename R , typename... Func\+Args, typename... Args, std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+base\+\_\+of$<$ \mbox{\hyperlink{classlibcamera_1_1Object}{Object}}, T $>$\+::value $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ }\\R \mbox{\hyperlink{classlibcamera_1_1Object_a2a4ea2209e289e2aabb75c5718d5b4a7}{invoke\+Method}} (R(T\+::\texorpdfstring{$\ast$}{*}func)(Func\+Args...), \mbox{\hyperlink{namespacelibcamera_ae2c8412791b9597d590a7d0b2c9e2919}{Connection\+Type}} type, Args \&\&... args)
+\begin{DoxyCompactList}\small\item\em Invoke a method asynchronously on an \doxylink{classlibcamera_1_1Object}{Object} instance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1Thread}{Thread}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1Object_aca52b8790edc25af65d6fe937355577b}{thread}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the thread the object is bound to \textbackslash{}context This function is \textbackslash{}threadsafe. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlibcamera_1_1Object_a8045a16ae8a093722466ca7129db6fc2}{move\+To\+Thread}} (\mbox{\hyperlink{classlibcamera_1_1Thread}{Thread}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classlibcamera_1_1Object_aca52b8790edc25af65d6fe937355577b}{thread}})
+\begin{DoxyCompactList}\small\item\em Move the object and all its children to a different thread. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1Object}{Object}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1Object_a469143548519e7ac9525e5b2b45e983f}{parent}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the object\textquotesingle{}s parent. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classlibcamera_1_1Debayer}{libcamera\+::\+Debayer}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1Signal}{Signal}}$<$ \mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries input\+Buffer\+Ready}
+\begin{DoxyCompactList}\small\item\em Signals when the input buffer is ready. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1Signal}{Signal}}$<$ \mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries output\+Buffer\+Ready}
+\begin{DoxyCompactList}\small\item\em Signals when the output buffer is ready. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1Object}{libcamera\+::\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classlibcamera_1_1Object_a5328cab1412743716aa2748eeded8e80}{message}} (\mbox{\hyperlink{classlibcamera_1_1Message}{Message}} \texorpdfstring{$\ast$}{*}msg)
+\begin{DoxyCompactList}\small\item\em \doxylink{classlibcamera_1_1Message}{Message} handler for the object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlibcamera_1_1Object_a6e81f2a2524dbe12daed49597cf66a57}{assert\+Thread\+Bound}} (const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classlibcamera_1_1Object_a5328cab1412743716aa2748eeded8e80}{message}})
+\begin{DoxyCompactList}\small\item\em Check if the caller complies with thread-\/bound constraints. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for debayering on the CPU. 
+
+Implementation for CPU based debayering 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlibcamera_1_1DebayerCpu_a3741e858de461b6d06188dc822c04696}\label{classlibcamera_1_1DebayerCpu_a3741e858de461b6d06188dc822c04696} 
+\index{libcamera::DebayerCpu@{libcamera::DebayerCpu}!DebayerCpu@{DebayerCpu}}
+\index{DebayerCpu@{DebayerCpu}!libcamera::DebayerCpu@{libcamera::DebayerCpu}}
+\doxysubsubsection{\texorpdfstring{DebayerCpu()}{DebayerCpu()}}
+{\footnotesize\ttfamily libcamera\+::\+Debayer\+Cpu\+::\+Debayer\+Cpu (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1SwStatsCpu}{Sw\+Stats\+Cpu}} $>$}]{stats }\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classlibcamera_1_1DebayerCpu}{Debayer\+Cpu} object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em stats} & Pointer to the stats object to use \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1DebayerCpu_acfb003482aacb5f4b2756f9f8b185ad9}\label{classlibcamera_1_1DebayerCpu_acfb003482aacb5f4b2756f9f8b185ad9} 
+\index{libcamera::DebayerCpu@{libcamera::DebayerCpu}!configure@{configure}}
+\index{configure@{configure}!libcamera::DebayerCpu@{libcamera::DebayerCpu}}
+\doxysubsubsection{\texorpdfstring{configure()}{configure()}}
+{\footnotesize\ttfamily int libcamera\+::\+Debayer\+Cpu\+::configure (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration}{Stream\+Configuration}} \&}]{input\+Cfg,  }\item[{const std\+::vector$<$ std\+::reference\+\_\+wrapper$<$ \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration}{Stream\+Configuration}} $>$ $>$ \&}]{output\+Cfgs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Configure the debayer object according to the passed in parameters. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em input\+Cfg} & The input configuration \\
+\hline
+\mbox{\texttt{ in}}  & {\em output\+Cfgs} & The output configurations\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, a negative errno on failure 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classlibcamera_1_1Debayer_af3f4a4e5a6ec3236586d2524108dce39}{libcamera\+::\+Debayer}}.
+
+\Hypertarget{classlibcamera_1_1DebayerCpu_aee613f4b8a7d05cd0ccdb98b65009377}\label{classlibcamera_1_1DebayerCpu_aee613f4b8a7d05cd0ccdb98b65009377} 
+\index{libcamera::DebayerCpu@{libcamera::DebayerCpu}!formats@{formats}}
+\index{formats@{formats}!libcamera::DebayerCpu@{libcamera::DebayerCpu}}
+\doxysubsubsection{\texorpdfstring{formats()}{formats()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classlibcamera_1_1PixelFormat}{Pixel\+Format}} $>$ libcamera\+::\+Debayer\+Cpu\+::formats (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1PixelFormat}{Pixel\+Format}}}]{input\+Format }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the supported output formats. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em input\+Format} & The input format\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+All supported output formats or an empty vector if there are none 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classlibcamera_1_1Debayer_a6f8ffa549ea5c343310511a080b8b354}{libcamera\+::\+Debayer}}.
+
+\Hypertarget{classlibcamera_1_1DebayerCpu_a5a2340eb70c69633826a050c8a2fcf61}\label{classlibcamera_1_1DebayerCpu_a5a2340eb70c69633826a050c8a2fcf61} 
+\index{libcamera::DebayerCpu@{libcamera::DebayerCpu}!frameSize@{frameSize}}
+\index{frameSize@{frameSize}!libcamera::DebayerCpu@{libcamera::DebayerCpu}}
+\doxysubsubsection{\texorpdfstring{frameSize()}{frameSize()}}
+{\footnotesize\ttfamily unsigned int libcamera\+::\+Debayer\+Cpu\+::frame\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the output frame size. 
+
+\begin{DoxyReturn}{Returns}
+The output frame size 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1DebayerCpu_afc389be2603536de8b2b2c400b98bd3a}\label{classlibcamera_1_1DebayerCpu_afc389be2603536de8b2b2c400b98bd3a} 
+\index{libcamera::DebayerCpu@{libcamera::DebayerCpu}!getStatsFD@{getStatsFD}}
+\index{getStatsFD@{getStatsFD}!libcamera::DebayerCpu@{libcamera::DebayerCpu}}
+\doxysubsubsection{\texorpdfstring{getStatsFD()}{getStatsFD()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classlibcamera_1_1SharedFD}{Shared\+FD}} \& libcamera\+::\+Debayer\+Cpu\+::get\+Stats\+FD (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the file descriptor for the statistics. 
+
+\begin{DoxyReturn}{Returns}
+the file descriptor pointing to the statistics 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1DebayerCpu_a1244659d82bd7411deaf58b28895de49}\label{classlibcamera_1_1DebayerCpu_a1244659d82bd7411deaf58b28895de49} 
+\index{libcamera::DebayerCpu@{libcamera::DebayerCpu}!patternSize@{patternSize}}
+\index{patternSize@{patternSize}!libcamera::DebayerCpu@{libcamera::DebayerCpu}}
+\doxysubsubsection{\texorpdfstring{patternSize()}{patternSize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} libcamera\+::\+Debayer\+Cpu\+::pattern\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1PixelFormat}{Pixel\+Format}}}]{input\+Format }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the width and height at which the bayer pattern repeats. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em input\+Format} & The input format\\
+\hline
+\end{DoxyParams}
+Valid sizes are\+: 2x2, 4x2 or 4x4.
+
+\begin{DoxyReturn}{Returns}
+Pattern size or an empty size for unsupported input\+Formats 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classlibcamera_1_1Debayer}{libcamera\+::\+Debayer}}.
+
+\Hypertarget{classlibcamera_1_1DebayerCpu_a0e83a0d14d3dc711ae7622c87ef8a655}\label{classlibcamera_1_1DebayerCpu_a0e83a0d14d3dc711ae7622c87ef8a655} 
+\index{libcamera::DebayerCpu@{libcamera::DebayerCpu}!process@{process}}
+\index{process@{process}!libcamera::DebayerCpu@{libcamera::DebayerCpu}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily void libcamera\+::\+Debayer\+Cpu\+::process (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{frame,  }\item[{\mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} \texorpdfstring{$\ast$}{*}}]{input,  }\item[{\mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} \texorpdfstring{$\ast$}{*}}]{output,  }\item[{\mbox{\hyperlink{structlibcamera_1_1DebayerParams}{Debayer\+Params}}}]{params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxylink{classlibcamera_1_1Process}{Process} the bayer data into the requested format. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em frame} & The frame number \\
+\hline
+\mbox{\texttt{ in}}  & {\em input} & The input buffer \\
+\hline
+\mbox{\texttt{ in}}  & {\em output} & The output buffer \\
+\hline
+\mbox{\texttt{ in}}  & {\em params} & The parameters to be used in debayering\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+\doxylink{structlibcamera_1_1DebayerParams}{Debayer\+Params} is passed by value deliberately so that a copy is passed when this is run in another thread by \doxylink{classlibcamera_1_1Object_a2a4ea2209e289e2aabb75c5718d5b4a7}{invoke\+Method()}. 
+\end{DoxyNote}
+
+
+Implements \mbox{\hyperlink{classlibcamera_1_1Debayer_aceb6bff8879ec5803809741db6790d53}{libcamera\+::\+Debayer}}.
+
+\Hypertarget{classlibcamera_1_1DebayerCpu_a2ed0021813e3ca42fd945b7804f471ca}\label{classlibcamera_1_1DebayerCpu_a2ed0021813e3ca42fd945b7804f471ca} 
+\index{libcamera::DebayerCpu@{libcamera::DebayerCpu}!sizes@{sizes}}
+\index{sizes@{sizes}!libcamera::DebayerCpu@{libcamera::DebayerCpu}}
+\doxysubsubsection{\texorpdfstring{sizes()}{sizes()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1SizeRange}{Size\+Range}} libcamera\+::\+Debayer\+Cpu\+::sizes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1PixelFormat}{Pixel\+Format}}}]{input\+Format,  }\item[{const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&}]{input\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the supported output sizes for the given input format and size. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em input\+Format} & The input format \\
+\hline
+\mbox{\texttt{ in}}  & {\em input\+Size} & The input size\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The valid size ranges or an empty range if there are none 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classlibcamera_1_1Debayer_a88150731f2b29766aacff7170238ebc9}{libcamera\+::\+Debayer}}.
+
+\Hypertarget{classlibcamera_1_1DebayerCpu_af235a1381203658b0b8b37f49696d3dd}\label{classlibcamera_1_1DebayerCpu_af235a1381203658b0b8b37f49696d3dd} 
+\index{libcamera::DebayerCpu@{libcamera::DebayerCpu}!strideAndFrameSize@{strideAndFrameSize}}
+\index{strideAndFrameSize@{strideAndFrameSize}!libcamera::DebayerCpu@{libcamera::DebayerCpu}}
+\doxysubsubsection{\texorpdfstring{strideAndFrameSize()}{strideAndFrameSize()}}
+{\footnotesize\ttfamily std\+::tuple$<$ unsigned int, unsigned int $>$ libcamera\+::\+Debayer\+Cpu\+::stride\+And\+Frame\+Size (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classlibcamera_1_1PixelFormat}{Pixel\+Format}} \&}]{output\+Format,  }\item[{const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the stride and the frame size. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em output\+Format} & The output format \\
+\hline
+\mbox{\texttt{ in}}  & {\em size} & The output size\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A tuple of the stride and the frame size, or a tuple with 0,0 if there is no valid output config 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classlibcamera_1_1Debayer_a201891fc832e554306d9ca20265dc396}{libcamera\+::\+Debayer}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/libcamera/software\+\_\+isp/debayer\+\_\+cpu.\+h\item 
+src/peripherals/camera/libcamera/src/libcamera/software\+\_\+isp/debayer\+\_\+cpu.\+cpp\end{DoxyCompactItemize}

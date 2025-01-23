@@ -1,0 +1,34 @@
+\doxysection{v4l2\+\_\+selection Struct Reference}
+\hypertarget{structv4l2__selection}{}\label{structv4l2__selection}\index{v4l2\_selection@{v4l2\_selection}}
+
+
+{\ttfamily \#include $<$videodev2.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structv4l2__selection_a5ed2db9a149fe0b6af81fab2eee7240f}\label{structv4l2__selection_a5ed2db9a149fe0b6af81fab2eee7240f} 
+\+\_\+\+\_\+u32 {\bfseries type}
+\item 
+\Hypertarget{structv4l2__selection_a772bf7f61e387263f5ba19c7348e11eb}\label{structv4l2__selection_a772bf7f61e387263f5ba19c7348e11eb} 
+\+\_\+\+\_\+u32 {\bfseries target}
+\item 
+\Hypertarget{structv4l2__selection_a5cc45927b0f1500a6dac6699882a9968}\label{structv4l2__selection_a5cc45927b0f1500a6dac6699882a9968} 
+\+\_\+\+\_\+u32 {\bfseries flags}
+\item 
+\Hypertarget{structv4l2__selection_afb29c5ad1825325d414d30dbf15fe6de}\label{structv4l2__selection_afb29c5ad1825325d414d30dbf15fe6de} 
+struct \mbox{\hyperlink{structv4l2__rect}{v4l2\+\_\+rect}} {\bfseries r}
+\item 
+\Hypertarget{structv4l2__selection_a8ae9f3efcab3bc4d4da146c1f50ed995}\label{structv4l2__selection_a8ae9f3efcab3bc4d4da146c1f50ed995} 
+\+\_\+\+\_\+u32 {\bfseries reserved} \mbox{[}9\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structv4l2__selection}{v4l2\+\_\+selection} -\/ selection info @type\+: buffer type (do not use \texorpdfstring{$\ast$}{*}\+\_\+\+MPLANE types) @target\+: Selection target, used to choose one of possible rectangles; defined in \doxylink{v4l2-common_8h_source}{v4l2-\/common.\+h}; V4\+L2\+\_\+\+SEL\+\_\+\+TGT\+\_\+\texorpdfstring{$\ast$}{*} . @flags\+: constraints flags, defined in \doxylink{v4l2-common_8h_source}{v4l2-\/common.\+h}; V4\+L2\+\_\+\+SEL\+\_\+\+FLAG\+\_\+\texorpdfstring{$\ast$}{*}. @r\+: coordinates of selection window @reserved\+: for future use, rounds structure size to 64 bytes, set to zero
+
+Hardware may use multiple helper windows to process a video stream. The structure is used to exchange this selection areas between an application and a driver. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/videodev2.\+h\end{DoxyCompactItemize}

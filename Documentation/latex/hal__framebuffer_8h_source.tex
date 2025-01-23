@@ -1,0 +1,32 @@
+\doxysection{hal\+\_\+framebuffer.\+h}
+\hypertarget{hal__framebuffer_8h_source}{}\label{hal__framebuffer_8h_source}\index{src/peripherals/camera/libcamera/src/android/hal\_framebuffer.h@{src/peripherals/camera/libcamera/src/android/hal\_framebuffer.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2022,\ Google\ Inc.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ HAL\ Frame\ Buffer\ Handling}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}libcamera/internal/framebuffer.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <hardware/camera3.h>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classHALFrameBuffer}{HALFrameBuffer}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{libcamera::FrameBuffer}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{classHALFrameBuffer}{HALFrameBuffer}}(std::unique\_ptr<Private>\ d,}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structnative__handle}{buffer\_handle\_t}}\ handle);}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{classHALFrameBuffer}{HALFrameBuffer}}(\textcolor{keyword}{const}\ std::vector<Plane>\ \&\mbox{\hyperlink{classlibcamera_1_1FrameBuffer_ae498b3d8bb272526c4a8798f3e04b566}{planes}},}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structnative__handle}{buffer\_handle\_t}}\ handle);}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{structnative__handle}{buffer\_handle\_t}}\ handle()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ handle\_;\ \}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{structnative__handle}{buffer\_handle\_t}}\ handle\_;}
+\DoxyCodeLine{00026\ \};}
+
+\end{DoxyCode}

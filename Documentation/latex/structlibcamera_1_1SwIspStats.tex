@@ -1,0 +1,48 @@
+\doxysection{libcamera\+::Sw\+Isp\+Stats Struct Reference}
+\hypertarget{structlibcamera_1_1SwIspStats}{}\label{structlibcamera_1_1SwIspStats}\index{libcamera::SwIspStats@{libcamera::SwIspStats}}
+
+
+Struct that holds the statistics for the Software ISP.  
+
+
+
+
+{\ttfamily \#include $<$swisp\+\_\+stats.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structlibcamera_1_1SwIspStats_a0f7bf2f5c30750ca0a14373fe8f70969}\label{structlibcamera_1_1SwIspStats_a0f7bf2f5c30750ca0a14373fe8f70969} 
+using {\bfseries Histogram} = std\+::array$<$ uint32\+\_\+t, \mbox{\hyperlink{structlibcamera_1_1SwIspStats_acc2df9b1f29e70474e8b9d19fb5d81cb}{k\+YHistogram\+Size}} $>$
+\begin{DoxyCompactList}\small\item\em Type of the histogram. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structlibcamera_1_1SwIspStats_a5895eeeb9210ede00971326fab964c56}\label{structlibcamera_1_1SwIspStats_a5895eeeb9210ede00971326fab964c56} 
+uint64\+\_\+t {\bfseries sum\+R\+\_\+}
+\begin{DoxyCompactList}\small\item\em Holds the sum of all sampled red pixels. \end{DoxyCompactList}\item 
+\Hypertarget{structlibcamera_1_1SwIspStats_ae9de02e225bdf8e645ff223c59564ede}\label{structlibcamera_1_1SwIspStats_ae9de02e225bdf8e645ff223c59564ede} 
+uint64\+\_\+t {\bfseries sum\+G\+\_\+}
+\begin{DoxyCompactList}\small\item\em Holds the sum of all sampled green pixels. \end{DoxyCompactList}\item 
+\Hypertarget{structlibcamera_1_1SwIspStats_a8f5c24249f09fce6b744adfde124f3c0}\label{structlibcamera_1_1SwIspStats_a8f5c24249f09fce6b744adfde124f3c0} 
+uint64\+\_\+t {\bfseries sum\+B\+\_\+}
+\begin{DoxyCompactList}\small\item\em Holds the sum of all sampled blue pixels. \end{DoxyCompactList}\item 
+\Hypertarget{structlibcamera_1_1SwIspStats_a873420e49e5b6aa4f544258f14467144}\label{structlibcamera_1_1SwIspStats_a873420e49e5b6aa4f544258f14467144} 
+\mbox{\hyperlink{structlibcamera_1_1SwIspStats_a0f7bf2f5c30750ca0a14373fe8f70969}{Histogram}} {\bfseries y\+Histogram}
+\begin{DoxyCompactList}\small\item\em A histogram of luminance values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structlibcamera_1_1SwIspStats_acc2df9b1f29e70474e8b9d19fb5d81cb}\label{structlibcamera_1_1SwIspStats_acc2df9b1f29e70474e8b9d19fb5d81cb} 
+static constexpr unsigned int {\bfseries k\+YHistogram\+Size} = 64
+\begin{DoxyCompactList}\small\item\em Number of bins in the y\+Histogram. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Struct that holds the statistics for the Software ISP. 
+
+The struct value types are large enough to not overflow. Should they still overflow for some reason, no check is performed and they wrap around. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/internal/software\+\_\+isp/swisp\+\_\+stats.\+h\end{DoxyCompactItemize}

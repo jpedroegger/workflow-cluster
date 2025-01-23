@@ -1,0 +1,133 @@
+\doxysection{Camera\+Device Class Reference}
+\hypertarget{classCameraDevice}{}\label{classCameraDevice}\index{CameraDevice@{CameraDevice}}
+Inheritance diagram for Camera\+Device\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCameraDevice}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classCameraDevice_a9189c77fa858854caffcf1f6fd6a8a25}\label{classCameraDevice_a9189c77fa858854caffcf1f6fd6a8a25} 
+int {\bfseries initialize} (const \mbox{\hyperlink{structCameraConfigData}{Camera\+Config\+Data}} \texorpdfstring{$\ast$}{*}camera\+Config\+Data)
+\item 
+\Hypertarget{classCameraDevice_ae0dee1ed4d9416985e2c20ce3daaabd0}\label{classCameraDevice_ae0dee1ed4d9416985e2c20ce3daaabd0} 
+int {\bfseries open} (const \mbox{\hyperlink{structhw__module__t}{hw\+\_\+module\+\_\+t}} \texorpdfstring{$\ast$}{*}hardware\+Module)
+\item 
+\Hypertarget{classCameraDevice_acd6c62ab64036acba7a1083feb151681}\label{classCameraDevice_acd6c62ab64036acba7a1083feb151681} 
+void {\bfseries close} ()
+\item 
+\Hypertarget{classCameraDevice_a934118336f8a3bdd382c4a9b73c22e2e}\label{classCameraDevice_a934118336f8a3bdd382c4a9b73c22e2e} 
+void {\bfseries flush} ()
+\item 
+\Hypertarget{classCameraDevice_a80e9d6511f29935d7b61353ff1c780ab}\label{classCameraDevice_a80e9d6511f29935d7b61353ff1c780ab} 
+unsigned int {\bfseries id} () const
+\item 
+\Hypertarget{classCameraDevice_ac92d279a5e17870a170fd48bb0fef4f7}\label{classCameraDevice_ac92d279a5e17870a170fd48bb0fef4f7} 
+\mbox{\hyperlink{structcamera3__device}{camera3\+\_\+device\+\_\+t}} \texorpdfstring{$\ast$}{*} {\bfseries camera3\+Device} ()
+\item 
+\Hypertarget{classCameraDevice_acddbf8db2b4d164c0b372ff1d2830257}\label{classCameraDevice_acddbf8db2b4d164c0b372ff1d2830257} 
+const \mbox{\hyperlink{classCameraCapabilities}{Camera\+Capabilities}} \texorpdfstring{$\ast$}{*} {\bfseries capabilities} () const
+\item 
+\Hypertarget{classCameraDevice_aa6bb23d8467097d66440045367ef01b8}\label{classCameraDevice_aa6bb23d8467097d66440045367ef01b8} 
+const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1Camera}{libcamera\+::\+Camera}} $>$ \& {\bfseries camera} () const
+\item 
+\Hypertarget{classCameraDevice_adfcddb3e9b2cdb8a32b76d9dd2caffcd}\label{classCameraDevice_adfcddb3e9b2cdb8a32b76d9dd2caffcd} 
+const std\+::string \& {\bfseries maker} () const
+\item 
+\Hypertarget{classCameraDevice_aa9c645478e5fa41c93a8d925d61f5d29}\label{classCameraDevice_aa9c645478e5fa41c93a8d925d61f5d29} 
+const std\+::string \& {\bfseries model} () const
+\item 
+\Hypertarget{classCameraDevice_ae17042ca6fc74c936ba49c643c56a7b3}\label{classCameraDevice_ae17042ca6fc74c936ba49c643c56a7b3} 
+int {\bfseries facing} () const
+\item 
+\Hypertarget{classCameraDevice_ab443fc526fb0372dc8eecf0d783df8ad}\label{classCameraDevice_ab443fc526fb0372dc8eecf0d783df8ad} 
+int {\bfseries orientation} () const
+\item 
+\Hypertarget{classCameraDevice_adf650010eba6f2e447e426c978f79ae3}\label{classCameraDevice_adf650010eba6f2e447e426c978f79ae3} 
+unsigned int {\bfseries max\+Jpeg\+Buffer\+Size} () const
+\item 
+\Hypertarget{classCameraDevice_ab2af0bf9e47b9f5e119b107314efc721}\label{classCameraDevice_ab2af0bf9e47b9f5e119b107314efc721} 
+void {\bfseries set\+Callbacks} (const \mbox{\hyperlink{structcamera3__callback__ops}{camera3\+\_\+callback\+\_\+ops\+\_\+t}} \texorpdfstring{$\ast$}{*}callbacks)
+\item 
+\Hypertarget{classCameraDevice_ab57932e2ccd9d18cb375f062a24f9499}\label{classCameraDevice_ab57932e2ccd9d18cb375f062a24f9499} 
+const camera\+\_\+metadata\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries get\+Static\+Metadata} ()
+\item 
+\Hypertarget{classCameraDevice_a392c3935ec6a0b6e73bb87ce08440fca}\label{classCameraDevice_a392c3935ec6a0b6e73bb87ce08440fca} 
+const camera\+\_\+metadata\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries construct\+Default\+Request\+Settings} (int type)
+\item 
+\Hypertarget{classCameraDevice_a215ccbcb34c4d5920d4ec6d0737088f0}\label{classCameraDevice_a215ccbcb34c4d5920d4ec6d0737088f0} 
+int {\bfseries configure\+Streams} (\mbox{\hyperlink{structcamera3__stream__configuration}{camera3\+\_\+stream\+\_\+configuration\+\_\+t}} \texorpdfstring{$\ast$}{*}stream\+\_\+list)
+\item 
+\Hypertarget{classCameraDevice_a8947389d79309c1691992771fa4bc787}\label{classCameraDevice_a8947389d79309c1691992771fa4bc787} 
+int {\bfseries process\+Capture\+Request} (\mbox{\hyperlink{structcamera3__capture__request}{camera3\+\_\+capture\+\_\+request\+\_\+t}} \texorpdfstring{$\ast$}{*}request)
+\item 
+\Hypertarget{classCameraDevice_ad57998a0e16d2d37eced7ba5d3842bca}\label{classCameraDevice_ad57998a0e16d2d37eced7ba5d3842bca} 
+void {\bfseries request\+Complete} (\mbox{\hyperlink{classlibcamera_1_1Request}{libcamera\+::\+Request}} \texorpdfstring{$\ast$}{*}request)
+\item 
+void \mbox{\hyperlink{classCameraDevice_a16a5c2e3cc9504c1afdee3c593540dd1}{stream\+Processing\+Complete}} (\mbox{\hyperlink{structCamera3RequestDescriptor_1_1StreamBuffer}{Camera3\+Request\+Descriptor\+::\+Stream\+Buffer}} \texorpdfstring{$\ast$}{*}buffer\+Stream, Camera3\+Request\+Descriptor\+::\+Status status)
+\begin{DoxyCompactList}\small\item\em Handle post-\/processing completion of a stream in a capture request. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classCameraDevice_a48b87d554741edf48ecbbb110a0af724}\label{classCameraDevice_a48b87d554741edf48ecbbb110a0af724} 
+static std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classCameraDevice}{Camera\+Device}} $>$ {\bfseries create} (unsigned int id, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1Camera}{libcamera\+::\+Camera}} $>$ cam)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classCameraDevice_ad9d5e42ae5032c32a8c7032da68c30ea}{log\+Prefix}} () const override
+\begin{DoxyCompactList}\small\item\em Retrieve a string to be prefixed to the log message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1Loggable}{libcamera\+::\+Loggable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1LogMessage}{Log\+Message}} \mbox{\hyperlink{classlibcamera_1_1Loggable_a56b00f844b75b5d08cad898ed9c6181e}{\+\_\+log}} (const \mbox{\hyperlink{classlibcamera_1_1LogCategory}{Log\+Category}} \texorpdfstring{$\ast$}{*}category, \mbox{\hyperlink{namespacelibcamera_a68f26f5a54a5bb105f2e7422215a0ca3}{Log\+Severity}} severity, const char \texorpdfstring{$\ast$}{*}file\+Name=\+\_\+\+\_\+builtin\+\_\+\+FILE(), unsigned int line=\+\_\+\+\_\+builtin\+\_\+\+LINE()) const
+\begin{DoxyCompactList}\small\item\em Create a temporary \doxylink{classlibcamera_1_1LogMessage}{Log\+Message} object to log a message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCameraDevice_ad9d5e42ae5032c32a8c7032da68c30ea}\label{classCameraDevice_ad9d5e42ae5032c32a8c7032da68c30ea} 
+\index{CameraDevice@{CameraDevice}!logPrefix@{logPrefix}}
+\index{logPrefix@{logPrefix}!CameraDevice@{CameraDevice}}
+\doxysubsubsection{\texorpdfstring{logPrefix()}{logPrefix()}}
+{\footnotesize\ttfamily std\+::string Camera\+Device\+::log\+Prefix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Retrieve a string to be prefixed to the log message. 
+
+This function allows classes inheriting from the Loggable class to extend the logger with an object-\/specific prefix output right before the log message contents.
+
+\begin{DoxyReturn}{Returns}
+A string to be prefixed to the log message 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classlibcamera_1_1Loggable_a4cc48b0ae7215ceb4bfae6f192b2b3ee}{libcamera\+::\+Loggable}}.
+
+\Hypertarget{classCameraDevice_a16a5c2e3cc9504c1afdee3c593540dd1}\label{classCameraDevice_a16a5c2e3cc9504c1afdee3c593540dd1} 
+\index{CameraDevice@{CameraDevice}!streamProcessingComplete@{streamProcessingComplete}}
+\index{streamProcessingComplete@{streamProcessingComplete}!CameraDevice@{CameraDevice}}
+\doxysubsubsection{\texorpdfstring{streamProcessingComplete()}{streamProcessingComplete()}}
+{\footnotesize\ttfamily void Camera\+Device\+::stream\+Processing\+Complete (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCamera3RequestDescriptor_1_1StreamBuffer}{Camera3\+Request\+Descriptor\+::\+Stream\+Buffer}} \texorpdfstring{$\ast$}{*}}]{stream\+Buffer,  }\item[{Camera3\+Request\+Descriptor\+::\+Status}]{status }\end{DoxyParamCaption})}
+
+
+
+Handle post-\/processing completion of a stream in a capture request. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em stream\+Buffer} & The Stream\+Buffer for which processing is complete \\
+\hline
+\mbox{\texttt{ in}}  & {\em status} & Stream post-\/processing status\\
+\hline
+\end{DoxyParams}
+This function is called from the post-\/processor\textquotesingle{}s thread whenever a camera stream has finished post processing. The corresponding entry is dropped from the descriptor\textquotesingle{}s pending\+Streams\+To\+Process\+\_\+ map.
+
+If the pending\+Streams\+To\+Process\+\_\+ map is then empty, all streams requiring to be generated from post-\/processing have been completed. Mark the descriptor as complete using complete\+Descriptor() in that case. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/android/camera\+\_\+device.\+h\item 
+src/peripherals/camera/libcamera/src/android/camera\+\_\+device.\+cpp\end{DoxyCompactItemize}

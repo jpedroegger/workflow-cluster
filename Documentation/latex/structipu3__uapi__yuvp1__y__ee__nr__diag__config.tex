@@ -1,0 +1,40 @@
+\doxysection{ipu3\+\_\+uapi\+\_\+yuvp1\+\_\+y\+\_\+ee\+\_\+nr\+\_\+diag\+\_\+config Struct Reference}
+\hypertarget{structipu3__uapi__yuvp1__y__ee__nr__diag__config}{}\label{structipu3__uapi__yuvp1__y__ee__nr__diag__config}\index{ipu3\_uapi\_yuvp1\_y\_ee\_nr\_diag\_config@{ipu3\_uapi\_yuvp1\_y\_ee\_nr\_diag\_config}}
+
+
+{\ttfamily \#include $<$intel-\/ipu3.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__y__ee__nr__diag__config_a2675c9974a1feee8fb858dc45a820d72}\label{structipu3__uapi__yuvp1__y__ee__nr__diag__config_a2675c9974a1feee8fb858dc45a820d72} 
+\+\_\+\+\_\+u32 {\bfseries diag\+\_\+disc\+\_\+g}\+:4
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__y__ee__nr__diag__config_af1d2f7b302a46e03a2cf5586b009ffa9}\label{structipu3__uapi__yuvp1__y__ee__nr__diag__config_af1d2f7b302a46e03a2cf5586b009ffa9} 
+\+\_\+\+\_\+u32 {\bfseries reserved0}\+:4
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__y__ee__nr__diag__config_ad255d7b8efb34a4fa85673d3a7a8ce88}\label{structipu3__uapi__yuvp1__y__ee__nr__diag__config_ad255d7b8efb34a4fa85673d3a7a8ce88} 
+\+\_\+\+\_\+u32 {\bfseries hvw\+\_\+hor}\+:4
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__y__ee__nr__diag__config_aa06a007e35ff0c9f71c62ede8b1ed37b}\label{structipu3__uapi__yuvp1__y__ee__nr__diag__config_aa06a007e35ff0c9f71c62ede8b1ed37b} 
+\+\_\+\+\_\+u32 {\bfseries dw\+\_\+hor}\+:4
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__y__ee__nr__diag__config_a3d4da33a889af839f86776c44616ffa6}\label{structipu3__uapi__yuvp1__y__ee__nr__diag__config_a3d4da33a889af839f86776c44616ffa6} 
+\+\_\+\+\_\+u32 {\bfseries hvw\+\_\+diag}\+:4
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__y__ee__nr__diag__config_a92efd985ed2eb085fb9f63575fbe8a9b}\label{structipu3__uapi__yuvp1__y__ee__nr__diag__config_a92efd985ed2eb085fb9f63575fbe8a9b} 
+\+\_\+\+\_\+u32 {\bfseries dw\+\_\+diag}\+:4
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__y__ee__nr__diag__config_afd3854886c0c62593d2a68d6e3086cec}\label{structipu3__uapi__yuvp1__y__ee__nr__diag__config_afd3854886c0c62593d2a68d6e3086cec} 
+\+\_\+\+\_\+u32 {\bfseries reserved1}\+:8
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structipu3__uapi__yuvp1__y__ee__nr__diag__config}{ipu3\+\_\+uapi\+\_\+yuvp1\+\_\+y\+\_\+ee\+\_\+nr\+\_\+diag\+\_\+config} -\/ Luma(\+Y) edge enhancement noise reduction diagonal config
+
+@diag\+\_\+disc\+\_\+g\+: Coefficient that prioritize diagonal edge direction on horizontal or vertical for final enhancement. u4.\+0, \mbox{[}1, 15\mbox{]}, default 1. @reserved0\+: reserved @hvw\+\_\+hor\+: Weight of horizontal/vertical edge enhancement for hv edge. u2.\+2, \mbox{[}1, 15\mbox{]}, default 4. @dw\+\_\+hor\+: Weight of diagonal edge enhancement for hv edge. u2.\+2, \mbox{[}1, 15\mbox{]}, default 1. @hvw\+\_\+diag\+: Weight of horizontal/vertical edge enhancement for diagonal edge. u2.\+2, \mbox{[}1, 15\mbox{]}, default 1. @dw\+\_\+diag\+: Weight of diagonal edge enhancement for diagonal edge. u2.\+2, \mbox{[}1, 15\mbox{]}, default 4. @reserved1\+: reserved 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/intel-\/ipu3.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,83 @@
+\doxysection{controller.\+h}
+\hypertarget{controller_8h_source}{}\label{controller_8h_source}\index{src/peripherals/camera/libcamera/src/ipa/rpi/controller/controller.h@{src/peripherals/camera/libcamera/src/ipa/rpi/controller/controller.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ BSD-\/2-\/Clause\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2019,\ Raspberry\ Pi\ Ltd}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ ISP\ controller\ interface}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ The\ Controller\ is\ simply\ a\ container\ for\ a\ collecting\ together\ a\ number\ of}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ "{}control\ algorithms"{}\ (such\ as\ AWB\ etc.)\ and\ for\ running\ them\ all\ in\ a}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ convenient\ manner.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{include_2libcamera_2base_2utils_8h}{libcamera/base/utils.h}}>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{yaml__parser_8h}{libcamera/internal/yaml\_parser.h}}"{}}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}camera\_mode.h"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}device\_status.h"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}metadata.h"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}statistics.h"{}}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{namespace\ }RPiController\ \{}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }Algorithm;}
+\DoxyCodeLine{00029\ \textcolor{keyword}{typedef}\ std::unique\_ptr<Algorithm>\ AlgorithmPtr;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ *\ The\ Controller\ holds\ a\ pointer\ to\ some\ global\_metadata,\ which\ is\ how}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ *\ different\ controllers\ and\ control\ algorithms\ within\ them\ can\ exchange}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ *\ information.\ The\ Prepare\ function\ returns\ a\ pointer\ to\ metadata\ for\ this}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ *\ specific\ image,\ and\ which\ should\ be\ passed\ on\ to\ the\ Process\ function.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRPiController_1_1Controller}{Controller}}}
+\DoxyCodeLine{00039\ \{}
+\DoxyCodeLine{00040\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structRPiController_1_1Controller_1_1HardwareConfig}{HardwareConfig}}\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Size}{libcamera::Size}}\ agcRegions;}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Size}{libcamera::Size}}\ agcZoneWeights;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Size}{libcamera::Size}}\ awbRegions;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Size}{libcamera::Size}}\ cacRegions;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Size}{libcamera::Size}}\ focusRegions;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ numHistogramBins;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ numGammaPoints;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ pipelineWidth;}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ statsInline;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{libcamera::utils::Duration}}\ minPixelProcessingTime;}
+\DoxyCodeLine{00052\ \ \ \ \ \};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{classRPiController_1_1Controller}{Controller}}();}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{classRPiController_1_1Controller}{\string~Controller}}();}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{int}\ read(\textcolor{keywordtype}{char}\ \textcolor{keyword}{const}\ *filename);}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ initialise();}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ switchMode(\mbox{\hyperlink{structCameraMode}{CameraMode}}\ \textcolor{keyword}{const}\ \&cameraMode,\ Metadata\ *metadata);}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ prepare(Metadata\ *imageMetadata);}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ process(StatisticsPtr\ stats,\ Metadata\ *imageMetadata);}
+\DoxyCodeLine{00061\ \ \ \ \ Metadata\ \&getGlobalMetadata();}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{classRPiController_1_1Algorithm}{Algorithm}}\ *getAlgorithm(std::string\ \textcolor{keyword}{const}\ \&name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&getTarget()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structRPiController_1_1Controller_1_1HardwareConfig}{HardwareConfig}}\ \&getHardwareConfig()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{int}\ createAlgorithm(\textcolor{keyword}{const}\ std::string\ \&name,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1YamlObject}{libcamera::YamlObject}}\ \&params);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ Metadata\ globalMetadata\_;}
+\DoxyCodeLine{00070\ \ \ \ \ std::vector<AlgorithmPtr>\ algorithms\_;}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{bool}\ switchModeCalled\_;}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00074\ \ \ \ \ std::string\ target\_;}
+\DoxyCodeLine{00075\ \};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \}\ \textcolor{comment}{/*\ namespace\ RPiController\ */}}
+
+\end{DoxyCode}

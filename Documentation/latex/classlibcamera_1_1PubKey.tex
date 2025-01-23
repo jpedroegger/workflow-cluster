@@ -1,0 +1,83 @@
+\doxysection{libcamera\+::Pub\+Key Class Reference}
+\hypertarget{classlibcamera_1_1PubKey}{}\label{classlibcamera_1_1PubKey}\index{libcamera::PubKey@{libcamera::PubKey}}
+
+
+Public key wrapper for signature verification.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1PubKey_a1f466a8d905b96bf1860226316ce0bcd}{Pub\+Key}} (\mbox{\hyperlink{classlibcamera_1_1Span}{Span}}$<$ const uint8\+\_\+t $>$ key)
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{classlibcamera_1_1PubKey}{Pub\+Key} from key data. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlibcamera_1_1PubKey_aef83cfe9c85b78452769720e278ccc76}{is\+Valid}} () const
+\begin{DoxyCompactList}\small\item\em Check is the public key is valid. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlibcamera_1_1PubKey_a959683b12bed8b7ec178c8b0b72fe6c5}{verify}} (\mbox{\hyperlink{classlibcamera_1_1Span}{Span}}$<$ const uint8\+\_\+t $>$ data, \mbox{\hyperlink{classlibcamera_1_1Span}{Span}}$<$ const uint8\+\_\+t $>$ sig) const
+\begin{DoxyCompactList}\small\item\em Verify signature on data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Public key wrapper for signature verification. 
+
+The \doxylink{classlibcamera_1_1PubKey}{Pub\+Key} class wraps a public key and implements signature verification. It only supports RSA keys and the RSA-\/\+SHA256 signature algorithm. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlibcamera_1_1PubKey_a1f466a8d905b96bf1860226316ce0bcd}\label{classlibcamera_1_1PubKey_a1f466a8d905b96bf1860226316ce0bcd} 
+\index{libcamera::PubKey@{libcamera::PubKey}!PubKey@{PubKey}}
+\index{PubKey@{PubKey}!libcamera::PubKey@{libcamera::PubKey}}
+\doxysubsubsection{\texorpdfstring{PubKey()}{PubKey()}}
+{\footnotesize\ttfamily libcamera\+::\+Pub\+Key\+::\+Pub\+Key (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1Span}{Span}}$<$ const uint8\+\_\+t $>$}]{key }\end{DoxyParamCaption})}
+
+
+
+Construct a \doxylink{classlibcamera_1_1PubKey}{Pub\+Key} from key data. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em key} & Key data encoded in DER format \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1PubKey_aef83cfe9c85b78452769720e278ccc76}\label{classlibcamera_1_1PubKey_aef83cfe9c85b78452769720e278ccc76} 
+\index{libcamera::PubKey@{libcamera::PubKey}!isValid@{isValid}}
+\index{isValid@{isValid}!libcamera::PubKey@{libcamera::PubKey}}
+\doxysubsubsection{\texorpdfstring{isValid()}{isValid()}}
+{\footnotesize\ttfamily bool libcamera\+::\+Pub\+Key\+::is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check is the public key is valid. 
+
+\begin{DoxyReturn}{Returns}
+True if the public key is valid, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1PubKey_a959683b12bed8b7ec178c8b0b72fe6c5}\label{classlibcamera_1_1PubKey_a959683b12bed8b7ec178c8b0b72fe6c5} 
+\index{libcamera::PubKey@{libcamera::PubKey}!verify@{verify}}
+\index{verify@{verify}!libcamera::PubKey@{libcamera::PubKey}}
+\doxysubsubsection{\texorpdfstring{verify()}{verify()}}
+{\footnotesize\ttfamily bool libcamera\+::\+Pub\+Key\+::verify (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1Span}{Span}}$<$ const uint8\+\_\+t $>$}]{data,  }\item[{\mbox{\hyperlink{classlibcamera_1_1Span}{Span}}$<$ const uint8\+\_\+t $>$}]{sig }\end{DoxyParamCaption}) const}
+
+
+
+Verify signature on data. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em data} & The signed data \\
+\hline
+\mbox{\texttt{ in}}  & {\em sig} & The signature\\
+\hline
+\end{DoxyParams}
+Verify that the signature {\itshape sig} matches the signed {\itshape data} for the public key. The signture algorithm is hardcoded to RSA-\/\+SHA256.
+
+\begin{DoxyReturn}{Returns}
+True if the signature is valid, false otherwise 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/internal/\mbox{\hyperlink{pub__key_8h}{pub\+\_\+key.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/pub\+\_\+key.\+cpp\end{DoxyCompactItemize}

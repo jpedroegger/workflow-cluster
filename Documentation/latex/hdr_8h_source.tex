@@ -1,0 +1,91 @@
+\doxysection{hdr.\+h}
+\hypertarget{hdr_8h_source}{}\label{hdr_8h_source}\index{src/peripherals/camera/libcamera/src/ipa/rpi/controller/rpi/hdr.h@{src/peripherals/camera/libcamera/src/ipa/rpi/controller/rpi/hdr.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ BSD-\/2-\/Clause\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2023,\ Raspberry\ Pi\ Ltd}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ HDR\ control\ algorithm}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{geometry_8h}{libcamera/geometry.h}}>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{pwl_8h}{libipa/pwl.h}}>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}../hdr\_algorithm.h"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}../hdr\_status.h"{}}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{comment}{/*\ This\ is\ our\ implementation\ of\ an\ HDR\ algorithm.\ */}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{namespace\ }RPiController\ \{}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structRPiController_1_1HdrConfig}{HdrConfig}}\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ std::string\ name;}
+\DoxyCodeLine{00026\ \ \ \ \ std::vector<unsigned\ int>\ cadence;}
+\DoxyCodeLine{00027\ \ \ \ \ std::map<unsigned\ int,\ std::string>\ channelMap;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{comment}{/*\ Lens\ shading\ related\ parameters.\ */}}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Pwl}{libcamera::ipa::Pwl}}\ spatialGainCurve;\ \textcolor{comment}{/*\ Brightness\ to\ gain\ curve\ for\ different\ image\ regions.\ */}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ diffusion;\ \textcolor{comment}{/*\ How\ much\ to\ diffuse\ the\ gain\ spatially.\ */}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{/*\ Tonemap\ related\ parameters.\ */}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{bool}\ tonemapEnable;}
+\DoxyCodeLine{00035\ \ \ \ \ uint16\_t\ detailConstant;}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{double}\ detailSlope;}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{double}\ iirStrength;}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{double}\ strength;}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Pwl}{libcamera::ipa::Pwl}}\ tonemap;}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{comment}{/*\ These\ relate\ to\ adaptive\ tonemap\ calculation.\ */}}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{double}\ speed;}
+\DoxyCodeLine{00042\ \ \ \ \ std::vector<double>\ hiQuantileTargets;\ \textcolor{comment}{/*\ quantiles\ to\ check\ for\ unsaturated\ images\ */}}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{double}\ hiQuantileMaxGain;\ \textcolor{comment}{/*\ the\ max\ gain\ we'll\ apply\ when\ unsaturated\ */}}
+\DoxyCodeLine{00044\ \ \ \ \ std::vector<double>\ quantileTargets;\ \textcolor{comment}{/*\ target\ values\ for\ histogram\ quantiles\ */}}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{double}\ powerMin;\ \textcolor{comment}{/*\ minimum\ tonemap\ power\ */}}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{double}\ powerMax;\ \textcolor{comment}{/*\ maximum\ tonemap\ power\ */}}
+\DoxyCodeLine{00047\ \ \ \ \ std::vector<double>\ contrastAdjustments;\ \textcolor{comment}{/*\ any\ contrast\ adjustment\ factors\ */}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{comment}{/*\ Stitch\ related\ parameters.\ */}}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{bool}\ stitchEnable;}
+\DoxyCodeLine{00051\ \ \ \ \ uint16\_t\ thresholdLo;}
+\DoxyCodeLine{00052\ \ \ \ \ uint8\_t\ diffPower;}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{double}\ motionThreshold;}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ read(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1YamlObject}{libcamera::YamlObject}}\ \&params,\ \textcolor{keyword}{const}\ std::string\ \&name);}
+\DoxyCodeLine{00056\ \};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRPiController_1_1Hdr}{Hdr}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classRPiController_1_1HdrAlgorithm}{HdrAlgorithm}}}
+\DoxyCodeLine{00059\ \{}
+\DoxyCodeLine{00060\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{classRPiController_1_1Hdr}{Hdr}}(\mbox{\hyperlink{classRPiController_1_1Controller}{Controller}}\ *controller);}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{char}\ \textcolor{keyword}{const}\ *name()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ switchMode(\mbox{\hyperlink{structCameraMode}{CameraMode}}\ \textcolor{keyword}{const}\ \&cameraMode,\ Metadata\ *metadata)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{int}\ read(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1YamlObject}{libcamera::YamlObject}}\ \&params)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ prepare(Metadata\ *imageMetadata)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ process(StatisticsPtr\ \&stats,\ Metadata\ *imageMetadata)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{int}\ setMode(std::string\ \textcolor{keyword}{const}\ \&mode)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00068\ \ \ \ \ std::vector<unsigned\ int>\ getChannels()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ updateAgcStatus(Metadata\ *metadata);}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ updateGains(StatisticsPtr\ \&stats,\ \mbox{\hyperlink{structRPiController_1_1HdrConfig}{HdrConfig}}\ \&config);}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{bool}\ updateTonemap(StatisticsPtr\ \&stats,\ \mbox{\hyperlink{structRPiController_1_1HdrConfig}{HdrConfig}}\ \&config);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ std::map<std::string,\ HdrConfig>\ config\_;}
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{structHdrStatus}{HdrStatus}}\ status\_;\ \textcolor{comment}{/*\ track\ the\ current\ HDR\ mode\ and\ channel\ */}}
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{structHdrStatus}{HdrStatus}}\ delayedStatus\_;\ \textcolor{comment}{/*\ track\ the\ delayed\ HDR\ mode\ and\ channel\ */}}
+\DoxyCodeLine{00078\ \ \ \ \ std::string\ previousMode\_;}
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Pwl}{libcamera::ipa::Pwl}}\ tonemap\_;}
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Size}{libcamera::Size}}\ regions\_;\ \textcolor{comment}{/*\ stats\ regions\ */}}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ numRegions\_;\ \textcolor{comment}{/*\ total\ number\ of\ stats\ regions\ */}}
+\DoxyCodeLine{00082\ \ \ \ \ std::vector<double>\ gains\_[2];}
+\DoxyCodeLine{00083\ \};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \}\ \textcolor{comment}{/*\ namespace\ RPiController\ */}}
+
+\end{DoxyCode}

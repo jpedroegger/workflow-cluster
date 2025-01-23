@@ -1,0 +1,28 @@
+\doxysection{Pipe\+Config Struct Reference}
+\hypertarget{structPipeConfig}{}\label{structPipeConfig}\index{PipeConfig@{PipeConfig}}
+
+
+The ImgU pipe configuration parameters.  
+
+
+
+
+\doxysubsection{Detailed Description}
+The ImgU pipe configuration parameters. 
+
+The ImgU image pipeline is composed of several hardware blocks that crop and scale the input image to obtain the desired output sizes. The scaling/cropping operations of those components is configured though the V4\+L2 selection API and the V4\+L2 subdev API applied to the ImgU media entity.
+
+The configurable components in the pipeline are\+:
+\begin{DoxyItemize}
+\item IF\+: image feeder
+\item BDS\+: bayer downscaler
+\item GDC\+: geometric distorsion correction
+\end{DoxyItemize}
+
+The IF crop rectangle is controlled by the V4\+L2\+\_\+\+SEL\+\_\+\+TGT\+\_\+\+CROP selection target applied to the ImgU media entity sink pad number 0. The BDS scaler is controlled by the V4\+L2\+\_\+\+SEL\+\_\+\+TGT\+\_\+\+COMPOSE target on the same pad, while the GDC output size is configured with the VIDIOC\+\_\+\+SUBDEV\+\_\+\+S\+\_\+\+FMT IOCTL, again on pad number 0.
+
+The \doxylink{structPipeConfig}{Pipe\+Config} structure collects the sizes of each of those components plus the BDS scaling factor used to calculate the field of view of the final images. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/libcamera/pipeline/ipu3/imgu.\+cpp\end{DoxyCompactItemize}

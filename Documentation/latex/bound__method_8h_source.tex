@@ -1,0 +1,230 @@
+\doxysection{bound\+\_\+method.\+h}
+\hypertarget{bound__method_8h_source}{}\label{bound__method_8h_source}\index{src/peripherals/camera/libcamera/include/libcamera/base/bound\_method.h@{src/peripherals/camera/libcamera/include/libcamera/base/bound\_method.h}}
+\mbox{\hyperlink{bound__method_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2019,\ Google\ Inc.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Method\ bind\ and\ invocation}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <tuple>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <type\_traits>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacelibcamera}{libcamera}}\ \{}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }Object;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespacelibcamera_ae2c8412791b9597d590a7d0b2c9e2919}{ConnectionType}}\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{namespacelibcamera_ae2c8412791b9597d590a7d0b2c9e2919a8d659af865521275ccdc99d8d233431f}{ConnectionTypeAuto}},}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{namespacelibcamera_ae2c8412791b9597d590a7d0b2c9e2919a8a67dadcdb520753f4305c1dd957a3d0}{ConnectionTypeDirect}},}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{namespacelibcamera_ae2c8412791b9597d590a7d0b2c9e2919a5dc36457abac372ae03ebdf7b19ea337}{ConnectionTypeQueued}},}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{namespacelibcamera_ae2c8412791b9597d590a7d0b2c9e2919ab3ec3848bcc2659ebf5e2616152e022d}{ConnectionTypeBlocking}},}
+\DoxyCodeLine{00024\ \};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1BoundMethodPackBase}{BoundMethodPackBase}}}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00028\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classlibcamera_1_1BoundMethodPackBase}{\string~BoundMethodPackBase}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00030\ \};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ R,\ \textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00033\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1BoundMethodPack}{BoundMethodPack}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classlibcamera_1_1BoundMethodPackBase}{BoundMethodPackBase}}}
+\DoxyCodeLine{00034\ \{}
+\DoxyCodeLine{00035\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1BoundMethodPack}{BoundMethodPack}}(\textcolor{keyword}{const}\ Args\ \&...\ args)}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ :\ args\_(args...)}
+\DoxyCodeLine{00038\ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ R\ returnValue()}
+\DoxyCodeLine{00042\ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ret\_;}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ std::tuple<typename\ std::remove\_reference\_t<Args>...>\ args\_;}
+\DoxyCodeLine{00047\ \ \ \ \ R\ ret\_;}
+\DoxyCodeLine{00048\ \};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00051\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1BoundMethodPack}{BoundMethodPack}}<void,\ Args...>\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classlibcamera_1_1BoundMethodPackBase}{BoundMethodPackBase}}}
+\DoxyCodeLine{00052\ \{}
+\DoxyCodeLine{00053\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1BoundMethodPack}{BoundMethodPack}}(\textcolor{keyword}{const}\ Args\ \&...\ args)}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ :\ args\_(args...)}
+\DoxyCodeLine{00056\ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ returnValue()}
+\DoxyCodeLine{00060\ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ std::tuple<typename\ std::remove\_reference\_t<Args>...>\ args\_;}
+\DoxyCodeLine{00064\ \};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1BoundMethodBase}{BoundMethodBase}}}
+\DoxyCodeLine{00067\ \{}
+\DoxyCodeLine{00068\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1BoundMethodBase}{BoundMethodBase}}(\textcolor{keywordtype}{void}\ *obj,\ \mbox{\hyperlink{classlibcamera_1_1Object}{Object}}\ *\textcolor{keywordtype}{object},\ \mbox{\hyperlink{namespacelibcamera_ae2c8412791b9597d590a7d0b2c9e2919}{ConnectionType}}\ type)}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ :\ obj\_(obj),\ object\_(\textcolor{keywordtype}{object}),\ connectionType\_(type)}
+\DoxyCodeLine{00071\ \ \ \ \ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \}}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classlibcamera_1_1BoundMethodBase}{\string~BoundMethodBase}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ template<typename\ T,\ std::enable\_if\_t<!std::is\_same<Object,\ T>::value>\ *\ =\ \textcolor{keyword}{nullptr}>}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{bool}\ match(T\ *obj)\ \{\ \textcolor{keywordflow}{return}\ obj\ ==\ obj\_;\ \}}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{bool}\ match(\mbox{\hyperlink{classlibcamera_1_1Object}{Object}}\ *\textcolor{keywordtype}{object})\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keywordtype}{object}\ ==\ object\_;\ \}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Object}{Object}}\ *object()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ object\_;\ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ invokePack(\mbox{\hyperlink{classlibcamera_1_1BoundMethodPackBase}{BoundMethodPackBase}}\ *pack)\ =\ 0;}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classlibcamera_1_1BoundMethodBase_a51e75c96b98814fc61832e9650a9d8e0}{activatePack}}(std::shared\_ptr<BoundMethodPackBase>\ pack,}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ deleteMethod);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{void}\ *obj\_;}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Object}{Object}}\ *object\_;}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{namespacelibcamera_ae2c8412791b9597d590a7d0b2c9e2919}{ConnectionType}}\ connectionType\_;}
+\DoxyCodeLine{00092\ \};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ R,\ \textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00095\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1BoundMethodArgs}{BoundMethodArgs}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classlibcamera_1_1BoundMethodBase}{BoundMethodBase}}}
+\DoxyCodeLine{00096\ \{}
+\DoxyCodeLine{00097\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classlibcamera_1_1BoundMethodPack}{PackType}}\ =\ \mbox{\hyperlink{classlibcamera_1_1BoundMethodPack}{BoundMethodPack}}<R,\ Args...>;}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{template}<std::size\_t...\ I,\ \textcolor{keyword}{typename}\ T\ =\ R>}
+\DoxyCodeLine{00102\ \ \ \ \ std::enable\_if\_t<!std::is\_void<T>::value,\ \textcolor{keywordtype}{void}>}
+\DoxyCodeLine{00103\ \ \ \ \ invokePack(\mbox{\hyperlink{classlibcamera_1_1BoundMethodPackBase}{BoundMethodPackBase}}\ *pack,\ std::index\_sequence<I...>)}
+\DoxyCodeLine{00104\ \ \ \ \ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1BoundMethodPack}{PackType}}\ *args\ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{classlibcamera_1_1BoundMethodPack}{PackType}}\ *\textcolor{keyword}{>}(pack);}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ args-\/>ret\_\ =\ invoke(std::get<I>(args-\/>args\_)...);}
+\DoxyCodeLine{00107\ \ \ \ \ \}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keyword}{template}<std::size\_t...\ I,\ \textcolor{keyword}{typename}\ T\ =\ R>}
+\DoxyCodeLine{00110\ \ \ \ \ std::enable\_if\_t<std::is\_void<T>::value,\ \textcolor{keywordtype}{void}>}
+\DoxyCodeLine{00111\ \ \ \ \ invokePack(\mbox{\hyperlink{classlibcamera_1_1BoundMethodPackBase}{BoundMethodPackBase}}\ *pack,\ std::index\_sequence<I...>)}
+\DoxyCodeLine{00112\ \ \ \ \ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ args\ is\ effectively\ unused\ when\ the\ sequence\ I\ is\ empty.\ */}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1BoundMethodPack}{PackType}}\ *args\ [[gnu::unused]]\ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{classlibcamera_1_1BoundMethodPack}{PackType}}\ *\textcolor{keyword}{>}(pack);}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ invoke(std::get<I>(args-\/>args\_)...);}
+\DoxyCodeLine{00116\ \ \ \ \ \}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00119\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1BoundMethodArgs}{BoundMethodArgs}}(\textcolor{keywordtype}{void}\ *obj,\ \mbox{\hyperlink{classlibcamera_1_1Object}{Object}}\ *\textcolor{keywordtype}{object},\ \mbox{\hyperlink{namespacelibcamera_ae2c8412791b9597d590a7d0b2c9e2919}{ConnectionType}}\ type)}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classlibcamera_1_1BoundMethodBase}{BoundMethodBase}}(obj,\ \textcolor{keywordtype}{object},\ type)\ \{\}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{void}\ invokePack(\mbox{\hyperlink{classlibcamera_1_1BoundMethodPackBase}{BoundMethodPackBase}}\ *pack)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00123\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ invokePack(pack,\ std::make\_index\_sequence<\textcolor{keyword}{sizeof}...(Args)>\{\});}
+\DoxyCodeLine{00125\ \ \ \ \ \}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keyword}{virtual}\ R\ activate(Args...\ args,\ \textcolor{keywordtype}{bool}\ deleteMethod\ =\ \textcolor{keyword}{false})\ =\ 0;}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keyword}{virtual}\ R\ invoke(Args...\ args)\ =\ 0;}
+\DoxyCodeLine{00129\ \};}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ R,\ \textcolor{keyword}{typename}\ Func,\ \textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00132\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1BoundMethodFunctor}{BoundMethodFunctor}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classlibcamera_1_1BoundMethodArgs}{BoundMethodArgs}}<R,\ Args...>}
+\DoxyCodeLine{00133\ \{}
+\DoxyCodeLine{00134\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keyword}{using\ }PackType\ =\ \textcolor{keyword}{typename}\ \mbox{\hyperlink{classlibcamera_1_1BoundMethodArgs}{BoundMethodArgs}}<R,\ Args...>::PackType;}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1BoundMethodFunctor}{BoundMethodFunctor}}(T\ *obj,\ \mbox{\hyperlink{classlibcamera_1_1Object}{Object}}\ *\textcolor{keywordtype}{object},\ Func\ func,}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacelibcamera_ae2c8412791b9597d590a7d0b2c9e2919}{ConnectionType}}\ type\ =\ \mbox{\hyperlink{namespacelibcamera_ae2c8412791b9597d590a7d0b2c9e2919a8d659af865521275ccdc99d8d233431f}{ConnectionTypeAuto}})}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classlibcamera_1_1BoundMethodArgs}{BoundMethodArgs}}<R,\ Args...>(obj,\ object,\ type),\ func\_(func)}
+\DoxyCodeLine{00140\ \ \ \ \ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \}}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ R\ activate(Args...\ args,\ \textcolor{keywordtype}{bool}\ deleteMethod\ =\ \textcolor{keyword}{false})\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00144\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!this-\/>object\_)}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ func\_(args...);}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ pack\ =\ std::make\_shared<PackType>(args...);}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ sync\ =\ \mbox{\hyperlink{classlibcamera_1_1BoundMethodBase_a51e75c96b98814fc61832e9650a9d8e0}{BoundMethodBase::activatePack}}(pack,\ deleteMethod);}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sync\ ?\ pack-\/>returnValue()\ :\ R();}
+\DoxyCodeLine{00151\ \ \ \ \ \}}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ R\ invoke(Args...\ args)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00154\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ func\_(args...);}
+\DoxyCodeLine{00156\ \ \ \ \ \}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00159\ \ \ \ \ Func\ func\_;}
+\DoxyCodeLine{00160\ \};}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ R,\ \textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00163\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1BoundMethodMember}{BoundMethodMember}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classlibcamera_1_1BoundMethodArgs}{BoundMethodArgs}}<R,\ Args...>}
+\DoxyCodeLine{00164\ \{}
+\DoxyCodeLine{00165\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keyword}{using\ }PackType\ =\ \textcolor{keyword}{typename}\ \mbox{\hyperlink{classlibcamera_1_1BoundMethodArgs}{BoundMethodArgs}}<R,\ Args...>::PackType;}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1BoundMethodMember}{BoundMethodMember}}(T\ *obj,\ \mbox{\hyperlink{classlibcamera_1_1Object}{Object}}\ *\textcolor{keywordtype}{object},\ R\ (T::*func)(Args...),}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacelibcamera_ae2c8412791b9597d590a7d0b2c9e2919}{ConnectionType}}\ type\ =\ \mbox{\hyperlink{namespacelibcamera_ae2c8412791b9597d590a7d0b2c9e2919a8d659af865521275ccdc99d8d233431f}{ConnectionTypeAuto}})}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classlibcamera_1_1BoundMethodArgs}{BoundMethodArgs}}<R,\ Args...>(obj,\ object,\ type),\ func\_(func)}
+\DoxyCodeLine{00171\ \ \ \ \ \{}
+\DoxyCodeLine{00172\ \ \ \ \ \}}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordtype}{bool}\ match(R\ (T::*func)(Args...))\ \textcolor{keyword}{const}\ \{\ \textcolor{keywordflow}{return}\ func\ ==\ func\_;\ \}}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \ \ \ \ R\ activate(Args...\ args,\ \textcolor{keywordtype}{bool}\ deleteMethod\ =\ \textcolor{keyword}{false})\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00177\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!this-\/>object\_)\ \{}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ T\ *obj\ =\ \textcolor{keyword}{static\_cast<}T\ *\textcolor{keyword}{>}(this-\/>obj\_);}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (obj-\/>*func\_)(args...);}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ pack\ =\ std::make\_shared<PackType>(args...);}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ sync\ =\ \mbox{\hyperlink{classlibcamera_1_1BoundMethodBase_a51e75c96b98814fc61832e9650a9d8e0}{BoundMethodBase::activatePack}}(pack,\ deleteMethod);}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sync\ ?\ pack-\/>returnValue()\ :\ R();}
+\DoxyCodeLine{00186\ \ \ \ \ \}}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \ \ \ \ R\ invoke(Args...\ args)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00189\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ T\ *obj\ =\ \textcolor{keyword}{static\_cast<}T\ *\textcolor{keyword}{>}(this-\/>obj\_);}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (obj-\/>*func\_)(args...);}
+\DoxyCodeLine{00192\ \ \ \ \ \}}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00195\ \ \ \ \ R\ (T::*func\_)(Args...);}
+\DoxyCodeLine{00196\ \};}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ R,\ \textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00199\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1BoundMethodStatic}{BoundMethodStatic}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classlibcamera_1_1BoundMethodArgs}{BoundMethodArgs}}<R,\ Args...>}
+\DoxyCodeLine{00200\ \{}
+\DoxyCodeLine{00201\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00202\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1BoundMethodStatic}{BoundMethodStatic}}(R\ (*func)(Args...))}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classlibcamera_1_1BoundMethodArgs}{BoundMethodArgs}}<R,\ Args...>(\textcolor{keyword}{nullptr},\ \textcolor{keyword}{nullptr},\ \mbox{\hyperlink{namespacelibcamera_ae2c8412791b9597d590a7d0b2c9e2919a8d659af865521275ccdc99d8d233431f}{ConnectionTypeAuto}}),}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ func\_(func)}
+\DoxyCodeLine{00205\ \ \ \ \ \{}
+\DoxyCodeLine{00206\ \ \ \ \ \}}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \ \ \ \ \textcolor{keywordtype}{bool}\ match(R\ (*func)(Args...))\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ func\ ==\ func\_;\ \}}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00210\ \ \ \ \ R\ activate(Args...\ args,\ [[maybe\_unused]]\ \textcolor{keywordtype}{bool}\ deleteMethod\ =\ \textcolor{keyword}{false})\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00211\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (*func\_)(args...);}
+\DoxyCodeLine{00213\ \ \ \ \ \}}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00215\ \ \ \ \ R\ invoke(Args...)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00216\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ R();}
+\DoxyCodeLine{00218\ \ \ \ \ \}}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00220\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00221\ \ \ \ \ R\ (*func\_)(Args...);}
+\DoxyCodeLine{00222\ \};}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ \}\ \textcolor{comment}{/*\ namespace\ libcamera\ */}}
+
+\end{DoxyCode}

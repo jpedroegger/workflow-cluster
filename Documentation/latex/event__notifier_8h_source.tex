@@ -1,0 +1,54 @@
+\doxysection{event\+\_\+notifier.\+h}
+\hypertarget{event__notifier_8h_source}{}\label{event__notifier_8h_source}\index{src/peripherals/camera/libcamera/include/libcamera/base/event\_notifier.h@{src/peripherals/camera/libcamera/include/libcamera/base/event\_notifier.h}}
+\mbox{\hyperlink{event__notifier_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2019,\ Google\ Inc.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ File\ descriptor\ event\ notifier}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <libcamera/base/private.h>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{object_8h}{libcamera/base/object.h}}>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{signal_8h}{libcamera/base/signal.h}}>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacelibcamera}{libcamera}}\ \{}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }Message;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1EventNotifier}{EventNotifier}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classlibcamera_1_1Object}{Object}}}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{classlibcamera_1_1EventNotifier_adceea4fbe37e9a3833dce6e258e35238}{Type}}\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1EventNotifier_adceea4fbe37e9a3833dce6e258e35238a5bb1c9edc7705f6c57b1291f322c86a4}{Read}},}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1EventNotifier_adceea4fbe37e9a3833dce6e258e35238a9a775304e288692f8b194f5f32c41af5}{Write}},}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1EventNotifier_adceea4fbe37e9a3833dce6e258e35238ad0c59d086a4af078b398c9c2e7cecb58}{Exception}},}
+\DoxyCodeLine{00026\ \ \ \ \ \};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1EventNotifier}{EventNotifier}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1EventNotifier_a4160d70ec08b29913d5a4936dd57e0ba}{fd}},\ \mbox{\hyperlink{classlibcamera_1_1EventNotifier_adceea4fbe37e9a3833dce6e258e35238}{Type}}\ \mbox{\hyperlink{classlibcamera_1_1EventNotifier_adbe8a0e432d9c76e855b78485a6e61c4}{type}},\ \mbox{\hyperlink{classlibcamera_1_1Object}{Object}}\ *\mbox{\hyperlink{classlibcamera_1_1Object_a469143548519e7ac9525e5b2b45e983f}{parent}}\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classlibcamera_1_1EventNotifier}{\string~EventNotifier}}();}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1EventNotifier_adceea4fbe37e9a3833dce6e258e35238}{Type}}\ \mbox{\hyperlink{classlibcamera_1_1EventNotifier_adbe8a0e432d9c76e855b78485a6e61c4}{type}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ type\_;\ \}}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1EventNotifier_a4160d70ec08b29913d5a4936dd57e0ba}{fd}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ fd\_;\ \}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classlibcamera_1_1EventNotifier_a2ed903b923b5b27533ea3b36e54a7ba7}{enabled}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ enabled\_;\ \}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1EventNotifier_a75a222d261786d5866d7f69406630061}{setEnabled}}(\textcolor{keywordtype}{bool}\ enable);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Signal}{Signal<>}}\ \mbox{\hyperlink{classlibcamera_1_1EventNotifier_afa2b7b07823ea7dabb67ef827e35a715}{activated}};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1EventNotifier_a83550c524a9bcc0ea582e876ca43c04d}{message}}(\mbox{\hyperlink{classlibcamera_1_1Message}{Message}}\ *msg)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{int}\ fd\_;}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1EventNotifier_adceea4fbe37e9a3833dce6e258e35238}{Type}}\ type\_;}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{bool}\ enabled\_;}
+\DoxyCodeLine{00046\ \};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \}\ \textcolor{comment}{/*\ namespace\ libcamera\ */}}
+
+\end{DoxyCode}

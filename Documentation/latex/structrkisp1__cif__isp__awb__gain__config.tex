@@ -1,0 +1,35 @@
+\doxysection{rkisp1\+\_\+cif\+\_\+isp\+\_\+awb\+\_\+gain\+\_\+config Struct Reference}
+\hypertarget{structrkisp1__cif__isp__awb__gain__config}{}\label{structrkisp1__cif__isp__awb__gain__config}\index{rkisp1\_cif\_isp\_awb\_gain\_config@{rkisp1\_cif\_isp\_awb\_gain\_config}}
+
+
+{\ttfamily \#include $<$rkisp1-\/config.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structrkisp1__cif__isp__awb__gain__config_a4b6164be4fa185749846262c4857b80a}\label{structrkisp1__cif__isp__awb__gain__config_a4b6164be4fa185749846262c4857b80a} 
+\+\_\+\+\_\+u16 {\bfseries gain\+\_\+red}
+\item 
+\Hypertarget{structrkisp1__cif__isp__awb__gain__config_afd7b7b889a82ac0c1081202723989093}\label{structrkisp1__cif__isp__awb__gain__config_afd7b7b889a82ac0c1081202723989093} 
+\+\_\+\+\_\+u16 {\bfseries gain\+\_\+green\+\_\+r}
+\item 
+\Hypertarget{structrkisp1__cif__isp__awb__gain__config_a4bf1bb15d5d7350b9a49a29bd8747944}\label{structrkisp1__cif__isp__awb__gain__config_a4bf1bb15d5d7350b9a49a29bd8747944} 
+\+\_\+\+\_\+u16 {\bfseries gain\+\_\+blue}
+\item 
+\Hypertarget{structrkisp1__cif__isp__awb__gain__config_aa257c71eafe613ca7ee39657f0b942d9}\label{structrkisp1__cif__isp__awb__gain__config_aa257c71eafe613ca7ee39657f0b942d9} 
+\+\_\+\+\_\+u16 {\bfseries gain\+\_\+green\+\_\+b}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structrkisp1__cif__isp__awb__gain__config}{rkisp1\+\_\+cif\+\_\+isp\+\_\+awb\+\_\+gain\+\_\+config} -\/ Configuration used by auto white balance gain
+
+All fields in this struct are 10 bit, where\+: 0x100h = 1, unsigned integer value, range 0 to 4 with 8 bit fractional part.
+
+out\+\_\+data\+\_\+x = ( AWB\+\_\+\+GAIN\+\_\+X \texorpdfstring{$\ast$}{*} in\+\_\+data + 128) \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} 8
+
+@gain\+\_\+red\+: gain value for red component. @gain\+\_\+green\+\_\+r\+: gain value for green component in red line. @gain\+\_\+blue\+: gain value for blue component. @gain\+\_\+green\+\_\+b\+: gain value for green component in blue line. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/rkisp1-\/config.\+h\end{DoxyCompactItemize}

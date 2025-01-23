@@ -1,0 +1,88 @@
+\doxysection{camera3\+\_\+stream\+\_\+buffer Struct Reference}
+\hypertarget{structcamera3__stream__buffer}{}\label{structcamera3__stream__buffer}\index{camera3\_stream\_buffer@{camera3\_stream\_buffer}}
+
+
+{\ttfamily \#include $<$camera3.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structcamera3__stream}{camera3\+\_\+stream\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structcamera3__stream__buffer_a24ef69cb5235c2177b95e4f0127d2b2b}{stream}}
+\item 
+\mbox{\hyperlink{structnative__handle}{buffer\+\_\+handle\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structcamera3__stream__buffer_adc8d67a8572337615897f0ba0aab970d}{buffer}}
+\item 
+int \mbox{\hyperlink{structcamera3__stream__buffer_a28bdcfc2f02d4d0a956cdd96269ccdcb}{status}}
+\item 
+int \mbox{\hyperlink{structcamera3__stream__buffer_aeaaec9a1858acbb834992a183e94b3f4}{acquire\+\_\+fence}}
+\item 
+int \mbox{\hyperlink{structcamera3__stream__buffer_af1b885d813d1313b04066cb02a46bf92}{release\+\_\+fence}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+camera3\+\_\+stream\+\_\+buffer\+\_\+t\+:
+
+A single buffer from a camera3 stream. It includes a handle to its parent stream, the handle to the gralloc buffer itself, and sync fences
+
+The buffer does not specify whether it is to be used for input or output; that is determined by its parent stream type and how the buffer is passed to the HAL device. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structcamera3__stream__buffer_aeaaec9a1858acbb834992a183e94b3f4}\label{structcamera3__stream__buffer_aeaaec9a1858acbb834992a183e94b3f4} 
+\index{camera3\_stream\_buffer@{camera3\_stream\_buffer}!acquire\_fence@{acquire\_fence}}
+\index{acquire\_fence@{acquire\_fence}!camera3\_stream\_buffer@{camera3\_stream\_buffer}}
+\doxysubsubsection{\texorpdfstring{acquire\_fence}{acquire\_fence}}
+{\footnotesize\ttfamily int camera3\+\_\+stream\+\_\+buffer\+::acquire\+\_\+fence}
+
+The acquire sync fence for this buffer. The HAL must wait on this fence fd before attempting to read from or write to this buffer.
+
+The framework may be set to -\/1 to indicate that no waiting is necessary for this buffer.
+
+When the HAL returns an output buffer to the framework with process\+\_\+capture\+\_\+result(), the acquire\+\_\+fence must be set to -\/1. If the HAL never waits on the acquire\+\_\+fence due to an error in filling a buffer, when calling process\+\_\+capture\+\_\+result() the HAL must set the release\+\_\+fence of the buffer to be the acquire\+\_\+fence passed to it by the framework. This will allow the framework to wait on the fence before reusing the buffer.
+
+For input buffers, the HAL must not change the acquire\+\_\+fence field during the process\+\_\+capture\+\_\+request() call.
+
+\texorpdfstring{$>$}{>}= CAMERA\+\_\+\+DEVICE\+\_\+\+API\+\_\+\+VERSION\+\_\+3\+\_\+2\+:
+
+When the HAL returns an input buffer to the framework with process\+\_\+capture\+\_\+result(), the acquire\+\_\+fence must be set to -\/1. If the HAL never waits on input buffer acquire fence due to an error, the sync fences should be handled similarly to the way they are handled for output buffers. \Hypertarget{structcamera3__stream__buffer_adc8d67a8572337615897f0ba0aab970d}\label{structcamera3__stream__buffer_adc8d67a8572337615897f0ba0aab970d} 
+\index{camera3\_stream\_buffer@{camera3\_stream\_buffer}!buffer@{buffer}}
+\index{buffer@{buffer}!camera3\_stream\_buffer@{camera3\_stream\_buffer}}
+\doxysubsubsection{\texorpdfstring{buffer}{buffer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structnative__handle}{buffer\+\_\+handle\+\_\+t}}\texorpdfstring{$\ast$}{*} camera3\+\_\+stream\+\_\+buffer\+::buffer}
+
+The native handle to the buffer \Hypertarget{structcamera3__stream__buffer_af1b885d813d1313b04066cb02a46bf92}\label{structcamera3__stream__buffer_af1b885d813d1313b04066cb02a46bf92} 
+\index{camera3\_stream\_buffer@{camera3\_stream\_buffer}!release\_fence@{release\_fence}}
+\index{release\_fence@{release\_fence}!camera3\_stream\_buffer@{camera3\_stream\_buffer}}
+\doxysubsubsection{\texorpdfstring{release\_fence}{release\_fence}}
+{\footnotesize\ttfamily int camera3\+\_\+stream\+\_\+buffer\+::release\+\_\+fence}
+
+The release sync fence for this buffer. The HAL must set this fence when returning buffers to the framework, or write -\/1 to indicate that no waiting is required for this buffer.
+
+For the output buffers, the fences must be set in the output\+\_\+buffers array passed to process\+\_\+capture\+\_\+result().
+
+\texorpdfstring{$<$}{<}= CAMERA\+\_\+\+DEVICE\+\_\+\+API\+\_\+\+VERSION\+\_\+3\+\_\+1\+:
+
+For the input buffer, the release fence must be set by the process\+\_\+capture\+\_\+request() call.
+
+\texorpdfstring{$>$}{>}= CAMERA\+\_\+\+DEVICE\+\_\+\+API\+\_\+\+VERSION\+\_\+3\+\_\+2\+:
+
+For the input buffer, the fences must be set in the input\+\_\+buffer passed to process\+\_\+capture\+\_\+result().
+
+After signaling the release\+\_\+fence for this buffer, the HAL should not make any further attempts to access this buffer as the ownership has been fully transferred back to the framework.
+
+If a fence of -\/1 was specified then the ownership of this buffer is transferred back immediately upon the call of process\+\_\+capture\+\_\+result. \Hypertarget{structcamera3__stream__buffer_a28bdcfc2f02d4d0a956cdd96269ccdcb}\label{structcamera3__stream__buffer_a28bdcfc2f02d4d0a956cdd96269ccdcb} 
+\index{camera3\_stream\_buffer@{camera3\_stream\_buffer}!status@{status}}
+\index{status@{status}!camera3\_stream\_buffer@{camera3\_stream\_buffer}}
+\doxysubsubsection{\texorpdfstring{status}{status}}
+{\footnotesize\ttfamily int camera3\+\_\+stream\+\_\+buffer\+::status}
+
+Current state of the buffer, one of the camera3\+\_\+buffer\+\_\+status\+\_\+t values. The framework will not pass buffers to the HAL that are in an error state. In case a buffer could not be filled by the HAL, it must have its status set to CAMERA3\+\_\+\+BUFFER\+\_\+\+STATUS\+\_\+\+ERROR when returned to the framework with process\+\_\+capture\+\_\+result(). \Hypertarget{structcamera3__stream__buffer_a24ef69cb5235c2177b95e4f0127d2b2b}\label{structcamera3__stream__buffer_a24ef69cb5235c2177b95e4f0127d2b2b} 
+\index{camera3\_stream\_buffer@{camera3\_stream\_buffer}!stream@{stream}}
+\index{stream@{stream}!camera3\_stream\_buffer@{camera3\_stream\_buffer}}
+\doxysubsubsection{\texorpdfstring{stream}{stream}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structcamera3__stream}{camera3\+\_\+stream\+\_\+t}}\texorpdfstring{$\ast$}{*} camera3\+\_\+stream\+\_\+buffer\+::stream}
+
+The handle of the stream this buffer is associated with 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/android/hardware/libhardware/include/hardware/camera3.\+h\end{DoxyCompactItemize}

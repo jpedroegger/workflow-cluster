@@ -27,6 +27,20 @@ find_package(fmt REQUIRED)
 # Create the shared library
 add_library(${lib_name} SHARED ${srcs})
 
+target_include_directories(AbstractDriver PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  $<INSTALL_INTERFACE:include>
+)
+
+install(
+  TARGETS AbstractDriver
+  EXPORT abstract_driver_targets
+  LIBRARY DESTINATION lib
+  ARCHIVE DESTINATION lib
+  RUNTIME DESTINATION bin
+  INCLUDES DESTINATION include
+)
+
 # Link against the required dependencies
 ament_target_dependencies(${lib_name} rclcpp custom_msgs fmt)
 
@@ -37,4 +51,6 @@ install(
   DESTINATION include
 )
 
+ament_export_targets(abstract_driver_targets HAS_LIBRARY_TARGET)
+ament_export_dependencies(${dependencies})
 ament_package()

@@ -1,0 +1,120 @@
+\doxysection{libcamera\+::IPCMessage Class Reference}
+\hypertarget{classlibcamera_1_1IPCMessage}{}\label{classlibcamera_1_1IPCMessage}\index{libcamera::IPCMessage@{libcamera::IPCMessage}}
+
+
+IPC message to be passed through IPC message pipe.  
+
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structlibcamera_1_1IPCMessage_1_1Header}{Header}}
+\begin{DoxyCompactList}\small\item\em Container for an \doxylink{classlibcamera_1_1IPCMessage}{IPCMessage} header. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1IPCMessage_a18d5528b27ded668463f02217ff189d7}\label{classlibcamera_1_1IPCMessage_a18d5528b27ded668463f02217ff189d7} 
+{\bfseries IPCMessage} ()
+\begin{DoxyCompactList}\small\item\em Construct an empty \doxylink{classlibcamera_1_1IPCMessage}{IPCMessage} instance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1IPCMessage_ae45c34c32b15f0de807cc5efd27a60ce}{IPCMessage}} (uint32\+\_\+t cmd)
+\begin{DoxyCompactList}\small\item\em Construct an \doxylink{classlibcamera_1_1IPCMessage}{IPCMessage} instance with a given command code. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1IPCMessage_a6d71fee6f6d1f960d24e77cbf7304f80}{IPCMessage}} (const \mbox{\hyperlink{structlibcamera_1_1IPCMessage_1_1Header}{Header}} \&\mbox{\hyperlink{classlibcamera_1_1IPCMessage_a8f05875c79df9361ab85461dc26c3a95}{header}})
+\begin{DoxyCompactList}\small\item\em Construct an \doxylink{classlibcamera_1_1IPCMessage}{IPCMessage} instance with a given header. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1IPCMessage_aac22ce8e978d33e8b55c2b79f4e1e61b}{IPCMessage}} (\mbox{\hyperlink{structlibcamera_1_1IPCUnixSocket_1_1Payload}{IPCUnix\+Socket\+::\+Payload}} \&\mbox{\hyperlink{classlibcamera_1_1IPCMessage_a18d9502a924db483ee1deffe37de8117}{payload}})
+\begin{DoxyCompactList}\small\item\em Construct an \doxylink{classlibcamera_1_1IPCMessage}{IPCMessage} instance from an IPC payload. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structlibcamera_1_1IPCUnixSocket_1_1Payload}{IPCUnix\+Socket\+::\+Payload}} \mbox{\hyperlink{classlibcamera_1_1IPCMessage_a18d9502a924db483ee1deffe37de8117}{payload}} () const
+\begin{DoxyCompactList}\small\item\em Create an \doxylink{classlibcamera_1_1IPCUnixSocket}{IPCUnix\+Socket} payload from the \doxylink{classlibcamera_1_1IPCMessage}{IPCMessage}. \end{DoxyCompactList}\item 
+\Hypertarget{classlibcamera_1_1IPCMessage_a8f05875c79df9361ab85461dc26c3a95}\label{classlibcamera_1_1IPCMessage_a8f05875c79df9361ab85461dc26c3a95} 
+\mbox{\hyperlink{structlibcamera_1_1IPCMessage_1_1Header}{Header}} \& {\bfseries header} ()
+\begin{DoxyCompactList}\small\item\em Returns a reference to the header. \end{DoxyCompactList}\item 
+\Hypertarget{classlibcamera_1_1IPCMessage_ae77a0b98b3329fe070f31461fd492448}\label{classlibcamera_1_1IPCMessage_ae77a0b98b3329fe070f31461fd492448} 
+std\+::vector$<$ uint8\+\_\+t $>$ \& {\bfseries data} ()
+\begin{DoxyCompactList}\small\item\em Returns a reference to the byte vector containing data. \end{DoxyCompactList}\item 
+\Hypertarget{classlibcamera_1_1IPCMessage_a049d7696716e0610643e1ee1d6b1496a}\label{classlibcamera_1_1IPCMessage_a049d7696716e0610643e1ee1d6b1496a} 
+std\+::vector$<$ \mbox{\hyperlink{classlibcamera_1_1SharedFD}{Shared\+FD}} $>$ \& {\bfseries fds} ()
+\begin{DoxyCompactList}\small\item\em Returns a reference to the vector containing file descriptors. \end{DoxyCompactList}\item 
+\Hypertarget{classlibcamera_1_1IPCMessage_a06677d20a7f82a32e11ae681b93d078b}\label{classlibcamera_1_1IPCMessage_a06677d20a7f82a32e11ae681b93d078b} 
+const \mbox{\hyperlink{structlibcamera_1_1IPCMessage_1_1Header}{Header}} \& {\bfseries header} () const
+\begin{DoxyCompactList}\small\item\em Returns a const reference to the header. \end{DoxyCompactList}\item 
+\Hypertarget{classlibcamera_1_1IPCMessage_a048419c3577fc76b0688159badf3015f}\label{classlibcamera_1_1IPCMessage_a048419c3577fc76b0688159badf3015f} 
+const std\+::vector$<$ uint8\+\_\+t $>$ \& {\bfseries data} () const
+\begin{DoxyCompactList}\small\item\em Returns a const reference to the byte vector containing data. \end{DoxyCompactList}\item 
+\Hypertarget{classlibcamera_1_1IPCMessage_a1ebcd1ddf091777ef34c12ebadc91da1}\label{classlibcamera_1_1IPCMessage_a1ebcd1ddf091777ef34c12ebadc91da1} 
+const std\+::vector$<$ \mbox{\hyperlink{classlibcamera_1_1SharedFD}{Shared\+FD}} $>$ \& {\bfseries fds} () const
+\begin{DoxyCompactList}\small\item\em Returns a const reference to the vector containing file descriptors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+IPC message to be passed through IPC message pipe. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlibcamera_1_1IPCMessage_ae45c34c32b15f0de807cc5efd27a60ce}\label{classlibcamera_1_1IPCMessage_ae45c34c32b15f0de807cc5efd27a60ce} 
+\index{libcamera::IPCMessage@{libcamera::IPCMessage}!IPCMessage@{IPCMessage}}
+\index{IPCMessage@{IPCMessage}!libcamera::IPCMessage@{libcamera::IPCMessage}}
+\doxysubsubsection{\texorpdfstring{IPCMessage()}{IPCMessage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily libcamera\+::\+IPCMessage\+::\+IPCMessage (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{cmd }\end{DoxyParamCaption})}
+
+
+
+Construct an \doxylink{classlibcamera_1_1IPCMessage}{IPCMessage} instance with a given command code. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em cmd} & The command code \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classlibcamera_1_1IPCMessage_a6d71fee6f6d1f960d24e77cbf7304f80}\label{classlibcamera_1_1IPCMessage_a6d71fee6f6d1f960d24e77cbf7304f80} 
+\index{libcamera::IPCMessage@{libcamera::IPCMessage}!IPCMessage@{IPCMessage}}
+\index{IPCMessage@{IPCMessage}!libcamera::IPCMessage@{libcamera::IPCMessage}}
+\doxysubsubsection{\texorpdfstring{IPCMessage()}{IPCMessage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily libcamera\+::\+IPCMessage\+::\+IPCMessage (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structlibcamera_1_1IPCMessage_1_1Header}{Header}} \&}]{header }\end{DoxyParamCaption})}
+
+
+
+Construct an \doxylink{classlibcamera_1_1IPCMessage}{IPCMessage} instance with a given header. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em header} & The header that the constructed \doxylink{classlibcamera_1_1IPCMessage}{IPCMessage} will contain \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classlibcamera_1_1IPCMessage_aac22ce8e978d33e8b55c2b79f4e1e61b}\label{classlibcamera_1_1IPCMessage_aac22ce8e978d33e8b55c2b79f4e1e61b} 
+\index{libcamera::IPCMessage@{libcamera::IPCMessage}!IPCMessage@{IPCMessage}}
+\index{IPCMessage@{IPCMessage}!libcamera::IPCMessage@{libcamera::IPCMessage}}
+\doxysubsubsection{\texorpdfstring{IPCMessage()}{IPCMessage()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily libcamera\+::\+IPCMessage\+::\+IPCMessage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlibcamera_1_1IPCUnixSocket_1_1Payload}{IPCUnix\+Socket\+::\+Payload}} \&}]{payload }\end{DoxyParamCaption})}
+
+
+
+Construct an \doxylink{classlibcamera_1_1IPCMessage}{IPCMessage} instance from an IPC payload. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em payload} & The \doxylink{classlibcamera_1_1IPCUnixSocket}{IPCUnix\+Socket} payload to construct from\\
+\hline
+\end{DoxyParams}
+This essentially converts an \doxylink{classlibcamera_1_1IPCUnixSocket}{IPCUnix\+Socket} payload into an \doxylink{classlibcamera_1_1IPCMessage}{IPCMessage}. The header is extracted from the payload into the \doxylink{classlibcamera_1_1IPCMessage}{IPCMessage}\textquotesingle{}s header field.
+
+If the \doxylink{classlibcamera_1_1IPCUnixSocket}{IPCUnix\+Socket} payload had any valid file descriptors, then they will all be invalidated. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1IPCMessage_a18d9502a924db483ee1deffe37de8117}\label{classlibcamera_1_1IPCMessage_a18d9502a924db483ee1deffe37de8117} 
+\index{libcamera::IPCMessage@{libcamera::IPCMessage}!payload@{payload}}
+\index{payload@{payload}!libcamera::IPCMessage@{libcamera::IPCMessage}}
+\doxysubsubsection{\texorpdfstring{payload()}{payload()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structlibcamera_1_1IPCUnixSocket_1_1Payload}{IPCUnix\+Socket\+::\+Payload}} libcamera\+::\+IPCMessage\+::payload (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Create an \doxylink{classlibcamera_1_1IPCUnixSocket}{IPCUnix\+Socket} payload from the \doxylink{classlibcamera_1_1IPCMessage}{IPCMessage}. 
+
+This essentially converts the \doxylink{classlibcamera_1_1IPCMessage}{IPCMessage} into an \doxylink{classlibcamera_1_1IPCUnixSocket}{IPCUnix\+Socket} payload.
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000035}{Todo}}]Resolve the layering violation (add other converters later?) \end{DoxyRefDesc}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/internal/\mbox{\hyperlink{ipc__pipe_8h}{ipc\+\_\+pipe.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/ipc\+\_\+pipe.\+cpp\end{DoxyCompactItemize}

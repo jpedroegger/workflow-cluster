@@ -1,0 +1,79 @@
+\doxysection{af.\+h}
+\hypertarget{ipu3_2algorithms_2af_8h_source}{}\label{ipu3_2algorithms_2af_8h_source}\index{src/peripherals/camera/libcamera/src/ipa/ipu3/algorithms/af.h@{src/peripherals/camera/libcamera/src/ipa/ipu3/algorithms/af.h}}
+\mbox{\hyperlink{ipu3_2algorithms_2af_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2021,\ Red\ Hat}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ IPU3\ Af\ algorithm}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <linux/intel-\/ipu3.h>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{include_2libcamera_2base_2utils_8h}{libcamera/base/utils.h}}>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{geometry_8h}{libcamera/geometry.h}}>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}algorithm.h"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacelibcamera}{libcamera}}\ \{}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{namespace\ }ipa::ipu3::algorithms\ \{}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1ipa_1_1ipu3_1_1algorithms_1_1Af}{Af}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1Algorithm}{Algorithm}}}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{/*\ The\ format\ of\ y\_table.\ From\ ipu3-\/ipa\ repo\ */}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\_\_attribute\_\_((packed))\ y\_table\_item\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ uint16\_t\ y1\_avg;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ uint16\_t\ y2\_avg;}
+\DoxyCodeLine{00028\ \ \ \ \ \}\ y\_table\_item\_t;}
+\DoxyCodeLine{00029\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1ipu3_1_1algorithms_1_1Af}{Af}}();}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1ipu3_1_1algorithms_1_1Af}{\string~Af}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1ipu3_1_1algorithms_1_1Af_afcea18b80ab3822bbaa7df4a1f3ca7df}{configure}}(\mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAContext}{IPAContext}}\ \&context,\ \textcolor{keyword}{const}\ IPAConfigInfo\ \&configInfo)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1ipu3_1_1algorithms_1_1Af_a50edbc40bd8238f2d37e826494142dcf}{prepare}}(\mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAContext}{IPAContext}}\ \&context,\ \textcolor{keyword}{const}\ uint32\_t\ frame,}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAFrameContext}{IPAFrameContext}}\ \&frameContext,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structipu3__uapi__params}{ipu3\_uapi\_params}}\ *params)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1ipu3_1_1algorithms_1_1Af_a31e1bf756c1ac08786db1ca5a7c136b7}{process}}(\mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAContext}{IPAContext}}\ \&context,\ \textcolor{keyword}{const}\ uint32\_t\ frame,}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAFrameContext}{IPAFrameContext}}\ \&frameContext,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structipu3__uapi__stats__3a}{ipu3\_uapi\_stats\_3a}}\ *stats,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ControlList}{ControlList}}\ \&metadata)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ afCoarseScan(\mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAContext}{IPAContext}}\ \&context);}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ afFineScan(\mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAContext}{IPAContext}}\ \&context);}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{bool}\ afScan(\mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAContext}{IPAContext}}\ \&context,\ \textcolor{keywordtype}{int}\ min\_step);}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ afReset(\mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAContext}{IPAContext}}\ \&context);}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{bool}\ afNeedIgnoreFrame();}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ afIgnoreFrameReset();}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{double}\ afEstimateVariance(\mbox{\hyperlink{classlibcamera_1_1Span}{Span<const\ y\_table\_item\_t>}}\ y\_items,\ \textcolor{keywordtype}{bool}\ isY1);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{bool}\ afIsOutOfFocus(\mbox{\hyperlink{structlibcamera_1_1ipa_1_1ipu3_1_1IPAContext}{IPAContext}}\ \&context);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{comment}{/*\ VCM\ step\ configuration.\ It\ is\ the\ current\ setting\ of\ the\ VCM\ step.\ */}}
+\DoxyCodeLine{00054\ \ \ \ \ uint32\_t\ focus\_;}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{comment}{/*\ The\ best\ VCM\ step.\ It\ is\ a\ local\ optimum\ VCM\ step\ during\ scanning.\ */}}
+\DoxyCodeLine{00056\ \ \ \ \ uint32\_t\ bestFocus\_;}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{comment}{/*\ Current\ AF\ statistic\ variance.\ */}}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{double}\ currentVariance\_;}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{comment}{/*\ The\ frames\ are\ ignore\ before\ starting\ measuring.\ */}}
+\DoxyCodeLine{00060\ \ \ \ \ uint32\_t\ ignoreCounter\_;}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{/*\ It\ is\ used\ to\ determine\ the\ derivative\ during\ scanning\ */}}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{double}\ previousVariance\_;}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{comment}{/*\ The\ designated\ maximum\ range\ of\ focus\ scanning.\ */}}
+\DoxyCodeLine{00064\ \ \ \ \ uint32\_t\ maxStep\_;}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{comment}{/*\ If\ the\ coarse\ scan\ completes,\ it\ is\ set\ to\ true.\ */}}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{bool}\ coarseCompleted\_;}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{comment}{/*\ If\ the\ fine\ scan\ completes,\ it\ is\ set\ to\ true.\ */}}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{bool}\ fineCompleted\_;}
+\DoxyCodeLine{00069\ \};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \}\ \textcolor{comment}{/*\ namespace\ ipa::ipu3::algorithms\ */}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \}\ \textcolor{comment}{/*\ namespace\ libcamera\ */}}
+
+\end{DoxyCode}

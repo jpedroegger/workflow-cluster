@@ -1,0 +1,93 @@
+\doxysection{libcamera\+::Camera\+Control\+Validator Class Reference}
+\hypertarget{classlibcamera_1_1CameraControlValidator}{}\label{classlibcamera_1_1CameraControlValidator}\index{libcamera::CameraControlValidator@{libcamera::CameraControlValidator}}
+
+
+A control validator for \doxylink{classlibcamera_1_1Camera}{Camera} instances.  
+
+
+Inheritance diagram for libcamera\+::Camera\+Control\+Validator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlibcamera_1_1CameraControlValidator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1CameraControlValidator_abe63dd7c2c1787de45fa2708fba081f7}{Camera\+Control\+Validator}} (\mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}} \texorpdfstring{$\ast$}{*}camera)
+\begin{DoxyCompactList}\small\item\em Construst a \doxylink{classlibcamera_1_1CameraControlValidator}{Camera\+Control\+Validator} for the {\itshape camera}. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{classlibcamera_1_1CameraControlValidator_aebd12536e25422896843ad120fe4aace}{name}} () const override
+\begin{DoxyCompactList}\small\item\em Retrieve the name of the object associated with the validator. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlibcamera_1_1CameraControlValidator_a71b33785a52fcdb71b31bc2286ea412d}{validate}} (unsigned int id) const override
+\begin{DoxyCompactList}\small\item\em Validate a control. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A control validator for \doxylink{classlibcamera_1_1Camera}{Camera} instances. 
+
+This \doxylink{classlibcamera_1_1ControlValidator}{Control\+Validator} specialisation validates that controls exist in the \doxylink{classlibcamera_1_1Camera}{Camera} associated with the validator. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlibcamera_1_1CameraControlValidator_abe63dd7c2c1787de45fa2708fba081f7}\label{classlibcamera_1_1CameraControlValidator_abe63dd7c2c1787de45fa2708fba081f7} 
+\index{libcamera::CameraControlValidator@{libcamera::CameraControlValidator}!CameraControlValidator@{CameraControlValidator}}
+\index{CameraControlValidator@{CameraControlValidator}!libcamera::CameraControlValidator@{libcamera::CameraControlValidator}}
+\doxysubsubsection{\texorpdfstring{CameraControlValidator()}{CameraControlValidator()}}
+{\footnotesize\ttfamily libcamera\+::\+Camera\+Control\+Validator\+::\+Camera\+Control\+Validator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1Camera}{Camera}} \texorpdfstring{$\ast$}{*}}]{camera }\end{DoxyParamCaption})}
+
+
+
+Construst a \doxylink{classlibcamera_1_1CameraControlValidator}{Camera\+Control\+Validator} for the {\itshape camera}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em camera} & The camera \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1CameraControlValidator_aebd12536e25422896843ad120fe4aace}\label{classlibcamera_1_1CameraControlValidator_aebd12536e25422896843ad120fe4aace} 
+\index{libcamera::CameraControlValidator@{libcamera::CameraControlValidator}!name@{name}}
+\index{name@{name}!libcamera::CameraControlValidator@{libcamera::CameraControlValidator}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily const std\+::string \& libcamera\+::\+Camera\+Control\+Validator\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retrieve the name of the object associated with the validator. 
+
+\begin{DoxyReturn}{Returns}
+The name of the object associated with the validator 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classlibcamera_1_1ControlValidator_ab56668b9fcb4bb0b135ad665cb750389}{libcamera\+::\+Control\+Validator}}.
+
+\Hypertarget{classlibcamera_1_1CameraControlValidator_a71b33785a52fcdb71b31bc2286ea412d}\label{classlibcamera_1_1CameraControlValidator_a71b33785a52fcdb71b31bc2286ea412d} 
+\index{libcamera::CameraControlValidator@{libcamera::CameraControlValidator}!validate@{validate}}
+\index{validate@{validate}!libcamera::CameraControlValidator@{libcamera::CameraControlValidator}}
+\doxysubsubsection{\texorpdfstring{validate()}{validate()}}
+{\footnotesize\ttfamily bool libcamera\+::\+Camera\+Control\+Validator\+::validate (\begin{DoxyParamCaption}\item[{unsigned int}]{id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Validate a control. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em id} & The control ID \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the control is valid, false otherwise 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classlibcamera_1_1ControlValidator_abcdc9ac8a5bb8d5342d2fb7fb1ce51f5}{libcamera\+::\+Control\+Validator}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/internal/\mbox{\hyperlink{camera__controls_8h}{camera\+\_\+controls.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/camera\+\_\+controls.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,54 @@
+\doxysection{Mock\+I2c\+Driver Class Reference}
+\hypertarget{classMockI2cDriver}{}\label{classMockI2cDriver}\index{MockI2cDriver@{MockI2cDriver}}
+Inheritance diagram for Mock\+I2c\+Driver\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classMockI2cDriver}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classMockI2cDriver_a8b8b08caa711dbec9fa195e955ee3c9f}\label{classMockI2cDriver_a8b8b08caa711dbec9fa195e955ee3c9f} 
+{\bfseries Mock\+I2c\+Driver} (uint8\+\_\+t device)
+\item 
+\Hypertarget{classMockI2cDriver_ad0c94fe63285789c833c59888ebe3fa9}\label{classMockI2cDriver_ad0c94fe63285789c833c59888ebe3fa9} 
+{\bfseries MOCK\+\_\+\+METHOD} (int, open,(),(override))
+\item 
+\Hypertarget{classMockI2cDriver_adf3007fe540c2e36482bbc0e9fc55ddc}\label{classMockI2cDriver_adf3007fe540c2e36482bbc0e9fc55ddc} 
+{\bfseries MOCK\+\_\+\+METHOD} (ssize\+\_\+t, read,(std\+::vector$<$ uint8\+\_\+t $>$ \&buff),(override))
+\item 
+\Hypertarget{classMockI2cDriver_a0e975405642cb8e5a5bfd0bc64729922}\label{classMockI2cDriver_a0e975405642cb8e5a5bfd0bc64729922} 
+{\bfseries MOCK\+\_\+\+METHOD} (ssize\+\_\+t, write,(std\+::vector$<$ uint8\+\_\+t $>$ \&buff),(override))
+\item 
+\Hypertarget{classMockI2cDriver_a83dd1faad21609efece4e9f0b9904e63}\label{classMockI2cDriver_a83dd1faad21609efece4e9f0b9904e63} 
+{\bfseries MOCK\+\_\+\+METHOD} (int, set\+Address,(uint8\+\_\+t address),(override))
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classII2cDriver}{II2c\+Driver}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries II2c\+Driver} (uint8\+\_\+t device)
+\item 
+virtual int {\bfseries open} ()=0
+\item 
+virtual ssize\+\_\+t {\bfseries read} (std\+::vector$<$ uint8\+\_\+t $>$ \&buff)=0
+\item 
+virtual ssize\+\_\+t {\bfseries write} (std\+::vector$<$ uint8\+\_\+t $>$ \&buff)=0
+\item 
+virtual int {\bfseries set\+Address} (uint8\+\_\+t address)=0
+\item 
+uint8\+\_\+t {\bfseries get\+Device\+Nb} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classII2cDriver}{II2c\+Driver}}}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t {\bfseries device\+\_\+}
+\item 
+int {\bfseries i2c\+\_\+fd\+\_\+}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/bus\+\_\+interfaces/i2c\+\_\+interface/test/include/Mock\+I2c\+Driver.\+hpp\end{DoxyCompactItemize}

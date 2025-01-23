@@ -1,0 +1,61 @@
+\doxysection{Post\+Processor\+Jpeg Class Reference}
+\hypertarget{classPostProcessorJpeg}{}\label{classPostProcessorJpeg}\index{PostProcessorJpeg@{PostProcessorJpeg}}
+Inheritance diagram for Post\+Processor\+Jpeg\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPostProcessorJpeg}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classPostProcessorJpeg_aecfaf0c784375f6aae2f5ee1be125f4a}\label{classPostProcessorJpeg_aecfaf0c784375f6aae2f5ee1be125f4a} 
+{\bfseries Post\+Processor\+Jpeg} (\mbox{\hyperlink{classCameraDevice}{Camera\+Device}} \texorpdfstring{$\ast$}{*}const device)
+\item 
+int \mbox{\hyperlink{classPostProcessorJpeg_adb99bb1ffa0434f8ac1afc675c919d7d}{configure}} (const \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration}{libcamera\+::\+Stream\+Configuration}} \&incfg, const \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration}{libcamera\+::\+Stream\+Configuration}} \&outcfg) override
+\item 
+void \mbox{\hyperlink{classPostProcessorJpeg_a536f8f9c548cda8bb0d7fb04aa390b8d}{process}} (\mbox{\hyperlink{structCamera3RequestDescriptor_1_1StreamBuffer}{Camera3\+Request\+Descriptor\+::\+Stream\+Buffer}} \texorpdfstring{$\ast$}{*}stream\+Buffer) override
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{classPostProcessor}{Post\+Processor}}}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classPostProcessor_aada6f4748174866925b2fd29b52399ce}\label{classPostProcessor_aada6f4748174866925b2fd29b52399ce} 
+enum class {\bfseries Status} \{ {\bfseries Error}
+, {\bfseries Success}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classPostProcessor}{Post\+Processor}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1Signal}{libcamera\+::\+Signal}}$<$ \mbox{\hyperlink{structCamera3RequestDescriptor_1_1StreamBuffer}{Camera3\+Request\+Descriptor\+::\+Stream\+Buffer}} \texorpdfstring{$\ast$}{*}, Status $>$ {\bfseries process\+Complete}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPostProcessorJpeg_adb99bb1ffa0434f8ac1afc675c919d7d}\label{classPostProcessorJpeg_adb99bb1ffa0434f8ac1afc675c919d7d} 
+\index{PostProcessorJpeg@{PostProcessorJpeg}!configure@{configure}}
+\index{configure@{configure}!PostProcessorJpeg@{PostProcessorJpeg}}
+\doxysubsubsection{\texorpdfstring{configure()}{configure()}}
+{\footnotesize\ttfamily int Post\+Processor\+Jpeg\+::configure (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration}{libcamera\+::\+Stream\+Configuration}} \&}]{incfg,  }\item[{const \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration}{libcamera\+::\+Stream\+Configuration}} \&}]{outcfg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classPostProcessor}{Post\+Processor}}.
+
+\Hypertarget{classPostProcessorJpeg_a536f8f9c548cda8bb0d7fb04aa390b8d}\label{classPostProcessorJpeg_a536f8f9c548cda8bb0d7fb04aa390b8d} 
+\index{PostProcessorJpeg@{PostProcessorJpeg}!process@{process}}
+\index{process@{process}!PostProcessorJpeg@{PostProcessorJpeg}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily void Post\+Processor\+Jpeg\+::process (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCamera3RequestDescriptor_1_1StreamBuffer}{Camera3\+Request\+Descriptor\+::\+Stream\+Buffer}} \texorpdfstring{$\ast$}{*}}]{stream\+Buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classPostProcessor}{Post\+Processor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/android/jpeg/post\+\_\+processor\+\_\+jpeg.\+h\item 
+src/peripherals/camera/libcamera/src/android/jpeg/post\+\_\+processor\+\_\+jpeg.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,29 @@
+\doxysection{camera3\+\_\+jpeg\+\_\+blob Struct Reference}
+\hypertarget{structcamera3__jpeg__blob}{}\label{structcamera3__jpeg__blob}\index{camera3\_jpeg\_blob@{camera3\_jpeg\_blob}}
+
+
+{\ttfamily \#include $<$camera3.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structcamera3__jpeg__blob_ac76c5219f233d2abd07d992f45e41e99}\label{structcamera3__jpeg__blob_ac76c5219f233d2abd07d992f45e41e99} 
+uint16\+\_\+t {\bfseries jpeg\+\_\+blob\+\_\+id}
+\item 
+\Hypertarget{structcamera3__jpeg__blob_aa56c4db03f3c57dfb800a5df4cecc4c2}\label{structcamera3__jpeg__blob_aa56c4db03f3c57dfb800a5df4cecc4c2} 
+uint32\+\_\+t {\bfseries jpeg\+\_\+size}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{structcamera3__jpeg__blob}{camera3\+\_\+jpeg\+\_\+blob}\+:
+
+Transport header for compressed JPEG buffers in output streams.
+
+To capture JPEG images, a stream is created using the pixel format HAL\+\_\+\+PIXEL\+\_\+\+FORMAT\+\_\+\+BLOB. The buffer size for the stream is calculated by the framework, based on the static metadata field android.\+jpeg.\+max\+Size. Since compressed JPEG images are of variable size, the HAL needs to include the final size of the compressed image using this structure inside the output stream buffer. The JPEG blob ID field must be set to CAMERA3\+\_\+\+JPEG\+\_\+\+BLOB\+\_\+\+ID.
+
+Transport header should be at the end of the JPEG output stream buffer. That means the jpeg\+\_\+blob\+\_\+id must start at byte\mbox{[}buffer\+\_\+size -\/ sizeof(camera3\+\_\+jpeg\+\_\+blob)\mbox{]}, where the buffer\+\_\+size is the size of gralloc buffer. Any HAL using this transport header must account for it in android.\+jpeg.\+max\+Size The JPEG data itself starts at the beginning of the buffer and should be jpeg\+\_\+size bytes long. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/android/hardware/libhardware/include/hardware/camera3.\+h\end{DoxyCompactItemize}

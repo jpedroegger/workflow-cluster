@@ -1,0 +1,32 @@
+\doxysection{\+\_\+\+Gst\+Libcamera\+Allocator Struct Reference}
+\hypertarget{struct__GstLibcameraAllocator}{}\label{struct__GstLibcameraAllocator}\index{\_GstLibcameraAllocator@{\_GstLibcameraAllocator}}
+
+
+A pooling Gst\+Dma\+Buf\+Allocator for libcamera.  
+
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct__GstLibcameraAllocator_a0f347c23f4b95896b2fc058b2327fc09}\label{struct__GstLibcameraAllocator_a0f347c23f4b95896b2fc058b2327fc09} 
+Gst\+Dma\+Buf\+Allocator {\bfseries parent}
+\item 
+\Hypertarget{struct__GstLibcameraAllocator_a9ed5d1830404d18d68b6c9e293c19f78}\label{struct__GstLibcameraAllocator_a9ed5d1830404d18d68b6c9e293c19f78} 
+\mbox{\hyperlink{classlibcamera_1_1FrameBufferAllocator}{Frame\+Buffer\+Allocator}} \texorpdfstring{$\ast$}{*} {\bfseries fb\+\_\+allocator}
+\item 
+\Hypertarget{struct__GstLibcameraAllocator_a6db269f6383a505d897bc5fa642883ea}\label{struct__GstLibcameraAllocator_a6db269f6383a505d897bc5fa642883ea} 
+GHash\+Table \texorpdfstring{$\ast$}{*} {\bfseries pools}
+\item 
+\Hypertarget{struct__GstLibcameraAllocator_abe6b4619dad97b7181436ed3584d17d4}\label{struct__GstLibcameraAllocator_abe6b4619dad97b7181436ed3584d17d4} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1CameraManager}{Camera\+Manager}} $>$ \texorpdfstring{$\ast$}{*} {\bfseries cm\+\_\+ptr}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A pooling Gst\+Dma\+Buf\+Allocator for libcamera. 
+
+This is a pooling Gst\+Dma\+Buf\+Allocator implementation. This implementation override the dispose function of memory object in order to keep them alive when they are disposed by downstream elements. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/gstreamer/gstlibcameraallocator.\+cpp\end{DoxyCompactItemize}

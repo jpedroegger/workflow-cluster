@@ -1,0 +1,75 @@
+\doxysection{libcamera\+::Control\+Validator Class Reference}
+\hypertarget{classlibcamera_1_1ControlValidator}{}\label{classlibcamera_1_1ControlValidator}\index{libcamera::ControlValidator@{libcamera::ControlValidator}}
+
+
+Interface for the control validator.  
+
+
+Inheritance diagram for libcamera\+::Control\+Validator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlibcamera_1_1ControlValidator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual const std\+::string \& \mbox{\hyperlink{classlibcamera_1_1ControlValidator_ab56668b9fcb4bb0b135ad665cb750389}{name}} () const =0
+\begin{DoxyCompactList}\small\item\em Retrieve the name of the object associated with the validator. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classlibcamera_1_1ControlValidator_abcdc9ac8a5bb8d5342d2fb7fb1ce51f5}{validate}} (unsigned int id) const =0
+\begin{DoxyCompactList}\small\item\em Validate a control. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface for the control validator. 
+
+The \doxylink{classlibcamera_1_1ControlValidator}{Control\+Validator} class is used by the \doxylink{classlibcamera_1_1ControlList}{Control\+List} class to validate controls added to the list. It is an abstract class providing an interface for object-\/specific control validation, such a \doxylink{classlibcamera_1_1Camera}{Camera} controls and V4\+L2 controls. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1ControlValidator_ab56668b9fcb4bb0b135ad665cb750389}\label{classlibcamera_1_1ControlValidator_ab56668b9fcb4bb0b135ad665cb750389} 
+\index{libcamera::ControlValidator@{libcamera::ControlValidator}!name@{name}}
+\index{name@{name}!libcamera::ControlValidator@{libcamera::ControlValidator}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily libcamera\+::\+Control\+Validator\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Retrieve the name of the object associated with the validator. 
+
+\begin{DoxyReturn}{Returns}
+The name of the object associated with the validator 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classlibcamera_1_1CameraControlValidator_aebd12536e25422896843ad120fe4aace}{libcamera\+::\+Camera\+Control\+Validator}}.
+
+\Hypertarget{classlibcamera_1_1ControlValidator_abcdc9ac8a5bb8d5342d2fb7fb1ce51f5}\label{classlibcamera_1_1ControlValidator_abcdc9ac8a5bb8d5342d2fb7fb1ce51f5} 
+\index{libcamera::ControlValidator@{libcamera::ControlValidator}!validate@{validate}}
+\index{validate@{validate}!libcamera::ControlValidator@{libcamera::ControlValidator}}
+\doxysubsubsection{\texorpdfstring{validate()}{validate()}}
+{\footnotesize\ttfamily libcamera\+::\+Control\+Validator\+::validate (\begin{DoxyParamCaption}\item[{unsigned int}]{id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Validate a control. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em id} & The control ID\\
+\hline
+\end{DoxyParams}
+This function validates the control {\itshape id} against the object corresponding to the validator. It shall at least validate that the control is applicable to the object instance, and may perform additional checks.
+
+\begin{DoxyReturn}{Returns}
+True if the control is valid, false otherwise 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classlibcamera_1_1CameraControlValidator_a71b33785a52fcdb71b31bc2286ea412d}{libcamera\+::\+Camera\+Control\+Validator}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/internal/\mbox{\hyperlink{control__validator_8h}{control\+\_\+validator.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/control\+\_\+validator.\+cpp\end{DoxyCompactItemize}

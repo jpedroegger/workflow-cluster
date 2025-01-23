@@ -1,0 +1,37 @@
+\doxysection{Blinkers\+Node.\+hpp}
+\hypertarget{BlinkersNode_8hpp_source}{}\label{BlinkersNode_8hpp_source}\index{src/peripherals/blinkers/include/BlinkersNode.hpp@{src/peripherals/blinkers/include/BlinkersNode.hpp}}
+\mbox{\hyperlink{BlinkersNode_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}std\_msgs/msg/u\_int8.hpp"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <custom\_msgs/srv/can\_service.hpp>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <rclcpp/client.hpp>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <rclcpp/publisher.hpp>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <rclcpp/rclcpp.hpp>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <rclcpp/subscription.hpp>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <std\_msgs/msg/u\_int8.hpp>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ BLINKERS\_STATE\_ID\ 0x100}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ IDLE\ 1}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ TURN\_LEFT\ 2}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ TURN\_RIGHT\ 3}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ WARNINGS\ 4}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBlinkersNode}{BlinkersNode}}\ :\ \textcolor{keyword}{public}\ rclcpp::Node}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBlinkersNode_a1f990145cfc4d979e16b9c9bbb1b7da7}{BlinkersNode}}();}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBlinkersNode_ae71bcc66ef33efadf364f879670faf51}{\string~BlinkersNode}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ rclcpp::Subscription<std\_msgs::msg::UInt8>::SharedPtr}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBlinkersNode_a15b6b766d7d4dce0340564b85a6383c1}{blinker\_state\_subscriber\_}};}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ rclcpp::Client<custom\_msgs::srv::CanService>::SharedPtr\ \mbox{\hyperlink{classBlinkersNode_ab1bb9d84b90c9df46a5e12c62b07a5bb}{can\_client\_}};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBlinkersNode_a9d63bfc53396ff2876b1ceb5e2ff391b}{writeBlinkersState}}(\textcolor{keyword}{const}\ std\_msgs::msg::UInt8\ msg);}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBlinkersNode_abadbe95d01185de70bf1db1ea7e75d10}{handleCanResponse}}(}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ rclcpp::Client<custom\_msgs::srv::CanService>::SharedFuture\ future);}
+\DoxyCodeLine{00036\ \};}
+
+\end{DoxyCode}

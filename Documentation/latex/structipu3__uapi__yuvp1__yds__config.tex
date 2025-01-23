@@ -1,0 +1,59 @@
+\doxysection{ipu3\+\_\+uapi\+\_\+yuvp1\+\_\+yds\+\_\+config Struct Reference}
+\hypertarget{structipu3__uapi__yuvp1__yds__config}{}\label{structipu3__uapi__yuvp1__yds__config}\index{ipu3\_uapi\_yuvp1\_yds\_config@{ipu3\_uapi\_yuvp1\_yds\_config}}
+
+
+{\ttfamily \#include $<$intel-\/ipu3.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__yds__config_a7c36356dc2fa2023cd0af1ef0c57209b}\label{structipu3__uapi__yuvp1__yds__config_a7c36356dc2fa2023cd0af1ef0c57209b} 
+\+\_\+\+\_\+u32 {\bfseries c00}\+:2
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__yds__config_a34f37434a622ab22d7b69f4f4bf7468e}\label{structipu3__uapi__yuvp1__yds__config_a34f37434a622ab22d7b69f4f4bf7468e} 
+\+\_\+\+\_\+u32 {\bfseries c01}\+:2
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__yds__config_ad9c393a2c36a652859118cbde1dc0181}\label{structipu3__uapi__yuvp1__yds__config_ad9c393a2c36a652859118cbde1dc0181} 
+\+\_\+\+\_\+u32 {\bfseries c02}\+:2
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__yds__config_a53cd653ef8037edeb8fc0060bb383b42}\label{structipu3__uapi__yuvp1__yds__config_a53cd653ef8037edeb8fc0060bb383b42} 
+\+\_\+\+\_\+u32 {\bfseries c03}\+:2
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__yds__config_ade09c442b9863bb4b176b0283113a2b5}\label{structipu3__uapi__yuvp1__yds__config_ade09c442b9863bb4b176b0283113a2b5} 
+\+\_\+\+\_\+u32 {\bfseries c10}\+:2
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__yds__config_a3bea1a08298c6c3b6302550abc30f3b4}\label{structipu3__uapi__yuvp1__yds__config_a3bea1a08298c6c3b6302550abc30f3b4} 
+\+\_\+\+\_\+u32 {\bfseries c11}\+:2
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__yds__config_ac723779b8de4f5c79c5b817a67bf05d2}\label{structipu3__uapi__yuvp1__yds__config_ac723779b8de4f5c79c5b817a67bf05d2} 
+\+\_\+\+\_\+u32 {\bfseries c12}\+:2
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__yds__config_a0056b94caa53b15364564a87745300f2}\label{structipu3__uapi__yuvp1__yds__config_a0056b94caa53b15364564a87745300f2} 
+\+\_\+\+\_\+u32 {\bfseries c13}\+:2
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__yds__config_ab0621890cf8c542edecd375a24ee3a0c}\label{structipu3__uapi__yuvp1__yds__config_ab0621890cf8c542edecd375a24ee3a0c} 
+\+\_\+\+\_\+u32 {\bfseries norm\+\_\+factor}\+:5
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__yds__config_a8c0b2c618a9dc921d8b195944b157500}\label{structipu3__uapi__yuvp1__yds__config_a8c0b2c618a9dc921d8b195944b157500} 
+\+\_\+\+\_\+u32 {\bfseries reserved0}\+:4
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__yds__config_a5e8dc05235ceb26cc9c29453424c6b75}\label{structipu3__uapi__yuvp1__yds__config_a5e8dc05235ceb26cc9c29453424c6b75} 
+\+\_\+\+\_\+u32 {\bfseries bin\+\_\+output}\+:1
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__yds__config_a1f7f55f6914fd685d1c1f6665f51ee80}\label{structipu3__uapi__yuvp1__yds__config_a1f7f55f6914fd685d1c1f6665f51ee80} 
+\+\_\+\+\_\+u32 {\bfseries reserved1}\+:6
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structipu3__uapi__yuvp1__yds__config}{ipu3\+\_\+uapi\+\_\+yuvp1\+\_\+yds\+\_\+config} -\/ Y Down-\/\+Sampling config
+
+@c00\+: range \mbox{[}0, 3\mbox{]}, default 0x0 @c01\+: range \mbox{[}0, 3\mbox{]}, default 0x1 @c02\+: range \mbox{[}0, 3\mbox{]}, default 0x1 @c03\+: range \mbox{[}0, 3\mbox{]}, default 0x0 @c10\+: range \mbox{[}0, 3\mbox{]}, default 0x0 @c11\+: range \mbox{[}0, 3\mbox{]}, default 0x1 @c12\+: range \mbox{[}0, 3\mbox{]}, default 0x1 @c13\+: range \mbox{[}0, 3\mbox{]}, default 0x0
+
+Above are 4x2 filter coefficients for chroma output downscaling.
+
+@norm\+\_\+factor\+: Normalization factor, range \mbox{[}0, 4\mbox{]}, default 2 0 -\/ divide by 1 1 -\/ divide by 2 2 -\/ divide by 4 3 -\/ divide by 8 4 -\/ divide by 16 @reserved0\+: reserved @bin\+\_\+output\+: Down sampling on Luma channel in two optional modes 0 -\/ Bin output 4.\+2.\+0 (default), 1 output 4.\+2.\+2. @reserved1\+: reserved 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/intel-\/ipu3.\+h\end{DoxyCompactItemize}

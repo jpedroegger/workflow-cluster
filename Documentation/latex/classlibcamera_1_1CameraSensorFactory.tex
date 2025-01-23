@@ -1,0 +1,65 @@
+\doxysection{libcamera\+::Camera\+Sensor\+Factory\texorpdfstring{$<$}{<} \+\_\+\+Camera\+Sensor \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classlibcamera_1_1CameraSensorFactory}{}\label{classlibcamera_1_1CameraSensorFactory}\index{libcamera::CameraSensorFactory$<$ \_CameraSensor $>$@{libcamera::CameraSensorFactory$<$ \_CameraSensor $>$}}
+
+
+Registration of \doxylink{classlibcamera_1_1CameraSensorFactory}{Camera\+Sensor\+Factory} classes and creation of instances.  
+
+
+Inheritance diagram for libcamera\+::Camera\+Sensor\+Factory\texorpdfstring{$<$}{<} \+\_\+\+Camera\+Sensor \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlibcamera_1_1CameraSensorFactory}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1CameraSensorFactory_a46dca79c0167ef94af1b4989076254ec}{Camera\+Sensor\+Factory}} (const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classlibcamera_1_1CameraSensorFactoryBase_a66f7990c55a0bc52675e2e9cd11c27d3}{name}}, int \mbox{\hyperlink{classlibcamera_1_1CameraSensorFactoryBase_af0f2faf3d7d273b5b6cf02d7d2e7d785}{priority}})
+\begin{DoxyCompactList}\small\item\em Construct a camera sensor factory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1CameraSensorFactoryBase}{libcamera\+::\+Camera\+Sensor\+Factory\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1CameraSensorFactoryBase_a99dc83d162aa036b20dd9b50cf81b848}{Camera\+Sensor\+Factory\+Base}} (const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classlibcamera_1_1CameraSensorFactoryBase_a66f7990c55a0bc52675e2e9cd11c27d3}{name}}, int \mbox{\hyperlink{classlibcamera_1_1CameraSensorFactoryBase_af0f2faf3d7d273b5b6cf02d7d2e7d785}{priority}})
+\begin{DoxyCompactList}\small\item\em Construct a camera sensor factory base. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{classlibcamera_1_1CameraSensorFactoryBase_a66f7990c55a0bc52675e2e9cd11c27d3}{name}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the camera sensor factory name. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classlibcamera_1_1CameraSensorFactoryBase_af0f2faf3d7d273b5b6cf02d7d2e7d785}{priority}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the priority value for the factory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1CameraSensorFactoryBase}{libcamera\+::\+Camera\+Sensor\+Factory\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1CameraSensor}{Camera\+Sensor}} $>$ \mbox{\hyperlink{classlibcamera_1_1CameraSensorFactoryBase_aa641844446d96c3da0e6bc52c288fe48}{create}} (\mbox{\hyperlink{classlibcamera_1_1MediaEntity}{Media\+Entity}} \texorpdfstring{$\ast$}{*}entity)
+\begin{DoxyCompactList}\small\item\em Create an instance of the \doxylink{classlibcamera_1_1CameraSensor}{Camera\+Sensor} corresponding to a media entity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename \+\_\+\+Camera\+Sensor$>$\newline
+class libcamera\+::\+Camera\+Sensor\+Factory$<$ \+\_\+\+Camera\+Sensor $>$}
+Registration of \doxylink{classlibcamera_1_1CameraSensorFactory}{Camera\+Sensor\+Factory} classes and creation of instances. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em \+\_\+\+Camera\+Sensor} & The camera sensor class type for this factory\\
+\hline
+\end{DoxyTemplParams}
+To facilitate discovery and instantiation of \doxylink{classlibcamera_1_1CameraSensor}{Camera\+Sensor} classes, the \doxylink{classlibcamera_1_1CameraSensorFactory}{Camera\+Sensor\+Factory} class implements auto-\/registration of camera sensors. Each \doxylink{classlibcamera_1_1CameraSensor}{Camera\+Sensor} subclass shall register itself using the \doxylink{camera__sensor_8h_a4eb72a0c095a1f9293905d047f75ef18}{REGISTER\+\_\+\+CAMERA\+\_\+\+SENSOR()} macro, which will create a corresponding instance of a \doxylink{classlibcamera_1_1CameraSensorFactory}{Camera\+Sensor\+Factory} subclass and register it with the static list of factories. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlibcamera_1_1CameraSensorFactory_a46dca79c0167ef94af1b4989076254ec}\label{classlibcamera_1_1CameraSensorFactory_a46dca79c0167ef94af1b4989076254ec} 
+\index{libcamera::CameraSensorFactory$<$ \_CameraSensor $>$@{libcamera::CameraSensorFactory$<$ \_CameraSensor $>$}!CameraSensorFactory@{CameraSensorFactory}}
+\index{CameraSensorFactory@{CameraSensorFactory}!libcamera::CameraSensorFactory$<$ \_CameraSensor $>$@{libcamera::CameraSensorFactory$<$ \_CameraSensor $>$}}
+\doxysubsubsection{\texorpdfstring{CameraSensorFactory()}{CameraSensorFactory()}}
+{\footnotesize\ttfamily template$<$typename \+\_\+\+Camera\+Sensor $>$ \\
+\mbox{\hyperlink{classlibcamera_1_1CameraSensorFactory}{libcamera\+::\+Camera\+Sensor\+Factory}}$<$ \+\_\+\+Camera\+Sensor $>$\+::\+Camera\+Sensor\+Factory (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{name,  }\item[{int}]{priority }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a camera sensor factory. 
+
+Creating an instance of the factory registers it with the global list of factories, accessible through the Camera\+Sensor\+Factory\+Base\+::factories() function. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/internal/\mbox{\hyperlink{camera__sensor_8h}{camera\+\_\+sensor.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/sensor/camera\+\_\+sensor.\+cpp\end{DoxyCompactItemize}

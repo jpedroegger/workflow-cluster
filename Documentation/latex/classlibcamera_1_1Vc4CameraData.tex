@@ -1,0 +1,295 @@
+\doxysection{libcamera\+::Vc4\+Camera\+Data Class Reference}
+\hypertarget{classlibcamera_1_1Vc4CameraData}{}\label{classlibcamera_1_1Vc4CameraData}\index{libcamera::Vc4CameraData@{libcamera::Vc4CameraData}}
+Inheritance diagram for libcamera\+::Vc4\+Camera\+Data\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classlibcamera_1_1Vc4CameraData}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structlibcamera_1_1Vc4CameraData_1_1Config}{Config}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1Vc4CameraData_a223908fe6a4357640b199e1481dc6afb}\label{classlibcamera_1_1Vc4CameraData_a223908fe6a4357640b199e1481dc6afb} 
+{\bfseries Vc4\+Camera\+Data} (\mbox{\hyperlink{classlibcamera_1_1PipelineHandler}{Pipeline\+Handler}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classlibcamera_1_1Camera_1_1Private_a765fac25ebdff5caf7be65a181cba38c}{pipe}})
+\item 
+\mbox{\hyperlink{classlibcamera_1_1V4L2VideoDevice_a028e21c214bae36abe9af7a1a95c991b}{V4\+L2\+Video\+Device\+::\+Formats}} \mbox{\hyperlink{classlibcamera_1_1Vc4CameraData_ae6cb86512b294fa7684899f0a5bfebbd}{isp\+Formats}} () const override
+\item 
+\mbox{\hyperlink{classlibcamera_1_1V4L2VideoDevice_a028e21c214bae36abe9af7a1a95c991b}{V4\+L2\+Video\+Device\+::\+Formats}} \mbox{\hyperlink{classlibcamera_1_1Vc4CameraData_a3b562c23519c6c215b4fcfc36d45e426}{raw\+Formats}} () const override
+\item 
+\mbox{\hyperlink{classlibcamera_1_1V4L2VideoDevice}{V4\+L2\+Video\+Device}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1Vc4CameraData_a4fcbeaa5907eff74b49d3bc60fdad953}{frontend\+Device}} () override
+\item 
+void \mbox{\hyperlink{classlibcamera_1_1Vc4CameraData_a45212124e2e9f8e378af302b9b21672e}{platform\+Free\+Buffers}} () override
+\item 
+\mbox{\hyperlink{classlibcamera_1_1CameraConfiguration_a64163f21db2fe1ce0a6af5a6f6847744}{Camera\+Configuration\+::\+Status}} \mbox{\hyperlink{classlibcamera_1_1Vc4CameraData_afd5ebb4a3d4520b79324c9b9b3041828}{platform\+Validate}} (\mbox{\hyperlink{classlibcamera_1_1RPi_1_1RPiCameraConfiguration}{RPi\+::\+RPi\+Camera\+Configuration}} \texorpdfstring{$\ast$}{*}rpi\+Config) const override
+\item 
+int \mbox{\hyperlink{classlibcamera_1_1Vc4CameraData_a8c5437b43b77794922e8746d2eb7c37f}{platform\+Pipeline\+Configure}} (const std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1YamlObject}{Yaml\+Object}} $>$ \&root) override
+\item 
+void \mbox{\hyperlink{classlibcamera_1_1Vc4CameraData_a252cf2ed31e313844aac84450198e658}{platform\+Start}} () override
+\item 
+void \mbox{\hyperlink{classlibcamera_1_1Vc4CameraData_a0f5e41872b5484f2e8d6da7f84d37161}{platform\+Stop}} () override
+\item 
+\Hypertarget{classlibcamera_1_1Vc4CameraData_a2dd0a597009e139c22fa7962d77a9755}\label{classlibcamera_1_1Vc4CameraData_a2dd0a597009e139c22fa7962d77a9755} 
+void {\bfseries unicam\+Buffer\+Dequeue} (\mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} \texorpdfstring{$\ast$}{*}buffer)
+\item 
+\Hypertarget{classlibcamera_1_1Vc4CameraData_adc784a0ed8292c221c1decc619ddaea9}\label{classlibcamera_1_1Vc4CameraData_adc784a0ed8292c221c1decc619ddaea9} 
+void {\bfseries isp\+Input\+Dequeue} (\mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} \texorpdfstring{$\ast$}{*}buffer)
+\item 
+\Hypertarget{classlibcamera_1_1Vc4CameraData_a17066d4375d9a85ecf1603a4082a765d}\label{classlibcamera_1_1Vc4CameraData_a17066d4375d9a85ecf1603a4082a765d} 
+void {\bfseries isp\+Output\+Dequeue} (\mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} \texorpdfstring{$\ast$}{*}buffer)
+\item 
+\Hypertarget{classlibcamera_1_1Vc4CameraData_a59e5c7fd7aedba9ef4863b775487cf3d}\label{classlibcamera_1_1Vc4CameraData_a59e5c7fd7aedba9ef4863b775487cf3d} 
+void {\bfseries process\+Stats\+Complete} (const ipa\+::\+RPi\+::\+Buffer\+Ids \&buffers)
+\item 
+\Hypertarget{classlibcamera_1_1Vc4CameraData_a52bd301c50daca795a814ed3575548f4}\label{classlibcamera_1_1Vc4CameraData_a52bd301c50daca795a814ed3575548f4} 
+void {\bfseries prepare\+Isp\+Complete} (const ipa\+::\+RPi\+::\+Buffer\+Ids \&buffers, bool stitch\+Swap\+Buffers)
+\item 
+\Hypertarget{classlibcamera_1_1Vc4CameraData_a05ca0cb1f035ebd8d5bd9e6fc2ae98e9}\label{classlibcamera_1_1Vc4CameraData_a05ca0cb1f035ebd8d5bd9e6fc2ae98e9} 
+void {\bfseries set\+Isp\+Controls} (const \mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} \&controls)
+\item 
+\Hypertarget{classlibcamera_1_1Vc4CameraData_a466ff4a731f805560a0eb16de3711744}\label{classlibcamera_1_1Vc4CameraData_a466ff4a731f805560a0eb16de3711744} 
+void {\bfseries set\+Camera\+Timeout} (uint32\+\_\+t max\+Frame\+Length\+Ms)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1RPi_1_1CameraData}{libcamera\+::\+RPi\+::\+Camera\+Data}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Camera\+Data} (\mbox{\hyperlink{classlibcamera_1_1PipelineHandler}{Pipeline\+Handler}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classlibcamera_1_1Camera_1_1Private_a765fac25ebdff5caf7be65a181cba38c}{pipe}})
+\item 
+double {\bfseries score\+Format} (double desired, double actual) const
+\item 
+\mbox{\hyperlink{structlibcamera_1_1V4L2SubdeviceFormat}{V4\+L2\+Subdevice\+Format}} {\bfseries find\+Best\+Format} (const \mbox{\hyperlink{classlibcamera_1_1Size}{Size}} \&req, unsigned int bit\+Depth) const
+\item 
+void {\bfseries free\+Buffers} ()
+\item 
+void {\bfseries enumerate\+Video\+Devices} (\mbox{\hyperlink{classlibcamera_1_1MediaLink}{Media\+Link}} \texorpdfstring{$\ast$}{*}link, const std\+::string \&frontend)
+\item 
+int {\bfseries load\+Pipeline\+Configuration} ()
+\item 
+int {\bfseries load\+IPA} (ipa\+::\+RPi\+::\+Init\+Result \texorpdfstring{$\ast$}{*}result)
+\item 
+int {\bfseries configure\+IPA} (const \mbox{\hyperlink{classlibcamera_1_1CameraConfiguration}{Camera\+Configuration}} \texorpdfstring{$\ast$}{*}config, ipa\+::\+RPi\+::\+Config\+Result \texorpdfstring{$\ast$}{*}result)
+\item 
+void {\bfseries metadata\+Ready} (const \mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} \&metadata)
+\item 
+void {\bfseries set\+Delayed\+Controls} (const \mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} \&controls, uint32\+\_\+t delay\+Context)
+\item 
+void {\bfseries set\+Lens\+Controls} (const \mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} \&controls)
+\item 
+void {\bfseries set\+Sensor\+Controls} (\mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} \&controls)
+\item 
+\mbox{\hyperlink{classlibcamera_1_1Rectangle}{Rectangle}} {\bfseries scale\+Isp\+Crop} (const \mbox{\hyperlink{classlibcamera_1_1Rectangle}{Rectangle}} \&isp\+Crop) const
+\item 
+void {\bfseries apply\+Scaler\+Crop} (const \mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} \&controls)
+\item 
+void {\bfseries camera\+Timeout} ()
+\item 
+void {\bfseries frame\+Started} (uint32\+\_\+t sequence)
+\item 
+void {\bfseries clear\+Incomplete\+Requests} ()
+\item 
+void {\bfseries handle\+Stream\+Buffer} (\mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} \texorpdfstring{$\ast$}{*}buffer, \mbox{\hyperlink{classlibcamera_1_1RPi_1_1Stream}{Stream}} \texorpdfstring{$\ast$}{*}stream)
+\item 
+void {\bfseries handle\+State} ()
+\item 
+bool {\bfseries is\+Running} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1Camera_1_1Private}{libcamera\+::\+Camera\+::\+Private}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1Camera_1_1Private_a9a4e997ad0fab497b95350f7bc82ec16}{Private}} (\mbox{\hyperlink{classlibcamera_1_1PipelineHandler}{Pipeline\+Handler}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classlibcamera_1_1Camera_1_1Private_a765fac25ebdff5caf7be65a181cba38c}{pipe}})
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{classlibcamera_1_1Camera_1_1Private}{Camera\+::\+Private} instance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1PipelineHandler}{Pipeline\+Handler}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1Camera_1_1Private_a765fac25ebdff5caf7be65a181cba38c}{pipe}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the pipeline handler related to this camera. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classlibcamera_1_1CameraControlValidator}{Camera\+Control\+Validator}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1Camera_1_1Private_ab3b02eaffac28effb9752c332318062b}{validator}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the control validator related to this camera. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1Extensible_1_1Private}{libcamera\+::\+Extensible\+::\+Private}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Private} ()
+\begin{DoxyCompactList}\small\item\em Construct an instance of an \doxylink{classlibcamera_1_1Extensible}{Extensible} class private data. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\const T \texorpdfstring{$\ast$}{*} {\bfseries \+\_\+o} () const
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \texorpdfstring{$\ast$}{*} {\bfseries \+\_\+o} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1Vc4CameraData_adf20e24c923eaba0b5bee057e2283040}\label{classlibcamera_1_1Vc4CameraData_adf20e24c923eaba0b5bee057e2283040} 
+\mbox{\hyperlink{classlibcamera_1_1RPi_1_1Device}{RPi\+::\+Device}}$<$ Unicam, 2 $>$ {\bfseries unicam\+\_\+}
+\item 
+\Hypertarget{classlibcamera_1_1Vc4CameraData_a8fcc47f1d2d552bf3b2616a22706528e}\label{classlibcamera_1_1Vc4CameraData_a8fcc47f1d2d552bf3b2616a22706528e} 
+\mbox{\hyperlink{classlibcamera_1_1RPi_1_1Device}{RPi\+::\+Device}}$<$ Isp, 4 $>$ {\bfseries isp\+\_\+}
+\item 
+\Hypertarget{classlibcamera_1_1Vc4CameraData_a49793a8c26b5ce56094c0f431b83a6d3}\label{classlibcamera_1_1Vc4CameraData_a49793a8c26b5ce56094c0f431b83a6d3} 
+\mbox{\hyperlink{classlibcamera_1_1DmaBufAllocator}{Dma\+Buf\+Allocator}} {\bfseries dma\+Heap\+\_\+}
+\item 
+\Hypertarget{classlibcamera_1_1Vc4CameraData_a5cbb4aa62dbf28c196abcb8bba624173}\label{classlibcamera_1_1Vc4CameraData_a5cbb4aa62dbf28c196abcb8bba624173} 
+\mbox{\hyperlink{classlibcamera_1_1SharedFD}{Shared\+FD}} {\bfseries ls\+Table\+\_\+}
+\item 
+\Hypertarget{classlibcamera_1_1Vc4CameraData_a0a7a4d087122c2b06d5d033004635db6}\label{classlibcamera_1_1Vc4CameraData_a0a7a4d087122c2b06d5d033004635db6} 
+\mbox{\hyperlink{structlibcamera_1_1Vc4CameraData_1_1Config}{Config}} {\bfseries config\+\_\+}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classlibcamera_1_1RPi_1_1CameraData}{libcamera\+::\+RPi\+::\+Camera\+Data}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ ipa\+::\+RPi\+::\+IPAProxy\+RPi $>$ {\bfseries ipa\+\_\+}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1CameraSensor}{Camera\+Sensor}} $>$ {\bfseries sensor\+\_\+}
+\item 
+Sensor\+Formats {\bfseries sensor\+Formats\+\_\+}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classlibcamera_1_1RPi_1_1Stream}{Stream}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries streams\+\_\+}
+\item 
+std\+::unordered\+\_\+set$<$ unsigned int $>$ {\bfseries buffer\+Ids\+\_\+}
+\item 
+std\+::vector$<$ std\+::pair$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1V4L2Subdevice}{V4\+L2\+Subdevice}} $>$, \mbox{\hyperlink{classlibcamera_1_1MediaLink}{Media\+Link}} \texorpdfstring{$\ast$}{*} $>$ $>$ {\bfseries bridge\+Devices\+\_\+}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1RPi_1_1DelayedControls}{Delayed\+Controls}} $>$ {\bfseries delayed\+Ctrls\+\_\+}
+\item 
+bool {\bfseries sensor\+Metadata\+\_\+}
+\item 
+State {\bfseries state\+\_\+}
+\item 
+std\+::queue$<$ \mbox{\hyperlink{classlibcamera_1_1Request}{Request}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries request\+Queue\+\_\+}
+\item 
+IPACamera\+Sensor\+Info {\bfseries sensor\+Info\+\_\+}
+\item 
+std\+::map$<$ unsigned int, \mbox{\hyperlink{structlibcamera_1_1RPi_1_1CameraData_1_1CropParams}{Crop\+Params}} $>$ {\bfseries crop\+Params\+\_\+}
+\item 
+unsigned int {\bfseries drop\+Frame\+Count\+\_\+}
+\item 
+std\+::optional$<$ int32\+\_\+t $>$ {\bfseries notify\+Gains\+Unity\+\_\+}
+\item 
+bool {\bfseries buffers\+Allocated\+\_\+}
+\item 
+\mbox{\hyperlink{structlibcamera_1_1RPi_1_1CameraData_1_1Config}{Config}} {\bfseries config\+\_\+}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classlibcamera_1_1Camera_1_1Private}{libcamera\+::\+Camera\+::\+Private}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::list$<$ \mbox{\hyperlink{classlibcamera_1_1Request}{Request}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classlibcamera_1_1Camera_1_1Private_ae5de4f5bb004bf9039363c9fd9e6240a}{queued\+Requests\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The list of queued and not yet completed requests. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map}} \mbox{\hyperlink{classlibcamera_1_1Camera_1_1Private_ab4e183eb4dabe929d1b2bbbb519b969f}{control\+Info\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The set of controls supported by the camera. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} \mbox{\hyperlink{classlibcamera_1_1Camera_1_1Private_ad31f12f5ed9c1fbe25750902f4791064}{properties\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The list of properties supported by the camera. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classlibcamera_1_1Camera_1_1Private_ace8c943a338ec3c0aa8b56c05b97463d}{request\+Sequence\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The queuing sequence number of the request. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{classlibcamera_1_1RPi_1_1CameraData}{libcamera\+::\+RPi\+::\+Camera\+Data}}}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1RPi_1_1CameraData_a0d94d5b8e7e505c00228746fb4fdbb2a}\label{classlibcamera_1_1RPi_1_1CameraData_a0d94d5b8e7e505c00228746fb4fdbb2a} 
+enum class {\bfseries State} \{ \newline
+{\bfseries Stopped}
+, {\bfseries Idle}
+, {\bfseries Busy}
+, {\bfseries Ipa\+Complete}
+, \newline
+{\bfseries Error}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1RPi_1_1CameraData}{libcamera\+::\+RPi\+::\+Camera\+Data}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries fill\+Request\+Metadata} (const \mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} \&buffer\+Controls, \mbox{\hyperlink{classlibcamera_1_1Request}{Request}} \texorpdfstring{$\ast$}{*}request)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classlibcamera_1_1RPi_1_1CameraData}{libcamera\+::\+RPi\+::\+Camera\+Data}}}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int {\bfseries isp\+Output\+Count\+\_\+}
+\item 
+unsigned int {\bfseries isp\+Output\+Total\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1Vc4CameraData_a4fcbeaa5907eff74b49d3bc60fdad953}\label{classlibcamera_1_1Vc4CameraData_a4fcbeaa5907eff74b49d3bc60fdad953} 
+\index{libcamera::Vc4CameraData@{libcamera::Vc4CameraData}!frontendDevice@{frontendDevice}}
+\index{frontendDevice@{frontendDevice}!libcamera::Vc4CameraData@{libcamera::Vc4CameraData}}
+\doxysubsubsection{\texorpdfstring{frontendDevice()}{frontendDevice()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1V4L2VideoDevice}{V4\+L2\+Video\+Device}} \texorpdfstring{$\ast$}{*} libcamera\+::\+Vc4\+Camera\+Data\+::frontend\+Device (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classlibcamera_1_1RPi_1_1CameraData}{libcamera\+::\+RPi\+::\+Camera\+Data}}.
+
+\Hypertarget{classlibcamera_1_1Vc4CameraData_ae6cb86512b294fa7684899f0a5bfebbd}\label{classlibcamera_1_1Vc4CameraData_ae6cb86512b294fa7684899f0a5bfebbd} 
+\index{libcamera::Vc4CameraData@{libcamera::Vc4CameraData}!ispFormats@{ispFormats}}
+\index{ispFormats@{ispFormats}!libcamera::Vc4CameraData@{libcamera::Vc4CameraData}}
+\doxysubsubsection{\texorpdfstring{ispFormats()}{ispFormats()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1V4L2VideoDevice_a028e21c214bae36abe9af7a1a95c991b}{V4\+L2\+Video\+Device\+::\+Formats}} libcamera\+::\+Vc4\+Camera\+Data\+::isp\+Formats (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classlibcamera_1_1RPi_1_1CameraData}{libcamera\+::\+RPi\+::\+Camera\+Data}}.
+
+\Hypertarget{classlibcamera_1_1Vc4CameraData_a45212124e2e9f8e378af302b9b21672e}\label{classlibcamera_1_1Vc4CameraData_a45212124e2e9f8e378af302b9b21672e} 
+\index{libcamera::Vc4CameraData@{libcamera::Vc4CameraData}!platformFreeBuffers@{platformFreeBuffers}}
+\index{platformFreeBuffers@{platformFreeBuffers}!libcamera::Vc4CameraData@{libcamera::Vc4CameraData}}
+\doxysubsubsection{\texorpdfstring{platformFreeBuffers()}{platformFreeBuffers()}}
+{\footnotesize\ttfamily void libcamera\+::\+Vc4\+Camera\+Data\+::platform\+Free\+Buffers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classlibcamera_1_1RPi_1_1CameraData}{libcamera\+::\+RPi\+::\+Camera\+Data}}.
+
+\Hypertarget{classlibcamera_1_1Vc4CameraData_a8c5437b43b77794922e8746d2eb7c37f}\label{classlibcamera_1_1Vc4CameraData_a8c5437b43b77794922e8746d2eb7c37f} 
+\index{libcamera::Vc4CameraData@{libcamera::Vc4CameraData}!platformPipelineConfigure@{platformPipelineConfigure}}
+\index{platformPipelineConfigure@{platformPipelineConfigure}!libcamera::Vc4CameraData@{libcamera::Vc4CameraData}}
+\doxysubsubsection{\texorpdfstring{platformPipelineConfigure()}{platformPipelineConfigure()}}
+{\footnotesize\ttfamily int libcamera\+::\+Vc4\+Camera\+Data\+::platform\+Pipeline\+Configure (\begin{DoxyParamCaption}\item[{const std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1YamlObject}{Yaml\+Object}} $>$ \&}]{root }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classlibcamera_1_1RPi_1_1CameraData}{libcamera\+::\+RPi\+::\+Camera\+Data}}.
+
+\Hypertarget{classlibcamera_1_1Vc4CameraData_a252cf2ed31e313844aac84450198e658}\label{classlibcamera_1_1Vc4CameraData_a252cf2ed31e313844aac84450198e658} 
+\index{libcamera::Vc4CameraData@{libcamera::Vc4CameraData}!platformStart@{platformStart}}
+\index{platformStart@{platformStart}!libcamera::Vc4CameraData@{libcamera::Vc4CameraData}}
+\doxysubsubsection{\texorpdfstring{platformStart()}{platformStart()}}
+{\footnotesize\ttfamily void libcamera\+::\+Vc4\+Camera\+Data\+::platform\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classlibcamera_1_1RPi_1_1CameraData}{libcamera\+::\+RPi\+::\+Camera\+Data}}.
+
+\Hypertarget{classlibcamera_1_1Vc4CameraData_a0f5e41872b5484f2e8d6da7f84d37161}\label{classlibcamera_1_1Vc4CameraData_a0f5e41872b5484f2e8d6da7f84d37161} 
+\index{libcamera::Vc4CameraData@{libcamera::Vc4CameraData}!platformStop@{platformStop}}
+\index{platformStop@{platformStop}!libcamera::Vc4CameraData@{libcamera::Vc4CameraData}}
+\doxysubsubsection{\texorpdfstring{platformStop()}{platformStop()}}
+{\footnotesize\ttfamily void libcamera\+::\+Vc4\+Camera\+Data\+::platform\+Stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classlibcamera_1_1RPi_1_1CameraData}{libcamera\+::\+RPi\+::\+Camera\+Data}}.
+
+\Hypertarget{classlibcamera_1_1Vc4CameraData_afd5ebb4a3d4520b79324c9b9b3041828}\label{classlibcamera_1_1Vc4CameraData_afd5ebb4a3d4520b79324c9b9b3041828} 
+\index{libcamera::Vc4CameraData@{libcamera::Vc4CameraData}!platformValidate@{platformValidate}}
+\index{platformValidate@{platformValidate}!libcamera::Vc4CameraData@{libcamera::Vc4CameraData}}
+\doxysubsubsection{\texorpdfstring{platformValidate()}{platformValidate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1CameraConfiguration_a64163f21db2fe1ce0a6af5a6f6847744}{Camera\+Configuration\+::\+Status}} libcamera\+::\+Vc4\+Camera\+Data\+::platform\+Validate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1RPi_1_1RPiCameraConfiguration}{RPi\+::\+RPi\+Camera\+Configuration}} \texorpdfstring{$\ast$}{*}}]{rpi\+Config }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classlibcamera_1_1RPi_1_1CameraData}{libcamera\+::\+RPi\+::\+Camera\+Data}}.
+
+\Hypertarget{classlibcamera_1_1Vc4CameraData_a3b562c23519c6c215b4fcfc36d45e426}\label{classlibcamera_1_1Vc4CameraData_a3b562c23519c6c215b4fcfc36d45e426} 
+\index{libcamera::Vc4CameraData@{libcamera::Vc4CameraData}!rawFormats@{rawFormats}}
+\index{rawFormats@{rawFormats}!libcamera::Vc4CameraData@{libcamera::Vc4CameraData}}
+\doxysubsubsection{\texorpdfstring{rawFormats()}{rawFormats()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1V4L2VideoDevice_a028e21c214bae36abe9af7a1a95c991b}{V4\+L2\+Video\+Device\+::\+Formats}} libcamera\+::\+Vc4\+Camera\+Data\+::raw\+Formats (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classlibcamera_1_1RPi_1_1CameraData}{libcamera\+::\+RPi\+::\+Camera\+Data}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/libcamera/pipeline/rpi/vc4/vc4.\+cpp\end{DoxyCompactItemize}

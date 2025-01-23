@@ -1,0 +1,278 @@
+\doxysection{libcamera\+::Bayer\+Format Class Reference}
+\hypertarget{classlibcamera_1_1BayerFormat}{}\label{classlibcamera_1_1BayerFormat}\index{libcamera::BayerFormat@{libcamera::BayerFormat}}
+
+
+Class to represent a raw image Bayer format.  
+
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classlibcamera_1_1BayerFormat_a72f709c68ce975ab0cbfc65cc5a73b95}{Order}} \+: uint8\+\_\+t \{ \newline
+\mbox{\hyperlink{classlibcamera_1_1BayerFormat_a72f709c68ce975ab0cbfc65cc5a73b95af2bc3bce940670d268117831e612ac58}{BGGR}} = 0
+, \mbox{\hyperlink{classlibcamera_1_1BayerFormat_a72f709c68ce975ab0cbfc65cc5a73b95a6715d0b601954c9f2a6a02fccd1feae2}{GBRG}} = 1
+, \mbox{\hyperlink{classlibcamera_1_1BayerFormat_a72f709c68ce975ab0cbfc65cc5a73b95a6d5cedd82a478175a7b8f63d83911891}{GRBG}} = 2
+, \mbox{\hyperlink{classlibcamera_1_1BayerFormat_a72f709c68ce975ab0cbfc65cc5a73b95aa150cae483435c52ad231fc5b88619b2}{RGGB}} = 3
+, \newline
+\mbox{\hyperlink{classlibcamera_1_1BayerFormat_a72f709c68ce975ab0cbfc65cc5a73b95aee7bb6693291e471f83d7b95ede516ba}{MONO}} = 4
+ \}
+\begin{DoxyCompactList}\small\item\em The order of the colour channels in the Bayer pattern. \end{DoxyCompactList}\item 
+enum class \mbox{\hyperlink{classlibcamera_1_1BayerFormat_a2c2c8def2a008fae9fd23616e59086a7}{Packing}} \+: uint16\+\_\+t \{ \newline
+\mbox{\hyperlink{classlibcamera_1_1BayerFormat_a2c2c8def2a008fae9fd23616e59086a7a6adf97f83acf6453d4a6a4b1070f3754}{None}} = 0
+, \mbox{\hyperlink{classlibcamera_1_1BayerFormat_a2c2c8def2a008fae9fd23616e59086a7a565dae8d97b721b72ab9684f04e578cc}{CSI2}} = 1
+, \mbox{\hyperlink{classlibcamera_1_1BayerFormat_a2c2c8def2a008fae9fd23616e59086a7abf83cf930378d7cb93c99bd845019222}{IPU3}} = 2
+, \mbox{\hyperlink{classlibcamera_1_1BayerFormat_a2c2c8def2a008fae9fd23616e59086a7a48b7caf82273abe98560a047b013f4f0}{PISP1}} = 3
+, \newline
+\mbox{\hyperlink{classlibcamera_1_1BayerFormat_a2c2c8def2a008fae9fd23616e59086a7a54955f0203dab85ad82efebb2371b4ed}{PISP2}} = 4
+ \}
+\begin{DoxyCompactList}\small\item\em Different types of packing that can be applied to a \doxylink{classlibcamera_1_1BayerFormat}{Bayer\+Format}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1BayerFormat_a08607a6b4138465f7a48da08e711d369}\label{classlibcamera_1_1BayerFormat_a08607a6b4138465f7a48da08e711d369} 
+constexpr {\bfseries Bayer\+Format} ()
+\begin{DoxyCompactList}\small\item\em Construct an empty (and invalid) \doxylink{classlibcamera_1_1BayerFormat}{Bayer\+Format}. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{classlibcamera_1_1BayerFormat_ae4fda4220f39a73c5cca3cb789d84277}{Bayer\+Format}} (\mbox{\hyperlink{classlibcamera_1_1BayerFormat_a72f709c68ce975ab0cbfc65cc5a73b95}{Order}} o, uint8\+\_\+t b, \mbox{\hyperlink{classlibcamera_1_1BayerFormat_a2c2c8def2a008fae9fd23616e59086a7}{Packing}} p)
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{classlibcamera_1_1BayerFormat}{Bayer\+Format} from explicit values. \end{DoxyCompactList}\item 
+\Hypertarget{classlibcamera_1_1BayerFormat_af618c3ac9c513bfe40717fbc27c4510f}\label{classlibcamera_1_1BayerFormat_af618c3ac9c513bfe40717fbc27c4510f} 
+bool {\bfseries is\+Valid} () const
+\begin{DoxyCompactList}\small\item\em Return whether a \doxylink{classlibcamera_1_1BayerFormat}{Bayer\+Format} is valid. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classlibcamera_1_1BayerFormat_abce6e6daffeaab008abda8ebda78350c}{to\+String}} () const
+\begin{DoxyCompactList}\small\item\em Assemble and return a readable string representation of the \doxylink{classlibcamera_1_1BayerFormat}{Bayer\+Format}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1V4L2PixelFormat}{V4\+L2\+Pixel\+Format}} \mbox{\hyperlink{classlibcamera_1_1BayerFormat_a92d0bc71ab06269de51dac7fb4f8aab2}{to\+V4\+L2\+Pixel\+Format}} () const
+\begin{DoxyCompactList}\small\item\em Convert a \doxylink{classlibcamera_1_1BayerFormat}{Bayer\+Format} into the corresponding \doxylink{classlibcamera_1_1V4L2PixelFormat}{V4\+L2\+Pixel\+Format}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1PixelFormat}{Pixel\+Format}} \mbox{\hyperlink{classlibcamera_1_1BayerFormat_aa419b8f69f498c9653169eec3c06b21f}{to\+Pixel\+Format}} () const
+\begin{DoxyCompactList}\small\item\em Convert a \doxylink{classlibcamera_1_1BayerFormat}{Bayer\+Format} into the corresponding \doxylink{classlibcamera_1_1PixelFormat}{Pixel\+Format}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1BayerFormat}{Bayer\+Format}} \mbox{\hyperlink{classlibcamera_1_1BayerFormat_ac6c07588cb55b11984f379d893621dd6}{transform}} (\mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571}{Transform}} t) const
+\begin{DoxyCompactList}\small\item\em Apply a transform to this \doxylink{classlibcamera_1_1BayerFormat}{Bayer\+Format}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const \mbox{\hyperlink{classlibcamera_1_1BayerFormat}{Bayer\+Format}} \& \mbox{\hyperlink{classlibcamera_1_1BayerFormat_a9b2b5c89ed37fc349f9d2ddec03cb7cc}{from\+Mbus\+Code}} (unsigned int mbus\+Code)
+\begin{DoxyCompactList}\small\item\em Retrieve the \doxylink{classlibcamera_1_1BayerFormat}{Bayer\+Format} associated with a media bus code. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classlibcamera_1_1BayerFormat}{Bayer\+Format}} \mbox{\hyperlink{classlibcamera_1_1BayerFormat_a00f274e814cfa0e7915c6f9687804cb1}{from\+V4\+L2\+Pixel\+Format}} (\mbox{\hyperlink{classlibcamera_1_1V4L2PixelFormat}{V4\+L2\+Pixel\+Format}} v4l2\+Format)
+\begin{DoxyCompactList}\small\item\em Convert {\itshape v4l2\+Format} to the corresponding \doxylink{classlibcamera_1_1BayerFormat}{Bayer\+Format}. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classlibcamera_1_1BayerFormat}{Bayer\+Format}} \mbox{\hyperlink{classlibcamera_1_1BayerFormat_ad0b858a59e3d158e624b43aae6c98254}{from\+Pixel\+Format}} (\mbox{\hyperlink{classlibcamera_1_1PixelFormat}{Pixel\+Format}} format)
+\begin{DoxyCompactList}\small\item\em Convert a \doxylink{classlibcamera_1_1PixelFormat}{Pixel\+Format} into the corresponding \doxylink{classlibcamera_1_1BayerFormat}{Bayer\+Format}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1BayerFormat_aaaff1754da78ff36513fc65a1ef6b601}\label{classlibcamera_1_1BayerFormat_aaaff1754da78ff36513fc65a1ef6b601} 
+\mbox{\hyperlink{classlibcamera_1_1BayerFormat_a72f709c68ce975ab0cbfc65cc5a73b95}{Order}} {\bfseries order}
+\begin{DoxyCompactList}\small\item\em The order of the colour channels in the Bayer pattern. \end{DoxyCompactList}\item 
+\Hypertarget{classlibcamera_1_1BayerFormat_a6a86a3fdf45933fc840a8ad011294e09}\label{classlibcamera_1_1BayerFormat_a6a86a3fdf45933fc840a8ad011294e09} 
+uint8\+\_\+t {\bfseries bit\+Depth}
+\begin{DoxyCompactList}\small\item\em The bit depth of the samples in the Bayer pattern. \end{DoxyCompactList}\item 
+\Hypertarget{classlibcamera_1_1BayerFormat_a74682aee26f8586d796a0ef26e0c1c30}\label{classlibcamera_1_1BayerFormat_a74682aee26f8586d796a0ef26e0c1c30} 
+\mbox{\hyperlink{classlibcamera_1_1BayerFormat_a2c2c8def2a008fae9fd23616e59086a7}{Packing}} {\bfseries packing}
+\begin{DoxyCompactList}\small\item\em Any packing scheme applied to this \doxylink{classlibcamera_1_1BayerFormat}{Bayer\+Format}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to represent a raw image Bayer format. 
+
+This class encodes the different Bayer formats in such a way that they can be easily manipulated. For example, the bit depth or Bayer order can be easily altered -\/ the Bayer order can even be "{}transformed"{} in the same manner as happens in many sensors when their horizontal or vertical "{}flip"{} controls are set. 
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{classlibcamera_1_1BayerFormat_a72f709c68ce975ab0cbfc65cc5a73b95}\label{classlibcamera_1_1BayerFormat_a72f709c68ce975ab0cbfc65cc5a73b95} 
+\index{libcamera::BayerFormat@{libcamera::BayerFormat}!Order@{Order}}
+\index{Order@{Order}!libcamera::BayerFormat@{libcamera::BayerFormat}}
+\doxysubsubsection{\texorpdfstring{Order}{Order}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classlibcamera_1_1BayerFormat_a72f709c68ce975ab0cbfc65cc5a73b95}{libcamera\+::\+Bayer\+Format\+::\+Order}} \+: uint8\+\_\+t}
+
+
+
+The order of the colour channels in the Bayer pattern. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BGGR@{BGGR}!libcamera::BayerFormat@{libcamera::BayerFormat}}\index{libcamera::BayerFormat@{libcamera::BayerFormat}!BGGR@{BGGR}}}\Hypertarget{classlibcamera_1_1BayerFormat_a72f709c68ce975ab0cbfc65cc5a73b95af2bc3bce940670d268117831e612ac58}\label{classlibcamera_1_1BayerFormat_a72f709c68ce975ab0cbfc65cc5a73b95af2bc3bce940670d268117831e612ac58} 
+BGGR&B then G on the first row, G then R on the second row. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GBRG@{GBRG}!libcamera::BayerFormat@{libcamera::BayerFormat}}\index{libcamera::BayerFormat@{libcamera::BayerFormat}!GBRG@{GBRG}}}\Hypertarget{classlibcamera_1_1BayerFormat_a72f709c68ce975ab0cbfc65cc5a73b95a6715d0b601954c9f2a6a02fccd1feae2}\label{classlibcamera_1_1BayerFormat_a72f709c68ce975ab0cbfc65cc5a73b95a6715d0b601954c9f2a6a02fccd1feae2} 
+GBRG&G then B on the first row, R then G on the second row. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GRBG@{GRBG}!libcamera::BayerFormat@{libcamera::BayerFormat}}\index{libcamera::BayerFormat@{libcamera::BayerFormat}!GRBG@{GRBG}}}\Hypertarget{classlibcamera_1_1BayerFormat_a72f709c68ce975ab0cbfc65cc5a73b95a6d5cedd82a478175a7b8f63d83911891}\label{classlibcamera_1_1BayerFormat_a72f709c68ce975ab0cbfc65cc5a73b95a6d5cedd82a478175a7b8f63d83911891} 
+GRBG&G then R on the first row, B then G on the second row. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RGGB@{RGGB}!libcamera::BayerFormat@{libcamera::BayerFormat}}\index{libcamera::BayerFormat@{libcamera::BayerFormat}!RGGB@{RGGB}}}\Hypertarget{classlibcamera_1_1BayerFormat_a72f709c68ce975ab0cbfc65cc5a73b95aa150cae483435c52ad231fc5b88619b2}\label{classlibcamera_1_1BayerFormat_a72f709c68ce975ab0cbfc65cc5a73b95aa150cae483435c52ad231fc5b88619b2} 
+RGGB&R then G on the first row, G then B on the second row. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONO@{MONO}!libcamera::BayerFormat@{libcamera::BayerFormat}}\index{libcamera::BayerFormat@{libcamera::BayerFormat}!MONO@{MONO}}}\Hypertarget{classlibcamera_1_1BayerFormat_a72f709c68ce975ab0cbfc65cc5a73b95aee7bb6693291e471f83d7b95ede516ba}\label{classlibcamera_1_1BayerFormat_a72f709c68ce975ab0cbfc65cc5a73b95aee7bb6693291e471f83d7b95ede516ba} 
+MONO&Monochrome image data, there is no colour filter array. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{classlibcamera_1_1BayerFormat_a2c2c8def2a008fae9fd23616e59086a7}\label{classlibcamera_1_1BayerFormat_a2c2c8def2a008fae9fd23616e59086a7} 
+\index{libcamera::BayerFormat@{libcamera::BayerFormat}!Packing@{Packing}}
+\index{Packing@{Packing}!libcamera::BayerFormat@{libcamera::BayerFormat}}
+\doxysubsubsection{\texorpdfstring{Packing}{Packing}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{classlibcamera_1_1BayerFormat_a2c2c8def2a008fae9fd23616e59086a7}{libcamera\+::\+Bayer\+Format\+::\+Packing}} \+: uint16\+\_\+t\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Different types of packing that can be applied to a \doxylink{classlibcamera_1_1BayerFormat}{Bayer\+Format}. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{None@{None}!libcamera::BayerFormat@{libcamera::BayerFormat}}\index{libcamera::BayerFormat@{libcamera::BayerFormat}!None@{None}}}\Hypertarget{classlibcamera_1_1BayerFormat_a2c2c8def2a008fae9fd23616e59086a7a6adf97f83acf6453d4a6a4b1070f3754}\label{classlibcamera_1_1BayerFormat_a2c2c8def2a008fae9fd23616e59086a7a6adf97f83acf6453d4a6a4b1070f3754} 
+None&No packing. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CSI2@{CSI2}!libcamera::BayerFormat@{libcamera::BayerFormat}}\index{libcamera::BayerFormat@{libcamera::BayerFormat}!CSI2@{CSI2}}}\Hypertarget{classlibcamera_1_1BayerFormat_a2c2c8def2a008fae9fd23616e59086a7a565dae8d97b721b72ab9684f04e578cc}\label{classlibcamera_1_1BayerFormat_a2c2c8def2a008fae9fd23616e59086a7a565dae8d97b721b72ab9684f04e578cc} 
+CSI2&\doxylink{classFormat}{Format} uses MIPI CSI-\/2 style packing. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IPU3@{IPU3}!libcamera::BayerFormat@{libcamera::BayerFormat}}\index{libcamera::BayerFormat@{libcamera::BayerFormat}!IPU3@{IPU3}}}\Hypertarget{classlibcamera_1_1BayerFormat_a2c2c8def2a008fae9fd23616e59086a7abf83cf930378d7cb93c99bd845019222}\label{classlibcamera_1_1BayerFormat_a2c2c8def2a008fae9fd23616e59086a7abf83cf930378d7cb93c99bd845019222} 
+IPU3&\doxylink{classFormat}{Format} uses IPU3 style packing. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PISP1@{PISP1}!libcamera::BayerFormat@{libcamera::BayerFormat}}\index{libcamera::BayerFormat@{libcamera::BayerFormat}!PISP1@{PISP1}}}\Hypertarget{classlibcamera_1_1BayerFormat_a2c2c8def2a008fae9fd23616e59086a7a48b7caf82273abe98560a047b013f4f0}\label{classlibcamera_1_1BayerFormat_a2c2c8def2a008fae9fd23616e59086a7a48b7caf82273abe98560a047b013f4f0} 
+PISP1&\doxylink{classFormat}{Format} uses PISP mode 1 compression. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PISP2@{PISP2}!libcamera::BayerFormat@{libcamera::BayerFormat}}\index{libcamera::BayerFormat@{libcamera::BayerFormat}!PISP2@{PISP2}}}\Hypertarget{classlibcamera_1_1BayerFormat_a2c2c8def2a008fae9fd23616e59086a7a54955f0203dab85ad82efebb2371b4ed}\label{classlibcamera_1_1BayerFormat_a2c2c8def2a008fae9fd23616e59086a7a54955f0203dab85ad82efebb2371b4ed} 
+PISP2&\doxylink{classFormat}{Format} uses PISP mode 2 compression. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlibcamera_1_1BayerFormat_ae4fda4220f39a73c5cca3cb789d84277}\label{classlibcamera_1_1BayerFormat_ae4fda4220f39a73c5cca3cb789d84277} 
+\index{libcamera::BayerFormat@{libcamera::BayerFormat}!BayerFormat@{BayerFormat}}
+\index{BayerFormat@{BayerFormat}!libcamera::BayerFormat@{libcamera::BayerFormat}}
+\doxysubsubsection{\texorpdfstring{BayerFormat()}{BayerFormat()}}
+{\footnotesize\ttfamily libcamera\+::\+Bayer\+Format\+::\+Bayer\+Format (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1BayerFormat_a72f709c68ce975ab0cbfc65cc5a73b95}{Order}}}]{o,  }\item[{uint8\+\_\+t}]{b,  }\item[{\mbox{\hyperlink{classlibcamera_1_1BayerFormat_a2c2c8def2a008fae9fd23616e59086a7}{Packing}}}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Construct a \doxylink{classlibcamera_1_1BayerFormat}{Bayer\+Format} from explicit values. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em o} & The order of the Bayer pattern \\
+\hline
+\mbox{\texttt{ in}}  & {\em b} & The bit depth of the Bayer samples \\
+\hline
+\mbox{\texttt{ in}}  & {\em p} & The type of packing applied to the pixel values \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1BayerFormat_a9b2b5c89ed37fc349f9d2ddec03cb7cc}\label{classlibcamera_1_1BayerFormat_a9b2b5c89ed37fc349f9d2ddec03cb7cc} 
+\index{libcamera::BayerFormat@{libcamera::BayerFormat}!fromMbusCode@{fromMbusCode}}
+\index{fromMbusCode@{fromMbusCode}!libcamera::BayerFormat@{libcamera::BayerFormat}}
+\doxysubsubsection{\texorpdfstring{fromMbusCode()}{fromMbusCode()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classlibcamera_1_1BayerFormat}{Bayer\+Format}} \& libcamera\+::\+Bayer\+Format\+::from\+Mbus\+Code (\begin{DoxyParamCaption}\item[{unsigned int}]{mbus\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retrieve the \doxylink{classlibcamera_1_1BayerFormat}{Bayer\+Format} associated with a media bus code. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em mbus\+Code} & The media bus code to convert into a \doxylink{classlibcamera_1_1BayerFormat}{Bayer\+Format}\\
+\hline
+\end{DoxyParams}
+The media bus code numeric identifiers are defined by the V4\+L2 specification. \Hypertarget{classlibcamera_1_1BayerFormat_ad0b858a59e3d158e624b43aae6c98254}\label{classlibcamera_1_1BayerFormat_ad0b858a59e3d158e624b43aae6c98254} 
+\index{libcamera::BayerFormat@{libcamera::BayerFormat}!fromPixelFormat@{fromPixelFormat}}
+\index{fromPixelFormat@{fromPixelFormat}!libcamera::BayerFormat@{libcamera::BayerFormat}}
+\doxysubsubsection{\texorpdfstring{fromPixelFormat()}{fromPixelFormat()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1BayerFormat}{Bayer\+Format}} libcamera\+::\+Bayer\+Format\+::from\+Pixel\+Format (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1PixelFormat}{Pixel\+Format}}}]{format }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Convert a \doxylink{classlibcamera_1_1PixelFormat}{Pixel\+Format} into the corresponding \doxylink{classlibcamera_1_1BayerFormat}{Bayer\+Format}. 
+
+\begin{DoxyReturn}{Returns}
+The \doxylink{classlibcamera_1_1BayerFormat}{Bayer\+Format} corresponding to this \doxylink{classlibcamera_1_1PixelFormat}{Pixel\+Format} 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1BayerFormat_a00f274e814cfa0e7915c6f9687804cb1}\label{classlibcamera_1_1BayerFormat_a00f274e814cfa0e7915c6f9687804cb1} 
+\index{libcamera::BayerFormat@{libcamera::BayerFormat}!fromV4L2PixelFormat@{fromV4L2PixelFormat}}
+\index{fromV4L2PixelFormat@{fromV4L2PixelFormat}!libcamera::BayerFormat@{libcamera::BayerFormat}}
+\doxysubsubsection{\texorpdfstring{fromV4L2PixelFormat()}{fromV4L2PixelFormat()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1BayerFormat}{Bayer\+Format}} libcamera\+::\+Bayer\+Format\+::from\+V4\+L2\+Pixel\+Format (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1V4L2PixelFormat}{V4\+L2\+Pixel\+Format}}}]{v4l2\+Format }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Convert {\itshape v4l2\+Format} to the corresponding \doxylink{classlibcamera_1_1BayerFormat}{Bayer\+Format}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em v4l2\+Format} & The raw format to convert into a \doxylink{classlibcamera_1_1BayerFormat}{Bayer\+Format} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \doxylink{classlibcamera_1_1BayerFormat}{Bayer\+Format} corresponding to {\itshape v4l2\+Format} 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1BayerFormat_aa419b8f69f498c9653169eec3c06b21f}\label{classlibcamera_1_1BayerFormat_aa419b8f69f498c9653169eec3c06b21f} 
+\index{libcamera::BayerFormat@{libcamera::BayerFormat}!toPixelFormat@{toPixelFormat}}
+\index{toPixelFormat@{toPixelFormat}!libcamera::BayerFormat@{libcamera::BayerFormat}}
+\doxysubsubsection{\texorpdfstring{toPixelFormat()}{toPixelFormat()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1PixelFormat}{Pixel\+Format}} libcamera\+::\+Bayer\+Format\+::to\+Pixel\+Format (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Convert a \doxylink{classlibcamera_1_1BayerFormat}{Bayer\+Format} into the corresponding \doxylink{classlibcamera_1_1PixelFormat}{Pixel\+Format}. 
+
+\begin{DoxyReturn}{Returns}
+The \doxylink{classlibcamera_1_1PixelFormat}{Pixel\+Format} corresponding to this \doxylink{classlibcamera_1_1BayerFormat}{Bayer\+Format} 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1BayerFormat_abce6e6daffeaab008abda8ebda78350c}\label{classlibcamera_1_1BayerFormat_abce6e6daffeaab008abda8ebda78350c} 
+\index{libcamera::BayerFormat@{libcamera::BayerFormat}!toString@{toString}}
+\index{toString@{toString}!libcamera::BayerFormat@{libcamera::BayerFormat}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily std\+::string libcamera\+::\+Bayer\+Format\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Assemble and return a readable string representation of the \doxylink{classlibcamera_1_1BayerFormat}{Bayer\+Format}. 
+
+\begin{DoxyReturn}{Returns}
+A string describing the \doxylink{classlibcamera_1_1BayerFormat}{Bayer\+Format} 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1BayerFormat_a92d0bc71ab06269de51dac7fb4f8aab2}\label{classlibcamera_1_1BayerFormat_a92d0bc71ab06269de51dac7fb4f8aab2} 
+\index{libcamera::BayerFormat@{libcamera::BayerFormat}!toV4L2PixelFormat@{toV4L2PixelFormat}}
+\index{toV4L2PixelFormat@{toV4L2PixelFormat}!libcamera::BayerFormat@{libcamera::BayerFormat}}
+\doxysubsubsection{\texorpdfstring{toV4L2PixelFormat()}{toV4L2PixelFormat()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1V4L2PixelFormat}{V4\+L2\+Pixel\+Format}} libcamera\+::\+Bayer\+Format\+::to\+V4\+L2\+Pixel\+Format (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Convert a \doxylink{classlibcamera_1_1BayerFormat}{Bayer\+Format} into the corresponding \doxylink{classlibcamera_1_1V4L2PixelFormat}{V4\+L2\+Pixel\+Format}. 
+
+\begin{DoxyReturn}{Returns}
+The \doxylink{classlibcamera_1_1V4L2PixelFormat}{V4\+L2\+Pixel\+Format} corresponding to this \doxylink{classlibcamera_1_1BayerFormat}{Bayer\+Format} 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1BayerFormat_ac6c07588cb55b11984f379d893621dd6}\label{classlibcamera_1_1BayerFormat_ac6c07588cb55b11984f379d893621dd6} 
+\index{libcamera::BayerFormat@{libcamera::BayerFormat}!transform@{transform}}
+\index{transform@{transform}!libcamera::BayerFormat@{libcamera::BayerFormat}}
+\doxysubsubsection{\texorpdfstring{transform()}{transform()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1BayerFormat}{Bayer\+Format}} libcamera\+::\+Bayer\+Format\+::transform (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacelibcamera_a371b6d17d531b85c035c4e889b116571}{Transform}}}]{t }\end{DoxyParamCaption}) const}
+
+
+
+Apply a transform to this \doxylink{classlibcamera_1_1BayerFormat}{Bayer\+Format}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em t} & The transform to apply\\
+\hline
+\end{DoxyParams}
+Applying a transform to an image stored in a Bayer format affects the Bayer order. For example, performing a horizontal flip on the Bayer pattern RGGB causes the RG rows of pixels to become GR, and the GB rows to become BG. The transformed image would have a GRBG order. Performing a vertical flip on the Bayer pattern RGGB causes the GB rows to come before the RG ones and the transformed image would have GBRG order. Applying both vertical and horizontal flips on the Bayer patter RGGB results in transformed images with BGGR order. The bit depth and modifiers are not affected.
+
+Horizontal and vertical flips are applied before transpose.
+
+\begin{DoxyReturn}{Returns}
+The transformed Bayer format 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/internal/\mbox{\hyperlink{bayer__format_8h}{bayer\+\_\+format.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/bayer\+\_\+format.\+cpp\end{DoxyCompactItemize}

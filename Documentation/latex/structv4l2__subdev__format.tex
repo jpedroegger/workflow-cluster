@@ -1,0 +1,32 @@
+\doxysection{v4l2\+\_\+subdev\+\_\+format Struct Reference}
+\hypertarget{structv4l2__subdev__format}{}\label{structv4l2__subdev__format}\index{v4l2\_subdev\_format@{v4l2\_subdev\_format}}
+
+
+{\ttfamily \#include $<$v4l2-\/subdev.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structv4l2__subdev__format_a54c26ef35dae269262a51e441dd84418}\label{structv4l2__subdev__format_a54c26ef35dae269262a51e441dd84418} 
+\+\_\+\+\_\+u32 {\bfseries which}
+\item 
+\Hypertarget{structv4l2__subdev__format_a8fc886137fcbe491409f14b992b8b433}\label{structv4l2__subdev__format_a8fc886137fcbe491409f14b992b8b433} 
+\+\_\+\+\_\+u32 {\bfseries pad}
+\item 
+\Hypertarget{structv4l2__subdev__format_a349187b11b99a3c6397772d8cea325bd}\label{structv4l2__subdev__format_a349187b11b99a3c6397772d8cea325bd} 
+struct v4l2\+\_\+mbus\+\_\+framefmt {\bfseries format}
+\item 
+\Hypertarget{structv4l2__subdev__format_abfc56bd70c528fc65f279c654b5b0150}\label{structv4l2__subdev__format_abfc56bd70c528fc65f279c654b5b0150} 
+\+\_\+\+\_\+u32 {\bfseries stream}
+\item 
+\Hypertarget{structv4l2__subdev__format_a7faa343d54bc6bc5ff0060dfb718d2c4}\label{structv4l2__subdev__format_a7faa343d54bc6bc5ff0060dfb718d2c4} 
+\+\_\+\+\_\+u32 {\bfseries reserved} \mbox{[}7\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structv4l2__subdev__format}{v4l2\+\_\+subdev\+\_\+format} -\/ Pad-\/level media bus format @which\+: format type (from enum v4l2\+\_\+subdev\+\_\+format\+\_\+whence) @pad\+: pad number, as reported by the media API @format\+: media bus format (format code and frame size) @stream\+: stream number, defined in subdev routing @reserved\+: drivers and applications must zero this array 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/v4l2-\/subdev.\+h\end{DoxyCompactItemize}

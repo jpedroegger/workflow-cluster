@@ -1,0 +1,27 @@
+\doxysection{Mock\+I2c\+Service Class Reference}
+\hypertarget{classMockI2cService}{}\label{classMockI2cService}\index{MockI2cService@{MockI2cService}}
+
+
+mocks the request handling.  
+
+
+
+
+{\ttfamily \#include $<$Mock\+I2c\+Service.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classMockI2cService_a38f99ac3554e7e0fd66cfbf13ab25850}\label{classMockI2cService_a38f99ac3554e7e0fd66cfbf13ab25850} 
+{\bfseries MOCK\+\_\+\+METHOD} (void, Handle\+Request,(const custom\+\_\+msgs\+::srv\+::\+I2c\+Service\+\_\+\+Request \&, custom\+\_\+msgs\+::srv\+::\+I2c\+Service\+\_\+\+Response \&))
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+mocks the request handling. 
+
+The idea is to intercept the request and examine its content to see if the driver works as expected. To do so we will spin a node exposing the i2c service but the callback associated with the service will just call the mock service that we can control the behaviour of. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/drivers/pca9685\+\_\+driver/test/include/Mock\+I2c\+Service.\+hpp\end{DoxyCompactItemize}

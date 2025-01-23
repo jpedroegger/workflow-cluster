@@ -1,0 +1,70 @@
+\doxysection{ipa\+\_\+control\+\_\+value\+\_\+entry Struct Reference}
+\hypertarget{structipa__control__value__entry}{}\label{structipa__control__value__entry}\index{ipa\_control\_value\_entry@{ipa\_control\_value\_entry}}
+
+
+Description of a serialized Control\+Value entry.  
+
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structipa__control__value__entry_a855db32059908de15fedfc8352771426}{id}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structipa__control__value__entry_a0739302cf6a8382fb1181c0956bd49fb}{type}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structipa__control__value__entry_a91059d27db48baea52dcd13e87a84863}{is\+\_\+array}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structipa__control__value__entry_ae148b9490c6e8844e5113ce4e5cd8174}{count}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structipa__control__value__entry_a0149b36aaceca06dc04e37edcad3aadb}{offset}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structipa__control__value__entry_ab38b3a6edc5b7de19b65fb38594c640c}{padding}} \mbox{[}1\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Description of a serialized Control\+Value entry. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structipa__control__value__entry_ae148b9490c6e8844e5113ce4e5cd8174}\label{structipa__control__value__entry_ae148b9490c6e8844e5113ce4e5cd8174} 
+\index{ipa\_control\_value\_entry@{ipa\_control\_value\_entry}!count@{count}}
+\index{count@{count}!ipa\_control\_value\_entry@{ipa\_control\_value\_entry}}
+\doxysubsubsection{\texorpdfstring{count}{count}}
+{\footnotesize\ttfamily ipa\+\_\+control\+\_\+value\+\_\+entry\+::count}
+
+The number of control array entries for array controls (1 otherwise) \Hypertarget{structipa__control__value__entry_a855db32059908de15fedfc8352771426}\label{structipa__control__value__entry_a855db32059908de15fedfc8352771426} 
+\index{ipa\_control\_value\_entry@{ipa\_control\_value\_entry}!id@{id}}
+\index{id@{id}!ipa\_control\_value\_entry@{ipa\_control\_value\_entry}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily ipa\+\_\+control\+\_\+value\+\_\+entry\+::id}
+
+The numerical ID of the control \Hypertarget{structipa__control__value__entry_a91059d27db48baea52dcd13e87a84863}\label{structipa__control__value__entry_a91059d27db48baea52dcd13e87a84863} 
+\index{ipa\_control\_value\_entry@{ipa\_control\_value\_entry}!is\_array@{is\_array}}
+\index{is\_array@{is\_array}!ipa\_control\_value\_entry@{ipa\_control\_value\_entry}}
+\doxysubsubsection{\texorpdfstring{is\_array}{is\_array}}
+{\footnotesize\ttfamily ipa\+\_\+control\+\_\+value\+\_\+entry\+::is\+\_\+array}
+
+True if the control value stores an array, false otherwise \Hypertarget{structipa__control__value__entry_a0149b36aaceca06dc04e37edcad3aadb}\label{structipa__control__value__entry_a0149b36aaceca06dc04e37edcad3aadb} 
+\index{ipa\_control\_value\_entry@{ipa\_control\_value\_entry}!offset@{offset}}
+\index{offset@{offset}!ipa\_control\_value\_entry@{ipa\_control\_value\_entry}}
+\doxysubsubsection{\texorpdfstring{offset}{offset}}
+{\footnotesize\ttfamily ipa\+\_\+control\+\_\+value\+\_\+entry\+::offset}
+
+The offset in bytes from the beginning of the data section to the control value data (shall be a multiple of 8 bytes). \Hypertarget{structipa__control__value__entry_ab38b3a6edc5b7de19b65fb38594c640c}\label{structipa__control__value__entry_ab38b3a6edc5b7de19b65fb38594c640c} 
+\index{ipa\_control\_value\_entry@{ipa\_control\_value\_entry}!padding@{padding}}
+\index{padding@{padding}!ipa\_control\_value\_entry@{ipa\_control\_value\_entry}}
+\doxysubsubsection{\texorpdfstring{padding}{padding}}
+{\footnotesize\ttfamily ipa\+\_\+control\+\_\+value\+\_\+entry\+::padding}
+
+Padding bytes (shall be set to 0) \Hypertarget{structipa__control__value__entry_a0739302cf6a8382fb1181c0956bd49fb}\label{structipa__control__value__entry_a0739302cf6a8382fb1181c0956bd49fb} 
+\index{ipa\_control\_value\_entry@{ipa\_control\_value\_entry}!type@{type}}
+\index{type@{type}!ipa\_control\_value\_entry@{ipa\_control\_value\_entry}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily ipa\+\_\+control\+\_\+value\+\_\+entry\+::type}
+
+The type of the control (defined by enum Control\+Type) 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/ipa/\mbox{\hyperlink{ipa__controls_8h}{ipa\+\_\+controls.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/ipa\+\_\+controls.\+cpp\end{DoxyCompactItemize}

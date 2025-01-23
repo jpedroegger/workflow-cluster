@@ -1,0 +1,77 @@
+\doxysection{RPi\+Controller\+::Agc\+Config Struct Reference}
+\hypertarget{structRPiController_1_1AgcConfig}{}\label{structRPiController_1_1AgcConfig}\index{RPiController::AgcConfig@{RPiController::AgcConfig}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structRPiController_1_1AgcConfig_a5faeaa69ecc7d8f2834bbc59d04ad6e1}\label{structRPiController_1_1AgcConfig_a5faeaa69ecc7d8f2834bbc59d04ad6e1} 
+int {\bfseries read} (const \mbox{\hyperlink{classlibcamera_1_1YamlObject}{libcamera\+::\+Yaml\+Object}} \&params)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structRPiController_1_1AgcConfig_a9c899925b80ca5581539d57105f380d0}\label{structRPiController_1_1AgcConfig_a9c899925b80ca5581539d57105f380d0} 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{structRPiController_1_1AgcMeteringMode}{Agc\+Metering\+Mode}} $>$ {\bfseries metering\+Modes}
+\item 
+\Hypertarget{structRPiController_1_1AgcConfig_ad6b2a07003cdfa11132ed7d3d5d100fb}\label{structRPiController_1_1AgcConfig_ad6b2a07003cdfa11132ed7d3d5d100fb} 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{structRPiController_1_1AgcExposureMode}{Agc\+Exposure\+Mode}} $>$ {\bfseries exposure\+Modes}
+\item 
+\Hypertarget{structRPiController_1_1AgcConfig_ac0c53df4730c56928df2a948672dbba5}\label{structRPiController_1_1AgcConfig_ac0c53df4730c56928df2a948672dbba5} 
+std\+::map$<$ std\+::string, Agc\+Constraint\+Mode $>$ {\bfseries constraint\+Modes}
+\item 
+\Hypertarget{structRPiController_1_1AgcConfig_ae207b176d8dd5ad9727a058850784e80}\label{structRPiController_1_1AgcConfig_ae207b176d8dd5ad9727a058850784e80} 
+std\+::vector$<$ \mbox{\hyperlink{structRPiController_1_1AgcChannelConstraint}{Agc\+Channel\+Constraint}} $>$ {\bfseries channel\+Constraints}
+\item 
+\Hypertarget{structRPiController_1_1AgcConfig_aed76d5943bb99a8f62620eb75e32d638}\label{structRPiController_1_1AgcConfig_aed76d5943bb99a8f62620eb75e32d638} 
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1Pwl}{libcamera\+::ipa\+::\+Pwl}} {\bfseries y\+Target}
+\item 
+\Hypertarget{structRPiController_1_1AgcConfig_a85e5988d7dd48fe91a330fb59ccb88fc}\label{structRPiController_1_1AgcConfig_a85e5988d7dd48fe91a330fb59ccb88fc} 
+double {\bfseries speed}
+\item 
+\Hypertarget{structRPiController_1_1AgcConfig_a513231578073c3cd0fbadc846d57ede9}\label{structRPiController_1_1AgcConfig_a513231578073c3cd0fbadc846d57ede9} 
+uint16\+\_\+t {\bfseries startup\+Frames}
+\item 
+\Hypertarget{structRPiController_1_1AgcConfig_a7231983fe67efc86c00eda40fe80f41e}\label{structRPiController_1_1AgcConfig_a7231983fe67efc86c00eda40fe80f41e} 
+unsigned int {\bfseries convergence\+Frames}
+\item 
+\Hypertarget{structRPiController_1_1AgcConfig_a92dbffbac8b94d1d5620940020d2a1a5}\label{structRPiController_1_1AgcConfig_a92dbffbac8b94d1d5620940020d2a1a5} 
+double {\bfseries max\+Change}
+\item 
+\Hypertarget{structRPiController_1_1AgcConfig_ae78ed57dec5459aad9af0b1af31245de}\label{structRPiController_1_1AgcConfig_ae78ed57dec5459aad9af0b1af31245de} 
+double {\bfseries min\+Change}
+\item 
+\Hypertarget{structRPiController_1_1AgcConfig_a76d9b8f5df3146af42555cb63ef36f27}\label{structRPiController_1_1AgcConfig_a76d9b8f5df3146af42555cb63ef36f27} 
+double {\bfseries fast\+Reduce\+Threshold}
+\item 
+\Hypertarget{structRPiController_1_1AgcConfig_a839cda57ef2b8d6fc795ee054d4e938e}\label{structRPiController_1_1AgcConfig_a839cda57ef2b8d6fc795ee054d4e938e} 
+double {\bfseries speed\+Up\+Threshold}
+\item 
+\Hypertarget{structRPiController_1_1AgcConfig_ab2d183244df114a8aba1edbcfc605790}\label{structRPiController_1_1AgcConfig_ab2d183244df114a8aba1edbcfc605790} 
+std\+::string {\bfseries default\+Metering\+Mode}
+\item 
+\Hypertarget{structRPiController_1_1AgcConfig_a32fd6fd71b07bb2a325c9ef3427b801a}\label{structRPiController_1_1AgcConfig_a32fd6fd71b07bb2a325c9ef3427b801a} 
+std\+::string {\bfseries default\+Exposure\+Mode}
+\item 
+\Hypertarget{structRPiController_1_1AgcConfig_a22f6ae63d7acfc30c808de0676ddceee}\label{structRPiController_1_1AgcConfig_a22f6ae63d7acfc30c808de0676ddceee} 
+std\+::string {\bfseries default\+Constraint\+Mode}
+\item 
+\Hypertarget{structRPiController_1_1AgcConfig_a8c5b4af50f92156bcad6f79f26280aa0}\label{structRPiController_1_1AgcConfig_a8c5b4af50f92156bcad6f79f26280aa0} 
+double {\bfseries base\+Ev}
+\item 
+\Hypertarget{structRPiController_1_1AgcConfig_a32afc1f816ed9b8e1e703ab6b2cf8a5c}\label{structRPiController_1_1AgcConfig_a32afc1f816ed9b8e1e703ab6b2cf8a5c} 
+\mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{libcamera\+::utils\+::\+Duration}} {\bfseries default\+Exposure\+Time}
+\item 
+\Hypertarget{structRPiController_1_1AgcConfig_a0a9357ee3d09db720e32771224c0a208}\label{structRPiController_1_1AgcConfig_a0a9357ee3d09db720e32771224c0a208} 
+double {\bfseries default\+Analogue\+Gain}
+\item 
+\Hypertarget{structRPiController_1_1AgcConfig_a932469414deeb29fd70cb37c6a8a097f}\label{structRPiController_1_1AgcConfig_a932469414deeb29fd70cb37c6a8a097f} 
+double {\bfseries stable\+Region}
+\item 
+\Hypertarget{structRPiController_1_1AgcConfig_af4ca2075e5956bfe965fb49f170cd6a2}\label{structRPiController_1_1AgcConfig_af4ca2075e5956bfe965fb49f170cd6a2} 
+bool {\bfseries desaturate}
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/ipa/rpi/controller/rpi/agc\+\_\+channel.\+h\item 
+src/peripherals/camera/libcamera/src/ipa/rpi/controller/rpi/agc\+\_\+channel.\+cpp\end{DoxyCompactItemize}

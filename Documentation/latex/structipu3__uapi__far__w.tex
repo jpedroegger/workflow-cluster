@@ -1,0 +1,37 @@
+\doxysection{ipu3\+\_\+uapi\+\_\+far\+\_\+w Struct Reference}
+\hypertarget{structipu3__uapi__far__w}{}\label{structipu3__uapi__far__w}\index{ipu3\_uapi\_far\_w@{ipu3\_uapi\_far\_w}}
+
+
+{\ttfamily \#include $<$intel-\/ipu3.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structipu3__uapi__far__w_ae77a75532274db0ed75d65620aa5a398}\label{structipu3__uapi__far__w_ae77a75532274db0ed75d65620aa5a398} 
+\+\_\+\+\_\+u32 {\bfseries dir\+\_\+shrp}\+:7
+\item 
+\Hypertarget{structipu3__uapi__far__w_a74e4e6de885c2ff78afe29685161e840}\label{structipu3__uapi__far__w_a74e4e6de885c2ff78afe29685161e840} 
+\+\_\+\+\_\+u32 {\bfseries reserved0}\+:1
+\item 
+\Hypertarget{structipu3__uapi__far__w_ad457dad81ee2090af1ac66a0f493e010}\label{structipu3__uapi__far__w_ad457dad81ee2090af1ac66a0f493e010} 
+\+\_\+\+\_\+u32 {\bfseries dir\+\_\+dns}\+:7
+\item 
+\Hypertarget{structipu3__uapi__far__w_a24ecd5396d9d7dc3eab9fb50ac85433e}\label{structipu3__uapi__far__w_a24ecd5396d9d7dc3eab9fb50ac85433e} 
+\+\_\+\+\_\+u32 {\bfseries reserved1}\+:1
+\item 
+\Hypertarget{structipu3__uapi__far__w_aed7423676fa29e31005e33393f01555b}\label{structipu3__uapi__far__w_aed7423676fa29e31005e33393f01555b} 
+\+\_\+\+\_\+u32 {\bfseries ndir\+\_\+dns\+\_\+powr}\+:7
+\item 
+\Hypertarget{structipu3__uapi__far__w_a08cf607141c5480a7229a3c85f286c5a}\label{structipu3__uapi__far__w_a08cf607141c5480a7229a3c85f286c5a} 
+\+\_\+\+\_\+u32 {\bfseries reserved2}\+:9
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structipu3__uapi__far__w}{ipu3\+\_\+uapi\+\_\+far\+\_\+w} -\/ Sharpening config for far sub-\/group
+
+@dir\+\_\+shrp\+: Weight of wide direct sharpening, u1.\+6, range \mbox{[}0, 64\mbox{]}, default 64. @reserved0\+: reserved @dir\+\_\+dns\+: Weight of wide direct denoising, u1.\+6, range \mbox{[}0, 64\mbox{]}, default 0. @reserved1\+: reserved @ndir\+\_\+dns\+\_\+powr\+: Power of non-\/direct denoising, Precision u1.\+6, range \mbox{[}0, 64\mbox{]}, default 64. @reserved2\+: reserved 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/intel-\/ipu3.\+h\end{DoxyCompactItemize}

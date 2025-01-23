@@ -8,13 +8,6 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 # set library name
 set(lib_name INA219Driver)
 
-include_directories(
-  include
-  ~/SEAME-Cluster-24-25/JetRacer/install/abstract_driver/include
-)
-
-link_directories(/home/jetpack/SEAME-Cluster-24-25/JetRacer/install/abstract_driver/lib)
-
 # Add source files
 set(srcs
 	src/INA219Driver.cpp
@@ -31,16 +24,31 @@ find_package(abstract_driver REQUIRED)
 # Create the shared library
 add_library(${lib_name} SHARED ${srcs})
 
+# Set include directories for the library
+target_include_directories(${lib_name} PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  $<INSTALL_INTERFACE:include>
+)
+
+# Install
+install(
+  TARGETS ${lib_name}
+  EXPORT  ${lib_name}_targets
+  ARCHIVE DESTINATION lib
+  LIBRARY DESTINATION lib
+  RUNTIME DESTINATION bin
+  INCLUDES DESTINATION include
+)
+
 # Link against the required dependencies
 ament_target_dependencies(${lib_name} rclcpp custom_msgs std_msgs fmt abstract_driver)
 
-target_link_libraries(${lib_name} AbstractDriver)
-
-# Export the libraries
 install(TARGETS ${lib_name} DESTINATION lib)
 install(
   DIRECTORY include/
   DESTINATION include
 )
 
+ament_export_targets(${lib_name}_targets HAS_LIBRARY_TARGET)
+ament_export_dependencies(${dependencies})
 ament_package()

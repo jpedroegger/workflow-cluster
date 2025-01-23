@@ -1,0 +1,99 @@
+\doxysection{libcamera\+::Invoke\+Message Class Reference}
+\hypertarget{classlibcamera_1_1InvokeMessage}{}\label{classlibcamera_1_1InvokeMessage}\index{libcamera::InvokeMessage@{libcamera::InvokeMessage}}
+
+
+A message carrying a method invocation across threads.  
+
+
+Inheritance diagram for libcamera\+::Invoke\+Message\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlibcamera_1_1InvokeMessage}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1InvokeMessage_a66995e4db95826638c61bc4ad4ff1d2a}{Invoke\+Message}} (\mbox{\hyperlink{classlibcamera_1_1BoundMethodBase}{Bound\+Method\+Base}} \texorpdfstring{$\ast$}{*}method, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1BoundMethodPackBase}{Bound\+Method\+Pack\+Base}} $>$ pack, \mbox{\hyperlink{classlibcamera_1_1Semaphore}{Semaphore}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classlibcamera_1_1InvokeMessage_a6d68547e0d9c52a91519147736b6781a}{semaphore}}=nullptr, bool delete\+Method=false)
+\begin{DoxyCompactList}\small\item\em Construct an \doxylink{classlibcamera_1_1InvokeMessage}{Invoke\+Message} for method invocation on an \doxylink{classlibcamera_1_1Object}{Object}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1Semaphore}{Semaphore}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1InvokeMessage_a6d68547e0d9c52a91519147736b6781a}{semaphore}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the message semaphore passed to the constructor. \end{DoxyCompactList}\item 
+\Hypertarget{classlibcamera_1_1InvokeMessage_aa52078afe4e7ad33512aad586e99fcbe}\label{classlibcamera_1_1InvokeMessage_aa52078afe4e7ad33512aad586e99fcbe} 
+void {\bfseries invoke} ()
+\begin{DoxyCompactList}\small\item\em Invoke the method bound to Invoke\+Message\+::method\+\_\+ with arguments Invoke\+Message\+::pack\+\_\+. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1Message}{libcamera\+::\+Message}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1Message_a820b1e559680365eef4d156915331e81}{Message}} (\mbox{\hyperlink{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5}{Type}} \mbox{\hyperlink{classlibcamera_1_1Message_a5e599ac6c441598d5a2c8f14e54e22c5}{type}})
+\begin{DoxyCompactList}\small\item\em Construct a message object of type {\itshape type}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5}{Type}} \mbox{\hyperlink{classlibcamera_1_1Message_a5e599ac6c441598d5a2c8f14e54e22c5}{type}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the message type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1Object}{Object}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1Message_a033904a82d0de72889559b6aafeeaae8}{receiver}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the message receiver. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{classlibcamera_1_1Message}{libcamera\+::\+Message}}}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5}{Type}} \{ \newline
+\mbox{\hyperlink{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5a2cf8f48814353e436d4f5fc4b9f8b713}{None}} = 0
+, \mbox{\hyperlink{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5a3f129f8240a0f00eca5f25c82032be2e}{Invoke\+Message}} = 1
+, \mbox{\hyperlink{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5a5f1a6bad8554e6afcc20a1713f08cbee}{Thread\+Move\+Message}} = 2
+, \mbox{\hyperlink{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5a000ca6c05658dd1d019315707eb449d7}{Deferred\+Delete}} = 3
+, \newline
+\mbox{\hyperlink{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5ad7c9da4e25599a32fe48308e6da49cf1}{User\+Message}} = 1000
+ \}
+\begin{DoxyCompactList}\small\item\em The message type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1Message}{libcamera\+::\+Message}}}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classlibcamera_1_1Message_a7ae15d74f028344ba827ea8ba4d77fa5}{Type}} \mbox{\hyperlink{classlibcamera_1_1Message_ab05060113830c8501f0a0049084ad11b}{register\+Message\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Reserve and register a custom user-\/defined message type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A message carrying a method invocation across threads. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlibcamera_1_1InvokeMessage_a66995e4db95826638c61bc4ad4ff1d2a}\label{classlibcamera_1_1InvokeMessage_a66995e4db95826638c61bc4ad4ff1d2a} 
+\index{libcamera::InvokeMessage@{libcamera::InvokeMessage}!InvokeMessage@{InvokeMessage}}
+\index{InvokeMessage@{InvokeMessage}!libcamera::InvokeMessage@{libcamera::InvokeMessage}}
+\doxysubsubsection{\texorpdfstring{InvokeMessage()}{InvokeMessage()}}
+{\footnotesize\ttfamily libcamera\+::\+Invoke\+Message\+::\+Invoke\+Message (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1BoundMethodBase}{Bound\+Method\+Base}} \texorpdfstring{$\ast$}{*}}]{method,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1BoundMethodPackBase}{Bound\+Method\+Pack\+Base}} $>$}]{pack,  }\item[{\mbox{\hyperlink{classlibcamera_1_1Semaphore}{Semaphore}} \texorpdfstring{$\ast$}{*}}]{semaphore = {\ttfamily nullptr},  }\item[{bool}]{delete\+Method = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Construct an \doxylink{classlibcamera_1_1InvokeMessage}{Invoke\+Message} for method invocation on an \doxylink{classlibcamera_1_1Object}{Object}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em method} & The bound method \\
+\hline
+\mbox{\texttt{ in}}  & {\em pack} & The packed method arguments \\
+\hline
+\mbox{\texttt{ in}}  & {\em semaphore} & The semaphore used to signal message delivery \\
+\hline
+\mbox{\texttt{ in}}  & {\em delete\+Method} & True to delete the {\itshape method} when the message is destroyed \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1InvokeMessage_a6d68547e0d9c52a91519147736b6781a}\label{classlibcamera_1_1InvokeMessage_a6d68547e0d9c52a91519147736b6781a} 
+\index{libcamera::InvokeMessage@{libcamera::InvokeMessage}!semaphore@{semaphore}}
+\index{semaphore@{semaphore}!libcamera::InvokeMessage@{libcamera::InvokeMessage}}
+\doxysubsubsection{\texorpdfstring{semaphore()}{semaphore()}}
+{\footnotesize\ttfamily libcamera\+::\+Invoke\+Message\+::semaphore (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the message semaphore passed to the constructor. 
+
+\begin{DoxyReturn}{Returns}
+The message semaphore 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/base/\mbox{\hyperlink{message_8h}{message.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/base/message.\+cpp\end{DoxyCompactItemize}

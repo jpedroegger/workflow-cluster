@@ -1,0 +1,608 @@
+\doxysection{src/peripherals/camera/libcamera/include/libcamera/base/utils.h File Reference}
+\hypertarget{include_2libcamera_2base_2utils_8h}{}\label{include_2libcamera_2base_2utils_8h}\index{src/peripherals/camera/libcamera/include/libcamera/base/utils.h@{src/peripherals/camera/libcamera/include/libcamera/base/utils.h}}
+
+
+Miscellaneous utility functions.  
+
+
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$iterator$>$}\newline
+{\ttfamily \#include $<$ostream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$sys/time.\+h$>$}\newline
+{\ttfamily \#include $<$type\+\_\+traits$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$libcamera/base/private.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structlibcamera_1_1utils_1_1__hex}{libcamera\+::utils\+::\+\_\+hex}}
+\item 
+class \mbox{\hyperlink{classlibcamera_1_1utils_1_1details_1_1StringSplitter}{libcamera\+::utils\+::details\+::\+String\+Splitter}}
+\item 
+class \mbox{\hyperlink{classlibcamera_1_1utils_1_1details_1_1StringSplitter_1_1iterator}{libcamera\+::utils\+::details\+::\+String\+Splitter\+::iterator}}
+\item 
+class \mbox{\hyperlink{classlibcamera_1_1utils_1_1details_1_1enumerate__iterator}{libcamera\+::utils\+::details\+::enumerate\+\_\+iterator$<$ Base $>$}}
+\item 
+class \mbox{\hyperlink{classlibcamera_1_1utils_1_1details_1_1enumerate__adapter}{libcamera\+::utils\+::details\+::enumerate\+\_\+adapter$<$ Base $>$}}
+\item 
+class \mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{libcamera\+::utils\+::\+Duration}}
+\begin{DoxyCompactList}\small\item\em Helper class from std\+::chrono\+::duration that represents a time duration in nanoseconds with double precision. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classlibcamera_1_1utils_1_1ScopeExitActions}{libcamera\+::utils\+::\+Scope\+Exit\+Actions}}
+\begin{DoxyCompactList}\small\item\em An object that performs actions upon destruction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacelibcamera}{libcamera}}
+\begin{DoxyCompactList}\small\item\em Top-\/level libcamera namespace. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{include_2libcamera_2base_2utils_8h_a45d7d635756f7b0d8fb0b5e639dd6dcb}\label{include_2libcamera_2base_2utils_8h_a45d7d635756f7b0d8fb0b5e639dd6dcb} 
+\#define {\bfseries O\+\_\+\+TMPFILE}~(020000000 \texorpdfstring{$\vert$}{|} O\+\_\+\+DIRECTORY)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{include_2libcamera_2base_2utils_8h_a7ef185f107a5045b3a044ca02cd2ea98}\label{include_2libcamera_2base_2utils_8h_a7ef185f107a5045b3a044ca02cd2ea98} 
+using {\bfseries libcamera\+::utils\+::clock} = std\+::chrono\+::steady\+\_\+clock
+\begin{DoxyCompactList}\small\item\em The libcamera clock (monotonic) \end{DoxyCompactList}\item 
+\Hypertarget{include_2libcamera_2base_2utils_8h_ad2a71f9eb2c27cd6213306d8d2ff7fd0}\label{include_2libcamera_2base_2utils_8h_ad2a71f9eb2c27cd6213306d8d2ff7fd0} 
+using {\bfseries libcamera\+::utils\+::duration} = std\+::chrono\+::steady\+\_\+clock\+::duration
+\begin{DoxyCompactList}\small\item\em The libcamera duration related to \doxylink{include_2libcamera_2base_2utils_8h_a7ef185f107a5045b3a044ca02cd2ea98}{libcamera\+::utils\+::clock}. \end{DoxyCompactList}\item 
+\Hypertarget{include_2libcamera_2base_2utils_8h_a8294b009381080fdcaed4b0eb8b03224}\label{include_2libcamera_2base_2utils_8h_a8294b009381080fdcaed4b0eb8b03224} 
+using {\bfseries libcamera\+::utils\+::time\+\_\+point} = std\+::chrono\+::steady\+\_\+clock\+::time\+\_\+point
+\begin{DoxyCompactList}\small\item\em The libcamera time point related to \doxylink{include_2libcamera_2base_2utils_8h_a7ef185f107a5045b3a044ca02cd2ea98}{libcamera\+::utils\+::clock}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{include_2libcamera_2base_2utils_8h_a1d2c8b994fc3be2a2ed92eca41e17d79}{libcamera\+::utils\+::basename}} (const char \texorpdfstring{$\ast$}{*}path)
+\begin{DoxyCompactList}\small\item\em Strip the directory prefix from the path. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{include_2libcamera_2base_2utils_8h_a6981717235fc0bcc1a270b1d77ee9189}{libcamera\+::utils\+::secure\+\_\+getenv}} (const char \texorpdfstring{$\ast$}{*}name)
+\begin{DoxyCompactList}\small\item\em Get an environment variable. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{include_2libcamera_2base_2utils_8h_afd9b4d3b9abf4232f49aaf12442d9412}{libcamera\+::utils\+::dirname}} (const std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Identify the dirname portion of a path. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ typename T\+::key\+\_\+type $>$ \mbox{\hyperlink{include_2libcamera_2base_2utils_8h_a9682828250eb4214779ddc2b9564415e}{libcamera\+::utils\+::map\+\_\+keys}} (const T \&map)
+\begin{DoxyCompactList}\small\item\em Retrieve the keys of a std\+::map$<$$>$ \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Input\+It1 , class Input\+It2 $>$ }\\unsigned int \mbox{\hyperlink{include_2libcamera_2base_2utils_8h_a83f4325ea534abfe9fb482799ecc8502}{libcamera\+::utils\+::set\+\_\+overlap}} (Input\+It1 first1, Input\+It1 last1, Input\+It2 first2, Input\+It2 last2)
+\begin{DoxyCompactList}\small\item\em Count the number of elements in the intersection of two ranges. \end{DoxyCompactList}\item 
+struct timespec \mbox{\hyperlink{include_2libcamera_2base_2utils_8h_aa6c2e92206b340eb5d61ed0de0ad8ada}{libcamera\+::utils\+::duration\+\_\+to\+\_\+timespec}} (const \mbox{\hyperlink{include_2libcamera_2base_2utils_8h_ad2a71f9eb2c27cd6213306d8d2ff7fd0}{duration}} \&value)
+\begin{DoxyCompactList}\small\item\em Convert a duration to a timespec. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{include_2libcamera_2base_2utils_8h_a286d03ee13e24290a5841b114c614e59}{libcamera\+::utils\+::time\+\_\+point\+\_\+to\+\_\+string}} (const \mbox{\hyperlink{include_2libcamera_2base_2utils_8h_a8294b009381080fdcaed4b0eb8b03224}{time\+\_\+point}} \&time)
+\begin{DoxyCompactList}\small\item\em Convert a time point to a string representation. \end{DoxyCompactList}\item 
+\Hypertarget{include_2libcamera_2base_2utils_8h_aaf336a00ecb34ec1ea29997a1dc201e3}\label{include_2libcamera_2base_2utils_8h_aaf336a00ecb34ec1ea29997a1dc201e3} 
+std\+::basic\+\_\+ostream$<$ char, std\+::char\+\_\+traits$<$ char $>$ $>$ \& {\bfseries libcamera\+::utils\+::operator$<$$<$} (std\+::basic\+\_\+ostream$<$ char, std\+::char\+\_\+traits$<$ char $>$ $>$ \&stream, const \mbox{\hyperlink{structlibcamera_1_1utils_1_1__hex}{\+\_\+hex}} \&h)
+\item 
+{\footnotesize template$<$typename T , std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+integral$<$ T $>$\+::value $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ }\\\mbox{\hyperlink{structlibcamera_1_1utils_1_1__hex}{\+\_\+hex}} \mbox{\hyperlink{include_2libcamera_2base_2utils_8h_ae71db1210216daf6c892326ffe34a3a3}{libcamera\+::utils\+::hex}} (T value, unsigned int width=0)
+\begin{DoxyCompactList}\small\item\em Write an hexadecimal value to an output string. \end{DoxyCompactList}\item 
+\Hypertarget{include_2libcamera_2base_2utils_8h_a5c086415cc7787c88a13c36b3cd41aa8}\label{include_2libcamera_2base_2utils_8h_a5c086415cc7787c88a13c36b3cd41aa8} 
+template$<$$>$ \mbox{\hyperlink{structlibcamera_1_1utils_1_1__hex}{\+\_\+hex}} {\bfseries libcamera\+::utils\+::hex$<$ int8\+\_\+t $>$} (int8\+\_\+t value, unsigned int width)
+\item 
+\Hypertarget{include_2libcamera_2base_2utils_8h_a319c35fba61524cfd5bfb6e023cf6a5d}\label{include_2libcamera_2base_2utils_8h_a319c35fba61524cfd5bfb6e023cf6a5d} 
+template$<$$>$ \mbox{\hyperlink{structlibcamera_1_1utils_1_1__hex}{\+\_\+hex}} {\bfseries libcamera\+::utils\+::hex$<$ uint8\+\_\+t $>$} (uint8\+\_\+t value, unsigned int width)
+\item 
+\Hypertarget{include_2libcamera_2base_2utils_8h_a0d8949724b9bbd976131e08f8571756e}\label{include_2libcamera_2base_2utils_8h_a0d8949724b9bbd976131e08f8571756e} 
+template$<$$>$ \mbox{\hyperlink{structlibcamera_1_1utils_1_1__hex}{\+\_\+hex}} {\bfseries libcamera\+::utils\+::hex$<$ int16\+\_\+t $>$} (int16\+\_\+t value, unsigned int width)
+\item 
+\Hypertarget{include_2libcamera_2base_2utils_8h_a0613dc5fe5b50144e8b6b5e17ac54962}\label{include_2libcamera_2base_2utils_8h_a0613dc5fe5b50144e8b6b5e17ac54962} 
+template$<$$>$ \mbox{\hyperlink{structlibcamera_1_1utils_1_1__hex}{\+\_\+hex}} {\bfseries libcamera\+::utils\+::hex$<$ uint16\+\_\+t $>$} (uint16\+\_\+t value, unsigned int width)
+\item 
+\Hypertarget{include_2libcamera_2base_2utils_8h_a4d595f32478708091fe758c4287228dc}\label{include_2libcamera_2base_2utils_8h_a4d595f32478708091fe758c4287228dc} 
+template$<$$>$ \mbox{\hyperlink{structlibcamera_1_1utils_1_1__hex}{\+\_\+hex}} {\bfseries libcamera\+::utils\+::hex$<$ int32\+\_\+t $>$} (int32\+\_\+t value, unsigned int width)
+\item 
+\Hypertarget{include_2libcamera_2base_2utils_8h_a9445c9598830f8c56ea68a4ebd054fb2}\label{include_2libcamera_2base_2utils_8h_a9445c9598830f8c56ea68a4ebd054fb2} 
+template$<$$>$ \mbox{\hyperlink{structlibcamera_1_1utils_1_1__hex}{\+\_\+hex}} {\bfseries libcamera\+::utils\+::hex$<$ uint32\+\_\+t $>$} (uint32\+\_\+t value, unsigned int width)
+\item 
+\Hypertarget{include_2libcamera_2base_2utils_8h_a13db7e9eadf2e7f63f6f462f2f6348c2}\label{include_2libcamera_2base_2utils_8h_a13db7e9eadf2e7f63f6f462f2f6348c2} 
+template$<$$>$ \mbox{\hyperlink{structlibcamera_1_1utils_1_1__hex}{\+\_\+hex}} {\bfseries libcamera\+::utils\+::hex$<$ int64\+\_\+t $>$} (int64\+\_\+t value, unsigned int width)
+\item 
+\Hypertarget{include_2libcamera_2base_2utils_8h_aceb7be12f324adb72a18029cb4e1efb7}\label{include_2libcamera_2base_2utils_8h_aceb7be12f324adb72a18029cb4e1efb7} 
+template$<$$>$ \mbox{\hyperlink{structlibcamera_1_1utils_1_1__hex}{\+\_\+hex}} {\bfseries libcamera\+::utils\+::hex$<$ uint64\+\_\+t $>$} (uint64\+\_\+t value, unsigned int width)
+\item 
+size\+\_\+t \mbox{\hyperlink{include_2libcamera_2base_2utils_8h_a68b34c72abd79fa88b3039bf05964de1}{libcamera\+::utils\+::strlcpy}} (char \texorpdfstring{$\ast$}{*}dst, const char \texorpdfstring{$\ast$}{*}src, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Copy a string with a size limit. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Container , typename Unary\+Op $>$ }\\std\+::string \mbox{\hyperlink{include_2libcamera_2base_2utils_8h_a3480ae757388b82c6d5d9f3e50008e13}{libcamera\+::utils\+::join}} (const Container \&items, const std\+::string \&sep, Unary\+Op op)
+\begin{DoxyCompactList}\small\item\em Join elements of a container in a string with a separator. \end{DoxyCompactList}\item 
+\Hypertarget{include_2libcamera_2base_2utils_8h_afcf7840fe23731a3afe1a6d6f8906018}\label{include_2libcamera_2base_2utils_8h_afcf7840fe23731a3afe1a6d6f8906018} 
+{\footnotesize template$<$typename Container $>$ }\\std\+::string {\bfseries libcamera\+::utils\+::join} (const Container \&items, const std\+::string \&sep)
+\item 
+\mbox{\hyperlink{classlibcamera_1_1utils_1_1details_1_1StringSplitter}{details\+::\+String\+Splitter}} \mbox{\hyperlink{include_2libcamera_2base_2utils_8h_a24701cae6640674865484b40b2325a7d}{libcamera\+::utils\+::split}} (const std\+::string \&str, const std\+::string \&delim)
+\begin{DoxyCompactList}\small\item\em Split a string based on a delimiter. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{include_2libcamera_2base_2utils_8h_a546d3faa29d241f8c5ad2784cdcae8d4}{libcamera\+::utils\+::to\+Ascii}} (const std\+::string \&str)
+\begin{DoxyCompactList}\small\item\em Remove any non-\/\+ASCII characters from a string. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{include_2libcamera_2base_2utils_8h_aa4e149c6ca26755ffd6b448778c4fb63}{libcamera\+::utils\+::libcamera\+Build\+Path}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the path to the build directory. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{include_2libcamera_2base_2utils_8h_a4163d8b770aad3f746637c59a5f228d2}{libcamera\+::utils\+::libcamera\+Source\+Path}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the path to the source directory. \end{DoxyCompactList}\item 
+constexpr unsigned int \mbox{\hyperlink{include_2libcamera_2base_2utils_8h_a2950834476fdd93908c4a275edccac4a}{libcamera\+::utils\+::align\+Down}} (unsigned int value, unsigned int alignment)
+\begin{DoxyCompactList}\small\item\em Align {\itshape value} down to {\itshape alignment}. \end{DoxyCompactList}\item 
+constexpr unsigned int \mbox{\hyperlink{include_2libcamera_2base_2utils_8h_a973e18b140de0499255673e3a2f4d861}{libcamera\+::utils\+::align\+Up}} (unsigned int value, unsigned int alignment)
+\begin{DoxyCompactList}\small\item\em Align {\itshape value} up to {\itshape alignment}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\details\+::reverse\+\_\+adapter$<$ T $>$ \mbox{\hyperlink{include_2libcamera_2base_2utils_8h_ad77ea11443473007cc0127e21a6a3e51}{libcamera\+::utils\+::reverse}} (T \&\&iterable)
+\begin{DoxyCompactList}\small\item\em Wrap an iterable to reverse iteration in a range-\/based loop. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\auto \mbox{\hyperlink{include_2libcamera_2base_2utils_8h_aae904c8027790ede4383b7b1d05ae279}{libcamera\+::utils\+::enumerate}} (T \&iterable) -\/$>$ \mbox{\hyperlink{classlibcamera_1_1utils_1_1details_1_1enumerate__adapter}{details\+::enumerate\+\_\+adapter}}$<$ decltype(iterable.\+begin())$>$
+\begin{DoxyCompactList}\small\item\em Wrap an iterable to enumerate index and value in a range-\/based loop. \end{DoxyCompactList}\item 
+\Hypertarget{include_2libcamera_2base_2utils_8h_a147397f9ce04de18fa87679704bff459}\label{include_2libcamera_2base_2utils_8h_a147397f9ce04de18fa87679704bff459} 
+{\footnotesize template$<$typename T , size\+\_\+t N$>$ }\\auto {\bfseries libcamera\+::utils\+::enumerate} (T(\&iterable)\mbox{[}N\mbox{]}) -\/$>$ \mbox{\hyperlink{classlibcamera_1_1utils_1_1details_1_1enumerate__adapter}{details\+::enumerate\+\_\+adapter}}$<$ T \texorpdfstring{$\ast$}{*} $>$
+\item 
+{\footnotesize template$<$typename T $>$ }\\decltype(auto) \mbox{\hyperlink{include_2libcamera_2base_2utils_8h_ac32a1f64e6a68944b89779c4bbe895e7}{libcamera\+::utils\+::abs\+\_\+diff}} (const T \&a, const T \&b)
+\begin{DoxyCompactList}\small\item\em Calculates the absolute value of the difference between two elements. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{include_2libcamera_2base_2utils_8h_adeccfc6cdef233fd9c7a384f1b2744ce}{libcamera\+::utils\+::strtod}} (const char \texorpdfstring{$\ast$}{*}\+\_\+\+\_\+restrict nptr, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+\_\+\+\_\+restrict endptr)
+\begin{DoxyCompactList}\small\item\em Convert a string to a double independently of the current locale. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Enum $>$ }\\constexpr std\+::underlying\+\_\+type\+\_\+t$<$ Enum $>$ \mbox{\hyperlink{include_2libcamera_2base_2utils_8h_a5e36eb7165ff23ffa3ff9551a0af76fc}{libcamera\+::utils\+::to\+\_\+underlying}} (Enum e) noexcept
+\begin{DoxyCompactList}\small\item\em Convert an enumeration to its underlygin type. \end{DoxyCompactList}\item 
+\Hypertarget{namespacelibcamera_adf83fbb381b0106efd7a8db57dfec654}\label{namespacelibcamera_adf83fbb381b0106efd7a8db57dfec654} 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& {\bfseries libcamera\+::operator$<$$<$} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const \mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{utils\+::\+Duration}} \&d)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Miscellaneous utility functions. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{include_2libcamera_2base_2utils_8h_ac32a1f64e6a68944b89779c4bbe895e7}\label{include_2libcamera_2base_2utils_8h_ac32a1f64e6a68944b89779c4bbe895e7} 
+\index{utils.h@{utils.h}!abs\_diff@{abs\_diff}}
+\index{abs\_diff@{abs\_diff}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{abs\_diff()}{abs\_diff()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+libcamera\+::utils\+::abs\+\_\+diff (\begin{DoxyParamCaption}\item[{const T \&}]{a,  }\item[{const T \&}]{b }\end{DoxyParamCaption})}
+
+
+
+Calculates the absolute value of the difference between two elements. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a} & The first element \\
+\hline
+\mbox{\texttt{ in}}  & {\em b} & The second element\\
+\hline
+\end{DoxyParams}
+This function calculates the absolute value of the difference between two elements of the same type, in such a way that a negative value will never occur during the calculation.
+
+This is inspired by the std\+::abs\+\_\+diff() candidate proposed in N4318 (\href{http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n4318.pdf}{\texttt{ http\+://www.\+open-\/std.\+org/jtc1/sc22/wg21/docs/papers/2014/n4318.\+pdf}}).
+
+\begin{DoxyReturn}{Returns}
+The absolute value of the difference of the two parameters {\itshape a} and {\itshape b} 
+\end{DoxyReturn}
+\Hypertarget{include_2libcamera_2base_2utils_8h_a2950834476fdd93908c4a275edccac4a}\label{include_2libcamera_2base_2utils_8h_a2950834476fdd93908c4a275edccac4a} 
+\index{utils.h@{utils.h}!alignDown@{alignDown}}
+\index{alignDown@{alignDown}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{alignDown()}{alignDown()}}
+{\footnotesize\ttfamily libcamera\+::utils\+::align\+Down (\begin{DoxyParamCaption}\item[{unsigned int}]{value,  }\item[{unsigned int}]{alignment }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Align {\itshape value} down to {\itshape alignment}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & The value to align \\
+\hline
+\mbox{\texttt{ in}}  & {\em alignment} & The alignment \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value rounded down to the nearest multiple of {\itshape alignment} 
+\end{DoxyReturn}
+\Hypertarget{include_2libcamera_2base_2utils_8h_a973e18b140de0499255673e3a2f4d861}\label{include_2libcamera_2base_2utils_8h_a973e18b140de0499255673e3a2f4d861} 
+\index{utils.h@{utils.h}!alignUp@{alignUp}}
+\index{alignUp@{alignUp}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{alignUp()}{alignUp()}}
+{\footnotesize\ttfamily libcamera\+::utils\+::align\+Up (\begin{DoxyParamCaption}\item[{unsigned int}]{value,  }\item[{unsigned int}]{alignment }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Align {\itshape value} up to {\itshape alignment}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & The value to align \\
+\hline
+\mbox{\texttt{ in}}  & {\em alignment} & The alignment \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value rounded up to the nearest multiple of {\itshape alignment} 
+\end{DoxyReturn}
+\Hypertarget{include_2libcamera_2base_2utils_8h_a1d2c8b994fc3be2a2ed92eca41e17d79}\label{include_2libcamera_2base_2utils_8h_a1d2c8b994fc3be2a2ed92eca41e17d79} 
+\index{utils.h@{utils.h}!basename@{basename}}
+\index{basename@{basename}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{basename()}{basename()}}
+{\footnotesize\ttfamily const char \texorpdfstring{$\ast$}{*} libcamera\+::utils\+::basename (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{path }\end{DoxyParamCaption})}
+
+
+
+Strip the directory prefix from the path. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em path} & The path to process\\
+\hline
+\end{DoxyParams}
+basename is implemented differently across different C libraries. This implementation matches the one provided by the GNU libc, and does not modify its input parameter.
+
+\begin{DoxyReturn}{Returns}
+A pointer within the given path without any leading directory components. 
+\end{DoxyReturn}
+\Hypertarget{include_2libcamera_2base_2utils_8h_afd9b4d3b9abf4232f49aaf12442d9412}\label{include_2libcamera_2base_2utils_8h_afd9b4d3b9abf4232f49aaf12442d9412} 
+\index{utils.h@{utils.h}!dirname@{dirname}}
+\index{dirname@{dirname}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{dirname()}{dirname()}}
+{\footnotesize\ttfamily std\+::string libcamera\+::utils\+::dirname (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})}
+
+
+
+Identify the dirname portion of a path. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em path} & The full path to parse\\
+\hline
+\end{DoxyParams}
+This function conforms with the behaviour of the dirname() function as defined by POSIX.
+
+\begin{DoxyReturn}{Returns}
+A string of the directory component of the path 
+\end{DoxyReturn}
+\Hypertarget{include_2libcamera_2base_2utils_8h_aa6c2e92206b340eb5d61ed0de0ad8ada}\label{include_2libcamera_2base_2utils_8h_aa6c2e92206b340eb5d61ed0de0ad8ada} 
+\index{utils.h@{utils.h}!duration\_to\_timespec@{duration\_to\_timespec}}
+\index{duration\_to\_timespec@{duration\_to\_timespec}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{duration\_to\_timespec()}{duration\_to\_timespec()}}
+{\footnotesize\ttfamily struct timespec libcamera\+::utils\+::duration\+\_\+to\+\_\+timespec (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{include_2libcamera_2base_2utils_8h_ad2a71f9eb2c27cd6213306d8d2ff7fd0}{duration}} \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Convert a duration to a timespec. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & The duration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A timespec expressing the duration 
+\end{DoxyReturn}
+\Hypertarget{include_2libcamera_2base_2utils_8h_aae904c8027790ede4383b7b1d05ae279}\label{include_2libcamera_2base_2utils_8h_aae904c8027790ede4383b7b1d05ae279} 
+\index{utils.h@{utils.h}!enumerate@{enumerate}}
+\index{enumerate@{enumerate}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{enumerate()}{enumerate()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+libcamera\+::utils\+::enumerate (\begin{DoxyParamCaption}\item[{T \&}]{iterable }\end{DoxyParamCaption}) -\/$>$ \mbox{\hyperlink{classlibcamera_1_1utils_1_1details_1_1enumerate__adapter}{details\+::enumerate\+\_\+adapter}}$<$decltype(iterable.\+begin())$>$ }
+
+
+
+Wrap an iterable to enumerate index and value in a range-\/based loop. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em iterable} & The iterable\\
+\hline
+\end{DoxyParams}
+Range-\/based for loops are handy and widely preferred in C++, but are limited in their ability to replace for loops that require access to a loop counter. The enumerate() function solves this problem by wrapping the {\itshape iterable} in an adapter that, when used as a range-\/expression, will provide iterators whose value\+\_\+type is a pair of index and value reference.
+
+The iterable must support std\+::begin() and std\+::end(). This includes all containers provided by the standard C++ library, as well as C-\/style arrays.
+
+A typical usage pattern would use structured binding to store the index and value in two separate variables\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{std::vector<int>\ values\ =\ ...;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ [index,\ value]\ :\ utils::\mbox{\hyperlink{include_2libcamera_2base_2utils_8h_aae904c8027790ede4383b7b1d05ae279}{enumerate}}(values))\ \{}
+\DoxyCodeLine{\ \ \ \ ...}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Note that the argument to enumerate() has to be an lvalue, as the lifetime of any rvalue would not be extended to the whole for loop. The compiler will complain if an rvalue is passed to the function, in which case it should be stored in a local variable before the loop.
+
+\begin{DoxyReturn}{Returns}
+A value of unspecified type that, when used in a range-\/based for loop, iterates over an indexed view of the {\itshape iterable} 
+\end{DoxyReturn}
+\Hypertarget{include_2libcamera_2base_2utils_8h_ae71db1210216daf6c892326ffe34a3a3}\label{include_2libcamera_2base_2utils_8h_ae71db1210216daf6c892326ffe34a3a3} 
+\index{utils.h@{utils.h}!hex@{hex}}
+\index{hex@{hex}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{hex()}{hex()}}
+{\footnotesize\ttfamily template$<$typename T , std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+integral$<$ T $>$\+::value $>$ \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+libcamera\+::utils\+::hex (\begin{DoxyParamCaption}\item[{T}]{value,  }\item[{unsigned int}]{width = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Write an hexadecimal value to an output string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The value \\
+\hline
+{\em width} & The width\\
+\hline
+\end{DoxyParams}
+Return an object of unspecified type such that, if {\itshape os} is the name of an output stream of type std\+::ostream, and T is an integer type, then the expression
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{os\ <<\ utils::hex(value)}
+
+\end{DoxyCode}
+
+
+will output the {\itshape value} to the stream in hexadecimal form with the base prefix and the filling character set to \textquotesingle{}0\textquotesingle{}. The field width is set to {\itshape width} if specified to a non-\/zero value, or to the native width of type T otherwise. The {\itshape os} stream configuration is not modified. \Hypertarget{include_2libcamera_2base_2utils_8h_a3480ae757388b82c6d5d9f3e50008e13}\label{include_2libcamera_2base_2utils_8h_a3480ae757388b82c6d5d9f3e50008e13} 
+\index{utils.h@{utils.h}!join@{join}}
+\index{join@{join}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{join()}{join()}}
+{\footnotesize\ttfamily template$<$typename Container , typename Unary\+Op $>$ \\
+template$<$ typename Container, typename Unary\+Op $>$ std\+::string libcamera\+::utils\+::join (\begin{DoxyParamCaption}\item[{const Container \&}]{items,  }\item[{const std\+::string \&}]{sep,  }\item[{Unary\+Op}]{op }\end{DoxyParamCaption})}
+
+
+
+Join elements of a container in a string with a separator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em items} & The container \\
+\hline
+\mbox{\texttt{ in}}  & {\em sep} & The separator to add between elements \\
+\hline
+\mbox{\texttt{ in}}  & {\em op} & A function that converts individual elements to strings\\
+\hline
+\end{DoxyParams}
+This function joins all elements in the {\itshape items} container into a string and returns it. The {\itshape sep} separator is added between elements. If the container elements are not implicitly convertible to std\+::string, the {\itshape op} function shall be provided to perform conversion of elements to std\+::string.
+
+\begin{DoxyReturn}{Returns}
+A string that concatenates all elements in the container 
+\end{DoxyReturn}
+\Hypertarget{include_2libcamera_2base_2utils_8h_aa4e149c6ca26755ffd6b448778c4fb63}\label{include_2libcamera_2base_2utils_8h_aa4e149c6ca26755ffd6b448778c4fb63} 
+\index{utils.h@{utils.h}!libcameraBuildPath@{libcameraBuildPath}}
+\index{libcameraBuildPath@{libcameraBuildPath}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{libcameraBuildPath()}{libcameraBuildPath()}}
+{\footnotesize\ttfamily std\+::string libcamera\+::utils\+::libcamera\+Build\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieve the path to the build directory. 
+
+During development, it is useful to run libcamera binaries directly from the build directory without installing them. This function helps components that need to locate resources in the build tree, such as IPA modules or IPA proxy workers, by providing them with the path to the root of the build directory. Callers can then use it to complement or override searches in system-\/wide directories.
+
+If libcamera has been installed, the build directory path is not available and this function returns an empty string.
+
+\begin{DoxyReturn}{Returns}
+The path to the build directory if running from a build, or an empty string otherwise 
+\end{DoxyReturn}
+\Hypertarget{include_2libcamera_2base_2utils_8h_a4163d8b770aad3f746637c59a5f228d2}\label{include_2libcamera_2base_2utils_8h_a4163d8b770aad3f746637c59a5f228d2} 
+\index{utils.h@{utils.h}!libcameraSourcePath@{libcameraSourcePath}}
+\index{libcameraSourcePath@{libcameraSourcePath}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{libcameraSourcePath()}{libcameraSourcePath()}}
+{\footnotesize\ttfamily std\+::string libcamera\+::utils\+::libcamera\+Source\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieve the path to the source directory. 
+
+During development, it is useful to run libcamera binaries directly from the build directory without installing them. This function helps components that need to locate resources in the source tree, such as IPA configuration files, by providing them with the path to the root of the source directory. Callers can then use it to complement or override searches in system-\/wide directories.
+
+If libcamera has been installed, the source directory path is not available and this function returns an empty string.
+
+\begin{DoxyReturn}{Returns}
+The path to the source directory if running from a build directory, or an empty string otherwise 
+\end{DoxyReturn}
+\Hypertarget{include_2libcamera_2base_2utils_8h_a9682828250eb4214779ddc2b9564415e}\label{include_2libcamera_2base_2utils_8h_a9682828250eb4214779ddc2b9564415e} 
+\index{utils.h@{utils.h}!map\_keys@{map\_keys}}
+\index{map\_keys@{map\_keys}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{map\_keys()}{map\_keys()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$ typename T\+::key\+\_\+type $>$ libcamera\+::utils\+::map\+\_\+keys (\begin{DoxyParamCaption}\item[{const T \&}]{map }\end{DoxyParamCaption})}
+
+
+
+Retrieve the keys of a std\+::map$<$$>$ 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em map} & The map whose keys to retrieve \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A std\+::vector$<$$>$ containing the keys of {\itshape map} 
+\end{DoxyReturn}
+\Hypertarget{include_2libcamera_2base_2utils_8h_ad77ea11443473007cc0127e21a6a3e51}\label{include_2libcamera_2base_2utils_8h_ad77ea11443473007cc0127e21a6a3e51} 
+\index{utils.h@{utils.h}!reverse@{reverse}}
+\index{reverse@{reverse}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{reverse()}{reverse()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+libcamera\+::utils\+::reverse (\begin{DoxyParamCaption}\item[{T \&\&}]{iterable }\end{DoxyParamCaption})}
+
+
+
+Wrap an iterable to reverse iteration in a range-\/based loop. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em iterable} & The iterable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A value of unspecified type that, when used in a range-\/based for loop, will cause the loop to iterate over the {\itshape iterable} in reverse order 
+\end{DoxyReturn}
+\Hypertarget{include_2libcamera_2base_2utils_8h_a6981717235fc0bcc1a270b1d77ee9189}\label{include_2libcamera_2base_2utils_8h_a6981717235fc0bcc1a270b1d77ee9189} 
+\index{utils.h@{utils.h}!secure\_getenv@{secure\_getenv}}
+\index{secure\_getenv@{secure\_getenv}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{secure\_getenv()}{secure\_getenv()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} libcamera\+::utils\+::secure\+\_\+getenv (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{name }\end{DoxyParamCaption})}
+
+
+
+Get an environment variable. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em name} & The name of the variable to return\\
+\hline
+\end{DoxyParams}
+The environment list is searched to find the variable \textquotesingle{}name\textquotesingle{}, and the corresponding string is returned.
+
+If \textquotesingle{}secure execution\textquotesingle{} is required then this function always returns NULL to avoid vulnerabilities that could occur if set-\/user-\/\+ID or set-\/group-\/\+ID programs accidentally trust the environment.
+
+\begin{DoxyNote}{Note}
+Not all platforms may support the features required to implement the secure execution check, in which case this function behaves as getenv(). A notable example of this is Android.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+A pointer to the value in the environment or NULL if the requested environment variable doesn\textquotesingle{}t exist or if secure execution is required. 
+\end{DoxyReturn}
+\Hypertarget{include_2libcamera_2base_2utils_8h_a83f4325ea534abfe9fb482799ecc8502}\label{include_2libcamera_2base_2utils_8h_a83f4325ea534abfe9fb482799ecc8502} 
+\index{utils.h@{utils.h}!set\_overlap@{set\_overlap}}
+\index{set\_overlap@{set\_overlap}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{set\_overlap()}{set\_overlap()}}
+{\footnotesize\ttfamily template$<$class Input\+It1 , class Input\+It2 $>$ \\
+libcamera\+::utils\+::set\+\_\+overlap (\begin{DoxyParamCaption}\item[{Input\+It1}]{first1,  }\item[{Input\+It1}]{last1,  }\item[{Input\+It2}]{first2,  }\item[{Input\+It2}]{last2 }\end{DoxyParamCaption})}
+
+
+
+Count the number of elements in the intersection of two ranges. 
+
+Count the number of elements in the intersection of the sorted ranges \mbox{[}{\itshape first1}, {\itshape last1}) and \mbox{[}{\itshape first1}, {\itshape last2}). Elements are compared using operator\texorpdfstring{$<$}{<} and the ranges must be sorted with respect to the same.
+
+\begin{DoxyReturn}{Returns}
+The number of elements in the intersection of the two ranges 
+\end{DoxyReturn}
+\Hypertarget{include_2libcamera_2base_2utils_8h_a24701cae6640674865484b40b2325a7d}\label{include_2libcamera_2base_2utils_8h_a24701cae6640674865484b40b2325a7d} 
+\index{utils.h@{utils.h}!split@{split}}
+\index{split@{split}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{split()}{split()}}
+{\footnotesize\ttfamily details\+::\+String\+Splitter libcamera\+::utils\+::split (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str,  }\item[{const std\+::string \&}]{delim }\end{DoxyParamCaption})}
+
+
+
+Split a string based on a delimiter. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em str} & The string to split \\
+\hline
+\mbox{\texttt{ in}}  & {\em delim} & The delimiter string\\
+\hline
+\end{DoxyParams}
+This function splits the string {\itshape str} into substrings based on the delimiter {\itshape delim}. It returns an object of unspecified type that can be used in a range-\/based for loop and yields the substrings in sequence.
+
+\begin{DoxyReturn}{Returns}
+An object that can be used in a range-\/based for loop to iterate over the substrings 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000013}{Todo}}]Try to avoid copies of str and delim \end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000013}{Todo}}]Try to avoid copies of str and delim \end{DoxyRefDesc}
+\Hypertarget{include_2libcamera_2base_2utils_8h_a68b34c72abd79fa88b3039bf05964de1}\label{include_2libcamera_2base_2utils_8h_a68b34c72abd79fa88b3039bf05964de1} 
+\index{utils.h@{utils.h}!strlcpy@{strlcpy}}
+\index{strlcpy@{strlcpy}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{strlcpy()}{strlcpy()}}
+{\footnotesize\ttfamily size\+\_\+t libcamera\+::utils\+::strlcpy (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{dst,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{src,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Copy a string with a size limit. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em dst} & The destination string \\
+\hline
+\mbox{\texttt{ in}}  & {\em src} & The source string \\
+\hline
+\mbox{\texttt{ in}}  & {\em size} & The size of the destination string\\
+\hline
+\end{DoxyParams}
+This function copies the null-\/terminated string {\itshape src} to {\itshape dst} with a limit of {\itshape size} -\/ 1 characters, and null-\/terminates the result if {\itshape size} is larger than 0. If {\itshape src} is larger than {\itshape size} -\/ 1, {\itshape dst} is truncated.
+
+\begin{DoxyReturn}{Returns}
+The size of {\itshape src} 
+\end{DoxyReturn}
+\Hypertarget{include_2libcamera_2base_2utils_8h_adeccfc6cdef233fd9c7a384f1b2744ce}\label{include_2libcamera_2base_2utils_8h_adeccfc6cdef233fd9c7a384f1b2744ce} 
+\index{utils.h@{utils.h}!strtod@{strtod}}
+\index{strtod@{strtod}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{strtod()}{strtod()}}
+{\footnotesize\ttfamily double libcamera\+::utils\+::strtod (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}\+\_\+\+\_\+restrict}]{nptr,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+\_\+\+\_\+restrict}]{endptr }\end{DoxyParamCaption})}
+
+
+
+Convert a string to a double independently of the current locale. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em nptr} & The string to convert \\
+\hline
+\mbox{\texttt{ out}}  & {\em endptr} & Pointer to trailing portion of the string after conversion\\
+\hline
+\end{DoxyParams}
+This function is a locale-\/independent version of the std\+::strtod() function. It behaves as the standard function, but uses the "{}\+C"{} locale instead of the current locale.
+
+\begin{DoxyReturn}{Returns}
+The converted value, if any, or 0.\+0 if the conversion failed. 
+\end{DoxyReturn}
+\Hypertarget{include_2libcamera_2base_2utils_8h_a286d03ee13e24290a5841b114c614e59}\label{include_2libcamera_2base_2utils_8h_a286d03ee13e24290a5841b114c614e59} 
+\index{utils.h@{utils.h}!time\_point\_to\_string@{time\_point\_to\_string}}
+\index{time\_point\_to\_string@{time\_point\_to\_string}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{time\_point\_to\_string()}{time\_point\_to\_string()}}
+{\footnotesize\ttfamily std\+::string libcamera\+::utils\+::time\+\_\+point\+\_\+to\+\_\+string (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{include_2libcamera_2base_2utils_8h_a8294b009381080fdcaed4b0eb8b03224}{time\+\_\+point}} \&}]{time }\end{DoxyParamCaption})}
+
+
+
+Convert a time point to a string representation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em time} & The time point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string representing the time point in hh\+:mm\+:ss.\+nanoseconds format 
+\end{DoxyReturn}
+\Hypertarget{include_2libcamera_2base_2utils_8h_a5e36eb7165ff23ffa3ff9551a0af76fc}\label{include_2libcamera_2base_2utils_8h_a5e36eb7165ff23ffa3ff9551a0af76fc} 
+\index{utils.h@{utils.h}!to\_underlying@{to\_underlying}}
+\index{to\_underlying@{to\_underlying}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{to\_underlying()}{to\_underlying()}}
+{\footnotesize\ttfamily template$<$class Enum $>$ \\
+libcamera\+::utils\+::to\+\_\+underlying (\begin{DoxyParamCaption}\item[{Enum}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Convert an enumeration to its underlygin type. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em e} & Enumeration value to convert\\
+\hline
+\end{DoxyParams}
+This function is equivalent to the C++23 std\+::to\+\_\+underlying().
+
+\begin{DoxyReturn}{Returns}
+The value of e converted to its underlying type 
+\end{DoxyReturn}
+\Hypertarget{include_2libcamera_2base_2utils_8h_a546d3faa29d241f8c5ad2784cdcae8d4}\label{include_2libcamera_2base_2utils_8h_a546d3faa29d241f8c5ad2784cdcae8d4} 
+\index{utils.h@{utils.h}!toAscii@{toAscii}}
+\index{toAscii@{toAscii}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{toAscii()}{toAscii()}}
+{\footnotesize\ttfamily std\+::string libcamera\+::utils\+::to\+Ascii (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str }\end{DoxyParamCaption})}
+
+
+
+Remove any non-\/\+ASCII characters from a string. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em str} & The string to strip\\
+\hline
+\end{DoxyParams}
+Remove all non-\/\+ASCII characters from a string.
+
+\begin{DoxyReturn}{Returns}
+A string equal to {\itshape str} stripped out of all non-\/\+ASCII characters 
+\end{DoxyReturn}

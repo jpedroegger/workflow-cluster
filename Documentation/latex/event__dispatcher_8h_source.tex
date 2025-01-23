@@ -1,0 +1,39 @@
+\doxysection{event\+\_\+dispatcher.\+h}
+\hypertarget{event__dispatcher_8h_source}{}\label{event__dispatcher_8h_source}\index{src/peripherals/camera/libcamera/include/libcamera/base/event\_dispatcher.h@{src/peripherals/camera/libcamera/include/libcamera/base/event\_dispatcher.h}}
+\mbox{\hyperlink{event__dispatcher_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2019,\ Google\ Inc.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Event\ dispatcher}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <libcamera/base/private.h>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacelibcamera}{libcamera}}\ \{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }EventNotifier;}
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }Timer;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1EventDispatcher}{EventDispatcher}}}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classlibcamera_1_1EventDispatcher}{\string~EventDispatcher}}();}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1EventDispatcher_a3c88ad0cc1eeb3bace6f78dd65256ef8}{registerEventNotifier}}(\mbox{\hyperlink{classlibcamera_1_1EventNotifier}{EventNotifier}}\ *notifier)\ =\ 0;}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1EventDispatcher_acce5cba984a6fe441a704911fb3d45f1}{unregisterEventNotifier}}(\mbox{\hyperlink{classlibcamera_1_1EventNotifier}{EventNotifier}}\ *notifier)\ =\ 0;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1EventDispatcher_aad6f0d92bd0745af50a165ec8cf58453}{registerTimer}}(\mbox{\hyperlink{classlibcamera_1_1Timer}{Timer}}\ *timer)\ =\ 0;}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1EventDispatcher_aa5b09e506519264577acf26f4e3f9068}{unregisterTimer}}(\mbox{\hyperlink{classlibcamera_1_1Timer}{Timer}}\ *timer)\ =\ 0;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1EventDispatcher_a33dea42b992409416799a48dc32fec90}{processEvents}}()\ =\ 0;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1EventDispatcher_a6c56e67ad8d3089ad11bad210011eb8b}{interrupt}}()\ =\ 0;}
+\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \}\ \textcolor{comment}{/*\ namespace\ libcamera\ */}}
+
+\end{DoxyCode}

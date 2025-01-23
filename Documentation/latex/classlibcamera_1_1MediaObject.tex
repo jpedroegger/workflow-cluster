@@ -1,0 +1,120 @@
+\doxysection{libcamera\+::Media\+Object Class Reference}
+\hypertarget{classlibcamera_1_1MediaObject}{}\label{classlibcamera_1_1MediaObject}\index{libcamera::MediaObject@{libcamera::MediaObject}}
+
+
+Base class for all media objects.  
+
+
+Inheritance diagram for libcamera\+::Media\+Object\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlibcamera_1_1MediaObject}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1MediaDevice}{Media\+Device}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1MediaObject_afd1daa8170461ab5b15ce0cb25b2acb7}{device}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the media device the media object belongs to.   \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classlibcamera_1_1MediaDevice}{Media\+Device}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1MediaObject_a324e73934f2b209ff6b5ea031a2640aa}{device}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the media device the media object belongs to. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classlibcamera_1_1MediaObject_a71b2dbbfed6a5719df31d9399fb2f8f9}{id}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the media object id. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1MediaObject_a040304e6607c1742fa50a1cfbe1064a5}{Media\+Object}} (\mbox{\hyperlink{classlibcamera_1_1MediaDevice}{Media\+Device}} \texorpdfstring{$\ast$}{*}dev, unsigned int \mbox{\hyperlink{classlibcamera_1_1MediaObject_a71b2dbbfed6a5719df31d9399fb2f8f9}{id}})
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{classlibcamera_1_1MediaObject}{Media\+Object} part of the \doxylink{classlibcamera_1_1MediaDevice}{Media\+Device} {\itshape dev}, identified by the {\itshape id} unique within the device. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1MediaObject_aa9ac2a933cc62d840f7554870b36e9a2}\label{classlibcamera_1_1MediaObject_aa9ac2a933cc62d840f7554870b36e9a2} 
+\mbox{\hyperlink{classlibcamera_1_1MediaDevice}{Media\+Device}} \texorpdfstring{$\ast$}{*} {\bfseries dev\+\_\+}
+\begin{DoxyCompactList}\small\item\em The media device the media object belongs to. \end{DoxyCompactList}\item 
+\Hypertarget{classlibcamera_1_1MediaObject_a30fd98d4872f4c456b52a2506542e11f}\label{classlibcamera_1_1MediaObject_a30fd98d4872f4c456b52a2506542e11f} 
+unsigned int {\bfseries id\+\_\+}
+\begin{DoxyCompactList}\small\item\em The media object id. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1MediaObject_adabcabf45c8d5d0795428f0f52ab237d}\label{classlibcamera_1_1MediaObject_adabcabf45c8d5d0795428f0f52ab237d} 
+class {\bfseries Media\+Device}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for all media objects. 
+
+\doxylink{classlibcamera_1_1MediaObject}{Media\+Object} is an abstract base class for all media objects in the media graph. Each object is identified by a reference to the media device it belongs to and a unique id within that media device. This base class provide helpers to media objects to keep track of these identifiers.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classlibcamera_1_1MediaEntity}{Media\+Entity}, \doxylink{classlibcamera_1_1MediaPad}{Media\+Pad}, \doxylink{classlibcamera_1_1MediaLink}{Media\+Link} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlibcamera_1_1MediaObject_a040304e6607c1742fa50a1cfbe1064a5}\label{classlibcamera_1_1MediaObject_a040304e6607c1742fa50a1cfbe1064a5} 
+\index{libcamera::MediaObject@{libcamera::MediaObject}!MediaObject@{MediaObject}}
+\index{MediaObject@{MediaObject}!libcamera::MediaObject@{libcamera::MediaObject}}
+\doxysubsubsection{\texorpdfstring{MediaObject()}{MediaObject()}}
+{\footnotesize\ttfamily libcamera\+::\+Media\+Object\+::\+Media\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1MediaDevice}{Media\+Device}} \texorpdfstring{$\ast$}{*}}]{dev,  }\item[{unsigned int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Construct a \doxylink{classlibcamera_1_1MediaObject}{Media\+Object} part of the \doxylink{classlibcamera_1_1MediaDevice}{Media\+Device} {\itshape dev}, identified by the {\itshape id} unique within the device. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em dev} & The media device this object belongs to \\
+\hline
+\mbox{\texttt{ in}}  & {\em id} & The media object id\\
+\hline
+\end{DoxyParams}
+The caller shall ensure unicity of the object id in the media device context. This constraint is neither enforced nor checked by the \doxylink{classlibcamera_1_1MediaObject}{Media\+Object}. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1MediaObject_afd1daa8170461ab5b15ce0cb25b2acb7}\label{classlibcamera_1_1MediaObject_afd1daa8170461ab5b15ce0cb25b2acb7} 
+\index{libcamera::MediaObject@{libcamera::MediaObject}!device@{device}}
+\index{device@{device}!libcamera::MediaObject@{libcamera::MediaObject}}
+\doxysubsubsection{\texorpdfstring{device()}{device()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily libcamera\+::\+Media\+Object\+::device (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the media device the media object belongs to.   
+
+\begin{DoxyReturn}{Returns}
+The \doxylink{classlibcamera_1_1MediaDevice}{Media\+Device}   
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1MediaObject_a324e73934f2b209ff6b5ea031a2640aa}\label{classlibcamera_1_1MediaObject_a324e73934f2b209ff6b5ea031a2640aa} 
+\index{libcamera::MediaObject@{libcamera::MediaObject}!device@{device}}
+\index{device@{device}!libcamera::MediaObject@{libcamera::MediaObject}}
+\doxysubsubsection{\texorpdfstring{device()}{device()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily libcamera\+::\+Media\+Object\+::device (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the media device the media object belongs to. 
+
+\begin{DoxyReturn}{Returns}
+The \doxylink{classlibcamera_1_1MediaDevice}{Media\+Device} 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1MediaObject_a71b2dbbfed6a5719df31d9399fb2f8f9}\label{classlibcamera_1_1MediaObject_a71b2dbbfed6a5719df31d9399fb2f8f9} 
+\index{libcamera::MediaObject@{libcamera::MediaObject}!id@{id}}
+\index{id@{id}!libcamera::MediaObject@{libcamera::MediaObject}}
+\doxysubsubsection{\texorpdfstring{id()}{id()}}
+{\footnotesize\ttfamily libcamera\+::\+Media\+Object\+::id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the media object id. 
+
+\begin{DoxyReturn}{Returns}
+The media object id 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/internal/\mbox{\hyperlink{media__object_8h}{media\+\_\+object.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/media\+\_\+object.\+cpp\end{DoxyCompactItemize}

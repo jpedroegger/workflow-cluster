@@ -1,0 +1,213 @@
+\doxysection{libcamera\+::IPAModule Class Reference}
+\hypertarget{classlibcamera_1_1IPAModule}{}\label{classlibcamera_1_1IPAModule}\index{libcamera::IPAModule@{libcamera::IPAModule}}
+
+
+Wrapper around IPA module shared object.  
+
+
+Inheritance diagram for libcamera\+::IPAModule\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlibcamera_1_1IPAModule}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1IPAModule_abf5eccedd5356d382c1377eddcaf7d9c}{IPAModule}} (const std\+::string \&lib\+Path)
+\begin{DoxyCompactList}\small\item\em Construct an \doxylink{classlibcamera_1_1IPAModule}{IPAModule} instance. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlibcamera_1_1IPAModule_af14705dc1eebb33518e8c3aacf3b7957}{is\+Valid}} () const
+\begin{DoxyCompactList}\small\item\em Check if the \doxylink{classlibcamera_1_1IPAModule}{IPAModule} instance is valid. \end{DoxyCompactList}\item 
+const struct \mbox{\hyperlink{structlibcamera_1_1IPAModuleInfo}{IPAModule\+Info}} \& \mbox{\hyperlink{classlibcamera_1_1IPAModule_a25eaa78c15705ddd7384516c1657745d}{info}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the IPA module information. \end{DoxyCompactList}\item 
+const std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{classlibcamera_1_1IPAModule_a87c7137417e924831762e0fe33258a8e}{signature}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the IPA module signature. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{classlibcamera_1_1IPAModule_ac4442f2b5ae1e04e0ea0341848707670}{path}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the IPA module path. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlibcamera_1_1IPAModule_a8a092bd638e35b4d3f4ac51f58fe4d51}{load}} ()
+\begin{DoxyCompactList}\small\item\em Load the IPA implementation factory from the shared object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1IPAInterface}{IPAInterface}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1IPAModule_af70448b68ca0f671376b4ca93e402e79}{create\+Interface}} ()
+\begin{DoxyCompactList}\small\item\em Instantiate an IPA interface. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classlibcamera_1_1IPAModule_aeff066789ce1cfd94e14169cdcd6c7c7}{match}} (\mbox{\hyperlink{classlibcamera_1_1PipelineHandler}{Pipeline\+Handler}} \texorpdfstring{$\ast$}{*}pipe, uint32\+\_\+t min\+Version, uint32\+\_\+t max\+Version) const
+\begin{DoxyCompactList}\small\item\em Verify if the IPA module matches a given pipeline handler. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classlibcamera_1_1IPAModule_a81b5a10c65b1aeef7218c1b4376ef837}{log\+Prefix}} () const override
+\begin{DoxyCompactList}\small\item\em Retrieve a string to be prefixed to the log message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1Loggable}{libcamera\+::\+Loggable}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1LogMessage}{Log\+Message}} \mbox{\hyperlink{classlibcamera_1_1Loggable_a56b00f844b75b5d08cad898ed9c6181e}{\+\_\+log}} (const \mbox{\hyperlink{classlibcamera_1_1LogCategory}{Log\+Category}} \texorpdfstring{$\ast$}{*}category, \mbox{\hyperlink{namespacelibcamera_a68f26f5a54a5bb105f2e7422215a0ca3}{Log\+Severity}} severity, const char \texorpdfstring{$\ast$}{*}file\+Name=\+\_\+\+\_\+builtin\+\_\+\+FILE(), unsigned int line=\+\_\+\+\_\+builtin\+\_\+\+LINE()) const
+\begin{DoxyCompactList}\small\item\em Create a temporary \doxylink{classlibcamera_1_1LogMessage}{Log\+Message} object to log a message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Wrapper around IPA module shared object. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlibcamera_1_1IPAModule_abf5eccedd5356d382c1377eddcaf7d9c}\label{classlibcamera_1_1IPAModule_abf5eccedd5356d382c1377eddcaf7d9c} 
+\index{libcamera::IPAModule@{libcamera::IPAModule}!IPAModule@{IPAModule}}
+\index{IPAModule@{IPAModule}!libcamera::IPAModule@{libcamera::IPAModule}}
+\doxysubsubsection{\texorpdfstring{IPAModule()}{IPAModule()}}
+{\footnotesize\ttfamily libcamera\+::\+IPAModule\+::\+IPAModule (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{lib\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct an \doxylink{classlibcamera_1_1IPAModule}{IPAModule} instance. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em lib\+Path} & path to IPA module shared object\\
+\hline
+\end{DoxyParams}
+Loads the \doxylink{structlibcamera_1_1IPAModuleInfo}{IPAModule\+Info} from the IPA module shared object at lib\+Path. The IPA module shared object file must be of the same endianness and bitness as libcamera.
+
+The caller shall call the \doxylink{classlibcamera_1_1IPAModule_af14705dc1eebb33518e8c3aacf3b7957}{is\+Valid()} function after constructing an \doxylink{classlibcamera_1_1IPAModule}{IPAModule} instance to verify the validity of the \doxylink{classlibcamera_1_1IPAModule}{IPAModule}. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1IPAModule_af70448b68ca0f671376b4ca93e402e79}\label{classlibcamera_1_1IPAModule_af70448b68ca0f671376b4ca93e402e79} 
+\index{libcamera::IPAModule@{libcamera::IPAModule}!createInterface@{createInterface}}
+\index{createInterface@{createInterface}!libcamera::IPAModule@{libcamera::IPAModule}}
+\doxysubsubsection{\texorpdfstring{createInterface()}{createInterface()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classlibcamera_1_1IPAInterface}{IPAInterface}} \texorpdfstring{$\ast$}{*} libcamera\+::\+IPAModule\+::create\+Interface (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Instantiate an IPA interface. 
+
+After loading the IPA module with \doxylink{classlibcamera_1_1IPAModule_a8a092bd638e35b4d3f4ac51f58fe4d51}{load()}, this function creates an instance of the IPA module interface.
+
+Calling this function on a module that has not yet been loaded, or an invalid module (as returned by \doxylink{classlibcamera_1_1IPAModule_a8a092bd638e35b4d3f4ac51f58fe4d51}{load()} and \doxylink{classlibcamera_1_1IPAModule_af14705dc1eebb33518e8c3aacf3b7957}{is\+Valid()}, respectively) is an error.
+
+\begin{DoxyReturn}{Returns}
+The IPA interface on success, or nullptr on error 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1IPAModule_a25eaa78c15705ddd7384516c1657745d}\label{classlibcamera_1_1IPAModule_a25eaa78c15705ddd7384516c1657745d} 
+\index{libcamera::IPAModule@{libcamera::IPAModule}!info@{info}}
+\index{info@{info}!libcamera::IPAModule@{libcamera::IPAModule}}
+\doxysubsubsection{\texorpdfstring{info()}{info()}}
+{\footnotesize\ttfamily const struct \mbox{\hyperlink{structlibcamera_1_1IPAModuleInfo}{IPAModule\+Info}} \& libcamera\+::\+IPAModule\+::info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retrieve the IPA module information. 
+
+The content of the IPA module information is loaded from the module, and is valid only if the module is valid (as returned by \doxylink{classlibcamera_1_1IPAModule_af14705dc1eebb33518e8c3aacf3b7957}{is\+Valid()}). Calling this function on an invalid module is an error.
+
+\begin{DoxyReturn}{Returns}
+the IPA module information 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1IPAModule_af14705dc1eebb33518e8c3aacf3b7957}\label{classlibcamera_1_1IPAModule_af14705dc1eebb33518e8c3aacf3b7957} 
+\index{libcamera::IPAModule@{libcamera::IPAModule}!isValid@{isValid}}
+\index{isValid@{isValid}!libcamera::IPAModule@{libcamera::IPAModule}}
+\doxysubsubsection{\texorpdfstring{isValid()}{isValid()}}
+{\footnotesize\ttfamily bool libcamera\+::\+IPAModule\+::is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Check if the \doxylink{classlibcamera_1_1IPAModule}{IPAModule} instance is valid. 
+
+An \doxylink{classlibcamera_1_1IPAModule}{IPAModule} instance is valid if the IPA module shared object exists and the IPA module information it contains was successfully retrieved and validated.
+
+\begin{DoxyReturn}{Returns}
+True if the \doxylink{classlibcamera_1_1IPAModule}{IPAModule} is valid, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1IPAModule_a8a092bd638e35b4d3f4ac51f58fe4d51}\label{classlibcamera_1_1IPAModule_a8a092bd638e35b4d3f4ac51f58fe4d51} 
+\index{libcamera::IPAModule@{libcamera::IPAModule}!load@{load}}
+\index{load@{load}!libcamera::IPAModule@{libcamera::IPAModule}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily bool libcamera\+::\+IPAModule\+::load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Load the IPA implementation factory from the shared object. 
+
+The IPA module shared object implements an \doxylink{classlibcamera_1_1IPAInterface}{IPAInterface} object to be used by pipeline handlers. This function loads the factory function from the shared object. Later, \doxylink{classlibcamera_1_1IPAModule_af70448b68ca0f671376b4ca93e402e79}{create\+Interface()} can be called to instantiate the \doxylink{classlibcamera_1_1IPAInterface}{IPAInterface}.
+
+This function only needs to be called successfully once, after which \doxylink{classlibcamera_1_1IPAModule_af70448b68ca0f671376b4ca93e402e79}{create\+Interface()} can be called as many times as \doxylink{classlibcamera_1_1IPAInterface}{IPAInterface} instances are needed.
+
+Calling this function on an invalid module (as returned by \doxylink{classlibcamera_1_1IPAModule_af14705dc1eebb33518e8c3aacf3b7957}{is\+Valid()}) is an error.
+
+\begin{DoxyReturn}{Returns}
+True if load was successful, or already loaded, and false otherwise 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1IPAModule_a81b5a10c65b1aeef7218c1b4376ef837}\label{classlibcamera_1_1IPAModule_a81b5a10c65b1aeef7218c1b4376ef837} 
+\index{libcamera::IPAModule@{libcamera::IPAModule}!logPrefix@{logPrefix}}
+\index{logPrefix@{logPrefix}!libcamera::IPAModule@{libcamera::IPAModule}}
+\doxysubsubsection{\texorpdfstring{logPrefix()}{logPrefix()}}
+{\footnotesize\ttfamily std\+::string libcamera\+::\+IPAModule\+::log\+Prefix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Retrieve a string to be prefixed to the log message. 
+
+This function allows classes inheriting from the \doxylink{classlibcamera_1_1Loggable}{Loggable} class to extend the logger with an object-\/specific prefix output right before the log message contents.
+
+\begin{DoxyReturn}{Returns}
+A string to be prefixed to the log message 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classlibcamera_1_1Loggable_a4cc48b0ae7215ceb4bfae6f192b2b3ee}{libcamera\+::\+Loggable}}.
+
+\Hypertarget{classlibcamera_1_1IPAModule_aeff066789ce1cfd94e14169cdcd6c7c7}\label{classlibcamera_1_1IPAModule_aeff066789ce1cfd94e14169cdcd6c7c7} 
+\index{libcamera::IPAModule@{libcamera::IPAModule}!match@{match}}
+\index{match@{match}!libcamera::IPAModule@{libcamera::IPAModule}}
+\doxysubsubsection{\texorpdfstring{match()}{match()}}
+{\footnotesize\ttfamily bool libcamera\+::\+IPAModule\+::match (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlibcamera_1_1PipelineHandler}{Pipeline\+Handler}} \texorpdfstring{$\ast$}{*}}]{pipe,  }\item[{uint32\+\_\+t}]{min\+Version,  }\item[{uint32\+\_\+t}]{max\+Version }\end{DoxyParamCaption}) const}
+
+
+
+Verify if the IPA module matches a given pipeline handler. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em pipe} & Pipeline handler to match with \\
+\hline
+\mbox{\texttt{ in}}  & {\em min\+Version} & Minimum acceptable version of IPA module \\
+\hline
+\mbox{\texttt{ in}}  & {\em max\+Version} & Maximum acceptable version of IPA module\\
+\hline
+\end{DoxyParams}
+This function checks if this IPA module matches the {\itshape pipe} pipeline handler, and the input version range.
+
+\begin{DoxyReturn}{Returns}
+True if the pipeline handler matches the IPA module, or false otherwise 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1IPAModule_ac4442f2b5ae1e04e0ea0341848707670}\label{classlibcamera_1_1IPAModule_ac4442f2b5ae1e04e0ea0341848707670} 
+\index{libcamera::IPAModule@{libcamera::IPAModule}!path@{path}}
+\index{path@{path}!libcamera::IPAModule@{libcamera::IPAModule}}
+\doxysubsubsection{\texorpdfstring{path()}{path()}}
+{\footnotesize\ttfamily const std\+::string \& libcamera\+::\+IPAModule\+::path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retrieve the IPA module path. 
+
+The IPA module path is the file name and path of the IPA module shared object from which the IPA module was created.
+
+\begin{DoxyReturn}{Returns}
+The IPA module path 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1IPAModule_a87c7137417e924831762e0fe33258a8e}\label{classlibcamera_1_1IPAModule_a87c7137417e924831762e0fe33258a8e} 
+\index{libcamera::IPAModule@{libcamera::IPAModule}!signature@{signature}}
+\index{signature@{signature}!libcamera::IPAModule@{libcamera::IPAModule}}
+\doxysubsubsection{\texorpdfstring{signature()}{signature()}}
+{\footnotesize\ttfamily const std\+::vector$<$ uint8\+\_\+t $>$ libcamera\+::\+IPAModule\+::signature (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retrieve the IPA module signature. 
+
+The IPA module signature is stored alongside the IPA module in a file with a \textquotesingle{}.sign\textquotesingle{} suffix, and is loaded when the \doxylink{classlibcamera_1_1IPAModule}{IPAModule} instance is created. This function returns the signature without verifying it. If the signature is missing, the returned vector will be empty.
+
+\begin{DoxyReturn}{Returns}
+The IPA module signature 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/internal/\mbox{\hyperlink{ipa__module_8h}{ipa\+\_\+module.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/ipa\+\_\+module.\+cpp\end{DoxyCompactItemize}

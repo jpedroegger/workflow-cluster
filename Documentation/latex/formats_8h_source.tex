@@ -1,0 +1,71 @@
+\doxysection{formats.\+h}
+\hypertarget{formats_8h_source}{}\label{formats_8h_source}\index{src/peripherals/camera/libcamera/include/libcamera/internal/formats.h@{src/peripherals/camera/libcamera/include/libcamera/internal/formats.h}}
+\mbox{\hyperlink{formats_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2019,\ Google\ Inc.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ libcamera\ image\ formats}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{geometry_8h}{libcamera/geometry.h}}>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{pixel__format_8h}{libcamera/pixel\_format.h}}>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{v4l2__pixelformat_8h}{libcamera/internal/v4l2\_pixelformat.h}}"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacelibcamera}{libcamera}}\ \{}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1PixelFormatInfo}{PixelFormatInfo}}}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{classlibcamera_1_1PixelFormatInfo_a021bf0e82baec37b1523baa3322dc23c}{ColourEncoding}}\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1PixelFormatInfo_a021bf0e82baec37b1523baa3322dc23ca325a4a7e84e64027e36ce0c680f8d018}{ColourEncodingRGB}},}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1PixelFormatInfo_a021bf0e82baec37b1523baa3322dc23caa7f76b3873550b4beeacfd5d8491d910}{ColourEncodingYUV}},}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1PixelFormatInfo_a021bf0e82baec37b1523baa3322dc23cac31c601b597d4cd2f1ff016875d8e564}{ColourEncodingRAW}},}
+\DoxyCodeLine{00027\ \ \ \ \ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structlibcamera_1_1PixelFormatInfo_1_1Plane}{Plane}}\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structlibcamera_1_1PixelFormatInfo_1_1Plane_aebb35354b0a1c6ee99a0bdf2b9335f31}{bytesPerGroup}};}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structlibcamera_1_1PixelFormatInfo_1_1Plane_aa599a1ae77469374e5ca9e53ae7ee2a5}{verticalSubSampling}};}
+\DoxyCodeLine{00032\ \ \ \ \ \};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classlibcamera_1_1PixelFormatInfo_acb11cb37fde348f29e723531b30344ac}{isValid}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classlibcamera_1_1PixelFormatInfo_a26a938c3d1967e062fc20ec8df9c54b3}{format}}.\mbox{\hyperlink{classlibcamera_1_1PixelFormat_ac17dd80cd0de120fbab4b2cf47abcf5f}{isValid}}();\ \}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1PixelFormatInfo}{PixelFormatInfo}}\ \&\mbox{\hyperlink{classlibcamera_1_1PixelFormatInfo_ab6778b5e339f41911b5fd08c3cb66531}{info}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1PixelFormat}{PixelFormat}}\ \&\mbox{\hyperlink{classlibcamera_1_1PixelFormatInfo_a26a938c3d1967e062fc20ec8df9c54b3}{format}});}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1PixelFormatInfo}{PixelFormatInfo}}\ \&\mbox{\hyperlink{classlibcamera_1_1PixelFormatInfo_ab6778b5e339f41911b5fd08c3cb66531}{info}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1V4L2PixelFormat}{V4L2PixelFormat}}\ \&\mbox{\hyperlink{classlibcamera_1_1PixelFormatInfo_a26a938c3d1967e062fc20ec8df9c54b3}{format}});}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1PixelFormatInfo}{PixelFormatInfo}}\ \&\mbox{\hyperlink{classlibcamera_1_1PixelFormatInfo_ab6778b5e339f41911b5fd08c3cb66531}{info}}(\textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classlibcamera_1_1PixelFormatInfo_a1aeacb31949df565216bb98d665125dd}{name}});}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1PixelFormatInfo_a37a284dd919fd4aba5b18138d6eea02a}{stride}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ plane,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ align\ =\ 1)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1PixelFormatInfo_ac7e125f99540866dac124ca50303f4f0}{planeSize}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \&size,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ plane,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ align\ =\ 1)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1PixelFormatInfo_ac7e125f99540866dac124ca50303f4f0}{planeSize}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ height,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ plane,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1PixelFormatInfo_a37a284dd919fd4aba5b18138d6eea02a}{stride}})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1PixelFormatInfo_aa98fc36a8238e5fbb426089dddef273d}{frameSize}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \&size,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ align\ =\ 1)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1PixelFormatInfo_aa98fc36a8238e5fbb426089dddef273d}{frameSize}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1Size}{Size}}\ \&size,}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::array<unsigned\ int,\ 3>\ \&strides)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1PixelFormatInfo_a41cca8a1c4b7bfd7ed8564812f6cdc49}{numPlanes}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{comment}{/*\ \(\backslash\)todo\ Add\ support\ for\ non-\/contiguous\ memory\ planes\ */}}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{classlibcamera_1_1PixelFormatInfo_a1aeacb31949df565216bb98d665125dd}{name}};}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1PixelFormat}{PixelFormat}}\ \mbox{\hyperlink{classlibcamera_1_1PixelFormatInfo_a26a938c3d1967e062fc20ec8df9c54b3}{format}};}
+\DoxyCodeLine{00055\ \ \ \ \ std::vector<V4L2PixelFormat>\ \mbox{\hyperlink{classlibcamera_1_1PixelFormatInfo_a417e6efba30a28758cb7553125b81580}{v4l2Formats}};}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1PixelFormatInfo_af66facd7e91d5db482c0e7e49e8d81bd}{bitsPerPixel}};}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{classlibcamera_1_1PixelFormatInfo_a021bf0e82baec37b1523baa3322dc23c}{ColourEncoding}}\ \mbox{\hyperlink{classlibcamera_1_1PixelFormatInfo_a4876401366f11a4c02e6b5e1e3669219}{colourEncoding}};}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classlibcamera_1_1PixelFormatInfo_afbc360af8e47f2fab08335ef0319c29f}{packed}};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1PixelFormatInfo_acd4b8bf93f17ceff24afc5e75613232c}{pixelsPerGroup}};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ std::array<Plane,\ 3>\ \mbox{\hyperlink{classlibcamera_1_1PixelFormatInfo_af570970ef29915513115cc68dba75a2a}{planes}};}
+\DoxyCodeLine{00063\ \};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \}\ \textcolor{comment}{/*\ namespace\ libcamera\ */}}
+
+\end{DoxyCode}

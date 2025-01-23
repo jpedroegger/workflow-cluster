@@ -1,0 +1,113 @@
+\doxysection{libcamera\+::RPi\+::Stream Class Reference}
+\hypertarget{classlibcamera_1_1RPi_1_1Stream}{}\label{classlibcamera_1_1RPi_1_1Stream}\index{libcamera::RPi::Stream@{libcamera::RPi::Stream}}
+Inheritance diagram for libcamera\+::RPi\+::Stream\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlibcamera_1_1RPi_1_1Stream}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1RPi_1_1Stream_abc46e62895cda67ed37ae60d984166d7}\label{classlibcamera_1_1RPi_1_1Stream_abc46e62895cda67ed37ae60d984166d7} 
+enum class {\bfseries Stream\+Flag} \{ \newline
+{\bfseries None} = 0
+, {\bfseries Import\+Only} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0)
+, {\bfseries External} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1)
+, {\bfseries Requires\+Mmap} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2)
+, \newline
+{\bfseries Recurrent} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3)
+, {\bfseries Needs32bit\+Conv} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 4)
+ \}
+\item 
+\Hypertarget{classlibcamera_1_1RPi_1_1Stream_a7a95871761fdd2a3ea47aa97a6f52361}\label{classlibcamera_1_1RPi_1_1Stream_a7a95871761fdd2a3ea47aa97a6f52361} 
+using {\bfseries Stream\+Flags} = \mbox{\hyperlink{classlibcamera_1_1Flags}{Flags}}$<$ Stream\+Flag $>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1RPi_1_1Stream_a43380513e5ecf74df076bea575fa256e}\label{classlibcamera_1_1RPi_1_1Stream_a43380513e5ecf74df076bea575fa256e} 
+{\bfseries Stream} (const char \texorpdfstring{$\ast$}{*}name, \mbox{\hyperlink{classlibcamera_1_1MediaEntity}{Media\+Entity}} \texorpdfstring{$\ast$}{*}dev, \mbox{\hyperlink{classlibcamera_1_1Flags}{Stream\+Flags}} flags=Stream\+Flag\+::\+None)
+\item 
+\Hypertarget{classlibcamera_1_1RPi_1_1Stream_a3d7380a83fc8906a3d73c087eda85a1a}\label{classlibcamera_1_1RPi_1_1Stream_a3d7380a83fc8906a3d73c087eda85a1a} 
+void {\bfseries set\+Flags} (\mbox{\hyperlink{classlibcamera_1_1Flags}{Stream\+Flags}} flags)
+\item 
+\Hypertarget{classlibcamera_1_1RPi_1_1Stream_a6ffaf52e27f61719d35c7f05da66447d}\label{classlibcamera_1_1RPi_1_1Stream_a6ffaf52e27f61719d35c7f05da66447d} 
+void {\bfseries clear\+Flags} (\mbox{\hyperlink{classlibcamera_1_1Flags}{Stream\+Flags}} flags)
+\item 
+\Hypertarget{classlibcamera_1_1RPi_1_1Stream_aef71e9bf350b55b11b952e28f0086440}\label{classlibcamera_1_1RPi_1_1Stream_aef71e9bf350b55b11b952e28f0086440} 
+\mbox{\hyperlink{classlibcamera_1_1Flags}{Stream\+Flags}} {\bfseries get\+Flags} () const
+\item 
+\Hypertarget{classlibcamera_1_1RPi_1_1Stream_ab1a04a6ea621eafe9743ee5ab7ff5ca1}\label{classlibcamera_1_1RPi_1_1Stream_ab1a04a6ea621eafe9743ee5ab7ff5ca1} 
+\mbox{\hyperlink{classlibcamera_1_1V4L2VideoDevice}{V4\+L2\+Video\+Device}} \texorpdfstring{$\ast$}{*} {\bfseries dev} () const
+\item 
+\Hypertarget{classlibcamera_1_1RPi_1_1Stream_a7395bdfa51bd3934a52516bfb18ef61e}\label{classlibcamera_1_1RPi_1_1Stream_a7395bdfa51bd3934a52516bfb18ef61e} 
+const std\+::string \& {\bfseries name} () const
+\item 
+\Hypertarget{classlibcamera_1_1RPi_1_1Stream_a9111cf279ab1fc5881edb4321dedcf63}\label{classlibcamera_1_1RPi_1_1Stream_a9111cf279ab1fc5881edb4321dedcf63} 
+void {\bfseries reset\+Buffers} ()
+\item 
+\Hypertarget{classlibcamera_1_1RPi_1_1Stream_a121fde591634cc2c1ddf1a60d945f42f}\label{classlibcamera_1_1RPi_1_1Stream_a121fde591634cc2c1ddf1a60d945f42f} 
+unsigned int {\bfseries sw\+Downscale} () const
+\item 
+\Hypertarget{classlibcamera_1_1RPi_1_1Stream_a0a7aecacbc9e5ef3c4681331f7bc9874}\label{classlibcamera_1_1RPi_1_1Stream_a0a7aecacbc9e5ef3c4681331f7bc9874} 
+void {\bfseries set\+Sw\+Downscale} (unsigned int sw\+Downscale)
+\item 
+\Hypertarget{classlibcamera_1_1RPi_1_1Stream_aef8adca90b3718fa43cbf8cbb6df08bf}\label{classlibcamera_1_1RPi_1_1Stream_aef8adca90b3718fa43cbf8cbb6df08bf} 
+void {\bfseries set\+Exported\+Buffers} (std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} $>$ $>$ \texorpdfstring{$\ast$}{*}buffers)
+\item 
+\Hypertarget{classlibcamera_1_1RPi_1_1Stream_a87f554de1ac6487183277cfa1171a53a}\label{classlibcamera_1_1RPi_1_1Stream_a87f554de1ac6487183277cfa1171a53a} 
+const Buffer\+Map \& {\bfseries get\+Buffers} () const
+\item 
+\Hypertarget{classlibcamera_1_1RPi_1_1Stream_a32539e3f435a7492847d316e963bfb76}\label{classlibcamera_1_1RPi_1_1Stream_a32539e3f435a7492847d316e963bfb76} 
+unsigned int {\bfseries get\+Buffer\+Id} (\mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} \texorpdfstring{$\ast$}{*}buffer) const
+\item 
+\Hypertarget{classlibcamera_1_1RPi_1_1Stream_ac122f34708cc475b26fa353c7994183e}\label{classlibcamera_1_1RPi_1_1Stream_ac122f34708cc475b26fa353c7994183e} 
+void {\bfseries set\+Exported\+Buffer} (\mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} \texorpdfstring{$\ast$}{*}buffer)
+\item 
+\Hypertarget{classlibcamera_1_1RPi_1_1Stream_a5e7ab918b2d14d0fdae6a70906097cc9}\label{classlibcamera_1_1RPi_1_1Stream_a5e7ab918b2d14d0fdae6a70906097cc9} 
+int {\bfseries prepare\+Buffers} (unsigned int count)
+\item 
+\Hypertarget{classlibcamera_1_1RPi_1_1Stream_a1983accf3876a7c0f94b18bb0af7dae6}\label{classlibcamera_1_1RPi_1_1Stream_a1983accf3876a7c0f94b18bb0af7dae6} 
+int {\bfseries queue\+Buffer} (\mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} \texorpdfstring{$\ast$}{*}buffer)
+\item 
+\Hypertarget{classlibcamera_1_1RPi_1_1Stream_ada73ea20117456cd2f3ea298a910b385}\label{classlibcamera_1_1RPi_1_1Stream_ada73ea20117456cd2f3ea298a910b385} 
+void {\bfseries return\+Buffer} (\mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{Frame\+Buffer}} \texorpdfstring{$\ast$}{*}buffer)
+\item 
+\Hypertarget{classlibcamera_1_1RPi_1_1Stream_a4c416d0042f68ba39870052b2e17daac}\label{classlibcamera_1_1RPi_1_1Stream_a4c416d0042f68ba39870052b2e17daac} 
+const \mbox{\hyperlink{structlibcamera_1_1RPi_1_1BufferObject}{Buffer\+Object}} \& {\bfseries get\+Buffer} (unsigned int id)
+\item 
+\Hypertarget{classlibcamera_1_1RPi_1_1Stream_a8ea05bd9b273a5f5df28e10f0da11672}\label{classlibcamera_1_1RPi_1_1Stream_a8ea05bd9b273a5f5df28e10f0da11672} 
+const \mbox{\hyperlink{structlibcamera_1_1RPi_1_1BufferObject}{Buffer\+Object}} \& {\bfseries acquire\+Buffer} ()
+\item 
+\Hypertarget{classlibcamera_1_1RPi_1_1Stream_a4a22f2a5477ddf4a9f31d9b68e72f2aa}\label{classlibcamera_1_1RPi_1_1Stream_a4a22f2a5477ddf4a9f31d9b68e72f2aa} 
+int {\bfseries queue\+All\+Buffers} ()
+\item 
+\Hypertarget{classlibcamera_1_1RPi_1_1Stream_a1ad0ebfaaf5e03bbfcf848007c098c4f}\label{classlibcamera_1_1RPi_1_1Stream_a1ad0ebfaaf5e03bbfcf848007c098c4f} 
+void {\bfseries release\+Buffers} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1Stream}{libcamera\+::\+Stream}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Stream} ()
+\begin{DoxyCompactList}\small\item\em Construct a stream with default parameters. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structlibcamera_1_1StreamConfiguration}{Stream\+Configuration}} \& \mbox{\hyperlink{classlibcamera_1_1Stream_a285540c48af574a480365424f1723115}{configuration}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the active configuration of the stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1RPi_1_1Stream_af6be39dddc715000303d3fd7b712c943}\label{classlibcamera_1_1RPi_1_1Stream_af6be39dddc715000303d3fd7b712c943} 
+static const \mbox{\hyperlink{structlibcamera_1_1RPi_1_1BufferObject}{Buffer\+Object}} {\bfseries error\+Buffer\+Object} \{ nullptr, false \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classlibcamera_1_1Stream}{libcamera\+::\+Stream}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structlibcamera_1_1StreamConfiguration}{Stream\+Configuration}} \mbox{\hyperlink{classlibcamera_1_1Stream_ac4322d978e351a67154464bdf1a23840}{configuration\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The stream configuration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/libcamera/pipeline/rpi/common/rpi\+\_\+stream.\+h\item 
+src/peripherals/camera/libcamera/src/libcamera/pipeline/rpi/common/rpi\+\_\+stream.\+cpp\end{DoxyCompactItemize}

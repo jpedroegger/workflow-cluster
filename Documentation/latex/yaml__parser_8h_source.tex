@@ -1,0 +1,251 @@
+\doxysection{yaml\+\_\+parser.\+h}
+\hypertarget{yaml__parser_8h_source}{}\label{yaml__parser_8h_source}\index{src/peripherals/camera/libcamera/include/libcamera/internal/yaml\_parser.h@{src/peripherals/camera/libcamera/include/libcamera/internal/yaml\_parser.h}}
+\mbox{\hyperlink{yaml__parser_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2022,\ Google\ Inc.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ libcamera\ YAML\ parsing\ helper}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <iterator>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <string\_view>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{class_8h}{libcamera/base/class.h}}>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{geometry_8h}{libcamera/geometry.h}}>}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacelibcamera}{libcamera}}\ \{}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }File;}
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }YamlParserContext;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1YamlObject}{YamlObject}}}
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00029\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{struct\ }Value\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ Value(std::string\ \&\&k,\ std::unique\_ptr<YamlObject>\ \&\&v)}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ :\ key(std::move(k)),\ value(std::move(v))}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ std::string\ key;}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ std::unique\_ptr<YamlObject>\ value;}
+\DoxyCodeLine{00037\ \ \ \ \ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{using\ }Container\ =\ std::vector<Value>;}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{using\ }ListContainer\ =\ std::vector<std::unique\_ptr<YamlObject>>;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#ifndef\ \_\_DOXYGEN\_\_}}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Derived>}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1YamlObject_1_1Iterator}{Iterator}}}
+\DoxyCodeLine{00046\ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }difference\_type\ =\ std::ptrdiff\_t;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }iterator\_category\ =\ std::forward\_iterator\_tag;}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1YamlObject_1_1Iterator}{Iterator}}(\textcolor{keyword}{typename}\ Container::const\_iterator\ it)}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ :\ it\_(it)}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ Derived\ \&operator++()}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ ++it\_;}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{static\_cast<}Derived\ *\textcolor{keyword}{>}(\textcolor{keyword}{this});}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ Derived\ operator++(\textcolor{keywordtype}{int})}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ Derived\ it\ =\ *\textcolor{keyword}{static\_cast<}Derived\ *\textcolor{keyword}{>}(\textcolor{keyword}{this});}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ it\_++;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ it;}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keywordtype}{bool}\ operator==(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1YamlObject_1_1Iterator}{Iterator}}\ \&a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1YamlObject_1_1Iterator}{Iterator}}\ \&b)}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ a.it\_\ ==\ b.it\_;}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keywordtype}{bool}\ operator!=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1YamlObject_1_1Iterator}{Iterator}}\ \&a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1YamlObject_1_1Iterator}{Iterator}}\ \&b)}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ a.it\_\ !=\ b.it\_;}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ Container::const\_iterator\ it\_;}
+\DoxyCodeLine{00081\ \ \ \ \ \};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Iterator>}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1YamlObject_1_1Adapter}{Adapter}}}
+\DoxyCodeLine{00085\ \ \ \ \ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1YamlObject_1_1Adapter}{Adapter}}(\textcolor{keyword}{const}\ Container\ \&container)}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ :\ container\_(container)}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1YamlObject_1_1Iterator}{Iterator}}\ begin()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00093\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classlibcamera_1_1YamlObject_1_1Iterator}{Iterator}}\{\ container\_.begin()\ \};}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1YamlObject_1_1Iterator}{Iterator}}\ end()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00098\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classlibcamera_1_1YamlObject_1_1Iterator}{Iterator}}\{\ container\_.end()\ \};}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Container\ \&container\_;}
+\DoxyCodeLine{00104\ \ \ \ \ \};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1YamlObject_1_1ListIterator}{ListIterator}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classlibcamera_1_1YamlObject_1_1Iterator}{Iterator}}<ListIterator>}
+\DoxyCodeLine{00107\ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classlibcamera_1_1YamlObject}{value\_type}}\ =\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1YamlObject}{YamlObject}}\ \&;}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classlibcamera_1_1YamlObject}{pointer}}\ =\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1YamlObject}{YamlObject}}\ *;}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classlibcamera_1_1YamlObject}{reference}}\ =\ \mbox{\hyperlink{classlibcamera_1_1YamlObject}{value\_type}};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1YamlObject}{value\_type}}\ operator*()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00114\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *it\_-\/>value.get();}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1YamlObject}{pointer}}\ operator-\/>()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00119\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ it\_-\/>value.get();}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00122\ \ \ \ \ \};}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1YamlObject_1_1DictIterator}{DictIterator}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classlibcamera_1_1YamlObject_1_1Iterator}{Iterator}}<DictIterator>}
+\DoxyCodeLine{00125\ \ \ \ \ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }value\_type\ =\ std::pair<const\ std::string\ \&,\ const\ YamlObject\ \&>;}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }pointer\ =\ value\_type\ *;}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }reference\ =\ value\_type\ \&;}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ value\_type\ operator*()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00132\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{\ it\_-\/>key,\ *it\_-\/>value.get()\ \};}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00135\ \ \ \ \ \};}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1YamlObject_1_1DictAdapter}{DictAdapter}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classlibcamera_1_1YamlObject_1_1Adapter}{Adapter}}<DictIterator>}
+\DoxyCodeLine{00138\ \ \ \ \ \{}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }key\_type\ =\ std::string;}
+\DoxyCodeLine{00141\ \ \ \ \ \};}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1YamlObject_1_1ListAdapter}{ListAdapter}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classlibcamera_1_1YamlObject_1_1Adapter}{Adapter}}<ListIterator>}
+\DoxyCodeLine{00144\ \ \ \ \ \{}
+\DoxyCodeLine{00145\ \ \ \ \ \};}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_DOXYGEN\_\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1YamlObject}{YamlObject}}();}
+\DoxyCodeLine{00149\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1YamlObject}{\string~YamlObject}}();}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classlibcamera_1_1YamlObject_ab31d888cf3a0b40a74aeeb96ec68580e}{isValue}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00152\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ type\_\ ==\ Type::Value;}
+\DoxyCodeLine{00154\ \ \ \ \ \}}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classlibcamera_1_1YamlObject_a3cc415c3859e55bd57866c3ae515cf15}{isList}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00156\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ type\_\ ==\ Type::List;}
+\DoxyCodeLine{00158\ \ \ \ \ \}}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classlibcamera_1_1YamlObject_abba8805450f297f4829019f9d38e499f}{isDictionary}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00160\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ type\_\ ==\ Type::Dictionary;}
+\DoxyCodeLine{00162\ \ \ \ \ \}}
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classlibcamera_1_1YamlObject_a2a514e9bd8bef788ed86a3e6995cf331}{isEmpty}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00164\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ type\_\ ==\ Type::Empty;}
+\DoxyCodeLine{00166\ \ \ \ \ \}}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keyword}{explicit}\ \textcolor{keyword}{operator}\ bool()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00168\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ type\_\ !=\ Type::Empty;}
+\DoxyCodeLine{00170\ \ \ \ \ \}}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \ \ \ \ std::size\_t\ \mbox{\hyperlink{classlibcamera_1_1YamlObject_a0360eee6876094bcef50378d86cf93a0}{size}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00175\ \ \ \ \ std::optional<T>\ \mbox{\hyperlink{classlibcamera_1_1YamlObject_a925192c04e1bf5dce2cefaa6ea84e2d6}{get}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00176\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Getter<T>\{\}.get(*\textcolor{keyword}{this});}
+\DoxyCodeLine{00178\ \ \ \ \ \}}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ U>}
+\DoxyCodeLine{00181\ \ \ \ \ T\ \mbox{\hyperlink{classlibcamera_1_1YamlObject_a3f2480ab8ebcd4b8965c26ecb26e041c}{get}}(U\ \&\&defaultValue)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00182\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ get<T>().value\_or(std::forward<U>(defaultValue));}
+\DoxyCodeLine{00184\ \ \ \ \ \}}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \textcolor{preprocessor}{\#ifndef\ \_\_DOXYGEN\_\_}}
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ std::enable\_if\_t<}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ std::is\_same\_v<bool,\ T>\ ||}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ std::is\_same\_v<float,\ T>\ ||}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ std::is\_same\_v<double,\ T>\ ||}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ std::is\_same\_v<int8\_t,\ T>\ ||}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ std::is\_same\_v<uint8\_t,\ T>\ ||}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ std::is\_same\_v<int16\_t,\ T>\ ||}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ std::is\_same\_v<uint16\_t,\ T>\ ||}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ std::is\_same\_v<int32\_t,\ T>\ ||}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ std::is\_same\_v<uint32\_t,\ T>\ ||}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ std::is\_same\_v<std::string,\ T>\ ||}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ std::is\_same\_v<Size,\ T>>\ *\ =\ \textcolor{keyword}{nullptr}>}
+\DoxyCodeLine{00200\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00201\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00202\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00203\ \ \ \ \ std::optional<std::vector<T>>\ \mbox{\hyperlink{classlibcamera_1_1YamlObject_a06fc88864e2d7575f8755f58bfb3e008}{getList}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1YamlObject_1_1DictAdapter}{DictAdapter}}\ \mbox{\hyperlink{classlibcamera_1_1YamlObject_aa13714170163aa9d2325aa4847f28247}{asDict}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classlibcamera_1_1YamlObject_1_1DictAdapter}{DictAdapter}}\{\ list\_\ \};\ \}}
+\DoxyCodeLine{00206\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1YamlObject_1_1ListAdapter}{ListAdapter}}\ \mbox{\hyperlink{classlibcamera_1_1YamlObject_afda1fc710962215ea21fe6b4f8d584ae}{asList}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classlibcamera_1_1YamlObject_1_1ListAdapter}{ListAdapter}}\{\ list\_\ \};\ \}}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1YamlObject}{YamlObject}}\ \&\mbox{\hyperlink{classlibcamera_1_1YamlObject_a9c6e3bcbb7d65bd0e3bd2911f90eb0ec}{operator[]}}(std::size\_t\ index)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00210\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classlibcamera_1_1YamlObject_a5297921e112338e2421d582fd53e4004}{contains}}(std::string\_view\ key)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00211\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1YamlObject}{YamlObject}}\ \&\mbox{\hyperlink{classlibcamera_1_1YamlObject_a9c6e3bcbb7d65bd0e3bd2911f90eb0ec}{operator[]}}(std::string\_view\ key)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00214\ \ \ \ \ \mbox{\hyperlink{class_8h_a3dfeb3af0e6990136655ba6125587d2f}{LIBCAMERA\_DISABLE\_COPY\_AND\_MOVE}}(\mbox{\hyperlink{classlibcamera_1_1YamlObject}{YamlObject}})}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{struct\ }Getter;}
+\DoxyCodeLine{00218\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1YamlParserContext}{YamlParserContext}};}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00220\ \ \ \ \ \textcolor{keyword}{enum\ class}\ Type\ \{}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ Dictionary,}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ List,}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ Value,}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ Empty,}
+\DoxyCodeLine{00225\ \ \ \ \ \};}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ Enable\ =\ \textcolor{keywordtype}{void}>}
+\DoxyCodeLine{00228\ \ \ \ \ \textcolor{keyword}{struct\ }Getter\ \{}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ std::optional<T>\ \mbox{\hyperlink{classlibcamera_1_1YamlObject_a925192c04e1bf5dce2cefaa6ea84e2d6}{get}}(\textcolor{keyword}{const}\ YamlObject\ \&obj)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00230\ \ \ \ \ \};}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \ \ \ \ Type\ type\_;}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ \ \ \ \ std::string\ value\_;}
+\DoxyCodeLine{00235\ \ \ \ \ Container\ list\_;}
+\DoxyCodeLine{00236\ \ \ \ \ std::map<std::string,\ YamlObject\ *,\ std::less<>>\ dictionary\_;}
+\DoxyCodeLine{00237\ \};}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00239\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1YamlParser}{YamlParser}}\ final}
+\DoxyCodeLine{00240\ \{}
+\DoxyCodeLine{00241\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00242\ \ \ \ \ \textcolor{keyword}{static}\ std::unique\_ptr<YamlObject>\ \mbox{\hyperlink{classlibcamera_1_1YamlParser_a13eb201394ae1cb921aab00fe9ba3e86}{parse}}(\mbox{\hyperlink{classlibcamera_1_1File}{File}}\ \&file);}
+\DoxyCodeLine{00243\ \};}
+\DoxyCodeLine{00244\ }
+\DoxyCodeLine{00245\ \}\ \textcolor{comment}{/*\ namespace\ libcamera\ */}}
+
+\end{DoxyCode}

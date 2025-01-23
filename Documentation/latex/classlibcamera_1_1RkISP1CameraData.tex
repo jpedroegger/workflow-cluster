@@ -1,0 +1,90 @@
+\doxysection{libcamera\+::Rk\+ISP1\+Camera\+Data Class Reference}
+\hypertarget{classlibcamera_1_1RkISP1CameraData}{}\label{classlibcamera_1_1RkISP1CameraData}\index{libcamera::RkISP1CameraData@{libcamera::RkISP1CameraData}}
+Inheritance diagram for libcamera\+::Rk\+ISP1\+Camera\+Data\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classlibcamera_1_1RkISP1CameraData}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1RkISP1CameraData_a8f2ff8eefe81c33dd912b71451ee4fc9}\label{classlibcamera_1_1RkISP1CameraData_a8f2ff8eefe81c33dd912b71451ee4fc9} 
+{\bfseries Rk\+ISP1\+Camera\+Data} (\mbox{\hyperlink{classlibcamera_1_1PipelineHandler}{Pipeline\+Handler}} \texorpdfstring{$\ast$}{*}pipe, \mbox{\hyperlink{classlibcamera_1_1RkISP1MainPath}{Rk\+ISP1\+Main\+Path}} \texorpdfstring{$\ast$}{*}main\+Path, \mbox{\hyperlink{classlibcamera_1_1RkISP1SelfPath}{Rk\+ISP1\+Self\+Path}} \texorpdfstring{$\ast$}{*}self\+Path)
+\item 
+\Hypertarget{classlibcamera_1_1RkISP1CameraData_a2bf9a9e66d3c57a149966511e83e6d65}\label{classlibcamera_1_1RkISP1CameraData_a2bf9a9e66d3c57a149966511e83e6d65} 
+\mbox{\hyperlink{classlibcamera_1_1PipelineHandlerRkISP1}{Pipeline\+Handler\+Rk\+ISP1}} \texorpdfstring{$\ast$}{*} {\bfseries pipe} ()
+\item 
+\Hypertarget{classlibcamera_1_1RkISP1CameraData_a1f64f1c879955d5ca644b15e4439715e}\label{classlibcamera_1_1RkISP1CameraData_a1f64f1c879955d5ca644b15e4439715e} 
+int {\bfseries load\+IPA} (unsigned int hw\+Revision)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1Camera_1_1Private}{libcamera\+::\+Camera\+::\+Private}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1Camera_1_1Private_a9a4e997ad0fab497b95350f7bc82ec16}{Private}} (\mbox{\hyperlink{classlibcamera_1_1PipelineHandler}{Pipeline\+Handler}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classlibcamera_1_1Camera_1_1Private_a765fac25ebdff5caf7be65a181cba38c}{pipe}})
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{classlibcamera_1_1Camera_1_1Private}{Camera\+::\+Private} instance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1PipelineHandler}{Pipeline\+Handler}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1Camera_1_1Private_a765fac25ebdff5caf7be65a181cba38c}{pipe}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the pipeline handler related to this camera. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classlibcamera_1_1CameraControlValidator}{Camera\+Control\+Validator}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1Camera_1_1Private_ab3b02eaffac28effb9752c332318062b}{validator}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the control validator related to this camera. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1Extensible_1_1Private}{libcamera\+::\+Extensible\+::\+Private}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Private} ()
+\begin{DoxyCompactList}\small\item\em Construct an instance of an \doxylink{classlibcamera_1_1Extensible}{Extensible} class private data. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\const T \texorpdfstring{$\ast$}{*} {\bfseries \+\_\+o} () const
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \texorpdfstring{$\ast$}{*} {\bfseries \+\_\+o} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classlibcamera_1_1RkISP1CameraData_a7af3e543362b3bb3d9ba0856682b6762}\label{classlibcamera_1_1RkISP1CameraData_a7af3e543362b3bb3d9ba0856682b6762} 
+\mbox{\hyperlink{classlibcamera_1_1Stream}{Stream}} {\bfseries main\+Path\+Stream\+\_\+}
+\item 
+\Hypertarget{classlibcamera_1_1RkISP1CameraData_a7a1ecd95f024cae56d1410acd7eab74f}\label{classlibcamera_1_1RkISP1CameraData_a7a1ecd95f024cae56d1410acd7eab74f} 
+\mbox{\hyperlink{classlibcamera_1_1Stream}{Stream}} {\bfseries self\+Path\+Stream\+\_\+}
+\item 
+\Hypertarget{classlibcamera_1_1RkISP1CameraData_af3b5716706086b6e930fee592693b3e4}\label{classlibcamera_1_1RkISP1CameraData_af3b5716706086b6e930fee592693b3e4} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1CameraSensor}{Camera\+Sensor}} $>$ {\bfseries sensor\+\_\+}
+\item 
+\Hypertarget{classlibcamera_1_1RkISP1CameraData_a8ca7ca5a9104ea128cfaabb646bcae1b}\label{classlibcamera_1_1RkISP1CameraData_a8ca7ca5a9104ea128cfaabb646bcae1b} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1DelayedControls}{Delayed\+Controls}} $>$ {\bfseries delayed\+Ctrls\+\_\+}
+\item 
+\Hypertarget{classlibcamera_1_1RkISP1CameraData_a7619690f7760113311a8e78fa9abac77}\label{classlibcamera_1_1RkISP1CameraData_a7619690f7760113311a8e78fa9abac77} 
+unsigned int {\bfseries frame\+\_\+}
+\item 
+\Hypertarget{classlibcamera_1_1RkISP1CameraData_af1d137b8b8baf7071cea2fb2bd8140d8}\label{classlibcamera_1_1RkISP1CameraData_af1d137b8b8baf7071cea2fb2bd8140d8} 
+std\+::vector$<$ IPABuffer $>$ {\bfseries ipa\+Buffers\+\_\+}
+\item 
+\Hypertarget{classlibcamera_1_1RkISP1CameraData_afac5ee09f5e5a2cadd2c07716825f63e}\label{classlibcamera_1_1RkISP1CameraData_afac5ee09f5e5a2cadd2c07716825f63e} 
+\mbox{\hyperlink{classlibcamera_1_1RkISP1Frames}{Rk\+ISP1\+Frames}} {\bfseries frame\+Info\+\_\+}
+\item 
+\Hypertarget{classlibcamera_1_1RkISP1CameraData_aeaf82d647767f5024ed75521926d661b}\label{classlibcamera_1_1RkISP1CameraData_aeaf82d647767f5024ed75521926d661b} 
+\mbox{\hyperlink{classlibcamera_1_1RkISP1MainPath}{Rk\+ISP1\+Main\+Path}} \texorpdfstring{$\ast$}{*} {\bfseries main\+Path\+\_\+}
+\item 
+\Hypertarget{classlibcamera_1_1RkISP1CameraData_a432b8d5a57c8c00c885e58e187fdfd3c}\label{classlibcamera_1_1RkISP1CameraData_a432b8d5a57c8c00c885e58e187fdfd3c} 
+\mbox{\hyperlink{classlibcamera_1_1RkISP1SelfPath}{Rk\+ISP1\+Self\+Path}} \texorpdfstring{$\ast$}{*} {\bfseries self\+Path\+\_\+}
+\item 
+\Hypertarget{classlibcamera_1_1RkISP1CameraData_abd4174582fd82278bf9e276c5ca65305}\label{classlibcamera_1_1RkISP1CameraData_abd4174582fd82278bf9e276c5ca65305} 
+std\+::unique\+\_\+ptr$<$ ipa\+::rkisp1\+::\+IPAProxy\+Rk\+ISP1 $>$ {\bfseries ipa\+\_\+}
+\item 
+\Hypertarget{classlibcamera_1_1RkISP1CameraData_a97cdd6602e93d9c8723fc501c31cf878}\label{classlibcamera_1_1RkISP1CameraData_a97cdd6602e93d9c8723fc501c31cf878} 
+\mbox{\hyperlink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map}} {\bfseries ipa\+Controls\+\_\+}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classlibcamera_1_1Camera_1_1Private}{libcamera\+::\+Camera\+::\+Private}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::list$<$ \mbox{\hyperlink{classlibcamera_1_1Request}{Request}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classlibcamera_1_1Camera_1_1Private_ae5de4f5bb004bf9039363c9fd9e6240a}{queued\+Requests\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The list of queued and not yet completed requests. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1ControlInfoMap}{Control\+Info\+Map}} \mbox{\hyperlink{classlibcamera_1_1Camera_1_1Private_ab4e183eb4dabe929d1b2bbbb519b969f}{control\+Info\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The set of controls supported by the camera. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1ControlList}{Control\+List}} \mbox{\hyperlink{classlibcamera_1_1Camera_1_1Private_ad31f12f5ed9c1fbe25750902f4791064}{properties\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The list of properties supported by the camera. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classlibcamera_1_1Camera_1_1Private_ace8c943a338ec3c0aa8b56c05b97463d}{request\+Sequence\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The queuing sequence number of the request. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/libcamera/pipeline/rkisp1/rkisp1.\+cpp\end{DoxyCompactItemize}

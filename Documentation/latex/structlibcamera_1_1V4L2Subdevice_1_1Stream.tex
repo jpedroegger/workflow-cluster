@@ -1,0 +1,55 @@
+\doxysection{libcamera\+::V4\+L2\+Subdevice\+::Stream Class Reference}
+\hypertarget{structlibcamera_1_1V4L2Subdevice_1_1Stream}{}\label{structlibcamera_1_1V4L2Subdevice_1_1Stream}\index{libcamera::V4L2Subdevice::Stream@{libcamera::V4L2Subdevice::Stream}}
+
+
+V4\+L2 subdevice stream.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structlibcamera_1_1V4L2Subdevice_1_1Stream_a5d1b430b5abd42ea2837975647ce6fa4}\label{structlibcamera_1_1V4L2Subdevice_1_1Stream_a5d1b430b5abd42ea2837975647ce6fa4} 
+{\bfseries Stream} ()
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{structlibcamera_1_1V4L2Subdevice_1_1Stream}{Stream} with pad and stream set to 0. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structlibcamera_1_1V4L2Subdevice_1_1Stream_a0aaf3ae80c438a04a84e681ffe3b790b}{Stream}} (unsigned int p, unsigned int s)
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{structlibcamera_1_1V4L2Subdevice_1_1Stream}{Stream} with a given {\itshape pad} and {\itshape stream} number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structlibcamera_1_1V4L2Subdevice_1_1Stream_a77372311a67097e801bfa5c44cd9d1ec}\label{structlibcamera_1_1V4L2Subdevice_1_1Stream_a77372311a67097e801bfa5c44cd9d1ec} 
+unsigned int {\bfseries pad}
+\begin{DoxyCompactList}\small\item\em The 0-\/indexed pad number. \end{DoxyCompactList}\item 
+\Hypertarget{structlibcamera_1_1V4L2Subdevice_1_1Stream_a0ec2537e5634f7ad92060e11df90b11b}\label{structlibcamera_1_1V4L2Subdevice_1_1Stream_a0ec2537e5634f7ad92060e11df90b11b} 
+unsigned int {\bfseries stream}
+\begin{DoxyCompactList}\small\item\em The stream number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+V4\+L2 subdevice stream. 
+
+This class identifies a subdev stream, by bundling the pad number with the stream number. It is used in all stream-\/aware functions of the \doxylink{classlibcamera_1_1V4L2Subdevice}{V4\+L2\+Subdevice} class to identify the stream the functions operate on. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{structlibcamera_1_1V4L2Subdevice_1_1Stream_a0aaf3ae80c438a04a84e681ffe3b790b}\label{structlibcamera_1_1V4L2Subdevice_1_1Stream_a0aaf3ae80c438a04a84e681ffe3b790b} 
+\index{libcamera::V4L2Subdevice::Stream@{libcamera::V4L2Subdevice::Stream}!Stream@{Stream}}
+\index{Stream@{Stream}!libcamera::V4L2Subdevice::Stream@{libcamera::V4L2Subdevice::Stream}}
+\doxysubsubsection{\texorpdfstring{Stream()}{Stream()}}
+{\footnotesize\ttfamily libcamera\+::\+V4\+L2\+Subdevice\+::\+Stream\+::\+Stream (\begin{DoxyParamCaption}\item[{unsigned int}]{pad,  }\item[{unsigned int}]{stream }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a \doxylink{structlibcamera_1_1V4L2Subdevice_1_1Stream}{Stream} with a given {\itshape pad} and {\itshape stream} number. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em pad} & The indexed pad number \\
+\hline
+\mbox{\texttt{ in}}  & {\em stream} & The stream number \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/internal/\mbox{\hyperlink{v4l2__subdevice_8h}{v4l2\+\_\+subdevice.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/v4l2\+\_\+subdevice.\+cpp\end{DoxyCompactItemize}

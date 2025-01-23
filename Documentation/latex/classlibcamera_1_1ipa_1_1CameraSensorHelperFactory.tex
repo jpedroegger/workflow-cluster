@@ -1,0 +1,70 @@
+\doxysection{libcamera\+::ipa\+::Camera\+Sensor\+Helper\+Factory\texorpdfstring{$<$}{<} \+\_\+\+Helper \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classlibcamera_1_1ipa_1_1CameraSensorHelperFactory}{}\label{classlibcamera_1_1ipa_1_1CameraSensorHelperFactory}\index{libcamera::ipa::CameraSensorHelperFactory$<$ \_Helper $>$@{libcamera::ipa::CameraSensorHelperFactory$<$ \_Helper $>$}}
+
+
+Registration of \doxylink{classlibcamera_1_1ipa_1_1CameraSensorHelperFactory}{Camera\+Sensor\+Helper\+Factory} classes and creation of instances.  
+
+
+Inheritance diagram for libcamera\+::ipa\+::Camera\+Sensor\+Helper\+Factory\texorpdfstring{$<$}{<} \+\_\+\+Helper \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlibcamera_1_1ipa_1_1CameraSensorHelperFactory}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1CameraSensorHelperFactory_a8caceebb2f83c1d02027ff5236843ba4}{Camera\+Sensor\+Helper\+Factory}} (const char \texorpdfstring{$\ast$}{*}name)
+\begin{DoxyCompactList}\small\item\em Construct a camera sensor helper factory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1ipa_1_1CameraSensorHelperFactoryBase}{libcamera\+::ipa\+::\+Camera\+Sensor\+Helper\+Factory\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1CameraSensorHelperFactoryBase_a2103eb088601c54281434a69687d6e15}{Camera\+Sensor\+Helper\+Factory\+Base}} (const std\+::string name)
+\begin{DoxyCompactList}\small\item\em Construct a camera sensor helper factory base. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1ipa_1_1CameraSensorHelperFactoryBase}{libcamera\+::ipa\+::\+Camera\+Sensor\+Helper\+Factory\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1CameraSensorHelper}{Camera\+Sensor\+Helper}} $>$ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1CameraSensorHelperFactoryBase_a5ba8184bb2edf7858c72ed265f10145f}{create}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Create an instance of the \doxylink{classlibcamera_1_1ipa_1_1CameraSensorHelper}{Camera\+Sensor\+Helper} corresponding to a named factory. \end{DoxyCompactList}\item 
+static std\+::vector$<$ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1CameraSensorHelperFactoryBase}{Camera\+Sensor\+Helper\+Factory\+Base}} \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{classlibcamera_1_1ipa_1_1CameraSensorHelperFactoryBase_a4cdf6349106ecb49a3b3ed9cdcd9f6c0}{factories}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the list of all camera sensor helper factories. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename \+\_\+\+Helper$>$\newline
+class libcamera\+::ipa\+::\+Camera\+Sensor\+Helper\+Factory$<$ \+\_\+\+Helper $>$}
+Registration of \doxylink{classlibcamera_1_1ipa_1_1CameraSensorHelperFactory}{Camera\+Sensor\+Helper\+Factory} classes and creation of instances. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em \+\_\+\+Helper} & The camera sensor helper class type for this factory\\
+\hline
+\end{DoxyTemplParams}
+To facilitate discovery and instantiation of \doxylink{classlibcamera_1_1ipa_1_1CameraSensorHelper}{Camera\+Sensor\+Helper} classes, the \doxylink{classlibcamera_1_1ipa_1_1CameraSensorHelperFactory}{Camera\+Sensor\+Helper\+Factory} class implements auto-\/registration of camera sensor helpers. Each \doxylink{classlibcamera_1_1ipa_1_1CameraSensorHelper}{Camera\+Sensor\+Helper} subclass shall register itself using the \doxylink{camera__sensor__helper_8h_a1b196d050477cdb5d27441679ff53a1b}{REGISTER\+\_\+\+CAMERA\+\_\+\+SENSOR\+\_\+\+HELPER()} macro, which will create a corresponding instance of a \doxylink{classlibcamera_1_1ipa_1_1CameraSensorHelperFactory}{Camera\+Sensor\+Helper\+Factory} subclass and register it with the static list of factories. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlibcamera_1_1ipa_1_1CameraSensorHelperFactory_a8caceebb2f83c1d02027ff5236843ba4}\label{classlibcamera_1_1ipa_1_1CameraSensorHelperFactory_a8caceebb2f83c1d02027ff5236843ba4} 
+\index{libcamera::ipa::CameraSensorHelperFactory$<$ \_Helper $>$@{libcamera::ipa::CameraSensorHelperFactory$<$ \_Helper $>$}!CameraSensorHelperFactory@{CameraSensorHelperFactory}}
+\index{CameraSensorHelperFactory@{CameraSensorHelperFactory}!libcamera::ipa::CameraSensorHelperFactory$<$ \_Helper $>$@{libcamera::ipa::CameraSensorHelperFactory$<$ \_Helper $>$}}
+\doxysubsubsection{\texorpdfstring{CameraSensorHelperFactory()}{CameraSensorHelperFactory()}}
+{\footnotesize\ttfamily template$<$typename \+\_\+\+Helper $>$ \\
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1CameraSensorHelperFactory}{libcamera\+::ipa\+::\+Camera\+Sensor\+Helper\+Factory}}$<$ \+\_\+\+Helper $>$\+::\+Camera\+Sensor\+Helper\+Factory (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a camera sensor helper factory. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em name} & Name of the camera sensor helper class\\
+\hline
+\end{DoxyParams}
+Creating an instance of the factory registers it with the global list of factories, accessible through the \doxylink{classlibcamera_1_1ipa_1_1CameraSensorHelperFactoryBase_a4cdf6349106ecb49a3b3ed9cdcd9f6c0}{Camera\+Sensor\+Helper\+Factory\+Base\+::factories()} function.
+
+The factory {\itshape name} is used to look up factories and shall be unique. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/ipa/libipa/\mbox{\hyperlink{camera__sensor__helper_8h}{camera\+\_\+sensor\+\_\+helper.\+h}}\item 
+src/peripherals/camera/libcamera/src/ipa/libipa/camera\+\_\+sensor\+\_\+helper.\+cpp\end{DoxyCompactItemize}

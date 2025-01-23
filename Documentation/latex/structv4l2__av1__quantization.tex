@@ -1,0 +1,52 @@
+\doxysection{v4l2\+\_\+av1\+\_\+quantization Struct Reference}
+\hypertarget{structv4l2__av1__quantization}{}\label{structv4l2__av1__quantization}\index{v4l2\_av1\_quantization@{v4l2\_av1\_quantization}}
+
+
+{\ttfamily \#include $<$v4l2-\/controls.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structv4l2__av1__quantization_aa7b99df6e98d4547fe96a9223e28eb5c}\label{structv4l2__av1__quantization_aa7b99df6e98d4547fe96a9223e28eb5c} 
+\+\_\+\+\_\+u8 {\bfseries flags}
+\item 
+\Hypertarget{structv4l2__av1__quantization_a686bb5062a009bb53522c4f83f01efbf}\label{structv4l2__av1__quantization_a686bb5062a009bb53522c4f83f01efbf} 
+\+\_\+\+\_\+u8 {\bfseries base\+\_\+q\+\_\+idx}
+\item 
+\Hypertarget{structv4l2__av1__quantization_a0c69f85348276d9734f67d1ecd1c6955}\label{structv4l2__av1__quantization_a0c69f85348276d9734f67d1ecd1c6955} 
+\+\_\+\+\_\+s8 {\bfseries delta\+\_\+q\+\_\+y\+\_\+dc}
+\item 
+\Hypertarget{structv4l2__av1__quantization_a137f33fba657c59e36c04124f93bfa12}\label{structv4l2__av1__quantization_a137f33fba657c59e36c04124f93bfa12} 
+\+\_\+\+\_\+s8 {\bfseries delta\+\_\+q\+\_\+u\+\_\+dc}
+\item 
+\Hypertarget{structv4l2__av1__quantization_a87ea1dc87f75e419b81e8611c24ba3bd}\label{structv4l2__av1__quantization_a87ea1dc87f75e419b81e8611c24ba3bd} 
+\+\_\+\+\_\+s8 {\bfseries delta\+\_\+q\+\_\+u\+\_\+ac}
+\item 
+\Hypertarget{structv4l2__av1__quantization_aefeea5382fb89d0051aac86b9cfe297d}\label{structv4l2__av1__quantization_aefeea5382fb89d0051aac86b9cfe297d} 
+\+\_\+\+\_\+s8 {\bfseries delta\+\_\+q\+\_\+v\+\_\+dc}
+\item 
+\Hypertarget{structv4l2__av1__quantization_aae821d799ba623ec6aa7289a1f129366}\label{structv4l2__av1__quantization_aae821d799ba623ec6aa7289a1f129366} 
+\+\_\+\+\_\+s8 {\bfseries delta\+\_\+q\+\_\+v\+\_\+ac}
+\item 
+\Hypertarget{structv4l2__av1__quantization_ad5eca9e7aca659310d6c6098fc516670}\label{structv4l2__av1__quantization_ad5eca9e7aca659310d6c6098fc516670} 
+\+\_\+\+\_\+u8 {\bfseries qm\+\_\+y}
+\item 
+\Hypertarget{structv4l2__av1__quantization_aed08c7c3c65f234536fd4b70d3e7f053}\label{structv4l2__av1__quantization_aed08c7c3c65f234536fd4b70d3e7f053} 
+\+\_\+\+\_\+u8 {\bfseries qm\+\_\+u}
+\item 
+\Hypertarget{structv4l2__av1__quantization_a4f016f3107a7b21bb2ce3d196abb1a32}\label{structv4l2__av1__quantization_a4f016f3107a7b21bb2ce3d196abb1a32} 
+\+\_\+\+\_\+u8 {\bfseries qm\+\_\+v}
+\item 
+\Hypertarget{structv4l2__av1__quantization_aa380c46f1915a2bf7edcec2079ebf315}\label{structv4l2__av1__quantization_aa380c46f1915a2bf7edcec2079ebf315} 
+\+\_\+\+\_\+u8 {\bfseries delta\+\_\+q\+\_\+res}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structv4l2__av1__quantization}{v4l2\+\_\+av1\+\_\+quantization} -\/ AV1 Quantization params as defined in section 6.\+8.\+11 "{}\+Quantization params semantics"{} of the AV1 specification.
+
+@flags\+: see V4\+L2\+\_\+\+AV1\+\_\+\+QUANTIZATION\+\_\+\+FLAG\+\_\+\{\} @base\+\_\+q\+\_\+idx\+: indicates the base frame qindex. This is used for Y AC coefficients and as the base value for the other quantizers. @delta\+\_\+q\+\_\+y\+\_\+dc\+: indicates the Y DC quantizer relative to base\+\_\+q\+\_\+idx. @delta\+\_\+q\+\_\+u\+\_\+dc\+: indicates the U DC quantizer relative to base\+\_\+q\+\_\+idx. @delta\+\_\+q\+\_\+u\+\_\+ac\+: indicates the U AC quantizer relative to base\+\_\+q\+\_\+idx. @delta\+\_\+q\+\_\+v\+\_\+dc\+: indicates the V DC quantizer relative to base\+\_\+q\+\_\+idx. @delta\+\_\+q\+\_\+v\+\_\+ac\+: indicates the V AC quantizer relative to base\+\_\+q\+\_\+idx. @qm\+\_\+y\+: specifies the level in the quantizer matrix that should be used for luma plane decoding. @qm\+\_\+u\+: specifies the level in the quantizer matrix that should be used for chroma U plane decoding. @qm\+\_\+v\+: specifies the level in the quantizer matrix that should be used for chroma V plane decoding. @delta\+\_\+q\+\_\+res\+: specifies the left shift which should be applied to decoded quantizer index delta values. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/v4l2-\/controls.\+h\end{DoxyCompactItemize}

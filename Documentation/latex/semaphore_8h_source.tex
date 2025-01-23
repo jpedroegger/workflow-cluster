@@ -1,0 +1,38 @@
+\doxysection{semaphore.\+h}
+\hypertarget{semaphore_8h_source}{}\label{semaphore_8h_source}\index{src/peripherals/camera/libcamera/include/libcamera/base/semaphore.h@{src/peripherals/camera/libcamera/include/libcamera/base/semaphore.h}}
+\mbox{\hyperlink{semaphore_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2019,\ Google\ Inc.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ General-\/purpose\ counting\ semaphore}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <libcamera/base/private.h>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{mutex_8h}{libcamera/base/mutex.h}}>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacelibcamera}{libcamera}}\ \{}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1Semaphore}{Semaphore}}}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1Semaphore}{Semaphore}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ n\ =\ 0);}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1Semaphore_a6f7388c198b17adfd0bcde0368d0c29c}{available}}()\ LIBCAMERA\_TSA\_EXCLUDES(mutex\_);}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1Semaphore_a60abc22a4c25592ec6c78cd888eeb8a9}{acquire}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ n\ =\ 1)\ LIBCAMERA\_TSA\_EXCLUDES(mutex\_);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classlibcamera_1_1Semaphore_aae3d125a055de724647f79b1fac4af59}{tryAcquire}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ n\ =\ 1)\ LIBCAMERA\_TSA\_EXCLUDES(mutex\_);}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1Semaphore_a4dd1d0e84deb03a3a86c1116b09935ff}{release}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ n\ =\ 1)\ LIBCAMERA\_TSA\_EXCLUDES(mutex\_);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{classMutex}{Mutex}}\ mutex\_;}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ConditionVariable}{ConditionVariable}}\ cv\_;}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ available\_\ LIBCAMERA\_TSA\_GUARDED\_BY(mutex\_);}
+\DoxyCodeLine{00030\ \};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \}\ \textcolor{comment}{/*\ namespace\ libcamera\ */}}
+
+\end{DoxyCode}

@@ -1,0 +1,72 @@
+\doxysection{capture.\+h}
+\hypertarget{capture_8h_source}{}\label{capture_8h_source}\index{src/peripherals/camera/libcamera/src/apps/lc-\/compliance/helpers/capture.h@{src/peripherals/camera/libcamera/src/apps/lc-\/compliance/helpers/capture.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ GPL-\/2.0-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2020-\/2021,\ Google\ Inc.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Simple\ capture\ helper}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <libcamera/libcamera.h>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}../common/event\_loop.h"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCapture}{Capture}}}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ configure(\mbox{\hyperlink{namespacelibcamera_a295d1f5e7828d95c0b0aabc0a8baac03}{libcamera::StreamRole}}\ role);}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{classCapture}{Capture}}(std::shared\_ptr<libcamera::Camera>\ camera);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classCapture}{\string~Capture}}();}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ start();}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ stop();}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ requestComplete(\mbox{\hyperlink{classlibcamera_1_1Request}{libcamera::Request}}\ *request)\ =\ 0;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{classEventLoop}{EventLoop}}\ *loop\_;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ std::shared\_ptr<libcamera::Camera>\ camera\_;}
+\DoxyCodeLine{00033\ \ \ \ \ std::unique\_ptr<libcamera::FrameBufferAllocator>\ allocator\_;}
+\DoxyCodeLine{00034\ \ \ \ \ std::unique\_ptr<libcamera::CameraConfiguration>\ config\_;}
+\DoxyCodeLine{00035\ \ \ \ \ std::vector<std::unique\_ptr<libcamera::Request>>\ requests\_;}
+\DoxyCodeLine{00036\ \};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCaptureBalanced}{CaptureBalanced}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classCapture}{Capture}}}
+\DoxyCodeLine{00039\ \{}
+\DoxyCodeLine{00040\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{classCaptureBalanced}{CaptureBalanced}}(std::shared\_ptr<libcamera::Camera>\ camera);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ capture(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ numRequests);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{int}\ queueRequest(\mbox{\hyperlink{classlibcamera_1_1Request}{libcamera::Request}}\ *request);}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ requestComplete(\mbox{\hyperlink{classlibcamera_1_1Request}{libcamera::Request}}\ *request)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ queueCount\_;}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ captureCount\_;}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ captureLimit\_;}
+\DoxyCodeLine{00052\ \};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCaptureUnbalanced}{CaptureUnbalanced}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classCapture}{Capture}}}
+\DoxyCodeLine{00055\ \{}
+\DoxyCodeLine{00056\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{classCaptureUnbalanced}{CaptureUnbalanced}}(std::shared\_ptr<libcamera::Camera>\ camera);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ capture(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ numRequests);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ requestComplete(\mbox{\hyperlink{classlibcamera_1_1Request}{libcamera::Request}}\ *request)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ captureCount\_;}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ captureLimit\_;}
+\DoxyCodeLine{00066\ \};}
+
+\end{DoxyCode}

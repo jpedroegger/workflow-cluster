@@ -1,0 +1,60 @@
+\doxysection{libcamera\+::ipa\+::ipu3\+::IPASession\+Configuration Struct Reference}
+\hypertarget{structlibcamera_1_1ipa_1_1ipu3_1_1IPASessionConfiguration}{}\label{structlibcamera_1_1ipa_1_1ipu3_1_1IPASessionConfiguration}\index{libcamera::ipa::ipu3::IPASessionConfiguration@{libcamera::ipa::ipu3::IPASessionConfiguration}}
+
+
+Session configuration for the IPA module.  
+
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structlibcamera_1_1ipa_1_1ipu3_1_1IPASessionConfiguration_af1729af4a607f41bad44ab249d75febd}\label{structlibcamera_1_1ipa_1_1ipu3_1_1IPASessionConfiguration_af1729af4a607f41bad44ab249d75febd} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>\mbox{\hyperlink{structipu3__uapi__grid__config}{ipu3\_uapi\_grid\_config}} {\bfseries bdsGrid}\\
+\>\mbox{\hyperlink{classlibcamera_1_1Size}{Size}} {\bfseries bdsOutputSize}\\
+\>uint32\_t {\bfseries stride}\\
+\} {\bfseries grid}\\
+
+\end{tabbing}\begin{DoxyCompactList}\small\item\em Grid configuration of the IPA. \end{DoxyCompactList}\item 
+\Hypertarget{structlibcamera_1_1ipa_1_1ipu3_1_1IPASessionConfiguration_a616f731fae56d9264064944e503e36be}\label{structlibcamera_1_1ipa_1_1ipu3_1_1IPASessionConfiguration_a616f731fae56d9264064944e503e36be} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>\mbox{\hyperlink{structipu3__uapi__grid__config}{ipu3\_uapi\_grid\_config}} {\bfseries afGrid}\\
+\} {\bfseries af}\\
+
+\end{tabbing}\begin{DoxyCompactList}\small\item\em AF grid configuration of the IPA. \end{DoxyCompactList}\item 
+\Hypertarget{structlibcamera_1_1ipa_1_1ipu3_1_1IPASessionConfiguration_af51d14e93db0649017584715f8d67d52}\label{structlibcamera_1_1ipa_1_1ipu3_1_1IPASessionConfiguration_af51d14e93db0649017584715f8d67d52} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>\mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{utils::Duration}} {\bfseries minExposureTime}\\
+\>\mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{utils::Duration}} {\bfseries maxExposureTime}\\
+\>double {\bfseries minAnalogueGain}\\
+\>double {\bfseries maxAnalogueGain}\\
+\} {\bfseries agc}\\
+
+\end{tabbing}\begin{DoxyCompactList}\small\item\em AGC parameters configuration of the IPA. \end{DoxyCompactList}\item 
+\Hypertarget{structlibcamera_1_1ipa_1_1ipu3_1_1IPASessionConfiguration_a9794d3453f454ef8ec4f5e7bed80ccf3}\label{structlibcamera_1_1ipa_1_1ipu3_1_1IPASessionConfiguration_a9794d3453f454ef8ec4f5e7bed80ccf3} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>int32\_t {\bfseries defVBlank}\\
+\>\mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{utils::Duration}} {\bfseries lineDuration}\\
+\>\mbox{\hyperlink{classlibcamera_1_1Size}{Size}} {\bfseries size}\\
+\} {\bfseries sensor}\\
+
+\end{tabbing}\begin{DoxyCompactList}\small\item\em Sensor-\/specific configuration of the IPA. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Session configuration for the IPA module. 
+
+The session configuration contains all IPA configuration parameters that remain constant during the capture session, from IPA module start to stop. It is typically set during the configure() operation of the IPA module, but may also be updated in the start() operation. 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/ipa/ipu3/\mbox{\hyperlink{ipu3_2ipa__context_8h}{ipa\+\_\+context.\+h}}\item 
+src/peripherals/camera/libcamera/src/ipa/ipu3/ipa\+\_\+context.\+cpp\end{DoxyCompactItemize}

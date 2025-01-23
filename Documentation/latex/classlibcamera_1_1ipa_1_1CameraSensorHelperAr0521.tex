@@ -1,0 +1,86 @@
+\doxysection{libcamera\+::ipa\+::Camera\+Sensor\+Helper\+Ar0521 Class Reference}
+\hypertarget{classlibcamera_1_1ipa_1_1CameraSensorHelperAr0521}{}\label{classlibcamera_1_1ipa_1_1CameraSensorHelperAr0521}\index{libcamera::ipa::CameraSensorHelperAr0521@{libcamera::ipa::CameraSensorHelperAr0521}}
+Inheritance diagram for libcamera\+::ipa\+::Camera\+Sensor\+Helper\+Ar0521\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlibcamera_1_1ipa_1_1CameraSensorHelperAr0521}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classlibcamera_1_1ipa_1_1CameraSensorHelperAr0521_a58abcabd89fa7ecb93065c85923555bf}{gain\+Code}} (double \mbox{\hyperlink{classlibcamera_1_1ipa_1_1CameraSensorHelperAr0521_afbec85d8f351990dc0e4fff30a479d56}{gain}}) const override
+\begin{DoxyCompactList}\small\item\em Compute gain code from the analogue gain absolute value. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classlibcamera_1_1ipa_1_1CameraSensorHelperAr0521_afbec85d8f351990dc0e4fff30a479d56}{gain}} (uint32\+\_\+t \mbox{\hyperlink{classlibcamera_1_1ipa_1_1CameraSensorHelperAr0521_a58abcabd89fa7ecb93065c85923555bf}{gain\+Code}}) const override
+\begin{DoxyCompactList}\small\item\em Compute the real gain from the V4\+L2 subdev control gain code. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classlibcamera_1_1ipa_1_1CameraSensorHelper}{libcamera\+::ipa\+::\+Camera\+Sensor\+Helper}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1ipa_1_1CameraSensorHelper_ae5e05b95f37bb7bec22bc805bda51589}{Camera\+Sensor\+Helper}} ()=default
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{classlibcamera_1_1ipa_1_1CameraSensorHelper}{Camera\+Sensor\+Helper} instance. \end{DoxyCompactList}\item 
+std\+::optional$<$ int16\+\_\+t $>$ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1CameraSensorHelper_ad6d462fc5828e841563289eef22d3174}{black\+Level}} () const
+\begin{DoxyCompactList}\small\item\em Fetch the black level of the sensor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classlibcamera_1_1ipa_1_1CameraSensorHelper}{libcamera\+::ipa\+::\+Camera\+Sensor\+Helper}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::optional$<$ int16\+\_\+t $>$ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1CameraSensorHelper_a44159cca9daade1411af09dcf01c511f}{black\+Level\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The black level of the sensor. \end{DoxyCompactList}\item 
+std\+::variant$<$ std\+::monostate, \mbox{\hyperlink{structlibcamera_1_1ipa_1_1CameraSensorHelper_1_1AnalogueGainLinear}{Analogue\+Gain\+Linear}}, \mbox{\hyperlink{structlibcamera_1_1ipa_1_1CameraSensorHelper_1_1AnalogueGainExp}{Analogue\+Gain\+Exp}} $>$ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1CameraSensorHelper_a2db54f4af15e9442b16294b7f6d10a7b}{gain\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The analogue gain parameters used for calculation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1ipa_1_1CameraSensorHelperAr0521_afbec85d8f351990dc0e4fff30a479d56}\label{classlibcamera_1_1ipa_1_1CameraSensorHelperAr0521_afbec85d8f351990dc0e4fff30a479d56} 
+\index{libcamera::ipa::CameraSensorHelperAr0521@{libcamera::ipa::CameraSensorHelperAr0521}!gain@{gain}}
+\index{gain@{gain}!libcamera::ipa::CameraSensorHelperAr0521@{libcamera::ipa::CameraSensorHelperAr0521}}
+\doxysubsubsection{\texorpdfstring{gain()}{gain()}}
+{\footnotesize\ttfamily double libcamera\+::ipa\+::\+Camera\+Sensor\+Helper\+Ar0521\+::gain (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{gain\+Code }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Compute the real gain from the V4\+L2 subdev control gain code. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em gain\+Code} & The V4\+L2 subdev control gain\\
+\hline
+\end{DoxyParams}
+This function aims to abstract the calculation of the gain letting the IPA use the real gain for its estimations. It is the counterpart of the function \doxylink{classlibcamera_1_1ipa_1_1CameraSensorHelper_a5c3fd0e1267fb455ba23ec3f1a96c41b}{Camera\+Sensor\+Helper\+::gain\+Code}.
+
+\begin{DoxyReturn}{Returns}
+The real gain 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classlibcamera_1_1ipa_1_1CameraSensorHelper_ae443ef2db6e3e5087cbb2fcd210b330b}{libcamera\+::ipa\+::\+Camera\+Sensor\+Helper}}.
+
+\Hypertarget{classlibcamera_1_1ipa_1_1CameraSensorHelperAr0521_a58abcabd89fa7ecb93065c85923555bf}\label{classlibcamera_1_1ipa_1_1CameraSensorHelperAr0521_a58abcabd89fa7ecb93065c85923555bf} 
+\index{libcamera::ipa::CameraSensorHelperAr0521@{libcamera::ipa::CameraSensorHelperAr0521}!gainCode@{gainCode}}
+\index{gainCode@{gainCode}!libcamera::ipa::CameraSensorHelperAr0521@{libcamera::ipa::CameraSensorHelperAr0521}}
+\doxysubsubsection{\texorpdfstring{gainCode()}{gainCode()}}
+{\footnotesize\ttfamily uint32\+\_\+t libcamera\+::ipa\+::\+Camera\+Sensor\+Helper\+Ar0521\+::gain\+Code (\begin{DoxyParamCaption}\item[{double}]{gain }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Compute gain code from the analogue gain absolute value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em gain} & The real gain to pass\\
+\hline
+\end{DoxyParams}
+This function aims to abstract the calculation of the gain letting the IPA use the real gain for its estimations.
+
+\begin{DoxyReturn}{Returns}
+The gain code to pass to V4\+L2 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classlibcamera_1_1ipa_1_1CameraSensorHelper_a5c3fd0e1267fb455ba23ec3f1a96c41b}{libcamera\+::ipa\+::\+Camera\+Sensor\+Helper}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/ipa/libipa/camera\+\_\+sensor\+\_\+helper.\+cpp\end{DoxyCompactItemize}

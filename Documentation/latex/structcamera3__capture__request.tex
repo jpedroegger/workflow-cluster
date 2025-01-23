@@ -1,0 +1,126 @@
+\doxysection{camera3\+\_\+capture\+\_\+request Struct Reference}
+\hypertarget{structcamera3__capture__request}{}\label{structcamera3__capture__request}\index{camera3\_capture\_request@{camera3\_capture\_request}}
+
+
+{\ttfamily \#include $<$camera3.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structcamera3__capture__request_adf801e287eb092705861d21a5c79bb39}{frame\+\_\+number}}
+\item 
+const camera\+\_\+metadata\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structcamera3__capture__request_a821bad383e1bdf1ed29f0dc5ede655ba}{settings}}
+\item 
+\mbox{\hyperlink{structcamera3__stream__buffer}{camera3\+\_\+stream\+\_\+buffer\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structcamera3__capture__request_a6a252198bb69f71f086283c4768132c0}{input\+\_\+buffer}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structcamera3__capture__request_a8e62ebd5b7a50cf0b2a56aab5278b2d3}{num\+\_\+output\+\_\+buffers}}
+\item 
+const \mbox{\hyperlink{structcamera3__stream__buffer}{camera3\+\_\+stream\+\_\+buffer\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structcamera3__capture__request_a68198f155ec7432ca9b6406fd538ff41}{output\+\_\+buffers}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structcamera3__capture__request_a1bc86c4e5f6e2c4ecef45a8e97d40fa8}{num\+\_\+physcam\+\_\+settings}}
+\item 
+const char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structcamera3__capture__request_a1a90b0ad86c1f4f36742ad2375f66832}{physcam\+\_\+id}}
+\item 
+const camera\+\_\+metadata\+\_\+t \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structcamera3__capture__request_a7bcf3aba6bee7ad4042faeb053d78fd5}{physcam\+\_\+settings}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+camera3\+\_\+capture\+\_\+request\+\_\+t\+:
+
+A single request for image capture/buffer reprocessing, sent to the Camera HAL device by the framework in process\+\_\+capture\+\_\+request().
+
+The request contains the settings to be used for this capture, and the set of output buffers to write the resulting image data in. It may optionally contain an input buffer, in which case the request is for reprocessing that input buffer instead of capturing a new image with the camera sensor. The capture is identified by the frame\+\_\+number.
+
+In response, the camera HAL device must send a \doxylink{structcamera3__capture__result}{camera3\+\_\+capture\+\_\+result} structure asynchronously to the framework, using the process\+\_\+capture\+\_\+result() callback. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structcamera3__capture__request_adf801e287eb092705861d21a5c79bb39}\label{structcamera3__capture__request_adf801e287eb092705861d21a5c79bb39} 
+\index{camera3\_capture\_request@{camera3\_capture\_request}!frame\_number@{frame\_number}}
+\index{frame\_number@{frame\_number}!camera3\_capture\_request@{camera3\_capture\_request}}
+\doxysubsubsection{\texorpdfstring{frame\_number}{frame\_number}}
+{\footnotesize\ttfamily uint32\+\_\+t camera3\+\_\+capture\+\_\+request\+::frame\+\_\+number}
+
+The frame number is an incrementing integer set by the framework to uniquely identify this capture. It needs to be returned in the result call, and is also used to identify the request in asynchronous notifications sent to \doxylink{structcamera3__callback__ops_a6b866f7b468e677ce586580fab546768}{camera3\+\_\+callback\+\_\+ops\+\_\+t.\+notify()}. \Hypertarget{structcamera3__capture__request_a6a252198bb69f71f086283c4768132c0}\label{structcamera3__capture__request_a6a252198bb69f71f086283c4768132c0} 
+\index{camera3\_capture\_request@{camera3\_capture\_request}!input\_buffer@{input\_buffer}}
+\index{input\_buffer@{input\_buffer}!camera3\_capture\_request@{camera3\_capture\_request}}
+\doxysubsubsection{\texorpdfstring{input\_buffer}{input\_buffer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structcamera3__stream__buffer}{camera3\+\_\+stream\+\_\+buffer\+\_\+t}}\texorpdfstring{$\ast$}{*} camera3\+\_\+capture\+\_\+request\+::input\+\_\+buffer}
+
+The input stream buffer to use for this request, if any.
+
+If input\+\_\+buffer is NULL, then the request is for a new capture from the imager. If input\+\_\+buffer is valid, the request is for reprocessing the image contained in input\+\_\+buffer.
+
+In the latter case, the HAL must set the release\+\_\+fence of the input\+\_\+buffer to a valid sync fence, or to -\/1 if the HAL does not support sync, before process\+\_\+capture\+\_\+request() returns.
+
+The HAL is required to wait on the acquire sync fence of the input buffer before accessing it.
+
+\texorpdfstring{$<$}{<}= CAMERA\+\_\+\+DEVICE\+\_\+\+API\+\_\+\+VERSION\+\_\+3\+\_\+1\+:
+
+Any input buffer included here will have been registered with the HAL through register\+\_\+stream\+\_\+buffers() before its inclusion in a request.
+
+\texorpdfstring{$>$}{>}= CAMERA\+\_\+\+DEVICE\+\_\+\+API\+\_\+\+VERSION\+\_\+3\+\_\+2\+:
+
+The buffers will not have been pre-\/registered with the HAL. Subsequent requests may reuse buffers, or provide entirely new buffers. \Hypertarget{structcamera3__capture__request_a8e62ebd5b7a50cf0b2a56aab5278b2d3}\label{structcamera3__capture__request_a8e62ebd5b7a50cf0b2a56aab5278b2d3} 
+\index{camera3\_capture\_request@{camera3\_capture\_request}!num\_output\_buffers@{num\_output\_buffers}}
+\index{num\_output\_buffers@{num\_output\_buffers}!camera3\_capture\_request@{camera3\_capture\_request}}
+\doxysubsubsection{\texorpdfstring{num\_output\_buffers}{num\_output\_buffers}}
+{\footnotesize\ttfamily uint32\+\_\+t camera3\+\_\+capture\+\_\+request\+::num\+\_\+output\+\_\+buffers}
+
+The number of output buffers for this capture request. Must be at least 1. \Hypertarget{structcamera3__capture__request_a1bc86c4e5f6e2c4ecef45a8e97d40fa8}\label{structcamera3__capture__request_a1bc86c4e5f6e2c4ecef45a8e97d40fa8} 
+\index{camera3\_capture\_request@{camera3\_capture\_request}!num\_physcam\_settings@{num\_physcam\_settings}}
+\index{num\_physcam\_settings@{num\_physcam\_settings}!camera3\_capture\_request@{camera3\_capture\_request}}
+\doxysubsubsection{\texorpdfstring{num\_physcam\_settings}{num\_physcam\_settings}}
+{\footnotesize\ttfamily uint32\+\_\+t camera3\+\_\+capture\+\_\+request\+::num\+\_\+physcam\+\_\+settings}
+
+\texorpdfstring{$<$}{<}= CAMERA\+\_\+\+DEVICE\+\_\+\+API\+\_\+\+VERISON\+\_\+3\+\_\+4\+:
+
+Not defined and must not be accessed.
+
+\texorpdfstring{$>$}{>}= CAMERA\+\_\+\+DEVICE\+\_\+\+API\+\_\+\+VERSION\+\_\+3\+\_\+5\+: The number of physical camera settings to be applied. If \textquotesingle{}num\+\_\+physcam\+\_\+settings\textquotesingle{} equals 0 or a physical device is not included, then Hal must decide the specific physical device settings based on the default \textquotesingle{}settings\textquotesingle{}. \Hypertarget{structcamera3__capture__request_a68198f155ec7432ca9b6406fd538ff41}\label{structcamera3__capture__request_a68198f155ec7432ca9b6406fd538ff41} 
+\index{camera3\_capture\_request@{camera3\_capture\_request}!output\_buffers@{output\_buffers}}
+\index{output\_buffers@{output\_buffers}!camera3\_capture\_request@{camera3\_capture\_request}}
+\doxysubsubsection{\texorpdfstring{output\_buffers}{output\_buffers}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structcamera3__stream__buffer}{camera3\+\_\+stream\+\_\+buffer\+\_\+t}}\texorpdfstring{$\ast$}{*} camera3\+\_\+capture\+\_\+request\+::output\+\_\+buffers}
+
+An array of num\+\_\+output\+\_\+buffers stream buffers, to be filled with image data from this capture/reprocess. The HAL must wait on the acquire fences of each stream buffer before writing to them.
+
+The HAL takes ownership of the actual buffer\+\_\+handle\+\_\+t entries in output\+\_\+buffers; the framework does not access them until they are returned in a camera3\+\_\+capture\+\_\+result\+\_\+t.
+
+\texorpdfstring{$<$}{<}= CAMERA\+\_\+\+DEVICE\+\_\+\+API\+\_\+\+VERSION\+\_\+3\+\_\+1\+:
+
+All the buffers included here will have been registered with the HAL through register\+\_\+stream\+\_\+buffers() before their inclusion in a request.
+
+\texorpdfstring{$>$}{>}= CAMERA\+\_\+\+DEVICE\+\_\+\+API\+\_\+\+VERSION\+\_\+3\+\_\+2\+:
+
+Any or all of the buffers included here may be brand new in this request (having never before seen by the HAL). \Hypertarget{structcamera3__capture__request_a1a90b0ad86c1f4f36742ad2375f66832}\label{structcamera3__capture__request_a1a90b0ad86c1f4f36742ad2375f66832} 
+\index{camera3\_capture\_request@{camera3\_capture\_request}!physcam\_id@{physcam\_id}}
+\index{physcam\_id@{physcam\_id}!camera3\_capture\_request@{camera3\_capture\_request}}
+\doxysubsubsection{\texorpdfstring{physcam\_id}{physcam\_id}}
+{\footnotesize\ttfamily const char\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} camera3\+\_\+capture\+\_\+request\+::physcam\+\_\+id}
+
+\texorpdfstring{$<$}{<}= CAMERA\+\_\+\+DEVICE\+\_\+\+API\+\_\+\+VERISON\+\_\+3\+\_\+4\+:
+
+Not defined and must not be accessed.
+
+\texorpdfstring{$>$}{>}= CAMERA\+\_\+\+DEVICE\+\_\+\+API\+\_\+\+VERSION\+\_\+3\+\_\+5\+: The physical camera ids. The array will contain \textquotesingle{}num\+\_\+physcam\+\_\+settings\textquotesingle{} camera id strings for all physical devices that have specific settings. In case some id is invalid, the process capture request must fail and return -\/EINVAL. \Hypertarget{structcamera3__capture__request_a7bcf3aba6bee7ad4042faeb053d78fd5}\label{structcamera3__capture__request_a7bcf3aba6bee7ad4042faeb053d78fd5} 
+\index{camera3\_capture\_request@{camera3\_capture\_request}!physcam\_settings@{physcam\_settings}}
+\index{physcam\_settings@{physcam\_settings}!camera3\_capture\_request@{camera3\_capture\_request}}
+\doxysubsubsection{\texorpdfstring{physcam\_settings}{physcam\_settings}}
+{\footnotesize\ttfamily const camera\+\_\+metadata\+\_\+t\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} camera3\+\_\+capture\+\_\+request\+::physcam\+\_\+settings}
+
+\texorpdfstring{$<$}{<}= CAMERA\+\_\+\+DEVICE\+\_\+\+API\+\_\+\+VERISON\+\_\+3\+\_\+4\+:
+
+Not defined and must not be accessed.
+
+\texorpdfstring{$>$}{>}= CAMERA\+\_\+\+DEVICE\+\_\+\+API\+\_\+\+VERSION\+\_\+3\+\_\+5\+: The capture settings for the physical cameras. The array will contain \textquotesingle{}num\+\_\+physcam\+\_\+settings\textquotesingle{} settings for invididual physical devices. In case the settings at some particular index are empty, the process capture request must fail and return -\/EINVAL. \Hypertarget{structcamera3__capture__request_a821bad383e1bdf1ed29f0dc5ede655ba}\label{structcamera3__capture__request_a821bad383e1bdf1ed29f0dc5ede655ba} 
+\index{camera3\_capture\_request@{camera3\_capture\_request}!settings@{settings}}
+\index{settings@{settings}!camera3\_capture\_request@{camera3\_capture\_request}}
+\doxysubsubsection{\texorpdfstring{settings}{settings}}
+{\footnotesize\ttfamily const camera\+\_\+metadata\+\_\+t\texorpdfstring{$\ast$}{*} camera3\+\_\+capture\+\_\+request\+::settings}
+
+The settings buffer contains the capture and processing parameters for the request. As a special case, a NULL settings buffer indicates that the settings are identical to the most-\/recently submitted capture request. A NULL buffer cannot be used as the first submitted request after a configure\+\_\+streams() call. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/android/hardware/libhardware/include/hardware/camera3.\+h\end{DoxyCompactItemize}

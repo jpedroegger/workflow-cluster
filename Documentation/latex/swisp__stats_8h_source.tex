@@ -1,0 +1,30 @@
+\doxysection{swisp\+\_\+stats.\+h}
+\hypertarget{swisp__stats_8h_source}{}\label{swisp__stats_8h_source}\index{src/peripherals/camera/libcamera/include/libcamera/internal/software\_isp/swisp\_stats.h@{src/peripherals/camera/libcamera/include/libcamera/internal/software\_isp/swisp\_stats.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2023,\ Linaro\ Ltd}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Statistics\ data\ format\ used\ by\ the\ software\ ISP\ and\ software\ IPA}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacelibcamera}{libcamera}}\ \{}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structlibcamera_1_1SwIspStats}{SwIspStats}}\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ uint64\_t\ \mbox{\hyperlink{structlibcamera_1_1SwIspStats_a5895eeeb9210ede00971326fab964c56}{sumR\_}};}
+\DoxyCodeLine{00030\ \ \ \ \ uint64\_t\ \mbox{\hyperlink{structlibcamera_1_1SwIspStats_ae9de02e225bdf8e645ff223c59564ede}{sumG\_}};}
+\DoxyCodeLine{00034\ \ \ \ \ uint64\_t\ \mbox{\hyperlink{structlibcamera_1_1SwIspStats_a8f5c24249f09fce6b744adfde124f3c0}{sumB\_}};}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structlibcamera_1_1SwIspStats_acc2df9b1f29e70474e8b9d19fb5d81cb}{kYHistogramSize}}\ =\ 64;}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{structlibcamera_1_1SwIspStats_a0f7bf2f5c30750ca0a14373fe8f70969}{Histogram}}\ =\ std::array<uint32\_t,\ kYHistogramSize>;}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{structlibcamera_1_1SwIspStats_a0f7bf2f5c30750ca0a14373fe8f70969}{Histogram}}\ \mbox{\hyperlink{structlibcamera_1_1SwIspStats_a873420e49e5b6aa4f544258f14467144}{yHistogram}};}
+\DoxyCodeLine{00047\ \};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \}\ \textcolor{comment}{/*\ namespace\ libcamera\ */}}
+
+\end{DoxyCode}

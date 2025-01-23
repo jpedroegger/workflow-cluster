@@ -1,0 +1,91 @@
+\doxysection{V4\+L2\+Video\+Device\+Test Class Reference}
+\hypertarget{classV4L2VideoDeviceTest}{}\label{classV4L2VideoDeviceTest}\index{V4L2VideoDeviceTest@{V4L2VideoDeviceTest}}
+Inheritance diagram for V4\+L2\+Video\+Device\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.538462cm]{classV4L2VideoDeviceTest}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classV4L2VideoDeviceTest_a93726e1c56d0920101ae94233602f7fe}\label{classV4L2VideoDeviceTest_a93726e1c56d0920101ae94233602f7fe} 
+{\bfseries V4\+L2\+Video\+Device\+Test} (const char \texorpdfstring{$\ast$}{*}driver, const char \texorpdfstring{$\ast$}{*}entity)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classTest}{Test}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries set\+Args} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\item 
+int {\bfseries execute} ()
+\item 
+const std\+::string \& {\bfseries self} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classV4L2VideoDeviceTest_ab218fc40cff41579fdf0a77b5e935817}{init}} ()
+\item 
+void \mbox{\hyperlink{classV4L2VideoDeviceTest_a309887219013b646ec68fef54082810a}{cleanup}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classTest}{Test}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual int {\bfseries run} ()=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classV4L2VideoDeviceTest_a7ab1c16cf0c52fa75d087a15b5c008fa}\label{classV4L2VideoDeviceTest_a7ab1c16cf0c52fa75d087a15b5c008fa} 
+std\+::string {\bfseries driver\+\_\+}
+\item 
+\Hypertarget{classV4L2VideoDeviceTest_a9237d86124d14d2f3db4440299739413}\label{classV4L2VideoDeviceTest_a9237d86124d14d2f3db4440299739413} 
+std\+::string {\bfseries entity\+\_\+}
+\item 
+\Hypertarget{classV4L2VideoDeviceTest_a737880a4dd7d088c459e9137ad8297c5}\label{classV4L2VideoDeviceTest_a737880a4dd7d088c459e9137ad8297c5} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1DeviceEnumerator}{libcamera\+::\+Device\+Enumerator}} $>$ {\bfseries enumerator\+\_\+}
+\item 
+\Hypertarget{classV4L2VideoDeviceTest_ac83223001bc3c9886ee38ddc888a1c02}\label{classV4L2VideoDeviceTest_ac83223001bc3c9886ee38ddc888a1c02} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1MediaDevice}{libcamera\+::\+Media\+Device}} $>$ {\bfseries media\+\_\+}
+\item 
+\Hypertarget{classV4L2VideoDeviceTest_ab7eb33f7bfc3252dc56370fe1dfd115e}\label{classV4L2VideoDeviceTest_ab7eb33f7bfc3252dc56370fe1dfd115e} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1CameraSensor}{libcamera\+::\+Camera\+Sensor}} $>$ {\bfseries sensor\+\_\+}
+\item 
+\Hypertarget{classV4L2VideoDeviceTest_a66a9c6166066c923b3ccc2630f1f4941}\label{classV4L2VideoDeviceTest_a66a9c6166066c923b3ccc2630f1f4941} 
+\mbox{\hyperlink{classlibcamera_1_1V4L2Subdevice}{libcamera\+::\+V4\+L2\+Subdevice}} \texorpdfstring{$\ast$}{*} {\bfseries debayer\+\_\+}
+\item 
+\Hypertarget{classV4L2VideoDeviceTest_aa559f50b908a754157c2d5ddd68e37d2}\label{classV4L2VideoDeviceTest_aa559f50b908a754157c2d5ddd68e37d2} 
+\mbox{\hyperlink{classlibcamera_1_1V4L2VideoDevice}{libcamera\+::\+V4\+L2\+Video\+Device}} \texorpdfstring{$\ast$}{*} {\bfseries capture\+\_\+}
+\item 
+\Hypertarget{classV4L2VideoDeviceTest_ae7fa70ab4d71c4f34d2ad7c4709bc9a9}\label{classV4L2VideoDeviceTest_ae7fa70ab4d71c4f34d2ad7c4709bc9a9} 
+std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classlibcamera_1_1FrameBuffer}{libcamera\+::\+Frame\+Buffer}} $>$ $>$ {\bfseries buffers\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classV4L2VideoDeviceTest_a309887219013b646ec68fef54082810a}\label{classV4L2VideoDeviceTest_a309887219013b646ec68fef54082810a} 
+\index{V4L2VideoDeviceTest@{V4L2VideoDeviceTest}!cleanup@{cleanup}}
+\index{cleanup@{cleanup}!V4L2VideoDeviceTest@{V4L2VideoDeviceTest}}
+\doxysubsubsection{\texorpdfstring{cleanup()}{cleanup()}}
+{\footnotesize\ttfamily void V4\+L2\+Video\+Device\+Test\+::cleanup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classTest}{Test}}.
+
+\Hypertarget{classV4L2VideoDeviceTest_ab218fc40cff41579fdf0a77b5e935817}\label{classV4L2VideoDeviceTest_ab218fc40cff41579fdf0a77b5e935817} 
+\index{V4L2VideoDeviceTest@{V4L2VideoDeviceTest}!init@{init}}
+\index{init@{init}!V4L2VideoDeviceTest@{V4L2VideoDeviceTest}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily int V4\+L2\+Video\+Device\+Test\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classTest}{Test}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/test/v4l2\+\_\+videodevice/v4l2\+\_\+videodevice\+\_\+test.\+h\item 
+src/peripherals/camera/libcamera/test/v4l2\+\_\+videodevice/v4l2\+\_\+videodevice\+\_\+test.\+cpp\end{DoxyCompactItemize}

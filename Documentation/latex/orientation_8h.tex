@@ -1,0 +1,40 @@
+\doxysection{src/peripherals/camera/libcamera/include/libcamera/orientation.h File Reference}
+\hypertarget{orientation_8h}{}\label{orientation_8h}\index{src/peripherals/camera/libcamera/include/libcamera/orientation.h@{src/peripherals/camera/libcamera/include/libcamera/orientation.h}}
+
+
+\doxylink{classImage}{Image} orientation definition.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacelibcamera}{libcamera}}
+\begin{DoxyCompactList}\small\item\em Top-\/level libcamera namespace. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespacelibcamera_a80ea01625b93ecfe879249ac60c79384}{libcamera\+::\+Orientation}} \{ \newline
+\mbox{\hyperlink{namespacelibcamera_a80ea01625b93ecfe879249ac60c79384a291b44223b90e70be1fade1eff8a55e0}{libcamera\+::\+Rotate0}} = 1
+, \mbox{\hyperlink{namespacelibcamera_a80ea01625b93ecfe879249ac60c79384a8c0ca32ba7e4de48842b5828d1cc4bbb}{libcamera\+::\+Rotate0\+Mirror}}
+, \mbox{\hyperlink{namespacelibcamera_a80ea01625b93ecfe879249ac60c79384a371980c5d153a94cf022d6b4daa4d34c}{libcamera\+::\+Rotate180}}
+, \mbox{\hyperlink{namespacelibcamera_a80ea01625b93ecfe879249ac60c79384a9299b4523bc8f8a8a3cf874fccc39e56}{libcamera\+::\+Rotate180\+Mirror}}
+, \newline
+\mbox{\hyperlink{namespacelibcamera_a80ea01625b93ecfe879249ac60c79384ad3e952bbaf7e50a879f42b7968e07a79}{libcamera\+::\+Rotate90\+Mirror}}
+, \mbox{\hyperlink{namespacelibcamera_a80ea01625b93ecfe879249ac60c79384a59c609399b2fb3956ecac7df34a76c2f}{libcamera\+::\+Rotate270}}
+, \mbox{\hyperlink{namespacelibcamera_a80ea01625b93ecfe879249ac60c79384a42099bec2daf386b1daeffe0854cab21}{libcamera\+::\+Rotate270\+Mirror}}
+, \mbox{\hyperlink{namespacelibcamera_a80ea01625b93ecfe879249ac60c79384a1d20b3969ea74725dd1a5b7669d60a98}{libcamera\+::\+Rotate90}}
+ \}
+\begin{DoxyCompactList}\small\item\em The image orientation in a memory buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacelibcamera_a80ea01625b93ecfe879249ac60c79384}{Orientation}} \mbox{\hyperlink{namespacelibcamera_aa8cfd315901c648f69b6a87555f3c056}{libcamera\+::orientation\+From\+Rotation}} (int angle, bool \texorpdfstring{$\ast$}{*}success)
+\begin{DoxyCompactList}\small\item\em Return the orientation representing a rotation of the given angle clockwise. \end{DoxyCompactList}\item 
+std\+::ostream \& \mbox{\hyperlink{namespacelibcamera_a4f4f4cf5cb99b8fb1baf2ff47d0e9d7e}{libcamera\+::operator$<$$<$}} (std\+::ostream \&out, const \mbox{\hyperlink{namespacelibcamera_a80ea01625b93ecfe879249ac60c79384}{Orientation}} \&orientation)
+\begin{DoxyCompactList}\small\item\em Prints human-\/friendly names for Orientation items. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classImage}{Image} orientation definition. 
+

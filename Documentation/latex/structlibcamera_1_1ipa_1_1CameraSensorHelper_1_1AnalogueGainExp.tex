@@ -1,0 +1,35 @@
+\doxysection{libcamera\+::ipa\+::Camera\+Sensor\+Helper\+::Analogue\+Gain\+Exp Struct Reference}
+\hypertarget{structlibcamera_1_1ipa_1_1CameraSensorHelper_1_1AnalogueGainExp}{}\label{structlibcamera_1_1ipa_1_1CameraSensorHelper_1_1AnalogueGainExp}\index{libcamera::ipa::CameraSensorHelper::AnalogueGainExp@{libcamera::ipa::CameraSensorHelper::AnalogueGainExp}}
+
+
+Analogue gain constants for the exponential gain model.  
+
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structlibcamera_1_1ipa_1_1CameraSensorHelper_1_1AnalogueGainExp_ab64e0713b27bed04a7f59226e0f0f303}\label{structlibcamera_1_1ipa_1_1CameraSensorHelper_1_1AnalogueGainExp_ab64e0713b27bed04a7f59226e0f0f303} 
+double {\bfseries a}
+\begin{DoxyCompactList}\small\item\em Constant used in the exponential gain coding/decoding. \end{DoxyCompactList}\item 
+\Hypertarget{structlibcamera_1_1ipa_1_1CameraSensorHelper_1_1AnalogueGainExp_a1ff67c3ba4098c3d746ae8ef15fd2079}\label{structlibcamera_1_1ipa_1_1CameraSensorHelper_1_1AnalogueGainExp_a1ff67c3ba4098c3d746ae8ef15fd2079} 
+double {\bfseries m}
+\begin{DoxyCompactList}\small\item\em Constant used in the exponential gain coding/decoding. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Analogue gain constants for the exponential gain model. 
+
+The relationship between the integer gain parameter and the resulting gain multiplier is given by the following equation\+:
+
+$gain = a \cdot 2^{m \cdot x}$
+
+Where \textquotesingle{}x\textquotesingle{} is the gain control parameter, and \textquotesingle{}a\textquotesingle{} and \textquotesingle{}m\textquotesingle{} are image sensor-\/specific constants.
+
+This is a subset of the MIPI CCS exponential gain model with the linear factor \textquotesingle{}a\textquotesingle{} being a constant, but with the exponent being configurable through the \textquotesingle{}m\textquotesingle{} coefficient.
+
+When the gain is expressed in dB, \textquotesingle{}a\textquotesingle{} is equal to 1 and \textquotesingle{}m\textquotesingle{} to $log_{2}{10^{\frac{1}{20}}}$. 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/ipa/libipa/\mbox{\hyperlink{camera__sensor__helper_8h}{camera\+\_\+sensor\+\_\+helper.\+h}}\item 
+src/peripherals/camera/libcamera/src/ipa/libipa/camera\+\_\+sensor\+\_\+helper.\+cpp\end{DoxyCompactItemize}

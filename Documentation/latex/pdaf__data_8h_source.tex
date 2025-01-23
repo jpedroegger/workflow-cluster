@@ -1,0 +1,30 @@
+\doxysection{pdaf\+\_\+data.\+h}
+\hypertarget{pdaf__data_8h_source}{}\label{pdaf__data_8h_source}\index{src/peripherals/camera/libcamera/src/ipa/rpi/controller/pdaf\_data.h@{src/peripherals/camera/libcamera/src/ipa/rpi/controller/pdaf\_data.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ BSD-\/2-\/Clause\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2022,\ Raspberry\ Pi\ Ltd}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ PDAF\ Metadata}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}region\_stats.h"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }RPiController\ \{}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structRPiController_1_1PdafData}{PdafData}}\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{comment}{/*\ Confidence,\ in\ arbitrary\ units\ */}}
+\DoxyCodeLine{00017\ \ \ \ \ uint16\_t\ conf;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{/*\ Phase\ error,\ in\ s16\ Q4\ format\ (S.11.4)\ */}}
+\DoxyCodeLine{00019\ \ \ \ \ int16\_t\ phase;}
+\DoxyCodeLine{00020\ \};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{using\ }\mbox{\hyperlink{classRPiController_1_1RegionStats}{PdafRegions}}\ =\ \mbox{\hyperlink{classRPiController_1_1RegionStats}{RegionStats<PdafData>}};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \}\ \textcolor{comment}{/*\ namespace\ RPiController\ */}}
+
+\end{DoxyCode}

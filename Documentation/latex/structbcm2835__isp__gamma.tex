@@ -1,0 +1,28 @@
+\doxysection{bcm2835\+\_\+isp\+\_\+gamma Struct Reference}
+\hypertarget{structbcm2835__isp__gamma}{}\label{structbcm2835__isp__gamma}\index{bcm2835\_isp\_gamma@{bcm2835\_isp\_gamma}}
+
+
+{\ttfamily \#include $<$bcm2835-\/isp.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structbcm2835__isp__gamma_abf423796aff91723968e61386bf59714}\label{structbcm2835__isp__gamma_abf423796aff91723968e61386bf59714} 
+\+\_\+\+\_\+u32 {\bfseries enabled}
+\item 
+\Hypertarget{structbcm2835__isp__gamma_a9e397c0c12cf74570f3a859fac7a9c1d}\label{structbcm2835__isp__gamma_a9e397c0c12cf74570f3a859fac7a9c1d} 
+\+\_\+\+\_\+u16 {\bfseries x} \mbox{[}BCM2835\+\_\+\+NUM\+\_\+\+GAMMA\+\_\+\+PTS\mbox{]}
+\item 
+\Hypertarget{structbcm2835__isp__gamma_ae88ac551e8f3166e324a6185fb0cfea8}\label{structbcm2835__isp__gamma_ae88ac551e8f3166e324a6185fb0cfea8} 
+\+\_\+\+\_\+u16 {\bfseries y} \mbox{[}BCM2835\+\_\+\+NUM\+\_\+\+GAMMA\+\_\+\+PTS\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structbcm2835__isp__gamma}{bcm2835\+\_\+isp\+\_\+gamma} -\/ Gamma parameters set with the V4\+L2\+\_\+\+CID\+\_\+\+USER\+\_\+\+BCM2835\+\_\+\+ISP\+\_\+\+GAMMA ctrl.
+
+@enabled\+: Enable gamma adjustment. @X\+: X values of the points defining the gamma curve. Values should be scaled to 16 bits. @Y\+: Y values of the points defining the gamma curve. Values should be scaled to 16 bits. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/bcm2835-\/isp.\+h\end{DoxyCompactItemize}

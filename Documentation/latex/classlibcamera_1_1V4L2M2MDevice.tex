@@ -1,0 +1,102 @@
+\doxysection{libcamera\+::V4\+L2\+M2\+MDevice Class Reference}
+\hypertarget{classlibcamera_1_1V4L2M2MDevice}{}\label{classlibcamera_1_1V4L2M2MDevice}\index{libcamera::V4L2M2MDevice@{libcamera::V4L2M2MDevice}}
+
+
+Memory-\/to-\/\+Memory video device.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlibcamera_1_1V4L2M2MDevice_aada8b048cfaaefb7da7347e101dfff7f}{V4\+L2\+M2\+MDevice}} (const std\+::string \&device\+Node)
+\begin{DoxyCompactList}\small\item\em Create a new \doxylink{classlibcamera_1_1V4L2M2MDevice}{V4\+L2\+M2\+MDevice} from the {\itshape device\+Node}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classlibcamera_1_1V4L2M2MDevice_a97c64c9999c261ffc6dc01ab00d67c63}{open}} ()
+\begin{DoxyCompactList}\small\item\em Open a V4\+L2 Memory to Memory device. \end{DoxyCompactList}\item 
+\Hypertarget{classlibcamera_1_1V4L2M2MDevice_a41134edcef513073ec56d6211f11da85}\label{classlibcamera_1_1V4L2M2MDevice_a41134edcef513073ec56d6211f11da85} 
+void {\bfseries close} ()
+\begin{DoxyCompactList}\small\item\em Close the memory-\/to-\/memory device, releasing any resources acquired by \doxylink{classlibcamera_1_1V4L2M2MDevice_a97c64c9999c261ffc6dc01ab00d67c63}{open()} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1V4L2VideoDevice}{V4\+L2\+Video\+Device}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1V4L2M2MDevice_aa045547129bf823b697d9552409414ee}{output}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the output \doxylink{classlibcamera_1_1V4L2VideoDevice}{V4\+L2\+Video\+Device} instance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlibcamera_1_1V4L2VideoDevice}{V4\+L2\+Video\+Device}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlibcamera_1_1V4L2M2MDevice_a34a6a4bf4b8ab9d8d7b9541034119312}{capture}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the capture \doxylink{classlibcamera_1_1V4L2VideoDevice}{V4\+L2\+Video\+Device} instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Memory-\/to-\/\+Memory video device. 
+
+Memory to Memory devices in the kernel using the V4\+L2 M2M API can operate with multiple contexts for parallel operations on a single device. Each instance of a \doxylink{classlibcamera_1_1V4L2M2MDevice}{V4\+L2\+M2\+MDevice} represents a single context.
+
+The \doxylink{classlibcamera_1_1V4L2M2MDevice}{V4\+L2\+M2\+MDevice} manages two \doxylink{classlibcamera_1_1V4L2VideoDevice}{V4\+L2\+Video\+Device} instances on the same device\+Node which operate together using two queues to implement the V4\+L2 Memory to Memory API.
+
+Users of this class should create a new instance of the \doxylink{classlibcamera_1_1V4L2M2MDevice}{V4\+L2\+M2\+MDevice} for each desired execution context and then open it by calling \doxylink{classlibcamera_1_1V4L2M2MDevice_a97c64c9999c261ffc6dc01ab00d67c63}{open()} on the \doxylink{classlibcamera_1_1V4L2M2MDevice}{V4\+L2\+M2\+MDevice} and close it by calling \doxylink{classlibcamera_1_1V4L2M2MDevice_a41134edcef513073ec56d6211f11da85}{close()} on the \doxylink{classlibcamera_1_1V4L2M2MDevice}{V4\+L2\+M2\+MDevice}.
+
+Calling \doxylink{classlibcamera_1_1V4L2VideoDevice_a407058d16f2508b20b88408be08e8581}{V4\+L2\+Video\+Device\+::open()} and \doxylink{classlibcamera_1_1V4L2VideoDevice_a9dc5c057e420ab545411eceb2266e6e9}{V4\+L2\+Video\+Device\+::close()} on the capture or output \doxylink{classlibcamera_1_1V4L2VideoDevice}{V4\+L2\+Video\+Device} is not permitted.
+
+Once the M2M device is open, users can operate on the output and capture queues represented by the \doxylink{classlibcamera_1_1V4L2VideoDevice}{V4\+L2\+Video\+Device} returned by the \doxylink{classlibcamera_1_1V4L2M2MDevice_aa045547129bf823b697d9552409414ee}{output()} and \doxylink{classlibcamera_1_1V4L2M2MDevice_a34a6a4bf4b8ab9d8d7b9541034119312}{capture()} functions. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlibcamera_1_1V4L2M2MDevice_aada8b048cfaaefb7da7347e101dfff7f}\label{classlibcamera_1_1V4L2M2MDevice_aada8b048cfaaefb7da7347e101dfff7f} 
+\index{libcamera::V4L2M2MDevice@{libcamera::V4L2M2MDevice}!V4L2M2MDevice@{V4L2M2MDevice}}
+\index{V4L2M2MDevice@{V4L2M2MDevice}!libcamera::V4L2M2MDevice@{libcamera::V4L2M2MDevice}}
+\doxysubsubsection{\texorpdfstring{V4L2M2MDevice()}{V4L2M2MDevice()}}
+{\footnotesize\ttfamily libcamera\+::\+V4\+L2\+M2\+MDevice\+::\+V4\+L2\+M2\+MDevice (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{device\+Node }\end{DoxyParamCaption})}
+
+
+
+Create a new \doxylink{classlibcamera_1_1V4L2M2MDevice}{V4\+L2\+M2\+MDevice} from the {\itshape device\+Node}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em device\+Node} & The file-\/system path to the video device node \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlibcamera_1_1V4L2M2MDevice_a34a6a4bf4b8ab9d8d7b9541034119312}\label{classlibcamera_1_1V4L2M2MDevice_a34a6a4bf4b8ab9d8d7b9541034119312} 
+\index{libcamera::V4L2M2MDevice@{libcamera::V4L2M2MDevice}!capture@{capture}}
+\index{capture@{capture}!libcamera::V4L2M2MDevice@{libcamera::V4L2M2MDevice}}
+\doxysubsubsection{\texorpdfstring{capture()}{capture()}}
+{\footnotesize\ttfamily libcamera\+::\+V4\+L2\+M2\+MDevice\+::capture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the capture \doxylink{classlibcamera_1_1V4L2VideoDevice}{V4\+L2\+Video\+Device} instance. 
+
+\begin{DoxyReturn}{Returns}
+The capture \doxylink{classlibcamera_1_1V4L2VideoDevice}{V4\+L2\+Video\+Device} instance 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1V4L2M2MDevice_a97c64c9999c261ffc6dc01ab00d67c63}\label{classlibcamera_1_1V4L2M2MDevice_a97c64c9999c261ffc6dc01ab00d67c63} 
+\index{libcamera::V4L2M2MDevice@{libcamera::V4L2M2MDevice}!open@{open}}
+\index{open@{open}!libcamera::V4L2M2MDevice@{libcamera::V4L2M2MDevice}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily int libcamera\+::\+V4\+L2\+M2\+MDevice\+::open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Open a V4\+L2 Memory to Memory device. 
+
+Open the device node and prepare the two \doxylink{classlibcamera_1_1V4L2VideoDevice}{V4\+L2\+Video\+Device} instances to handle their respective buffer queues.
+
+\begin{DoxyReturn}{Returns}
+0 on success or a negative error code otherwise 
+\end{DoxyReturn}
+\Hypertarget{classlibcamera_1_1V4L2M2MDevice_aa045547129bf823b697d9552409414ee}\label{classlibcamera_1_1V4L2M2MDevice_aa045547129bf823b697d9552409414ee} 
+\index{libcamera::V4L2M2MDevice@{libcamera::V4L2M2MDevice}!output@{output}}
+\index{output@{output}!libcamera::V4L2M2MDevice@{libcamera::V4L2M2MDevice}}
+\doxysubsubsection{\texorpdfstring{output()}{output()}}
+{\footnotesize\ttfamily libcamera\+::\+V4\+L2\+M2\+MDevice\+::output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the output \doxylink{classlibcamera_1_1V4L2VideoDevice}{V4\+L2\+Video\+Device} instance. 
+
+\begin{DoxyReturn}{Returns}
+The output \doxylink{classlibcamera_1_1V4L2VideoDevice}{V4\+L2\+Video\+Device} instance 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/libcamera/internal/\mbox{\hyperlink{v4l2__videodevice_8h}{v4l2\+\_\+videodevice.\+h}}\item 
+src/peripherals/camera/libcamera/src/libcamera/v4l2\+\_\+videodevice.\+cpp\end{DoxyCompactItemize}

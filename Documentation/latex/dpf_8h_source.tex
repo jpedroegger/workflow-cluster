@@ -1,0 +1,44 @@
+\doxysection{dpf.\+h}
+\hypertarget{dpf_8h_source}{}\label{dpf_8h_source}\index{src/peripherals/camera/libcamera/src/ipa/rkisp1/algorithms/dpf.h@{src/peripherals/camera/libcamera/src/ipa/rkisp1/algorithms/dpf.h}}
+\mbox{\hyperlink{dpf_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2021-\/2022,\ Ideas\ On\ Board}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ RkISP1\ Denoise\ Pre-\/Filter\ control}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <sys/types.h>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}algorithm.h"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacelibcamera}{libcamera}}\ \{}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }ipa::rkisp1::algorithms\ \{}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlibcamera_1_1ipa_1_1rkisp1_1_1algorithms_1_1Dpf}{Dpf}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1rkisp1_1_1Algorithm}{Algorithm}}}
+\DoxyCodeLine{00019\ \{}
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1rkisp1_1_1algorithms_1_1Dpf}{Dpf}}();}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1rkisp1_1_1algorithms_1_1Dpf}{\string~Dpf}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1rkisp1_1_1algorithms_1_1Dpf_a15643170bb334791b93a238211929941}{init}}(\mbox{\hyperlink{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAContext}{IPAContext}}\ \&context,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1YamlObject}{YamlObject}}\ \&tuningData)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1rkisp1_1_1algorithms_1_1Dpf_acbf471cd8551de1f086473c9bcd24367}{queueRequest}}(\mbox{\hyperlink{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAContext}{IPAContext}}\ \&context,\ \textcolor{keyword}{const}\ uint32\_t\ frame,}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAFrameContext}{IPAFrameContext}}\ \&frameContext,}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classlibcamera_1_1ControlList}{ControlList}}\ \&controls)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1rkisp1_1_1algorithms_1_1Dpf_a7dc0cd3be5857a4944f0809d665c2915}{prepare}}(\mbox{\hyperlink{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAContext}{IPAContext}}\ \&context,\ \textcolor{keyword}{const}\ uint32\_t\ frame,}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structlibcamera_1_1ipa_1_1rkisp1_1_1IPAFrameContext}{IPAFrameContext}}\ \&frameContext,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1ipa_1_1rkisp1_1_1RkISP1Params}{RkISP1Params}}\ *params)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structrkisp1__cif__isp__dpf__config}{rkisp1\_cif\_isp\_dpf\_config}}\ config\_;}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structrkisp1__cif__isp__dpf__strength__config}{rkisp1\_cif\_isp\_dpf\_strength\_config}}\ strengthConfig\_;}
+\DoxyCodeLine{00035\ \};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \}\ \textcolor{comment}{/*\ namespace\ ipa::rkisp1::algorithms\ */}}
+\DoxyCodeLine{00038\ \}\ \textcolor{comment}{/*\ namespace\ libcamera\ */}}
+
+\end{DoxyCode}

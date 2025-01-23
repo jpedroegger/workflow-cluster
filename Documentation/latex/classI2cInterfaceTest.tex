@@ -1,0 +1,41 @@
+\doxysection{I2c\+Interface\+Test Class Reference}
+\hypertarget{classI2cInterfaceTest}{}\label{classI2cInterfaceTest}\index{I2cInterfaceTest@{I2cInterfaceTest}}
+Inheritance diagram for I2c\+Interface\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classI2cInterfaceTest}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classI2cInterfaceTest_a61d69fbc7a44de30c9cf6ded33a43e16}\label{classI2cInterfaceTest_a61d69fbc7a44de30c9cf6ded33a43e16} 
+void {\bfseries Set\+Up} () override
+\item 
+\Hypertarget{classI2cInterfaceTest_ac012044dea06364ea363bd2ccd59f537}\label{classI2cInterfaceTest_ac012044dea06364ea363bd2ccd59f537} 
+void {\bfseries Tear\+Down} () override
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classI2cInterfaceTest_a13ea19bca39891022c85da749cab77d0}\label{classI2cInterfaceTest_a13ea19bca39891022c85da749cab77d0} 
+rclcpp\+::\+Client$<$ custom\+\_\+msgs\+::srv\+::\+I2c\+Service $>$\+::\+Shared\+Ptr {\bfseries i2c\+\_\+client\+\_\+}
+\item 
+\Hypertarget{classI2cInterfaceTest_afa68a282789d3362776f7539ee3ef228}\label{classI2cInterfaceTest_afa68a282789d3362776f7539ee3ef228} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classI2cInterface}{I2c\+Interface}} $>$ {\bfseries test\+\_\+node\+\_\+}
+\item 
+\Hypertarget{classI2cInterfaceTest_a2c931d10ac03fe22006ed08bb318bb3b}\label{classI2cInterfaceTest_a2c931d10ac03fe22006ed08bb318bb3b} 
+rclcpp\+::executors\+::\+Single\+Threaded\+Executor\+::\+Unique\+Ptr {\bfseries executor\+\_\+}
+\item 
+\Hypertarget{classI2cInterfaceTest_adce5d1452bc90a81745a70250df77b0a}\label{classI2cInterfaceTest_adce5d1452bc90a81745a70250df77b0a} 
+std\+::thread {\bfseries executor\+\_\+thread\+\_\+}
+\item 
+\Hypertarget{classI2cInterfaceTest_ae17ca45ed0de06ae873e6faa469ad72a}\label{classI2cInterfaceTest_ae17ca45ed0de06ae873e6faa469ad72a} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMockI2cDriver}{Mock\+I2c\+Driver}} $>$ {\bfseries mock\+\_\+device\+\_\+}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/bus\+\_\+interfaces/i2c\+\_\+interface/test/include/I2c\+Interface\+Test.\+hpp\item 
+src/bus\+\_\+interfaces/i2c\+\_\+interface/test/src/I2c\+Interface\+Test.\+cpp\end{DoxyCompactItemize}

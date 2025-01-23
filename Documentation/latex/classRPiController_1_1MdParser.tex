@@ -1,0 +1,58 @@
+\doxysection{RPi\+Controller\+::Md\+Parser Class Reference}
+\hypertarget{classRPiController_1_1MdParser}{}\label{classRPiController_1_1MdParser}\index{RPiController::MdParser@{RPiController::MdParser}}
+Inheritance diagram for RPi\+Controller\+::Md\+Parser\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classRPiController_1_1MdParser}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classRPiController_1_1MdParser_a20daa99a176eac47e1cf040f24003fed}\label{classRPiController_1_1MdParser_a20daa99a176eac47e1cf040f24003fed} 
+enum {\bfseries Status} \{ {\bfseries OK} = 0
+, {\bfseries NOTFOUND} = 1
+, {\bfseries ERROR} = 2
+ \}
+\item 
+\Hypertarget{classRPiController_1_1MdParser_a943071401bf9456a91af346bfd94071b}\label{classRPiController_1_1MdParser_a943071401bf9456a91af346bfd94071b} 
+using {\bfseries Register\+Map} = std\+::map$<$ uint32\+\_\+t, uint32\+\_\+t $>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classRPiController_1_1MdParser_a4350e9c9e38a2c06974f9df9553ec9ff}\label{classRPiController_1_1MdParser_a4350e9c9e38a2c06974f9df9553ec9ff} 
+void {\bfseries reset} ()
+\item 
+\Hypertarget{classRPiController_1_1MdParser_a8e63e38ac9a9cb8bea53206f6ff8f2f9}\label{classRPiController_1_1MdParser_a8e63e38ac9a9cb8bea53206f6ff8f2f9} 
+void {\bfseries set\+Bits\+Per\+Pixel} (int bpp)
+\item 
+\Hypertarget{classRPiController_1_1MdParser_ad6d5f773a05f36173f82291f02b9703a}\label{classRPiController_1_1MdParser_ad6d5f773a05f36173f82291f02b9703a} 
+void {\bfseries set\+Num\+Lines} (unsigned int num\+Lines)
+\item 
+\Hypertarget{classRPiController_1_1MdParser_acfae2046564183b63a766d46cb223b52}\label{classRPiController_1_1MdParser_acfae2046564183b63a766d46cb223b52} 
+void {\bfseries set\+Line\+Length\+Bytes} (unsigned int num\+Bytes)
+\item 
+\Hypertarget{classRPiController_1_1MdParser_ae6b639f4aa21476fc5d37ced74b41c17}\label{classRPiController_1_1MdParser_ae6b639f4aa21476fc5d37ced74b41c17} 
+virtual Status {\bfseries parse} (\mbox{\hyperlink{classlibcamera_1_1Span}{libcamera\+::\+Span}}$<$ const uint8\+\_\+t $>$ buffer, Register\+Map \&registers)=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classRPiController_1_1MdParser_a93b741d80ca9ccd3645875e52d039df2}\label{classRPiController_1_1MdParser_a93b741d80ca9ccd3645875e52d039df2} 
+bool {\bfseries reset\+\_\+}
+\item 
+\Hypertarget{classRPiController_1_1MdParser_a0ed32b7d368f1bfb5ed1ba1f336200bb}\label{classRPiController_1_1MdParser_a0ed32b7d368f1bfb5ed1ba1f336200bb} 
+int {\bfseries bits\+Per\+Pixel\+\_\+}
+\item 
+\Hypertarget{classRPiController_1_1MdParser_aa0750776f60785fed9b5ffc107bd0149}\label{classRPiController_1_1MdParser_aa0750776f60785fed9b5ffc107bd0149} 
+unsigned int {\bfseries num\+Lines\+\_\+}
+\item 
+\Hypertarget{classRPiController_1_1MdParser_a5fa3b47b7aefa72931f451d14ec2368c}\label{classRPiController_1_1MdParser_a5fa3b47b7aefa72931f451d14ec2368c} 
+unsigned int {\bfseries line\+Length\+Bytes\+\_\+}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/src/ipa/rpi/cam\+\_\+helper/md\+\_\+parser.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,46 @@
+\doxysection{camera3\+\_\+error\+\_\+msg Struct Reference}
+\hypertarget{structcamera3__error__msg}{}\label{structcamera3__error__msg}\index{camera3\_error\_msg@{camera3\_error\_msg}}
+
+
+{\ttfamily \#include $<$camera3.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structcamera3__error__msg_a3807690ea08b0bc7293dd19645db2a8c}{frame\+\_\+number}}
+\item 
+\mbox{\hyperlink{structcamera3__stream}{camera3\+\_\+stream\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structcamera3__error__msg_a78181e1ec37642a85293b016dfdabd7f}{error\+\_\+stream}}
+\item 
+int \mbox{\hyperlink{structcamera3__error__msg_ae1b72729cc0119f9f7928c2c3d16d957}{error\+\_\+code}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+camera3\+\_\+error\+\_\+msg\+\_\+t\+:
+
+Message contents for CAMERA3\+\_\+\+MSG\+\_\+\+ERROR 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structcamera3__error__msg_ae1b72729cc0119f9f7928c2c3d16d957}\label{structcamera3__error__msg_ae1b72729cc0119f9f7928c2c3d16d957} 
+\index{camera3\_error\_msg@{camera3\_error\_msg}!error\_code@{error\_code}}
+\index{error\_code@{error\_code}!camera3\_error\_msg@{camera3\_error\_msg}}
+\doxysubsubsection{\texorpdfstring{error\_code}{error\_code}}
+{\footnotesize\ttfamily int camera3\+\_\+error\+\_\+msg\+::error\+\_\+code}
+
+The code for this error; one of the CAMERA\+\_\+\+MSG\+\_\+\+ERROR enum values. \Hypertarget{structcamera3__error__msg_a78181e1ec37642a85293b016dfdabd7f}\label{structcamera3__error__msg_a78181e1ec37642a85293b016dfdabd7f} 
+\index{camera3\_error\_msg@{camera3\_error\_msg}!error\_stream@{error\_stream}}
+\index{error\_stream@{error\_stream}!camera3\_error\_msg@{camera3\_error\_msg}}
+\doxysubsubsection{\texorpdfstring{error\_stream}{error\_stream}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structcamera3__stream}{camera3\+\_\+stream\+\_\+t}}\texorpdfstring{$\ast$}{*} camera3\+\_\+error\+\_\+msg\+::error\+\_\+stream}
+
+Pointer to the stream that had a failure. NULL if the stream isn\textquotesingle{}t applicable to the error. \Hypertarget{structcamera3__error__msg_a3807690ea08b0bc7293dd19645db2a8c}\label{structcamera3__error__msg_a3807690ea08b0bc7293dd19645db2a8c} 
+\index{camera3\_error\_msg@{camera3\_error\_msg}!frame\_number@{frame\_number}}
+\index{frame\_number@{frame\_number}!camera3\_error\_msg@{camera3\_error\_msg}}
+\doxysubsubsection{\texorpdfstring{frame\_number}{frame\_number}}
+{\footnotesize\ttfamily uint32\+\_\+t camera3\+\_\+error\+\_\+msg\+::frame\+\_\+number}
+
+Frame number of the request the error applies to. 0 if the frame number isn\textquotesingle{}t applicable to the error. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/android/hardware/libhardware/include/hardware/camera3.\+h\end{DoxyCompactItemize}

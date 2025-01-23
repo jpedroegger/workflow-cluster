@@ -1,0 +1,49 @@
+\doxysection{Battery\+And\+Speed\+Widget.\+h}
+\hypertarget{BatteryAndSpeedWidget_8h_source}{}\label{BatteryAndSpeedWidget_8h_source}\index{src/head\_unit/cluster\_qt/includes/BatteryAndSpeedWidget.h@{src/head\_unit/cluster\_qt/includes/BatteryAndSpeedWidget.h}}
+\mbox{\hyperlink{BatteryAndSpeedWidget_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ BATTERANDSPEEDYWIDGET\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ BATTERANDSPEEDYWIDGET\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Colors_8h}{Colors.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QPainter>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QTimer>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBatteryAndSpeedWidget}{BatteryAndSpeedWidget}}\ :\ \textcolor{keyword}{public}\ QWidget}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBatteryAndSpeedWidget}{BatteryAndSpeedWidget}}(QWidget*\ parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBatteryAndSpeedWidget_a4b08d7475dd59dc1804d47824ce0f68b}{\string~BatteryAndSpeedWidget}}();}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBatteryAndSpeedWidget_a390d6831c7c65a36da504cb47a2770a7}{setCurrentSpeed}}(\textcolor{keywordtype}{int}\ speed);}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBatteryAndSpeedWidget_a63b92f9679050d19cb2ccfa6f308da2d}{setCurrentLevel}}(\textcolor{keywordtype}{int}\ battery);}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBatteryAndSpeedWidget_a1f84cda3aa2909bcfde4eacd8811afe3}{accelerate}}(\textcolor{keywordtype}{int}\ forward\_key);}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ QColor\ \mbox{\hyperlink{classBatteryAndSpeedWidget_a9c536b1b3c2c768ff229d9df6a01491f}{main\_color}};}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ QColor\ \mbox{\hyperlink{classBatteryAndSpeedWidget_a422f467ed7ae6a4ed9289ed31b3b2f24}{accent\_color}};}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ QColor\ \mbox{\hyperlink{classBatteryAndSpeedWidget_a8e5cf4dfb06995d95cfc1ff64b3e0976}{alphabet\_color}};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBatteryAndSpeedWidget_a2729834a955825b1e2fe5c1bce7d07a7}{paintEvent}}(QPaintEvent*\ event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classBatteryAndSpeedWidget_ad1d2d5b5daf8306b47055833301105b0}{currentLevel}};}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classBatteryAndSpeedWidget_a450c4696d009a0f66eaf14294d8207dc}{currentSpeed}};}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classColor}{Color}}\ \mbox{\hyperlink{classBatteryAndSpeedWidget_a91b9ca9d8c91a483ade1a3bbeb613b6a}{color1}};}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBatteryAndSpeedWidget_a37b757e111cf973df4e7ba4ffbf6cb65}{drawScale}}(QPainter\&\ painter,\ \textcolor{keywordtype}{int}\ centerX,\ \textcolor{keywordtype}{int}\ centerY,\ \textcolor{keywordtype}{int}\ radius);}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBatteryAndSpeedWidget_ac7512dc6ee5f57714194ed75e742bc5e}{drawCentralNumber}}(QPainter\&\ painter,\ \textcolor{keywordtype}{int}\ centerX,\ \textcolor{keywordtype}{int}\ centerY);}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBatteryAndSpeedWidget_a8c283b51a58f5f8d1629098607d4afa0}{drawBatteryNumber}}(QPainter\&\ painter,\ \textcolor{keywordtype}{int}\ centerX,\ \textcolor{keywordtype}{int}\ centerY);}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ QColor\ \mbox{\hyperlink{classBatteryAndSpeedWidget_a4f2515ad6286654f348d346071fd1049}{calculateBarColor}}(\textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBatteryAndSpeedWidget_aac11c5cf4f33fafcabb54147f2165ea6}{drawBars}}(QPainter\&\ painter,\ \textcolor{keywordtype}{int}\ centerX,\ \textcolor{keywordtype}{int}\ centerY,\ \textcolor{keywordtype}{int}\ radius,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ startAngle,\ \textcolor{keywordtype}{double}\ endAngle,\ \textcolor{keywordtype}{int}\ Level);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBatteryAndSpeedWidget_a8e46b48dea9a4235edacf82d8245f36e}{updateLevel}}();}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBatteryAndSpeedWidget_a6d95a2b1196b95ce52cc12693d1a9ccf}{updateSpeed}}();}
+\DoxyCodeLine{00041\ \};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

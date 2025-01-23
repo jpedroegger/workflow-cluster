@@ -1,0 +1,45 @@
+\doxysection{ipu3\+\_\+uapi\+\_\+yuvp1\+\_\+chnr\+\_\+sense\+\_\+gain\+\_\+config Struct Reference}
+\hypertarget{structipu3__uapi__yuvp1__chnr__sense__gain__config}{}\label{structipu3__uapi__yuvp1__chnr__sense__gain__config}\index{ipu3\_uapi\_yuvp1\_chnr\_sense\_gain\_config@{ipu3\_uapi\_yuvp1\_chnr\_sense\_gain\_config}}
+
+
+{\ttfamily \#include $<$intel-\/ipu3.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__chnr__sense__gain__config_a0487a6a879b017da2315e0a1b76407f1}\label{structipu3__uapi__yuvp1__chnr__sense__gain__config_a0487a6a879b017da2315e0a1b76407f1} 
+\+\_\+\+\_\+u32 {\bfseries vy}\+:8
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__chnr__sense__gain__config_a3ef634efd506a5340562ae56adaed614}\label{structipu3__uapi__yuvp1__chnr__sense__gain__config_a3ef634efd506a5340562ae56adaed614} 
+\+\_\+\+\_\+u32 {\bfseries vu}\+:8
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__chnr__sense__gain__config_a31a207e414023807c3599d15de3c5f74}\label{structipu3__uapi__yuvp1__chnr__sense__gain__config_a31a207e414023807c3599d15de3c5f74} 
+\+\_\+\+\_\+u32 {\bfseries vv}\+:8
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__chnr__sense__gain__config_a822fccd1035ba73f67eb5e356991df4e}\label{structipu3__uapi__yuvp1__chnr__sense__gain__config_a822fccd1035ba73f67eb5e356991df4e} 
+\+\_\+\+\_\+u32 {\bfseries reserved0}\+:8
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__chnr__sense__gain__config_a8b7cde0cf324038f5c83dbfa59552825}\label{structipu3__uapi__yuvp1__chnr__sense__gain__config_a8b7cde0cf324038f5c83dbfa59552825} 
+\+\_\+\+\_\+u32 {\bfseries hy}\+:8
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__chnr__sense__gain__config_ac45c6459163898c0d20bae2529580ea3}\label{structipu3__uapi__yuvp1__chnr__sense__gain__config_ac45c6459163898c0d20bae2529580ea3} 
+\+\_\+\+\_\+u32 {\bfseries hu}\+:8
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__chnr__sense__gain__config_abcd3c615473145cdb06ef5530a525ac2}\label{structipu3__uapi__yuvp1__chnr__sense__gain__config_abcd3c615473145cdb06ef5530a525ac2} 
+\+\_\+\+\_\+u32 {\bfseries hv}\+:8
+\item 
+\Hypertarget{structipu3__uapi__yuvp1__chnr__sense__gain__config_a6b581171807fb29c93e37ae2b9087f3c}\label{structipu3__uapi__yuvp1__chnr__sense__gain__config_a6b581171807fb29c93e37ae2b9087f3c} 
+\+\_\+\+\_\+u32 {\bfseries reserved1}\+:8
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct \doxylink{structipu3__uapi__yuvp1__chnr__sense__gain__config}{ipu3\+\_\+uapi\+\_\+yuvp1\+\_\+chnr\+\_\+sense\+\_\+gain\+\_\+config} -\/ Chroma noise reduction gains
+
+All sensitivity gain parameters have precision u13.\+0, range \mbox{[}0, 8191\mbox{]}.
+
+@vy\+: Sensitivity of horizontal edge of Y, default 100 @vu\+: Sensitivity of horizontal edge of U, default 100 @vv\+: Sensitivity of horizontal edge of V, default 100 @reserved0\+: reserved @hy\+: Sensitivity of vertical edge of Y, default 50 @hu\+: Sensitivity of vertical edge of U, default 50 @hv\+: Sensitivity of vertical edge of V, default 50 @reserved1\+: reserved 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/peripherals/camera/libcamera/include/linux/intel-\/ipu3.\+h\end{DoxyCompactItemize}

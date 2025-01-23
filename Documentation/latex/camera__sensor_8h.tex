@@ -1,0 +1,83 @@
+\doxysection{src/peripherals/camera/libcamera/include/libcamera/internal/camera\+\_\+sensor.h File Reference}
+\hypertarget{camera__sensor_8h}{}\label{camera__sensor_8h}\index{src/peripherals/camera/libcamera/include/libcamera/internal/camera\_sensor.h@{src/peripherals/camera/libcamera/include/libcamera/internal/camera\_sensor.h}}
+
+
+A camera sensor.  
+
+
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$variant$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$libcamera/base/class.\+h$>$}\newline
+{\ttfamily \#include $<$libcamera/control\+\_\+ids.\+h$>$}\newline
+{\ttfamily \#include $<$libcamera/controls.\+h$>$}\newline
+{\ttfamily \#include $<$libcamera/geometry.\+h$>$}\newline
+{\ttfamily \#include $<$libcamera/orientation.\+h$>$}\newline
+{\ttfamily \#include $<$libcamera/transform.\+h$>$}\newline
+{\ttfamily \#include "{}libcamera/internal/bayer\+\_\+format.\+h"{}}\newline
+{\ttfamily \#include "{}libcamera/internal/camera\+\_\+sensor\+\_\+properties.\+h"{}}\newline
+{\ttfamily \#include "{}libcamera/internal/v4l2\+\_\+subdevice.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classlibcamera_1_1CameraSensor}{libcamera\+::\+Camera\+Sensor}}
+\begin{DoxyCompactList}\small\item\em A abstract camera sensor. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classlibcamera_1_1CameraSensorFactoryBase}{libcamera\+::\+Camera\+Sensor\+Factory\+Base}}
+\begin{DoxyCompactList}\small\item\em Base class for camera sensor factories. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classlibcamera_1_1CameraSensorFactory}{libcamera\+::\+Camera\+Sensor\+Factory$<$ \+\_\+\+Camera\+Sensor $>$}}
+\begin{DoxyCompactList}\small\item\em Registration of \doxylink{classlibcamera_1_1CameraSensorFactory}{Camera\+Sensor\+Factory} classes and creation of instances. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacelibcamera}{libcamera}}
+\begin{DoxyCompactList}\small\item\em Top-\/level libcamera namespace. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{camera__sensor_8h_a4eb72a0c095a1f9293905d047f75ef18}{REGISTER\+\_\+\+CAMERA\+\_\+\+SENSOR}}(sensor,  priority)~static Camera\+Sensor\+Factory$<$sensor$>$ global\+\_\+\#\#sensor\#\#Factory\{ \#sensor, priority \};
+\begin{DoxyCompactList}\small\item\em Register a camera sensor type to the sensor factory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A camera sensor. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{camera__sensor_8h_a4eb72a0c095a1f9293905d047f75ef18}\label{camera__sensor_8h_a4eb72a0c095a1f9293905d047f75ef18} 
+\index{camera\_sensor.h@{camera\_sensor.h}!REGISTER\_CAMERA\_SENSOR@{REGISTER\_CAMERA\_SENSOR}}
+\index{REGISTER\_CAMERA\_SENSOR@{REGISTER\_CAMERA\_SENSOR}!camera\_sensor.h@{camera\_sensor.h}}
+\doxysubsubsection{\texorpdfstring{REGISTER\_CAMERA\_SENSOR}{REGISTER\_CAMERA\_SENSOR}}
+{\footnotesize\ttfamily \#define REGISTER\+\_\+\+CAMERA\+\_\+\+SENSOR(\begin{DoxyParamCaption}\item[{}]{sensor,  }\item[{}]{priority }\end{DoxyParamCaption})~static Camera\+Sensor\+Factory$<$sensor$>$ global\+\_\+\#\#sensor\#\#Factory\{ \#sensor, priority \};}
+
+
+
+Register a camera sensor type to the sensor factory. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em sensor} & Class name of the Camera\+Sensor derived class to register \\
+\hline
+\mbox{\texttt{ in}}  & {\em priority} & Priority order for factory selection\\
+\hline
+\end{DoxyParams}
+Register a Camera\+Sensor subclass with the factory and make it available to try and match sensors. The subclass needs to implement a static match function\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{static}\ std::variant<std::unique\_ptr<CameraSensor>,\ \textcolor{keywordtype}{int}>\ match(MediaEntity\ *entity);}
+
+\end{DoxyCode}
+
+
+The function tests if the sensor class supports the camera sensor identified by a Media\+Entity. If so, it creates a new instance of the sensor class. The return value is a variant that contains
+
+
+\begin{DoxyItemize}
+\item A new instance of the camera sensor class if the entity matched and creation succeeded ;
+\item A non-\/zero error code if the entity matched and the creation failed ; or
+\item A zero error code if the entity didn\textquotesingle{}t match.
+\end{DoxyItemize}
+
+When multiple factories can support the same Media\+Entity (as in the match() function of multiple factories returning true for the same entity), the {\itshape priority} argument selects which factory will be used. See Camera\+Sensor\+Factory\+Base\+::create() for more information. 

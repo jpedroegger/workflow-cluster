@@ -1,0 +1,49 @@
+\doxysection{device\+\_\+status.\+h}
+\hypertarget{device__status_8h_source}{}\label{device__status_8h_source}\index{src/peripherals/camera/libcamera/src/ipa/rpi/controller/device\_status.h@{src/peripherals/camera/libcamera/src/ipa/rpi/controller/device\_status.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ BSD-\/2-\/Clause\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2019-\/2021,\ Raspberry\ Pi\ Ltd}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ device\ (image\ sensor)\ status}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{include_2libcamera_2base_2utils_8h}{libcamera/base/utils.h}}>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ Definition\ of\ "{}device\ metadata"{}\ which\ stores\ things\ like\ exposure\ time\ and}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ analogue\ gain\ that\ downstream\ control\ algorithms\ will\ want\ to\ know.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structDeviceStatus}{DeviceStatus}}\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{structDeviceStatus}{DeviceStatus}}()}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ :\ exposureTime(std::chrono::seconds(0)),\ frameLength(0),}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ lineLength(std::chrono::seconds(0)),\ analogueGain(0.0)}
+\DoxyCodeLine{00023\ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\ \&operator<<(std::ostream\ \&out,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structDeviceStatus}{DeviceStatus}}\ \&d);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{/*\ time\ the\ image\ is\ exposed\ */}}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{libcamera::utils::Duration}}\ exposureTime;}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{/*\ frame\ length\ given\ in\ number\ of\ lines\ */}}
+\DoxyCodeLine{00031\ \ \ \ \ uint32\_t\ frameLength;}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{comment}{/*\ line\ length\ for\ the\ current\ frame\ */}}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{classlibcamera_1_1utils_1_1Duration}{libcamera::utils::Duration}}\ lineLength;}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{double}\ analogueGain;}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{/*\ 1.0/distance-\/in-\/metres\ */}}
+\DoxyCodeLine{00036\ \ \ \ \ std::optional<double>\ lensPosition;}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{comment}{/*\ 1/f\ so\ that\ brightness\ quadruples\ when\ this\ doubles\ */}}
+\DoxyCodeLine{00038\ \ \ \ \ std::optional<double>\ aperture;}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{/*\ proportional\ to\ brightness\ with\ 0\ =\ no\ flash,\ 1\ =\ maximum\ flash\ */}}
+\DoxyCodeLine{00040\ \ \ \ \ std::optional<double>\ flashIntensity;}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{comment}{/*\ Sensor\ reported\ temperature\ value\ (in\ degrees)\ */}}
+\DoxyCodeLine{00042\ \ \ \ \ std::optional<double>\ sensorTemperature;}
+\DoxyCodeLine{00043\ \};}
+
+\end{DoxyCode}

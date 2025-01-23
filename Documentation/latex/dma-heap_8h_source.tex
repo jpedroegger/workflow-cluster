@@ -1,0 +1,38 @@
+\doxysection{dma-\/heap.h}
+\hypertarget{dma-heap_8h_source}{}\label{dma-heap_8h_source}\index{src/peripherals/camera/libcamera/include/linux/dma-\/heap.h@{src/peripherals/camera/libcamera/include/linux/dma-\/heap.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ SPDX-\/License-\/Identifier:\ GPL-\/2.0\ WITH\ Linux-\/syscall-\/note\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ DMABUF\ Heaps\ Userspace\ API}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2011\ Google,\ Inc.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2019\ Linaro\ Ltd.}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ \_LINUX\_DMABUF\_POOL\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ \_LINUX\_DMABUF\_POOL\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <linux/ioctl.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <linux/types.h>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00018\ \textcolor{comment}{/*\ Valid\ FD\_FLAGS\ are\ O\_CLOEXEC,\ O\_RDONLY,\ O\_WRONLY,\ O\_RDWR\ */}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ DMA\_HEAP\_VALID\_FD\_FLAGS\ (O\_CLOEXEC\ |\ O\_ACCMODE)}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{comment}{/*\ Currently\ no\ heap\ flags\ */}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ DMA\_HEAP\_VALID\_HEAP\_FLAGS\ (0ULL)}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structdma__heap__allocation__data}{dma\_heap\_allocation\_data}}\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \_\_u64\ len;}
+\DoxyCodeLine{00037\ \ \ \ \ \_\_u32\ fd;}
+\DoxyCodeLine{00038\ \ \ \ \ \_\_u32\ fd\_flags;}
+\DoxyCodeLine{00039\ \ \ \ \ \_\_u64\ heap\_flags;}
+\DoxyCodeLine{00040\ \};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ DMA\_HEAP\_IOC\_MAGIC\ \ \ \ \ \ 'H'}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ DMA\_HEAP\_IOCTL\_ALLOC\ \ \ \ \_IOWR(DMA\_HEAP\_IOC\_MAGIC,\ 0x0,\(\backslash\)}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ struct\ dma\_heap\_allocation\_data)}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_LINUX\_DMABUF\_POOL\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}
