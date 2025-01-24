@@ -40,7 +40,7 @@ int main(int argc, char* argv[])
                               cputemp2, topBar, topBar2, stackedWidget, mainWindow, node);
     app.installEventFilter(&eventManager);
 
-    arrowSymbol->setGeometry(374, 140, 270, 320); // x, y, width, height
+    arrowSymbol->setGeometry(374, 140, 240, 320); // x, y, width, height
     //speedometer->setGeometry(90, 170, 325, 325);
     battery->setGeometry(500, 140, 325, 325);
     leftB->setGeometry(-5, 250, 100, 100);
@@ -80,7 +80,7 @@ int main(int argc, char* argv[])
     mainLayout->addWidget(stackedWidget);
 
     mainWindow->setLayout(mainLayout);
-    mainWindow->resize(750, 700);
+    mainWindow->resize(850, 700);
     mainWindow->setStyleSheet(QString("%1; margin: 0px; padding: 0px;").arg(color.background));
     mainWindow->show();
 
