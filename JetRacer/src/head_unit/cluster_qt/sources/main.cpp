@@ -17,14 +17,14 @@ int main(int argc, char* argv[])
     TopBar*                 topBar = new TopBar(mode1Page);
     Blinkers*               leftB = new Blinkers(mode1Page, "left", "off");
     Blinkers*               rightB = new Blinkers(mode1Page, "right", "off");
-    SpeedometerWidget*      speedometer = new SpeedometerWidget(mode1Page, 90, 130, 325, 325);
+    SpeedometerWidget*      speedometer = new SpeedometerWidget(mode1Page, 90, 145, 300, 300);
     BatteryWidget*          battery = new BatteryWidget(mode1Page);
     FanSpeedWidget*         fanspeed = new FanSpeedWidget(mode1Page);
     CPUTempWidget*          cputemp = new CPUTempWidget(mode1Page);
     ArrowSymbolWidget*      arrowSymbol = new ArrowSymbolWidget(mode1Page, "zero");
 
     // Mode 2
-    StatsWidget*            stats = new StatsWidget(mode2Page, 330, 100, 600, 400);
+    StatsWidget*            stats = new StatsWidget(mode2Page, 350, 150, 550, 400);
     TopBar*                 topBar2 = new TopBar(mode2Page);
     Blinkers*               rightB2 = new Blinkers(mode2Page, "right", "off");
     Blinkers*               leftB2 = new Blinkers(mode2Page, "left", "off");
@@ -32,30 +32,30 @@ int main(int argc, char* argv[])
     FanSpeedWidget*         fanspeed2 = new FanSpeedWidget(mode2Page);
     CPUTempWidget*          cputemp2 = new CPUTempWidget(mode2Page);
 
+
     // Ros node
-    auto node = std::make_shared<RosNode>();
+    //auto node = std::make_shared<RosNode>();
 
     EventManager eventManager(arrowSymbol, speedometer, battery, bas, leftB, rightB,
                               leftB2, rightB2, stats, fanspeed, fanspeed2, cputemp,
-                              cputemp2, topBar, topBar2, stackedWidget, mainWindow, node);
+                              cputemp2, topBar, topBar2, stackedWidget, mainWindow);
     app.installEventFilter(&eventManager);
-
-    arrowSymbol->setGeometry(374, 140, 240, 320); // x, y, width, height
-    //speedometer->setGeometry(90, 170, 325, 325);
-    battery->setGeometry(500, 140, 325, 325);
+    arrowSymbol->setGeometry(390, 140, 240, 320); // x, y, width, height
+    //speedometer->setGeometry(90, 170, 300, 300);
+    battery->setGeometry(615, 145, 300, 300);
     leftB->setGeometry(-5, 250, 100, 100);
-    rightB->setGeometry(700, 250, 100, 100);
+    rightB->setGeometry(900, 250, 100, 100);
     fanspeed->setGeometry(0, 530, 150, 140);
     cputemp->setGeometry(100, 530, 150, 140);
-    topBar->setGeometry(300, 600, 250, 50);
+    topBar->setGeometry(250, 600, 250, 50);
     //settings->setGeometry(1120, -10, 250, 250);
 
-    bas->setGeometry(130, 50, 200, 400);
+    bas->setGeometry(110, 80, 200, 400);
     leftB2->setGeometry(-5, 250, 100, 100);
-    rightB2->setGeometry(700, 250, 100, 100);
+    rightB2->setGeometry(900, 250, 100, 100);
     fanspeed2->setGeometry(0, 530, 150, 140);
     cputemp2->setGeometry(100, 530, 150, 140);
-    topBar2->setGeometry(300, 600, 250, 50);
+    topBar2->setGeometry(250, 600, 250, 50);
 
     // Toolbar for switching modes
     QToolBar* toolBar = new QToolBar;

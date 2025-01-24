@@ -52,8 +52,8 @@ void SpeedometerWidget::drawScale(QPainter& painter, int centerX, int centerY,
     int minSpeed = 0, step = 20;
     double startAngle = -45; // Start angle for 0 speed (bottom left)
     double endAngle = 225;   // End angle for max speed (bottom right)
-    QFont font("Arial", 20, QFont::Bold); // Example: Arial, size 10, bold
-    painter.setPen(QPen(alphabet_color, 4));
+    QFont font("Arial", 20); // Example: Arial, size 10, bold
+    painter.setPen(QPen(alphabet_color, 6));
     painter.setFont(font);
     for (int speed = minSpeed; speed <= maxSpeed; speed += step / 2)
     {
@@ -70,7 +70,7 @@ void SpeedometerWidget::drawScale(QPainter& painter, int centerX, int centerY,
         else if (speed / 10 % 2 != 0)
             painter.setPen(QPen(Qt::gray, 6));
         painter.drawLine(xOuter, yOuter, xInner, yInner);
-        painter.setPen(QPen(alphabet_color, 5));
+        painter.setPen(QPen(alphabet_color, 2));
         // Draw label
         int xLabel = centerX - std::cos(rad) * (radius - 55) - 8;
         int yLabel = centerY - std::sin(rad) * (radius - 55);
@@ -100,7 +100,7 @@ void SpeedometerWidget::drawCentralNumber(QPainter& painter, int centerX,
                                           int centerY)
 {
     // Set font and color for the speed number
-    QFont font("Arial", 40, QFont::Bold); // Large font for the speed
+    QFont font("Arial", 30, QFont::Bold); // Large font for the speed
     painter.setFont(font);
     painter.setPen(QPen(alphabet_color));
     QString speedText = QString::number(currentSpeed);

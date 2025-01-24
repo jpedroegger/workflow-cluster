@@ -52,7 +52,7 @@ void BatteryWidget::drawScale(QPainter& painter, int centerX, int centerY, int r
         drawBars(painter, centerX, centerY, radius, startAngle, endAngle, 100);
     painter.setPen(QPen(main_color, 15));
     painter.drawEllipse(centerX - radius, centerY - radius, 2 * radius, 2 * radius);
-    smaller_r -=  80;
+    smaller_r -=  60;
     painter.drawEllipse(centerX - smaller_r, centerY - smaller_r, 2 * smaller_r, 2 * smaller_r);
 }
 
@@ -103,7 +103,7 @@ QColor BatteryWidget::calculateBarColor(int value) {
 
 void BatteryWidget::drawCentralNumber(QPainter& painter, int centerX, int centerY) {
     // Set font and color for the Level number
-    QFont font("Arial", 40, QFont::Bold);  // Large font for the Level
+    QFont font("Arial", 30, QFont::Bold);  // Large font for the Level
     painter.setFont(font);
     painter.setPen(QPen(alphabet_color));
     QString LevelText = QString::number(currentLevel);
@@ -121,7 +121,7 @@ void BatteryWidget::drawCentralNumber(QPainter& painter, int centerX, int center
     QFontMetrics smallMetrics(smallFont);
     int kphWidth = smallMetrics.horizontalAdvance("%");
     int kphX = centerX - kphWidth / 2; // Center-align "KPH"
-    int kphY = y + textRect.height() - 30;  // Position "KPH" below the Level text
+    int kphY = y + textRect.height() - 20;  // Position "KPH" below the Level text
     // Draw "KPH"
     painter.drawText(kphX, kphY, "%");
 }
