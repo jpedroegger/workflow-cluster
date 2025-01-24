@@ -29,21 +29,22 @@ ArrowSymbolWidget::ArrowSymbolWidget(QWidget* parent, std::string input)
 
 ArrowSymbolWidget::~ArrowSymbolWidget() {}
 
+
 void ArrowSymbolWidget::setDrawVerticalArrows(bool enabled)
 {
     m_drawVerticalArrows = enabled;
     update(); // Trigger a repaint
 }
 
-void ArrowSymbolWidget::setDrawLeftCurve(bool enabled)
+void ArrowSymbolWidget::setdrawLeftUpperCurve(bool enabled)
 {
-    m_drawLeftCurve = enabled;
+    m_drawLeftUpperCurve = enabled;
     update(); // Trigger a repaint
 }
 
-void ArrowSymbolWidget::setDrawRightCurve(bool enabled)
+void ArrowSymbolWidget::setdrawRightUpperCurve(bool enabled)
 {
-    m_drawRightCurve = enabled;
+    m_drawRightUpperCurve = enabled;
     update(); // Trigger a repaint
 }
 
