@@ -33,12 +33,12 @@ int main(int argc, char* argv[])
     CPUTempWidget*          cputemp2 = new CPUTempWidget(mode2Page);
 
 
-    // Ros node
-    //auto node = std::make_shared<RosNode>();
+    auto node = std::make_shared<RosNode>();
 
     EventManager eventManager(arrowSymbol, speedometer, battery, bas, leftB, rightB,
                               leftB2, rightB2, stats, fanspeed, fanspeed2, cputemp,
-                              cputemp2, topBar, topBar2, stackedWidget, mainWindow);
+                              cputemp2, topBar, topBar2, stackedWidget, mainWindow, node);
+    app.installEventFilter(&eventManager);
     app.installEventFilter(&eventManager);
     arrowSymbol->setGeometry(390, 140, 240, 320); // x, y, width, height
     //speedometer->setGeometry(90, 170, 300, 300);
