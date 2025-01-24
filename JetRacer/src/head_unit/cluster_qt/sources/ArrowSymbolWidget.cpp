@@ -124,9 +124,9 @@ void ArrowSymbolWidget::drawLeftUpperCurve(QPainter& painter, std::string color)
 
     QPainterPath leftCurve;
     leftCurve.moveTo(centerX, centerY + 40);
-    leftCurve.cubicTo(centerX - 30, centerY - 40, centerX - 50, centerY - 50, centerX - 100, centerY - 60);
+    leftCurve.cubicTo(centerX - 30, centerY - 40, centerX - 30, centerY - 50, centerX - 80, centerY - 60);
     painter.drawPath(leftCurve);
-    drawArrowhead(painter, centerX - 100, centerY - 50, 45, arrowSize, color);
+    drawArrowhead(painter, centerX - 80, centerY - 50, 45, arrowSize, color);
 }
 
 void ArrowSymbolWidget::drawRightUpperCurve(QPainter& painter, std::string color)
@@ -142,9 +142,9 @@ void ArrowSymbolWidget::drawRightUpperCurve(QPainter& painter, std::string color
 
     QPainterPath rightCurve;
     rightCurve.moveTo(centerX, centerY + 40);
-    rightCurve.cubicTo(centerX + 30, centerY - 40, centerX + 50, centerY - 50, centerX + 100, centerY - 60);
+    rightCurve.cubicTo(centerX + 30, centerY - 40, centerX + 30, centerY - 50, centerX + 80, centerY - 60);
     painter.drawPath(rightCurve);
-    drawArrowhead(painter, centerX + 100, centerY - 50, 135, arrowSize, color);
+    drawArrowhead(painter, centerX + 80, centerY - 50, 135, arrowSize, color);
 }
 
 void ArrowSymbolWidget::drawLeftLowerCurve(QPainter& painter, std::string color)
@@ -160,9 +160,9 @@ void ArrowSymbolWidget::drawLeftLowerCurve(QPainter& painter, std::string color)
 
     QPainterPath leftCurve;
     leftCurve.moveTo(centerX, centerY - 40);
-    leftCurve.cubicTo(centerX - 30, centerY + 40, centerX - 50, centerY + 50, centerX - 100, centerY + 60);
+    leftCurve.cubicTo(centerX - 30, centerY + 40, centerX - 30, centerY + 50, centerX - 80, centerY + 60);
     painter.drawPath(leftCurve);
-    drawArrowhead(painter, centerX - 100, centerY + 70, 45, arrowSize, color);
+    drawArrowhead(painter, centerX - 80, centerY + 70, 45, arrowSize, color);
 }
 
 void ArrowSymbolWidget::drawRightLowerCurve(QPainter& painter, std::string color)
@@ -178,9 +178,9 @@ void ArrowSymbolWidget::drawRightLowerCurve(QPainter& painter, std::string color
 
     QPainterPath rightCurve;
     rightCurve.moveTo(centerX, centerY - 40);
-    rightCurve.cubicTo(centerX + 30, centerY + 40, centerX + 50, centerY + 50, centerX + 100, centerY + 60);
+    rightCurve.cubicTo(centerX + 30, centerY + 40, centerX + 30, centerY + 50, centerX + 80, centerY + 60);
     painter.drawPath(rightCurve);
-    drawArrowhead(painter, centerX + 100, centerY + 70, 135, arrowSize, color);
+    drawArrowhead(painter, centerX + 80, centerY + 70, 135, arrowSize, color);
 }
 
 void ArrowSymbolWidget::drawArrowhead(QPainter& painter, int x, int y, double angle, int size, std::string color)
