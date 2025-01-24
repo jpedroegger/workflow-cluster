@@ -10,7 +10,7 @@ SpeedSensorNode::SpeedSensorNode() : rclcpp::Node("speed_sensor")
     speed_publisher_ =
         this->create_publisher<std_msgs::msg::UInt8>("speed_readings", 10);
     rpm_publisher_ =
-        this->create_publisher<std_msgs::msg::Int32>("rpm_readings", 10);
+        this->create_publisher<std_msgs::msg::UInt32>("rpm_readings", 10);
 }
 
 SpeedSensorNode::~SpeedSensorNode() {}
@@ -30,9 +30,18 @@ void SpeedSensorNode::writeSpeed(
     else
     {
         std_msgs::msg::UInt8 speed_msg;
+        std_msgs::msg::UInt32 rpm_msg;
+        float rot_per_sec =
+            (static_cast<float>(response->read_data.at(0)) / NB_HOLES) *
+            (1000.0 / POLL_FREQ_MS);
+        float calculated_speed =
+            (rot_per_sec * WHEELS_PERIMETER_M) * 10.0; // calculated speed dm/s
 
-        speed_msg.set__data(response->read_data.at(0));
+        rpm_msg.set__data(rot_per_sec * 60.0);
+        speed_msg.set__data(calculated_speed);
+
         speed_publisher_->publish(speed_msg);
+        rpm_publisher_->publish(rpm_msg);
     }
 }
 

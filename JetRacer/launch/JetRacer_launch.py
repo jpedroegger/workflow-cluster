@@ -63,24 +63,24 @@ def generate_launch_description():
             executable='teleop_node',
             name='teleop'
         ),
-        Node(
-            package='camera_ros',
-            executable='camera_node',
-            name='camera_node',
-            arguments=['--ros-args', '--log-level', 'fatal'], 
-            parameters=[
-                {
-                    "format": "RGB888",
-                    "width": 1920,
-                    "height": 1080,
-                }
-            ],
-            remappings=[
-                ('/camera_node/image_raw', 'image_raw'),
-                ('/camera_node/image_raw/compressed', 'image_compressed'),
-                ('/camera_node/camera_info', 'camera_info')
-            ]
-        ),
+        # Node(
+        #     package='camera_ros',
+        #     executable='camera_node',
+        #     name='camera_node',
+        #     arguments=['--ros-args', '--log-level', 'fatal'], 
+        #     parameters=[
+        #         {
+        #             "format": "RGB888",
+        #             "width": 1920,
+        #             "height": 1080,
+        #         }
+        #     ],
+        #     remappings=[
+        #         ('/camera_node/image_raw', 'image_raw'),
+        #         ('/camera_node/image_raw/compressed', 'image_compressed'),
+        #         ('/camera_node/camera_info', 'camera_info')
+        #     ]
+        # ),
         Node (
             package='display_routine',
             executable='display_routine_node',
@@ -89,6 +89,8 @@ def generate_launch_description():
         Node (
             package='cluster',
             executable='cluster_node',
-            name='cluster'
+            name='cluster',
+            respawn=True,
+            respawn_delay=2.0
         ),
     ])

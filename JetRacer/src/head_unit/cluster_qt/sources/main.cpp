@@ -38,8 +38,8 @@ int main(int argc, char* argv[])
     QVBoxLayout* mode1Layout = new QVBoxLayout();
     QHBoxLayout* mode1ContentLayout = new QHBoxLayout();
 
-    EventManager eventManager(arrowSymbol, speedometer, battery, bas, leftB, rightB,
-                              stackedWidget, node);
+    EventManager eventManager(arrowSymbol, speedometer, battery, bas, leftB,
+                              rightB, stackedWidget, node);
     app.installEventFilter(&eventManager);
 
     arrowSymbol->setFixedSize(400, 400);
