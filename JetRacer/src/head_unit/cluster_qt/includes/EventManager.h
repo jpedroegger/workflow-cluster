@@ -58,6 +58,8 @@ class EventManager : public QWidget
                      std::shared_ptr<RosNode> ros_node);
         virtual ~EventManager();
         Color color1;
+        void changeUnits();
+        void changeColors();
 
     protected:
         bool eventFilter(QObject* obj, QEvent* event) override;
