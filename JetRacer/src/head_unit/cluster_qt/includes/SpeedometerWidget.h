@@ -11,7 +11,7 @@ class SpeedometerWidget : public QWidget
 {
 
     public:
-        SpeedometerWidget(QWidget* parent = nullptr);
+        SpeedometerWidget(QWidget* parent = nullptrint x = 0, int y = 0, int width = 0, int height = 0);
         ~SpeedometerWidget();
 
         void setCurrentSpeed(int speed);
