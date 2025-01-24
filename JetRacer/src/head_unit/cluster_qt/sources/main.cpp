@@ -32,16 +32,16 @@ int main(int argc, char* argv[])
     BatteryAndSpeedWidget*  bas = new BatteryAndSpeedWidget(mode2Page);
     FanSpeedWidget*         fanspeed2 = new FanSpeedWidget(mode2Page);
     CPUTempWidget*          cputemp2 = new CPUTempWidget(mode2Page);
-    SettingsWidget*         settings2 = new SettingsWidget(mode2Page, stats);
-    SettingsWidget*         settings = new SettingsWidget(mode1Page, stats);
+    //SettingsWidget*         settings2 = new SettingsWidget(mode2Page, stats);
+    //SettingsWidget*         settings = new SettingsWidget(mode1Page, stats);
 
 
     // Ros node
     //auto node = std::make_shared<RosNode>();
 
     EventManager eventManager(arrowSymbol, speedometer, battery, bas, leftB, rightB,
-                              leftB2, rightB2, stats, topBar, topBar2, stackedWidget,
-                              mainWindow);
+                              leftB2, rightB2, stats, fanspeed, fanspeed2, cputemp,
+                              cputemp2, topBar, topBar2, stackedWidget, mainWindow);
     app.installEventFilter(&eventManager);
     arrowSymbol->setGeometry(454, 180, 270, 320); // x, y, width, height
     //speedometer->setGeometry(90, 170, 365, 365);
@@ -51,7 +51,7 @@ int main(int argc, char* argv[])
     fanspeed->setGeometry(0, 630, 150, 140);
     cputemp->setGeometry(100, 630, 150, 140);
     topBar->setGeometry(340, 700, 250, 50);
-    settings->setGeometry(1120, -10, 250, 250);
+    //settings->setGeometry(1120, -10, 250, 250);
 
     bas->setGeometry(130, 125, 200, 400);
     leftB2->setGeometry(-5, 300, 100, 100);
@@ -59,7 +59,7 @@ int main(int argc, char* argv[])
     fanspeed2->setGeometry(0, 630, 150, 140);
     cputemp2->setGeometry(100, 630, 150, 140);
     topBar2->setGeometry(340, 700, 250, 50);
-    settings2->setGeometry(1120, -10, 250, 250);
+    //settings2->setGeometry(1120, -10, 250, 250);
 
     // Toolbar for switching modes
     QToolBar* toolBar = new QToolBar;

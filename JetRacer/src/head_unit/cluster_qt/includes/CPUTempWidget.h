@@ -12,7 +12,8 @@ class CPUTempWidget : public QWidget {
     public:
         CPUTempWidget(QWidget* parent = nullptr);
         ~CPUTempWidget();
-        void changeColor(int  array_index);
+        void changeColor(int array_index);
+        void changeUnits();
         QColor  main_color;
         QColor  accent_color;
         QColor  alphabet_color;
@@ -22,7 +23,13 @@ class CPUTempWidget : public QWidget {
 
     private:
         int currentSpeed;
+        int index = 0;
+
         Color color1;
+        QString unit;
+        QPixmap image;             // First image
+        QPixmap image_array[4];
+
         void drawScale(QPainter& painter, int centerX, int centerY, int radius);
         void drawNeedle(QPainter& painter, int centerX, int centerY, int radius);
         void drawCentralNumber(QPainter& painter, int centerX, int centerY);

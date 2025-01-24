@@ -6,6 +6,8 @@
 #include "Blinkers.h"
 #include "Colors.h"
 #include "TopBar.h"
+#include "FanSpeedWidget.h"
+#include "CPUTempWidget.h"
 //#include "RosNode.hpp"
 #include "SpeedometerWidget.h"
 #include "StatsWidget.h"
@@ -31,6 +33,10 @@ class EventManager : public QWidget
         Blinkers* left_blinker2;
         Blinkers* right_blinker2;
         StatsWidget* stats;
+        FanSpeedWidget* fan;
+        FanSpeedWidget* fan2;
+        CPUTempWidget* cpu;
+        CPUTempWidget* cpu2;
         TopBar* top;
         TopBar* top2;
         QSet<int> pressedKeys;
@@ -45,7 +51,8 @@ class EventManager : public QWidget
                      BatteryWidget* py_battery, BatteryAndSpeedWidget* py_batspeed,
                      Blinkers* left_blinker, Blinkers* right_blinker,
                      Blinkers* left_blinker2, Blinkers* right_blinker2,
-                     StatsWidget* stats, TopBar* top, TopBar* top2,
+                     StatsWidget* stats, FanSpeedWidget* fan, FanSpeedWidget* fan2,
+                     CPUTempWidget* cpu, CPUTempWidget* cpu2, TopBar* top, TopBar* top2,
                      QStackedWidget* stackedWidget, QWidget* mainWindow);
         virtual ~EventManager();
         Color color1;

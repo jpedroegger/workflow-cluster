@@ -4,11 +4,12 @@ EventManager::EventManager(ArrowSymbolWidget* arrow, SpeedometerWidget* py_speed
                      BatteryWidget* py_battery, BatteryAndSpeedWidget* py_batspeed,
                      Blinkers* left_blinker, Blinkers* right_blinker,
                      Blinkers* left_blinker2, Blinkers* right_blinker2,
-                     StatsWidget* stats, TopBar* top, TopBar* top2,
+                     StatsWidget* stats, FanSpeedWidget* fan, FanSpeedWidget* fan2,
+                     CPUTempWidget* cpu, CPUTempWidget* cpu2, TopBar* top, TopBar* top2,
                      QStackedWidget* stackedWidget, QWidget* mainWindow)
     : arrows(arrow), py_speed(py_speed), py_battery(py_battery), py_batspeed(py_batspeed),
       left_blinker(left_blinker), right_blinker(right_blinker), left_blinker2(left_blinker2), 
-      right_blinker2(right_blinker2), stats(stats), top(top), top2(top2),
+      right_blinker2(right_blinker2), stats(stats), fan(fan), fan2(fan2), cpu(cpu), cpu2(cpu2), top(top), top2(top2),
       stackedWidget(stackedWidget), mainWindow(mainWindow)
 {
     color1 = Color();
@@ -190,6 +191,10 @@ void EventManager::changeColors()
     top2->changeColor(color1.counter);
     left_blinker2->changeColor(color1.counter);
     right_blinker2->changeColor(color1.counter);
+    fan->changeColor(color1.counter);
+    fan2->changeColor(color1.counter);
+    cpu->changeColor(color1.counter);
+    cpu2->changeColor(color1.counter);
     mainWindow->setStyleSheet(color1.background_array[color1.counter]);
 }
 
@@ -198,6 +203,8 @@ void EventManager::changeUnits()
     py_speed->changeUnits();
     py_batspeed->changeUnits();
     stats->changeUnits();
+    cpu->changeUnits();
+    cpu2->changeUnits();
 }
 
 

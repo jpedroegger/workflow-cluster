@@ -7,7 +7,12 @@ FanSpeedWidget::FanSpeedWidget(QWidget* parent)
     main_color = color1.main_color;
     accent_color = color1.accent_color;
     alphabet_color = color1.alphabet_color;
-    setFocusPolicy(Qt::StrongFocus); 
+    setFocusPolicy(Qt::StrongFocus);
+    image_array[0] = QPixmap("../assets/icons/fan_p.png");
+    image_array[1] = QPixmap("../assets/icons/fan_r.png");
+    image_array[2] = QPixmap("../assets/icons/fan_i.png");
+    image_array[3] = QPixmap("../assets/icons/fan_g.png");
+    image = image_array[index];
 }
 
 
@@ -27,7 +32,7 @@ void FanSpeedWidget::paintEvent(QPaintEvent* event)
 
 void FanSpeedWidget::drawScale(QPainter& painter, int centerX, int centerY, int radius) {
 
-    painter.setPen(QPen(Qt::black, 8));
+    painter.setPen(QPen(main_color, 8));
     painter.drawEllipse(centerX - radius, centerY - radius, 2 * radius, 2 * radius);
 
 }
@@ -42,8 +47,7 @@ void FanSpeedWidget::drawNeedle(QPainter& painter, int centerX, int centerY, int
     int yStart = centerY - std::sin(rad) * (radius - 3);
     int xEnd = centerX - std::cos(rad) * (radius + 1);
     int yEnd = centerY - std::sin(rad) * (radius + 1);
-    QPen pen(Qt::gray, 5);
-    painter.setPen(pen);
+    painter.setPen(QPen(accent_color, 5));
 
     painter.drawLine(xStart, yStart, xEnd, yEnd);
 }
@@ -52,7 +56,7 @@ void FanSpeedWidget::drawCentralNumber(QPainter& painter, int centerX, int cente
 
     QFont font("Arial", 20, QFont::Bold); 
     painter.setFont(font);
-    painter.setPen(QPen(Qt::white));
+    painter.setPen(QPen(alphabet_color));
     QString speedText = QString::number(currentSpeed);
 
     QFontMetrics metrics(font);
@@ -71,7 +75,7 @@ void FanSpeedWidget::drawCentralNumber(QPainter& painter, int centerX, int cente
     int kphY = y + textRect.height() - 20; 
 
     painter.drawText(kphX, kphY, "RPM");
-    QPixmap image("../assets/icons/fan_white.png");
+    image = image_array[index];
     if (!image.isNull()) {
         int imgWidth = 25; 
         int imgHeight = 25;
@@ -111,7 +115,8 @@ void    FanSpeedWidget::changeColor(int  array_index)
 {
     main_color = color1.main_color_array[array_index];
     accent_color = color1.accent_color_array[array_index];
-    alphabet_color = color1.alphabet_color_array[array_index];   
+    alphabet_color = color1.alphabet_color_array[array_index];
+    index = array_index; 
     update();
 }
 
