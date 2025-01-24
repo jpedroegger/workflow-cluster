@@ -17,7 +17,7 @@ int main(int argc, char* argv[])
     TopBar*                 topBar = new TopBar(mode1Page);
     Blinkers*               leftB = new Blinkers(mode1Page, "left", "off");
     Blinkers*               rightB = new Blinkers(mode1Page, "right", "off");
-    SpeedometerWidget*      speedometer = new SpeedometerWidget(mode1Page, 90, 170, 325, 325);
+    SpeedometerWidget*      speedometer = new SpeedometerWidget(mode1Page, 90, 130, 325, 325);
     BatteryWidget*          battery = new BatteryWidget(mode1Page);
     FanSpeedWidget*         fanspeed = new FanSpeedWidget(mode1Page);
     CPUTempWidget*          cputemp = new CPUTempWidget(mode1Page);
@@ -40,19 +40,19 @@ int main(int argc, char* argv[])
                               cputemp2, topBar, topBar2, stackedWidget, mainWindow, node);
     app.installEventFilter(&eventManager);
 
-    arrowSymbol->setGeometry(454, 180, 270, 320); // x, y, width, height
+    arrowSymbol->setGeometry(414, 140, 270, 320); // x, y, width, height
     //speedometer->setGeometry(90, 170, 325, 325);
-    battery->setGeometry(720, 170, 325, 325);
-    leftB->setGeometry(-5, 300, 100, 100);
-    rightB->setGeometry(980, 300, 100, 100);
+    battery->setGeometry(680, 140, 325, 325);
+    leftB->setGeometry(-5, 250, 100, 100);
+    rightB->setGeometry(800, 250, 100, 100);
     fanspeed->setGeometry(0, 530, 150, 140);
     cputemp->setGeometry(100, 530, 150, 140);
     topBar->setGeometry(300, 600, 250, 50);
     //settings->setGeometry(1120, -10, 250, 250);
 
     bas->setGeometry(130, 125, 200, 400);
-    leftB2->setGeometry(-5, 300, 100, 100);
-    rightB2->setGeometry(980, 300, 100, 100);
+    leftB2->setGeometry(-5, 250, 100, 100);
+    rightB2->setGeometry(800, 250, 100, 100);
     fanspeed2->setGeometry(0, 530, 150, 140);
     cputemp2->setGeometry(100, 530, 150, 140);
     topBar2->setGeometry(300, 600, 250, 50);
@@ -80,7 +80,7 @@ int main(int argc, char* argv[])
     mainLayout->addWidget(stackedWidget);
 
     mainWindow->setLayout(mainLayout);
-    mainWindow->resize(1000, 700);
+    mainWindow->resize(850, 700);
     mainWindow->setStyleSheet(QString("%1; margin: 0px; padding: 0px;").arg(color.background));
     mainWindow->show();
 
