@@ -31,12 +31,13 @@ void SpeedSensorNode::writeSpeed(
     {
         std_msgs::msg::UInt8 speed_msg;
         std_msgs::msg::UInt32 rpm_msg;
-        int32_t rot_per_sec =
-            (response->read_data.at(0) * (POLL_FREQ_MS / 1000)) / NB_HOLES;
-        int32_t calculated_speed =
-            rot_per_sec * WHEELS_PERIMETER_M; // calculated speed m/s
+        float rot_per_sec =
+            (static_cast<float>(response->read_data.at(0)) / NB_HOLES) *
+            (1000.0 / POLL_FREQ_MS);
+        float calculated_speed =
+            (rot_per_sec * WHEELS_PERIMETER_M) * 10.0; // calculated speed dm/s
 
-        rpm_msg.set__data(rot_per_sec * 60);
+        rpm_msg.set__data(rot_per_sec * 60.0);
         speed_msg.set__data(calculated_speed);
 
         speed_publisher_->publish(speed_msg);
