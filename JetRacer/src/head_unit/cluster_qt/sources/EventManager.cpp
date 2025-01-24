@@ -65,7 +65,7 @@ void EventManager::processKeyStates()
     py_battery->update();
     py_batspeed->update();
 
-    /*
+    
     for (int key : pressedKeys)
     {
         switch (key)
@@ -100,7 +100,7 @@ void EventManager::processKeyStates()
             break;
         }
     }
-    */
+    
 }
 
 

@@ -17,14 +17,14 @@ int main(int argc, char* argv[])
     TopBar*                 topBar = new TopBar(mode1Page);
     Blinkers*               leftB = new Blinkers(mode1Page, "left", "off");
     Blinkers*               rightB = new Blinkers(mode1Page, "right", "off");
-    SpeedometerWidget*      speedometer = new SpeedometerWidget(mode1Page, 90, 170, 365, 365);
+    SpeedometerWidget*      speedometer = new SpeedometerWidget(mode1Page, 90, 170, 325, 325);
     BatteryWidget*          battery = new BatteryWidget(mode1Page);
     FanSpeedWidget*         fanspeed = new FanSpeedWidget(mode1Page);
     CPUTempWidget*          cputemp = new CPUTempWidget(mode1Page);
     ArrowSymbolWidget*      arrowSymbol = new ArrowSymbolWidget(mode1Page, "zero");
 
     // Mode 2
-    StatsWidget*            stats = new StatsWidget(mode2Page, 450, 200, 600, 400);
+    StatsWidget*            stats = new StatsWidget(mode2Page, 370, 200, 600, 400);
     TopBar*                 topBar2 = new TopBar(mode2Page);
     Blinkers*               rightB2 = new Blinkers(mode2Page, "right", "off");
     Blinkers*               leftB2 = new Blinkers(mode2Page, "left", "off");
@@ -41,21 +41,21 @@ int main(int argc, char* argv[])
     app.installEventFilter(&eventManager);
 
     arrowSymbol->setGeometry(454, 180, 270, 320); // x, y, width, height
-    //speedometer->setGeometry(90, 170, 365, 365);
-    battery->setGeometry(720, 170, 365, 365);
+    //speedometer->setGeometry(90, 170, 325, 325);
+    battery->setGeometry(720, 170, 325, 325);
     leftB->setGeometry(-5, 300, 100, 100);
-    rightB->setGeometry(1080, 300, 100, 100);
-    fanspeed->setGeometry(0, 630, 150, 140);
-    cputemp->setGeometry(100, 630, 150, 140);
-    topBar->setGeometry(340, 700, 250, 50);
+    rightB->setGeometry(980, 300, 100, 100);
+    fanspeed->setGeometry(0, 530, 150, 140);
+    cputemp->setGeometry(100, 530, 150, 140);
+    topBar->setGeometry(300, 600, 250, 50);
     //settings->setGeometry(1120, -10, 250, 250);
 
     bas->setGeometry(130, 125, 200, 400);
     leftB2->setGeometry(-5, 300, 100, 100);
-    rightB2->setGeometry(1080, 300, 100, 100);
-    fanspeed2->setGeometry(0, 630, 150, 140);
-    cputemp2->setGeometry(100, 630, 150, 140);
-    topBar2->setGeometry(340, 700, 250, 50);
+    rightB2->setGeometry(980, 300, 100, 100);
+    fanspeed2->setGeometry(0, 530, 150, 140);
+    cputemp2->setGeometry(100, 530, 150, 140);
+    topBar2->setGeometry(300, 600, 250, 50);
 
     // Toolbar for switching modes
     QToolBar* toolBar = new QToolBar;
@@ -80,7 +80,7 @@ int main(int argc, char* argv[])
     mainLayout->addWidget(stackedWidget);
 
     mainWindow->setLayout(mainLayout);
-    mainWindow->resize(1200, 800);
+    mainWindow->resize(1000, 700);
     mainWindow->setStyleSheet(QString("%1; margin: 0px; padding: 0px;").arg(color.background));
     mainWindow->show();
 
