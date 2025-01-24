@@ -36,6 +36,9 @@ set(HEADERS
     includes/EventManager.h
     includes/CameraWidget.h
 	includes/RosNode.hpp
+	includes/Colors.h
+    includes/SettingsWidget.h
+    includes/StatsWidget.h
 )
 
 set(SOURCES
@@ -52,6 +55,8 @@ set(SOURCES
     sources/EventManager.cpp
     sources/CameraWidget.cpp
 	sources/RosNode.cpp
+	sources/SettingsWidget.cpp
+	sources/StatsWidget.cpp
 )
 
 set(UI_FILES

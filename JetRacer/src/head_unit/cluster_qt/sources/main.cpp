@@ -13,72 +13,49 @@ int main(int argc, char* argv[])
     stackedWidget->addWidget(mode1Page); // Mode 1
     stackedWidget->addWidget(mode2Page); // Mode 2
 
-    // Mode 1
-    TopBar* topBar = new TopBar(mainWindow);
-    Blinkers* leftB = new Blinkers(mainWindow, "left", "off");
-    Blinkers* rightB = new Blinkers(mainWindow, "right", "off");
-    SpeedometerWidget* speedometer = new SpeedometerWidget(mainWindow);
-    BatteryWidget* battery = new BatteryWidget(mainWindow);
-    FanSpeedWidget* fanspeed = new FanSpeedWidget(mainWindow);
-    CPUTempWidget* cputemp = new CPUTempWidget(mainWindow);
-    ArrowSymbolWidget* arrowSymbol = new ArrowSymbolWidget(mainWindow, "zero");
+        // Mode 1
+    TopBar*                 topBar = new TopBar(mode1Page);
+    Blinkers*               leftB = new Blinkers(mode1Page, "left", "off");
+    Blinkers*               rightB = new Blinkers(mode1Page, "right", "off");
+    SpeedometerWidget*      speedometer = new SpeedometerWidget(mode1Page, 90, 170, 365, 365);
+    BatteryWidget*          battery = new BatteryWidget(mode1Page);
+    FanSpeedWidget*         fanspeed = new FanSpeedWidget(mode1Page);
+    CPUTempWidget*          cputemp = new CPUTempWidget(mode1Page);
+    ArrowSymbolWidget*      arrowSymbol = new ArrowSymbolWidget(mode1Page, "zero");
 
     // Mode 2
-    TopBar* topBar2 = new TopBar(mainWindow);
-    Blinkers* rightB2 = new Blinkers(mainWindow, "right", "off");
-    Blinkers* leftB2 = new Blinkers(mainWindow, "left", "off");
-    BatteryAndSpeedWidget* bas = new BatteryAndSpeedWidget(mainWindow);
-    FanSpeedWidget* fanspeed2 = new FanSpeedWidget(mainWindow);
-    CPUTempWidget* cputemp2 = new CPUTempWidget(mainWindow);
+    StatsWidget*            stats = new StatsWidget(mode2Page, 450, 200, 600, 400);
+    TopBar*                 topBar2 = new TopBar(mode2Page);
+    Blinkers*               rightB2 = new Blinkers(mode2Page, "right", "off");
+    Blinkers*               leftB2 = new Blinkers(mode2Page, "left", "off");
+    BatteryAndSpeedWidget*  bas = new BatteryAndSpeedWidget(mode2Page);
+    FanSpeedWidget*         fanspeed2 = new FanSpeedWidget(mode2Page);
+    CPUTempWidget*          cputemp2 = new CPUTempWidget(mode2Page);
 
     // Ros node
     auto node = std::make_shared<RosNode>();
 
-    // Layout for Mode 1
-    QVBoxLayout* mode1Layout = new QVBoxLayout();
-    QHBoxLayout* mode1ContentLayout = new QHBoxLayout();
-
-    EventManager eventManager(arrowSymbol, speedometer, battery, bas, leftB,
-                              rightB, stackedWidget, node);
+    EventManager eventManager(arrowSymbol, speedometer, battery, bas, leftB, rightB,
+                              leftB2, rightB2, stats, fanspeed, fanspeed2, cputemp,
+                              cputemp2, topBar, topBar2, stackedWidget, mainWindow, node);
     app.installEventFilter(&eventManager);
 
-    arrowSymbol->setFixedSize(400, 400);
+    arrowSymbol->setGeometry(454, 180, 270, 320); // x, y, width, height
+    //speedometer->setGeometry(90, 170, 365, 365);
+    battery->setGeometry(720, 170, 365, 365);
+    leftB->setGeometry(-5, 300, 100, 100);
+    rightB->setGeometry(1080, 300, 100, 100);
+    fanspeed->setGeometry(0, 630, 150, 140);
+    cputemp->setGeometry(100, 630, 150, 140);
+    topBar->setGeometry(340, 700, 250, 50);
+    //settings->setGeometry(1120, -10, 250, 250);
 
-    speedometer->resize(900, 900);
-    speedometer->setFixedSize(400, 400);
-    battery->resize(900, 900);
-    battery->setFixedSize(400, 400);
-    // cameraWidget->resize(1920, 1080);
-    // cameraWidget->setFixedSize(700, 500);
-
-    bas->resize(900, 900);
-    bas->setFixedSize(400, 400);
-
-    mode1ContentLayout->addWidget(leftB, 1);
-    mode1ContentLayout->addWidget(speedometer, 1);
-    mode1ContentLayout->addWidget(arrowSymbol, 1);
-    mode1ContentLayout->addWidget(battery, 1);
-    mode1ContentLayout->addWidget(rightB, 1);
-
-    mode1Layout->addLayout(mode1ContentLayout, 1);
-    mode1Layout->addWidget(fanspeed, 0, Qt::AlignBottom);
-    mode1Layout->addWidget(cputemp, 0, Qt::AlignBottom);
-    mode1Layout->addWidget(topBar, 0, Qt::AlignBottom);
-    mode1Page->setLayout(mode1Layout);
-
-    // Layout for Mode 2
-    QVBoxLayout* mode2Layout = new QVBoxLayout();
-    QHBoxLayout* mode2ContentLayout = new QHBoxLayout();
-
-    mode2ContentLayout->addWidget(leftB2, 1);
-    mode2ContentLayout->addWidget(bas, 2);
-    mode2ContentLayout->addWidget(rightB2, 1);
-
-    mode2Layout->addLayout(mode2ContentLayout, 1);
-    mode2Layout->addWidget(fanspeed2, 0, Qt::AlignBottom);
-    mode2Layout->addWidget(cputemp2, 0, Qt::AlignBottom);
-    mode2Layout->addWidget(topBar2, 0, Qt::AlignBottom);
-    mode2Page->setLayout(mode2Layout);
+    bas->setGeometry(130, 125, 200, 400);
+    leftB2->setGeometry(-5, 300, 100, 100);
+    rightB2->setGeometry(1080, 300, 100, 100);
+    fanspeed2->setGeometry(0, 630, 150, 140);
+    cputemp2->setGeometry(100, 630, 150, 140);
+    topBar2->setGeometry(340, 700, 250, 50);
 
     // Toolbar for switching modes
     QToolBar* toolBar = new QToolBar;
@@ -104,7 +81,7 @@ int main(int argc, char* argv[])
 
     mainWindow->setLayout(mainLayout);
     mainWindow->resize(1200, 800);
-    mainWindow->setStyleSheet(color.background);
+    mainWindow->setStyleSheet(QString("%1; margin: 0px; padding: 0px;").arg(color.background));
     mainWindow->show();
 
     /*

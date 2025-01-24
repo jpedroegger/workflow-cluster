@@ -3,6 +3,10 @@
 BatteryWidget::BatteryWidget(QWidget* parent)
     : QWidget(parent), currentLevel(0)
 {
+    color1 = Color();
+    main_color = color1.main_color;
+    accent_color = color1.accent_color;
+    alphabet_color = color1.alphabet_color;
     QTimer* timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, &BatteryWidget::updateLevel);
     timer->start(60000); // Update Level every 1ms
@@ -23,16 +27,14 @@ void BatteryWidget::paintEvent(QPaintEvent* event)
 
 void BatteryWidget::drawScale(QPainter& painter, int centerX, int centerY, int radius) {
     // Draw outer circle
-    painter.setPen(QPen(Qt::black, 15));
     int smaller_r = radius - 10;
-    painter.setPen(QPen(Qt::black, 15));
     
     // Draw tick marks and labels
     int minLevel = 0, maxLevel = 100, step = 10;
     double startAngle = -45; // Start angle for 0 Level (bottom left)
     double endAngle = 225;     // End angle for max Level (bottom right)
     QFont font("Arial", 20, QFont::Bold);  // Example: Arial, size 10, bold
-    painter.setPen(QPen(Qt::white, 6));
+    painter.setPen(QPen(alphabet_color, 6));
     painter.setFont(font);
     for (int Level = minLevel; Level <= maxLevel; Level += step / 2) {
         double angle = startAngle + (endAngle - startAngle) * (double(Level) / maxLevel);
@@ -42,7 +44,7 @@ void BatteryWidget::drawScale(QPainter& painter, int centerX, int centerY, int r
         int xInner = centerX - std::cos(rad) * (radius - 6);
         int yInner = centerY - std::sin(rad) * (radius - 6);
         // Draw tick mark
-        painter.setPen(QPen(Qt::white, 6));
+        painter.setPen(QPen(alphabet_color, 6));
         // Draw label
         int xLabel = centerX - std::cos(rad) * (radius - 55) - 8;
         int yLabel = centerY - std::sin(rad) * (radius - 55);
@@ -103,7 +105,7 @@ void BatteryWidget::drawCentralNumber(QPainter& painter, int centerX, int center
     // Set font and color for the Level number
     QFont font("Arial", 40, QFont::Bold);  // Large font for the Level
     painter.setFont(font);
-    painter.setPen(QPen(Qt::white));
+    painter.setPen(QPen(alphabet_color));
     QString LevelText = QString::number(currentLevel);
     // Calculate the bounding box for the Level text
     QFontMetrics metrics(font);
@@ -129,5 +131,13 @@ void BatteryWidget::updateLevel() {
 }
 
 void BatteryWidget::setCurrentLevel(int battery) {currentLevel = battery;}
+
+void    BatteryWidget::changeColor(int  array_index)
+{
+    main_color = color1.main_color_array[array_index];
+    accent_color = color1.accent_color_array[array_index];
+    alphabet_color = color1.alphabet_color_array[array_index];   
+    update();
+}
 
 BatteryWidget::~BatteryWidget() {}

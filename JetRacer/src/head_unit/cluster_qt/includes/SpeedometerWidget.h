@@ -16,6 +16,9 @@ class SpeedometerWidget : public QWidget
 
         void setCurrentSpeed(int speed);
         void accelerate(int forward_key);
+        void changeColor(int  array_index);
+        void changeUnits(void);
+        QString getUnit();
         QColor main_color;
         QColor accent_color;
         QColor alphabet_color;
@@ -25,6 +28,9 @@ class SpeedometerWidget : public QWidget
 
     private:
         int currentSpeed;
+        int maxSpeed;
+
+        QString unit;
         Color color1;
         void drawScale(QPainter& painter, int centerX, int centerY, int radius);
         void drawNeedle(QPainter& painter, int centerX, int centerY,
