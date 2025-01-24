@@ -53,7 +53,7 @@ void SpeedometerWidget::drawScale(QPainter& painter, int centerX, int centerY,
     double startAngle = -45; // Start angle for 0 speed (bottom left)
     double endAngle = 225;   // End angle for max speed (bottom right)
     QFont font("Arial", 20, QFont::Bold); // Example: Arial, size 10, bold
-    painter.setPen(QPen(alphabet_color, 6));
+    painter.setPen(QPen(alphabet_color, 4));
     painter.setFont(font);
     for (int speed = minSpeed; speed <= maxSpeed; speed += step / 2)
     {

@@ -24,7 +24,7 @@ int main(int argc, char* argv[])
     ArrowSymbolWidget*      arrowSymbol = new ArrowSymbolWidget(mode1Page, "zero");
 
     // Mode 2
-    StatsWidget*            stats = new StatsWidget(mode2Page, 370, 200, 600, 400);
+    StatsWidget*            stats = new StatsWidget(mode2Page, 330, 100, 600, 400);
     TopBar*                 topBar2 = new TopBar(mode2Page);
     Blinkers*               rightB2 = new Blinkers(mode2Page, "right", "off");
     Blinkers*               leftB2 = new Blinkers(mode2Page, "left", "off");
@@ -40,19 +40,19 @@ int main(int argc, char* argv[])
                               cputemp2, topBar, topBar2, stackedWidget, mainWindow, node);
     app.installEventFilter(&eventManager);
 
-    arrowSymbol->setGeometry(414, 140, 270, 320); // x, y, width, height
+    arrowSymbol->setGeometry(374, 140, 270, 320); // x, y, width, height
     //speedometer->setGeometry(90, 170, 325, 325);
-    battery->setGeometry(680, 140, 325, 325);
+    battery->setGeometry(500, 140, 325, 325);
     leftB->setGeometry(-5, 250, 100, 100);
-    rightB->setGeometry(800, 250, 100, 100);
+    rightB->setGeometry(700, 250, 100, 100);
     fanspeed->setGeometry(0, 530, 150, 140);
     cputemp->setGeometry(100, 530, 150, 140);
     topBar->setGeometry(300, 600, 250, 50);
     //settings->setGeometry(1120, -10, 250, 250);
 
-    bas->setGeometry(130, 125, 200, 400);
+    bas->setGeometry(130, 50, 200, 400);
     leftB2->setGeometry(-5, 250, 100, 100);
-    rightB2->setGeometry(800, 250, 100, 100);
+    rightB2->setGeometry(700, 250, 100, 100);
     fanspeed2->setGeometry(0, 530, 150, 140);
     cputemp2->setGeometry(100, 530, 150, 140);
     topBar2->setGeometry(300, 600, 250, 50);
@@ -80,7 +80,7 @@ int main(int argc, char* argv[])
     mainLayout->addWidget(stackedWidget);
 
     mainWindow->setLayout(mainLayout);
-    mainWindow->resize(850, 700);
+    mainWindow->resize(750, 700);
     mainWindow->setStyleSheet(QString("%1; margin: 0px; padding: 0px;").arg(color.background));
     mainWindow->show();
 
