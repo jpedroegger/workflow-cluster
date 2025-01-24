@@ -18,10 +18,10 @@ BatteryAndSpeedWidget::BatteryAndSpeedWidget(QWidget* parent)
 void BatteryAndSpeedWidget::paintEvent(QPaintEvent* event)
 {
     QPainter painter(this);
-    image_array[0] = QPixmap("../assets/icons/battery_p.png");
-    image_array[1] = QPixmap("../assets/icons/battery_r.png");
-    image_array[2] = QPixmap("../assets/icons/battery_i.png");
-    image_array[3] = QPixmap("../assets/icons/battery_g.png");
+    image_array[0] = QPixmap("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/battery_p.png");
+    image_array[1] = QPixmap("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/battery_r.png");
+    image_array[2] = QPixmap("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/battery_i.png");
+    image_array[3] = QPixmap("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/battery_g.png");
     image = image_array[index];
     painter.setRenderHint(QPainter::Antialiasing);
     int centerX = 40;

@@ -7,7 +7,7 @@ SettingsWidget::SettingsWidget(QWidget *parent, EventManager &event)
     mainIcon = new QPushButton(this);
     mainIcon->setFixedSize(50, 50);
     mainIcon->setStyleSheet("border: none; "
-                            "background-image: url('../assets/icons/settings.png'); "
+                            "background-image: url('/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/settings.png'); "
                             "background-repeat: no-repeat; "
                             "background-position: center;"
                             );
@@ -16,7 +16,7 @@ SettingsWidget::SettingsWidget(QWidget *parent, EventManager &event)
     closeIcon = new QPushButton(this);
     closeIcon->setFixedSize(50, 50);
     closeIcon->setStyleSheet("border: none; "
-                             "background-image: url('../assets/icons/settings.png'); "
+                             "background-image: url('/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/settings.png'); "
                              "background-repeat: no-repeat; "
                              "background-position: center;");
 
@@ -34,7 +34,7 @@ SettingsWidget::SettingsWidget(QWidget *parent, EventManager &event)
         "   text-align: center;"
         "}"
         );
-    themesIcon->setIcon(QIcon("../assets/icons/brush.png"));
+    themesIcon->setIcon(QIcon("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/brush.png"));
     themesIcon->setIconSize(QSize(50, 50));
     themesIcon->setText("Change Themes");
 
@@ -52,7 +52,7 @@ SettingsWidget::SettingsWidget(QWidget *parent, EventManager &event)
         "   text-align: center;"
         "}"
         );
-    changeUnitIcon->setIcon(QIcon("../assets/icons/convert.png"));
+    changeUnitIcon->setIcon(QIcon("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/convert.png"));
     changeUnitIcon->setIconSize(QSize(50, 50));
     changeUnitIcon->setText("Change Units");
 
