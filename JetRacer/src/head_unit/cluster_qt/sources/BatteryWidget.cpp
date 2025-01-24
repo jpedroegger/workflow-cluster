@@ -59,7 +59,7 @@ void BatteryWidget::drawScale(QPainter& painter, int centerX, int centerY, int r
 void BatteryWidget::drawBars(QPainter& painter, int centerX, int centerY, int radius, double startAngle, double endAngle, int Level) {
     int numBars = Level / 2; // Total number of bars (from 0 to 100)
     int barWidth = 6;  // Width of each bar
-    int innerRadius = radius - 80; // Inner radius for bars
+    int innerRadius = radius - 60; // Inner radius for bars
     int outerRadius = radius - 5; // Outer radius for bars
 
     int activeBars = static_cast<int>(currentLevel); // Bars below the needle

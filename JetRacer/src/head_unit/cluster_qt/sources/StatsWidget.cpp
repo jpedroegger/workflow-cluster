@@ -25,7 +25,7 @@ void    StatsWidget::paintEvent(QPaintEvent *event)
     QPainter painter(this);
 
     // Set up font for text
-    painter.setFont(QFont("Arial", 20, QFont::Bold));
+    painter.setFont(QFont("Arial", 15, QFont::Bold));
 
     int spacing = 20;
     int rectWidth = width / 2 - spacing;

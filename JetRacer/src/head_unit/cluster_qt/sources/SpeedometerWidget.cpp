@@ -10,7 +10,7 @@ SpeedometerWidget::SpeedometerWidget(QWidget* parent, int x, int y, int width, i
 {
     color1 = Color();
     color1 = Color();
-    unit = "KPH";
+    unit = "DPS";
     maxSpeed = 220;
     main_color = color1.main_color;
     accent_color = color1.accent_color;
@@ -144,12 +144,12 @@ void    SpeedometerWidget::changeColor(int  array_index)
 
 void    SpeedometerWidget::changeUnits(void)
 {
-    if (unit == "KPH"){
-        unit = "MPH";
+    if (unit == "DPS"){
+        unit = "FPS";
         maxSpeed = 160;
         currentSpeed *= 0.6214;
     } else {
-        unit = "KPH";
+        unit = "DPS";
         maxSpeed = 220;
         currentSpeed *= 1.609;
     }
