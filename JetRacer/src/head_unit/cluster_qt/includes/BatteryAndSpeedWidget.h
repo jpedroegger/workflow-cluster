@@ -10,7 +10,7 @@ class BatteryAndSpeedWidget : public QWidget
 {
 
     public:
-        BatteryAndSpeedWidget(QWidget* parent = nullptr);
+        BatteryAndSpeedWidget(QWidget* parent = nullptr, int x = 0, int y = 0, int width = 0, int height = 0);
         ~BatteryAndSpeedWidget();
 
         void setCurrentSpeed(int speed);

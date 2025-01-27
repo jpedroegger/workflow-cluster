@@ -1,6 +1,6 @@
 #include "../includes/BatteryWidget.h"
 
-BatteryWidget::BatteryWidget(QWidget* parent)
+BatteryWidget::BatteryWidget(QWidget* parent, int x, int y, int width, int height)
     : QWidget(parent), currentLevel(100)
 {
     color1 = Color();
@@ -9,6 +9,7 @@ BatteryWidget::BatteryWidget(QWidget* parent)
     alphabet_color = color1.alphabet_color;
     QTimer* timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, &BatteryWidget::updateLevel);
+    setGeometry(x, y, width, height);
     timer->start(800); // Update Level every 100ms
 }
 

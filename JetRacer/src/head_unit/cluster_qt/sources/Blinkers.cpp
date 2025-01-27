@@ -1,7 +1,7 @@
 #include "../includes/Blinkers.h"
 #include <QHBoxLayout>
 
-Blinkers::Blinkers(QWidget* parent, std::string dir, std::string mode)
+Blinkers::Blinkers(QWidget* parent, std::string dir, std::string mode, int x, int y, int width, int height)
     : QWidget(parent), isImage1Visible(true), blinking(false)
 {
     
@@ -10,23 +10,23 @@ Blinkers::Blinkers(QWidget* parent, std::string dir, std::string mode)
     blinking = false;
     isImage1Visible = true;
     toggleTimer = NULL;
-    
+    setGeometry(x, y, width, height);
     if (dir == "left")
     {
-        image1_array[0].load("../assets/icons/left_p.png");
+        image1_array[0].load("assets/icons/left_p.png");
         image1_array[1].load("assets/icons/left_r.png");
         image1_array[2].load("assets/icons/left_i.png");
         image1_array[3].load("assets/icons/left_g.png");
-        image2.load("../assets/icons/left_on.png");
+        image2.load("assets/icons/left_on.png");
         image1 = image1_array[0];
     }
     else
     {
-        image1_array[0].load("../assets/icons/right_p2.png");
+        image1_array[0].load("assets/icons/right_p2.png");
         image1_array[1].load("assets/icons/right_r.png");
         image1_array[2].load("assets/icons/right_i.png");
         image1_array[3].load("assets/icons/right_g.png");
-        image2.load("../assets/icons/right_on.png");
+        image2.load("assets/icons/right_on.png");
         image1 = image1_array[0];
     }
 

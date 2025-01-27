@@ -10,7 +10,7 @@ class BatteryWidget : public QWidget
 {
 
     public:
-        BatteryWidget(QWidget* parent = nullptr);
+        BatteryWidget(QWidget* parent = nullptr, int x = 0, int y = 0, int width = 0, int height = 0);
         ~BatteryWidget();
         
         void changeColor(int  array_index);

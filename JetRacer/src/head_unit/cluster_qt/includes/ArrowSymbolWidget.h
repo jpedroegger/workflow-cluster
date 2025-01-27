@@ -10,7 +10,7 @@
 class ArrowSymbolWidget : public QWidget
 {
     public:
-        ArrowSymbolWidget(QWidget* parent = nullptr, std::string input = "none");
+        ArrowSymbolWidget(QWidget* parent = nullptr, std::string input = "none", int x = 0, int y = 0, int width = 0, int height = 0);
         ~ArrowSymbolWidget();
 
         void setDrawVerticalArrows(bool enabled);

@@ -1,6 +1,6 @@
 #include "../includes/FanSpeedWidget.h"
 
-FanSpeedWidget::FanSpeedWidget(QWidget* parent)
+FanSpeedWidget::FanSpeedWidget(QWidget* parent, int x, int y, int width, int height)
     : QWidget(parent), currentSpeed(0)
 {
     color1 = Color();
@@ -8,11 +8,12 @@ FanSpeedWidget::FanSpeedWidget(QWidget* parent)
     accent_color = color1.accent_color;
     alphabet_color = color1.alphabet_color;
     setFocusPolicy(Qt::StrongFocus);
-    image_array[0] = QPixmap("../assets/icons/fan_p.png");
-    image_array[1] = QPixmap("../assets/icons/fan_r.png");
-    image_array[2] = QPixmap("../assets/icons/fan_i.png");
-    image_array[3] = QPixmap("../assets/icons/fan_g.png");
+    image_array[0] = QPixmap("assets/icons/fan_p.png");
+    image_array[1] = QPixmap("assets/icons/fan_r.png");
+    image_array[2] = QPixmap("assets/icons/fan_i.png");
+    image_array[3] = QPixmap("assets/icons/fan_g.png");
     image = image_array[index];
+    setGeometry(x, y, width, height);
 }
 
 

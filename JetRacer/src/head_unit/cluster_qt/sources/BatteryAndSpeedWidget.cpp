@@ -1,7 +1,7 @@
 #include "../includes/BatteryAndSpeedWidget.h"
 #include <iostream>
 
-BatteryAndSpeedWidget::BatteryAndSpeedWidget(QWidget* parent)
+BatteryAndSpeedWidget::BatteryAndSpeedWidget(QWidget* parent, int x, int y, int width, int height)
     : QWidget(parent), currentSpeed(0)
 {
     color1 = Color();
@@ -13,16 +13,17 @@ BatteryAndSpeedWidget::BatteryAndSpeedWidget(QWidget* parent)
     setFocusPolicy(Qt::StrongFocus);
     QTimer* timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, &BatteryAndSpeedWidget::updateLevel);
+    setGeometry(x, y, width, height);
     timer->start(800);
 }
 
 void BatteryAndSpeedWidget::paintEvent(QPaintEvent* event)
 {
     QPainter painter(this);
-    image_array[0] = QPixmap("../assets/icons/battery_p.png");
-    image_array[1] = QPixmap("../assets/icons/battery_r.png");
-    image_array[2] = QPixmap("../assets/icons/battery_i.png");
-    image_array[3] = QPixmap("../assets/icons/battery_g.png");
+    image_array[0] = QPixmap("assets/icons/battery_p.png");
+    image_array[1] = QPixmap("assets/icons/battery_r.png");
+    image_array[2] = QPixmap("assets/icons/battery_i.png");
+    image_array[3] = QPixmap("assets/icons/battery_g.png");
     image = image_array[index];
     painter.setRenderHint(QPainter::Antialiasing);
     int centerX = 40;

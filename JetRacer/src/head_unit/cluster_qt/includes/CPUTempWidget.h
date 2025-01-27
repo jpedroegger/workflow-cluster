@@ -10,7 +10,7 @@
 class CPUTempWidget : public QWidget {
 
     public:
-        CPUTempWidget(QWidget* parent = nullptr);
+        CPUTempWidget(QWidget* parent = nullptr, int x = 0, int y = 0, int width = 0, int height = 0);
         ~CPUTempWidget();
         void changeColor(int array_index);
         void changeUnits();

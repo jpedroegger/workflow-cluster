@@ -1,6 +1,6 @@
 #include "../includes/ArrowSymbolWidget.h"
 
-ArrowSymbolWidget::ArrowSymbolWidget(QWidget* parent, std::string input)
+ArrowSymbolWidget::ArrowSymbolWidget(QWidget* parent, std::string input, int x, int y, int width, int height)
     : QWidget(parent)
 {
     color1 = Color();
@@ -24,6 +24,7 @@ ArrowSymbolWidget::ArrowSymbolWidget(QWidget* parent, std::string input)
         m_greenLU = true;
     else if (input == "right")
         m_greenRU = true;
+    setGeometry(x, y, width, height);
     setFocusPolicy(Qt::StrongFocus);
 }
 
