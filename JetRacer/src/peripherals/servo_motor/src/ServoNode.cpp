@@ -1,5 +1,6 @@
 #include "ServoNode.hpp"
 #include <PCA9685Driver.hpp>
+#include <algorithm>
 #include <functional>
 #include <rclcpp/client.hpp>
 #include <rclcpp/logger.hpp>
@@ -80,14 +81,16 @@ void ServoNode::writeAngle(const geometry_msgs::msg::Twist::SharedPtr twist)
     }
 
     // map to an angle
-    uint8_t angle = static_cast<uint8_t>((-angular_z + 1.0) * 90);
+    int angle = (-angular_z + 1.0) * 90;
 
-    RCLCPP_DEBUG(this->get_logger(), "Writing angle: %d", angle);
+    // restrain angle
+    int restrained_angle = std::clamp((int)angle, MIN_ANGLE, MAX_ANGLE);
+    RCLCPP_DEBUG(this->get_logger(), "Writing angle: %d", restrained_angle);
 
     // Map the angle (0 to 180) to PCA9685 pulse width (102 to 510)
     uint16_t pulseWidth = static_cast<uint16_t>(
         MIN_COUNT +
-        (static_cast<float>(angle) * (MAX_COUNT - MIN_COUNT)) / 180);
+        (static_cast<float>(restrained_angle) * (MAX_COUNT - MIN_COUNT)) / 180);
 
     pca_driver_->setPWMDutyCycle(DEFAULT_CHANNEL, 0, pulseWidth);
 }
