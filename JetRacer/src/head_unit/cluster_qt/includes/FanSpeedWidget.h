@@ -10,7 +10,7 @@
 class FanSpeedWidget : public QWidget {
 
     public:
-        FanSpeedWidget(QWidget* parent = nullptr);
+        FanSpeedWidget(QWidget* parent = nullptr, int x = 0, int y = 0, int width = 0, int height = 0);
         ~FanSpeedWidget();
         void changeColor(int array_index);
         QColor  main_color;

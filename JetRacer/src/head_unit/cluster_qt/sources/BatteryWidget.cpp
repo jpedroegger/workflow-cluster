@@ -1,15 +1,14 @@
 #include "../includes/BatteryWidget.h"
 
-BatteryWidget::BatteryWidget(QWidget* parent)
+BatteryWidget::BatteryWidget(QWidget* parent, std::string input, int x, int y, int width, int height)
     : QWidget(parent), currentLevel(0)
 {
     color1 = Color();
     main_color = color1.main_color;
     accent_color = color1.accent_color;
     alphabet_color = color1.alphabet_color;
-    QTimer* timer = new QTimer(this);
-    connect(timer, &QTimer::timeout, this, &BatteryWidget::updateLevel);
-    timer->start(60000); // Update Level every 1ms
+    setGeometry(x, y, width, height);
+
 }
 
 void BatteryWidget::paintEvent(QPaintEvent* event)

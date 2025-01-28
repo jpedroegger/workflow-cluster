@@ -1,6 +1,6 @@
 #include "../includes/FanSpeedWidget.h"
 
-FanSpeedWidget::FanSpeedWidget(QWidget* parent)
+FanSpeedWidget::FanSpeedWidget(QWidget* parent, std::string input, int x, int y, int width, int height)
     : QWidget(parent), currentSpeed(0)
 {
     color1 = Color();
@@ -13,6 +13,7 @@ FanSpeedWidget::FanSpeedWidget(QWidget* parent)
     image_array[2] = QPixmap("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/fan_i.png");
     image_array[3] = QPixmap("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/fan_g.png");
     image = image_array[index];
+    setGeometry(x, y, width, height);
 }
 
 

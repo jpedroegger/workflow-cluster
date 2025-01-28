@@ -1,6 +1,6 @@
 #include "../includes/BatteryAndSpeedWidget.h"
 
-BatteryAndSpeedWidget::BatteryAndSpeedWidget(QWidget* parent)
+BatteryAndSpeedWidget::BatteryAndSpeedWidget(QWidget* parent, std::string input, int x, int y, int width, int height)
     : QWidget(parent), currentSpeed(0)
 {
     color1 = Color();
@@ -8,11 +8,8 @@ BatteryAndSpeedWidget::BatteryAndSpeedWidget(QWidget* parent)
     main_color = color1.main_color;
     accent_color = color1.accent_color;
     alphabet_color = color1.alphabet_color;
-    updateLevel();
     setFocusPolicy(Qt::StrongFocus);
-    QTimer* timer = new QTimer(this);
-    connect(timer, &QTimer::timeout, this, &BatteryAndSpeedWidget::updateLevel);
-    timer->start(800);
+    setGeometry(x, y, width, height);
 }
 
 void BatteryAndSpeedWidget::paintEvent(QPaintEvent* event)

@@ -11,7 +11,7 @@ class Blinkers : public QWidget
     Q_OBJECT
 
 public:
-    explicit Blinkers(QWidget* parent = nullptr, std::string dir = "left", std::string mode = "off");
+    explicit Blinkers(QWidget* parent = nullptr, std::string dir = "left", std::string mode = "off", int x = 0, int y = 0, int width = 0, int height = 0);
     virtual ~Blinkers();
 
     void    turnOnBlinkers(bool  on_off);

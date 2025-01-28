@@ -1,12 +1,13 @@
 #include "../includes/TopBar.h"
 #include <iostream>
 
-TopBar::TopBar(QWidget* parent) : QWidget(parent)
+TopBar::TopBar(QWidget* parent, std::string input, int x, int y, int width, int height) : QWidget(parent)
 {
     // Initialize layout
     layout = new QHBoxLayout(this);
     layout->setSpacing(1); // Optional: adjust spacing between images
     layout->setContentsMargins(0, 0, 0, 0); // Optional: adjust margins
+    setGeometry(x, y, width, height);
 
     // Create default and alternate images
     defaultImagePaths_array[0] = {

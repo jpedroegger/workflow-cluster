@@ -6,31 +6,31 @@ int main(int argc, char* argv[])
     QApplication app(argc, argv);
 
     QWidget* mainWindow = new QWidget;
-    QWidget* mode1Page = new QWidget;
-    QWidget* mode2Page = new QWidget;
+    QWidget* page1 = new QWidget;
+    QWidget* page2 = new QWidget;
 
     QStackedWidget* stackedWidget = new QStackedWidget;
-    stackedWidget->addWidget(mode1Page); // Mode 1
-    stackedWidget->addWidget(mode2Page); // Mode 2
+    stackedWidget->addWidget(page1); // Mode 1
+    stackedWidget->addWidget(page2); // Mode 2
 
-        // Mode 1
-    TopBar*                 topBar = new TopBar(mode1Page);
-    Blinkers*               leftB = new Blinkers(mode1Page, "left", "off");
-    Blinkers*               rightB = new Blinkers(mode1Page, "right", "off");
-    SpeedometerWidget*      speedometer = new SpeedometerWidget(mode1Page, 90, 145, 300, 300);
-    BatteryWidget*          battery = new BatteryWidget(mode1Page);
-    FanSpeedWidget*         fanspeed = new FanSpeedWidget(mode1Page);
-    CPUTempWidget*          cputemp = new CPUTempWidget(mode1Page);
-    ArrowSymbolWidget*      arrowSymbol = new ArrowSymbolWidget(mode1Page, "zero");
+    // Mode 1
+    SpeedometerWidget*      speedometer = new SpeedometerWidget(page1, 90, 145, 300, 300);
+    BatteryWidget*          battery = new BatteryWidget(615, 145, 300, 300);
+    ArrowSymbolWidget*      arrowSymbol = new ArrowSymbolWidget(page1, "zero", 390, 140, 240, 320);
+    Blinkers*               leftB = new Blinkers(page1, "left", "off", -5, 250, 100, 100);
+    Blinkers*               rightB = new Blinkers(page1, "right", "off", 900, 250, 100, 100);
+    FanSpeedWidget*         fanspeed = new FanSpeedWidget(page1, 0, 530, 150, 140);
+    CPUTempWidget*          cputemp = new CPUTempWidget(page1, 100, 530, 150, 140);
+    TopBar*                 topBar = new TopBar(page1, 250, 600, 250, 50);
 
     // Mode 2
-    StatsWidget*            stats = new StatsWidget(mode2Page, 350, 150, 550, 400);
-    TopBar*                 topBar2 = new TopBar(mode2Page);
-    Blinkers*               rightB2 = new Blinkers(mode2Page, "right", "off");
-    Blinkers*               leftB2 = new Blinkers(mode2Page, "left", "off");
-    BatteryAndSpeedWidget*  bas = new BatteryAndSpeedWidget(mode2Page);
-    FanSpeedWidget*         fanspeed2 = new FanSpeedWidget(mode2Page);
-    CPUTempWidget*          cputemp2 = new CPUTempWidget(mode2Page);
+    BatteryAndSpeedWidget*  bas = new BatteryAndSpeedWidget(page2, 110, 80, 200, 400);
+    StatsWidget*            stats = new StatsWidget(page2, 350, 150, 550, 400);
+    Blinkers*               leftB2 = new Blinkers(page2, "left", "off", -5, 250, 100, 100);
+    Blinkers*               rightB2 = new Blinkers(page2, "right", "off", 900, 250, 100, 100);
+    FanSpeedWidget*         fanspeed2 = new FanSpeedWidget(page2, 0, 530, 150, 140);
+    CPUTempWidget*          cputemp2 = new CPUTempWidget(page2, 100, 530, 150, 140);
+    TopBar*                 topBar2 = new TopBar(page2, 250, 600, 250, 50);
 
 
     auto node = std::make_shared<RosNode>();
@@ -39,24 +39,7 @@ int main(int argc, char* argv[])
                               leftB2, rightB2, stats, fanspeed, fanspeed2, cputemp,
                               cputemp2, topBar, topBar2, stackedWidget, mainWindow, node);
     app.installEventFilter(&eventManager);
-    app.installEventFilter(&eventManager);
-    arrowSymbol->setGeometry(390, 140, 240, 320); // x, y, width, height
-    //speedometer->setGeometry(90, 170, 300, 300);
-    battery->setGeometry(615, 145, 300, 300);
-    leftB->setGeometry(-5, 250, 100, 100);
-    rightB->setGeometry(900, 250, 100, 100);
-    fanspeed->setGeometry(0, 530, 150, 140);
-    cputemp->setGeometry(100, 530, 150, 140);
-    topBar->setGeometry(250, 600, 250, 50);
     //settings->setGeometry(1120, -10, 250, 250);
-
-    bas->setGeometry(110, 80, 200, 400);
-    leftB2->setGeometry(-5, 250, 100, 100);
-    rightB2->setGeometry(900, 250, 100, 100);
-    fanspeed2->setGeometry(0, 530, 150, 140);
-    cputemp2->setGeometry(100, 530, 150, 140);
-    topBar2->setGeometry(250, 600, 250, 50);
-
     // Toolbar for switching modes
     QToolBar* toolBar = new QToolBar;
     QAction* mode1Action = toolBar->addAction("Mode 1");
@@ -65,12 +48,12 @@ int main(int argc, char* argv[])
     QObject::connect(mode1Action, &QAction::triggered,
                      [&]()
                      {
-                         stackedWidget->setCurrentIndex(0); // Switch to Mode 1
+                         stackedWidget->setCurrentIndex(0);
                      });
     QObject::connect(mode2Action, &QAction::triggered,
                      [&]()
                      {
-                         stackedWidget->setCurrentIndex(1); // Switch to Mode 2
+                         stackedWidget->setCurrentIndex(1);
                      });
 
     // Main Layout
@@ -78,22 +61,12 @@ int main(int argc, char* argv[])
     QVBoxLayout* mainLayout = new QVBoxLayout();
     mainLayout->addWidget(toolBar);
     mainLayout->addWidget(stackedWidget);
-
     mainWindow->setLayout(mainLayout);
     mainWindow->resize(850, 700);
     mainWindow->setStyleSheet(QString("%1; margin: 0px; padding: 0px;").arg(color.background));
     mainWindow->show();
 
-    /*
-    QTimer::singleShot(2000, [&]() { topBar->setImageState(0, true); });
-    QTimer::singleShot(3000, [&]() { topBar->setImageState(1, true); });
-    QTimer::singleShot(4000, [&]() { topBar->setImageState(2, true); });
-    QTimer::singleShot(6000, [&]() { topBar->setImageState(4, true); });
-    QTimer::singleShot(7000, [&]() { topBar->setImageState(3, true); });
-    QTimer::singleShot(8000, [&]() { topBar->setImageState(5, true); });
-    */
     int ret = app.exec();
     rclcpp::shutdown();
-
     return ret;
 }

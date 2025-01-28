@@ -1,8 +1,9 @@
 #include "../includes/SettingsWidget.h"
 
-SettingsWidget::SettingsWidget(QWidget *parent, EventManager &event)
+SettingsWidget::SettingsWidget(QWidget *parent, EventManager &event, std::string input, int x, int y, int width, int height)
     : QWidget(parent), expanded(false), event(event)
 {
+    setGeometry(x, y, width, height);
     // Initialize main icon with an image
     mainIcon = new QPushButton(this);
     mainIcon->setFixedSize(50, 50);

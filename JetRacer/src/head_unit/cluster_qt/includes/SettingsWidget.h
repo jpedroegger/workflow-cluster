@@ -16,7 +16,7 @@ class SettingsWidget : public QWidget
     Q_OBJECT
 
 public:
-    explicit SettingsWidget(QWidget *parent, EventManager &event);
+    explicit SettingsWidget(QWidget *parent, EventManager &event, int x = 0, int y = 0, int width = 0, int height = 0);
 
 protected:
     void mousePressEvent(QMouseEvent *event) override;
