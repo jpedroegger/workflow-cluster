@@ -11,7 +11,8 @@ class SpeedometerWidget : public QWidget
 {
 
     public:
-        SpeedometerWidget(QWidget* parent = nullptr, int x = 0, int y = 0, int width = 0, int height = 0);
+        SpeedometerWidget(QWidget* parent = nullptr, int x = 0, int y = 0,
+                          int width = 0, int height = 0);
         ~SpeedometerWidget();
 
         void setCurrentSpeed(int speed);
@@ -36,9 +37,6 @@ class SpeedometerWidget : public QWidget
         void drawNeedle(QPainter& painter, int centerX, int centerY,
                         int radius);
         void drawCentralNumber(QPainter& painter, int centerX, int centerY);
-
-    private slots:
-        void updateSpeed();
 };
 
 #endif // SPEEDOMETERWIDGET_H

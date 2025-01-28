@@ -105,8 +105,8 @@ void BatteryAndSpeedWidget::updateLevel()
 
 BatteryAndSpeedWidget::~BatteryAndSpeedWidget() {}
 
-void BatteryAndSpeedWidget::drawCentralNumber(QPainter& painter, int centerX,
-                                              int centerY)
+void BatteryAndSpeedWidget::drawCentralNumber(QPainter& painter,
+                                            int centerX, int centerY)
 {
     QFont font("Arial", 80, QFont::Bold);
     painter.setFont(font);
@@ -130,8 +130,8 @@ void BatteryAndSpeedWidget::drawCentralNumber(QPainter& painter, int centerX,
     painter.drawText(kphX, kphY, unit);
 }
 
-void BatteryAndSpeedWidget::drawBatteryNumber(QPainter& painter, int centerX,
-                                              int centerY)
+void BatteryAndSpeedWidget::drawBatteryNumber(QPainter& painter,
+                                            int centerX, int centerY)
 {
     QFont font("Arial", 10, QFont::Bold);
     painter.setFont(font);
@@ -195,7 +195,8 @@ void    BatteryAndSpeedWidget::changeUnits(void)
 
 void BatteryAndSpeedWidget::setCurrentSpeed(int speed)
 {
-    if (speed == currentSpeed || (unit == "DPS" && speed * 0.6214 == currentSpeed))
+    if (speed == currentSpeed
+    || (unit == "DPS" && speed * 0.6214 == currentSpeed))
         return ;
     if (unit == "FPS")
         currentSpeed = 0.6214 * speed;
@@ -203,5 +204,3 @@ void BatteryAndSpeedWidget::setCurrentSpeed(int speed)
         currentSpeed = speed;
     update();
 }
-
-void BatteryAndSpeedWidget::updateSpeed() { update(); }
