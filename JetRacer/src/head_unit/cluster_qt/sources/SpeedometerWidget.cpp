@@ -164,10 +164,13 @@ QString SpeedometerWidget::getUnit()
 
 void SpeedometerWidget::setCurrentSpeed(int speed)
 {
+    if (speed == currentSpeed || (unit == "MPH" && speed * 0.614 == currentSpeed))
+        return ;
     if (unit == "MPH")
         currentSpeed = 0.6214 * speed;
     else
         currentSpeed = speed;
+    update();
 }
 
 SpeedometerWidget::~SpeedometerWidget() {}

@@ -61,10 +61,6 @@ void EventManager::processKeyStates()
     stats->setObstacles(2);
 
     stats->update();
-    py_speed->update();
-    py_battery->update();
-    py_batspeed->update();
-
     
     for (int key : pressedKeys)
     {

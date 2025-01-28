@@ -174,7 +174,13 @@ void    BatteryAndSpeedWidget::changeColor(int  array_index)
     update();
 }
 
-void    BatteryAndSpeedWidget::setCurrentLevel(int battery) { currentLevel = battery; }
+void    BatteryAndSpeedWidget::setCurrentLevel(int battery)
+{
+    if (battery == currentLevel)
+        return ;
+    currentLevel = battery;
+    update();
+}
 void    BatteryAndSpeedWidget::changeUnits(void)
 {
     if (unit == "DPS"){
@@ -189,10 +195,13 @@ void    BatteryAndSpeedWidget::changeUnits(void)
 
 void BatteryAndSpeedWidget::setCurrentSpeed(int speed)
 {
+    if (speed == currentSpeed || (unit == "DPS" && speed * 0.6214 == currentSpeed))
+        return ;
     if (unit == "FPS")
         currentSpeed = 0.6214 * speed;
     else
         currentSpeed = speed;
+    update();
 }
 
 void BatteryAndSpeedWidget::updateSpeed() { update(); }

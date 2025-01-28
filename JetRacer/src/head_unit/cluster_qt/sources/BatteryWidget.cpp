@@ -129,7 +129,13 @@ void BatteryWidget::updateLevel() {
     update();
 }
 
-void BatteryWidget::setCurrentLevel(int battery) {currentLevel = battery;}
+void BatteryWidget::setCurrentLevel(int battery)
+{
+    if (battery == currentLevel)
+        return ;
+    currentLevel = battery;
+    update();
+}
 
 void    BatteryWidget::changeColor(int  array_index)
 {
