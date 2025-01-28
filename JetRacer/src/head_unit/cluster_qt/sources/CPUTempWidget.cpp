@@ -4,6 +4,7 @@ CPUTempWidget::CPUTempWidget(QWidget* parent, std::string input, int x, int y, i
     : QWidget(parent), currentSpeed(0)
 {
     color1 = Color();
+    index = color1.counter;
     main_color = color1.main_color;
     accent_color = color1.accent_color;
     alphabet_color = color1.alphabet_color;

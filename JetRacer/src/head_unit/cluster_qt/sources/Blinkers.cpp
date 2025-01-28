@@ -10,7 +10,8 @@ Blinkers::Blinkers(QWidget* parent, std::string dir, std::string mode, std::stri
     blinking = false;
     isImage1Visible = true;
     toggleTimer = NULL;
-    
+    Color color1 = Color();
+    int counter = color1.counter;
     if (dir == "left")
     {
         image1_array[0].load("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/left_p.png");
@@ -18,7 +19,7 @@ Blinkers::Blinkers(QWidget* parent, std::string dir, std::string mode, std::stri
         image1_array[2].load("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/left_i.png");
         image1_array[3].load("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/left_g.png");
         image2.load("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/left_on.png");
-        image1 = image1_array[0];
+        image1 = image1_array[counter];
     }
     else
     {
@@ -27,7 +28,7 @@ Blinkers::Blinkers(QWidget* parent, std::string dir, std::string mode, std::stri
         image1_array[2].load("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/right_i.png");
         image1_array[3].load("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/right_g.png");
         image2.load("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/right_on.png");
-        image1 = image1_array[0];
+        image1 = image1_array[counter];
     }
 
     if (image1.isNull() || image2.isNull()) {

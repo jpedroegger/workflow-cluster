@@ -5,6 +5,7 @@ BatteryAndSpeedWidget::BatteryAndSpeedWidget(QWidget* parent, std::string input,
 {
     color1 = Color();
     unit = "DPS";
+    index = color1.counter;
     main_color = color1.main_color;
     accent_color = color1.accent_color;
     alphabet_color = color1.alphabet_color;

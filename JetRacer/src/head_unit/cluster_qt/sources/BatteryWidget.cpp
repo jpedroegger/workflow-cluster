@@ -24,38 +24,36 @@ void BatteryWidget::paintEvent(QPaintEvent* event)
     drawCentralNumber(painter, centerX, centerY);
 }
 
-void BatteryWidget::drawScale(QPainter& painter, int centerX, int centerY, int radius) {
+void BatteryWidget::drawScale(QPainter& painter, int centerX, int centerY, int radius)
+{
     // Draw outer circle
-    int smaller_r = radius - 10;
-    
     // Draw tick marks and labels
     int minLevel = 0, maxLevel = 100, step = 10;
     double startAngle = -45; // Start angle for 0 Level (bottom left)
     double endAngle = 225;     // End angle for max Level (bottom right)
     QFont font("Arial", 20, QFont::Bold);  // Example: Arial, size 10, bold
-    painter.setPen(QPen(alphabet_color, 6));
     painter.setFont(font);
-    for (int Level = minLevel; Level <= maxLevel; Level += step / 2) {
+    painter.setPen(QPen(alphabet_color, 6));
+    for (int Level = minLevel; Level <= maxLevel; Level += step / 2)
+    {
         double angle = startAngle + (endAngle - startAngle) * (double(Level) / maxLevel);
         double rad = qDegreesToRadians(angle);
         int xOuter = centerX - std::cos(rad) * radius;
         int yOuter = centerY - std::sin(rad) * radius;
         int xInner = centerX - std::cos(rad) * (radius - 6);
         int yInner = centerY - std::sin(rad) * (radius - 6);
-        // Draw tick mark
-        painter.setPen(QPen(alphabet_color, 6));
-        // Draw label
         int xLabel = centerX - std::cos(rad) * (radius - 55) - 8;
         int yLabel = centerY - std::sin(rad) * (radius - 55);
     }
-        drawBars(painter, centerX, centerY, radius, startAngle, endAngle, 100);
+    drawBars(painter, centerX, centerY, radius, startAngle, endAngle, 100);
     painter.setPen(QPen(main_color, 15));
     painter.drawEllipse(centerX - radius, centerY - radius, 2 * radius, 2 * radius);
-    smaller_r -=  60;
+    int smaller_r = radius - 70;
     painter.drawEllipse(centerX - smaller_r, centerY - smaller_r, 2 * smaller_r, 2 * smaller_r);
 }
 
-void BatteryWidget::drawBars(QPainter& painter, int centerX, int centerY, int radius, double startAngle, double endAngle, int Level) {
+void BatteryWidget::drawBars(QPainter& painter, int centerX, int centerY, int radius, double startAngle, double endAngle, int Level)
+{
     int numBars = Level / 2; // Total number of bars (from 0 to 100)
     int barWidth = 6;  // Width of each bar
     int innerRadius = radius - 60; // Inner radius for bars
@@ -81,7 +79,8 @@ void BatteryWidget::drawBars(QPainter& painter, int centerX, int centerY, int ra
     }
 }
 
-QColor BatteryWidget::calculateBarColor(int value) {
+QColor BatteryWidget::calculateBarColor(int value)
+{
     if (value < 5) {
         return QColor(139, 0, 0); // Dark red
     } else if (value < 50) {
@@ -100,7 +99,8 @@ QColor BatteryWidget::calculateBarColor(int value) {
     }
 }
 
-void BatteryWidget::drawCentralNumber(QPainter& painter, int centerX, int centerY) {
+void BatteryWidget::drawCentralNumber(QPainter& painter, int centerX, int centerY)
+{
     // Set font and color for the Level number
     QFont font("Arial", 30, QFont::Bold);  // Large font for the Level
     painter.setFont(font);
@@ -125,7 +125,8 @@ void BatteryWidget::drawCentralNumber(QPainter& painter, int centerX, int center
     painter.drawText(kphX, kphY, "%");
 }
 
-void BatteryWidget::updateLevel() {
+void BatteryWidget::updateLevel()
+{
     update();
 }
 

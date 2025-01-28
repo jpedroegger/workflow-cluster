@@ -25,7 +25,7 @@ class FanSpeedWidget : public QWidget {
         Color color1;
         QPixmap image;             // First image
         QPixmap image_array[4]; 
-        int index = 0;
+        int index;
         void drawScale(QPainter& painter, int centerX, int centerY, int radius);
         void drawNeedle(QPainter& painter, int centerX, int centerY, int radius);
         void drawCentralNumber(QPainter& painter, int centerX, int centerY);

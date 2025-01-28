@@ -5,6 +5,7 @@
 #include <QLabel>
 #include <QPixmap>
 #include <QTimer>
+#include "Colors.h"
 
 class Blinkers : public QWidget
 {
@@ -27,9 +28,9 @@ private:
     QPixmap image1;             // First image
     QPixmap image1_array[4];             
     QPixmap image2;            // Second image
-    bool isImage1Visible;       // Boolean to track the current image
     QTimer* toggleTimer;        // Timer for toggling
-    bool blinking;
+    bool    isImage1Visible;       // Boolean to track the current image
+    bool    blinking;
 };
 
 #endif

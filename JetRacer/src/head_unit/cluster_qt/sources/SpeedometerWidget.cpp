@@ -9,7 +9,6 @@ SpeedometerWidget::SpeedometerWidget(QWidget* parent, int x, int y, int width, i
     : QWidget(parent), currentSpeed(0)
 {
     color1 = Color();
-    color1 = Color();
     unit = "DPS";
     maxSpeed = 220;
     main_color = color1.main_color;

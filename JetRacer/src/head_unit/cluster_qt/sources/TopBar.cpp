@@ -10,6 +10,8 @@ TopBar::TopBar(QWidget* parent, std::string input, int x, int y, int width, int 
     setGeometry(x, y, width, height);
 
     // Create default and alternate images
+    Color color1 = Color();
+    int index = color1.counter;
     defaultImagePaths_array[0] = {
         "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/wheel_p.png",
         "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/brake_p.png",
@@ -56,7 +58,7 @@ TopBar::TopBar(QWidget* parent, std::string input, int x, int y, int width, int 
         "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/belt_on.png"
     };
 
-    defaultImagePaths = defaultImagePaths_array[0];
+    defaultImagePaths = defaultImagePaths_array[index];
     // Load images into QPixmaps
     for (int j = 0; j < 4; j++)
     {

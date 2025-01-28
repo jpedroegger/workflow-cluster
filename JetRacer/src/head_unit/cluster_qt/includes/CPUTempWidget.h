@@ -23,7 +23,7 @@ class CPUTempWidget : public QWidget {
 
     private:
         int currentSpeed;
-        int index = 0;
+        int index;
 
         Color color1;
         QString unit;
