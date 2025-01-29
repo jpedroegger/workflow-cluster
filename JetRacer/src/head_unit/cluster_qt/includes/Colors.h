@@ -1,7 +1,7 @@
 #ifndef COLOR_H
 #define COLOR_H
 
-//#include <QWidget>
+#include <QWidget>
 #include <string>
 #include <iostream>
 #include <fstream>
