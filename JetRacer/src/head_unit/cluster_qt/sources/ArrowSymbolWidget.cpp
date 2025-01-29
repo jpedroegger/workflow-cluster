@@ -1,6 +1,6 @@
 #include "../includes/ArrowSymbolWidget.h"
 
-ArrowSymbolWidget::ArrowSymbolWidget(QWidget* parent, std::string input, std::string input, int x, int y, int width, int height)
+ArrowSymbolWidget::ArrowSymbolWidget(QWidget* parent, std::string input, int x, int y, int width, int height)
     : QWidget(parent)
 {
     color1 = Color();
