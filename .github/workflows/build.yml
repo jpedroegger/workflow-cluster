@@ -38,8 +38,9 @@ jobs:
       run: |
         sudo git clone https://github.com/lmapii/run-clang-tidy.git
         cd run-clang-tidy
-        cargo build
-        sudo mv target/debug/run-clang-tidy /usr/local/bin/run-clang-tidy-rust
+        cargo build --release --target-dir /tmp/target
+        sudo mv /tmp/target/release/run-clang-tidy /usr/local/bin/run-clang-tidy-rust
+
 
     - name: Install ROS2 jazzy
       run: |
