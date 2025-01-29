@@ -9,6 +9,7 @@ on:
     branches:
       - main
       - workflow
+      - clang-tidy
 
 env:
   QT_BUILD_DIR: JetRacer/src/head_unit/cluster_qt/build
