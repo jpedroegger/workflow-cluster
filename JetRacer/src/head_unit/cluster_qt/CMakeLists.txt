@@ -118,13 +118,12 @@ if(BUILD_TESTING)
         add_test(NAME ${TEST_NAME} COMMAND ${TEST_NAME})
     endfunction()
 
-    # Add your tests
-    # file(GLOB_RECURSE TEST_FILES "test/*Test/*.cpp")
-    # foreach(TEST_FILE ${TEST_FILES})
-    #     get_filename_component(TEST_NAME ${TEST_FILE} NAME_WE)
-    #     add_qt_test(${TEST_NAME} ${TEST_FILE})
-    # endforeach()
-	add_qt_test(blinker_test test/BlinkerTest/tst_blinkertest.cpp)
+    file(GLOB_RECURSE TEST_FILES "test/*Test/*.cpp")
+    foreach(TEST_FILE ${TEST_FILES})
+        get_filename_component(TEST_NAME ${TEST_FILE} NAME_WE)
+        add_qt_test(${TEST_NAME} ${TEST_FILE})
+    endforeach()
+ 
 endif()
 
 # Install targets

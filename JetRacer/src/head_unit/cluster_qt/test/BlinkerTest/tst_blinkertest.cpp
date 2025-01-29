@@ -34,7 +34,7 @@ void BlinkerTest::testTurnOnLeftBlinkerStartsBlinking()
     auto left_blinker = new MockBlinkers();
     auto right_blinker = new MockBlinkers();
 
-    left_blinker->turnOnBlinkers(0);
+    left_blinker->turnOnBlinkers(true);
 
     QVERIFY(left_blinker->get_blinking());
 }
@@ -44,7 +44,7 @@ void BlinkerTest::testTurnOnRightBlinkerStartsBlinking()
     auto left_blinker = new MockBlinkers();
     auto right_blinker = new MockBlinkers();
 
-    right_blinker->turnOnBlinkers(0);
+    right_blinker->turnOnBlinkers(true);
 
     QVERIFY(right_blinker->get_blinking());
 }
@@ -54,8 +54,8 @@ void BlinkerTest::testTurnOffLeftBlinkerStopsBlinking()
     auto left_blinker = new MockBlinkers();
     auto right_blinker = new MockBlinkers();
 
-    left_blinker->turnOnBlinkers(0);
-    left_blinker->turnOnBlinkers(0);
+    left_blinker->turnOnBlinkers(true);
+    left_blinker->turnOnBlinkers(false);
 
     QVERIFY(!left_blinker->get_blinking());
 }
@@ -65,8 +65,8 @@ void BlinkerTest::testTurnOffRightBlinkerStopsBlinking()
     auto left_blinker = new MockBlinkers();
     auto right_blinker = new MockBlinkers();
 
-    right_blinker->turnOnBlinkers(0);
-    right_blinker->turnOnBlinkers(0);
+    right_blinker->turnOnBlinkers(true);
+    right_blinker->turnOnBlinkers(false);
 
     QVERIFY(!right_blinker->get_blinking());
 }
@@ -75,7 +75,7 @@ void BlinkerTest::testTimerStartsWhenBlinkerIsTurnedOn()
 {
     Blinkers leftBlinker;
 
-    leftBlinker.turnOnBlinkers(0);
+    leftBlinker.turnOnBlinkers(true);
 
     QVERIFY(leftBlinker.getToggleTimer() != nullptr);
     QVERIFY(leftBlinker.getToggleTimer()->isActive());
@@ -85,22 +85,12 @@ void BlinkerTest::testTimerStopsWhenBlinkerIsTurnedOff()
 {
     Blinkers leftBlinker;
 
-    leftBlinker.turnOnBlinkers(0);
-    leftBlinker.turnOnBlinkers(0);
+    leftBlinker.turnOnBlinkers(true);
+    leftBlinker.turnOnBlinkers(false);
 
     QVERIFY(leftBlinker.getToggleTimer() != nullptr);
     QVERIFY(!leftBlinker.getToggleTimer()->isActive());
 }
-
-// void BlinkerTest::testImageUpdatesWhenBlinkerIsTurnedOff()
-// {
-//     Blinkers leftBlinker;
-//
-//     leftBlinker.turnOnBlinkers(0);
-//     leftBlinker.turnOnBlinkers(0);
-//
-//     QVERIFY(!leftBlinker.getIsImage1Visible());
-// }
 
 QTEST_MAIN(BlinkerTest)
 
