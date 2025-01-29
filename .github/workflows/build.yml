@@ -36,7 +36,7 @@ jobs:
 
     - name: Install run-clang-tidy
       run: |
-        sudo git clone git@github.com:lmapii/run-clang-tidy.git
+        sudo git clone https://github.com/lmapii/run-clang-tidy.git
         cd run-clang-tidy
         cargo build
         mv target/debug/run-clang-tidy /usr/local/bin
