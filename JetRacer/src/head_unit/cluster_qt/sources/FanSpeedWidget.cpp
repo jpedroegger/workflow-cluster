@@ -1,6 +1,6 @@
 #include "../includes/FanSpeedWidget.h"
 
-FanSpeedWidget::FanSpeedWidget(QWidget* parent, std::string input, int x, int y, int width, int height)
+FanSpeedWidget::FanSpeedWidget(QWidget* parent, int x, int y, int width, int height)
     : QWidget(parent), currentSpeed(0)
 {
     color1 = Color();

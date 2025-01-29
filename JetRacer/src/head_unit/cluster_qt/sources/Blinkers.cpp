@@ -1,7 +1,7 @@
 #include "../includes/Blinkers.h"
 #include <QHBoxLayout>
 
-Blinkers::Blinkers(QWidget* parent, std::string dir, std::string mode, std::string input, int x, int y, int width, int height)
+Blinkers::Blinkers(QWidget* parent, std::string dir, std::string mode, int x, int y, int width, int height)
     : QWidget(parent), isImage1Visible(true), blinking(false)
 {
     

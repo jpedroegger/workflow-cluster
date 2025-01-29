@@ -1,6 +1,6 @@
 #include "../includes/CameraWidget.h"
 
-CameraWidget::CameraWidget(QWidget *parent, std::string input, int x, int y, int width, int height)
+CameraWidget::CameraWidget(QWidget *parent, int x, int y, int width, int height)
     : QWidget(parent),
       camera(new QCamera(this)),
       videoWidget(new QVideoWidget(this)) {

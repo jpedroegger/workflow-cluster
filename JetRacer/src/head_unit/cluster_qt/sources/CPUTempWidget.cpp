@@ -1,6 +1,6 @@
 #include "../includes/CPUTempWidget.h"
 
-CPUTempWidget::CPUTempWidget(QWidget* parent, std::string input, int x, int y, int width, int height)
+CPUTempWidget::CPUTempWidget(QWidget* parent, int x, int y, int width, int height)
     : QWidget(parent), currentSpeed(0)
 {
     color1 = Color();

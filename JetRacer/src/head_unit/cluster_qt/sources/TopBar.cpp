@@ -1,7 +1,7 @@
 #include "../includes/TopBar.h"
 #include <iostream>
 
-TopBar::TopBar(QWidget* parent, std::string input, int x, int y, int width, int height) : QWidget(parent)
+TopBar::TopBar(QWidget* parent, int x, int y, int width, int height) : QWidget(parent)
 {
     // Initialize layout
     layout = new QHBoxLayout(this);

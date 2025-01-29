@@ -1,6 +1,6 @@
 #include "../includes/BatteryWidget.h"
 
-BatteryWidget::BatteryWidget(QWidget* parent, std::string input, int x, int y, int width, int height)
+BatteryWidget::BatteryWidget(QWidget* parent, int x, int y, int width, int height)
     : QWidget(parent), currentLevel(0)
 {
     color1 = Color();
