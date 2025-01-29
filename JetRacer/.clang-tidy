@@ -1,0 +1,8 @@
+Checks: >
+  modernize-*,
+  performance-*,
+  readability-*,
+  bugprone-*
+WarningsAsErrors: modernize-use-override
+HeaderFilterRegex: '.*'
+FormatStyle: file
