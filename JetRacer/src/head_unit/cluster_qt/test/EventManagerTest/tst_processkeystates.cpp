@@ -1,35 +1,43 @@
+#include "../../includes/EventManager.h"
 #include <QCoreApplication>
 #include <QtTest>
-#include "../../includes/EventManager.h"
 
-class MockArrowSymbolWidget : public ArrowSymbolWidget {};
-class MockSpeedometerWidget : public SpeedometerWidget {};
-class MockBlinkers : public Blinkers {};
-class MockStackedWidget : public QStackedWidget {};
+class MockArrowSymbolWidget : public ArrowSymbolWidget
+{
+};
+class MockSpeedometerWidget : public SpeedometerWidget
+{
+};
+class MockBlinkers : public Blinkers
+{
+};
+class MockStackedWidget : public QStackedWidget
+{
+};
 
 class EventManagerTestProcessKeys : public QObject
 {
-    Q_OBJECT
+        Q_OBJECT
 
-public:
-    EventManagerTestProcessKeys();
-    ~EventManagerTestProcessKeys();
+    public:
+        EventManagerTestProcessKeys();
+        ~EventManagerTestProcessKeys();
 
-private slots:
-    void    testProcessCallsLeftArrow();
-    void    testProcessCallsRightArrow();
-    void    testProcessCallsFowardArrow();
-    void    testProcessCallsAccelerate();
-    void    testProcessCallsReduceSpeed();
-    void    testProcessCallsLeftBlinker();
-    void    testProcessCallsRightBlinker();
+    private slots:
+        void testProcessCallsLeftArrow();
+        void testProcessCallsRightArrow();
+        void testProcessCallsFowardArrow();
+        void testProcessCallsAccelerate();
+        void testProcessCallsReduceSpeed();
+        void testProcessCallsLeftBlinker();
+        void testProcessCallsRightBlinker();
 };
 
 EventManagerTestProcessKeys::EventManagerTestProcessKeys() {}
 
 EventManagerTestProcessKeys::~EventManagerTestProcessKeys() {}
 
-void    EventManagerTestProcessKeys::testProcessCallsLeftArrow()
+void EventManagerTestProcessKeys::testProcessCallsLeftArrow()
 {
     auto arrows = new MockArrowSymbolWidget();
 
@@ -48,7 +56,7 @@ void    EventManagerTestProcessKeys::testProcessCallsLeftArrow()
     QTest::keyRelease(&eventManager, Qt::Key_Left);
 }
 
-void    EventManagerTestProcessKeys::testProcessCallsRightArrow()
+void EventManagerTestProcessKeys::testProcessCallsRightArrow()
 {
     auto arrows = new MockArrowSymbolWidget();
 
@@ -67,7 +75,7 @@ void    EventManagerTestProcessKeys::testProcessCallsRightArrow()
     QTest::keyRelease(&eventManager, Qt::Key_Right);
 }
 
-void    EventManagerTestProcessKeys::testProcessCallsFowardArrow()
+void EventManagerTestProcessKeys::testProcessCallsFowardArrow()
 {
     auto arrows = new MockArrowSymbolWidget();
 
@@ -86,7 +94,7 @@ void    EventManagerTestProcessKeys::testProcessCallsFowardArrow()
     QTest::keyRelease(&eventManager, Qt::Key_Up);
 }
 
-void    EventManagerTestProcessKeys::testProcessCallsAccelerate()
+void EventManagerTestProcessKeys::testProcessCallsAccelerate()
 {
     auto speedometer = new MockSpeedometerWidget();
 
@@ -103,7 +111,7 @@ void    EventManagerTestProcessKeys::testProcessCallsAccelerate()
     QTest::keyRelease(&eventManager, Qt::Key_Space);
 }
 
-void    EventManagerTestProcessKeys::testProcessCallsReduceSpeed()
+void EventManagerTestProcessKeys::testProcessCallsReduceSpeed()
 {
     auto speedometer = new MockSpeedometerWidget();
 
@@ -122,12 +130,13 @@ void    EventManagerTestProcessKeys::testProcessCallsReduceSpeed()
     QCOMPARE(speedometer->getCurrentSpeed(), 2);
 }
 
-void    EventManagerTestProcessKeys::testProcessCallsLeftBlinker()
+void EventManagerTestProcessKeys::testProcessCallsLeftBlinker()
 {
     auto left_blinker = new MockBlinkers();
     auto right_blinker = new MockBlinkers();
 
-    EventManager eventManager(nullptr, nullptr, left_blinker, right_blinker, nullptr);
+    EventManager eventManager(nullptr, nullptr, left_blinker, right_blinker,
+                              nullptr);
 
     eventManager.installEventFilter(&eventManager);
 
@@ -145,12 +154,13 @@ void    EventManagerTestProcessKeys::testProcessCallsLeftBlinker()
     QVERIFY(!right_blinker->getBlinking());
 }
 
-void    EventManagerTestProcessKeys::testProcessCallsRightBlinker()
+void EventManagerTestProcessKeys::testProcessCallsRightBlinker()
 {
     auto left_blinker = new MockBlinkers();
     auto right_blinker = new MockBlinkers();
 
-    EventManager eventManager(nullptr, nullptr, left_blinker, right_blinker, nullptr);
+    EventManager eventManager(nullptr, nullptr, left_blinker, right_blinker,
+                              nullptr);
 
     eventManager.installEventFilter(&eventManager);
 
@@ -171,5 +181,3 @@ void    EventManagerTestProcessKeys::testProcessCallsRightBlinker()
 QTEST_MAIN(EventManagerTestProcessKeys)
 
 #include "tst_processkeystates.moc"
-
-

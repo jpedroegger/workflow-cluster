@@ -94,3 +94,5 @@ void Blinkers::turnOnBlinkers(bool on_off)
 }
 
 bool Blinkers::get_blinking() { return blinking; }
+
+QTimer* Blinkers::getToggleTimer() { return toggleTimer; }
