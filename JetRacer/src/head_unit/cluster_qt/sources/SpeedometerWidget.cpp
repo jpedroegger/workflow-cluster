@@ -128,10 +128,6 @@ void SpeedometerWidget::accelerate(int forward_key)
     // FUTURE ROS2
 }
 
-void SpeedometerWidget::updateSpeed()
-{
-    update(); // Trigger a repaint
-}
 
 void    SpeedometerWidget::changeColor(int  array_index)
 {

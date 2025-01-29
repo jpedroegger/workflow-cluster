@@ -1,6 +1,6 @@
 #include "../includes/BatteryAndSpeedWidget.h"
 
-BatteryAndSpeedWidget::BatteryAndSpeedWidget(QWidget* parent, std::string input, int x, int y, int width, int height)
+BatteryAndSpeedWidget::BatteryAndSpeedWidget(QWidget* parent, int x, int y, int width, int height)
     : QWidget(parent), currentSpeed(0)
 {
     color1 = Color();
