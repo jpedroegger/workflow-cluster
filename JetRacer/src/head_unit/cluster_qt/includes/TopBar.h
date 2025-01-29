@@ -5,6 +5,7 @@
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QPixmap>
+#include "Colors.h"
 
 class TopBar : public QWidget
 {
