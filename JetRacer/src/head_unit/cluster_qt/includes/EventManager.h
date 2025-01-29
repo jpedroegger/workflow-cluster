@@ -3,11 +3,11 @@
 
 #include "ArrowSymbolWidget.h"
 #include "BatteryAndSpeedWidget.h"
+#include "BatteryWidget.h"
 #include "Blinkers.h"
 #include "Colors.h"
 #include "RosNode.hpp"
 #include "SpeedometerWidget.h"
-#include "BatteryWidget.h"
 #include <QObject>
 #include <QSet>
 #include <QStackedWidget>
@@ -40,6 +40,7 @@ class EventManager : public QWidget
                      Blinkers* right_blinker, QStackedWidget* stackedWidget,
                      std::shared_ptr<RosNode> ros_node);
         virtual ~EventManager();
+        QStackedWidget* getStackedWidget();
         Color color1;
 
     protected:
