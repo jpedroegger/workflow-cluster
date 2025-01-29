@@ -10,8 +10,8 @@ TopBar::TopBar(QWidget* parent, int x, int y, int width, int height) : QWidget(p
     setGeometry(x, y, width, height);
 
     // Create default and alternate images
-    Color color1 = Color();
-    int index = color1.counter;
+    Color color = Color();
+    int index = color.counter;
     defaultImagePaths_array[0] = {
         "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/wheel_p.png",
         "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/brake_p.png",
