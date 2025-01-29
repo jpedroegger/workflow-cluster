@@ -9,6 +9,8 @@
 
 #define MIN_COUNT 102
 #define MAX_COUNT 510
+#define MIN_ANGLE 10
+#define MAX_ANGLE 170
 #define PCA_SERVO_ADDRESS 0x40
 
 /**
