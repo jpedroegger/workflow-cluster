@@ -76,7 +76,7 @@ jobs:
         # export QT_QPA_PLATFORM=offscreen
         # ctest --verbose
 
-    - name: Install clang-tidy
+    - name: Run clang-tidy
       run: |
-        cd $ROS_BUILD_DIR
+        cd $ROS_BUILD_DIR/clang-tidy
         run-clang-tidy-rust tidy.json
