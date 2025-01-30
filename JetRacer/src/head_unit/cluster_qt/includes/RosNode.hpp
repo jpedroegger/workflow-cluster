@@ -5,13 +5,12 @@
 #include <std_msgs/msg/u_int32.hpp>
 #include <std_msgs/msg/u_int8.hpp>
 
-enum blinkerState
+enum class blinkerState
 {
     IDLE,
     TURN_RIGHT,
     TURN_LEFT,
     WARNINGS,
-    FULL
 };
 
 /**
@@ -28,7 +27,7 @@ class RosNode : public rclcpp::Node
         int getSpeed() const;
         int getBattery() const;
         int getRpm() const;
-        uint8_t getBlinkerState() const;
+        blinkerState getBlinkerState() const;
 
     private:
         rclcpp::Subscription<std_msgs::msg::Float64>::SharedPtr battery_sub_;
@@ -41,5 +40,5 @@ class RosNode : public rclcpp::Node
         int battery_level_{100};
         int speed_{0};
         int rpm_{0};
-        blinkerState blinker_state_{IDLE};
+        blinkerState blinker_state_{blinkerState::IDLE};
 };
