@@ -1,10 +1,10 @@
 {
   "paths": [
-    "./src/*/*/include/*.hpp",
-    "./src/*/*/src/*.cpp"
+    "./src/*/*/include/*ServoNode.hpp",
+    "./src/*/*/src/*ServoNode.cpp"
   ],
   "tidyRoot": ".",
   "buildRoot": "build/",
   "compilationDatabase": "build/compile_commands.json",
-  "tidyFile": "tidy.clang-tidy"
+  "tidyFile": ".clang-tidy"
 }

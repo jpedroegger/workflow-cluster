@@ -10,6 +10,11 @@
 constexpr int MIN_COUNT = 102;
 constexpr int MAX_COUNT = 510;
 constexpr int PCA_SERVO_ADDRESS = 0x40;
+constexpr int SERVO_FREQ_HZ = 50;
+constexpr int CENTER_ANGLE = 90;
+constexpr int MAX_ANGLE = 180;
+
+constexpr int NODE_QOS = 10;
 
 /**
  * @class ServoNode
@@ -30,7 +35,7 @@ class ServoNode : public rclcpp::Node
             direction_subscriber_;
         std::shared_ptr<APCA9685Driver> pca_driver_;
 
-        void writeAngle(const geometry_msgs::msg::Twist::SharedPtr twist);
+        void writeAngle(geometry_msgs::msg::Twist::SharedPtr twist);
 
         const float_t MAX_ANGULAR_VEL = 1.0;
 };

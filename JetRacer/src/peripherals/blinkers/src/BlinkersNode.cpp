@@ -9,7 +9,7 @@ BlinkersNode::BlinkersNode() : Node("blinkers_node")
     can_client_ =
         this->create_client<custom_msgs::srv::CanService>("can_service");
     blinker_state_subscriber_ = this->create_subscription<std_msgs::msg::UInt8>(
-        "cmd_blinkers", 10,
+        "cmd_blinkers", NODE_QOS,
         std::bind(&BlinkersNode::writeBlinkersState, this,
                   std::placeholders::_1));
 }
