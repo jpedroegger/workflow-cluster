@@ -1,6 +1,7 @@
 /**
  * @file SpeedometerWidget.cpp
- * @brief Object responsible for drawing the Speedometer widget present in the cluster, and updating it's values as published by EventManager. 
+ * @brief Object responsible for drawing the Speedometer widget present in the
+ * cluster, and updating it's values as published by EventManager.
  */
 
 #include "../includes/SpeedometerWidget.h"
@@ -167,5 +168,7 @@ void SpeedometerWidget::setCurrentSpeed(int speed)
         currentSpeed = speed;
     update();
 }
+
+int SpeedometerWidget::getCurrentSpeed() const { return currentSpeed; }
 
 SpeedometerWidget::~SpeedometerWidget() {}

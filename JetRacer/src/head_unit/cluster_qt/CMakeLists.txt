@@ -13,8 +13,8 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Find Qt6 dependencies
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Multimedia MultimediaWidgets)
-find_package(Qt6 REQUIRED COMPONENTS Widgets Multimedia MultimediaWidgets)
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Multimedia MultimediaWidgets Test)
+find_package(Qt6 REQUIRED COMPONENTS Widgets Multimedia MultimediaWidgets Test)
 
 # Find ROS dependencies
 find_package(ament_cmake REQUIRED)
@@ -42,7 +42,6 @@ set(HEADERS
 )
 
 set(SOURCES
-    sources/main.cpp
     sources/mainwindow.cpp
     sources/ArrowSymbolWidget.cpp
     sources/SpeedometerWidget.cpp
@@ -63,23 +62,45 @@ set(UI_FILES
     sources/mainwindow.ui
 )
 
-# Include directories
-include_directories(
+# Create a shared library for tests
+add_library(${PROJECT_NAME}_lib SHARED
+    ${HEADERS}
+    ${SOURCES}
+    ${UI_FILES}
+)
+
+target_include_directories(${PROJECT_NAME}_lib PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/includes
     ${rclcpp_INCLUDE_DIRS}
     ${std_msgs_INCLUDE_DIRS}
     ${custom_msgs_INCLUDE_DIRS}
 )
 
-# Add executable with all files
+target_link_libraries(${PROJECT_NAME}_lib PUBLIC
+    Qt6::Widgets
+    Qt6::Multimedia
+    Qt6::MultimediaWidgets
+    ${rclcpp_LIBRARIES}
+    ${std_msgs_LIBRARIES}
+    ${custom_msgs_LIBRARIES}
+)
+
+# Main executable using qt_add_executable
 qt_add_executable(${exec_name}
     MANUAL_FINALIZATION
+    sources/main.cpp
     ${HEADERS}
     ${SOURCES}
     ${UI_FILES}
 )
 
-# Link libraries
+target_include_directories(${exec_name} PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/includes
+    ${rclcpp_INCLUDE_DIRS}
+    ${std_msgs_INCLUDE_DIRS}
+    ${custom_msgs_INCLUDE_DIRS}
+)
+
 target_link_libraries(${exec_name} PRIVATE
     Qt6::Widgets
     Qt6::Multimedia
@@ -89,15 +110,28 @@ target_link_libraries(${exec_name} PRIVATE
     ${custom_msgs_LIBRARIES}
 )
 
-# Explicitly set include directories for the target
-target_include_directories(${exec_name} PRIVATE
-    ${CMAKE_CURRENT_SOURCE_DIR}/include
-    ${rclcpp_INCLUDE_DIRS}
-    ${std_msgs_INCLUDE_DIRS}
-    ${custom_msgs_INCLUDE_DIRS}
-)
+# Testing configuration
+if(BUILD_TESTING)
+    enable_testing()
 
-# Install target
+    function(add_qt_test TEST_NAME TEST_SOURCES)
+        qt_add_executable(${TEST_NAME} ${TEST_SOURCES})
+        target_link_libraries(${TEST_NAME} PRIVATE
+            ${PROJECT_NAME}_lib
+            Qt6::Test
+        )
+        add_test(NAME ${TEST_NAME} COMMAND ${TEST_NAME})
+    endfunction()
+
+    file(GLOB_RECURSE TEST_FILES "test/*Test/*.cpp")
+    foreach(TEST_FILE ${TEST_FILES})
+        get_filename_component(TEST_NAME ${TEST_FILE} NAME_WE)
+        add_qt_test(${TEST_NAME} ${TEST_FILE})
+    endforeach()
+ 
+endif()
+
+# Install targets
 install(TARGETS ${exec_name}
     RUNTIME DESTINATION lib/${PROJECT_NAME}
 )

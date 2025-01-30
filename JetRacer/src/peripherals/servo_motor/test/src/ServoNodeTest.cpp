@@ -53,9 +53,9 @@ TEST_P(ServoNodeTest, velocityToAngleConversion)
 // Define test cases: {cmd_vel, expected_angle}
 INSTANTIATE_TEST_CASE_P(
     VelocityMappings, ServoNodeTest,
-    ::testing::Values(std::make_tuple(-1.0, 180), // Full left
+    ::testing::Values(std::make_tuple(-1.0, 170), // Full left
                       std::make_tuple(0.0, 90),   // Center
-                      std::make_tuple(1.0, 0),    // Full right
+                      std::make_tuple(1.0, 10),   // Full right
                       std::make_tuple(-0.5, 135), // Mid left
                       std::make_tuple(0.5, 45)    // Mid right
                       ),

@@ -1,7 +1,6 @@
 #ifndef BLINKERS_H
 #define BLINKERS_H
 
-#include <QWidget>
 #include <QLabel>
 #include <QPixmap>
 #include <QTimer>
@@ -9,7 +8,7 @@
 
 class Blinkers : public QWidget
 {
-    Q_OBJECT
+        Q_OBJECT
 
 public:
     explicit Blinkers(QWidget* parent = nullptr, std::string dir = "left", std::string mode = "off", int x = 0, int y = 0, int width = 0, int height = 0);
@@ -20,8 +19,8 @@ public:
     void    changeColor(int  array_index);
 
 
-private slots:
-    void toggleImage(); // Slot to toggle the image
+    private slots:
+        void toggleImage(); // Slot to toggle the image
 
 private:
     QLabel* imageLabel;         // QLabel to display the image

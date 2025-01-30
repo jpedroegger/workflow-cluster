@@ -227,4 +227,6 @@ void EventManager::handleGestureEvent(QGestureEvent* gestureEvent)
     }
 }
 
+QStackedWidget* EventManager::getStackedWidget() { return stackedWidget; }
+
 EventManager::~EventManager() {}

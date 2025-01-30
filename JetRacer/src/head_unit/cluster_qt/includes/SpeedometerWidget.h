@@ -16,6 +16,8 @@ class SpeedometerWidget : public QWidget
         ~SpeedometerWidget();
 
         void setCurrentSpeed(int speed);
+        int getCurrentSpeed() const;
+
         void accelerate(int forward_key);
         void changeColor(int  array_index);
         void changeUnits(void);

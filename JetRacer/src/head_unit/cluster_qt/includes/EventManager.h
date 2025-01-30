@@ -3,6 +3,7 @@
 
 #include "ArrowSymbolWidget.h"
 #include "BatteryAndSpeedWidget.h"
+#include "BatteryWidget.h"
 #include "Blinkers.h"
 #include "Colors.h"
 #include "TopBar.h"
@@ -57,6 +58,7 @@ class EventManager : public QWidget
                      QStackedWidget* stackedWidget, QWidget* mainWindow,
                      std::shared_ptr<RosNode> ros_node);
         virtual ~EventManager();
+        QStackedWidget* getStackedWidget();
         Color color1;
         void changeUnits();
         void changeColors();
