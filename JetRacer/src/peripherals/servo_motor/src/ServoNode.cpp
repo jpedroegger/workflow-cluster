@@ -81,7 +81,7 @@ void ServoNode::writeAngle(const geometry_msgs::msg::Twist::SharedPtr twist)
     }
 
     // map to an angle
-    auto angle = static_cast<uint8_t>((-angular_z + 1.0) * CENTER_ANGLE);
+    int angle = (-angular_z + 1.0) * CENTER_ANGLE;
 
     // restrain angle
     int restrained_angle =
@@ -91,7 +91,8 @@ void ServoNode::writeAngle(const geometry_msgs::msg::Twist::SharedPtr twist)
     // Map the angle (0 to 180) to PCA9685 pulse width (102 to 510)
     auto pulse_width = static_cast<uint16_t>(
         MIN_COUNT +
-        (static_cast<float>(angle) * (MAX_COUNT - MIN_COUNT)) / MAX_ANGLE);
+        (static_cast<float>(restrained_angle) * (MAX_COUNT - MIN_COUNT)) /
+            MAX_ANGLE);
 
     pca_driver_->setPWMDutyCycle(DEFAULT_CHANNEL, 0, pulse_width);
 }

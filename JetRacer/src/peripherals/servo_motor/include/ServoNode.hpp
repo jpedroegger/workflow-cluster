@@ -14,7 +14,6 @@ constexpr int SERVO_FREQ_HZ = 50;
 
 constexpr int CENTER_ANGLE = 90;
 constexpr int MAX_ANGLE = 180;
-constexpr int MIN_ANGLE = 0;
 
 // RETSRAINED ANGLES
 constexpr int MIN_REST_ANGLE = 10;
