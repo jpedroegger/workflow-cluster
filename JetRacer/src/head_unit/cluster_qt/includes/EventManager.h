@@ -6,8 +6,13 @@
 #include "BatteryWidget.h"
 #include "Blinkers.h"
 #include "Colors.h"
+#include "TopBar.h"
+#include "FanSpeedWidget.h"
+#include "CPUTempWidget.h"
 #include "RosNode.hpp"
 #include "SpeedometerWidget.h"
+#include "StatsWidget.h"
+#include "BatteryWidget.h"
 #include <QObject>
 #include <QSet>
 #include <QStackedWidget>
@@ -27,21 +32,36 @@ class EventManager : public QWidget
         BatteryAndSpeedWidget* py_batspeed;
         Blinkers* left_blinker;
         Blinkers* right_blinker;
+        Blinkers* left_blinker2;
+        Blinkers* right_blinker2;
+        StatsWidget* stats;
+        FanSpeedWidget* fan;
+        FanSpeedWidget* fan2;
+        CPUTempWidget* cpu;
+        CPUTempWidget* cpu2;
+        TopBar* top;
+        TopBar* top2;
         QSet<int> pressedKeys;
         QTimer* updateTimer; // Used to check if a key is still being called
         QStackedWidget* stackedWidget;
+        QWidget* mainWindow;
         std::shared_ptr<RosNode> node;
         rclcpp::executors::SingleThreadedExecutor executor;
 
     public:
         EventManager(ArrowSymbolWidget* arrow, SpeedometerWidget* py_speed,
-                     BatteryWidget* py_battery,
-                     BatteryAndSpeedWidget* py_batspeed, Blinkers* left_blinker,
-                     Blinkers* right_blinker, QStackedWidget* stackedWidget,
+                     BatteryWidget* py_battery, BatteryAndSpeedWidget* py_batspeed,
+                     Blinkers* left_blinker, Blinkers* right_blinker,
+                     Blinkers* left_blinker2, Blinkers* right_blinker2,
+                     StatsWidget* stats, FanSpeedWidget* fan, FanSpeedWidget* fan2,
+                     CPUTempWidget* cpu, CPUTempWidget* cpu2, TopBar* top, TopBar* top2,
+                     QStackedWidget* stackedWidget, QWidget* mainWindow,
                      std::shared_ptr<RosNode> ros_node);
         virtual ~EventManager();
         QStackedWidget* getStackedWidget();
         Color color1;
+        void changeUnits();
+        void changeColors();
 
     protected:
         bool eventFilter(QObject* obj, QEvent* event) override;
@@ -49,6 +69,9 @@ class EventManager : public QWidget
     private slots:
         void handleGestureEvent(QGestureEvent* gestureEvent);
         void processKeyStates();
+        void turnBothB();
+        void turnLeftB();
+        void turnRightB();
 };
 
 #endif // EVENTMANAGER_H
