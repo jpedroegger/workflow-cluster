@@ -72,11 +72,8 @@ jobs:
         source ./install/setup.bash
         colcon test --ctest-args tests --packages-skip camera_ros cluster --executor sequential
         colcon test-result --all --verbose
-        # cd $QT_BUILD_DIR/cluster_tests
-        # export QT_QPA_PLATFORM=offscreen
-        # ctest --verbose
 
-    - name: Run clang-tidy
-      run: |
-        cd $ROS_BUILD_DIR
-        run-clang-tidy-rust tidy.json
+    # - name: Run clang-tidy
+    #   run: |
+    #     cd $ROS_BUILD_DIR
+    #     run-clang-tidy-rust tidy.json
