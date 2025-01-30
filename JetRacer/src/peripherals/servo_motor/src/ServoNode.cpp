@@ -84,7 +84,8 @@ void ServoNode::writeAngle(const geometry_msgs::msg::Twist::SharedPtr twist)
     auto angle = static_cast<uint8_t>((-angular_z + 1.0) * CENTER_ANGLE);
 
     // restrain angle
-    int restrained_angle = std::clamp((int)angle, MIN_ANGLE, MAX_ANGLE);
+    int restrained_angle =
+        std::clamp((int)angle, MIN_REST_ANGLE, MAX_REST_ANGLE);
     RCLCPP_DEBUG(this->get_logger(), "Writing angle: %d", restrained_angle);
 
     // Map the angle (0 to 180) to PCA9685 pulse width (102 to 510)

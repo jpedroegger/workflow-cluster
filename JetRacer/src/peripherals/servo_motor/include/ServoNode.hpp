@@ -11,8 +11,14 @@ constexpr int MIN_COUNT = 102;
 constexpr int MAX_COUNT = 510;
 constexpr int PCA_SERVO_ADDRESS = 0x40;
 constexpr int SERVO_FREQ_HZ = 50;
+
 constexpr int CENTER_ANGLE = 90;
 constexpr int MAX_ANGLE = 180;
+constexpr int MIN_ANGLE = 0;
+
+// RETSRAINED ANGLES
+constexpr int MIN_REST_ANGLE = 10;
+constexpr int MAX_REST_ANGLE = 170;
 
 constexpr int NODE_QOS = 10;
 
