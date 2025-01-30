@@ -34,7 +34,7 @@ jobs:
         sudo apt-get install -y qt6-base-dev qt6-tools-dev-tools
         sudo apt-get install -y qt6-multimedia-dev
 
-    - name: Install run-clang-tidy
+    - name: Install clang-tidy
       run: |
         sudo git clone https://github.com/lmapii/run-clang-tidy.git
         cd run-clang-tidy
@@ -75,4 +75,7 @@ jobs:
         # cd $QT_BUILD_DIR/cluster_tests
         # export QT_QPA_PLATFORM=offscreen
         # ctest --verbose
-  
+    - name: Install clang-tidy
+      run: |
+        sudo cd $ROS_BUILD_DIR
+        run-clang-tidy-rust tidy.json
