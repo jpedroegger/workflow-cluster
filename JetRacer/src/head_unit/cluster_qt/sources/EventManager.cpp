@@ -1,24 +1,26 @@
 #include "../includes/EventManager.h"
-#include <iostream>
-EventManager::EventManager(ArrowSymbolWidget* arrow, SpeedometerWidget* py_speed,
-                     BatteryWidget* py_battery, BatteryAndSpeedWidget* py_batspeed,
-                     Blinkers* left_blinker, Blinkers* right_blinker,
-                     Blinkers* left_blinker2, Blinkers* right_blinker2,
-                     StatsWidget* stats, FanSpeedWidget* fan, FanSpeedWidget* fan2,
-                     CPUTempWidget* cpu, CPUTempWidget* cpu2, TopBar* top, TopBar* top2,
-                     QStackedWidget* stackedWidget, QWidget* mainWindow,
-                           std::shared_ptr<RosNode> ros_node)
-    : arrows(arrow), py_speed(py_speed), py_battery(py_battery), py_batspeed(py_batspeed),
-      left_blinker(left_blinker), right_blinker(right_blinker), left_blinker2(left_blinker2), 
-      right_blinker2(right_blinker2), stats(stats), fan(fan), fan2(fan2), cpu(cpu), cpu2(cpu2), top(top), top2(top2),
-      stackedWidget(stackedWidget), mainWindow(mainWindow), node(ros_node)
+#include <rclcpp/rclcpp.hpp>
+
+EventManager::EventManager(
+    ArrowSymbolWidget* arrow, SpeedometerWidget* py_speed,
+    BatteryWidget* py_battery, BatteryAndSpeedWidget* py_batspeed,
+    Blinkers* left_blinker, Blinkers* right_blinker, Blinkers* left_blinker2,
+    Blinkers* right_blinker2, StatsWidget* stats, FanSpeedWidget* fan,
+    FanSpeedWidget* fan2, CPUTempWidget* cpu, CPUTempWidget* cpu2, TopBar* top,
+    TopBar* top2, QStackedWidget* stackedWidget, QWidget* mainWindow,
+    std::shared_ptr<RosNode> ros_node)
+    : arrows(arrow), py_speed(py_speed), py_battery(py_battery),
+      py_batspeed(py_batspeed), left_blinker(left_blinker),
+      right_blinker(right_blinker), left_blinker2(left_blinker2),
+      right_blinker2(right_blinker2), stats(stats), fan(fan), fan2(fan2),
+      cpu(cpu), cpu2(cpu2), top(top), top2(top2), stackedWidget(stackedWidget),
+      mainWindow(mainWindow), node(ros_node)
 {
     color1 = Color();
     updateTimer = new QTimer(this);
-    connect(updateTimer, &QTimer::timeout, this,
-            &EventManager::processKeyStates);
+    connect(updateTimer, &QTimer::timeout, this, &EventManager::updateScreen);
     executor.add_node(node);
-    updateTimer->start(80); // Every 80ms
+    updateTimer->start(REFRESH_RATE_MS); // Every 50ms => 20FPS
 }
 
 bool EventManager::eventFilter(QObject* obj, QEvent* event)
@@ -47,7 +49,7 @@ bool EventManager::eventFilter(QObject* obj, QEvent* event)
     return QObject::eventFilter(obj, event);
 }
 
-void EventManager::processKeyStates()
+void EventManager::updateScreen()
 {
     executor.spin_some(
         std::chrono::milliseconds(10)); // after this line, values are updated.
@@ -55,37 +57,18 @@ void EventManager::processKeyStates()
     py_battery->setCurrentLevel(node->getBattery());
     py_batspeed->setCurrentLevel(node->getBattery());
     py_batspeed->setCurrentSpeed(node->getSpeed());
+    updateBlinkers();
+
     stats->setDistance(4533);
     stats->setAverage(56);
     stats->setConsumed(78);
     stats->setObstacles(2);
-
     stats->update();
-    
+
     for (int key : pressedKeys)
     {
         switch (key)
         {
-        case Qt::Key_Left:
-        case Qt::Key_Right:
-        case Qt::Key_Up:
-            if (arrows)
-                arrows->changeDirection(key);
-            break;
-        case Qt::Key_Space:
-        case Qt::Key_Down:
-            if (py_speed)
-                py_speed->accelerate(key);
-            break;
-        case Qt::Key_L:
-            turnLeftB();
-            break;
-        case Qt::Key_R:
-            turnRightB();
-            break;
-        case Qt::Key_B:
-            turnBothB();
-            break;
         case Qt::Key_C:
             changeColors();
             break;
@@ -96,83 +79,41 @@ void EventManager::processKeyStates()
             break;
         }
     }
-    
 }
 
-
-void EventManager::turnLeftB()
+void EventManager::updateBlinkers()
 {
-    if (left_blinker && right_blinker)
+    switch (node->getBlinkerState())
     {
-        if (!left_blinker->get_blinking())
-            left_blinker->turnOnBlinkers(true);
-        else if (!right_blinker->get_blinking())
-            left_blinker->turnOnBlinkers(false);
-        right_blinker->turnOnBlinkers(false);
-    }
-    if (left_blinker2 && right_blinker2)
-    {
-        if (!left_blinker2->get_blinking())
-            left_blinker2->turnOnBlinkers(true);
-        else if (!right_blinker2->get_blinking())
-            left_blinker2->turnOnBlinkers(false);
-        right_blinker2->turnOnBlinkers(false);
-    }
-}
-
-void EventManager::turnRightB()
-{
-    if (left_blinker && right_blinker)
-    {
-        if (!right_blinker->get_blinking())
-            right_blinker->turnOnBlinkers(true);
-        else if (!left_blinker->get_blinking())
-            right_blinker->turnOnBlinkers(false);
+    case blinkerState::IDLE:
         left_blinker->turnOnBlinkers(false);
-    }
-    if (left_blinker2 && right_blinker2)
-    {
-        if (!right_blinker2->get_blinking())
-            right_blinker2->turnOnBlinkers(true);
-        else if (!left_blinker2->get_blinking())
-            right_blinker2->turnOnBlinkers(false);
+        right_blinker->turnOnBlinkers(false);
         left_blinker2->turnOnBlinkers(false);
-    }
-}
-
-void EventManager::turnBothB()
-{
-    if (right_blinker && left_blinker)
-    {
-        if (right_blinker->get_blinking() &&
-            left_blinker->get_blinking())
-        {
-            left_blinker->turnOnBlinkers(false);
-            right_blinker->turnOnBlinkers(false);
-        }
-        else
-        {
-            left_blinker->turnOnBlinkers(false);
-            right_blinker->turnOnBlinkers(false);
-            left_blinker->turnOnBlinkers(true);
-            right_blinker->turnOnBlinkers(true);
-        }
-    }
-    if (right_blinker2 && left_blinker2)
-    {
-        if (right_blinker2->get_blinking() &&
-            left_blinker2->get_blinking())
-        {
-            left_blinker2->turnOnBlinkers(false);
-            right_blinker2->turnOnBlinkers(false);
-        }
-        else
-        {
-            left_blinker2->turnOnBlinkers(false);
-            right_blinker2->turnOnBlinkers(false);
-            left_blinker2->turnOnBlinkers(true);
-            right_blinker2->turnOnBlinkers(true);
-        }
+        right_blinker2->turnOnBlinkers(false);
+        break;
+    case blinkerState::TURN_LEFT:
+        left_blinker->turnOnBlinkers(true);
+        right_blinker->turnOnBlinkers(false);
+        left_blinker2->turnOnBlinkers(true);
+        right_blinker2->turnOnBlinkers(false);
+        break;
+    case blinkerState::TURN_RIGHT:
+        left_blinker->turnOnBlinkers(false);
+        right_blinker->turnOnBlinkers(true);
+        left_blinker2->turnOnBlinkers(false);
+        right_blinker2->turnOnBlinkers(true);
+        break;
+    case blinkerState::WARNINGS:
+        left_blinker->turnOnBlinkers(true);
+        right_blinker->turnOnBlinkers(true);
+        left_blinker2->turnOnBlinkers(true);
+        right_blinker2->turnOnBlinkers(true);
+        break;
+    default:
+        left_blinker->turnOnBlinkers(false);
+        right_blinker->turnOnBlinkers(false);
+        left_blinker2->turnOnBlinkers(false);
+        right_blinker2->turnOnBlinkers(false);
     }
 }
 
