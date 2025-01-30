@@ -3,91 +3,89 @@
 
 TopBar::TopBar(QWidget* parent, int x, int y, int width, int height) : QWidget(parent)
 {
-    // Initialize layout
     layout = new QHBoxLayout(this);
-    layout->setSpacing(1); // Optional: adjust spacing between images
-    layout->setContentsMargins(0, 0, 0, 0); // Optional: adjust margins
+    layout->setSpacing(1);
+    layout->setContentsMargins(0, 0, 0, 0);
     setGeometry(x, y, width, height);
 
-    // Create default and alternate images
     Color color = Color();
     int index = color.counter;
-    defaultImagePaths_array[0] = {
+    default_image_paths_array[0] = {
         "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/wheel_p.png",
         "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/brake_p.png",
-        "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/abs_p.png", // Replace with your actual paths
+        "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/abs_p.png",
         "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/med_p.png",
         "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/max_p.png",
         "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/fog_p.png",
         "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/belt_p.png"
     };
-    defaultImagePaths_array[1] = {
+    default_image_paths_array[1] = {
         "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/wheel_r.png",
         "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/brake_r.png",
-        "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/abs_r.png", // Replace with your actual paths
+        "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/abs_r.png",
         "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/med_r.png",
         "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/max_r.png",
         "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/fog_r.png",
         "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/belt_r.png"
     };
-    defaultImagePaths_array[2] = {
+    default_image_paths_array[2] = {
         "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/wheel_i.png",
         "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/brake_i.png",
-        "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/abs_i.png", // Replace with your actual paths
+        "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/abs_i.png",
         "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/med_i.png",
         "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/max_i.png",
         "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/fog_i.png",
         "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/belt_i.png"
     };
-    defaultImagePaths_array[3] = {
+    default_image_paths_array[3] = {
         "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/wheel_g.png",
         "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/brake_g.png",
-        "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/abs_g.png", // Replace with your actual paths
+        "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/abs_g.png",
         "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/med_g.png",
         "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/max_g.png",
         "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/fog_g.png",
         "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/belt_g.png"
     };
-    altImagePaths = {
+    alt_image_paths = {
         "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/wheel_on.png",
         "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/brake_on.png",
-        "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/abs_on.png", // Replace with your actual paths
+        "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/abs_on.png",
         "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/med_on.png",
         "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/max_on.png",
         "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/fog_on.png",
         "/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/belt_on.png"
     };
 
-    defaultImagePaths = defaultImagePaths_array[index];
-    // Load images into QPixmaps
+    default_image_paths = default_image_paths_array[index];
+
     for (int j = 0; j < 4; j++)
     {
-        for (const QString& path : defaultImagePaths_array[j]) {
+        for (const QString& path : default_image_paths_array[j]) {
             QPixmap pixmap(path);
             if (pixmap.isNull()) {
                 qWarning() << "Failed to load default image:" << path;
             }
-            defaultImages_array[j].append(pixmap);
+            default_images_array[j].append(pixmap);
         }
     }
-    defaultImages = defaultImages_array[0];
-    for (const QString& path : altImagePaths) {
+    default_images = default_images_array[0];
+    for (const QString& path : alt_image_paths) {
         QPixmap pixmap(path);
         if (pixmap.isNull()) {
             qWarning() << "Failed to load alternate image:" << path;
         }
-        altImages.append(pixmap);
+        alt_images.append(pixmap);
     }
 
-    // Create QLabel widgets for each image
+
     for (int i = 0; i < 6; ++i) {
         QLabel* label = new QLabel(this);
-        label->setFixedSize(40, 40); // Optional: set a fixed size for the images
-        //label->setScaledContents(true); // Ensure the image scales to fit the QLabel
-        if (i < defaultImages.size()) {
-            label->setPixmap(defaultImages[i]); // Set default image
+        label->setFixedSize(40, 40);
+    
+        if (i < default_images.size()) {
+            label->setPixmap(default_images[i]);
         }
-        imageLabels.append(label);
+        image_labels.append(label);
         layout->addWidget(label);
     }
 
@@ -100,25 +98,25 @@ TopBar::~TopBar() {}
 
 bool    TopBar::setImageState(int index, bool state)
 {
-    if (index < 0 || index >= imageLabels.size()) {
+    if (index < 0 || index >= image_labels.size()) {
         qWarning() << "Invalid index:" << index;
         return false;
     }
 
-    // Set the image based on the state
+
     if (state) {
-        imageLabels[index]->setPixmap(altImages[index]);
+        image_labels[index]->setPixmap(alt_images[index]);
         return true;
     } else {
-        imageLabels[index]->setPixmap(defaultImages[index]);
+        image_labels[index]->setPixmap(default_images[index]);
         return false;
     }
 }
 
 void    TopBar::changeColor(int  array_index)
 {
-    defaultImages = defaultImages_array[array_index];
+    default_images = default_images_array[array_index];
     for (int i = 0; i < 6; ++i) {
-        imageLabels[i]->setPixmap(defaultImages[i]);
+        image_labels[i]->setPixmap(default_images[i]);
     }
 }

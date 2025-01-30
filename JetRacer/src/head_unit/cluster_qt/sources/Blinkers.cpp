@@ -3,14 +3,14 @@
 
 Blinkers::Blinkers(QWidget* parent, std::string dir, std::string mode, int x,
                    int y, int width, int height)
-    : QWidget(parent), isImage1Visible(true), blinking(false)
+    : QWidget(parent), is_image1_visible(true), blinking(false)
 {
 
-    imageLabel = new QLabel(this);
-    imageLabel->setAlignment(Qt::AlignCenter);
+    image_label = new QLabel(this);
+    image_label->setAlignment(Qt::AlignCenter);
     blinking = false;
-    isImage1Visible = true;
-    toggleTimer = NULL;
+    is_image1_visible = true;
+    toggle_timer = NULL;
     Color color1 = Color();
     int counter = color1.counter;
     if (dir == "left")
@@ -47,10 +47,10 @@ Blinkers::Blinkers(QWidget* parent, std::string dir, std::string mode, int x,
         qWarning() << "Failed to load images.";
     }
 
-    imageLabel->setPixmap(image1);
+    image_label->setPixmap(image1);
 
     QVBoxLayout* layout = new QVBoxLayout(this);
-    layout->addWidget(imageLabel);
+    layout->addWidget(image_label);
 
     setLayout(layout);
     setMaximumWidth(105);
@@ -61,24 +61,17 @@ Blinkers::Blinkers(QWidget* parent, std::string dir, std::string mode, int x,
 Blinkers::~Blinkers()
 {
 
-    delete imageLabel;
-    delete toggleTimer;
+    delete image_label;
+    delete toggle_timer;
 }
 
 void Blinkers::toggleImage()
 {
-    // Toggle between the two images
-    if (isImage1Visible)
-    {
-        imageLabel->setPixmap(image2);
-    }
+    if (is_image1_visible)
+        image_label->setPixmap(image2);
     else
-    {
-        imageLabel->setPixmap(image1);
-    }
-
-    // Flip the visibility flag
-    isImage1Visible = !isImage1Visible;
+        image_label->setPixmap(image1);
+    is_image1_visible = !is_image1_visible;
 }
 
 void Blinkers::turnOnBlinkers(bool on_off)
@@ -87,20 +80,20 @@ void Blinkers::turnOnBlinkers(bool on_off)
     {
         if (!blinking)
         {
-            toggleTimer = new QTimer(this);
-            connect(toggleTimer, &QTimer::timeout, this,
+            toggle_timer = new QTimer(this);
+            connect(toggle_timer, &QTimer::timeout, this,
                     &Blinkers::toggleImage);
-            toggleTimer->start(500);
+            toggle_timer->start(500);
             blinking = true;
         }
     }
     else
     {
-        if (toggleTimer)
-            toggleTimer->stop();
-        if (isImage1Visible)
-            isImage1Visible = false;
-        imageLabel->setPixmap(image1);
+        if (toggle_timer)
+            toggle_timer->stop();
+        if (is_image1_visible)
+            is_image1_visible = false;
+        image_label->setPixmap(image1);
         blinking = false;
     }
 }
@@ -108,9 +101,9 @@ void Blinkers::turnOnBlinkers(bool on_off)
 void Blinkers::changeColor(int array_index)
 {
     image1 = image1_array[array_index];
-    imageLabel->setPixmap(image1);
+    image_label->setPixmap(image1);
 }
 
 bool Blinkers::get_blinking() { return blinking; }
 
-QTimer* Blinkers::getToggleTimer() { return toggleTimer; }
+QTimer* Blinkers::getToggleTimer() { return toggle_timer; }

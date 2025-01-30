@@ -27,26 +27,26 @@ class EventManager : public QWidget
         Q_OBJECT;
 
     private:
-        ArrowSymbolWidget* arrows;
-        SpeedometerWidget* py_speed;
-        BatteryWidget* py_battery;
-        BatteryAndSpeedWidget* py_batspeed;
-        Blinkers* left_blinker;
-        Blinkers* right_blinker;
-        Blinkers* left_blinker2;
-        Blinkers* right_blinker2;
-        StatsWidget* stats;
-        FanSpeedWidget* fan;
-        FanSpeedWidget* fan2;
-        CPUTempWidget* cpu;
-        CPUTempWidget* cpu2;
-        TopBar* top;
-        TopBar* top2;
-        QSet<int> pressedKeys;
-        QTimer* updateTimer; // Used to check if a key is still being called
-        QStackedWidget* stackedWidget;
-        QWidget* mainWindow;
-        std::shared_ptr<RosNode> node;
+        ArrowSymbolWidget*                        arrows;
+        SpeedometerWidget*                        py_speed;
+        BatteryWidget*                            py_battery;
+        BatteryAndSpeedWidget*                    py_batspeed;
+        Blinkers*                                 left_blinker;
+        Blinkers*                                 right_blinker;
+        Blinkers*                                 left_blinker2;
+        Blinkers*                                 right_blinker2;
+        StatsWidget*                              stats;
+        FanSpeedWidget*                           fan;
+        FanSpeedWidget*                           fan2;
+        CPUTempWidget*                            cpu;
+        CPUTempWidget*                            cpu2;
+        TopBar*                                   top;
+        TopBar*                                   top2;
+        QSet<int>                                 pressed_keys;
+        QTimer*                                   update_timer;
+        QStackedWidget*                           stacked_widget;
+        QWidget*                                  main_window;
+        std::shared_ptr<RosNode>                  node;
         rclcpp::executors::SingleThreadedExecutor executor;
 
     public:
@@ -57,21 +57,22 @@ class EventManager : public QWidget
                      Blinkers* right_blinker2, StatsWidget* stats,
                      FanSpeedWidget* fan, FanSpeedWidget* fan2,
                      CPUTempWidget* cpu, CPUTempWidget* cpu2, TopBar* top,
-                     TopBar* top2, QStackedWidget* stackedWidget,
-                     QWidget* mainWindow, std::shared_ptr<RosNode> ros_node);
-        virtual ~EventManager();
+                     TopBar* top2, QStackedWidget* stacked_widget,
+                     QWidget* main_window, std::shared_ptr<RosNode> ros_node);
+
+        virtual         ~EventManager();
         QStackedWidget* getStackedWidget();
-        Color color1;
-        void changeUnits();
-        void changeColors();
+        Color           color1;
+        void            changeUnits();
+        void            changeColors();
 
     protected:
-        bool eventFilter(QObject* obj, QEvent* event) override;
+        bool            eventFilter(QObject* obj, QEvent* event) override;
 
     private slots:
-        void handleGestureEvent(QGestureEvent* gestureEvent);
-        void updateScreen();
-        void updateBlinkers();
+        void            handleGestureEvent(QGestureEvent* gesture_event);
+        void            updateScreen();
+        void            updateBlinkers();
 };
 
-#endif // EVENTMANAGER_H
+#endif

@@ -3,15 +3,13 @@
 CameraWidget::CameraWidget(QWidget *parent, int x, int y, int width, int height)
     : QWidget(parent),
       camera(new QCamera(this)),
-      videoWidget(new QVideoWidget(this)) {
+      video_widget(new QVideoWidget(this)) {
 
-    // Set up the capture session
-    captureSession.setCamera(camera);
-    captureSession.setVideoOutput(videoWidget);
+    capture_session.setCamera(camera);
+    capture_session.setVideoOutput(video_widget);
 
-    // Layout for the widget
     QVBoxLayout *layout = new QVBoxLayout(this);
-    layout->addWidget(videoWidget); // Display the camera feed
+    layout->addWidget(video_widget);
     setLayout(layout);
     setGeometry(x, y, width, height);
 }

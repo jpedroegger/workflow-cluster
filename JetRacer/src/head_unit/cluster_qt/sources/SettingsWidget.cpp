@@ -4,26 +4,24 @@ SettingsWidget::SettingsWidget(QWidget *parent, EventManager &event, int x, int 
     : QWidget(parent), expanded(false), event(event)
 {
     setGeometry(x, y, width, height);
-    // Initialize main icon with an image
-    mainIcon = new QPushButton(this);
-    mainIcon->setFixedSize(50, 50);
-    mainIcon->setStyleSheet("border: none; "
+    main_icon = new QPushButton(this);
+    main_icon->setFixedSize(50, 50);
+    main_icon->setStyleSheet("border: none; "
                             "background-image: url('/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/settings.png'); "
                             "background-repeat: no-repeat; "
                             "background-position: center;"
                             );
 
-    // Initialize close icon with an image
-    closeIcon = new QPushButton(this);
-    closeIcon->setFixedSize(50, 50);
-    closeIcon->setStyleSheet("border: none; "
+    close_icon = new QPushButton(this);
+    close_icon->setFixedSize(50, 50);
+    close_icon->setStyleSheet("border: none; "
                              "background-image: url('/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/settings.png'); "
                              "background-repeat: no-repeat; "
                              "background-position: center;");
 
-    themesIcon = new QPushButton(this);
-    themesIcon->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
-    themesIcon->setStyleSheet(
+    themes_icon = new QPushButton(this);
+    themes_icon->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+    themes_icon->setStyleSheet(
         "QPushButton {"
         "   border: none;"
         "   background: none;"
@@ -35,13 +33,13 @@ SettingsWidget::SettingsWidget(QWidget *parent, EventManager &event, int x, int 
         "   text-align: center;"
         "}"
         );
-    themesIcon->setIcon(QIcon("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/brush.png"));
-    themesIcon->setIconSize(QSize(50, 50));
-    themesIcon->setText("Change Themes");
+    themes_icon->setIcon(QIcon("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/brush.png"));
+    themes_icon->setIconSize(QSize(50, 50));
+    themes_icon->setText("Change Themes");
 
-    changeUnitIcon = new QPushButton(this);
-    changeUnitIcon->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
-    changeUnitIcon->setStyleSheet(
+    change_unit_icon = new QPushButton(this);
+    change_unit_icon->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+    change_unit_icon->setStyleSheet(
         "QPushButton {"
         "   border: none;"
         "   background: none;"
@@ -53,37 +51,34 @@ SettingsWidget::SettingsWidget(QWidget *parent, EventManager &event, int x, int 
         "   text-align: center;"
         "}"
         );
-    changeUnitIcon->setIcon(QIcon("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/convert.png"));
-    changeUnitIcon->setIconSize(QSize(50, 50));
-    changeUnitIcon->setText("Change Units");
+    change_unit_icon->setIcon(QIcon("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/convert.png"));
+    change_unit_icon->setIconSize(QSize(50, 50));
+    change_unit_icon->setText("Change Units");
 
 
-    collapsedWidget = new QWidget(this);
-    QVBoxLayout *collapsedLayout = new QVBoxLayout(collapsedWidget);
-    collapsedLayout->addWidget(mainIcon);
+    collapsed_widget = new QWidget(this);
+    QVBoxLayout *collapsedLayout = new QVBoxLayout(collapsed_widget);
+    collapsedLayout->addWidget(main_icon);
 
     collapsedLayout->setContentsMargins(0, 0, 0, 0);
     collapsedLayout->setSpacing(0);
 
-    // Create expanded widget
-    expandedWidget = new QWidget(this);
-    QVBoxLayout *expandedLayout = new QVBoxLayout(expandedWidget);
-    expandedLayout->addWidget(themesIcon);
-    expandedLayout->addWidget(changeUnitIcon);
-    expandedLayout->addWidget(closeIcon);
+    expanded_widget = new QWidget(this);
+    QVBoxLayout *expandedLayout = new QVBoxLayout(expanded_widget);
+    expandedLayout->addWidget(themes_icon);
+    expandedLayout->addWidget(change_unit_icon);
+    expandedLayout->addWidget(close_icon);
 
     expandedLayout->setContentsMargins(0, 0, 0, 0);
     expandedLayout->setSpacing(10);
 
-    // Create stacked widget
-    stackedWidget = new QStackedWidget(this);
-    stackedWidget->addWidget(collapsedWidget);
-    stackedWidget->addWidget(expandedWidget);
+    stacked_widget = new QStackedWidget(this);
+    stacked_widget->addWidget(collapsed_widget);
+    stacked_widget->addWidget(expanded_widget);
 
 
-    // Set initial state
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
-    mainLayout->addWidget(stackedWidget);
+    mainLayout->addWidget(stacked_widget);
     mainLayout->setContentsMargins(0, 0, 0, 0);
     mainLayout->setSpacing(0);
 
@@ -92,11 +87,10 @@ SettingsWidget::SettingsWidget(QWidget *parent, EventManager &event, int x, int 
     setFixedSize(140, 120); // Collapsed size
 
 
-    // Connect buttons
-    connect(mainIcon, &QPushButton::clicked, this, &SettingsWidget::toggleExpand);
-    connect(closeIcon, &QPushButton::clicked, this, &SettingsWidget::toggleExpand);
-    connect(changeUnitIcon, &QPushButton::clicked, stats, &event->changeUnits());
-    connect(themesIcon, &QPushButton::clicked, stats, &event->changeColors());
+    connect(main_icon, &QPushButton::clicked, this, &SettingsWidget::toggleExpand);
+    connect(close_icon, &QPushButton::clicked, this, &SettingsWidget::toggleExpand);
+    connect(change_unit_icon, &QPushButton::clicked, stats, &event->changeUnits());
+    connect(themes_icon, &QPushButton::clicked, stats, &event->changeColors());
 }
 
 void SettingsWidget::toggleExpand()
@@ -109,11 +103,11 @@ void SettingsWidget::setExpanded(bool expand)
     expanded = expand;
 
     if (expanded) {
-        stackedWidget->setCurrentWidget(expandedWidget);
+        stacked_widget->setCurrentWidget(expanded_widget);
         setMinimumSize(140, 200);
         setMaximumSize(140, 200);
     } else {
-        stackedWidget->setCurrentWidget(collapsedWidget);
+        stacked_widget->setCurrentWidget(collapsed_widget);
         setMinimumSize(140, 120);
         setMaximumSize(140, 120);
     }

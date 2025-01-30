@@ -4,49 +4,50 @@
 #include <QWidget>
 #include <QPainter>
 #include <QPainterPath>
-#include <QKeyEvent>  // Include for key events
+#include <QKeyEvent>
 #include "Colors.h"
 
 class ArrowSymbolWidget : public QWidget
 {
     public:
-        ArrowSymbolWidget(QWidget* parent = nullptr, std::string input = "none", int x = 0, int y = 0, int width = 0, int height = 0);
+        ArrowSymbolWidget(QWidget* parent = nullptr, std::string input = "none",
+                          int x = 0, int y = 0, int width = 0, int height = 0);
         ~ArrowSymbolWidget();
 
-        void setDrawVerticalArrows(bool enabled);
-        void setdrawLeftUpperCurve(bool enabled);
-        void setdrawRightUpperCurve(bool enabled);
-        void setdrawLeftLowerCurve(bool enabled);
-        void setdrawRightLowerCurve(bool enabled);
-        void changeColor(int  array_index);
-        void changeDirection(int movement_key);
-        QColor  main_color;
-        QColor  accent_color;
-        QColor  alphabet_color;
+        void   setDrawVerticalArrows(bool enabled);
+        void   setdrawLeftUpperCurve(bool enabled);
+        void   setdrawRightUpperCurve(bool enabled);
+        void   setdrawLeftLowerCurve(bool enabled);
+        void   setdrawRightLowerCurve(bool enabled);
+        void   changeColor(int  array_index);
+        void   changeDirection(int movement_key);
+        QColor main_color;
+        QColor accent_color;
+        QColor alphabet_color;
 
     protected:
-        ArrowSymbolWidget();
-        void paintEvent(QPaintEvent* event) override;
+        void   paintEvent(QPaintEvent* event) override;
 
     private:
-        void drawVerticalArrows(QPainter& painter, std::string color);
-        void drawLeftUpperCurve(QPainter& painter, std::string color);
-        void drawRightUpperCurve(QPainter& painter, std::string color);
-        void drawLeftLowerCurve(QPainter& painter, std::string color);
-        void drawRightLowerCurve(QPainter& painter, std::string color);
-        void drawArrowhead(QPainter& painter, int x, int y, double angle, int size, std::string color);
+        void   drawVerticalArrows(QPainter& painter, std::string color);
+        void   drawLeftUpperCurve(QPainter& painter, std::string color);
+        void   drawRightUpperCurve(QPainter& painter, std::string color);
+        void   drawLeftLowerCurve(QPainter& painter, std::string color);
+        void   drawRightLowerCurve(QPainter& painter, std::string color);
+        void   drawArrowhead(QPainter& painter, int x, int y, double angle,
+                             int size, std::string color);
 
-        bool m_drawVerticalArrows;
-        bool m_drawLeftUpperCurve;
-        bool m_drawRightUpperCurve;
-        bool m_drawLeftLowerCurve;
-        bool m_drawRightLowerCurve;
-        bool m_greenLU;
-        bool m_greenRU;
-        bool m_greenLL;
-        bool m_greenRL;
-        bool m_greenV;
-        Color color1;
+        bool   m_draw_vertical_arrows;
+        bool   m_draw_left_upper_curve;
+        bool   m_draw_right_upper_curve;
+        bool   m_draw_left_lower_curve;
+        bool   m_draw_right_lower_curve;
+        bool   m_green_l_u;
+        bool   m_green_r_u;
+        bool   m_green_l_l;
+        bool   m_green_r_l;
+        bool   m_green_v;
+        Color  color1;
 };
 
-#endif // ARROWSYMBOLWIDGET_H
+#endif

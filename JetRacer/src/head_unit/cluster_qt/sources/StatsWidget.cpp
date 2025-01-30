@@ -1,5 +1,4 @@
 #include "../includes/StatsWidget.h"
-#include <iostream>
 
 
 StatsWidget::StatsWidget(QWidget *parent, int x, int y, int width, int height)
@@ -24,14 +23,12 @@ void    StatsWidget::paintEvent(QPaintEvent *event)
 {
     QPainter painter(this);
 
-    // Set up font for text
     painter.setFont(QFont("Arial", 15, QFont::Bold));
 
     int spacing = 20;
     int rectWidth = width / 2 - spacing;
     int rectHeight = height / 2 - spacing - 50;
 
-    // Draw two rows, each with two rectangles
     values.clear();
     values << distance << average << consumed << obstacles;
     for (int row = 0; row < 2; row++)
@@ -41,7 +38,6 @@ void    StatsWidget::paintEvent(QPaintEvent *event)
             int x = 10 + col * (rectWidth + spacing);
             int y = 10 + row * (rectHeight + spacing);
 
-            // Draw rectangle
             painter.setPen(QPen(main_color, 8));
             painter.drawRect(x, y, rectWidth, rectHeight);
 
@@ -92,7 +88,6 @@ void    StatsWidget::setObstacles(int obs)
 
 void    StatsWidget::changeUnits(void)
 {
-    qDebug() << "Called";
     if (unit == "Km"){
         unit = "Mi";
         distance_int *= 0.6214;

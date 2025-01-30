@@ -12,22 +12,22 @@ class TopBar : public QWidget
     Q_OBJECT
 
 public:
-    explicit TopBar(QWidget* parent = nullptr, int x = 0, int y = 0, int width = 0, int height = 0);
+    explicit        TopBar(QWidget* parent = nullptr, int x = 0, int y = 0,
+                           int width = 0, int height = 0);
     ~TopBar();
 
-    // Method to update the image at a specific index based on a condition
-    bool setImageState(int index, bool state);
-    void changeColor(int  array_index);
+    bool            setImageState(int index, bool state);
+    void            changeColor(int  array_index);
 
 private:
-    QHBoxLayout* layout;              // Layout to hold the images
-    QVector<QLabel*> imageLabels;     // Vector to hold QLabel pointers for the images
-    QVector<QPixmap> defaultImages;  // Vector to hold the default images
-    QVector<QPixmap> defaultImages_array[4];
-    QVector<QPixmap> altImages;      // Vector to hold the alternate images
-    QStringList defaultImagePaths;
-    QStringList defaultImagePaths_array[4];
-    QStringList altImagePaths;
+    QHBoxLayout*     layout;
+    QVector<QLabel*> image_labels;
+    QVector<QPixmap> default_images;
+    QVector<QPixmap> default_images_array[4];
+    QVector<QPixmap> alt_images;
+    QStringList      default_image_paths;
+    QStringList      default_image_paths_array[4];
+    QStringList      alt_image_paths;
 };
 
-#endif // TOPBAR_H
+#endif

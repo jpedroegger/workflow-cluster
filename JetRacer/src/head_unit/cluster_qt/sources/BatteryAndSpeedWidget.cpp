@@ -1,7 +1,7 @@
 #include "../includes/BatteryAndSpeedWidget.h"
 
 BatteryAndSpeedWidget::BatteryAndSpeedWidget(QWidget* parent, int x, int y, int width, int height)
-    : QWidget(parent), currentSpeed(0)
+    : QWidget(parent), current_speed(0)
 {
     color1 = Color();
     unit = "DPS";
@@ -28,13 +28,13 @@ void BatteryAndSpeedWidget::paintEvent(QPaintEvent* event)
 
     int imageWidth = 25;
     int imageHeight = 25;
-    int imageX = centerX - 25 - imageWidth / 2;
-    int imageY = centerY + imageWidth / 2;
+    int image_x = centerX - 25 - imageWidth / 2;
+    int image_y = centerY + imageWidth / 2;
 
-    painter.drawPixmap(imageX, imageY, imageWidth, imageHeight, image);
+    painter.drawPixmap(image_x, image_y, imageWidth, imageHeight, image);
 
     drawCentralNumber(painter, centerX + 100, centerY);
-    drawBatteryNumber(painter, imageX + 15, imageY + 55);
+    drawBatteryNumber(painter, image_x + 15, image_y + 55);
     drawScale(painter, centerX, centerY, radius);
 }
 
@@ -58,7 +58,7 @@ void BatteryAndSpeedWidget::drawBars(QPainter& painter, int centerX,
     int barWidth = 6;
     int innerRadius = radius - 80;
     int outerRadius = radius - 70;
-    int activeBars = static_cast<int>(currentLevel);
+    int activeBars = static_cast<int>(current_level);
 
     for (int i = 0; i <= numBars; ++i)
     {
@@ -112,7 +112,7 @@ void BatteryAndSpeedWidget::drawCentralNumber(QPainter& painter,
     QFont font("Arial", 80, QFont::Bold);
     painter.setFont(font);
     painter.setPen(QPen(alphabet_color));
-    QString speedText = QString::number(currentSpeed);
+    QString speedText = QString::number(current_speed);
     QFontMetrics metrics(font);
     QRect textRect = metrics.boundingRect(speedText);
 
@@ -137,7 +137,7 @@ void BatteryAndSpeedWidget::drawBatteryNumber(QPainter& painter,
     QFont font("Arial", 10, QFont::Bold);
     painter.setFont(font);
     painter.setPen(QPen(alphabet_color));
-    QString speedText = QString::number(currentLevel) + " %";
+    QString speedText = QString::number(current_level) + " %";
 
     QFontMetrics metrics(font);
     QRect textRect = metrics.boundingRect(speedText);
@@ -151,17 +151,17 @@ void BatteryAndSpeedWidget::accelerate(int forward_key)
 {
     if (forward_key == Qt::Key_Space)
     {
-        currentSpeed += 2;
-        if (currentSpeed > 160)
-            currentSpeed = 160;
+        current_speed += 2;
+        if (current_speed > 160)
+            current_speed = 160;
         update();
     }
 
     if (forward_key == Qt::Key_Down)
     {
-        currentSpeed -= 2;
-        if (currentSpeed <= 0)
-            currentSpeed = 0;
+        current_speed -= 2;
+        if (current_speed <= 0)
+            current_speed = 0;
         update();
     }
 }
@@ -177,31 +177,31 @@ void    BatteryAndSpeedWidget::changeColor(int  array_index)
 
 void    BatteryAndSpeedWidget::setCurrentLevel(int battery)
 {
-    if (battery == currentLevel)
+    if (battery == current_level)
         return ;
-    currentLevel = battery;
+    current_level = battery;
     update();
 }
 void    BatteryAndSpeedWidget::changeUnits(void)
 {
     if (unit == "DPS"){
         unit = "FPS";
-        currentSpeed *= 0.6214;
+        current_speed *= 0.6214;
     } else {
         unit = "DPS";
-        currentSpeed *= 1.609;
+        current_speed *= 1.609;
     }
     update();
 }
 
 void BatteryAndSpeedWidget::setCurrentSpeed(int speed)
 {
-    if (speed == currentSpeed
-    || (unit == "DPS" && speed * 0.6214 == currentSpeed))
+    if (speed == current_speed
+    || (unit == "DPS" && speed * 0.6214 == current_speed))
         return ;
     if (unit == "FPS")
-        currentSpeed = 0.6214 * speed;
+        current_speed = 0.6214 * speed;
     else
-        currentSpeed = speed;
+        current_speed = speed;
     update();
 }

@@ -5,13 +5,13 @@ int main(int argc, char* argv[])
     rclcpp::init(argc, argv);
     QApplication app(argc, argv);
 
-    QWidget* mainWindow = new QWidget;
+    QWidget* main_window = new QWidget;
     QWidget* page1 = new QWidget;
     QWidget* page2 = new QWidget;
 
-    QStackedWidget* stackedWidget = new QStackedWidget;
-    stackedWidget->addWidget(page1); // Mode 1
-    stackedWidget->addWidget(page2); // Mode 2
+    QStackedWidget* stacked_widget = new QStackedWidget;
+    stacked_widget->addWidget(page1); // Mode 1
+    stacked_widget->addWidget(page2); // Mode 2
 
     // Mode 1
     SpeedometerWidget*      speedometer = new SpeedometerWidget(page1, 90, 145, 300, 300);
@@ -37,7 +37,7 @@ int main(int argc, char* argv[])
 
     EventManager eventManager(arrowSymbol, speedometer, battery, bas, leftB, rightB,
                               leftB2, rightB2, stats, fanspeed, fanspeed2, cputemp,
-                              cputemp2, topBar, topBar2, stackedWidget, mainWindow, node);
+                              cputemp2, topBar, topBar2, stacked_widget, main_window, node);
     app.installEventFilter(&eventManager);
     //settings->setGeometry(1120, -10, 250, 250);
     // Toolbar for switching modes
@@ -48,23 +48,23 @@ int main(int argc, char* argv[])
     QObject::connect(mode1Action, &QAction::triggered,
                      [&]()
                      {
-                         stackedWidget->setCurrentIndex(0);
+                         stacked_widget->setCurrentIndex(0);
                      });
     QObject::connect(mode2Action, &QAction::triggered,
                      [&]()
                      {
-                         stackedWidget->setCurrentIndex(1);
+                         stacked_widget->setCurrentIndex(1);
                      });
 
     // Main Layout
     Color color = Color();
     QVBoxLayout* mainLayout = new QVBoxLayout();
     mainLayout->addWidget(toolBar);
-    mainLayout->addWidget(stackedWidget);
-    mainWindow->setLayout(mainLayout);
-    mainWindow->resize(850, 700);
-    mainWindow->setStyleSheet(QString("%1; margin: 0px; padding: 0px;").arg(color.background));
-    mainWindow->show();
+    mainLayout->addWidget(stacked_widget);
+    main_window->setLayout(mainLayout);
+    main_window->resize(850, 700);
+    main_window->setStyleSheet(QString("%1; margin: 0px; padding: 0px;").arg(color.background));
+    main_window->show();
 
     int ret = app.exec();
     rclcpp::shutdown();

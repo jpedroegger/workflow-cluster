@@ -9,36 +9,36 @@
 #include <QStyle>
 #include "../includes/EventManager.h"
 
-class StatsWidget;
-
 class SettingsWidget : public QWidget
 {
     Q_OBJECT
 
-public:
-    explicit SettingsWidget(QWidget *parent, EventManager &event, int x = 0, int y = 0, int width = 0, int height = 0);
+    public:
+        explicit       SettingsWidget(QWidget *parent, EventManager &event,
+                                      int x = 0, int y = 0, int width = 0, int height = 0);
 
-protected:
-    void mousePressEvent(QMouseEvent *event) override;
+    protected:
+        void           mousePressEvent(QMouseEvent *event) override;
 
-private slots:
-    void toggleExpand();
+    private slots:
+        void           toggleExpand();
 
-private:
-    bool expanded;
+    private:
+        bool           expanded;
 
-    QStackedWidget *stackedWidget;
-    QWidget *collapsedWidget;
-    QWidget *expandedWidget;
+        QStackedWidget *stacked_widget;
+        QWidget        *collapsed_widget;
+        QWidget        *expanded_widget;
 
-    QPushButton *mainIcon;
-    QPushButton *closeIcon;
-    QPushButton *themesIcon;
-    QPushButton *changeUnitIcon;
-    EventManager &event;
+        QPushButton    *main_icon;
+        QPushButton    *close_icon;
+        QPushButton    *themes_icon;
+        QPushButton    *change_unit_icon;
+        EventManager   &event;
 
-    bool setButtonIcon(QPushButton *button, const QString &imagePath);
-    void setExpanded(bool expand);
-    bool isClickOutside(const QPoint &pos) const;
+        bool           setButtonIcon(QPushButton *button, const QString &imagePath);
+        void           setExpanded(bool expand);
+        bool           isClickOutside(const QPoint &pos) const;
 };
+
 #endif

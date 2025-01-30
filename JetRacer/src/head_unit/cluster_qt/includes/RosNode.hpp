@@ -24,21 +24,21 @@ class RosNode : public rclcpp::Node
         RosNode();
         ~RosNode() = default;
 
-        int getSpeed() const;
-        int getBattery() const;
-        int getRpm() const;
-        blinkerState getBlinkerState() const;
+        int                                                     getSpeed() const;
+        int                                                     getBattery() const;
+        int                                                     getRpm() const;
+        blinkerState                                            getBlinkerState() const;
 
     private:
         rclcpp::Subscription<std_msgs::msg::Float64>::SharedPtr battery_sub_;
-        rclcpp::Subscription<std_msgs::msg::UInt8>::SharedPtr speed_sub_;
-        rclcpp::Subscription<std_msgs::msg::UInt32>::SharedPtr rpm_sub_;
-        rclcpp::Subscription<std_msgs::msg::UInt8>::SharedPtr blinker_sub_;
+        rclcpp::Subscription<std_msgs::msg::UInt8>::SharedPtr   speed_sub_;
+        rclcpp::Subscription<std_msgs::msg::UInt32>::SharedPtr  rpm_sub_;
+        rclcpp::Subscription<std_msgs::msg::UInt8>::SharedPtr   blinker_sub_;
 
-        void setBlinkerState(std_msgs::msg::UInt8 msg);
+        void                                                    setBlinkerState(std_msgs::msg::UInt8 msg);
 
-        int battery_level_{100};
-        int speed_{0};
-        int rpm_{0};
-        blinkerState blinker_state_{blinkerState::IDLE};
+        int                                                     battery_level_{100};
+        int                                                     speed_{0};
+        int                                                     rpm_{0};
+        blinkerState                                            blinker_state_{blinkerState::IDLE};
 };

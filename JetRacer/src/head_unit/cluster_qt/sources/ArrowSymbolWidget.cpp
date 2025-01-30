@@ -8,22 +8,22 @@ ArrowSymbolWidget::ArrowSymbolWidget(QWidget* parent, std::string input, int x, 
     accent_color = color1.accent_color;
     alphabet_color = color1.alphabet_color;
 
-    m_greenLU = false;
-    m_greenRU = false;
-    m_greenLL = false;
-    m_greenRL = false;
-    m_greenV = false;
-    m_drawVerticalArrows = true;
-    m_drawLeftUpperCurve = true;
-    m_drawRightUpperCurve = true;
-    m_drawLeftLowerCurve = true;
-    m_drawRightLowerCurve = true;
+    m_green_l_u = false;
+    m_green_r_u = false;
+    m_green_l_l = false;
+    m_green_r_l = false;
+    m_green_v = false;
+    m_draw_vertical_arrows = true;
+    m_draw_left_upper_curve = true;
+    m_draw_right_upper_curve = true;
+    m_draw_left_lower_curve = true;
+    m_draw_right_lower_curve = true;
     if (input == "front")
-        m_greenV = true;
+        m_green_v = true;
     else if (input == "left")
-        m_greenLU = true;
+        m_green_l_u = true;
     else if (input == "right")
-        m_greenRU = true;
+        m_green_r_u = true;
     setFocusPolicy(Qt::StrongFocus);
     setGeometry(x, y, width, height);
 }
@@ -33,20 +33,20 @@ ArrowSymbolWidget::~ArrowSymbolWidget() {}
 
 void ArrowSymbolWidget::setDrawVerticalArrows(bool enabled)
 {
-    m_drawVerticalArrows = enabled;
-    update(); // Trigger a repaint
+    m_draw_vertical_arrows = enabled;
+    update();
 }
 
 void ArrowSymbolWidget::setdrawLeftUpperCurve(bool enabled)
 {
-    m_drawLeftUpperCurve = enabled;
-    update(); // Trigger a repaint
+    m_draw_left_upper_curve = enabled;
+    update();
 }
 
 void ArrowSymbolWidget::setdrawRightUpperCurve(bool enabled)
 {
-    m_drawRightUpperCurve = enabled;
-    update(); // Trigger a repaint
+    m_draw_right_upper_curve = enabled;
+    update();
 }
 
 void ArrowSymbolWidget::paintEvent(QPaintEvent* event)
@@ -55,36 +55,36 @@ void ArrowSymbolWidget::paintEvent(QPaintEvent* event)
     painter.setRenderHint(QPainter::Antialiasing);
 
 
-    if (m_drawLeftUpperCurve) {
-        if (m_greenLU == false)
+    if (m_draw_left_upper_curve) {
+        if (m_green_l_u == false)
             drawLeftUpperCurve(painter, "black");
         else
             drawLeftUpperCurve(painter, "green");
     }
 
-    if (m_drawRightUpperCurve) {
-        if (m_greenRU == false) 
+    if (m_draw_right_upper_curve) {
+        if (m_green_r_u == false) 
             drawRightUpperCurve(painter, "black");
         else
             drawRightUpperCurve(painter, "green");
 
     }
 
-    if (m_drawLeftLowerCurve) {
-        if (m_greenLU == false)
+    if (m_draw_left_lower_curve) {
+        if (m_green_l_u == false)
             drawLeftLowerCurve(painter, "black");
         else
             drawLeftLowerCurve(painter, "green");
     }
-    if (m_drawRightLowerCurve) {
-        if (m_greenRU == false) 
+    if (m_draw_right_lower_curve) {
+        if (m_green_r_u == false) 
             drawRightLowerCurve(painter, "black");
         else
             drawRightLowerCurve(painter, "green");
 
     }
-    if (m_drawVerticalArrows) {
-        if (m_greenV == false)
+    if (m_draw_vertical_arrows) {
+        if (m_green_v == false)
             drawVerticalArrows(painter, "black");
         else
             drawVerticalArrows(painter, "green");
@@ -99,7 +99,6 @@ void ArrowSymbolWidget::drawVerticalArrows(QPainter& painter, std::string color)
     int stemLength = 100;
     int arrowSize = 10;
 
-    // Draw the central vertical arrow
     if (color == "black")
         painter.setPen(QPen(main_color,10));
     else

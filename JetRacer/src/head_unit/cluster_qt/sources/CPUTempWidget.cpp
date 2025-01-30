@@ -1,7 +1,7 @@
 #include "../includes/CPUTempWidget.h"
 
 CPUTempWidget::CPUTempWidget(QWidget* parent, int x, int y, int width, int height)
-    : QWidget(parent), currentSpeed(0)
+    : QWidget(parent), current_speed(0)
 {
     color1 = Color();
     index = color1.counter;
@@ -44,7 +44,7 @@ void CPUTempWidget::drawNeedle(QPainter& painter, int centerX, int centerY, int 
     double startAngle = -45;
     double endAngle = 225;    
 
-    double angle = startAngle + (endAngle - startAngle) * (double(currentSpeed) / 160);
+    double angle = startAngle + (endAngle - startAngle) * (double(current_speed) / 160);
     double rad = qDegreesToRadians(angle);
     int xStart = centerX - std::cos(rad) * (radius - 3);
     int yStart = centerY - std::sin(rad) * (radius - 3);
@@ -60,7 +60,7 @@ void CPUTempWidget::drawCentralNumber(QPainter& painter, int centerX, int center
     QFont font("Arial", 20, QFont::Bold); 
     painter.setFont(font);
     painter.setPen(QPen(alphabet_color));
-    QString speedText = QString::number(currentSpeed);
+    QString speedText = QString::number(current_speed);
 
     QFontMetrics metrics(font);
     QRect textRect = metrics.boundingRect(speedText);
@@ -88,28 +88,6 @@ void CPUTempWidget::drawCentralNumber(QPainter& painter, int centerX, int center
     }
 }
 
-void CPUTempWidget::keyPressEvent(QKeyEvent* event)
-{
-
-    if (event->key() == Qt::Key_Space) {
-        currentSpeed += 2; 
-        if (currentSpeed > 160) {
-            currentSpeed = 160; 
-        }
-        update(); 
-    }
-
-    
-    if (event->key() == Qt::Key_Down) {
-        currentSpeed -= 2; 
-        if (currentSpeed <= 0) {
-            currentSpeed = 0; 
-        }
-        update(); 
-    }
-}
-
-
 void CPUTempWidget::updateSpeed() {
     update();
 }
@@ -127,10 +105,10 @@ void    CPUTempWidget::changeUnits(void)
 {
     if (unit == "ºC"){
         unit = "ºF";
-        currentSpeed = currentSpeed * 9 / 5 + 32;
+        current_speed = current_speed * 9 / 5 + 32;
     } else {
         unit = "ºC";
-        currentSpeed = (currentSpeed - 32) * 5 / 9;
+        current_speed = (current_speed - 32) * 5 / 9;
     }
     update();
 }
