@@ -10,13 +10,17 @@ class BatteryAndSpeedWidget : public QWidget
 {
 
     public:
-        BatteryAndSpeedWidget(QWidget* parent = nullptr);
+        BatteryAndSpeedWidget(QWidget* parent = nullptr, int x = 0, int y = 0, int width = 0, int height = 0);
         ~BatteryAndSpeedWidget();
 
         void setCurrentSpeed(int speed);
         void setCurrentLevel(int battery);
 
         void accelerate(int forward_key);
+
+        void changeColor(int  array_index);
+        void changeUnits(void);
+
         QColor main_color;
         QColor accent_color;
         QColor alphabet_color;
@@ -27,7 +31,14 @@ class BatteryAndSpeedWidget : public QWidget
     private:
         int currentLevel;
         int currentSpeed;
+        int imageX;
+        int imageY;
+        int index = 0;
+
+        QString unit;
         Color color1;
+        QPixmap image_array[4];
+        QPixmap image;
         void drawScale(QPainter& painter, int centerX, int centerY, int radius);
         void drawCentralNumber(QPainter& painter, int centerX, int centerY);
         void drawBatteryNumber(QPainter& painter, int centerX, int centerY);

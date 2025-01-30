@@ -12,7 +12,7 @@ class CameraWidget : public QWidget {
     Q_OBJECT
 
 public:
-    explicit CameraWidget(QWidget *parent = nullptr);
+    explicit CameraWidget(QWidget *parent = nullptr, int x = 0, int y = 0, int width = 0, int height = 0);
     ~CameraWidget();
 
 private:

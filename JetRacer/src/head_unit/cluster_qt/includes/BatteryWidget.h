@@ -10,8 +10,10 @@ class BatteryWidget : public QWidget
 {
 
     public:
-        BatteryWidget(QWidget* parent = nullptr);
+        BatteryWidget(QWidget* parent = nullptr, int x = 0, int y = 0, int width = 0, int height = 0);
         ~BatteryWidget();
+
+        void changeColor(int  array_index);
         QColor main_color;
         QColor accent_color;
         QColor alphabet_color;
@@ -25,8 +27,6 @@ class BatteryWidget : public QWidget
         int currentLevel;
         Color color1;
         void drawScale(QPainter& painter, int centerX, int centerY, int radius);
-        void drawNeedle(QPainter& painter, int centerX, int centerY,
-                        int radius);
         void drawCentralNumber(QPainter& painter, int centerX, int centerY);
         QColor calculateBarColor(int value);
         void drawBars(QPainter& painter, int centerX, int centerY, int radius,

@@ -15,7 +15,7 @@ RosNode::RosNode() : rclcpp::Node("ros_node"), battery_level_(0), speed_(0)
         [this](std_msgs::msg::UInt32 msg) { rpm_ = msg.data; });
 
     blinker_sub_ = this->create_subscription<std_msgs::msg::UInt8>(
-        "blinker_state", 10,
+        "cmd_blinkers", 10,
         std::bind(&RosNode::setBlinkerState, this, std::placeholders::_1));
 }
 
@@ -25,29 +25,26 @@ int RosNode::getBattery() const { return battery_level_; }
 
 int RosNode::getRpm() const { return rpm_; }
 
-uint8_t RosNode::getBlinkerState() const { return blinker_state_; }
+blinkerState RosNode::getBlinkerState() const { return blinker_state_; }
 
 void RosNode::setBlinkerState(std_msgs::msg::UInt8 msg)
 {
     switch (msg.data)
     {
     case 0x0:
-        blinker_state_ = IDLE;
+        blinker_state_ = blinkerState::IDLE;
         break;
     case 0x1:
-        blinker_state_ = TURN_RIGHT;
+        blinker_state_ = blinkerState::TURN_RIGHT;
         break;
     case 0x2:
-        blinker_state_ = TURN_LEFT;
+        blinker_state_ = blinkerState::TURN_LEFT;
         break;
     case 0x3:
-        blinker_state_ = WARNINGS;
-        break;
-    case 0x4:
-        blinker_state_ = FULL;
+        blinker_state_ = blinkerState::WARNINGS;
         break;
     default:
         RCLCPP_WARN(this->get_logger(), "Unrecognised blinker state");
-        blinker_state_ = IDLE;
+        blinker_state_ = blinkerState::IDLE;
     }
 }

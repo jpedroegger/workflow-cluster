@@ -1,32 +1,34 @@
 #include "../includes/BatteryAndSpeedWidget.h"
-#include <iostream>
 
-BatteryAndSpeedWidget::BatteryAndSpeedWidget(QWidget* parent)
+BatteryAndSpeedWidget::BatteryAndSpeedWidget(QWidget* parent, int x, int y, int width, int height)
     : QWidget(parent), currentSpeed(0)
 {
     color1 = Color();
+    unit = "DPS";
+    index = color1.counter;
     main_color = color1.main_color;
     accent_color = color1.accent_color;
     alphabet_color = color1.alphabet_color;
-    updateLevel();
     setFocusPolicy(Qt::StrongFocus);
-    QTimer* timer = new QTimer(this);
-    connect(timer, &QTimer::timeout, this, &BatteryAndSpeedWidget::updateLevel);
-    timer->start(800);
+    setGeometry(x, y, width, height);
 }
 
 void BatteryAndSpeedWidget::paintEvent(QPaintEvent* event)
 {
     QPainter painter(this);
-    QPixmap image("assets/icons/battery.png");
+    image_array[0] = QPixmap("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/battery_p.png");
+    image_array[1] = QPixmap("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/battery_r.png");
+    image_array[2] = QPixmap("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/battery_i.png");
+    image_array[3] = QPixmap("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/battery_g.png");
+    image = image_array[index];
     painter.setRenderHint(QPainter::Antialiasing);
-    int centerX = width() / 2;
+    int centerX = 40;
     int centerY = height() / 2;
-    int radius = std::min(width(), height()) / 2 - 20;
+    int radius = std::max(width(), height()) / 2 - 20;
 
     int imageWidth = 25;
     int imageHeight = 25;
-    int imageX = centerX - 30 - imageWidth / 2;
+    int imageX = centerX - 25 - imageWidth / 2;
     int imageY = centerY + imageWidth / 2;
 
     painter.drawPixmap(imageX, imageY, imageWidth, imageHeight, image);
@@ -46,12 +48,6 @@ void BatteryAndSpeedWidget::drawScale(QPainter& painter, int centerX,
     painter.setFont(font);
     drawBars(painter, centerX + 150, centerY + 30, radius * 1.2, startAngle,
              endAngle, 100);
-    painter.setPen(QPen(main_color, 15));
-
-    QRect rect(centerX, centerY - 80, radius, radius * 1.3);
-
-    int startAngle1 = 135 * 16;
-    int spanAngle1 = 90 * 16;
 }
 
 void BatteryAndSpeedWidget::drawBars(QPainter& painter, int centerX,
@@ -110,8 +106,8 @@ void BatteryAndSpeedWidget::updateLevel()
 
 BatteryAndSpeedWidget::~BatteryAndSpeedWidget() {}
 
-void BatteryAndSpeedWidget::drawCentralNumber(QPainter& painter, int centerX,
-                                              int centerY)
+void BatteryAndSpeedWidget::drawCentralNumber(QPainter& painter,
+                                            int centerX, int centerY)
 {
     QFont font("Arial", 80, QFont::Bold);
     painter.setFont(font);
@@ -128,15 +124,15 @@ void BatteryAndSpeedWidget::drawCentralNumber(QPainter& painter, int centerX,
     painter.setFont(smallFont);
 
     QFontMetrics smallMetrics(smallFont);
-    int kphWidth = smallMetrics.horizontalAdvance("KPH");
+    int kphWidth = smallMetrics.horizontalAdvance(unit);
     int kphX = centerX - kphWidth / 2;
     int kphY = y + textRect.height() - 60;
 
-    painter.drawText(kphX, kphY, "KPH");
+    painter.drawText(kphX, kphY, unit);
 }
 
-void BatteryAndSpeedWidget::drawBatteryNumber(QPainter& painter, int centerX,
-                                              int centerY)
+void BatteryAndSpeedWidget::drawBatteryNumber(QPainter& painter,
+                                            int centerX, int centerY)
 {
     QFont font("Arial", 10, QFont::Bold);
     painter.setFont(font);
@@ -170,7 +166,42 @@ void BatteryAndSpeedWidget::accelerate(int forward_key)
     }
 }
 
-void BatteryAndSpeedWidget::setCurrentLevel(int battery) { currentLevel = battery; }
-void BatteryAndSpeedWidget::setCurrentSpeed(int speed) { currentSpeed = speed; }
+void    BatteryAndSpeedWidget::changeColor(int  array_index)
+{
+    main_color = color1.main_color_array[array_index];
+    accent_color = color1.accent_color_array[array_index];
+    alphabet_color = color1.alphabet_color_array[array_index];
+    index = array_index;
+    update();
+}
 
-void BatteryAndSpeedWidget::updateSpeed() { update(); }
+void    BatteryAndSpeedWidget::setCurrentLevel(int battery)
+{
+    if (battery == currentLevel)
+        return ;
+    currentLevel = battery;
+    update();
+}
+void    BatteryAndSpeedWidget::changeUnits(void)
+{
+    if (unit == "DPS"){
+        unit = "FPS";
+        currentSpeed *= 0.6214;
+    } else {
+        unit = "DPS";
+        currentSpeed *= 1.609;
+    }
+    update();
+}
+
+void BatteryAndSpeedWidget::setCurrentSpeed(int speed)
+{
+    if (speed == currentSpeed
+    || (unit == "DPS" && speed * 0.6214 == currentSpeed))
+        return ;
+    if (unit == "FPS")
+        currentSpeed = 0.6214 * speed;
+    else
+        currentSpeed = speed;
+    update();
+}

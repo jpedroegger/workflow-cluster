@@ -28,6 +28,8 @@
 # include "EventManager.h"
 # include "CameraWidget.h"
 # include "Colors.h"
+# include "SettingsWidget.h"
+# include "StatsWidget.h"
 
 # include <QStackedWidget>
 # include <QToolBar>

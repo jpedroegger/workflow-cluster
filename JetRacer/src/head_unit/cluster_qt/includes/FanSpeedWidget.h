@@ -10,8 +10,9 @@
 class FanSpeedWidget : public QWidget {
 
     public:
-        FanSpeedWidget(QWidget* parent = nullptr);
+        FanSpeedWidget(QWidget* parent = nullptr, int x = 0, int y = 0, int width = 0, int height = 0);
         ~FanSpeedWidget();
+        void changeColor(int array_index);
         QColor  main_color;
         QColor  accent_color;
         QColor  alphabet_color;
@@ -22,6 +23,9 @@ class FanSpeedWidget : public QWidget {
     private:
         int currentSpeed;
         Color color1;
+        QPixmap image;             // First image
+        QPixmap image_array[4]; 
+        int index;
         void drawScale(QPainter& painter, int centerX, int centerY, int radius);
         void drawNeedle(QPainter& painter, int centerX, int centerY, int radius);
         void drawCentralNumber(QPainter& painter, int centerX, int centerY);
