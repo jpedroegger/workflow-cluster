@@ -1,10 +1,11 @@
 #include "../includes/Blinkers.h"
 #include <QHBoxLayout>
 
-Blinkers::Blinkers(QWidget* parent, std::string dir, std::string mode, int x, int y, int width, int height)
+Blinkers::Blinkers(QWidget* parent, std::string dir, std::string mode, int x,
+                   int y, int width, int height)
     : QWidget(parent), isImage1Visible(true), blinking(false)
 {
-    
+
     imageLabel = new QLabel(this);
     imageLabel->setAlignment(Qt::AlignCenter);
     blinking = false;
@@ -14,24 +15,35 @@ Blinkers::Blinkers(QWidget* parent, std::string dir, std::string mode, int x, in
     int counter = color1.counter;
     if (dir == "left")
     {
-        image1_array[0].load("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/left_p.png");
-        image1_array[1].load("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/left_r.png");
-        image1_array[2].load("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/left_i.png");
-        image1_array[3].load("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/left_g.png");
-        image2.load("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/left_on.png");
+        image1_array[0].load("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/"
+                             "head_unit/cluster_qt/assets/icons/left_p.png");
+        image1_array[1].load("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/"
+                             "head_unit/cluster_qt/assets/icons/left_r.png");
+        image1_array[2].load("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/"
+                             "head_unit/cluster_qt/assets/icons/left_i.png");
+        image1_array[3].load("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/"
+                             "head_unit/cluster_qt/assets/icons/left_g.png");
+        image2.load("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/"
+                    "cluster_qt/assets/icons/left_on.png");
         image1 = image1_array[counter];
     }
     else
     {
-        image1_array[0].load("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/right_p2.png");
-        image1_array[1].load("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/right_r.png");
-        image1_array[2].load("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/right_i.png");
-        image1_array[3].load("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/right_g.png");
-        image2.load("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/right_on.png");
+        image1_array[0].load("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/"
+                             "head_unit/cluster_qt/assets/icons/right_p2.png");
+        image1_array[1].load("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/"
+                             "head_unit/cluster_qt/assets/icons/right_r.png");
+        image1_array[2].load("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/"
+                             "head_unit/cluster_qt/assets/icons/right_i.png");
+        image1_array[3].load("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/"
+                             "head_unit/cluster_qt/assets/icons/right_g.png");
+        image2.load("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/"
+                    "cluster_qt/assets/icons/right_on.png");
         image1 = image1_array[counter];
     }
 
-    if (image1.isNull() || image2.isNull()) {
+    if (image1.isNull() || image2.isNull())
+    {
         qWarning() << "Failed to load images.";
     }
 
@@ -48,7 +60,7 @@ Blinkers::Blinkers(QWidget* parent, std::string dir, std::string mode, int x, in
 
 Blinkers::~Blinkers()
 {
-    
+
     delete imageLabel;
     delete toggleTimer;
 }
@@ -56,9 +68,12 @@ Blinkers::~Blinkers()
 void Blinkers::toggleImage()
 {
     // Toggle between the two images
-    if (isImage1Visible) {
+    if (isImage1Visible)
+    {
         imageLabel->setPixmap(image2);
-    } else {
+    }
+    else
+    {
         imageLabel->setPixmap(image1);
     }
 
@@ -66,7 +81,7 @@ void Blinkers::toggleImage()
     isImage1Visible = !isImage1Visible;
 }
 
-void    Blinkers::turnOnBlinkers(bool  on_off)
+void Blinkers::turnOnBlinkers(bool on_off)
 {
     if (on_off == true)
     {
@@ -90,13 +105,12 @@ void    Blinkers::turnOnBlinkers(bool  on_off)
     }
 }
 
-void    Blinkers::changeColor(int  array_index)
+void Blinkers::changeColor(int array_index)
 {
     image1 = image1_array[array_index];
     imageLabel->setPixmap(image1);
 }
 
-bool    Blinkers::get_blinking()
-{
-    return blinking;
-}
+bool Blinkers::get_blinking() { return blinking; }
+
+QTimer* Blinkers::getToggleTimer() { return toggleTimer; }
