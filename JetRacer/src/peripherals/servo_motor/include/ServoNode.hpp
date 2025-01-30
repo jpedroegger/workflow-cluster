@@ -7,9 +7,9 @@
 #include <rclcpp/subscription.hpp>
 #include <std_msgs/msg/u_int8.hpp>
 
-#define MIN_COUNT 102
-#define MAX_COUNT 510
-#define PCA_SERVO_ADDRESS 0x40
+constexpr int MIN_COUNT = 102;
+constexpr int MAX_COUNT = 510;
+constexpr int PCA_SERVO_ADDRESS = 0x40;
 
 /**
  * @class ServoNode
@@ -20,7 +20,7 @@ class ServoNode : public rclcpp::Node
 {
     public:
         ServoNode();
-        ~ServoNode();
+        ~ServoNode() override;
 
         uint8_t
         initPCA9685(std::shared_ptr<APCA9685Driver> mock_pca_driver = nullptr);
