@@ -75,7 +75,8 @@ jobs:
         # cd $QT_BUILD_DIR/cluster_tests
         # export QT_QPA_PLATFORM=offscreen
         # ctest --verbose
+
     - name: Install clang-tidy
       run: |
-        sudo cd $ROS_BUILD_DIR
+        cd $ROS_BUILD_DIR
         run-clang-tidy-rust tidy.json
