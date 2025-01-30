@@ -6,13 +6,9 @@
 #include <rclcpp/publisher.hpp>
 #include <rclcpp/rclcpp.hpp>
 #include <rclcpp/subscription.hpp>
-#include <std_msgs/msg/u_int8.hpp>
 
-#define BLINKERS_STATE_ID 0x100
-#define IDLE 1
-#define TURN_LEFT 2
-#define TURN_RIGHT 3
-#define WARNINGS 4
+constexpr int BLINKERS_STATE_ID = 0x100;
+constexpr int NODE_QOS = 10;
 
 /**
  * @class BlinkersNode
@@ -23,14 +19,14 @@ class BlinkersNode : public rclcpp::Node
 {
     public:
         BlinkersNode();
-        ~BlinkersNode() = default;
+        ~BlinkersNode() override = default;
 
     private:
         rclcpp::Subscription<std_msgs::msg::UInt8>::SharedPtr
             blinker_state_subscriber_;
         rclcpp::Client<custom_msgs::srv::CanService>::SharedPtr can_client_;
 
-        void writeBlinkersState(const std_msgs::msg::UInt8 msg);
+        void writeBlinkersState(std_msgs::msg::UInt8 msg);
         void handleCanResponse(
             rclcpp::Client<custom_msgs::srv::CanService>::SharedFuture future);
 };

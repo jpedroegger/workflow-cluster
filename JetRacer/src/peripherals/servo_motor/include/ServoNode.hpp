@@ -7,11 +7,19 @@
 #include <rclcpp/subscription.hpp>
 #include <std_msgs/msg/u_int8.hpp>
 
-#define MIN_COUNT 102
-#define MAX_COUNT 510
-#define MIN_ANGLE 10
-#define MAX_ANGLE 170
-#define PCA_SERVO_ADDRESS 0x40
+constexpr int MIN_COUNT = 102;
+constexpr int MAX_COUNT = 510;
+constexpr int PCA_SERVO_ADDRESS = 0x40;
+constexpr int SERVO_FREQ_HZ = 50;
+
+constexpr int CENTER_ANGLE = 90;
+constexpr int MAX_ANGLE = 180;
+
+// RETSRAINED ANGLES
+constexpr int MIN_REST_ANGLE = 10;
+constexpr int MAX_REST_ANGLE = 170;
+
+constexpr int NODE_QOS = 10;
 
 /**
  * @class ServoNode
@@ -22,7 +30,7 @@ class ServoNode : public rclcpp::Node
 {
     public:
         ServoNode();
-        ~ServoNode();
+        ~ServoNode() override;
 
         uint8_t
         initPCA9685(std::shared_ptr<APCA9685Driver> mock_pca_driver = nullptr);
@@ -32,7 +40,7 @@ class ServoNode : public rclcpp::Node
             direction_subscriber_;
         std::shared_ptr<APCA9685Driver> pca_driver_;
 
-        void writeAngle(const geometry_msgs::msg::Twist::SharedPtr twist);
+        void writeAngle(geometry_msgs::msg::Twist::SharedPtr twist);
 
         const float_t MAX_ANGULAR_VEL = 1.0;
 };

@@ -12,7 +12,7 @@ ServoNode::ServoNode() : Node("servo_node")
 {
     direction_subscriber_ =
         this->create_subscription<geometry_msgs::msg::Twist>(
-            "cmd_vel", 10,
+            "cmd_vel", NODE_QOS,
             std::bind(&ServoNode::writeAngle, this, std::placeholders::_1));
 }
 
@@ -43,7 +43,7 @@ uint8_t ServoNode::initPCA9685(std::shared_ptr<APCA9685Driver> mock_driver)
             return EXIT_FAILURE;
         }
     }
-    pca_driver_->setPWMFrequency(50);
+    pca_driver_->setPWMFrequency(SERVO_FREQ_HZ);
     return EXIT_SUCCESS;
 }
 
@@ -81,16 +81,18 @@ void ServoNode::writeAngle(const geometry_msgs::msg::Twist::SharedPtr twist)
     }
 
     // map to an angle
-    int angle = (-angular_z + 1.0) * 90;
+    int angle = (-angular_z + 1.0) * CENTER_ANGLE;
 
     // restrain angle
-    int restrained_angle = std::clamp((int)angle, MIN_ANGLE, MAX_ANGLE);
+    int restrained_angle =
+        std::clamp((int)angle, MIN_REST_ANGLE, MAX_REST_ANGLE);
     RCLCPP_DEBUG(this->get_logger(), "Writing angle: %d", restrained_angle);
 
     // Map the angle (0 to 180) to PCA9685 pulse width (102 to 510)
-    uint16_t pulseWidth = static_cast<uint16_t>(
+    auto pulse_width = static_cast<uint16_t>(
         MIN_COUNT +
-        (static_cast<float>(restrained_angle) * (MAX_COUNT - MIN_COUNT)) / 180);
+        (static_cast<float>(restrained_angle) * (MAX_COUNT - MIN_COUNT)) /
+            MAX_ANGLE);
 
-    pca_driver_->setPWMDutyCycle(DEFAULT_CHANNEL, 0, pulseWidth);
+    pca_driver_->setPWMDutyCycle(DEFAULT_CHANNEL, 0, pulse_width);
 }
