@@ -36,7 +36,7 @@ TEST_F(CanInterfaceTest, readSuccess)
             []()
             {
                 const sockcanpp::CanId id(CAN_ID);
-                sockcanpp::CanMessage msg(id, DATA);
+                sockcanpp::CanMessage msg(id, {DATA[0]});
 
                 return msg;
             });
