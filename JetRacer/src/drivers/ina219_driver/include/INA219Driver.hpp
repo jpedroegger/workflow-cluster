@@ -6,7 +6,6 @@
 #include <rclcpp/rclcpp.hpp>
 
 constexpr int NODE_QOS = 10;
-
 constexpr float MAX_BATTERY = 12.6;
 constexpr float MIN_BATTERY = 10.8;
 constexpr float COEF_TO_VOLT = 0.004;

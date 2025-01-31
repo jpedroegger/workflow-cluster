@@ -13,9 +13,6 @@ INA219Driver::INA219Driver(std::shared_ptr<rclcpp::Node> node,
     publisher_perc_ = node_->create_publisher<std_msgs::msg::Float64>(
         "battery_percentage", NODE_QOS);
 
-    while (!i2c_client_->wait_for_service(2s))
-        RCLCPP_INFO(node_->get_logger(), "Waiting for i2c service to start");
-
     this->ping();
 
     RCLCPP_INFO(node->get_logger(),

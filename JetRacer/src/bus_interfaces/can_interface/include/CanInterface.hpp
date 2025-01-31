@@ -6,7 +6,7 @@
 #include <rclcpp/rclcpp.hpp>
 
 constexpr int QUEUE_SIZE = 60;
-constexpr int ERROR_OUTPUT_FREQ = 3000;
+constexpr int ERROR_OUTPUT_FREQ = 5000;
 
 using sockcanpp::CanDriver;
 
