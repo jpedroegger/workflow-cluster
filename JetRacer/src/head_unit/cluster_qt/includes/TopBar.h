@@ -11,23 +11,23 @@ class TopBar : public QWidget
 {
     Q_OBJECT
 
-public:
-    explicit        TopBar(QWidget* parent = nullptr, int x = 0, int y = 0,
-                           int width = 0, int height = 0);
-    ~TopBar();
-
-    bool            setImageState(int index, bool state);
-    void            changeColor(int  array_index);
-
-private:
-    QHBoxLayout*     layout;
-    QVector<QLabel*> image_labels;
-    QVector<QPixmap> default_images;
-    QVector<QPixmap> default_images_array[4];
-    QVector<QPixmap> alt_images;
-    QStringList      default_image_paths;
-    QStringList      default_image_paths_array[4];
-    QStringList      alt_image_paths;
+    public:
+        TopBar(QWidget* parent = nullptr, int x = 0, int y = 0,
+               int width = 0, int height = 0);
+        ~TopBar();
+    
+        bool             setImageState(int index, bool state);
+        void             changeColor(int  array_index);
+    
+    private:
+        QHBoxLayout*     layout;
+        QVector<QLabel*> image_labels;
+        QVector<QPixmap> default_images;
+        QVector<QPixmap> default_images_array[4];
+        QVector<QPixmap> alt_images;
+        QStringList      default_image_paths;
+        QStringList      default_image_paths_array[4];
+        QStringList      alt_image_paths;
 };
 
 #endif

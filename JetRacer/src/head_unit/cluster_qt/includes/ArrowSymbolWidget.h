@@ -6,6 +6,7 @@
 #include <QPainterPath>
 #include <QKeyEvent>
 #include "Colors.h"
+#include <QTimer>
 
 class ArrowSymbolWidget : public QWidget
 {
@@ -21,9 +22,11 @@ class ArrowSymbolWidget : public QWidget
         void   setdrawRightLowerCurve(bool enabled);
         void   changeColor(int  array_index);
         void   changeDirection(int movement_key);
+        void   variangle(void);
         QColor main_color;
         QColor accent_color;
         QColor alphabet_color;
+        double angle;
 
     protected:
         void   paintEvent(QPaintEvent* event) override;

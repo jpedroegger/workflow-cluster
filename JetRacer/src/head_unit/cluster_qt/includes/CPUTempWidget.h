@@ -18,6 +18,7 @@ class CPUTempWidget : public QWidget {
         QColor  main_color;
         QColor  accent_color;
         QColor  alphabet_color;
+
     protected:
         void    paintEvent(QPaintEvent* event) override;
 
@@ -38,4 +39,4 @@ class CPUTempWidget : public QWidget {
         void    updateSpeed();
 };
 
-#endif // CPUTempWidget_H
+#endif

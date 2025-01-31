@@ -26,6 +26,10 @@ ArrowSymbolWidget::ArrowSymbolWidget(QWidget* parent, std::string input, int x, 
         m_green_r_u = true;
     setFocusPolicy(Qt::StrongFocus);
     setGeometry(x, y, width, height);
+    angle = 0;
+    QTimer *timer = new QTimer(this);
+    connect(timer, &QTimer::timeout, this, &ArrowSymbolWidget::variangle);
+    timer->start(200); // 200 ms delay
 }
 
 ArrowSymbolWidget::~ArrowSymbolWidget() {}
@@ -52,45 +56,37 @@ void ArrowSymbolWidget::setdrawRightUpperCurve(bool enabled)
 void ArrowSymbolWidget::paintEvent(QPaintEvent* event)
 {
     QPainter painter(this);
-    painter.setRenderHint(QPainter::Antialiasing);
+        painter.setRenderHint(QPainter::Antialiasing);
+        painter.translate(width() / 2, height() - 50);  // Start from the center bottom
 
+        int length = 150;  // Length of curve arc
+        float curvature = angle * (M_PI / 180.0);  // Convert degrees to radians
 
-    if (m_draw_left_upper_curve) {
-        if (m_green_l_u == false)
-            drawLeftUpperCurve(painter, "black");
-        else
-            drawLeftUpperCurve(painter, "green");
-    }
+        QPainterPath path;
+        path.moveTo(0, 0);
 
-    if (m_draw_right_upper_curve) {
-        if (m_green_r_u == false) 
-            drawRightUpperCurve(painter, "black");
-        else
-            drawRightUpperCurve(painter, "green");
+        // Calculate endpoint based on curvature and length
+        float endX = length * std::sin(curvature);
+        float endY = -length * std::cos(curvature);
 
-    }
+        QRectF controlRect(-length, -length, 2 * length, 2 * length);
+        path.quadTo(QPointF(endX / 2, -40 * std::sin(curvature)), QPointF(endX, endY));
 
-    if (m_draw_left_lower_curve) {
-        if (m_green_l_u == false)
-            drawLeftLowerCurve(painter, "black");
-        else
-            drawLeftLowerCurve(painter, "green");
-    }
-    if (m_draw_right_lower_curve) {
-        if (m_green_r_u == false) 
-            drawRightLowerCurve(painter, "black");
-        else
-            drawRightLowerCurve(painter, "green");
+        painter.setPen(QPen(Qt::blue, 2));
+        painter.drawPath(path);
 
-    }
-    if (m_draw_vertical_arrows) {
-        if (m_green_v == false)
-            drawVerticalArrows(painter, "black");
-        else
-            drawVerticalArrows(painter, "green");
-
-    }
 }
+
+
+
+void   ArrowSymbolWidget::variangle(void)
+{
+    angle += 5;  // Increase angle step by step
+    if (angle > 360) 
+        angle = 0;  // Reset after a full circle
+    update();  // Trigger a repaint
+}
+
 
 void ArrowSymbolWidget::drawVerticalArrows(QPainter& painter, std::string color)
 {
