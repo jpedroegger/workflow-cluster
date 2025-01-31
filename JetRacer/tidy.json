@@ -1,8 +1,9 @@
 {
   "paths": [
-    "src/*/*/include/*.hpp",
-    "src/*/*/src/*.cpp"
+    "src/drivers/*/include/*.hpp",
+    "src/drivers/*/src/*.cpp"
   ],
+  "filterPre": ["**/test", ".*"],
   "tidyRoot": ".",
   "buildRoot": "build/",
   "compilationDatabase": "build/compile_commands.json",

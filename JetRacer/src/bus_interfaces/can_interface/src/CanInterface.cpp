@@ -19,8 +19,9 @@ using namespace std::chrono_literals;
 CanInterface::CanInterface(std::shared_ptr<ICanDriver> mock_driver)
     : Node("can_interface")
 {
-    rclcpp::QoS qos(60);
+    rclcpp::QoS qos((rclcpp::KeepLast(QUEUE_SIZE)));
     qos.reliable();
+    qos.durability_volatile();
 
     if (mock_driver)
         can_driver_ = mock_driver;

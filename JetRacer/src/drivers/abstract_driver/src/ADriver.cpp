@@ -1,4 +1,5 @@
 #include "ADriver.hpp"
+#include "DriverException.hpp"
 #include "fmt/core.h"
 
 using namespace std::chrono_literals;
