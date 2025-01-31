@@ -1,9 +1,11 @@
 {
   "paths": [
-    "src/drivers/*/include/*.hpp",
-    "src/drivers/*/src/*.cpp"
+    "src/*/*/include/*.hpp",
+    "src/*/*/src/*.cpp",
+	"src/*/*/test/src/*.cpp",
+	"src/*/*/test/inlude/*.hpp"
   ],
-  "filterPre": ["**/test", ".*"],
+  "filterPre": [".*", "**/cluster"],
   "tidyRoot": ".",
   "buildRoot": "build/",
   "compilationDatabase": "build/compile_commands.json",
