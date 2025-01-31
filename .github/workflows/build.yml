@@ -9,7 +9,7 @@ on:
     branches:
       - main
       - workflow
-      - demo
+      - clang_tidy
 
 env:
   QT_BUILD_DIR: JetRacer/src/head_unit/cluster_qt/build
@@ -25,12 +25,22 @@ jobs:
     - name: Install dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y clang build-essential cmake
+        sudo apt-get install -y clang build-essential cmake curl git clang-tidy
+        curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y # Rust for 
+        sudo apt install -y cargo 
 
     - name: Install Qt
       run: |
         sudo apt-get install -y qt6-base-dev qt6-tools-dev-tools
         sudo apt-get install -y qt6-multimedia-dev
+
+    - name: Install clang-tidy
+      run: |
+        sudo git clone https://github.com/lmapii/run-clang-tidy.git
+        cd run-clang-tidy
+        cargo build --release --target-dir /tmp/target
+        sudo mv /tmp/target/release/run-clang-tidy /usr/local/bin/run-clang-tidy-rust
+
 
     - name: Install ROS2 jazzy
       run: |
@@ -62,7 +72,8 @@ jobs:
         source ./install/setup.bash
         colcon test --ctest-args tests --packages-skip camera_ros cluster --executor sequential
         colcon test-result --all --verbose
-        # cd $QT_BUILD_DIR/cluster_tests
-        # export QT_QPA_PLATFORM=offscreen
-        # ctest --verbose
-  
+
+    # - name: Run clang-tidy
+    #   run: |
+    #     cd $ROS_BUILD_DIR
+    #     run-clang-tidy-rust tidy.json

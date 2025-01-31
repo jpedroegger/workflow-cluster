@@ -1,0 +1,10 @@
+{
+  "paths": [
+    "src/*/*/include/*.hpp",
+    "src/*/*/src/*.cpp"
+  ],
+  "tidyRoot": ".",
+  "buildRoot": "build/",
+  "compilationDatabase": "build/compile_commands.json",
+  "tidyFile": ".clang-tidy"
+}
