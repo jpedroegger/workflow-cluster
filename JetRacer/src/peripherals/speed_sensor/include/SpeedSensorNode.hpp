@@ -14,6 +14,7 @@
 // NODE
 constexpr int SPEED_SENSOR_ID = 0x300;
 constexpr int NODE_QOS = 10;
+constexpr int ERROR_OUTPUT_FREQ = 3000;
 constexpr int POLL_FREQ_MS = 100;
 constexpr int NB_HOLES = 36;
 constexpr float WHEELS_DIAM_M = 0.065;
