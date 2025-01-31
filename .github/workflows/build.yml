@@ -71,7 +71,7 @@ jobs:
         colcon test --ctest-args tests --packages-skip camera_ros cluster --executor sequential
         colcon test-result --all --verbose
 
-    # - name: Run clang-tidy
-    #   run: |
-    #     cd $ROS_BUILD_DIR
-    #     run-clang-tidy-rust tidy.json
+    - name: Run clang-tidy
+      run: |
+        cd $ROS_BUILD_DIR
+        run-clang-tidy-rust tidy.json
