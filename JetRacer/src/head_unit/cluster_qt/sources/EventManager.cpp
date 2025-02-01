@@ -25,16 +25,21 @@ EventManager::EventManager(
 
 bool EventManager::eventFilter(QObject* obj, QEvent* event)
 {
-    // Handle gesture events
-    if (event->type() == QEvent::Gesture)
-    {
-        QGestureEvent* gestureEvent = static_cast<QGestureEvent*>(event);
-        handleGestureEvent(gestureEvent);
+    if (event->type() == QEvent::MouseButtonPress) {
+        QMouseEvent* mousePos = static_cast<QMouseEvent*>(event);
+        QPointF pressPosition = mousePos->position();
+
+        mousePosition = pressPosition;
         return true;
     }
-
-    // Handle key events
-    if (event->type() == QEvent::KeyPress)
+    else if (event->type() == QEvent::MouseButtonRelease) {
+        QMouseEvent* mousePos = static_cast<QMouseEvent*>(event);
+        QPointF releasePosition = mousePos->position();
+        // Check for swipe params. If enough conditions, returns true for swipe.
+        if (swipe(releasePosition))
+            return true;
+    }
+    else if (event->type() == QEvent::KeyPress)
     {
         QKeyEvent* keyEvent = static_cast<QKeyEvent*>(event);
         pressedKeys.insert(keyEvent->key());
@@ -147,26 +152,26 @@ void EventManager::changeUnits()
     cpu2->changeUnits();
 }
 
-void EventManager::handleGestureEvent(QGestureEvent* gestureEvent)
+bool    EventManager::swipe(QPointF releasePosition)
 {
-    if (QSwipeGesture* swipe = static_cast<QSwipeGesture*>(
-            gestureEvent->gesture(Qt::SwipeGesture)))
-    {
-        if (swipe->horizontalDirection() == QSwipeGesture::Left)
-        {
-            // nextIndex is the last or page + 1
-            int nextIndex = std::min(stackedWidget->count() - 1,
-                                     stackedWidget->currentIndex() + 1);
-            stackedWidget->setCurrentIndex(nextIndex);
-        }
-        else if (swipe->horizontalDirection() == QSwipeGesture::Right)
-        {
-            // prevIndex is the first or page - 1
-            int prevIndex = std::max(0, stackedWidget->currentIndex() - 1);
-            stackedWidget->setCurrentIndex(prevIndex);
-        }
+    bool swipeRange = qFabs(mousePosition.rx() - releasePosition.rx()) > 100;
+    bool verticalRange = qFabs(mousePosition.ry() - releasePosition.ry()) < 200;
+
+    if (mousePosition.rx() < releasePosition.rx() && swipeRange && verticalRange ) {
+        int prevIndex = std::max(0, stackedWidget->currentIndex() - 1);
+        stackedWidget->setCurrentIndex(prevIndex);
+
+        return true;
     }
+    else if (mousePosition.rx() > releasePosition.rx() && swipeRange && verticalRange ) {
+        int nextIndex = std::min(stackedWidget->count() - 1, stackedWidget->currentIndex() + 1);
+        stackedWidget->setCurrentIndex(nextIndex);
+
+        return true;
+    }
+    return false;
 }
+
 
 QStackedWidget* EventManager::getStackedWidget() { return stackedWidget; }
 
