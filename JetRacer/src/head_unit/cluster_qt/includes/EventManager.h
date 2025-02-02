@@ -42,12 +42,14 @@ class EventManager : public QWidget
         CPUTempWidget* cpu2;
         TopBar* top;
         TopBar* top2;
-        QSet<int> pressedKeys;
-        QTimer* updateTimer; // Used to check if a key is still being called
-        QStackedWidget* stackedWidget;
-        QWidget* mainWindow;
-        std::shared_ptr<RosNode> node;
-        rclcpp::executors::SingleThreadedExecutor executor;
+
+        QPointF                                     mousePosition;
+        QSet<int>                                   pressedKeys;
+        QTimer*                                     updateTimer; // Used to check if a key is still being called
+        QStackedWidget*                             stackedWidget;
+        QWidget*                                    mainWindow;
+        std::shared_ptr<RosNode>                    node;
+        rclcpp::executors::SingleThreadedExecutor   executor;
 
     public:
         EventManager(ArrowSymbolWidget* arrow, SpeedometerWidget* py_speed,
@@ -67,9 +69,9 @@ class EventManager : public QWidget
 
     protected:
         bool eventFilter(QObject* obj, QEvent* event) override;
+        bool    swipe(QPointF releasePosition);
 
     private slots:
-        void handleGestureEvent(QGestureEvent* gestureEvent);
         void updateScreen();
         void updateBlinkers();
 };
