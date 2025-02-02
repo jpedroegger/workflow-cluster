@@ -43,8 +43,8 @@ class EventManager : public QWidget
         TopBar* top;
         TopBar* top2;
 
+        // QSet<int>                                   pressedKeys;
         QPointF                                     mousePosition;
-        QSet<int>                                   pressedKeys;
         QTimer*                                     updateTimer; // Used to check if a key is still being called
         QStackedWidget*                             stackedWidget;
         QWidget*                                    mainWindow;
@@ -70,6 +70,8 @@ class EventManager : public QWidget
     protected:
         bool eventFilter(QObject* obj, QEvent* event) override;
         bool    swipe(QPointF releasePosition);
+        void    activateButton(int key);  
+
 
     private slots:
         void updateScreen();

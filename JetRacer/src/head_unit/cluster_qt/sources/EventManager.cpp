@@ -35,23 +35,33 @@ bool EventManager::eventFilter(QObject* obj, QEvent* event)
     else if (event->type() == QEvent::MouseButtonRelease) {
         QMouseEvent* mousePos = static_cast<QMouseEvent*>(event);
         QPointF releasePosition = mousePos->position();
-        // Check for swipe params. If enough conditions, returns true for swipe.
         if (swipe(releasePosition))
             return true;
-    }
-    else if (event->type() == QEvent::KeyPress)
-    {
-        QKeyEvent* keyEvent = static_cast<QKeyEvent*>(event);
-        pressedKeys.insert(keyEvent->key());
-        return true;
     }
     else if (event->type() == QEvent::KeyRelease)
     {
         QKeyEvent* keyEvent = static_cast<QKeyEvent*>(event);
-        pressedKeys.remove(keyEvent->key());
+        
+        if (!keyEvent->isAutoRepeat())
+            activateButton(keyEvent->key());
         return true;
     }
     return QObject::eventFilter(obj, event);
+}
+
+void    EventManager::activateButton(int key)
+{
+    switch (key)
+    {
+    case Qt::Key_C:
+        changeColors();
+        break;
+    case Qt::Key_U:
+        changeUnits();
+        break;
+    default:
+        break;
+    }
 }
 
 void EventManager::updateScreen()
@@ -69,21 +79,6 @@ void EventManager::updateScreen()
     stats->setConsumed(78);
     stats->setObstacles(2);
     stats->update();
-
-    for (int key : pressedKeys)
-    {
-        switch (key)
-        {
-        case Qt::Key_C:
-            changeColors();
-            break;
-        case Qt::Key_U:
-            changeUnits();
-            break;
-        default:
-            break;
-        }
-    }
 }
 
 void EventManager::updateBlinkers()
