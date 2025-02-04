@@ -26,10 +26,11 @@ ArrowSymbolWidget::ArrowSymbolWidget(QWidget* parent, std::string input, int x, 
         m_green_r_u = true;
     setFocusPolicy(Qt::StrongFocus);
     setGeometry(x, y, width, height);
-    angle = 0;
+    angle = 240;
+    step = 5;
     QTimer *timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, &ArrowSymbolWidget::variangle);
-    timer->start(200); // 200 ms delay
+    timer->start(500); // 200 ms delay
 }
 
 ArrowSymbolWidget::~ArrowSymbolWidget() {}
@@ -56,24 +57,39 @@ void ArrowSymbolWidget::setdrawRightUpperCurve(bool enabled)
 void ArrowSymbolWidget::paintEvent(QPaintEvent* event)
 {
     QPainter painter(this);
-        painter.setRenderHint(QPainter::Antialiasing);
-        painter.translate(width() / 2, height() - 50);  // Start from the center bottom
+    painter.setRenderHint(QPainter::Antialiasing);
+    painter.translate(width() / 2 - 50, height() / 2);
+    float radius = 150;
+    float smaller = radius / 2;
+    float angle_y_offset_left = - angle * angle / 257.2 + 126;
+    float angle_y_offset_right = angle * angle / 430 - 75.35;
+    if (angle < 180)
+        angle_y_offset_right = 0;
+    else
+        angle_y_offset_left = 0;
+    angle_y_offset_left = 0;
+    angle_y_offset_right = 0;
+    float curvature = angle * (M_PI / 180.0);
 
-        int length = 150;  // Length of curve arc
-        float curvature = angle * (M_PI / 180.0);  // Convert degrees to radians
+    QPainterPath path;
+    path.moveTo(0, 0);
+    float final_x = radius * std::sin(curvature);
+    float final_y = radius * std::cos(curvature);
 
-        QPainterPath path;
-        path.moveTo(0, 0);
+    float middle_x = smaller * std::sin(curvature);
+    float middle_y = smaller * std::cos(curvature);
+    //QRectF controlRect(-length, -length, 2 * length, 2 * length);
+    path.quadTo(QPointF(0, -smaller - angle_y_offset_left), QPointF(final_x, final_y - angle_y_offset_left));
+    painter.setPen(QPen(Qt::red, 8));
+    painter.drawPath(path);
 
-        // Calculate endpoint based on curvature and length
-        float endX = length * std::sin(curvature);
-        float endY = -length * std::cos(curvature);
+    QPainterPath rightPath;
+    float offset = 100; // Adjust offset for separation between lines
+    rightPath.moveTo(offset, 0);
+    rightPath.quadTo(QPointF(offset, -smaller - angle_y_offset_right), QPointF(offset + final_x, final_y - angle_y_offset_right));
 
-        QRectF controlRect(-length, -length, 2 * length, 2 * length);
-        path.quadTo(QPointF(endX / 2, -40 * std::sin(curvature)), QPointF(endX, endY));
-
-        painter.setPen(QPen(Qt::blue, 2));
-        painter.drawPath(path);
+    painter.setPen(QPen(Qt::red, 8));
+    painter.drawPath(rightPath);
 
 }
 
@@ -81,10 +97,10 @@ void ArrowSymbolWidget::paintEvent(QPaintEvent* event)
 
 void   ArrowSymbolWidget::variangle(void)
 {
-    angle += 5;  // Increase angle step by step
-    if (angle > 360) 
-        angle = 0;  // Reset after a full circle
-    update();  // Trigger a repaint
+    angle -= step;
+    if (angle < 120 || angle > 240) 
+        step *= -1;
+    update();
 }
 
 

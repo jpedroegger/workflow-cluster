@@ -16,7 +16,7 @@ int main(int argc, char* argv[])
     // Mode 1
     //SpeedometerWidget*      speedometer = new SpeedometerWidget(page1, 90, 145, 300, 300);
     //BatteryWidget*          battery = new BatteryWidget(page1, 615, 145, 300, 300);
-    ArrowSymbolWidget*      arrowSymbol = new ArrowSymbolWidget(page1, "zero", 390, 140, 240, 320);
+    ArrowSymbolWidget*      arrowSymbol = new ArrowSymbolWidget(page1, "zero", 390, 140, 400, 400);
     //Blinkers*               leftB = new Blinkers(page1, "left", "off", -5, 250, 100, 100);
     //Blinkers*               rightB = new Blinkers(page1, "right", "off", 900, 250, 100, 100);
     //FanSpeedWidget*         fanspeed = new FanSpeedWidget(page1, 0, 530, 150, 140);

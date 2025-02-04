@@ -27,6 +27,7 @@ class ArrowSymbolWidget : public QWidget
         QColor accent_color;
         QColor alphabet_color;
         double angle;
+        double step;
 
     protected:
         void   paintEvent(QPaintEvent* event) override;
