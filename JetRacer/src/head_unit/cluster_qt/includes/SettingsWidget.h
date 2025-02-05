@@ -9,8 +9,15 @@
 #include <QStyle>
 #include "../includes/EventManager.h"
 
+
 class StatsWidget;
 
+/**
+ * @brief The SettingsWidget class provides a customizable settings interface.
+ *
+ * This widget allows users to toggle between a collapsed and expanded view, change themes,
+ * and switch units. It interacts with an `EventManager` to handle user actions and updates.
+ */
 class SettingsWidget : public QWidget
 {
     Q_OBJECT
@@ -37,7 +44,7 @@ private:
     QPushButton *changeUnitIcon;
     EventManager &event;
 
-    bool setButtonIcon(QPushButton *button, const QString &imagePath);
+    // bool setButtonIcon(QPushButton *button, const QString &imagePath);
     void setExpanded(bool expand);
     bool isClickOutside(const QPoint &pos) const;
 };

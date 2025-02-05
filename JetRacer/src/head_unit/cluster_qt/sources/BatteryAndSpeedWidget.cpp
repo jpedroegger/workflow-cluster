@@ -1,5 +1,14 @@
 #include "../includes/BatteryAndSpeedWidget.h"
 
+/**
+ * @brief Constructs a BatteryAndSpeedWidget with optional position and size parameters.
+ *
+ * @param parent The parent widget.
+ * @param x The x-coordinate of the widget's position (default is 0).
+ * @param y The y-coordinate of the widget's position (default is 0).
+ * @param width The width of the widget (default is 0).
+ * @param height The height of the widget (default is 0).
+ */
 BatteryAndSpeedWidget::BatteryAndSpeedWidget(QWidget* parent, int x, int y, int width, int height)
     : QWidget(parent), currentSpeed(0)
 {
@@ -13,6 +22,13 @@ BatteryAndSpeedWidget::BatteryAndSpeedWidget(QWidget* parent, int x, int y, int 
     setGeometry(x, y, width, height);
 }
 
+/**
+ * @brief Handles the painting of the widget.
+ *
+ * This method is overridden from QWidget and is called whenever the widget needs to be redrawn.
+ *
+ * @param event The paint event.
+ */
 void BatteryAndSpeedWidget::paintEvent(QPaintEvent* event)
 {
     QPainter painter(this);
@@ -38,6 +54,14 @@ void BatteryAndSpeedWidget::paintEvent(QPaintEvent* event)
     drawScale(painter, centerX, centerY, radius);
 }
 
+/**
+ * @brief Draws the scale on the widget.
+ *
+ * @param painter The QPainter object used for drawing.
+ * @param centerX The x-coordinate of the center of the scale.
+ * @param centerY The y-coordinate of the center of the scale.
+ * @param radius The radius of the scale.
+ */
 void BatteryAndSpeedWidget::drawScale(QPainter& painter, int centerX,
                                       int centerY, int radius)
 {
@@ -50,6 +74,17 @@ void BatteryAndSpeedWidget::drawScale(QPainter& painter, int centerX,
              endAngle, 100);
 }
 
+/**
+ * @brief Draws the battery or speed bars on the widget.
+ *
+ * @param painter The QPainter object used for drawing.
+ * @param centerX The x-coordinate of the center of the bars.
+ * @param centerY The y-coordinate of the center of the bars.
+ * @param radius The radius of the bars.
+ * @param startAngle The starting angle of the bars.
+ * @param endAngle The ending angle of the bars.
+ * @param Level The current battery level.
+ */
 void BatteryAndSpeedWidget::drawBars(QPainter& painter, int centerX,
                                      int centerY, int radius, double startAngle,
                                      double endAngle, int Level)
@@ -79,6 +114,12 @@ void BatteryAndSpeedWidget::drawBars(QPainter& painter, int centerX,
     }
 }
 
+/**
+ * @brief Calculates the color of the battery or speed bars based on the current value.
+ *
+ * @param value The current value (e.g., speed or battery level).
+ * @return The QColor representing the bar color.
+ */
 QColor BatteryAndSpeedWidget::calculateBarColor(int value)
 {
     if (value < 5)
@@ -99,13 +140,26 @@ QColor BatteryAndSpeedWidget::calculateBarColor(int value)
         return QColor(0, 255, 0);
 }
 
+/**
+ * @brief Updates the battery level displayed on the widget.
+ */
 void BatteryAndSpeedWidget::updateLevel()
 {
     update();
 }
 
+/**
+ * @brief Destroys the BatteryAndSpeedWidget.
+ */
 BatteryAndSpeedWidget::~BatteryAndSpeedWidget() {}
 
+/**
+ * @brief Draws the central number on the widget.
+ *
+ * @param painter The QPainter object used for drawing.
+ * @param centerX The x-coordinate of the center of the number.
+ * @param centerY The y-coordinate of the center of the number.
+ */
 void BatteryAndSpeedWidget::drawCentralNumber(QPainter& painter,
                                             int centerX, int centerY)
 {
@@ -131,6 +185,13 @@ void BatteryAndSpeedWidget::drawCentralNumber(QPainter& painter,
     painter.drawText(kphX, kphY, unit);
 }
 
+/**
+ * @brief Draws the battery level number on the widget.
+ *
+ * @param painter The QPainter object used for drawing.
+ * @param centerX The x-coordinate of the center of the number.
+ * @param centerY The y-coordinate of the center of the number.
+ */
 void BatteryAndSpeedWidget::drawBatteryNumber(QPainter& painter,
                                             int centerX, int centerY)
 {
@@ -147,6 +208,11 @@ void BatteryAndSpeedWidget::drawBatteryNumber(QPainter& painter,
     painter.drawText(x, y, speedText);
 }
 
+/**
+ * @brief Simulates acceleration based on the forward key input.
+ *
+ * @param forward_key The key input representing acceleration.
+ */
 void BatteryAndSpeedWidget::accelerate(int forward_key)
 {
     if (forward_key == Qt::Key_Space)
@@ -166,6 +232,11 @@ void BatteryAndSpeedWidget::accelerate(int forward_key)
     }
 }
 
+/**
+ * @brief Changes the color scheme of the widget.
+ *
+ * @param array_index The index of the color scheme in the `image_array`.
+ */
 void    BatteryAndSpeedWidget::changeColor(int  array_index)
 {
     main_color = color1.main_color_array[array_index];
@@ -175,6 +246,11 @@ void    BatteryAndSpeedWidget::changeColor(int  array_index)
     update();
 }
 
+/**
+ * @brief A setter for the current battery level to be displayed.
+ *
+ * @param battery The battery level value to display (0-100).
+ */
 void    BatteryAndSpeedWidget::setCurrentLevel(int battery)
 {
     if (battery == currentLevel)
@@ -182,6 +258,10 @@ void    BatteryAndSpeedWidget::setCurrentLevel(int battery)
     currentLevel = battery;
     update();
 }
+
+/**
+ * @brief Toggles between different units.
+ */
 void    BatteryAndSpeedWidget::changeUnits(void)
 {
     if (unit == "DPS"){
@@ -194,6 +274,11 @@ void    BatteryAndSpeedWidget::changeUnits(void)
     update();
 }
 
+/**
+ * @brief A setter for the current speed to be displayed.
+ *
+ * @param speed The speed value to display.
+ */
 void BatteryAndSpeedWidget::setCurrentSpeed(int speed)
 {
     if (speed == currentSpeed
