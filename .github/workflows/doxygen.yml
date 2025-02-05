@@ -10,21 +10,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout main branch
+      - name: Checkout Repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Install Doxygen
-        run: sudo apt-get install -y doxygen
+        run: sudo apt-get update && sudo apt-get install -y doxygen
 
-      - name: Generate Doxygen documentation
-        run: doxygen docs/Doxyfile
-
-      - name: Commit and push changes
+      - name: Generate Doxygen Documentation
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          find docs/ -mindepth 1 ! -name 'Doxyfile' -exec rm -rf {} +
+          doxygen docs/Doxyfile
+          cd docs/html && mv * ../ && cd ../..
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
           git add docs/
-          git commit -m "Update Doxygen documentation"
-          git push origin main
+          git diff --cached --quiet || (git commit -m "Update Doxygen documentation" && git push)
+
