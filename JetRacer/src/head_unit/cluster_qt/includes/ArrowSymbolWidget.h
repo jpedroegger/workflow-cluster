@@ -11,46 +11,27 @@
 class ArrowSymbolWidget : public QWidget
 {
     public:
-        ArrowSymbolWidget(QWidget* parent = nullptr, std::string input = "none",
-                          int x = 0, int y = 0, int width = 0, int height = 0);
+        ArrowSymbolWidget(QWidget* parent = nullptr, int x = 0, int y = 0, int width = 0, int height = 0);
         ~ArrowSymbolWidget();
 
-        void   setDrawVerticalArrows(bool enabled);
-        void   setdrawLeftUpperCurve(bool enabled);
-        void   setdrawRightUpperCurve(bool enabled);
-        void   setdrawLeftLowerCurve(bool enabled);
-        void   setdrawRightLowerCurve(bool enabled);
-        void   changeColor(int  array_index);
-        void   changeDirection(int movement_key);
-        void   variangle(void);
-        QColor main_color;
-        QColor accent_color;
-        QColor alphabet_color;
-        double angle;
-        double step;
+        void    changeColor(int  array_index);
+        void    changeDirection(QString dir);
+        void    changeAngle(double ang);
+        void    variangle(void);
+        QColor  main_color;
+        QColor  accent_color;
+        QColor  alphabet_color;
+        double  angle;
+        double  step;
+        QString direction;
 
     protected:
-        void   paintEvent(QPaintEvent* event) override;
+        void    paintEvent(QPaintEvent* event) override;
 
     private:
-        void   drawVerticalArrows(QPainter& painter, std::string color);
-        void   drawLeftUpperCurve(QPainter& painter, std::string color);
-        void   drawRightUpperCurve(QPainter& painter, std::string color);
-        void   drawLeftLowerCurve(QPainter& painter, std::string color);
-        void   drawRightLowerCurve(QPainter& painter, std::string color);
-        void   drawArrowhead(QPainter& painter, int x, int y, double angle,
-                             int size, std::string color);
+        void    forwardArrows(QPainter& painter);
+        void    backwardsArrows(QPainter& painter);
 
-        bool   m_draw_vertical_arrows;
-        bool   m_draw_left_upper_curve;
-        bool   m_draw_right_upper_curve;
-        bool   m_draw_left_lower_curve;
-        bool   m_draw_right_lower_curve;
-        bool   m_green_l_u;
-        bool   m_green_r_u;
-        bool   m_green_l_l;
-        bool   m_green_r_l;
-        bool   m_green_v;
         Color  color1;
 };
 
