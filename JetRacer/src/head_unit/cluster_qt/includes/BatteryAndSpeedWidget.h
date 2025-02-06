@@ -6,6 +6,11 @@
 #include <QTimer>
 #include <QWidget>
 
+/**
+ * @brief This class is a custom QWidget that displays battery level and speed information.
+ * @details The widget provides a graphical representation of the current battery level and speed. 
+ * It supports customization of colors, units, and display styles. 
+ */
 class BatteryAndSpeedWidget : public QWidget
 {
 
@@ -15,9 +20,7 @@ class BatteryAndSpeedWidget : public QWidget
 
         void setCurrentSpeed(int speed);
         void setCurrentLevel(int battery);
-
         void accelerate(int forward_key);
-
         void changeColor(int  array_index);
         void changeUnits(void);
 
@@ -36,19 +39,19 @@ class BatteryAndSpeedWidget : public QWidget
         int index = 0;
 
         QString unit;
-        Color color1;
+        Color   color1;
         QPixmap image_array[4];
         QPixmap image;
-        void drawScale(QPainter& painter, int centerX, int centerY, int radius);
-        void drawCentralNumber(QPainter& painter, int centerX, int centerY);
-        void drawBatteryNumber(QPainter& painter, int centerX, int centerY);
-        QColor calculateBarColor(int value);
-        void drawBars(QPainter& painter, int centerX, int centerY, int radius,
+        void    drawScale(QPainter& painter, int centerX, int centerY, int radius);
+        void    drawCentralNumber(QPainter& painter, int centerX, int centerY);
+        void    drawBatteryNumber(QPainter& painter, int centerX, int centerY);
+        QColor  calculateBarColor(int value);
+        void    drawBars(QPainter& painter, int centerX, int centerY, int radius,
                       double startAngle, double endAngle, int Level);
 
     private slots:
         void updateLevel();
-        void updateSpeed();
+        // void updateSpeed();
 };
 
 #endif

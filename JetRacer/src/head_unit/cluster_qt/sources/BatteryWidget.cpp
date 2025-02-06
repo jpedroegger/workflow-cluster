@@ -1,5 +1,15 @@
 #include "../includes/BatteryWidget.h"
 
+
+/**
+ * @brief Constructs a BatteryWidget with optional position and size parameters.
+ *
+ * @param parent The parent widget.
+ * @param x The x-coordinate of the widget's position (default is 0).
+ * @param y The y-coordinate of the widget's position (default is 0).
+ * @param width The width of the widget (default is 0).
+ * @param height The height of the widget (default is 0).
+ */
 BatteryWidget::BatteryWidget(QWidget* parent, int x, int y, int width, int height)
     : QWidget(parent), currentLevel(0)
 {
@@ -11,6 +21,13 @@ BatteryWidget::BatteryWidget(QWidget* parent, int x, int y, int width, int heigh
 
 }
 
+/**
+ * @brief Handles the painting of the widget.
+ *
+ * This method is overridden from QWidget and is called whenever the widget needs to be redrawn.
+ *
+ * @param event The paint event.
+ */
 void BatteryWidget::paintEvent(QPaintEvent* event)
 {
     QPainter painter(this);
@@ -24,6 +41,14 @@ void BatteryWidget::paintEvent(QPaintEvent* event)
     drawCentralNumber(painter, centerX, centerY);
 }
 
+/**
+ * @brief Draws the scale on the widget.
+ *
+ * @param painter The QPainter object used for drawing.
+ * @param centerX The x-coordinate of the center of the scale.
+ * @param centerY The y-coordinate of the center of the scale.
+ * @param radius The radius of the scale.
+ */
 void BatteryWidget::drawScale(QPainter& painter, int centerX, int centerY, int radius)
 {
     // Draw outer circle
@@ -52,6 +77,17 @@ void BatteryWidget::drawScale(QPainter& painter, int centerX, int centerY, int r
     painter.drawEllipse(centerX - smaller_r, centerY - smaller_r, 2 * smaller_r, 2 * smaller_r);
 }
 
+/**
+ * @brief Draws the battery bars on the widget.
+ *
+ * @param painter The QPainter object used for drawing.
+ * @param centerX The x-coordinate of the center of the bars.
+ * @param centerY The y-coordinate of the center of the bars.
+ * @param radius The radius of the bars.
+ * @param startAngle The starting angle of the bars.
+ * @param endAngle The ending angle of the bars.
+ * @param Level The current battery level.
+ */
 void BatteryWidget::drawBars(QPainter& painter, int centerX, int centerY, int radius, double startAngle, double endAngle, int Level)
 {
     int numBars = Level / 2; // Total number of bars (from 0 to 100)
@@ -79,6 +115,12 @@ void BatteryWidget::drawBars(QPainter& painter, int centerX, int centerY, int ra
     }
 }
 
+/**
+ * @brief Calculates the color of the battery bars based on the current value.
+ *
+ * @param value The current battery level.
+ * @return The QColor representing the bar color.
+ */
 QColor BatteryWidget::calculateBarColor(int value)
 {
     if (value < 5) {
@@ -99,6 +141,13 @@ QColor BatteryWidget::calculateBarColor(int value)
     }
 }
 
+/**
+ * @brief Draws the central number on the widget.
+ *
+ * @param painter The QPainter object used for drawing.
+ * @param centerX The x-coordinate of the center of the number.
+ * @param centerY The y-coordinate of the center of the number.
+ */
 void BatteryWidget::drawCentralNumber(QPainter& painter, int centerX, int centerY)
 {
     // Set font and color for the Level number
@@ -125,11 +174,22 @@ void BatteryWidget::drawCentralNumber(QPainter& painter, int centerX, int center
     painter.drawText(kphX, kphY, "%");
 }
 
+/**
+ * @brief Updates the battery level displayed on the widget.
+ *
+ * This slot is triggered to refresh the battery level display. It can be connected to a signal
+ * that provides real-time battery level updates.
+ */
 void BatteryWidget::updateLevel()
 {
     update();
 }
 
+/**
+ * @brief Sets the current battery level to be displayed.
+ *
+ * @param battery The battery level value to display (typically 0-100).
+ */
 void BatteryWidget::setCurrentLevel(int battery)
 {
     if (battery == currentLevel)
@@ -138,6 +198,11 @@ void BatteryWidget::setCurrentLevel(int battery)
     update();
 }
 
+/**
+ * @brief Changes the color scheme of the widget.
+ *
+ * @param array_index The index of the color scheme in the `image_array`.
+ */
 void    BatteryWidget::changeColor(int  array_index)
 {
     main_color = color1.main_color_array[array_index];
@@ -146,4 +211,7 @@ void    BatteryWidget::changeColor(int  array_index)
     update();
 }
 
+/**
+ * @brief Destroys the BatteryWidget.
+ */
 BatteryWidget::~BatteryWidget() {}

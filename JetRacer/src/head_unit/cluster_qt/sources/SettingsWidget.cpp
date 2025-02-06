@@ -1,5 +1,16 @@
 #include "../includes/SettingsWidget.h"
 
+
+/**
+ * @brief Constructs a SettingsWidget with the specified parameters.
+ *
+ * @param parent The parent widget.
+ * @param event Reference to the EventManager for handling user actions.
+ * @param x The x-coordinate of the widget's position (default is 0).
+ * @param y The y-coordinate of the widget's position (default is 0).
+ * @param width The width of the widget (default is 0).
+ * @param height The height of the widget (default is 0).
+ */
 SettingsWidget::SettingsWidget(QWidget *parent, EventManager &event, int x, int y, int width, int height)
     : QWidget(parent), expanded(false), event(event)
 {
@@ -99,11 +110,23 @@ SettingsWidget::SettingsWidget(QWidget *parent, EventManager &event, int x, int 
     connect(themesIcon, &QPushButton::clicked, stats, &event->changeColors());
 }
 
+/**
+ * @brief Toggles the widget between collapsed and expanded states.
+ *
+ * This slot is triggered when the user clicks the main icon to expand or collapse the settings menu.
+ */
 void SettingsWidget::toggleExpand()
 {
     setExpanded(!expanded);
 }
 
+/**
+ * @brief Expands or collapses the settings menu.
+ *
+ * This method updates the widget's state and UI to reflect the expanded or collapsed state.
+ *
+ * @param expand If true, the widget is expanded; if false, it is collapsed.
+ */
 void SettingsWidget::setExpanded(bool expand)
 {
     expanded = expand;
@@ -119,6 +142,14 @@ void SettingsWidget::setExpanded(bool expand)
     }
 }
 
+/**
+ * @brief Handles mouse press events to detect clicks outside the widget.
+ *
+ * This method is overridden from QWidget to detect clicks outside the widget and collapse
+ * the settings menu if it is expanded.
+ *
+ * @param event The mouse event.
+ */
 void SettingsWidget::mousePressEvent(QMouseEvent *event)
 {
     if (expanded && isClickOutside(event->pos())) {
@@ -129,6 +160,14 @@ void SettingsWidget::mousePressEvent(QMouseEvent *event)
     QWidget::mousePressEvent(event);
 }
 
+/**
+ * @brief Checks if a click occurred outside the widget.
+ *
+ * This method determines whether a mouse click occurred outside the bounds of the widget.
+ *
+ * @param pos The position of the mouse click.
+ * @return true if the click was outside the widget, false otherwise.
+ */
 bool SettingsWidget::isClickOutside(const QPoint &pos) const
 {
     // Check if the click position is outside the widget's rectangle

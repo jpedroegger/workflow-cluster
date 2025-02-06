@@ -1,7 +1,18 @@
-#include "../includes/StatsWidget.h"
-#include <iostream>
+#include "StatsWidget.h"
 
 
+/**
+ * @brief Constructs a StatsWidget with the specified parameters.
+ *
+ * This constructor initializes the statistics widget, sets its geometry, and configures
+ * its colors and default values.
+ *
+ * @param parent The parent widget.
+ * @param x The x-coordinate of the widget's position.
+ * @param y The y-coordinate of the widget's position.
+ * @param width The width of the widget.
+ * @param height The height of the widget.
+ */
 StatsWidget::StatsWidget(QWidget *parent, int x, int y, int width, int height)
     : QWidget(parent), width(width), height(height)
 {
@@ -18,8 +29,12 @@ StatsWidget::StatsWidget(QWidget *parent, int x, int y, int width, int height)
     setGeometry(x, y, width, height);
 }
 
-#include <iostream>
-
+/**
+ * @brief Handles the painting of the statistics widget.
+ *
+ * This method is overridden from QWidget and is called whenever the widget needs to be redrawn.
+ * @param event The paint event.
+ */
 void    StatsWidget::paintEvent(QPaintEvent *event)
 {
     QPainter painter(this);
@@ -54,6 +69,14 @@ void    StatsWidget::paintEvent(QPaintEvent *event)
 
 }
 
+/**
+ * @brief Changes the color scheme of the statistics widget.
+ *
+ * This method updates the colors of the widget based on the provided
+ * array index.
+ *
+ * @param array_index The index of the color scheme in the array.
+ */
 void    StatsWidget::changeColor(int  array_index)
 {
     main_color = color1.main_color_array[array_index];
@@ -62,6 +85,13 @@ void    StatsWidget::changeColor(int  array_index)
     update();
 }
 
+/**
+ * @brief A Setter that updates the distance traveled statistic.
+ *
+ * This method updates the distance value and converts it to the current unit.
+ *
+ * @param dist The distance value to set.
+ */
 void    StatsWidget::setDistance(int dist)
 {
     if (unit == "Mi")
@@ -71,6 +101,13 @@ void    StatsWidget::setDistance(int dist)
     distance = QString::number(distance_int) + " " + unit;
 }
 
+/**
+ * @brief A Setter that updates the average speed statistic.
+ *
+ * This method updates the average speed value and converts it to the current unit.
+ *
+ * @param avg The average speed value to set.
+ */
 void    StatsWidget::setAverage(int avg)
 {
     if (unit == "Mi")
@@ -80,16 +117,36 @@ void    StatsWidget::setAverage(int avg)
     average = QString::number(average_int) + " " + unit + " Per Hour";
 }
 
+/**
+ * @brief A Setter that updates the battery consumed statistic.
+ *
+ * This method updates the battery consumed value as a percentage.
+ *
+ * @param con The battery consumed value to set.
+ */
 void    StatsWidget::setConsumed(int con)
 {
     consumed = QString::number(con) + "%";
 }
 
+/**
+ * @brief A Setter that updates the obstacles detected statistic.
+ *
+ * This method updates the number of obstacles detected.
+ *
+ * @param obs The number of obstacles detected.
+ */
 void    StatsWidget::setObstacles(int obs)
 {
     obstacles = QString::number(obs) + "";
 }
 
+/**
+ * @brief Toggles between units.
+ *
+ * This method switches the unit of measurement for distance and average speed and updates the
+ * displayed values accordingly.
+ */
 void    StatsWidget::changeUnits(void)
 {
     if (unit == "Km"){

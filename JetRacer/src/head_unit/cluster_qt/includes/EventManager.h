@@ -21,6 +21,12 @@
 #include <rclcpp/rclcpp.hpp>
 
 
+/**
+ * @brief The EventManager handles the events sent by the car and the command.
+ * @details It performs a swipe movement based on mouse events, filter key events to change
+ *  the cluster color and its units (KH/Mh).
+ */
+
 class EventManager : public QWidget
 {
         Q_OBJECT;
@@ -70,12 +76,12 @@ class EventManager : public QWidget
                      QWidget* main_window, std::shared_ptr<RosNode> ros_node);
         ~EventManager() override;
         QStackedWidget* getStackedWidget();
-        Color color1;
-        void changeUnits();
-        void changeColors();
+        void            changeColors();
+        void            changeUnits();
+        Color           color1;
 
     protected:
-        bool eventFilter(QObject* obj, QEvent* event) override;
+        bool    eventFilter(QObject* obj, QEvent* event) override;
         bool    swipe(QPointF release_position);
         void    activateButton(int key);  
 
