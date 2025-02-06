@@ -2,10 +2,12 @@
   "paths": [
     "src/*/*/include/*.hpp",
     "src/*/*/src/*.cpp",
-	"src/*/*/test/src/*.cpp",
-	"src/*/*/test/inlude/*.hpp"
+    "src/*/*/includes/*.h",
+    "src/*/*/source/*.cpp",
+    "src/*/*/test/src/*.cpp",
+    "src/*/*/test/inlude/*.hpp"
   ],
-  "filterPre": [".*", "**/cluster"],
+  "filterPre": [".*", "**mainwindow.h"],
   "tidyRoot": ".",
   "buildRoot": "build/",
   "compilationDatabase": "build/compile_commands.json",

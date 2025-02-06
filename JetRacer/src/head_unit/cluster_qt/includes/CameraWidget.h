@@ -20,7 +20,7 @@ class CameraWidget : public QWidget {
 
 public:
     explicit CameraWidget(QWidget *parent = nullptr, int x = 0, int y = 0, int width = 0, int height = 0);
-    ~CameraWidget();
+    ~CameraWidget() override;
 
 private:
     QCamera *camera;                       // Camera object
