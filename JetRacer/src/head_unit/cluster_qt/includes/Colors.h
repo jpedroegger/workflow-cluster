@@ -12,7 +12,8 @@ public:
     Color() : counter(getLastValue()) {};
     ~Color(){};
     Color&  operator=(const Color&) {return *this;}
-    
+    static constexpr int    INDEX_LENGTH = 8;
+
     int    getLastValue(void)
     {
         int counter = 0;
@@ -29,7 +30,7 @@ public:
             {
                 try
                 {
-                    counter = std::stoi(s.substr(pos + 8));
+                    counter = std::stoi(s.substr(pos + INDEX_LENGTH));
                 }
                 catch (const std::exception& e)
                 {

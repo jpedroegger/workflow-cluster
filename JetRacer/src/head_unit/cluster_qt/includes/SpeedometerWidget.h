@@ -22,7 +22,7 @@ class SpeedometerWidget : public QWidget
     public:
         SpeedometerWidget(QWidget* parent = nullptr, int x = 0, int y = 0,
                           int width = 0, int height = 0);
-        ~SpeedometerWidget();
+        ~SpeedometerWidget() override;
 
         // void accelerate(int forward_key);
         void    setCurrentSpeed(int speed);
@@ -44,10 +44,10 @@ class SpeedometerWidget : public QWidget
 
         QString unit;
         Color   color1;
-        void    drawScale(QPainter& painter, int centerX, int centerY, int radius);
-        void    drawNeedle(QPainter& painter, int centerX, int centerY,
+        void    drawScale(QPainter& painter, int center_x, int center_y, int radius);
+        void    drawNeedle(QPainter& painter, int center_x, int center_y,
                         int radius);
-        void    drawCentralNumber(QPainter& painter, int centerX, int centerY);
+        void    drawCentralNumber(QPainter& painter, int center_x, int center_y);
 };
 
 #endif // SPEEDOMETERWIDGET_H

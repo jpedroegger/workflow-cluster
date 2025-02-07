@@ -21,10 +21,10 @@ class Blinkers : public QWidget
         explicit Blinkers(QWidget* parent = nullptr, std::string dir = "left",
                           std::string mode = "off", int x = 0, int y = 0,
                           int width = 0, int height = 0);
-        virtual ~Blinkers();
+        ~Blinkers() override;
 
         void turnOnBlinkers(bool on_off);
-        bool get_blinking(void);
+        bool getBlinking(void);
         void changeColor(int array_index);
         QTimer* getToggleTimer(void);
 

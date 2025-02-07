@@ -36,7 +36,7 @@ void BlinkerTest::testTurnOnLeftBlinkerStartsBlinking()
 
     left_blinker->turnOnBlinkers(true);
 
-    QVERIFY(left_blinker->get_blinking());
+    QVERIFY(left_blinker->getBlinking());
 }
 
 void BlinkerTest::testTurnOnRightBlinkerStartsBlinking()
@@ -46,7 +46,7 @@ void BlinkerTest::testTurnOnRightBlinkerStartsBlinking()
 
     right_blinker->turnOnBlinkers(true);
 
-    QVERIFY(right_blinker->get_blinking());
+    QVERIFY(right_blinker->getBlinking());
 }
 
 void BlinkerTest::testTurnOffLeftBlinkerStopsBlinking()
@@ -57,7 +57,7 @@ void BlinkerTest::testTurnOffLeftBlinkerStopsBlinking()
     left_blinker->turnOnBlinkers(true);
     left_blinker->turnOnBlinkers(false);
 
-    QVERIFY(!left_blinker->get_blinking());
+    QVERIFY(!left_blinker->getBlinking());
 }
 
 void BlinkerTest::testTurnOffRightBlinkerStopsBlinking()
@@ -68,7 +68,7 @@ void BlinkerTest::testTurnOffRightBlinkerStopsBlinking()
     right_blinker->turnOnBlinkers(true);
     right_blinker->turnOnBlinkers(false);
 
-    QVERIFY(!right_blinker->get_blinking());
+    QVERIFY(!right_blinker->getBlinking());
 }
 
 void BlinkerTest::testTimerStartsWhenBlinkerIsTurnedOn()

@@ -19,7 +19,7 @@ class TopBar : public QWidget
 
 public:
     explicit TopBar(QWidget* parent = nullptr, int x = 0, int y = 0, int width = 0, int height = 0);
-    ~TopBar();
+    ~TopBar() override ;
 
     // Method to update the image at a specific index based on a condition
     bool    setImageState(int index, bool state);
