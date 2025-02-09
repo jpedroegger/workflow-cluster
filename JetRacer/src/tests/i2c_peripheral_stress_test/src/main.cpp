@@ -17,9 +17,9 @@ class TesterNode : public rclcpp::Node
             rclcpp::QoS qos_profile =
                 rclcpp::QoS(QUEUE_DEPTH).reliable().durability_volatile();
 
-            timer_servo = this->create_timer(
+            timer_servo = this->create_wall_timer(
                 1s, std::bind(&TesterNode::twistCallback, this));
-            timer_display = this->create_timer(
+            timer_display = this->create_wall_timer(
                 1s, std::bind(&TesterNode::displayCallback, this));
 
             twist_publisher_ =
