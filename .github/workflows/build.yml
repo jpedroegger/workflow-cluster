@@ -73,7 +73,7 @@ jobs:
         source /opt/ros/humble/setup.bash
         cd $ROS_BUILD_DIR
         source ./install/setup.bash
-        colcon test --ctest-args tests --packages-skip camera_ros cluster --executor sequential
+        colcon test --ctest-args tests --packages-skip camera_ros --executor sequential
         colcon test-result --all --verbose
 
     - name: Run clang-tidy
