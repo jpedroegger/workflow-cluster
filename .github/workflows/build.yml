@@ -26,7 +26,9 @@ jobs:
         wget https://apt.llvm.org/llvm.sh
         chmod +x llvm.sh
         sudo ./llvm.sh 18
-        sudo apt-get install -y clang build-essential cmake curl git clang-tidy wget
+        sudo apt-get install -y clang build-essential cmake curl git clang-tidy-18 wget
+        sudo update-alternatives --install /usr/bin/clang-tidy clang-tidy /usr/bin/clang-tidy-18 100
+
 
     - name: Install Qt
       run: |
