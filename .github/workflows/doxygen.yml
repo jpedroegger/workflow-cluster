@@ -21,6 +21,7 @@ jobs:
           git fetch origin
           doxygen Doxyfile
           cd html && mv * ../ && cd ..
+          rm -rf ECU_code JetRacer html || true
           git add .
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
