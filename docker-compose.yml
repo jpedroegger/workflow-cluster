@@ -1,0 +1,23 @@
+services:
+  ros2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ros2_container
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - /dev/snd:/dev/snd
+    environment:
+      - DEBIAN_FRONTEND=noninteractive
+      - ROS_DISTRO=jazzy
+      - DISPLAY=${DISPLAY}
+      - PULSE_SERVER=unix:/run/user/1000/pulse/native
+    devices:
+      - "/dev/snd"  # Give access to sound hardware
+    group_add:
+      - "audio"  # Add container user to 'audio' group
+    tty: true
+    stdin_open: true  
+    command: bash  

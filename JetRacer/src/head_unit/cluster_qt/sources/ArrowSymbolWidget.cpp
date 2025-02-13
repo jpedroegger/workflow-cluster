@@ -114,15 +114,14 @@ void   ArrowSymbolWidget::variangle(void)
     update();
 }
 
-void ArrowSymbolWidget::changeDirection(QString dir)
-{
-   direction = dir;
-}
 
-void ArrowSymbolWidget::changeAngle(double ang)
+void ArrowSymbolWidget::changeDirection(double ang, QString dir)
 {
-   angle = ang;
-   update();
+    if (angle == ang && direction == dir)
+        return ;
+    angle = ang;
+    direction = dir;
+    update();
 }
 
 void    ArrowSymbolWidget::changeColor(int  array_index)

@@ -15,22 +15,21 @@ class ArrowSymbolWidget : public QWidget
         ~ArrowSymbolWidget();
 
         void    changeColor(int  array_index);
-        void    changeDirection(QString dir);
-        void    changeAngle(double ang);
-        void    variangle(void);
-        QColor  main_color;
-        QColor  accent_color;
-        QColor  alphabet_color;
-        double  angle;
-        double  step;
-        QString direction;
+        void    changeDirection(double ang, QString dir);
 
     protected:
         void    paintEvent(QPaintEvent* event) override;
 
     private:
+        void    variangle(void);
         void    forwardArrows(QPainter& painter);
         void    backwardsArrows(QPainter& painter);
+        QColor  main_color;
+        QColor  accent_color;
+        QColor  alphabet_color;
+        QString direction;
+        double  angle;
+        double  step;
 
         Color  color1;
 };

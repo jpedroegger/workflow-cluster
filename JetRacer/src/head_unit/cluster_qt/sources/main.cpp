@@ -41,7 +41,6 @@ int main(int argc, char* argv[])
     app.installEventFilter(&eventManager);
     //settings->setGeometry(1120, -10, 250, 250);
     // Toolbar for switching modes
-    arrowSymbol->variangle();
     QToolBar* toolBar = new QToolBar;
     QAction* mode1Action = toolBar->addAction("Mode 1");
     QAction* mode2Action = toolBar->addAction("Mode 2");
