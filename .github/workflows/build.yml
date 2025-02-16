@@ -12,6 +12,7 @@ on:
 env:
   QT_BUILD_DIR: JetRacer/src/head_unit/cluster_qt/build
   ROS_BUILD_DIR: JetRacer
+  QT_QPA_PLATFORM: offscreen
 
 jobs:
   build:
