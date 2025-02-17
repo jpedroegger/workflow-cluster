@@ -1,5 +1,6 @@
 from vosk import Model, KaldiRecognizer
 import pyaudio
+import json
 
 # Load the Vosk model
 model = Model("vosk-model-small-en-us-0.15")
@@ -14,5 +15,6 @@ while True:
     if len(data) == 0:
         break
     if recognizer.AcceptWaveform(data):
-        print(recognizer.Result())
+        res = json.loads(recognizer.Result())
+        print(res["text"])
 
