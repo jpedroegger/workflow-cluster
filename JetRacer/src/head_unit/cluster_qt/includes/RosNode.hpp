@@ -35,7 +35,7 @@ class RosNode : public rclcpp::Node
         rclcpp::Subscription<std_msgs::msg::UInt8>::SharedPtr   speed_sub_;
         rclcpp::Subscription<std_msgs::msg::UInt32>::SharedPtr  rpm_sub_;
         rclcpp::Subscription<std_msgs::msg::UInt8>::SharedPtr   blinker_sub_;
-        rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr wheel_angle_sub_;
+        rclcpp::Subscription<std_msgs::msg::Float64>::SharedPtr wheel_angle_sub_;
 
         void                                                    setBlinkerState(std_msgs::msg::UInt8 msg);
 

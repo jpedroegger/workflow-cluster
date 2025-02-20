@@ -18,8 +18,11 @@ RosNode::RosNode() : rclcpp::Node("ros_node"), battery_level_(0), speed_(0)
         "cmd_blinkers", 10,
         std::bind(&RosNode::setBlinkerState, this, std::placeholders::_1));
     
-    wheel_angle_ = this->create_subscription<geometry_msgs::msg::Twist>(
-        "cmd_vel", 90,
+        wheel_angle_sub_ = this->create_subscription<std_msgs::msg::Float64>(
+            "cmd_vel", 90,
+            [this](const std_msgs::msg::Float64::SharedPtr msg) {
+                wheel_angle_ = static_cast<float>(msg->data);
+            });
 }
 
 int RosNode::getSpeed() const { return speed_; }
