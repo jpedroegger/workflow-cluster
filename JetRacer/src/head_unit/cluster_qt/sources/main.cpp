@@ -22,6 +22,7 @@ int main(int argc, char* argv[])
     FanSpeedWidget*         fanspeed = new FanSpeedWidget(page1, 0, 530, 150, 140);
     CPUTempWidget*          cputemp = new CPUTempWidget(page1, 100, 530, 150, 140);
     TopBar*                 topBar = new TopBar(page1, 250, 600, 250, 50);
+    ListeningWidget*        listening = new ListeningWidget(page1, 0, 620, 950, 50);
 
     // Mode 2
     BatteryAndSpeedWidget*  bas = new BatteryAndSpeedWidget(page2, 110, 80, 200, 400);
@@ -37,7 +38,7 @@ int main(int argc, char* argv[])
 
     EventManager eventManager(arrowSymbol, speedometer, battery, bas, leftB, rightB,
                               leftB2, rightB2, stats, fanspeed, fanspeed2, cputemp,
-                              cputemp2, topBar, topBar2, stacked_widget, main_window, node);
+                              cputemp2, topBar, topBar2, stacked_widget, main_window, listening, node);
     app.installEventFilter(&eventManager);
     //settings->setGeometry(1120, -10, 250, 250);
     // Toolbar for switching modes

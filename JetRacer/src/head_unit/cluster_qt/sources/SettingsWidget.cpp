@@ -7,7 +7,7 @@ SettingsWidget::SettingsWidget(QWidget *parent, EventManager &event, int x, int 
     main_icon = new QPushButton(this);
     main_icon->setFixedSize(50, 50);
     main_icon->setStyleSheet("border: none; "
-                            "background-image: url('/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/settings.png'); "
+                            "background-image: url('/workspace/JetRacer/src/head_unit/cluster_qt/assets/icons/settings.png'); "
                             "background-repeat: no-repeat; "
                             "background-position: center;"
                             );
@@ -15,7 +15,7 @@ SettingsWidget::SettingsWidget(QWidget *parent, EventManager &event, int x, int 
     close_icon = new QPushButton(this);
     close_icon->setFixedSize(50, 50);
     close_icon->setStyleSheet("border: none; "
-                             "background-image: url('/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/settings.png'); "
+                             "background-image: url('/workspace/JetRacer/src/head_unit/cluster_qt/assets/icons/settings.png'); "
                              "background-repeat: no-repeat; "
                              "background-position: center;");
 
@@ -33,7 +33,7 @@ SettingsWidget::SettingsWidget(QWidget *parent, EventManager &event, int x, int 
         "   text-align: center;"
         "}"
         );
-    themes_icon->setIcon(QIcon("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/brush.png"));
+    themes_icon->setIcon(QIcon("/workspace/JetRacer/src/head_unit/cluster_qt/assets/icons/brush.png"));
     themes_icon->setIconSize(QSize(50, 50));
     themes_icon->setText("Change Themes");
 
@@ -51,7 +51,7 @@ SettingsWidget::SettingsWidget(QWidget *parent, EventManager &event, int x, int 
         "   text-align: center;"
         "}"
         );
-    change_unit_icon->setIcon(QIcon("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/convert.png"));
+    change_unit_icon->setIcon(QIcon("/workspace/JetRacer/src/head_unit/cluster_qt/assets/icons/convert.png"));
     change_unit_icon->setIconSize(QSize(50, 50));
     change_unit_icon->setText("Change Units");
 

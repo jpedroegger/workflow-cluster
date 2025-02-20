@@ -8,13 +8,13 @@ EventManager::EventManager(
     Blinkers* right_blinker2, StatsWidget* stats, FanSpeedWidget* fan,
     FanSpeedWidget* fan2, CPUTempWidget* cpu, CPUTempWidget* cpu2, TopBar* top,
     TopBar* top2, QStackedWidget* stacked_widget, QWidget* main_window,
-    std::shared_ptr<RosNode> ros_node)
+    ListeningWidget* listening, std::shared_ptr<RosNode> ros_node)
     : arrows(arrow), py_speed(py_speed), py_battery(py_battery),
       py_batspeed(py_batspeed), left_blinker(left_blinker),
       right_blinker(right_blinker), left_blinker2(left_blinker2),
       right_blinker2(right_blinker2), stats(stats), fan(fan), fan2(fan2),
       cpu(cpu), cpu2(cpu2), top(top), top2(top2), stacked_widget(stacked_widget),
-      main_window(main_window), node(ros_node)
+      main_window(main_window), listening(listening), node(ros_node)
 {
     color1 = Color();
     update_timer = new QTimer(this);
@@ -133,6 +133,7 @@ void EventManager::changeColors()
     fan2->changeColor(color1.counter);
     cpu->changeColor(color1.counter);
     cpu2->changeColor(color1.counter);
+    listening->changeColor(color1.counter);
     main_window->setStyleSheet(color1.background_array[color1.counter]);
 }
 

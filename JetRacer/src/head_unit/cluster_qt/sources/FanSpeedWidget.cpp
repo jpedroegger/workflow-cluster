@@ -9,10 +9,10 @@ FanSpeedWidget::FanSpeedWidget(QWidget* parent, int x, int y, int width, int hei
     accent_color = color1.accent_color;
     alphabet_color = color1.alphabet_color;
     setFocusPolicy(Qt::StrongFocus);
-    image_array[0] = QPixmap("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/fan_p.png");
-    image_array[1] = QPixmap("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/fan_r.png");
-    image_array[2] = QPixmap("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/fan_i.png");
-    image_array[3] = QPixmap("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/fan_g.png");
+    image_array[0] = QPixmap("/workspace/JetRacer/src/head_unit/cluster_qt/assets/icons/fan_p.png");
+    image_array[1] = QPixmap("/workspace/JetRacer/src/head_unit/cluster_qt/assets/icons/fan_r.png");
+    image_array[2] = QPixmap("/workspace/JetRacer/src/head_unit/cluster_qt/assets/icons/fan_i.png");
+    image_array[3] = QPixmap("/workspace/JetRacer/src/head_unit/cluster_qt/assets/icons/fan_g.png");
     image = image_array[index];
     setGeometry(x, y, width, height);
 }

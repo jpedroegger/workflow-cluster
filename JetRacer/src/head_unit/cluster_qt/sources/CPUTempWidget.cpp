@@ -10,10 +10,10 @@ CPUTempWidget::CPUTempWidget(QWidget* parent, int x, int y, int width, int heigh
     alphabet_color = color1.alphabet_color;
     unit = "ºC";
     setFocusPolicy(Qt::StrongFocus);
-    image_array[0] = QPixmap("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/cpu_p.png");
-    image_array[1] = QPixmap("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/cpu_r.png");
-    image_array[2] = QPixmap("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/cpu_i.png");
-    image_array[3] = QPixmap("/home/jetpack/SEAME-Cluster-24-25/JetRacer/src/head_unit/cluster_qt/assets/icons/cpu_g.png");
+    image_array[0] = QPixmap("/workspace/JetRacer/src/head_unit/cluster_qt/assets/icons/cpu_p.png");
+    image_array[1] = QPixmap("/workspace/JetRacer/src/head_unit/cluster_qt/assets/icons/cpu_r.png");
+    image_array[2] = QPixmap("/workspace/JetRacer/src/head_unit/cluster_qt/assets/icons/cpu_i.png");
+    image_array[3] = QPixmap("/workspace/JetRacer/src/head_unit/cluster_qt/assets/icons/cpu_g.png");
     image = image_array[index];
     setGeometry(x, y, width, height);
 }

@@ -30,6 +30,7 @@
 # include "Colors.h"
 # include "SettingsWidget.h"
 # include "StatsWidget.h"
+# include "ListeningWidget.h"
 
 # include <QStackedWidget>
 # include <QToolBar>
