@@ -55,6 +55,8 @@ void EventManager::updateScreen()
     py_battery->setCurrentLevel(node->getBattery());
     py_batspeed->setCurrentLevel(node->getBattery());
     py_batspeed->setCurrentSpeed(node->getSpeed());
+    arrows->changeDirection(node->getWheelAngle(), "forward");
+    
     updateBlinkers();
 
     stats->setDistance(4533);

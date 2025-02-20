@@ -28,12 +28,14 @@ class RosNode : public rclcpp::Node
         int                                                     getBattery() const;
         int                                                     getRpm() const;
         blinkerState                                            getBlinkerState() const;
+        float                                                   getWheelAngle() const;
 
     private:
         rclcpp::Subscription<std_msgs::msg::Float64>::SharedPtr battery_sub_;
         rclcpp::Subscription<std_msgs::msg::UInt8>::SharedPtr   speed_sub_;
         rclcpp::Subscription<std_msgs::msg::UInt32>::SharedPtr  rpm_sub_;
         rclcpp::Subscription<std_msgs::msg::UInt8>::SharedPtr   blinker_sub_;
+        rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr wheel_angle_sub_;
 
         void                                                    setBlinkerState(std_msgs::msg::UInt8 msg);
 
@@ -41,4 +43,5 @@ class RosNode : public rclcpp::Node
         int                                                     speed_{0};
         int                                                     rpm_{0};
         blinkerState                                            blinker_state_{blinkerState::IDLE};
+        float                                                   wheel_angle_{90};
 };

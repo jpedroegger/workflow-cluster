@@ -17,6 +17,9 @@ RosNode::RosNode() : rclcpp::Node("ros_node"), battery_level_(0), speed_(0)
     blinker_sub_ = this->create_subscription<std_msgs::msg::UInt8>(
         "cmd_blinkers", 10,
         std::bind(&RosNode::setBlinkerState, this, std::placeholders::_1));
+    
+    wheel_angle_ = this->create_subscription<geometry_msgs::msg::Twist>(
+        "cmd_vel", 90,
 }
 
 int RosNode::getSpeed() const { return speed_; }
@@ -24,6 +27,8 @@ int RosNode::getSpeed() const { return speed_; }
 int RosNode::getBattery() const { return battery_level_; }
 
 int RosNode::getRpm() const { return rpm_; }
+
+float RosNode::getWheelAngle() const {return wheel_angle_; }
 
 blinkerState RosNode::getBlinkerState() const { return blinker_state_; }
 
