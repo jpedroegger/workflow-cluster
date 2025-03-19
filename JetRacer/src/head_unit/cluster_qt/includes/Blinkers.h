@@ -6,6 +6,13 @@
 #include <QPixmap>
 #include <QTimer>
 
+
+/**
+ * @brief The class represents a widget that simulates blinking indicators.
+ * @details It uses a QTimer to toggle between two images, creating a blinking effect. 
+ * The class supports turning the blinkers on/off and changing the color of the images.
+ */
+
 class Blinkers : public QWidget
 {
         Q_OBJECT
@@ -14,7 +21,7 @@ class Blinkers : public QWidget
         explicit Blinkers(QWidget* parent = nullptr, std::string dir = "left",
                           std::string mode = "off", int x = 0, int y = 0,
                           int width = 0, int height = 0);
-        virtual ~Blinkers();
+        ~Blinkers() override;
 
         void    turnOnBlinkers(bool on_off);
         bool    get_blinking(void);

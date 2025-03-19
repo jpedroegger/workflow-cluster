@@ -7,13 +7,22 @@
 #include <QTimer>
 #include <QWidget>
 
+
+/**
+ * @brief The SpeedometerWidget class represents a custom widget for displaying speed.
+ *
+ * @details This widget provides a graphical representation of speed, including a circular scale,
+ * a needle, and a central display for the current speed value. It supports customization
+ * of colors, units, and maximum speed.
+ */
+
 class SpeedometerWidget : public QWidget
 {
 
     public:
         SpeedometerWidget(QWidget* parent = nullptr, int x = 0, int y = 0,
                           int width = 0, int height = 0);
-        ~SpeedometerWidget();
+        ~SpeedometerWidget() override;
 
         void    setCurrentSpeed(int speed);
         int     getCurrentSpeed() const;

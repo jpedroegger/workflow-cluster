@@ -14,34 +14,33 @@ enum class blinkerState
 };
 
 /**
- * @class RosNode
- * @brief Subscribes to the battery level and speed topics for
- * the QT app to use
+ * @brief The RosNode class represents a ROS 2 node for managing vehicle data.
+ *
+ * This class inherits from rclcpp::Node and subscribes to topics 
+ * such as battery level and speed. It also includes methods to retrieve
+ * the latest values of these parameters.
  */
 class RosNode : public rclcpp::Node
 {
     public:
         RosNode();
-        ~RosNode() = default;
+        ~RosNode() override = default;
 
-        int                                                     getSpeed() const;
-        int                                                     getBattery() const;
-        int                                                     getRpm() const;
-        blinkerState                                            getBlinkerState() const;
-        float                                                   getWheelAngle() const;
+        int             getSpeed() const;
+        int             getBattery() const;
+        int             getRpm() const;
+        blinkerState    getBlinkerState() const;
 
     private:
         rclcpp::Subscription<std_msgs::msg::Float64>::SharedPtr battery_sub_;
         rclcpp::Subscription<std_msgs::msg::UInt8>::SharedPtr   speed_sub_;
         rclcpp::Subscription<std_msgs::msg::UInt32>::SharedPtr  rpm_sub_;
         rclcpp::Subscription<std_msgs::msg::UInt8>::SharedPtr   blinker_sub_;
-        rclcpp::Subscription<std_msgs::msg::Float64>::SharedPtr wheel_angle_sub_;
 
-        void                                                    setBlinkerState(std_msgs::msg::UInt8 msg);
+        void            setBlinkerState(std_msgs::msg::UInt8 msg);
 
-        int                                                     battery_level_{100};
-        int                                                     speed_{0};
-        int                                                     rpm_{0};
-        blinkerState                                            blinker_state_{blinkerState::IDLE};
-        float                                                   wheel_angle_{90};
+        int             battery_level_{0};
+        int             speed_{0};
+        int             rpm_{0};
+        blinkerState    blinker_state_{blinkerState::IDLE};
 };

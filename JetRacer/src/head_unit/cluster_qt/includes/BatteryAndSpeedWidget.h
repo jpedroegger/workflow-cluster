@@ -6,6 +6,11 @@
 #include <QTimer>
 #include <QWidget>
 
+/**
+ * @brief This class is a custom QWidget that displays battery level and speed information.
+ * @details The widget provides a graphical representation of the current battery level and speed. 
+ * It supports customization of colors, units, and display styles. 
+ */
 class BatteryAndSpeedWidget : public QWidget
 {
 

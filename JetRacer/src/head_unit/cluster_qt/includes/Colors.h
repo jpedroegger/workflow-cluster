@@ -35,7 +35,6 @@ class Color
                     catch (const std::exception& e)
                     {
                         counter = 0;
-                       // std::cerr << "Something wrong with file, the result gotten is: " << s.substr(pos + 8) << "\n";
                     } 
                 }
             }
@@ -44,16 +43,22 @@ class Color
         }
         int     counter;
 
-        QColor  main_color_array[4] = {"#312244", "#9A031E", "#FF99C8", "#283618"};
+        QColor  main_color_array[4] = {"#312244", "#9A031E", "#FF99C8",
+                                       "#283618"};
         QColor  main_color = main_color_array[counter];
 
-        QColor  accent_color_array[4] = {"#4D194D", "#FB8B24", "#A9DEF9", "#BC6C25"};
+        QColor  accent_color_array[4] = {"#4D194D", "#FB8B24", "#A9DEF9",
+                                         "#BC6C25"};
         QColor  accent_color = accent_color_array[counter];
 
-        QColor  alphabet_color_array[4] = {"#006466", "#E36414", "#E4C1F9", "#FEFAE0"};
+        QColor  alphabet_color_array[4] = {"#006466", "#E36414", "#E4C1F9",
+                                           "#FEFAE0"};
         QColor  alphabet_color = alphabet_color_array[counter];
 
-        QString background_array[4] = {"background-color: #212F45", "background-color: #5F0F40", "background-color: #D0F4DE", "background-color: #DDA15E"};
+        QString background_array[4] = {"background-color: #212F45",
+                                       "background-color: #5F0F40",
+                                       "background-color: #D0F4DE",
+                                       "background-color: #DDA15E"};
         QString background = background_array[counter];
 
         void    indent(void)

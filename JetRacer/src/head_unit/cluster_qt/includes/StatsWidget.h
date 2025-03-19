@@ -7,7 +7,18 @@
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QPainter>
+#include <iostream>
 
+
+/**
+ * @brief The StatsWidget class represents a custom widget for displaying statistics.
+ *
+ * @details This widget provides a graphical representation of four key statistics:
+ * - Distance Traveled
+ * - Average Speed
+ * - Battery Consumed
+ * - Obstacles Detected
+ */
 class StatsWidget : public QWidget
 {
 

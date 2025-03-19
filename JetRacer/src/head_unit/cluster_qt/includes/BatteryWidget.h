@@ -6,6 +6,11 @@
 #include <QTimer>
 #include <QWidget>
 
+
+/**
+ * @brief This class is a custom QWidget that displays battery level information.
+ * @details This widget provides a graphical representation of the current battery level.
+ */
 class BatteryWidget : public QWidget
 {
 

@@ -1,6 +1,33 @@
 #include "../includes/EventManager.h"
 #include <rclcpp/rclcpp.hpp>
 
+
+/**
+ * @brief Constructs an EventManager with the specified widgets and ROS node.
+ *
+ * This constructor initializes the EventManager, connects it to various widgets 
+ * and sets up a timer to periodically update the screen. It also initializes
+ * the ROS node and starts the update timer.
+ *
+ * @param arrow Pointer to the ArrowSymbolWidget.
+ * @param py_speed Pointer to the SpeedometerWidget.
+ * @param py_battery Pointer to the BatteryWidget.
+ * @param py_batspeed Pointer to the BatteryAndSpeedWidget.
+ * @param left_blinker Pointer to the left Blinkers widget.
+ * @param right_blinker Pointer to the right Blinkers widget.
+ * @param left_blinker2 Pointer to the secondary left Blinkers widget.
+ * @param right_blinker2 Pointer to the secondary right Blinkers widget.
+ * @param stats Pointer to the StatsWidget.
+ * @param fan Pointer to the FanSpeedWidget.
+ * @param fan2 Pointer to the secondary FanSpeedWidget.
+ * @param cpu Pointer to the CPUTempWidget.
+ * @param cpu2 Pointer to the secondary CPUTempWidget.
+ * @param top Pointer to the TopBar widget.
+ * @param top2 Pointer to the secondary TopBar widget.
+ * @param stacked_widget Pointer to the QStackedWidget for managing multiple screens.
+ * @param main_window Pointer to the main QWidget window.
+ * @param ros_node Shared pointer to the ROS node for communication.
+ */
 EventManager::EventManager(
     ArrowSymbolWidget* arrow, SpeedometerWidget* py_speed,
     BatteryWidget* py_battery, BatteryAndSpeedWidget* py_batspeed,
@@ -23,34 +50,74 @@ EventManager::EventManager(
     update_timer->start(REFRESH_RATE_MS); // Every 50ms => 20FPS
 }
 
+/**
+ * @brief Filters and handles events for the EventManager.
+ *
+ * This method processes mouse events, and key events. It tracks mouse
+ * positions for swipe gestures and handles key presses to activate buttons.
+ *
+ * @param obj The object that generated the event.
+ * @param event The event to be filtered.
+ * @return true if the event was handled, false otherwise.
+ */
 bool EventManager::eventFilter(QObject* obj, QEvent* event)
 {
-    if (event->type() == QEvent::Gesture)
-    {
-        QGestureEvent* gesture_event = static_cast<QGestureEvent*>(event);
-        handleGestureEvent(gesture_event);
+    if (event->type() == QEvent::MouseButtonPress) {
+        auto mouse_event = static_cast<QMouseEvent*>(event);
+        QPointF press_position = mouse_event->position();
+
+        mouse_position = press_position;
         return true;
     }
-
-    if (event->type() == QEvent::KeyPress)
-    {
-        QKeyEvent* keyEvent = static_cast<QKeyEvent*>(event);
-        pressed_keys.insert(keyEvent->key());
-        return true;
+    else if (event->type() == QEvent::MouseButtonRelease) {
+        auto mouse_event = static_cast<QMouseEvent*>(event);
+        QPointF release_position = mouse_event->position();
+        if (swipe(release_position))
+            return true;
     }
     else if (event->type() == QEvent::KeyRelease)
     {
-        QKeyEvent* keyEvent = static_cast<QKeyEvent*>(event);
-        pressed_keys.remove(keyEvent->key());
+        auto key_event = static_cast<QKeyEvent*>(event);
+        
+        if (!key_event->isAutoRepeat())
+            activateButton(key_event->key());
         return true;
     }
     return QObject::eventFilter(obj, event);
 }
 
+/**
+ * @brief Activates functionality based on the key pressed.
+ *
+ * This method handles key press events and performs actions such as changing colors or units.
+ *
+ * @param key The key code of the pressed key.
+ */
+void    EventManager::activateButton(int key)
+{
+    switch (key)
+    {
+    case Qt::Key_C:
+        changeColors();
+        break;
+    case Qt::Key_U:
+        changeUnits();
+        break;
+    default:
+        break;
+    }
+}
+
+/**
+ * @brief Updates the screen with the latest data from the ROS node.
+ *
+ * This method is called periodically by the update timer. It retrieves the latest speed, battery
+ * level, and blinker state from the ROS node and updates the corresponding widgets.
+ */
 void EventManager::updateScreen()
 {
     executor.spin_some(
-        std::chrono::milliseconds(10)); // after this line, values are updated.
+        std::chrono::milliseconds(SCREEN_UPDATE_RATE)); // after this line, values are updated.
     py_speed->setCurrentSpeed(node->getSpeed());
     py_battery->setCurrentLevel(node->getBattery());
     py_batspeed->setCurrentLevel(node->getBattery());
@@ -59,28 +126,18 @@ void EventManager::updateScreen()
     
     updateBlinkers();
 
-    stats->setDistance(4533);
-    stats->setAverage(56);
-    stats->setConsumed(78);
-    stats->setObstacles(2);
+    stats->setDistance(STATS_DISTANCE);
+    stats->setAverage(STATS_AVERAGE);
+    stats->setConsumed(STATS_CONSUMED);
+    stats->setObstacles(STATS_OBSTACLES);
     stats->update();
-
-    for (int key : pressed_keys)
-    {
-        switch (key)
-        {
-        case Qt::Key_C:
-            changeColors();
-            break;
-        case Qt::Key_U:
-            changeUnits();
-            break;
-        default:
-            break;
-        }
-    }
 }
 
+/**
+ * @brief Updates the state of the blinker widgets based on the ROS node's blinker state.
+ *
+ * This method turns the blinkers on or off depending on the current blinker state.
+ */
 void EventManager::updateBlinkers()
 {
     switch (node->getBlinkerState())
@@ -117,6 +174,12 @@ void EventManager::updateBlinkers()
     }
 }
 
+/**
+ * @brief Changes the color scheme of all connected widgets.
+ *
+ * This method updates the color scheme of all widgets and the main 
+ * window's background based on the current color index.
+ */
 void EventManager::changeColors()
 {
     color1.indent();
@@ -139,6 +202,11 @@ void EventManager::changeColors()
     main_window->setStyleSheet(color1.background_array[color1.counter]);
 }
 
+/**
+ * @brief Changes the units of measurement for speed and temperature widgets.
+ *
+ * This method toggles between different units for the speedometer and CPU temperature widgets.
+ */
 void EventManager::changeUnits()
 {
     py_speed->changeUnits();
@@ -148,25 +216,45 @@ void EventManager::changeUnits()
     cpu2->changeUnits();
 }
 
-void EventManager::handleGestureEvent(QGestureEvent* gesture_event)
+/**
+ * @brief Handles swipe gestures to switch between screens.
+ *
+ * This method detects horizontal swipe gestures and updates the QStackedWidget to show the
+ * previous or next screen.
+ *
+ * @param release_position The position where the mouse button was released.
+ * @return true if a swipe gesture was detected, false otherwise.
+ */
+bool    EventManager::swipe(QPointF release_position)
 {
-    if (QSwipeGesture* swipe = static_cast<QSwipeGesture*>(
-            gesture_event->gesture(Qt::SwipeGesture)))
-    {
-        if (swipe->horizontalDirection() == QSwipeGesture::Left)
-        {
-            int nextIndex = std::min(stacked_widget->count() - 1,
-                                     stacked_widget->currentIndex() + 1);
-            stacked_widget->setCurrentIndex(nextIndex);
-        }
-        else if (swipe->horizontalDirection() == QSwipeGesture::Right)
-        {
-            int prevIndex = std::max(0, stacked_widget->currentIndex() - 1);
-            stacked_widget->setCurrentIndex(prevIndex);
-        }
+    bool swipe_range = qFabs(mouse_position.rx() - release_position.rx()) > MIN_SWIPE_WIDTH;
+    bool vertical_range = qFabs(mouse_position.ry() - release_position.ry()) < MAX_SWIPE_HEIGHT;
+
+    if (mouse_position.rx() < release_position.rx() && swipe_range && vertical_range ) {
+        int previous_index = std::max(0, stacked_widget->currentIndex() - 1);
+        stacked_widget->setCurrentIndex(previous_index);
+
+        return true;
     }
+    else if (mouse_position.rx() > release_position.rx() && swipe_range && vertical_range ) {
+        int next_index = std::min(stacked_widget->count() - 1, stacked_widget->currentIndex() + 1);
+        stacked_widget->setCurrentIndex(next_index);
+
+        return true;
+    }
+    return false;
 }
 
+/**
+ * @brief A Getter that returns the QStackedWidget used for managing multiple screens.
+ *
+ * @return A pointer to the QStackedWidget.
+ */
 QStackedWidget* EventManager::getStackedWidget() { return stacked_widget; }
 
+/**
+ * @brief Destroys the EventManager.
+ *
+ * This destructor cleans up any resources used by the EventManager.
+ */
 EventManager::~EventManager() {}

@@ -6,7 +6,13 @@
 #include <QLabel>
 #include <QPixmap>
 #include "Colors.h"
+#include <iostream>
 
+
+/**
+ * @brief This class sets a Bar of icons in the Widget.
+ * @details It updates the icons state and changes its colour.
+ */
 class TopBar : public QWidget
 {
     Q_OBJECT

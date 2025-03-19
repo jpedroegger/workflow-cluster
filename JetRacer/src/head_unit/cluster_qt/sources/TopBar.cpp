@@ -1,6 +1,19 @@
 #include "../includes/TopBar.h"
-#include <iostream>
 
+
+/**
+ * @brief Constructs a TopBar widget with the specified parameters.
+ *
+ * This constructor initializes the top bar widget, sets its geometry, and loads default and alternate
+ * images for the icons. The widget displays a horizontal layout of icons, which can be toggled between
+ * default and alternate states.
+ *
+ * @param parent The parent widget.
+ * @param x The x-coordinate of the widget's position.
+ * @param y The y-coordinate of the widget's position.
+ * @param width The width of the widget.
+ * @param height The height of the widget.
+ */
 TopBar::TopBar(QWidget* parent, int x, int y, int width, int height) : QWidget(parent)
 {
     layout = new QHBoxLayout(this);
@@ -94,8 +107,22 @@ TopBar::TopBar(QWidget* parent, int x, int y, int width, int height) : QWidget(p
     setMinimumWidth(250 * 2);
 }
 
+/**
+ * @brief Destroys the TopBar widget.
+ *
+ * This destructor cleans up any resources used by the widget.
+ */
 TopBar::~TopBar() {}
 
+/**
+ * @brief Sets the state of an image in the top bar.
+ *
+ * This method toggles the image at the specified index between its default and alternate states.
+ *
+ * @param index The index of the image to update.
+ * @param state If true, the alternate image is displayed; if false, the default image is displayed.
+ * @return true if the image was updated successfully, false if the index is invalid.
+ */
 bool    TopBar::setImageState(int index, bool state)
 {
     if (index < 0 || index >= image_labels.size()) {
@@ -113,6 +140,14 @@ bool    TopBar::setImageState(int index, bool state)
     }
 }
 
+/**
+ * @brief Changes the color scheme of the top bar icons.
+ *
+ * This method updates the default images based on the provided array index, allowing the icons to
+ * reflect a new color scheme.
+ *
+ * @param array_index The index of the color scheme.
+ */
 void    TopBar::changeColor(int  array_index)
 {
     default_images = default_images_array[array_index];

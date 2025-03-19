@@ -1,11 +1,17 @@
+#include "SpeedometerWidget.h"
+
 /**
- * @file SpeedometerWidget.cpp
- * @brief Object responsible for drawing the Speedometer widget present in the
- * cluster, and updating it's values as published by EventManager.
+ * @brief Constructs a SpeedometerWidget with the specified parameters.
+ *
+ * This constructor initializes the speedometer widget, sets its geometry, and configures
+ * its colors and focus policy.
+ *
+ * @param parent The parent widget.
+ * @param x The x-coordinate of the widget's position (default is 0).
+ * @param y The y-coordinate of the widget's position (default is 0).
+ * @param width The width of the widget (default is 0).
+ * @param height The height of the widget (default is 0).
  */
-
-#include "../includes/SpeedometerWidget.h"
-
 SpeedometerWidget::SpeedometerWidget(QWidget* parent, int x, int y, int width, int height)
     : QWidget(parent), current_speed(0)
 {
@@ -19,6 +25,14 @@ SpeedometerWidget::SpeedometerWidget(QWidget* parent, int x, int y, int width, i
     setFocusPolicy(Qt::StrongFocus);
 }
 
+/**
+ * @brief Handles the painting of the speedometer.
+ *
+ * This method is overridden from QWidget and is called whenever the widget needs to be redrawn.
+ * It draws the circular scale, needle, and central speed number.
+ *
+ * @param event The paint event.
+ */
 void SpeedometerWidget::paintEvent(QPaintEvent* event)
 {
     QPainter painter(this);
@@ -31,6 +45,16 @@ void SpeedometerWidget::paintEvent(QPaintEvent* event)
     drawCentralNumber(painter, centerX, centerY);
 }
 
+/**
+ * @brief Draws the circular scale of the speedometer.
+ *
+ * This method draws the outer circle, tick marks, and labels for the speedometer scale.
+ *
+ * @param painter The QPainter object used for drawing.
+ * @param centerX The x-coordinate of the center of the scale.
+ * @param centerY The y-coordinate of the center of the scale.
+ * @param radius The radius of the scale.
+ */
 void SpeedometerWidget::drawScale(QPainter& painter, int centerX, int centerY,
                                   int radius)
 {
@@ -73,6 +97,16 @@ void SpeedometerWidget::drawScale(QPainter& painter, int centerX, int centerY,
     }
 }
 
+/**
+ * @brief Draws the needle of the speedometer.
+ *
+ * This method draws the needle that indicates the current speed on the speedometer.
+ *
+ * @param painter The QPainter object used for drawing.
+ * @param centerX The x-coordinate of the center of the needle.
+ * @param centerY The y-coordinate of the center of the needle.
+ * @param radius The radius of the needle's arc.
+ */
 void SpeedometerWidget::drawNeedle(QPainter& painter, int centerX, int centerY,
                                    int radius)
 {
@@ -89,6 +123,16 @@ void SpeedometerWidget::drawNeedle(QPainter& painter, int centerX, int centerY,
     painter.drawLine(xStart, yStart, xEnd, yEnd);
 }
 
+/**
+ * @brief Draws the central speed number and unit.
+ *
+ * This method draws the current speed value and unit in the center
+ * of the speedometer.
+ *
+ * @param painter The QPainter object used for drawing.
+ * @param centerX The x-coordinate of the center of the number.
+ * @param centerY The y-coordinate of the center of the number.
+ */
 void SpeedometerWidget::drawCentralNumber(QPainter& painter, int centerX,
                                           int centerY)
 {
@@ -117,12 +161,14 @@ void SpeedometerWidget::drawCentralNumber(QPainter& painter, int centerX,
     painter.drawText(kphX, kphY, unit);
 }
 
-void SpeedometerWidget::accelerate(int forward_key)
-{
-    // FUTURE ROS2
-}
-
-
+/**
+ * @brief Changes the color scheme of the speedometer.
+ *
+ * This method updates the colors of the speedometer based on the
+ * provided array index.
+ *
+ * @param array_index The index of the color scheme in the `color1` arrays.
+ */
 void    SpeedometerWidget::changeColor(int  array_index)
 {
     main_color = color1.main_color_array[array_index];
@@ -131,6 +177,12 @@ void    SpeedometerWidget::changeColor(int  array_index)
     update();
 }
 
+/**
+ * @brief Toggles between speed units.
+ *
+ * This method switches the speed unit and adjusts the maximum speed and current speed
+ * accordingly.
+ */
 void    SpeedometerWidget::changeUnits(void)
 {
     if (unit == "DPS"){
@@ -145,12 +197,23 @@ void    SpeedometerWidget::changeUnits(void)
     update();
 }
 
+/**
+ * @brief A Getter that returns the current speed unit.
+ *
+ * @return The current speed unit as a QString (e.g., "DPS" or "FPS").
+ */
 QString SpeedometerWidget::getUnit()
 {
     return unit;
 }
 
-
+/**
+ * @brief A Setter that updates the current speed of the speedometer.
+ *
+ * This method updates the current speed value and triggers a repaint of the widget.
+ *
+ * @param speed The new speed value.
+ */
 void SpeedometerWidget::setCurrentSpeed(int speed)
 {
     if (speed == current_speed || (unit == "MPH" && speed * 0.614 == current_speed))
@@ -162,6 +225,16 @@ void SpeedometerWidget::setCurrentSpeed(int speed)
     update();
 }
 
-int SpeedometerWidget::getCurrentSpeed() const { return current_speed; }
+/**
+ * @brief A Getter that returns the current speed of the speedometer.
+ *
+ * @return The current speed as an integer.
+ */
+int SpeedometerWidget::getCurrentSpeed() const { return currentSpeed; }
 
+/**
+ * @brief Destroys the SpeedometerWidget.
+ *
+ * This destructor cleans up any resources used by the widget.
+ */
 SpeedometerWidget::~SpeedometerWidget() {}
