@@ -5,6 +5,8 @@ ArrowSymbolWidget::ArrowSymbolWidget(QWidget* parent, int x, int y, int width, i
 {
     color1 = Color();
     main_color = color1.main_color;
+    left_color = main_color;
+    right_color = main_color;
     accent_color = color1.accent_color;
     alphabet_color = color1.alphabet_color;
 
@@ -61,13 +63,13 @@ void ArrowSymbolWidget::forwardArrows(QPainter& painter)
 
     QRectF controlRect(-radius, -radius, 2 * radius, 2 * radius);
     path.quadTo(QPointF(0, -smaller - angle_y_offset_left), QPointF(final_x, final_y - angle_y_offset_left));
-    painter.setPen(QPen(main_color, 8));
+    painter.setPen(QPen(left_color, 8));
     painter.drawPath(path);
 
     QPainterPath rightPath;
     rightPath.moveTo(offset, 0);
     rightPath.quadTo(QPointF(offset, -smaller - angle_y_offset_right), QPointF(offset + final_x, final_y - angle_y_offset_right));
-
+    painter.setPen(QPen(right_color, 8));
     painter.drawPath(rightPath);
 }
 
@@ -90,13 +92,13 @@ void ArrowSymbolWidget::backwardsArrows(QPainter& painter)
     QPainterPath path;
     path.moveTo(0, offset_y);
     path.quadTo(QPointF(0, offset_y + smaller + angle_y_offset_right), QPointF(final_x, offset_y + final_y + angle_y_offset_right));
-    painter.setPen(QPen(main_color, 8));
+    painter.setPen(QPen(left_color, 8));
     painter.drawPath(path);
 
     QPainterPath rightPath;
     rightPath.moveTo(offset_x, offset_y);
     rightPath.quadTo(QPointF(offset_x, offset_y + smaller + angle_y_offset_left), QPointF(offset_x + final_x, offset_y + final_y + angle_y_offset_left));
-
+    painter.setPen(QPen(right_color, 8));
     painter.drawPath(rightPath);
 }
 
@@ -126,8 +128,25 @@ void ArrowSymbolWidget::changeDirection(double ang, QString dir)
 
 void    ArrowSymbolWidget::changeColor(int  array_index)
 {
+    if (left_color == main_color)
+        left_color = color1.main_color_array[array_index];
+    if (right_color == main_color)
+        right_color = color1.main_color_array[array_index];
     main_color = color1.main_color_array[array_index];
     accent_color = color1.accent_color_array[array_index];
     alphabet_color = color1.alphabet_color_array[array_index];   
+    update();
+}
+
+void    ArrowSymbolWidget::turnOnLanes(bool left, bool right)
+{
+    if (left)
+        left_color = QColor(Qt::red);
+    else
+        left_color = main_color;
+    if (right)
+        right_color = QColor(Qt::red);
+    else
+        right_color = main_color;
     update();
 }

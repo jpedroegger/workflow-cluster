@@ -5,7 +5,7 @@
  * @brief Constructs a RosNode.
  *
  * This constructor initializes the ROS 2 node and sets up subscriptions for battery level,
- * speed, RPM, and blinker state.
+ * speed, RPM, blinker state, lane state and wheel angle.
  */
 RosNode::RosNode() : rclcpp::Node("ros_node"), battery_level_(0), speed_(0)
 {
@@ -25,11 +25,15 @@ RosNode::RosNode() : rclcpp::Node("ros_node"), battery_level_(0), speed_(0)
         "cmd_blinkers", 10,
         std::bind(&RosNode::setBlinkerState, this, std::placeholders::_1));
     
-        wheel_angle_sub_ = this->create_subscription<std_msgs::msg::Float64>(
-            "cmd_vel", 90,
-            [this](const std_msgs::msg::Float64::SharedPtr msg) {
-                wheel_angle_ = static_cast<float>(msg->data);
-            });
+    lane_sub_ = this->create_subscription<std_msgs::msg::UInt8>(
+        "cmd_lane", 10,
+        std::bind(&RosNode::setLaneDetection, this, std::placeholders::_1));
+
+    wheel_angle_sub_ = this->create_subscription<std_msgs::msg::Float64>(
+        "cmd_vel", 90,
+        [this](const std_msgs::msg::Float64::SharedPtr msg) {
+            wheel_angle_ = static_cast<float>(msg->data);
+        });
 }
 
 
@@ -57,9 +61,16 @@ int RosNode::getRpm() const { return rpm_; }
 /**
  * @brief A Getter that returns the current state of the blinkers.
  *
- * @return The current blinker state as a `blinkerState` enum value.
+ * @return The current blinker state as a `blinker_state` enum value.
  */
 blinkerState RosNode::getBlinkerState() const { return blinker_state_; }
+
+/**
+ * @brief A Getter that returns the current state of the lane.
+ *
+ * @return The current lane state as a `lane_state` enum value.
+ */
+laneDetection RosNode::getLaneDetection() const { return lane_state_; }
 
 /**
  * @brief A Setter that updates the blinker state based on the received message.
@@ -87,5 +98,31 @@ void RosNode::setBlinkerState(std_msgs::msg::UInt8 msg)
     default:
         RCLCPP_WARN(this->get_logger(), "Unrecognised blinker state");
         blinker_state_ = blinkerState::IDLE;
+    }
+}
+
+/**
+ * @brief A Setter that updates the lane detection state based on the received message.
+ *
+ * This callback function is triggered whenever a new lane state message is received.
+ *
+ * @param msg The message containing the new lane state.
+ */
+void RosNode::setLaneDetection(std_msgs::msg::UInt8 msg)
+{
+    switch (msg.data)
+    {
+    case 0x0:
+        lane_state_ = laneDetection::NONE;
+        break;
+    case 0x1:
+        lane_state_ = laneDetection::RIGHT;
+        break;
+    case 0x2:
+        lane_state_ = laneDetection::LEFT;
+        break;
+    default:
+        RCLCPP_WARN(this->get_logger(), "Unrecognised lane state");
+        lane_state_ = laneDetection::NONE;
     }
 }

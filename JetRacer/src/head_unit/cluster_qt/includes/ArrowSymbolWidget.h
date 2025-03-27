@@ -15,6 +15,7 @@ class ArrowSymbolWidget : public QWidget
         ~ArrowSymbolWidget();
 
         void    changeColor(int  array_index);
+        void    turnOnLanes(bool left, bool right);
         void    changeDirection(double ang, QString dir);
 
     protected:
@@ -24,10 +25,15 @@ class ArrowSymbolWidget : public QWidget
         void    variangle(void);
         void    forwardArrows(QPainter& painter);
         void    backwardsArrows(QPainter& painter);
+
         QColor  main_color;
         QColor  accent_color;
         QColor  alphabet_color;
+        QColor  left_color;
+        QColor  right_color;
+
         QString direction;
+        
         double  angle;
         double  step;
 

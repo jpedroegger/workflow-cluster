@@ -13,6 +13,13 @@ enum class blinkerState
     WARNINGS,
 };
 
+enum class laneDetection
+{
+    NONE,
+    RIGHT,
+    LEFT,
+};
+
 /**
  * @brief The RosNode class represents a ROS 2 node for managing vehicle data.
  *
@@ -30,17 +37,21 @@ class RosNode : public rclcpp::Node
         int             getBattery() const;
         int             getRpm() const;
         blinkerState    getBlinkerState() const;
+        laneDetection   getLaneDetection() const;
 
     private:
         rclcpp::Subscription<std_msgs::msg::Float64>::SharedPtr battery_sub_;
         rclcpp::Subscription<std_msgs::msg::UInt8>::SharedPtr   speed_sub_;
         rclcpp::Subscription<std_msgs::msg::UInt32>::SharedPtr  rpm_sub_;
         rclcpp::Subscription<std_msgs::msg::UInt8>::SharedPtr   blinker_sub_;
+        rclcpp::Subscription<std_msgs::msg::UInt8>::SharedPtr   lane_sub_;
 
         void            setBlinkerState(std_msgs::msg::UInt8 msg);
+        void            setLaneDetection(std_msgs::msg::UInt8 msg);
 
         int             battery_level_{0};
         int             speed_{0};
         int             rpm_{0};
         blinkerState    blinker_state_{blinkerState::IDLE};
+        laneDetection   lane_state_{laneDetection::NONE};
 };

@@ -125,7 +125,7 @@ void EventManager::updateScreen()
     arrows->changeDirection(node->getWheelAngle(), "forward");
     
     updateBlinkers();
-
+    updateArrows();
     stats->setDistance(STATS_DISTANCE);
     stats->setAverage(STATS_AVERAGE);
     stats->setConsumed(STATS_CONSUMED);
@@ -171,6 +171,29 @@ void EventManager::updateBlinkers()
         right_blinker->turnOnBlinkers(false);
         left_blinker2->turnOnBlinkers(false);
         right_blinker2->turnOnBlinkers(false);
+    }
+}
+
+/**
+ * @brief Updates the state of the arrow widgets based on the ROS node's arrow state.
+ *
+ * This method changes the arrows color depending on the current arrow state.
+ */
+void EventManager::updateArrows()
+{
+    switch (node->getLaneDetection())
+    {
+    case laneDetection::IDLE:
+        arrows->turnOnLanes(false, false);
+        break;
+    case laneDetection::RIGHT:
+        arrows->turnOnLanes(false, true);
+        break;
+    case laneDetection::LEFT:
+        arrows->turnOnLanes(true, false);
+        break;
+    default:
+        arrows->turnOnLanes(false, false);
     }
 }
 

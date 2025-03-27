@@ -91,6 +91,7 @@ class EventManager : public QWidget
     private slots:
         void updateScreen();
         void updateBlinkers();
+        void updateArrows();
 };
 
 #endif
