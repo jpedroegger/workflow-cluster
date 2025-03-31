@@ -64,11 +64,13 @@ jobs:
            git clone --recurse-submodules https://github.com/carla-simulator/ros-bridge.git src/ros-bridge
            source /opt/ros/humble/setup.bash
            colcon build --packages-select carla_msgs --symlink-install --base-paths $HOME/carla-ros-bridge
-           source $HOME/carla-ros-bridge/install/setup.bash
+           echo "source $HOME/carla-ros-bridge/install/setup.bash" >> $GITHUB_ENV
            
     - name: Build the project
       run: |
           source /opt/ros/humble/setup.bash
+          source $HOME/carla-ros-bridge/install/setup.bash
+          echo "export CMAKE_PREFIX_PATH=$HOME/carla-ros-bridge/install:$CMAKE_PREFIX_PATH" >> $GITHUB_ENV
           cd $ROS_BUILD_DIR
           # Initialize rosdep
           sudo rosdep init || true
