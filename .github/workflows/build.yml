@@ -59,20 +59,21 @@ jobs:
 
     - name: Clone CARLA ROS 2 Bridge
       run: |
-          mkdir -p $HOME/carla-ros-bridge
-          cd $HOME/carla-ros-bridge
-          git clone --recurse-submodules https://github.com/carla-simulator/ros-bridge.git src/ros-bridge
+           mkdir -p carla-ros-bridge
+           cd carla-ros-bridge
+           git clone --recurse-submodules https://github.com/carla-simulator/ros-bridge.git src/ros-bridge
+           source /opt/ros/humble/setup.bash
+           colcon build --packages-select carla_msgs --symlink-install
+           source install/setup.bash
+           
+    - name: Build the project
+      run: |
+          pwd
           source /opt/ros/humble/setup.bash
-          colcon build --packages-select carla_msgs --symlink-install --base-paths $HOME/carla-ros-bridge
-          source $HOME/carla-ros-bridge/install/setup.bash
-          source /opt/ros/humble/setup.bash
-          cd $ROS_BUILD_DIR
-          # Initialize rosdep
+          cd ../JetRacer
           sudo rosdep init || true
           rosdep update
-          # Install dependencies
           rosdep install --from-paths . --ignore-src -r -y
-          # Build
           colcon build --symlink-install --packages-skip camera_ros
 
     - name: Run tests
