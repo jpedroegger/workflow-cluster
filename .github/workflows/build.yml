@@ -57,6 +57,19 @@ jobs:
          sudo apt install -y ros-humble-desktop
          source /opt/ros/humble/setup.bash
 
+    - name: Clone CARLA ROS Bridge
+      run: |
+           mkdir -p ~/carla-ros-bridge
+           cd ~/carla-ros-bridge
+           git clone --recurse-submodules https://github.com/carla-simulator/ros-bridge.git src/ros-bridge
+ 
+    - name: Build CARLA ROS Bridge Packages
+      run: |
+           source /opt/ros/humble/setup.bash
+           colcon build --packages-select carla_msgs --symlink-install --base-paths ~/carla-ros-bridge
+           colcon build --packages-select carla_bridge --symlink-install --base-paths ~/carla-ros-bridge
+           source ~/carla-ros-bridge/install/setup.bash
+           
     - name: Build the project
       run: |
           source /opt/ros/humble/setup.bash
