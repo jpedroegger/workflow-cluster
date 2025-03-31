@@ -10,7 +10,10 @@ find_package(rclcpp REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(carla_msgs REQUIRED)
 
-add_executable(carla_bridge_node src/CarlaBridgeNode.cpp)
+add_executable(carla_bridge_node 
+  src/main.cpp
+  src/CarlaBridgeNode.cpp
+)
 
 ament_target_dependencies(carla_bridge_node
     rclcpp

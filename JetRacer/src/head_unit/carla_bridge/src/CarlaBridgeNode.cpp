@@ -1,4 +1,4 @@
-#include "CarlaBridgeNode.hpp"
+#include "../include/CarlaBridgeNode.hpp"
 
 CarlaBridgeNode::CarlaBridgeNode() : rclcpp::Node("carla_bridge_node")
 {
