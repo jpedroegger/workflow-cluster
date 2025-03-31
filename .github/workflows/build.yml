@@ -70,7 +70,7 @@ jobs:
       run: |
           pwd
           source /opt/ros/humble/setup.bash
-          cd ../JetRacer
+          cd $ROS_BUILD_DIR
           sudo rosdep init || true
           rosdep update
           rosdep install --from-paths . --ignore-src -r -y
