@@ -62,9 +62,6 @@ jobs:
            mkdir -p $HOME/carla-ros-bridge
            cd $HOME/carla-ros-bridge
            git clone --recurse-submodules https://github.com/carla-simulator/ros-bridge.git src/ros-bridge
- 
-    - name: Build CARLA ROS 2 Bridge Packages
-      run: |
            source /opt/ros/humble/setup.bash
            colcon build --packages-select carla_msgs --symlink-install --base-paths $HOME/carla-ros-bridge
            source $HOME/carla-ros-bridge/install/setup.bash
