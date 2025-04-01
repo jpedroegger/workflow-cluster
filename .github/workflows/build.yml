@@ -21,15 +21,6 @@ jobs:
     - name: Checkout Code
       uses: actions/checkout@v4
 
-    - name: Cache ROS 2 installation
-      id: cache-ros
-      uses: actions/cache@v3
-      with:
-        path: |
-          /opt/ros/humble
-          ~/.ros/rosdep
-        key: ${{ runner.os }}-ros2-humble-${{ hashFiles('**/package.xml') }}
-
     - name: Install llvm18 toolchain
       run: |
         sudo apt-get update
@@ -39,11 +30,6 @@ jobs:
         sudo apt-get install -y clang build-essential cmake curl git clang-tidy-18 wget
         sudo update-alternatives --install /usr/bin/clang-tidy clang-tidy /usr/bin/clang-tidy-18 100
 
-    - name: Debug clang-tidy version
-      run: |
-        clang-tidy --version
-        cat .clang-tidy
-        grep "command" build/compile_commands.json | head -1
 
     - name: Install Qt
       run: |
@@ -61,7 +47,6 @@ jobs:
 
 
     - name: Install ROS 2 humble
-      if: steps.cache-ros.outputs.cache-hit != 'true'
       run: |
          sudo apt install -y software-properties-common
          sudo add-apt-repository universe
@@ -100,16 +85,14 @@ jobs:
         colcon test --ctest-args tests --packages-skip camera_ros --executor sequential
         colcon test-result --all --verbose
     
-    - name: Generate compile_commands.json
+    - name: Debug ROS 2 environment
       run: |
         source /opt/ros/humble/setup.bash
-        cd $ROS_BUILD_DIR
-        colcon build --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON --symlink-install
-        cp build/compile_commands.json .
-      
+        echo "CMAKE_PREFIX_PATH: $CMAKE_PREFIX_PATH"
+        find /opt/ros -name twist.hpp
+        colcon list
+
     - name: Run clang-tidy
       run: |
-        source /opt/ros/humble/setup.bash
         cd $ROS_BUILD_DIR
-        export CPLUS_INCLUDE_PATH="/opt/ros/humble/include:$CPLUS_INCLUDE_PATH"
-        run-clang-tidy-rust -p build/ compile_commands.json -j 4 --suppress-warnings
+        run-clang-tidy-rust tidy.json -j 4 --suppress-warnings --command /usr/bin/clang-tidy-18
