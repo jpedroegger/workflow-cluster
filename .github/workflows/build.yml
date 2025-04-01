@@ -86,5 +86,4 @@ jobs:
     - name: Run clang-tidy
       run: |
         cd $ROS_BUILD_DIR
-        run-clang-tidy-rust -p build/ compile_commands.json -j 4 --suppress-warnings
-
+        run-clang-tidy-rust tidy.json -j 4 --suppress-warnings
