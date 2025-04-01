@@ -84,8 +84,16 @@ jobs:
         source ./install/setup.bash
         colcon test --ctest-args tests --packages-skip camera_ros --executor sequential
         colcon test-result --all --verbose
+    
+    - name: Debug ROS 2 environment
+      run: |
+        source /opt/ros/humble/setup.bash
+        echo "CMAKE_PREFIX_PATH: $CMAKE_PREFIX_PATH"
+        find /opt/ros -name twist.hpp
+        colcon list
 
     - name: Run clang-tidy
       run: |
+        source /opt/ros/humble/setup.bash
         cd $ROS_BUILD_DIR
         run-clang-tidy-rust tidy.json -j 4 --suppress-warnings
