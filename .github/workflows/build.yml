@@ -30,7 +30,6 @@ jobs:
         sudo apt-get install -y clang build-essential cmake curl git clang-tidy-18 wget
         sudo update-alternatives --install /usr/bin/clang-tidy clang-tidy /usr/bin/clang-tidy-18 100
 
-
     - name: Install Qt
       run: |
         sudo apt-get install -y qt6-base-dev qt6-tools-dev-tools
@@ -44,7 +43,6 @@ jobs:
         cd run-clang-tidy
         cargo build --release --target-dir /tmp/target
         sudo mv /tmp/target/release/run-clang-tidy /usr/local/bin/run-clang-tidy-rust
-
 
     - name: Install ROS 2 humble
       run: |
@@ -84,15 +82,9 @@ jobs:
         source ./install/setup.bash
         colcon test --ctest-args tests --packages-skip camera_ros --executor sequential
         colcon test-result --all --verbose
-    
-    - name: Debug ROS 2 environment
-      run: |
-        source /opt/ros/humble/setup.bash
-        echo "CMAKE_PREFIX_PATH: $CMAKE_PREFIX_PATH"
-        find /opt/ros -name twist.hpp
-        colcon list
 
     - name: Run clang-tidy
       run: |
         cd $ROS_BUILD_DIR
-        run-clang-tidy-rust tidy.json -j 4 --suppress-warnings --command /usr/bin/clang-tidy-18
+        run-clang-tidy-rust -p build/ compile_commands.json -j 4 --suppress-warnings
+
