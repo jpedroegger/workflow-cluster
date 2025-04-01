@@ -39,6 +39,11 @@ jobs:
         sudo apt-get install -y clang build-essential cmake curl git clang-tidy-18 wget
         sudo update-alternatives --install /usr/bin/clang-tidy clang-tidy /usr/bin/clang-tidy-18 100
 
+    - name: Debug clang-tidy version
+      run: |
+        clang-tidy --version
+        cat .clang-tidy
+        grep "command" build/compile_commands.json | head -1
 
     - name: Install Qt
       run: |
