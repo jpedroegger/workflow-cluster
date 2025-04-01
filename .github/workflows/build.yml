@@ -63,18 +63,19 @@ jobs:
            cd carla-ros-bridge
            git clone --recurse-submodules https://github.com/carla-simulator/ros-bridge.git src/ros-bridge
            source /opt/ros/humble/setup.bash
+           sed -i 's/cmake_minimum_required(VERSION [0-9.]\+)/cmake_minimum_required(VERSION 3.16)/' src/ros-bridge/carla_msgs/CMakeLists.txt
            colcon build --packages-select carla_msgs --symlink-install
            source install/setup.bash
            
     - name: Build the project
       run: |
-          pwd
           source /opt/ros/humble/setup.bash
           cd $ROS_BUILD_DIR
           sudo rosdep init || true
           rosdep update
           rosdep install --from-paths . --ignore-src -r -y
-          colcon build --symlink-install --packages-skip camera_ros
+          source $GITHUB_WORKSPACE/carla-ros-bridge/install/setup.bash
+          colcon build --symlink-install
 
     - name: Run tests
       run: |
