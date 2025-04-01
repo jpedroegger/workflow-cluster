@@ -53,12 +53,6 @@ jobs:
         cargo build --release --target-dir /tmp/target
         sudo mv /tmp/target/release/run-clang-tidy /usr/local/bin/run-clang-tidy-rust
 
-    - name: Debug clang-tidy version
-      run: |
-        clang-tidy --version
-        grep "command" build/compile_commands.json | head -1
-        cat .clang-tidy
-
     - name: Install ROS 2 humble
       if: steps.cache-ros.outputs.cache-hit != 'true'
       run: |
@@ -98,17 +92,8 @@ jobs:
         source ./install/setup.bash
         colcon test --ctest-args tests --packages-skip camera_ros --executor sequential
         colcon test-result --all --verbose
-    
-    - name: Generate compile_commands.json
-      run: |
-        source /opt/ros/humble/setup.bash
-        cd $ROS_BUILD_DIR
-        colcon build --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON --symlink-install
-        cp build/compile_commands.json .
       
     - name: Run clang-tidy
       run: |
-        source /opt/ros/humble/setup.bash
         cd $ROS_BUILD_DIR
-        export CPLUS_INCLUDE_PATH="/opt/ros/humble/include:$CPLUS_INCLUDE_PATH"
-        run-clang-tidy-rust -p build/ compile_commands.json -j 4 --suppress-warnings
+        run-clang-tidy-rust -p build/ compile_commands.json -j 4 --command /usr/bin/clang-tidy-18 --suppress-warnings
