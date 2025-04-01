@@ -39,12 +39,6 @@ jobs:
         sudo apt-get install -y clang build-essential cmake curl git clang-tidy-18 wget
         sudo update-alternatives --install /usr/bin/clang-tidy clang-tidy /usr/bin/clang-tidy-18 100
 
-    - name: Debug clang-tidy version
-      run: |
-        clang-tidy --version
-        cat .clang-tidy
-        grep "command" build/compile_commands.json | head -1
-
     - name: Install Qt
       run: |
         sudo apt-get install -y qt6-base-dev qt6-tools-dev-tools
@@ -59,6 +53,11 @@ jobs:
         cargo build --release --target-dir /tmp/target
         sudo mv /tmp/target/release/run-clang-tidy /usr/local/bin/run-clang-tidy-rust
 
+    - name: Debug clang-tidy version
+      run: |
+        clang-tidy --version
+        grep "command" build/compile_commands.json | head -1
+        cat .clang-tidy
 
     - name: Install ROS 2 humble
       if: steps.cache-ros.outputs.cache-hit != 'true'
