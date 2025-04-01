@@ -1,4 +1,4 @@
-#include "../include/CarlaBridgeNode.hpp"
+#include "CarlaBridgeNode.hpp"
 #include <rclcpp/rclcpp.hpp>
 
 int main(int argc, char** argv)
